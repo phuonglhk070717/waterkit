@@ -1,73 +1,73 @@
-# 水处理工具箱 · WaterKit
+﻿# Bộ công cụ xử lý nước · WaterKit
 
-> 给水处理工程师的精准计算工具箱 · [waterkit.cn](https://waterkit.cn)
+> Bộ công cụ tính toán chính xác dành cho kỹ sư xử lý nước · [waterkit.cn](https://waterkit.cn)
 
-**WaterKit** 是一套面向水处理工艺工程师、水厂运行人员、环保公司技术员的在线计算工具集合。所有计算在浏览器本地完成,无需后端、无需注册、完全免费。
+**WaterKit** là tập hợp các công cụ tính toán trực tuyến dành cho kỹ sư công nghệ xử lý nước, nhân viên vận hành nhà máy nước và kỹ thuật viên môi trường. Mọi phép tính được thực hiện ngay trong trình duyệt, không cần máy chủ hay đăng ký và hoàn toàn miễn phí.
 
-由海南登登科技咨询有限公司([dengdengtech.cn](https://dengdengtech.cn))出品与维护。
+Do Hainan Dengdeng Technology Consulting Co., Ltd. ([dengdengtech.cn](https://dengdengtech.cn)) phát triển và bảo trì.
 
-## ✨ 特点
+## ✨ Đặc điểm
 
-- **纯静态 · 即开即用** — 18 个工具页 + 首页,双击即可离线使用
-- **规范优先** — 每个工具都标注依据的国标、行业标准与公式出处
-- **实时联动** — 改任意输入结果立即重算,像 Excel 一样顺滑
-- **移动适配** — 工地、水厂、会议室、手机上都能用
-- **参数完整** — 温度 / 海拔 / 介质 / 工艺参数一一到位,不做简化
+- **Trang tĩnh · Sử dụng ngay** — 18 trang công cụ và trang chủ, nhấp đúp để sử dụng ngoại tuyến
+- **Ưu tiên tiêu chuẩn** — Mỗi công cụ nêu rõ tiêu chuẩn quốc gia, tiêu chuẩn ngành và nguồn công thức áp dụng
+- **Tính toán tức thời** — Thay đổi bất kỳ dữ liệu đầu vào nào, kết quả được tính lại ngay như trong Excel
+- **Tương thích thiết bị di động** — Sử dụng tại công trường, nhà máy, phòng họp hoặc trên điện thoại
+- **Đầy đủ thông số** — Xét nhiệt độ, độ cao, môi chất và các thông số công nghệ mà không đơn giản hóa
 
-## 📐 工具目录
+## 📐 Danh mục công cụ
 
-### 水力计算 · Hydraulics
+### Tính toán thủy lực
 
-| 工具 | 说明 |
+| Công cụ | Mô tả |
 |------|------|
-| [管道水力](pipe-hydraulic-calculator.html) | Q/v/D 互算 · Colebrook-White 迭代 · 8 种管材粗糙度（可自定义） |
-| [管道水力（加强版）](pipe-hydraulic-pro.html) | 9 种管材真实内径 · 管件局部阻力清单 · Manning 重力流定径 · PN 承压校核 |
-| [明渠水力](open-channel-calculator.html) | Manning 公式 · 梯形/矩形/圆形断面 · 临界水深 · Fr 判流 |
-| [堰流计算](weir-flow-calculator.html) | 矩形 / 三角 / 梯形 / 宽顶 四种堰型 · 淹没出流修正 |
-| [孔口管嘴出流](orifice-nozzle-calculator.html) | 薄壁孔 / 圆柱管嘴 / 锥形管嘴 / 大孔口 · 变水头泄流时间 |
+| [Thủy lực đường ống](pipe-hydraulic-calculator.html) | Tính qua lại Q/v/D · Lặp Colebrook-White · Độ nhám của 8 loại vật liệu ống (có thể tùy chỉnh) |
+| [Thủy lực đường ống (nâng cao)](pipe-hydraulic-pro.html) | Đường kính trong thực tế của 9 loại ống · Danh sách tổn thất cục bộ tại phụ kiện · Chọn đường kính dòng tự chảy theo Manning · Kiểm tra áp lực PN |
+| [Thủy lực kênh hở](open-channel-calculator.html) | Công thức Manning · Mặt cắt hình thang/chữ nhật/tròn · Độ sâu phân giới · Phân loại dòng chảy theo Fr |
+| [Dòng chảy qua đập tràn](weir-flow-calculator.html) | Đập tràn chữ nhật / tam giác / hình thang / đỉnh rộng · Hiệu chỉnh dòng chảy ngập |
+| [Dòng chảy qua lỗ và vòi](orifice-nozzle-calculator.html) | Lỗ thành mỏng / vòi hình trụ / vòi hình côn / lỗ lớn · Thời gian tháo nước với cột nước thay đổi |
 
-### 工艺计算 · Process
+### Tính toán công nghệ
 
-| 工具 | 说明 |
+| Công cụ | Mô tả |
 |------|------|
-| [曝气量](aeration-calculator.html) | 活性污泥法 AOR/SOR · α-β 修正 · 碳化+硝化需氧 |
-| [污泥产量](sludge-production-calculator.html) | 生物+化学+原生污泥 · 脱水前后体积 · 处置成本 |
-| [加药量](dosing-calculator.html) | PAC/PAM/次氯酸钠/碳源/除磷/pH 调节 六大类药剂 |
-| [活性污泥工艺](activated-sludge-process-calculator.html) | AAO / A/O / SBR / 氧化沟 池容 · 回流 · 需氧 · 剩余污泥(Beta) |
-| [MBBR](mbbr-design.html) | 纯 MBBR 段组合 · 填料选型 · 案例库(Beta)；循环水养殖 RAS 见 [iRAS](https://iras.cn) |
-| [IFAS](ifas-design.html) | 泥膜复合(活性污泥+填料) · 新建池容 / 改造能力反算 · RAS + MLR 回流(Beta) |
-| [MBR](mbr-design.html) | 池容 · 膜面积 · 清洗 · 能耗(Beta) |
-| [RO 反渗透](ro-design.html) | 逐支元件模拟 · 苦咸水/回用/海水 · 二级 RO · 结垢加药 · 能量回收(Beta) |
+| [Lưu lượng khí sục](aeration-calculator.html) | AOR/SOR cho bùn hoạt tính (Activated Sludge) · Hiệu chỉnh α-β · Nhu cầu oxy cho oxy hóa cacbon và nitrat hóa |
+| [Lượng bùn phát sinh](sludge-production-calculator.html) | Bùn sinh học, hóa học và sơ cấp · Thể tích trước và sau tách nước · Chi phí xử lý |
+| [Liều lượng hóa chất](dosing-calculator.html) | Sáu nhóm hóa chất: PAC/PAM/natri hypoclorit/nguồn cacbon/khử phospho/điều chỉnh pH |
+| [Công nghệ bùn hoạt tính](activated-sludge-process-calculator.html) | Thể tích bể AAO / A/O / SBR / mương oxy hóa · Tuần hoàn · Nhu cầu oxy · Bùn dư (Beta) |
+| [MBBR](mbbr-design.html) | Kết hợp các giai đoạn MBBR thuần túy · Chọn giá thể · Thư viện trường hợp (Beta); hệ thống nuôi tuần hoàn RAS xem [iRAS](https://iras.cn) |
+| [IFAS](ifas-design.html) | Kết hợp bùn hoạt tính và màng sinh học trên giá thể · Tính thể tích bể mới / năng lực sau cải tạo · Tuần hoàn RAS + MLR (Beta) |
+| [MBR](mbr-design.html) | Thể tích bể · Diện tích màng · Vệ sinh · Tiêu thụ năng lượng (Beta) |
+| [Thẩm thấu ngược RO](ro-design.html) | Mô phỏng từng phần tử màng · Nước lợ/nước tái sử dụng/nước biển · RO hai cấp · Châm hóa chất chống cáu cặn · Thu hồi năng lượng (Beta) |
 
-### 设备选型 · Equipment
+### Lựa chọn thiết bị
 
-| 工具 | 说明 |
+| Công cụ | Mô tả |
 |------|------|
-| [水泵选型](pump-selection-calculator.html) | 系统扬程 / 轴功率 / NPSH 校核 / 并联变频 |
-| [鼓风机选型](blower-selection-calculator.html) | 绝热压缩功率 · 海拔修正 · 机型建议 · 年电费 |
+| [Lựa chọn bơm](pump-selection-calculator.html) | Cột áp hệ thống / công suất trục / kiểm tra NPSH / vận hành song song với biến tần |
+| [Lựa chọn máy thổi khí](blower-selection-calculator.html) | Công suất nén đoạn nhiệt · Hiệu chỉnh độ cao · Đề xuất loại máy · Chi phí điện hằng năm |
 
-### 基础换算 · Utilities
+### Chuyển đổi cơ bản
 
-| 工具 | 说明 |
+| Công cụ | Mô tả |
 |------|------|
-| [水质单位换算](water-quality-unit-converter.html) | 硬度/碱度/pH/氮磷/电导/通用离子 六大模块实时联动 |
+| [Chuyển đổi đơn vị chất lượng nước](water-quality-unit-converter.html) | Sáu mô-đun liên kết tức thời: độ cứng/độ kiềm/pH/nitơ và phospho/độ dẫn điện/ion thông dụng |
 
-### 水产养殖 · Aquaculture
+### Nuôi trồng thủy sản
 
-| 工具 | 说明 |
+| Công cụ | Mô tả |
 |------|------|
-| [池塘养殖尾水处理](tailwater.html) | 各省尾水排放标准自动判级 · 氮磷质量平衡估算尾水浓度 · 三池两坝设施规模 |
-| [Aqua Nor 2027 观展与采购指南](aquanor-2027-guide-cn.html) | 挪威特隆赫姆水产养殖展 · 倒推时间表 · 住宿 / 申根签证与 EES · 费用估算与行前清单 |
+| [Xử lý nước thải ao nuôi](tailwater.html) | Tự động phân loại theo tiêu chuẩn xả thải của từng tỉnh · Ước tính nồng độ nước thải bằng cân bằng khối lượng nitơ và phospho · Quy mô công trình ba ao hai đập |
+| [Hướng dẫn tham quan và mua sắm Aqua Nor 2027](aquanor-2027-guide-cn.html) | Triển lãm nuôi trồng thủy sản tại Trondheim, Na Uy · Lịch chuẩn bị ngược từ ngày khởi hành · Lưu trú / thị thực Schengen và EES · Ước tính chi phí và danh sách chuẩn bị |
 
-## 🚀 本地运行
+## 🚀 Chạy trên máy cá nhân
 
 ```bash
 git clone https://github.com/chengsunmail/waterkit.git
 cd waterkit
-# 双击 index.html 即可,无需任何构建或依赖
+# Nhấp đúp vào index.html; không cần xây dựng hoặc cài đặt thư viện
 ```
 
-或者使用任意静态文件服务器:
+Hoặc sử dụng bất kỳ máy chủ tệp tĩnh nào:
 
 ```bash
 # Python
@@ -76,60 +76,60 @@ python -m http.server 8000
 # Node.js
 npx serve .
 
-# 然后访问 http://localhost:8000
+# Sau đó truy cập http://localhost:8000
 ```
 
-## ☁️ 部署
+## ☁️ Triển khai
 
-站点部署在 Cloudflare Workers Static Assets(见 `wrangler.toml`):
+Trang web được triển khai bằng Cloudflare Workers Static Assets (xem `wrangler.toml`):
 
-- `wrangler deploy` 发布仓库根目录的静态文件
-- `.assetsignore` 列出不对外发布的文件(README、配置等)
-- `_redirects` 维护旧地址的 301 重定向
-- 不存在的地址返回 `404.html`
+- `wrangler deploy` xuất bản các tệp tĩnh trong thư mục gốc của kho mã
+- `.assetsignore` liệt kê các tệp không xuất bản công khai (README, cấu hình, v.v.)
+- `_redirects` quản lý chuyển hướng 301 cho các địa chỉ cũ
+- Địa chỉ không tồn tại trả về `404.html`
 
-## 📋 技术说明
+## 📋 Thông tin kỹ thuật
 
-- 纯原生 HTML + CSS + JavaScript,**零依赖**
-- 所有计算在浏览器端完成,不上传数据
-- 支持离线使用,下载后断网可用
-- 响应式设计,适配桌面与手机
+- HTML + CSS + JavaScript thuần, **không có thư viện phụ thuộc**
+- Mọi phép tính được thực hiện trong trình duyệt, không tải dữ liệu lên máy chủ
+- Hỗ trợ sử dụng ngoại tuyến sau khi tải về
+- Thiết kế đáp ứng cho máy tính và điện thoại
 
-## 📖 引用规范
+## 📖 Tiêu chuẩn tham khảo
 
-本工具计算基于以下现行国家/行业标准:
+Các phép tính dựa trên những tiêu chuẩn quốc gia và ngành sau:
 
-- **GB 50013** 室外给水设计标准
-- **GB 50014** 室外排水设计标准
-- **HJ 576** 厌氧-缺氧-好氧活性污泥法污水处理工程技术规范
-- **GB 18918** 城镇污水处理厂污染物排放标准
-- **GB 5749** 生活饮用水卫生标准
-- 《给水排水设计手册》第 1-11 册
-- Metcalf & Eddy《Wastewater Engineering: Treatment and Resource Recovery》
+- **GB 50013** Tiêu chuẩn thiết kế cấp nước ngoài nhà
+- **GB 50014** Tiêu chuẩn thiết kế thoát nước ngoài nhà
+- **HJ 576** Quy phạm kỹ thuật công trình xử lý nước thải bằng bùn hoạt tính kỵ khí - thiếu khí - hiếu khí
+- **GB 18918** Tiêu chuẩn xả chất ô nhiễm của nhà máy xử lý nước thải đô thị
+- **GB 5749** Tiêu chuẩn vệ sinh nước sinh hoạt
+- Sổ tay thiết kế cấp thoát nước, tập 1-11
+- Metcalf & Eddy, *Wastewater Engineering: Treatment and Resource Recovery*
 
-## ⚠️ 免责声明
+## ⚠️ Miễn trừ trách nhiệm
 
-本工具为工程方案阶段估算与参考使用,**实际工程设计须按相关规范进行详细计算,并由注册工程师复核**。开发者不对因使用本工具造成的任何直接或间接损失承担责任。
+Công cụ này dùng để ước tính và tham khảo ở giai đoạn lập phương án. **Thiết kế công trình thực tế phải được tính toán chi tiết theo các tiêu chuẩn liên quan và được kỹ sư có chứng chỉ kiểm tra.** Nhà phát triển không chịu trách nhiệm về bất kỳ thiệt hại trực tiếp hoặc gián tiếp nào phát sinh từ việc sử dụng công cụ.
 
-## 🤝 贡献
+## 🤝 Đóng góp
 
-欢迎提 Issue 报告计算错误、建议新工具或改进用户体验。
+Bạn có thể tạo Issue để báo lỗi tính toán, đề xuất công cụ mới hoặc cải thiện trải nghiệm người dùng.
 
-想贡献新工具?请在 [Issues](https://github.com/chengsunmail/waterkit/issues) 开一个讨论说明想做的工具类型和计算依据,我们一起评估。
+Bạn muốn đóng góp công cụ mới? Hãy mở một cuộc thảo luận trong [Issues](https://github.com/chengsunmail/waterkit/issues), mô tả loại công cụ và cơ sở tính toán để cùng đánh giá.
 
-## 📄 License
+## 📄 Giấy phép
 
-本项目采用 **GNU Affero General Public License v3.0 (AGPL-3.0)** 开源许可证。
+Dự án sử dụng giấy phép mã nguồn mở **GNU Affero General Public License v3.0 (AGPL-3.0)**.
 
-这意味着:
+Điều này có nghĩa là:
 
-- ✅ **可自由使用、修改、分发** — 包括商业用途
-- ⚠️ **必须开源衍生作品** — 任何基于本项目的修改版(包括通过网络提供服务的 SaaS)必须以相同 AGPL-3.0 协议开源
-- 📝 **必须保留版权声明** — 分发时需保留原作者信息与本许可证
-- 🌐 **网络使用也受约束** — 将本项目修改后部署为在线服务(如搭建自己的水处理计算网站),同样需要向用户提供修改后的完整源代码
+- ✅ **Được tự do sử dụng, sửa đổi và phân phối** — bao gồm mục đích thương mại
+- ⚠️ **Phải công khai mã nguồn tác phẩm phái sinh** — các phiên bản sửa đổi dựa trên dự án này, kể cả dịch vụ SaaS qua mạng, phải được phát hành theo cùng giấy phép AGPL-3.0
+- 📝 **Phải giữ thông báo bản quyền** — khi phân phối cần giữ thông tin tác giả gốc và giấy phép
+- 🌐 **Việc sử dụng qua mạng cũng chịu ràng buộc** — khi triển khai phiên bản sửa đổi thành dịch vụ trực tuyến, cần cung cấp cho người dùng đầy đủ mã nguồn đã sửa đổi
 
-完整协议内容见 [LICENSE](LICENSE) 文件或 <https://www.gnu.org/licenses/agpl-3.0.html>
+Xem toàn văn tại [LICENSE](LICENSE) hoặc <https://www.gnu.org/licenses/agpl-3.0.html>. Tệp LICENSE được giữ nguyên bằng ngôn ngữ gốc.
 
-> 如需商业授权(例如闭源集成到私有系统中),请通过 [登登科技官网](https://dengdengtech.cn) 联系商务合作。
+> Để xin giấy phép thương mại (ví dụ tích hợp mã đóng vào hệ thống riêng), vui lòng liên hệ qua [trang web Dengdeng Technology](https://dengdengtech.cn).
 
-© 2026 海南登登科技咨询有限公司 Hainan Dengdeng Technology Consulting Co., Ltd.
+© 2026 Hainan Dengdeng Technology Consulting Co., Ltd.
