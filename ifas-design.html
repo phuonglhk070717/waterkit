@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IFAS 工程设计 · 泥膜复合工艺计算 | 水处理工具箱 · WaterKit</title>
+<title>Thiết kế kỹ thuật IFAS · Tính toán công nghệ bùn hoạt tính kết hợp màng sinh học | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="IFAS 工程设计（泥膜复合工艺，活性污泥池投加 MBBR 填料）：悬浮相 + 生物膜双相模型，新建池容与改造能力反算，4 种段配置（纯好氧 / A/O / 后缺氧 / 完整 BNR），含 RAS 与 MLR 回流、需氧量与曝气器风机选型、药剂与产泥；填料硝化速率与纯 MBBR 同一口径。">
-<meta name="keywords" content="IFAS,泥膜复合,活性污泥投加填料,MBBR填料,提标改造,硝化,A/O,BNR,WaterKit,登登科技">
-<meta name="author" content="海南登登科技咨询有限公司">
+<meta name="description" content="Thiết kế kỹ thuật IFAS (kết hợp bùn hoạt tính và màng sinh học trên giá thể MBBR): mô hình hai pha lơ lửng và màng sinh học, tính thể tích bể xây mới hoặc công suất sau cải tạo, 4 cấu hình (hiếu khí / A/O / thiếu khí sau / BNR hoàn chỉnh), gồm tuần hoàn RAS và MLR, nhu cầu oxy, lựa chọn thiết bị sục khí và máy thổi khí, hoá chất và lượng bùn; tốc độ nitrat hoá của giá thể tính cùng cơ sở với MBBR thuần tuý.">
+<meta name="keywords" content="IFAS,kết hợp bùn và màng sinh học,bổ sung giá thể vào bùn hoạt tính,giá thể MBBR,cải tạo nâng chuẩn,nitrat hoá,A/O,BNR,WaterKit,Dengdeng">
+<meta name="author" content="Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam">
 <link rel="canonical" href="https://waterkit.cn/ifas-design.html">
 <style>
 :root {
@@ -667,7 +667,7 @@ body {
   .result-row.row-long { flex-wrap: wrap; }
   .result-row.row-long .result-label { flex: 1 1 100%; min-width: 0; }
   .result-row.row-long > span:last-child { flex: 1 1 100%; text-align: right; }
-  .flow-diagram::after { content: "← 左右滑动查看流程图 →"; display: block; text-align: center; font-size: 11px; color: var(--text-faint); margin-top: 6px; }
+  .flow-diagram::after { content: "← Vuốt ngang để xem sơ đồ công nghệ →"; display: block; text-align: center; font-size: 11px; color: var(--text-faint); margin-top: 6px; }
 }
 
 /* ========== 打印 ========== */
@@ -706,36 +706,36 @@ body {
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · bởi Dengdeng Technology</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-process">工艺计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-process">Tính toán công nghệ</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Dengdeng Technology</a>
     </nav>
   </div>
 </header>
-<div class="beta-bar" role="note"><div class="beta-inner">🚧 <b>Beta · 开发中</b>：本平台仍在持续校核与迭代，计算结果仅供方案估算参考，工程设计请以正式设计文件为准。发现问题欢迎 <a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a>。</div></div>
+<div class="beta-bar" role="note"><div class="beta-inner">🚧 <b>Beta · Đang phát triển</b>: Nền tảng vẫn đang được kiểm tra và cập nhật. Kết quả chỉ dùng để ước tính phương án; thiết kế công trình cần căn cứ vào hồ sơ thiết kế chính thức. Nếu phát hiện vấn đề, vui lòng <a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">gửi Issue</a>.</div></div>
 
 <!-- ========== Hero ========== -->
 <section class="hero">
   <div class="hero-inner">
     <div class="breadcrumb">
-      <a href="index.html">WaterKit</a> / <a href="index.html#cat-process">工艺计算</a> / IFAS 工程设计
+      <a href="index.html">WaterKit</a> / <a href="index.html#cat-process">Tính toán công nghệ</a> / Thiết kế kỹ thuật IFAS
     </div>
-    <div class="hero-badge">🔗 IFAS 工程设计</div>
-    <h1 class="hero-title">IFAS 工程设计</h1>
+    <div class="hero-badge">🔗 Thiết kế kỹ thuật IFAS</div>
+    <h1 class="hero-title">Thiết kế kỹ thuật IFAS</h1>
     <p class="hero-sub">
-      IFAS（Integrated Fixed-film Activated Sludge，泥膜复合）= 活性污泥池投加 MBBR 填料，悬浮污泥与填料生物膜协同处理，含活性污泥回流（RAS）。
-      本工具按悬浮相 + 附着相双相模型计算新建池容或改造后处理能力，涵盖 4 种段配置、RAS / MLR 回流、需氧量与曝气器风机选型、药剂与产泥；填料硝化速率与纯 MBBR 同一口径。
+      IFAS (Integrated Fixed-film Activated Sludge, kết hợp bùn hoạt tính và màng sinh học) bổ sung giá thể MBBR vào bể bùn hoạt tính; bùn lơ lửng và màng sinh học trên giá thể cùng xử lý nước thải, có tuần hoàn bùn hoạt tính (RAS).
+      Công cụ dùng mô hình hai pha lơ lửng và bám dính để tính thể tích bể xây mới hoặc công suất sau cải tạo; bao gồm 4 cấu hình ngăn, tuần hoàn RAS / MLR, nhu cầu oxy, lựa chọn thiết bị sục khí và máy thổi khí, hoá chất và lượng bùn. Tốc độ nitrat hoá của giá thể được tính cùng cơ sở với MBBR thuần tuý.
     </p>
     <div class="hero-meta">
-      <span>📘 <b>依据</b> Metcalf&amp;Eddy / HJ 576 / GB 50014</span>
-      <span>🎯 <b>双相协同</b> 悬浮 + 附着</span>
-      <span>🔄 <b>RAS + MLR</b> 回流计算</span>
-      <span>🏗️ <b>新建 / 改造</b> 两种模式</span>
+      <span>📘 <b>Cơ sở</b> Metcalf&amp;Eddy / HJ 576 / GB 50014</span>
+      <span>🎯 <b>Kết hợp hai pha</b> Lơ lửng + bám dính</span>
+      <span>🔄 <b>RAS + MLR</b> Tính tuần hoàn</span>
+      <span>🏗️ <b>Xây mới / cải tạo</b> Hai chế độ</span>
     </div>
   </div>
 </section>
@@ -744,82 +744,82 @@ body {
 <main class="main-wrap">
 
   <!-- 相关工具互链 -->
-  <nav class="xlink-bar" aria-label="相关工具">
-    <a class="xlink" href="mbbr-design.html"><span class="xl-k">← 纯生物膜 · 无回流</span><b>纯 MBBR 工程设计</b></a>
-    <span class="xlink-here"><span class="xl-k">本页 · 泥膜复合</span><b>IFAS</b></span>
-    <a class="xlink" href="activated-sludge-process-calculator.html"><span class="xl-k">纯悬浮污泥 · 含回流 →</span><b>活性污泥工艺</b></a>
+  <nav class="xlink-bar" aria-label="Công cụ liên quan">
+    <a class="xlink" href="mbbr-design.html"><span class="xl-k">← Chỉ có màng sinh học · không tuần hoàn</span><b>Thiết kế kỹ thuật MBBR thuần tuý</b></a>
+    <span class="xlink-here"><span class="xl-k">Trang này · kết hợp bùn và màng sinh học</span><b>IFAS</b></span>
+    <a class="xlink" href="activated-sludge-process-calculator.html"><span class="xl-k">Chỉ có bùn lơ lửng · có tuần hoàn →</span><b>Công nghệ bùn hoạt tính</b></a>
   </nav>
 
   <!-- Tab 导航 -->
   <div class="tab-nav-wrap">
     <div class="tab-nav">
       <button class="tab-btn active" data-tab="ifas" onclick="switchTab('ifas')">
-        设计计算<span class="tab-sub">新建 · 改造</span>
+        Tính toán thiết kế<span class="tab-sub">Xây mới · Cải tạo</span>
       </button>
       <button class="tab-btn" data-tab="theory" onclick="switchTab('theory')">
-        IFAS 原理<span class="tab-sub">悬浮相与生物膜分担</span>
+        Nguyên lý IFAS<span class="tab-sub">Phân chia giữa pha lơ lửng và màng sinh học</span>
       </button>
     </div>
   </div>
 
-  <!-- ===== Tab 1: IFAS 设计计算 ===== -->
+  <!-- ===== Tab 1: IFAS Tính toán thiết kế ===== -->
   <div class="tab-panel active" id="panel-ifas">
 
     <div class="carrier-intro">
-      <h3>🔗 混合工艺 IFAS 设计</h3>
-      <p>IFAS（Integrated Fixed-film Activated Sludge）= 活性污泥 + MBBR 填料。<b>有活性污泥回流（RAS）</b>是与纯 MBBR 的核心区别。步骤编排与 <a href="mbbr-design.html">纯 MBBR 工程设计</a>完全对应，方便对比。填料硝化速率与纯 MBBR 同一口径：经验参考值（以 10 ℃ 为基准、按温度修正，按进入负荷校核），国内项目请结合实测或厂家数据复核。</p>
+      <h3>🔗 Thiết kế công nghệ kết hợp IFAS</h3>
+      <p>IFAS (Integrated Fixed-film Activated Sludge) = bùn hoạt tính + giá thể MBBR. <b>Có tuần hoàn bùn hoạt tính (RAS)</b> là điểm khác biệt chính so với MBBR thuần tuý. Các bước được bố trí tương ứng với <a href="mbbr-design.html">Thiết kế kỹ thuật MBBR thuần tuý</a> để thuận tiện so sánh. Tốc độ nitrat hoá của giá thể tính cùng cơ sở với MBBR thuần tuý: giá trị kinh nghiệm tham khảo (lấy 10 ℃ làm cơ sở, hiệu chỉnh theo nhiệt độ và kiểm tra theo tải lượng đầu vào); các dự án tại Trung Quốc cần kiểm tra lại bằng số liệu đo thực tế hoặc của nhà sản xuất.</p>
       <div class="mini-spec">
-        <span>📘 依据：Metcalf&amp;Eddy / HJ 576 / GB 50014</span>
-        <span>🎯 双相协同：悬浮 + 附着</span>
-        <span>🔄 含 RAS + MLR 回流计算</span>
+        <span>📘 Cơ sở: Metcalf&amp;Eddy / HJ 576 / GB 50014</span>
+        <span>🎯 Kết hợp hai pha: lơ lửng + bám dính</span>
+        <span>🔄 Bao gồm tính tuần hoàn RAS + MLR</span>
       </div>
     </div>
 
     <!-- 步骤1：进水 & 出水参数 -->
-    <div class="section-title" style="margin-top:8px;"><span class="num">1</span>进水 &amp; 出水参数</div>
+    <div class="section-title" style="margin-top:8px;"><span class="num">1</span>Thông số nước đầu vào &amp; đầu ra</div>
     <div class="water-preset">
-      <button class="preset-tab active" data-preset-ifas="municipal" onclick="setPresetIFAS('municipal')">城镇污水</button>
-      <button class="preset-tab" data-preset-ifas="industrial" onclick="setPresetIFAS('industrial')">工业废水</button>
-      <button class="preset-tab" data-preset-ifas="upgrade" onclick="setPresetIFAS('upgrade')">提标改造</button>
-      <button class="preset-tab" type="button" onclick="resetIfasDefaults()" title="恢复全部输入（含高级参数、容积比、曝气与风机参数）为页面初始默认值">↺ 恢复默认</button>
+      <button class="preset-tab active" data-preset-ifas="municipal" onclick="setPresetIFAS('municipal')">Nước thải đô thị</button>
+      <button class="preset-tab" data-preset-ifas="industrial" onclick="setPresetIFAS('industrial')">Nước thải công nghiệp</button>
+      <button class="preset-tab" data-preset-ifas="upgrade" onclick="setPresetIFAS('upgrade')">Cải tạo nâng chuẩn</button>
+      <button class="preset-tab" type="button" onclick="resetIfasDefaults()" title="Khôi phục mọi đầu vào (gồm thông số nâng cao, tỷ lệ thể tích, thông số sục khí và máy thổi khí) về giá trị mặc định ban đầu">↺ Khôi phục mặc định</button>
     </div>
     <div class="grid">
       <div class="field"><label for="ifas_Q">Q <span class="unit">万 m³/d</span></label>
         <input type="number" id="ifas_Q" value="3" step="0.5" oninput="calcAndRenderIFAS()"></div>
       <div class="field"><label for="ifas_T">T <span class="unit">°C</span></label>
         <input type="number" id="ifas_T" value="20" step="1" oninput="calcAndRenderIFAS()">
-        <div class="helper">设计水温：BOD/SALR、需氧与 SOR 按此计</div></div>
-      <div class="field"><label for="ifas_Tmin">最低设计水温 T_min <span class="unit">°C</span></label>
-        <input type="number" id="ifas_Tmin" value="" step="1" placeholder="留空 = min(T, 12)" oninput="calcAndRenderIFAS()">
-        <div class="helper">填料硝化速率（以 10 ℃ 为基准修正）与悬浮相硝化泥龄 SRT_min 按此温度；留空取 min(T, 12 ℃)</div></div>
-      <div class="field"><label for="ifas_Kz">总变化系数 Kz</label>
-        <input type="number" id="ifas_Kz" value="" step="0.05" placeholder="自动" oninput="calcAndRenderIFAS()">
-        <div class="helper">二沉池按最高时流量 Q·Kz/24 设计/校核；留空按 GB 50014 总变化系数表（平均日流量 L/s）插值</div></div>
+        <div class="helper">Nhiệt độ nước thiết kế: dùng để tính BOD/SALR, nhu cầu oxy và SOR</div></div>
+      <div class="field"><label for="ifas_Tmin">Nhiệt độ nước thiết kế tối thiểu T_min <span class="unit">°C</span></label>
+        <input type="number" id="ifas_Tmin" value="" step="1" placeholder="Để trống = min(T, 12)" oninput="calcAndRenderIFAS()">
+        <div class="helper">Tốc độ nitrat hoá của giá thể (hiệu chỉnh từ 10 ℃) và tuổi bùn nitrat hoá SRT_min của pha lơ lửng được tính theo nhiệt độ này; để trống lấy min(T, 12 ℃)</div></div>
+      <div class="field"><label for="ifas_Kz">Hệ số biến đổi tổng Kz</label>
+        <input type="number" id="ifas_Kz" value="" step="0.05" placeholder="Tự động" oninput="calcAndRenderIFAS()">
+        <div class="helper">Bể lắng thứ cấp được thiết kế/kiểm tra theo lưu lượng giờ lớn nhất Q·Kz/24; để trống sẽ nội suy theo bảng hệ số biến đổi tổng của GB 50014 (lưu lượng trung bình ngày tính bằng L/s)</div></div>
       <div class="field"><label for="ifas_BOD0">BOD₀ <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_BOD0" value="180" step="5" oninput="calcAndRenderIFAS()"></div>
       <div class="field"><label for="ifas_NH40">NH₄-N₀ <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_NH40" value="35" step="1" oninput="calcAndRenderIFAS()"></div>
       <div class="field"><label for="ifas_TN0">TN₀ <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_TN0" value="45" step="1" oninput="calcAndRenderIFAS()">
-        <div class="helper">本页无 TKN 输入，以 TN₀ 代 TKN₀（进水 NOx 可忽略时）</div></div>
+        <div class="helper">Trang này không nhập TKN; dùng TN₀ thay TKN₀ khi NOx đầu vào không đáng kể</div></div>
       <div class="field"><label for="ifas_TP0">TP₀ <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_TP0" value="5" step="0.2" oninput="calcAndRenderIFAS()"></div>
-      <div class="field"><label for="ifas_SS0">进水 SS₀ <span class="unit">mg/L</span></label>
+      <div class="field"><label for="ifas_SS0">SS₀ đầu vào <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_SS0" value="200" step="10" oninput="calcAndRenderIFAS()">
-        <div class="helper">用于惰性 SS 产泥 f·Q·(SS₀−SSₑ)；城镇原水约 200</div></div>
-      <div class="field"><label for="ifas_Alk">碱度 Alk <span class="unit">mg/L</span></label>
+        <div class="helper">Dùng tính lượng bùn từ SS trơ f·Q·(SS₀−SSₑ); nước thải đô thị đầu vào khoảng 200</div></div>
+      <div class="field"><label for="ifas_Alk">Độ kiềm Alk <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_Alk" value="220" step="10" oninput="calcAndRenderIFAS()">
-        <div class="helper">硝化消耗 7.14 mg/mg NH₄</div></div>
+        <div class="helper">Nitrat hoá tiêu thụ 7.14 mg/mg NH₄</div></div>
     </div>
     <div class="grid">
-      <div class="field"><label for="ifas_standard">排放标准</label>
+      <div class="field"><label for="ifas_standard">Tiêu chuẩn xả thải</label>
         <select id="ifas_standard" onchange="applyStandardIFAS()">
-          <option value="1A">一级 A (GB 18918)</option>
-          <option value="grade4">准 IV 类（地方标准）</option>
-          <option value="grade3">地表 III 类（TP 按河流 0.2；湖库为 0.05，需另行校核）</option>
-          <option value="custom">自定义</option>
+          <option value="1A">Cấp I A (GB 18918)</option>
+          <option value="grade4">Tương đương loại IV (tiêu chuẩn địa phương)</option>
+          <option value="grade3">Nước mặt loại III (TP theo sông là 0.2; hồ và hồ chứa là 0.05, cần kiểm tra riêng)</option>
+          <option value="custom">Tự chọn</option>
         </select>
-        <div class="helper">准 IV 类为地方标准（TN 10 等），限值按项目所在地调整</div></div>
+        <div class="helper">Loại tương đương IV là tiêu chuẩn địa phương (TN 10 v.v.); điều chỉnh giới hạn theo địa điểm dự án</div></div>
       <div class="field"><label for="ifas_NH4e">出水 NH₄-N <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_NH4e" value="5" step="0.5" oninput="calcAndRenderIFAS()"></div>
       <div class="field"><label for="ifas_TNe">出水 TN <span class="unit">mg/L</span></label>
@@ -832,321 +832,321 @@ body {
         <input type="number" id="ifas_SSe" value="10" step="1" oninput="calcAndRenderIFAS()"></div>
     </div>
 
-    <!-- 步骤2：工艺推荐 -->
-    <div class="section-title"><span class="num">2</span>工艺推荐 <span class="sub">根据进出水自动分析</span></div>
+    <!-- 步骤2：Đề xuất công nghệ -->
+    <div class="section-title"><span class="num">2</span>Đề xuất công nghệ <span class="sub">Tự động phân tích theo nước đầu vào và đầu ra</span></div>
     <div id="ifas_recommend_box" style="margin-bottom:16px;"></div>
 
     <!-- 步骤3：工艺模式 & 段配置 -->
-    <div class="section-title"><span class="num">3</span>工艺模式 &amp; 段配置方案</div>
+    <div class="section-title"><span class="num">3</span>Chế độ công nghệ &amp; phương án bố trí các ngăn</div>
 
     <!-- 新建/改造选择 -->
     <div class="stage-configs" style="margin-bottom:12px;">
       <button class="stage-config active" data-ifas-mode="new" onclick="setIFASMode('new')">
         <div class="sc-num">新</div>
-        <div class="sc-title">新建 IFAS</div>
-        <div class="sc-sub">全新设计 · 活性污泥+填料</div>
-        <div class="sc-flow">进水 → 好氧IFAS → 二沉池 · RAS回流</div>
+        <div class="sc-title">Xây mới IFAS</div>
+        <div class="sc-sub">Thiết kế mới · bùn hoạt tính + giá thể</div>
+        <div class="sc-flow">Nước vào → IFAS hiếu khí → bể lắng thứ cấp · tuần hoàn RAS</div>
       </button>
       <button class="stage-config" data-ifas-mode="retrofit" onclick="setIFASMode('retrofit')">
         <div class="sc-num">改</div>
-        <div class="sc-title">改造 IFAS</div>
-        <div class="sc-sub">原池投加填料 · 提升能力</div>
-        <div class="sc-flow">现有活性污泥池 → 投填料 → 处理能力↑30-60%</div>
+        <div class="sc-title">Cải tạo IFAS</div>
+        <div class="sc-sub">Bổ sung giá thể vào bể hiện hữu · nâng công suất</div>
+        <div class="sc-flow">Bể bùn hoạt tính hiện hữu → bổ sung giá thể → công suất xử lý tăng 30-60%</div>
       </button>
     </div>
 
     <!-- 工艺段配置选择 -->
-    <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin:4px 0 8px;">工艺段配置（选择后自动初始化容积分配比）</div>
+    <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin:4px 0 8px;">Cấu hình các ngăn công nghệ (tự khởi tạo tỷ lệ phân bổ thể tích khi chọn)</div>
     <div class="stage-configs">
       <button class="stage-config" data-ifas-config="nitrif_only" onclick="setIFASConfig('nitrif_only')">
         <div class="sc-num">①</div>
-        <div class="sc-title">纯好氧 IFAS</div>
-        <div class="sc-sub">仅 BOD 去除 + 硝化 · 无脱氮</div>
-        <div class="sc-flow">好氧IFAS(100%) → 二沉池</div>
+        <div class="sc-title">IFAS chỉ hiếu khí</div>
+        <div class="sc-sub">Chỉ loại bỏ BOD và nitrat hoá · không khử nitơ</div>
+        <div class="sc-flow">IFAS hiếu khí(100%) → bể lắng thứ cấp</div>
       </button>
       <button class="stage-config" data-ifas-config="ao" onclick="setIFASConfig('ao')">
         <div class="sc-num">②</div>
-        <div class="sc-title">预缺氧 + 好氧 A/O</div>
-        <div class="sc-sub">含 MLR 内回流 · 免费反硝化 · 主流</div>
-        <div class="sc-flow">预缺氧(25%) → 好氧IFAS(75%) → 二沉池 · MLR 200-400%</div>
+        <div class="sc-title">Thiếu khí trước + hiếu khí A/O</div>
+        <div class="sc-sub">Có tuần hoàn nội MLR · khử nitrat không cần bổ sung carbon · phương án phổ biến</div>
+        <div class="sc-flow">Thiếu khí trước(25%) → IFAS hiếu khí(75%) → bể lắng thứ cấp · MLR 200-400%</div>
       </button>
       <button class="stage-config" data-ifas-config="post_anox" onclick="setIFASConfig('post_anox')">
         <div class="sc-num">③</div>
-        <div class="sc-title">好氧 IFAS + 后缺氧</div>
-        <div class="sc-sub">后缺氧脱氮 · 需外加碳源</div>
-        <div class="sc-flow">好氧IFAS(75%) → 后缺氧(25%) → 二沉池</div>
+        <div class="sc-title">IFAS hiếu khí + thiếu khí sau</div>
+        <div class="sc-sub">Khử nitơ ở ngăn thiếu khí sau · cần bổ sung nguồn carbon</div>
+        <div class="sc-flow">IFAS hiếu khí(75%) → thiếu khí sau(25%) → bể lắng thứ cấp</div>
       </button>
       <button class="stage-config active" data-ifas-config="full_bnr" onclick="setIFASConfig('full_bnr')">
         <div class="sc-num">④</div>
-        <div class="sc-title">完整 BNR</div>
-        <div class="sc-sub">双重脱氮 + 化除磷 · 最高标准</div>
-        <div class="sc-flow">预缺氧(25%) → 好氧IFAS(55%) → 后缺氧(20%) → 二沉池 · MLR</div>
+        <div class="sc-title">BNR đầy đủ</div>
+        <div class="sc-sub">Khử nitơ hai bậc + khử phospho bằng hoá chất · tiêu chuẩn cao nhất</div>
+        <div class="sc-flow">Thiếu khí trước(25%) → IFAS hiếu khí(55%) → thiếu khí sau(20%) → bể lắng thứ cấp · MLR</div>
       </button>
     </div>
 
     <div class="auto-calc-notice" style="margin-top:8px;">
       <div class="notice-head"><span class="notice-ic">ℹ️</span>
-        <span id="ifas_config_desc">完整BNR：预缺氧+好氧IFAS+后缺氧+化除磷，双重脱氮+化除磷，适合TN/TP均严格的场景。</span>
+        <span id="ifas_config_desc">BNR hoàn chỉnh: thiếu khí trước + IFAS hiếu khí + thiếu khí sau + khử phospho bằng hoá chất; khử nitơ hai bậc và khử phospho bằng hoá chất, phù hợp khi yêu cầu nghiêm ngặt đối với cả TN và TP.</span>
       </div>
     </div>
 
-    <!-- 步骤4：工艺设计参数 -->
-    <div class="section-title"><span class="num">4</span><span id="ifas_paramTitle">工艺设计参数</span></div>
+    <!-- 步骤4：Thông số thiết kế công nghệ -->
+    <div class="section-title"><span class="num">4</span><span id="ifas_paramTitle">Thông số thiết kế công nghệ</span></div>
     <div id="ifas_newParams">
       <div class="grid">
         <div class="field"><label for="ifas_MLSS">MLSS(悬浮) <span class="unit">mg/L</span></label>
           <input type="number" id="ifas_MLSS" value="3500" step="100" oninput="calcAndRenderIFAS()">
-          <div class="helper">总悬浮固体（含进水惰性 SS、化学污泥），D1 口径；IFAS 常 2500-4000</div></div>
+          <div class="helper">总悬浮固体（含进水惰性 SS、Bùn hoá học），D1 口径；IFAS 常 2500-4000</div></div>
         <div class="field"><label for="ifas_VSS_SS">MLVSS/MLSS</label>
           <input type="number" id="ifas_VSS_SS" value="0.72" step="0.01" oninput="calcAndRenderIFAS()"></div>
-        <div class="field"><label for="ifas_SRT">泥龄 SRT <span class="unit">d</span></label>
+        <div class="field"><label for="ifas_SRT">Tuổi bùn SRT <span class="unit">d</span></label>
           <input type="number" id="ifas_SRT" value="5" step="0.5" oninput="calcAndRenderIFAS()">
           <div class="helper">悬浮相最小泥龄（全池）：SRT = 水体×MLSS ÷ ΔX（ΔX 含惰性 SS、化学与碳源污泥，D1 口径）。好氧泥龄（扣缺氧区）低于 SF·SRT_min 时硝化全部由填料承担——IFAS 正是借填料在短泥龄下硝化</div></div>
-        <div class="field"><label for="ifas_V_input">总池容 V <span class="unit">m³（留0自动估算）</span></label>
-          <input type="number" id="ifas_V_input" value="0" step="500" oninput="calcAndRenderIFAS()" placeholder="自动估算"></div>
-        <div class="field"><label for="ifas_fillRatio">填料填充率 f <span class="unit">%</span></label>
+        <div class="field"><label for="ifas_V_input">Tổng thể tích bể V <span class="unit">m³（留0自动估算）</span></label>
+          <input type="number" id="ifas_V_input" value="0" step="500" oninput="calcAndRenderIFAS()" placeholder="Ước tính tự động"></div>
+        <div class="field"><label for="ifas_fillRatio">Tỷ lệ lấp đầy giá thể f <span class="unit">%</span></label>
           <input type="number" id="ifas_fillRatio" value="40" step="5" oninput="calcAndRenderIFAS()">
-          <div class="helper">IFAS 常 20-40%，上限 50%</div></div>
-        <div class="field"><label for="ifas_specArea">填料比表面积 a <span class="unit">m²/m³</span></label>
+          <div class="helper">IFAS thường 20-40%, tối đa 50%</div></div>
+        <div class="field"><label for="ifas_specArea">Diện tích bề mặt riêng của giá thể a <span class="unit">m²/m³</span></label>
           <input type="number" id="ifas_specArea" value="800" step="50" oninput="calcAndRenderIFAS()">
-          <div class="helper">K3 约 500，K5 约 800（IFAS 常用高比表面积填料）</div></div>
-        <div class="field"><label for="ifas_biofilm">填料表面生物量 <span class="unit">g VSS/m²</span></label>
+          <div class="helper">K3 khoảng 500, K5 khoảng 800 (IFAS thường dùng giá thể có diện tích bề mặt riêng lớn)</div></div>
+        <div class="field"><label for="ifas_biofilm">Sinh khối trên bề mặt giá thể <span class="unit">g VSS/m²</span></label>
           <input type="number" id="ifas_biofilm" value="15" step="1" oninput="calcAndRenderIFAS()">
           <div class="helper">文献常用 10-30 g VSS/m²（Ødegaard 等，与纯 MBBR 页同一口径）；IFAS 低负荷好氧段常取下段，取值偏高会高估附着相贡献</div></div>
         <div class="field"><label for="ifas_SALR">SALR₂₀ <span class="unit">g BOD/m²·d</span></label>
           <input type="number" id="ifas_SALR" value="7" step="0.5" oninput="calcAndRenderIFAS()"></div>
-        <div class="field"><label for="ifas_nitClass">填料硝化速率·前处理类别</label>
+        <div class="field"><label for="ifas_nitClass">Tốc độ nitrat hoá của giá thể · loại tiền xử lý</label>
           <select id="ifas_nitClass" oninput="calcAndRenderIFAS()">
-            <option value="auto">按构型自动（有预缺氧→b，无→a）</option>
-            <option value="a">a：无初沉、无前置反硝化（0.50）</option>
-            <option value="b">b：有初沉或前置反硝化（0.60）</option>
-            <option value="c">c：有初沉且前置反硝化（0.65）</option>
-            <option value="d">d：化学预沉淀（0.75）</option>
+            <option value="auto">Tự động theo cấu hình (có thiếu khí trước → b, không có → a)</option>
+            <option value="a">a: không lắng sơ cấp, không khử nitrat phía trước (0.50)</option>
+            <option value="b">b: có lắng sơ cấp hoặc khử nitrat phía trước (0.60)</option>
+            <option value="c">c: có lắng sơ cấp và khử nitrat phía trước (0.65)</option>
+            <option value="d">d: kết tủa hoá học sơ bộ (0.75)</option>
           </select>
           <div class="helper">与纯 MBBR 同一函数：r = r_类别（10 ℃）× θ^(min(T_min,20)−10) × min(DO,5)/5 × min(1, NH₄ₑ/2)，按进入 NH₄-N 负荷校核</div></div>
-        <div class="field"><label for="ifas_rNit">自定义填料硝化速率 <span class="unit">g NH₄-N/m²·d（10 ℃）</span></label>
-          <input type="number" id="ifas_rNit" value="" step="0.05" placeholder="留空 = 按类别" oninput="calcAndRenderIFAS()">
-          <div class="helper">有实测/厂家数据时填写（10 ℃ 基准），留空按类别</div></div>
-        <div class="field"><label for="ifas_settleQ">二沉池表面负荷 q <span class="unit">m³/m²·h</span></label>
+        <div class="field"><label for="ifas_rNit">Tốc độ nitrat hoá của giá thể tự nhập <span class="unit">g NH₄-N/m²·d（10 ℃）</span></label>
+          <input type="number" id="ifas_rNit" value="" step="0.05" placeholder="Để trống = theo loại" oninput="calcAndRenderIFAS()">
+          <div class="helper">Nhập khi có số liệu đo thực tế hoặc của nhà sản xuất (chuẩn 10 ℃); để trống để dùng theo loại</div></div>
+        <div class="field"><label for="ifas_settleQ">Tải trọng bề mặt bể lắng thứ cấp q <span class="unit">m³/m²·h</span></label>
           <input type="number" id="ifas_settleQ" value="1.0" step="0.1" oninput="calcAndRenderIFAS()">
           <div class="helper">GB 50014 活性污泥二沉池 0.6-1.5；A = Q·Kz/24 ÷ q（最高时流量）</div></div>
-        <div class="field"><label for="ifas_settleHRT">后置沉淀最小 HRT <span class="unit">h</span></label>
+        <div class="field"><label for="ifas_settleHRT">HRT tối thiểu của bể lắng sau <span class="unit">h</span></label>
           <input type="number" id="ifas_settleHRT" value="2.0" step="0.5" oninput="calcAndRenderIFAS()">
           <div class="helper">V = max(A×3.5 m, Q_max,h×HRT)；按最高时流量 1.5-4h</div></div>
-        <div class="field"><label for="ifas_poolH">好氧池有效水深 H <span class="unit">m</span></label>
+        <div class="field"><label for="ifas_poolH">Chiều sâu nước hữu ích của bể hiếu khí H <span class="unit">m</span></label>
           <input type="number" id="ifas_poolH" value="5.0" step="0.5" oninput="calcAndRenderIFAS()">
           <div class="helper">影响鼓风机静压（淹没深度 H − 0.2 m）与氧转移效率；IFAS 常 4-6 m，&lt; 3 m 时提示</div></div>
       </div>
     </div>
     <div id="ifas_retrofitParams" style="display:none;">
       <div class="grid">
-        <div class="field"><label for="ifas_Vexisting">原有池容 V <span class="unit">m³</span></label>
+        <div class="field"><label for="ifas_Vexisting">Thể tích bể hiện hữu V <span class="unit">m³</span></label>
           <input type="number" id="ifas_Vexisting" value="17000" step="500" oninput="calcAndRenderIFAS()"></div>
-        <div class="field"><label for="ifas_MLSSexisting">原有 MLSS <span class="unit">mg/L</span></label>
+        <div class="field"><label for="ifas_MLSSexisting">MLSS hiện hữu <span class="unit">mg/L</span></label>
           <input type="number" id="ifas_MLSSexisting" value="3500" step="100" oninput="calcAndRenderIFAS()">
           <div class="helper">总悬浮固体（含惰性），D1 口径</div></div>
-        <div class="field"><label for="ifas_VSS_SS2">改造后 MLVSS/MLSS</label>
+        <div class="field"><label for="ifas_VSS_SS2">MLVSS sau cải tạo/MLSS</label>
           <input type="number" id="ifas_VSS_SS2" value="0.72" step="0.01" oninput="calcAndRenderIFAS()"></div>
-        <div class="field"><label for="ifas_MLSS_new">改造后目标 MLSS <span class="unit">mg/L</span></label>
+        <div class="field"><label for="ifas_MLSS_new">MLSS mục tiêu sau cải tạo <span class="unit">mg/L</span></label>
           <input type="number" id="ifas_MLSS_new" value="4000" step="100" oninput="calcAndRenderIFAS()">
-          <div class="helper">改造后悬浮相按此 MLSS 计算；改造前能力按原有 MLSS</div></div>
-        <div class="field"><label for="ifas_SRT_r">悬浮相最小泥龄 SRT <span class="unit">d</span></label>
+          <div class="helper">改造后悬浮相按此 MLSS 计算；改造前能力按MLSS hiện hữu</div></div>
+        <div class="field"><label for="ifas_SRT_r">Tuổi bùn tối thiểu của pha lơ lửng SRT <span class="unit">d</span></label>
           <input type="number" id="ifas_SRT_r" value="5" step="0.5" oninput="calcAndRenderIFAS()">
           <div class="helper">改造前后同一口径：水体×MLSS = SRT×ΔX（含惰性 SS）反算能力；改造前另需好氧泥龄 ≥ SF·SRT_min 才能硝化，改造后不足部分由填料硝化</div></div>
-        <div class="field"><label for="ifas_Asettle_r">原有二沉池面积 <span class="unit">m²</span></label>
+        <div class="field"><label for="ifas_Asettle_r">Diện tích bể lắng thứ cấp hiện hữu <span class="unit">m²</span></label>
           <input type="number" id="ifas_Asettle_r" value="2400" step="100" oninput="calcAndRenderIFAS()">
           <div class="helper">二沉池能力 = A × q × 24 / Kz（改造前后相同）</div></div>
-        <div class="field"><label for="ifas_fillRatio_r">填料填充率 f <span class="unit">%</span></label>
+        <div class="field"><label for="ifas_fillRatio_r">Tỷ lệ lấp đầy giá thể f <span class="unit">%</span></label>
           <input type="number" id="ifas_fillRatio_r" value="40" step="5" oninput="calcAndRenderIFAS()">
-          <div class="helper">IFAS 常 20-40%，上限 50%</div></div>
-        <div class="field"><label for="ifas_specArea_r">填料比表面积 a <span class="unit">m²/m³</span></label>
+          <div class="helper">IFAS thường 20-40%, tối đa 50%</div></div>
+        <div class="field"><label for="ifas_specArea_r">Diện tích bề mặt riêng của giá thể a <span class="unit">m²/m³</span></label>
           <input type="number" id="ifas_specArea_r" value="800" step="50" oninput="calcAndRenderIFAS()"></div>
-        <div class="field"><label for="ifas_biofilm_r">填料表面生物量 <span class="unit">g VSS/m²</span></label>
+        <div class="field"><label for="ifas_biofilm_r">Sinh khối trên bề mặt giá thể <span class="unit">g VSS/m²</span></label>
           <input type="number" id="ifas_biofilm_r" value="12" step="1" oninput="calcAndRenderIFAS()">
           <div class="helper">文献常用 10-30 g VSS/m²（Ødegaard 等，与纯 MBBR 页同一口径）</div></div>
         <div class="field"><label for="ifas_SALR_r">SALR₂₀ <span class="unit">g BOD/m²·d</span></label>
           <input type="number" id="ifas_SALR_r" value="7" step="0.5" oninput="calcAndRenderIFAS()"></div>
-        <div class="field"><label for="ifas_nitClass_r">填料硝化速率·前处理类别</label>
+        <div class="field"><label for="ifas_nitClass_r">Tốc độ nitrat hoá của giá thể · loại tiền xử lý</label>
           <select id="ifas_nitClass_r" oninput="calcAndRenderIFAS()">
-            <option value="auto">按构型自动（有预缺氧→b，无→a）</option>
-            <option value="a">a：无初沉、无前置反硝化（0.50）</option>
-            <option value="b">b：有初沉或前置反硝化（0.60）</option>
-            <option value="c">c：有初沉且前置反硝化（0.65）</option>
-            <option value="d">d：化学预沉淀（0.75）</option>
+            <option value="auto">Tự động theo cấu hình (có thiếu khí trước → b, không có → a)</option>
+            <option value="a">a: không lắng sơ cấp, không khử nitrat phía trước (0.50)</option>
+            <option value="b">b: có lắng sơ cấp hoặc khử nitrat phía trước (0.60)</option>
+            <option value="c">c: có lắng sơ cấp và khử nitrat phía trước (0.65)</option>
+            <option value="d">d: kết tủa hoá học sơ bộ (0.75)</option>
           </select>
           <div class="helper">与纯 MBBR 同一函数：r = r_类别（10 ℃）× θ^(min(T_min,20)−10) × min(DO,5)/5 × min(1, NH₄ₑ/2)，按进入 NH₄-N 负荷校核</div></div>
-        <div class="field"><label for="ifas_rNit_r">自定义填料硝化速率 <span class="unit">g NH₄-N/m²·d（10 ℃）</span></label>
-          <input type="number" id="ifas_rNit_r" value="" step="0.05" placeholder="留空 = 按类别" oninput="calcAndRenderIFAS()">
-          <div class="helper">有实测/厂家数据时填写（10 ℃ 基准），留空按类别</div></div>
-        <div class="field"><label for="ifas_settleQ_r">二沉池允许表面负荷 q <span class="unit">m³/m²·h</span></label>
+        <div class="field"><label for="ifas_rNit_r">Tốc độ nitrat hoá của giá thể tự nhập <span class="unit">g NH₄-N/m²·d（10 ℃）</span></label>
+          <input type="number" id="ifas_rNit_r" value="" step="0.05" placeholder="Để trống = theo loại" oninput="calcAndRenderIFAS()">
+          <div class="helper">Nhập khi có số liệu đo thực tế hoặc của nhà sản xuất (chuẩn 10 ℃); để trống để dùng theo loại</div></div>
+        <div class="field"><label for="ifas_settleQ_r">Tải trọng bề mặt cho phép của bể lắng thứ cấp q <span class="unit">m³/m²·h</span></label>
           <input type="number" id="ifas_settleQ_r" value="1.3" step="0.1" oninput="calcAndRenderIFAS()">
           <div class="helper">最高时流量下允许值，GB 50014 活性污泥二沉池 0.6-1.5；用于二沉池能力反算</div></div>
-        <div class="field"><label for="ifas_poolH_r">好氧池有效水深 H <span class="unit">m</span></label>
+        <div class="field"><label for="ifas_poolH_r">Chiều sâu nước hữu ích của bể hiếu khí H <span class="unit">m</span></label>
           <input type="number" id="ifas_poolH_r" value="5.0" step="0.5" oninput="calcAndRenderIFAS()">
           <div class="helper">影响鼓风机静压（淹没深度 H − 0.2 m）与氧转移效率；&lt; 3 m 时提示</div></div>
       </div>
     </div>
 
-    <!-- 步骤5：容积分配比 -->
-    <div class="section-title"><span class="num">5</span>容积分配比(%) <span class="sub">（由工艺构型自动初始化，可手动调整）</span></div>
+    <!-- 步骤5：Tỷ lệ phân bổ thể tích -->
+    <div class="section-title"><span class="num">5</span>Tỷ lệ phân bổ thể tích(%) <span class="sub">(tự khởi tạo theo cấu hình công nghệ, có thể điều chỉnh thủ công)</span></div>
     <div class="grid" id="ifas_volRatioGrid">
-      <div class="field" id="ifas_volPreAnox_field"><label for="ifas_r_preAnox_pct">预缺氧段 %</label>
+      <div class="field" id="ifas_volPreAnox_field"><label for="ifas_r_preAnox_pct">Ngăn thiếu khí trước %</label>
         <input type="number" id="ifas_r_preAnox_pct" value="0" step="5" oninput="calcAndRenderIFAS()"></div>
-      <div class="field"><label for="ifas_r_aer_pct">好氧 IFAS 段 %</label>
+      <div class="field"><label for="ifas_r_aer_pct">Ngăn IFAS hiếu khí %</label>
         <input type="number" id="ifas_r_aer_pct" value="100" step="5" oninput="calcAndRenderIFAS()"></div>
-      <div class="field" id="ifas_volPostAnox_field"><label for="ifas_r_postAnox_pct">后缺氧段 %</label>
+      <div class="field" id="ifas_volPostAnox_field"><label for="ifas_r_postAnox_pct">Ngăn thiếu khí sau %</label>
         <input type="number" id="ifas_r_postAnox_pct" value="0" step="5" oninput="calcAndRenderIFAS()"></div>
     </div>
     <div id="ifas_volSumWarn"></div>
 
-    <!-- 步骤6：回流参数（RAS + MLR）-->
+    <!-- 步骤6：Thông số tuần hoàn（RAS + MLR）-->
     <div id="ifas_recircSection">
-      <div class="section-title"><span class="num">6</span>回流参数 <span class="sub">IFAS 有活性污泥，RAS 必须设置</span></div>
+      <div class="section-title"><span class="num">6</span>Thông số tuần hoàn <span class="sub">IFAS có bùn hoạt tính, cần thiết lập RAS</span></div>
       <div class="auto-calc-notice">
         <div class="notice-head"><span class="notice-ic">🔄</span>
-          <span><b>IFAS 与纯 MBBR 的核心区别：</b>RAS 维持 MLSS；A/O 工艺另有 MLR 内回流将硝化液送回缺氧段实现免费反硝化。</span>
+          <span><b>Khác biệt chính giữa IFAS và MBBR thuần tuý:</b>RAS 维持 MLSS；A/O 工艺另有 MLR 内回流将硝化液送回缺氧段实现免费反硝化。</span>
         </div>
       </div>
       <div class="grid">
-        <div class="field"><label for="ifas_RAS">RAS 回流比 <span class="unit">%（相对Q）</span></label>
+        <div class="field"><label for="ifas_RAS">Tỷ lệ tuần hoàn RAS <span class="unit">%（相对Q）</span></label>
           <input type="number" id="ifas_RAS" value="100" step="25" oninput="calcAndRenderIFAS()">
-          <div class="helper">典型 50-150%</div></div>
-        <div class="field" id="ifas_MLR_field"><label for="ifas_MLR">MLR 内回流比 <span class="unit">%（相对Q）</span></label>
+          <div class="helper">Thông thường 50-150%</div></div>
+        <div class="field" id="ifas_MLR_field"><label for="ifas_MLR">Tỷ lệ tuần hoàn nội MLR <span class="unit">%（相对Q）</span></label>
           <input type="number" id="ifas_MLR" value="300" step="50" oninput="calcAndRenderIFAS()">
-          <div class="helper">A/O：200-400%；预缺氧 NOx 去除率 η = (MLR+R)/(1+MLR+R)×0.85（R 为 RAS 回流比，0.85 为经验折减），且不超过进水 BOD 可支持的反硝化量及预缺氧池容能力 SDNR_T·MLVSS·V_pre（θ = 1.08）</div></div>
-        <div class="field"><label for="ifas_RAS_H">RAS 泵扬程 <span class="unit">m</span></label>
+          <div class="helper">A/O：200-400%；预缺氧 NOx 去除率 η = (MLR+R)/(1+MLR+R)×0.85（R 为 Tỷ lệ tuần hoàn RAS，0.85 为经验折减），且不超过进水 BOD 可支持的反硝化量及预缺氧池容能力 SDNR_T·MLVSS·V_pre（θ = 1.08）</div></div>
+        <div class="field"><label for="ifas_RAS_H">Cột áp bơm RAS <span class="unit">m</span></label>
           <input type="number" id="ifas_RAS_H" value="3" step="0.5" oninput="calcAndRenderIFAS()"></div>
-        <div class="field"><label for="ifas_MLR_H">MLR 泵扬程 <span class="unit">m</span></label>
+        <div class="field"><label for="ifas_MLR_H">Cột áp bơm MLR <span class="unit">m</span></label>
           <input type="number" id="ifas_MLR_H" value="2" step="0.5" oninput="calcAndRenderIFAS()"></div>
-        <div class="field"><label for="ifas_pumpEff">泵效率 <span class="unit">%</span></label>
+        <div class="field"><label for="ifas_pumpEff">Hiệu suất bơm <span class="unit">%</span></label>
           <input type="number" id="ifas_pumpEff" value="65" step="5" oninput="calcAndRenderIFAS()"></div>
       </div>
     </div>
 
     <!-- 步骤7：外加药剂参数 -->
-    <div class="section-title"><span class="num">7</span>外加药剂参数</div>
+    <div class="section-title"><span class="num">7</span>Thông số hoá chất bổ sung</div>
     <div class="grid">
-      <div class="field"><label for="ifas_carbonSrc">后缺氧碳源类型</label>
+      <div class="field"><label for="ifas_carbonSrc">Loại nguồn carbon cho vùng thiếu khí sau</label>
         <select id="ifas_carbonSrc" onchange="calcAndRenderIFAS()">
-          <option value="methanol">甲醇（COD系数 1.5，最经济）</option>
-          <option value="acetate">乙酸钠（无水 COD系数 0.78 × 有效含量，启动快）</option>
-          <option value="glucose">葡萄糖（COD系数 1.07）</option>
+          <option value="methanol">Methanol (hệ số COD 1.5, kinh tế nhất)</option>
+          <option value="acetate">Natri acetat (khan: hệ số COD 0.78 × hàm lượng hữu hiệu, khởi động nhanh)</option>
+          <option value="glucose">Glucose (hệ số COD 1.07)</option>
         </select></div>
-      <div class="field"><label for="ifas_acetatePurity">乙酸钠有效含量 <span class="unit">%</span></label>
+      <div class="field"><label for="ifas_acetatePurity">Hàm lượng hữu hiệu của natri axetat <span class="unit">%</span></label>
         <input type="number" id="ifas_acetatePurity" value="58" step="1" oninput="calcAndRenderIFAS()">
         <div class="helper">固体三水乙酸钠约 58%（折合 0.45 gCOD/g 商品）；液体按标称含量；仅选乙酸钠时生效</div></div>
-      <div class="field"><label for="ifas_carbonPrice">碳源价格 <span class="unit">元/kg</span></label>
+      <div class="field"><label for="ifas_carbonPrice">Giá nguồn carbon <span class="unit">元/kg</span></label>
         <input type="number" id="ifas_carbonPrice" value="5" step="0.5" oninput="calcAndRenderIFAS()"></div>
-      <div class="field"><label for="ifas_PAC">PAC 投加量 <span class="unit">mg/L</span></label>
-        <input type="number" id="ifas_PAC" value="" step="5" placeholder="留空自动" oninput="calcAndRenderIFAS()">
+      <div class="field"><label for="ifas_PAC">Liều lượng PAC <span class="unit">mg/L</span></label>
+        <input type="number" id="ifas_PAC" value="" step="5" placeholder="Để trống để tính tự động" oninput="calcAndRenderIFAS()">
         <div class="helper">液体 PAC（Al₂O₃ 10%，Al 5.29%）；留空按化学计量 Al/P=2（摩尔比）自动计算，生物除磷按 15%（经验值）</div></div>
-      <div class="field"><label for="ifas_PACprice">PAC 价格 <span class="unit">元/kg</span></label>
+      <div class="field"><label for="ifas_PACprice">Giá PAC <span class="unit">元/kg</span></label>
         <input type="number" id="ifas_PACprice" value="0.7" step="0.1" oninput="calcAndRenderIFAS()">
-        <div class="helper">液体 PAC（10% Al₂O₃）参考价</div></div>
-      <div class="field"><label for="ifas_alkDose">NaHCO₃补碱 <span class="unit">mg/L（留0自动计算）</span></label>
+        <div class="helper">Giá tham khảo của PAC lỏng (10% Al₂O₃)</div></div>
+      <div class="field"><label for="ifas_alkDose">Bổ sung độ kiềm bằng NaHCO₃ <span class="unit">mg/L（留0自动计算）</span></label>
         <input type="number" id="ifas_alkDose" value="0" step="10" oninput="calcAndRenderIFAS()"></div>
-      <div class="field"><label for="ifas_alkPrice">NaHCO₃ 价格 <span class="unit">元/kg</span></label>
+      <div class="field"><label for="ifas_alkPrice">Giá NaHCO₃ <span class="unit">元/kg</span></label>
         <input type="number" id="ifas_alkPrice" value="2.5" step="0.5" oninput="calcAndRenderIFAS()"></div>
-      <div class="field"><label for="ifas_sludge_mc">脱水后泥饼含水率 <span class="unit">%</span></label>
+      <div class="field"><label for="ifas_sludge_mc">Độ ẩm bánh bùn sau tách nước <span class="unit">%</span></label>
         <input type="number" id="ifas_sludge_mc" value="80" step="1" oninput="calcAndRenderIFAS()">
-        <div class="helper">板框 75-80%，离心 78-82%</div></div>
-      <div class="field"><label for="ifas_sludge_price">污泥处置费用 <span class="unit">元/t（湿）</span></label>
+        <div class="helper">Máy ép khung bản 75-80%, máy ly tâm 78-82%</div></div>
+      <div class="field"><label for="ifas_sludge_price">Chi phí xử lý bùn <span class="unit">元/t（湿）</span></label>
         <input type="number" id="ifas_sludge_price" value="300" step="50" oninput="calcAndRenderIFAS()">
-        <div class="helper">卫生填埋 200-400</div></div>
+        <div class="helper">Chôn lấp hợp vệ sinh 200-400</div></div>
     </div>
 
-    <!-- 步骤8-11：曝气器选型与风机（与MBBR一致） -->
-    <div class="section-title"><span class="num">8</span>曝气器选型与风机 <span class="sub">基于IFAS双相需氧量计算</span></div>
+    <!-- 步骤8-11：Lựa chọn thiết bị sục khí và máy thổi khí（与MBBR一致） -->
+    <div class="section-title"><span class="num">8</span>Lựa chọn thiết bị sục khí và máy thổi khí <span class="sub">Tính theo nhu cầu oxy của hai pha IFAS</span></div>
     <div class="aerator-tabs">
       <button class="aerator-tab active" data-aer="coarse" onclick="setAeratorType('coarse')">
-        <b>粗孔旋混</b><span>专为 MBBR 优化 · 抗堵</span>
+        <b>Sục khí lỗ thô khuấy xoáy</b><span>Tối ưu cho MBBR · chống tắc</span>
       </button>
       <button class="aerator-tab" data-aer="disc" onclick="setAeratorType('disc')">
-        <b>盘式微孔</b><span>氧传质最高 · 易堵塞</span>
+        <b>Đĩa sục khí lỗ mịn</b><span>Truyền oxy cao nhất · dễ tắc</span>
       </button>
       <button class="aerator-tab" data-aer="tube" onclick="setAeratorType('tube')">
-        <b>管式曝气</b><span>大气量 · 安装方便</span>
+        <b>Sục khí dạng ống</b><span>Lưu lượng khí lớn · dễ lắp đặt</span>
       </button>
     </div>
 
     <!-- 曝气器特性参数 -->
-    <div class="section-title"><span class="num">9</span>曝气器性能参数</div>
+    <div class="section-title"><span class="num">9</span>Thông số hiệu suất thiết bị sục khí</div>
     <div class="grid">
-      <div class="field"><label for="ifa_perDevice">单个曝气器额定气量 <span class="unit">Nm³/h</span></label>
+      <div class="field"><label for="ifa_perDevice">Lưu lượng khí định mức mỗi thiết bị sục khí <span class="unit">Nm³/h</span></label>
         <input type="number" id="ifa_perDevice" value="7" step="1" onchange="calcAndRenderIFAS()">
         <div class="helper" id="ifa_perDevice_help">粗孔单件 5-15</div></div>
-      <div class="field"><label for="ifa_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
+      <div class="field"><label for="ifa_OTE">Hiệu suất truyền oxy OTE <span class="unit">%/m</span></label>
         <input type="number" id="ifa_OTE" value="3" step="0.5" onchange="calcAndRenderIFAS()">
         <div class="helper" id="ifa_OTE_help">粗孔 2-4 %/m 水深</div>
         <div class="helper">IFAS 口径：OTE 为曝气器标准条件（清水）值，经 α/β/θ 由 SOR 推气量；与纯 MBBR 的 SOFK（现场条件值、按 AOR 推气量）口径不同，同等需氧下 IFAS 算出的气量会偏高</div></div>
-      <div class="field"><label for="ifa_spacing">曝气器布置间距 <span class="unit">m</span></label>
+      <div class="field"><label for="ifa_spacing">Khoảng cách bố trí thiết bị sục khí <span class="unit">m</span></label>
         <input type="number" id="ifa_spacing" value="0.8" step="0.1" onchange="calcAndRenderIFAS()">
         <div class="helper">粗孔 0.6-1.0 常用</div></div>
-      <div class="field"><label for="ifa_mixAir">填料流化最小气量强度 <span class="unit">Nm³/m²·h</span></label>
+      <div class="field"><label for="ifa_mixAir">Cường độ cấp khí tối thiểu để làm chuyển động giá thể <span class="unit">Nm³/m²·h</span></label>
         <input type="number" id="ifa_mixAir" value="12.5" step="0.5" oninput="this.dataset.user='1'" onchange="this.dataset.user='1'">
-        <div class="helper" id="ifa_mixAir_help">按好氧段池底面积计的搅拌/流化下限，设计气量 = max(需氧气量, 本值 × 池底面积)。粗孔/旋混、管式靠气体流化填料，套用纯 MBBR 经验值 12.5；盘式微孔气泡细、流化力弱，取 3 并需另配潜水搅拌器（约 25 W/m³，参考值，计入电耗）。随曝气器类型自动填入，手动修改后不再覆盖</div></div>
+        <div class="helper" id="ifa_mixAir_help">按好氧段池底面积计的搅拌/流化下限，设计气量 = max(需氧气量, 本值 × 池底面积)。粗孔/旋混、管式靠气体流化填料，套用纯 MBBR 经验值 12.5；Đĩa sục khí lỗ mịn气泡细、流化力弱，取 3 并需另配潜水搅拌器（约 25 W/m³，参考值，计入电耗）。随曝气器类型自动填入，手动修改后不再覆盖</div></div>
       <div class="field"><label for="ifa_price">单价 <span class="unit">元/个</span></label>
         <input type="number" id="ifa_price" value="180" step="10" onchange="calcAndRenderIFAS()">
         <div class="helper" id="ifa_price_help">粗孔 150-300 元</div></div>
     </div>
 
     <!-- 风机选型参数 -->
-    <div class="section-title"><span class="num">10</span>风机参数</div>
+    <div class="section-title"><span class="num">10</span>Thông số máy thổi khí</div>
     <div class="grid">
-      <div class="field"><label for="ifa_blowerType">风机类型</label>
+      <div class="field"><label for="ifa_blowerType">Loại máy thổi khí</label>
         <select id="ifa_blowerType" onchange="setIFASBlowerType()">
-          <option value="roots">罗茨风机(常规)</option>
-          <option value="multistage">多级离心风机(低噪音)</option>
-          <option value="magnetic">磁悬浮风机(节能最优)</option>
+          <option value="roots">Máy thổi khí Roots (thông dụng)</option>
+          <option value="multistage">Máy thổi khí ly tâm đa cấp (độ ồn thấp)</option>
+          <option value="magnetic">Máy thổi khí đệm từ (tiết kiệm năng lượng nhất)</option>
         </select></div>
-      <div class="field"><label for="ifa_dp_aer">曝气池阻力 <span class="unit">kPa</span></label>
+      <div class="field"><label for="ifa_dp_aer">Tổn thất áp suất bể sục khí <span class="unit">kPa</span></label>
         <input type="number" id="ifa_dp_aer" value="3" step="0.5" onchange="calcAndRenderIFAS()">
-        <div class="helper">微孔 3-5, 粗孔 2-3</div></div>
-      <div class="field"><label for="ifa_dp_pipe">管路阻力 <span class="unit">kPa</span></label>
+        <div class="helper">Lỗ mịn 3-5, lỗ thô 2-3</div></div>
+      <div class="field"><label for="ifa_dp_pipe">Tổn thất áp suất đường ống <span class="unit">kPa</span></label>
         <input type="number" id="ifa_dp_pipe" value="3" step="0.5" onchange="calcAndRenderIFAS()"></div>
       <div class="field"><label for="ifa_alt">海拔 <span class="unit">m</span></label>
         <input type="number" id="ifa_alt" value="0" step="100" onchange="calcAndRenderIFAS()">
         <div class="helper">SOR 的 P_b 与鼓风机进气压力按当地大气压计；默认 0 = 海平面（P = 101.325·(1 − 2.25577×10⁻⁵·h)^5.25588 kPa，−500 ~ 6000 m）</div></div>
-      <div class="field"><label for="ifa_efficiency">风机效率 <span class="unit">%</span></label>
+      <div class="field"><label for="ifa_efficiency">Hiệu suất máy thổi khí <span class="unit">%</span></label>
         <input type="number" id="ifa_efficiency" value="62" step="1" onchange="calcAndRenderIFAS()">
         <div class="helper">罗茨 55-70, 多级离心 65-78, 磁悬浮 75-85；切换风机类型时自动填入典型值（62/70/80），超出该类型上限按上限计</div></div>
-      <div class="field"><label for="ifa_backupFactor">备用系数</label>
+      <div class="field"><label for="ifa_backupFactor">Hệ số dự phòng</label>
         <input type="number" id="ifa_backupFactor" value="1.2" step="0.05" onchange="calcAndRenderIFAS()">
         <div class="helper">单台风机选型富余系数（常 1.1-1.2）：单台额定气量 = 设计气量 × 系数 ÷ 工作台数；备用台另按"N 用 1 备"计入装机气量</div></div>
     </div>
 
     <!-- AOR→SOR 修正系数 -->
-    <div class="section-title"><span class="num">11</span>α · β · θ 修正系数 <span class="sub">用于 AOR → SOR 转换校核</span></div>
+    <div class="section-title"><span class="num">11</span>α · β · θ 修正系数 <span class="sub">Dùng để kiểm tra quy đổi AOR → SOR</span></div>
     <div class="auto-calc-notice">
       <div class="notice-head"><span class="notice-ic">ℹ️</span>
         <span>以下修正系数用于将实际需氧量 AOR 换算为标准状态需氧量 SOR，并反推气量；SOR、气量、曝气器与风机统一使用这一组 β、θ、DO（DO 同时用于填料硝化速率的 DO 修正）。
-        水温 T 自动跟随上方进水水温 T；α 取高级参数中的 α（默认 0.65）。</span>
+        Nhiệt độ nước T 自动跟随上方进水Nhiệt độ nước T；α 取Thông số nâng cao中的 α（默认 0.65）。</span>
       </div>
     </div>
     <div class="grid">
       <div class="field"><label for="ifa_beta">β（水质饱和度修正）</label>
         <input type="number" id="ifa_beta" value="0.95" step="0.01" onchange="calcAndRenderIFAS()">
-        <div class="helper">含盐低时 0.95-1.0</div></div>
+        <div class="helper">Khi độ mặn thấp: 0.95-1.0</div></div>
       <div class="field"><label for="ifa_theta">θ（传质温度系数）</label>
         <input type="number" id="ifa_theta" value="1.024" step="0.001" onchange="calcAndRenderIFAS()">
-        <div class="helper">鼓风曝气 1.016-1.025</div></div>
-      <div class="field"><label for="ifa_DO">DO 设计值 <span class="unit">mg/L</span></label>
+        <div class="helper">Sục khí bằng máy thổi khí 1.016-1.025</div></div>
+      <div class="field"><label for="ifa_DO">DO thiết kế <span class="unit">mg/L</span></label>
         <input type="number" id="ifa_DO" value="3.0" step="0.5" onchange="calcAndRenderIFAS()">
         <div class="helper">IFAS 好氧段常 3-4 mg/L；填料硝化速率按 min(DO, 5)/5 线性修正，设计 DO 上限 5</div></div>
-      <div class="field"><label for="ifa_T">水温 T <span class="unit">°C</span></label>
+      <div class="field"><label for="ifa_T">Nhiệt độ nước T <span class="unit">°C</span></label>
         <input type="number" id="ifa_T" value="20" step="1" onchange="calcAndRenderIFAS()">
-        <div class="helper">自动跟随上方进水温度 T</div></div>
+        <div class="helper">Tự động theo nhiệt độ nước vào T ở trên</div></div>
     </div>
 
 
-    <!-- 高级参数（折叠，对应MBBR的高级参数区） -->
+    <!-- Thông số nâng cao（折叠，对应MBBR的Thông số nâng cao区） -->
     <div class="advanced-toggle" onclick="toggleIFASAdv()">
       <span class="chev" id="ifasChev">▸</span>
-      <span>高级参数（θ温度修正 / 动力学 / 生物膜）</span>
+      <span>Thông số nâng cao（θHiệu chỉnh nhiệt độ / 动力学 / 生物膜）</span>
     </div>
     <div class="advanced-params" id="ifasAdv">
       <div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:8px;">
-        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🌡️ 温度修正</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🌡️ Hiệu chỉnh nhiệt độ</div>
         <div class="grid">
           <div class="field"><label for="ifas_theta">θ_nit（填料硝化温度系数）</label>
             <input type="number" id="ifas_theta" value="1.09" step="0.01" oninput="calcAndRenderIFAS()">
@@ -1162,11 +1162,11 @@ body {
           <div class="field"><label for="ifas_alpha">α（污水修正）</label>
             <input type="number" id="ifas_alpha" value="0.65" step="0.05" oninput="calcAndRenderIFAS()">
             <div class="helper">IFAS 含悬浮污泥，α 比纯 MBBR 低；同时用于 §11 SOR 换算</div></div>
-          <div class="helper" style="grid-column:1/-1;">β、θ_O₂、DO 设计值统一在 §11 设置</div>
+          <div class="helper" style="grid-column:1/-1;">β、θ_O₂、DO thiết kế统一在 §11 设置</div>
         </div>
       </div>
       <div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:14px;">
-        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🧬 生物动力学</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🧬 Động học sinh học</div>
         <div class="grid">
           <div class="field"><label for="ifas_Y">Y（悬浮相）</label>
             <input type="number" id="ifas_Y" value="0.60" step="0.05" oninput="calcAndRenderIFAS()"></div>
@@ -1177,17 +1177,17 @@ body {
             <div class="helper">表观（净）产率，已含生物膜内源衰减：脱落量 = Y_bio × 附着相去除 BOD，不再另扣衰减；MBBR 生物膜常 0.2-0.3</div></div>
           <div class="field"><label for="ifas_SDNR">SDNR₂₀ <span class="unit">g N/g VSS·d</span></label>
             <input type="number" id="ifas_SDNR" value="0.08" step="0.01" oninput="calcAndRenderIFAS()">
-            <div class="helper">温度修正 θ=1.08（依据 GB 50014：Kde(T)=Kde(20)·1.08^(T−20)），按设计水温 T 修正（与活性污泥工具一致：反硝化按 T，硝化按 T_min）；用于预缺氧池容上限与后缺氧能力</div></div>
-          <div class="field"><label for="ifas_fSS">惰性 SS 系数 f</label>
+            <div class="helper">Hiệu chỉnh nhiệt độ θ=1.08（依据 GB 50014：Kde(T)=Kde(20)·1.08^(T−20)），按设计Nhiệt độ nước T 修正（与活性污泥工具一致：反硝化按 T，硝化按 T_min）；用于预缺氧池容上限与后缺氧能力</div></div>
+          <div class="field"><label for="ifas_fSS">Hệ số SS trơ f</label>
             <input type="number" id="ifas_fSS" value="0.5" step="0.05" oninput="calcAndRenderIFAS()">
             <div class="helper">进水 SS 中不可生物降解部分，GB 50014 取 0.5-0.7</div></div>
-          <div class="field"><label for="ifas_solidFrac">填料实体率</label>
+          <div class="field"><label for="ifas_solidFrac">Tỷ phần thể tích rắn của giá thể</label>
             <input type="number" id="ifas_solidFrac" value="0.13" step="0.01" oninput="calcAndRenderIFAS()">
             <div class="helper">填料实体体积 / 堆积体积，K 型约 0.10-0.15；水体 = V − V_fill × 实体率</div></div>
           <div class="field"><label for="ifas_Kn">硝化半速率常数 K_N <span class="unit">mg/L</span></label>
             <input type="number" id="ifas_Kn" value="1.0" step="0.1" oninput="calcAndRenderIFAS()">
             <div class="helper">全站口径固定 1.0（GB 50014）；改动后将与活性污泥工具不一致。SRT_min = 1/μ，μ = 0.47·N_a/(K_N+N_a)·e^0.098(T_min−15)，N_a 取出水 NH₄（下限 0.5）；依据 GB 50014-2021 式（7.6.17），θ 按 e^0.098≈1.103/℃，不计衰减（与活性污泥、MBR 工具同口径）</div></div>
-          <div class="field"><label for="ifas_SF">硝化安全系数 SF</label>
+          <div class="field"><label for="ifas_SF">Hệ số an toàn nitrat hoá SF</label>
             <input type="number" id="ifas_SF" value="2.0" step="0.1" oninput="calcAndRenderIFAS()">
             <div class="helper">即 GB 50014 式中 F（宜 1.5～3.0；城镇默认 2.0、工业 3.0）。悬浮相好氧泥龄 ≥ SF·SRT_min 才计悬浮相硝化，否则硝化全部由填料承担</div></div>
         </div>
@@ -1196,46 +1196,46 @@ body {
 
     <!-- 结果区 -->
     <div class="results" style="margin-top:20px;">
-      <h2>🎯 <span id="ifas_titleSub">IFAS 新建</span> 设计结果</h2>
+      <h2>🎯 <span id="ifas_titleSub">IFAS xây mới</span> Kết quả thiết kế</h2>
       <div class="flow-diagram">
         <svg id="ifasFlowSvg" width="100%" height="260" viewBox="0 0 1000 260" xmlns="http://www.w3.org/2000/svg"></svg>
       </div>
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">📐</span> 各段池容</div>
-        <div class="result-row highlight-row"><span class="result-label"><b>总池容 V</b></span>
+        <div class="result-group-title"><span class="ic">📐</span> Thể tích các ngăn</div>
+        <div class="result-row highlight-row"><span class="result-label"><b>Tổng thể tích bể V</b></span>
           <span><span class="result-value big" id="ifas_r_V">—</span><span class="result-unit">m³</span></span></div>
         <div class="result-row highlight-row"><span class="result-label"><b>HRT</b></span>
           <span><span class="result-value big" id="ifas_r_HRT">—</span><span class="result-unit">h</span></span></div>
-        <div class="result-row row-long"><span class="result-label">池容控制因素 <span class="sub">(SRT 质量平衡 / 填料 SALR / 硝化)</span></span>
+        <div class="result-row row-long"><span class="result-label">Yếu tố khống chế thể tích bể <span class="sub">(SRT 质量平衡 / 填料 SALR / 硝化)</span></span>
           <span><span class="result-value" id="ifas_r_Vctrl" style="font-size:12px;">—</span></span></div>
-        <div class="result-row" id="ifas_row_preAnox"><span class="result-label">预缺氧段</span>
+        <div class="result-row" id="ifas_row_preAnox"><span class="result-label">Ngăn thiếu khí trước</span>
           <span><span class="result-value" id="ifas_r_V_preAnox">—</span><span class="result-unit">m³</span></span></div>
-        <div class="result-row"><span class="result-label">好氧 IFAS 段</span>
+        <div class="result-row"><span class="result-label">Ngăn IFAS hiếu khí</span>
           <span><span class="result-value" id="ifas_r_V_aer">—</span><span class="result-unit">m³</span></span></div>
-        <div class="result-row" id="ifas_row_postAnox"><span class="result-label">后缺氧段</span>
+        <div class="result-row" id="ifas_row_postAnox"><span class="result-label">Ngăn thiếu khí sau</span>
           <span><span class="result-value" id="ifas_r_V_postAnox">—</span><span class="result-unit">m³</span></span></div>
-        <div class="result-row"><span class="result-label">填料体积 V_fill</span>
+        <div class="result-row"><span class="result-label">Thể tích giá thể V_fill</span>
           <span><span class="result-value" id="ifas_r_VfillMat">—</span><span class="result-unit">m³</span></span></div>
-        <div class="result-row"><span class="result-label">填料有效面积 A_total</span>
+        <div class="result-row"><span class="result-label">Diện tích hữu hiệu của giá thể A_total</span>
           <span><span class="result-value" id="ifas_r_Atotal">—</span><span class="result-unit">m²</span></span></div>
         <div class="result-row row-long"><span class="result-label">填料所需面积 A_BOD + A_nit <span class="sub">(A_BOD = (ΔBOD − 3·N_pre) 在好氧段按生物量分给填料的部分 ÷ [5 × θ_BOD^(min(T_min,20)−10)]；A_nit = 进入 NH₄-N 负荷 ÷ r_nit；与纯 MBBR 合建方案同一口径，两者相加)</span></span>
           <span><span class="result-value" id="ifas_r_Areq">—</span><span class="result-unit">m²</span></span></div>
-        <div class="result-row"><span class="result-label">后置沉淀池 V</span>
+        <div class="result-row"><span class="result-label">Bể lắng sau V</span>
           <span><span class="result-value" id="ifas_r_Vsettle">—</span><span class="result-unit">m³</span></span></div>
-        <div class="result-row"><span class="result-label">沉淀池表面负荷 <span class="sub">(最高时 Q·Kz/24，Kz = <span id="ifas_r_Kz">—</span>)</span></span>
+        <div class="result-row"><span class="result-label">Tải trọng bề mặt bể lắng <span class="sub">(最高时 Q·Kz/24，Kz = <span id="ifas_r_Kz">—</span>)</span></span>
           <span><span class="result-value" id="ifas_r_surfLoad">—</span><span class="result-unit">m/h</span></span></div>
-        <div class="result-row"><span class="result-label">沉淀池面积 / HRT <span class="sub">(最高时)</span></span>
+        <div class="result-row"><span class="result-label">Diện tích bể lắng / HRT <span class="sub">(最高时)</span></span>
           <span><span class="result-value" id="ifas_r_settleAH">—</span><span class="result-unit">m² / h</span></span></div>
       </div>
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">🧬</span> 双相生物量</div>
-        <div class="result-row"><span class="result-label">附着相生物量 X_bio</span>
+        <div class="result-group-title"><span class="ic">🧬</span> Sinh khối hai pha</div>
+        <div class="result-row"><span class="result-label">Sinh khối pha bám dính X_bio</span>
           <span><span class="result-value" id="ifas_r_Xbio">—</span><span class="result-unit">kg VSS</span></span></div>
-        <div class="result-row"><span class="result-label">悬浮相生物量 X_susp</span>
+        <div class="result-row"><span class="result-label">Sinh khối pha lơ lửng X_susp</span>
           <span><span class="result-value" id="ifas_r_Xsusp">—</span><span class="result-unit">kg VSS</span></span></div>
-        <div class="result-row"><span class="result-label">悬浮相泥龄 SRT（水体×MLSS ÷ ΔX，含惰性）/ 好氧泥龄 / 硝化安全泥龄 SF·SRT_min(T_min)</span>
+        <div class="result-row"><span class="result-label">悬浮相Tuổi bùn SRT（水体×MLSS ÷ ΔX，含惰性）/ 好氧泥龄 / 硝化安全泥龄 SF·SRT_min(T_min)</span>
           <span><span class="result-value" id="ifas_r_SRTact">—</span><span class="result-unit">d / d / d</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>等效 MLSS</b> <span class="sub">((悬浮相固体 + 生物膜) ÷ 池容)</span></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>MLSS tương đương</b> <span class="sub">((悬浮相固体 + 生物膜) ÷ 池容)</span></span>
           <span><span class="result-value big" id="ifas_r_MLSSeq">—</span><span class="result-unit">mg/L</span></span></div>
         <div class="result-row"><span class="result-label">附着相 BOD 去除贡献 <span class="sub">(按生物量比)</span></span>
           <span><span class="result-value" id="ifas_r_bioContribBOD">—</span><span class="result-unit">%</span></span></div>
@@ -1249,170 +1249,170 @@ body {
           <span><span class="result-value" id="ifas_r_dX">—</span><span class="result-unit">kg VSS/d</span></span></div>
         <div class="result-row"><span class="result-label">进水惰性 SS 产泥 f·Q·(SS₀−SSₑ)</span>
           <span><span class="result-value" id="ifas_r_dX_inert">—</span><span class="result-unit">kg/d</span></span></div>
-        <div class="result-row"><span class="result-label">化学污泥 <span class="sub">(AlPO₄ 122/31 + 余 Al(OH)₃ 78/27)</span></span>
+        <div class="result-row"><span class="result-label">Bùn hoá học <span class="sub">(AlPO₄ 122/31 + 余 Al(OH)₃ 78/27)</span></span>
           <span><span class="result-value" id="ifas_r_dX_chem">—</span><span class="result-unit">kg/d</span></span></div>
         <div class="result-row"><span class="result-label">外加碳源产泥 <span class="sub">(Y≈0.3 kgVSS/kgCOD，经验值)</span></span>
           <span><span class="result-value" id="ifas_r_dX_carbon">—</span><span class="result-unit">kg/d</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>剩余污泥干量 ΔX</b> <span class="sub">(ΔX_VSS + f·Q·ΔSS + 化学 + 碳源)</span></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>Khối lượng khô bùn dư ΔX</b> <span class="sub">(ΔX_VSS + f·Q·ΔSS + 化学 + 碳源)</span></span>
           <span><span class="result-value big" id="ifas_r_dX_total">—</span><span class="result-unit">kg DS/d</span></span></div>
-        <div class="result-row"><span class="result-label">污泥产率（吨水）</span>
+        <div class="result-row"><span class="result-label">Lượng bùn sinh ra trên một tấn nước</span>
           <span><span class="result-value" id="ifas_r_sludge_yield">—</span><span class="result-unit">kg DS/m³</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>脱水后泥饼量</b></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>Lượng bánh bùn sau tách nước</b></span>
           <span><span class="result-value big" id="ifas_r_sludge_wet">—</span><span class="result-unit">t/d</span></span></div>
-        <div class="result-row"><span class="result-label">污泥处置年费用</span>
+        <div class="result-row"><span class="result-label">Chi phí xử lý bùn hằng năm</span>
           <span><span class="result-value" id="ifas_r_sludge_cost">—</span><span class="result-unit">万元/年</span></span></div>
       </div>
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">📊</span> 去除效果预测</div>
-        <div class="result-row"><span class="result-label">BOD 去除率</span>
+        <div class="result-group-title"><span class="ic">📊</span> Dự báo hiệu quả loại bỏ</div>
+        <div class="result-row"><span class="result-label">Tỷ lệ loại bỏ BOD</span>
           <span><span class="result-value" id="ifas_r_BODrm">—</span><span class="result-unit">%</span></span></div>
-        <div class="result-row"><span class="result-label">NH₄-N 去除率</span>
+        <div class="result-row"><span class="result-label">Tỷ lệ loại bỏ NH₄-N</span>
           <span><span class="result-value" id="ifas_r_NH4rm">—</span><span class="result-unit">%</span></span></div>
         <div class="result-row"><span class="result-label">被硝化氮 N_nit <span class="sub">(ΔTKN − 0.12·ΔX_VSS；ΔTKN = TN₀ − NH₄ₑ − 1.5，无 TKN 输入以 TN₀ 代)</span></span>
           <span><span class="result-value" id="ifas_r_Nnit">—</span><span class="result-unit">kg N/d</span></span></div>
         <div class="result-row row-long"><span class="result-label">预缺氧 / 后缺氧脱氮量 <span class="sub">(预缺氧 = min(η·N_nit, 进水 BOD 可支持量, SDNR_T·MLVSS·V_pre)，SDNR θ = 1.08)</span></span>
           <span><span class="result-value" id="ifas_r_NDN">—</span><span class="result-unit">kg N/d</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>TN 去除率</b></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>Tỷ lệ loại bỏ TN</b></span>
           <span><span class="result-value big" id="ifas_r_TNrm">—</span><span class="result-unit">%</span></span></div>
-        <div class="result-row"><span class="result-label">预计 TN 出水 <span class="sub">(NH₄ₑ + 有机氮ₑ 1.5 + NOx·(1−η))</span></span>
+        <div class="result-row"><span class="result-label">TN nước ra dự kiến <span class="sub">(NH₄ₑ + 有机氮ₑ 1.5 + NOx·(1−η))</span></span>
           <span><span class="result-value" id="ifas_r_TNout">—</span><span class="result-unit">mg/L</span></span></div>
         <div class="result-row"><span class="result-label">预缺氧 NOx 去除率 η = (MLR+R)/(1+MLR+R)×0.85 <span class="sub">(另受进水 BOD 与预缺氧池容约束)</span></span>
           <span><span class="result-value" id="ifas_r_MLR_limit">—</span><span class="result-unit">%</span></span></div>
         <div class="result-row"><span class="result-label">碱度剩余（硝化消耗 − 反硝化回收后）</span>
           <span><span class="result-value" id="ifas_r_alkRem">—</span><span class="result-unit">mg/L</span></span></div>
-        <div class="result-row"><span class="result-label">预计 TP 出水 <span class="sub">(生物 15% + PAC 化学除磷)</span></span>
+        <div class="result-row"><span class="result-label">TP nước ra dự kiến <span class="sub">(生物 15% + PAC 化学除磷)</span></span>
           <span><span class="result-value" id="ifas_r_TPout">—</span><span class="result-unit">mg/L</span></span></div>
       </div>
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">💨</span> 需氧量与曝气</div>
-        <div class="result-row highlight-row"><span class="result-label"><b>AOR 实际需氧量</b> <span class="sub">(1.47·ΔBOD − 1.42·ΔX_VSS + 4.57·(ΔTKN − 0.12·ΔX_VSS) − 2.86·N_DN；N_DN 仅计预缺氧利用进水碳源的脱氮)</span></span>
+        <div class="result-group-title"><span class="ic">💨</span> Nhu cầu oxy và sục khí</div>
+        <div class="result-row highlight-row"><span class="result-label"><b>AOR nhu cầu oxy thực tế</b> <span class="sub">(1.47·ΔBOD − 1.42·ΔX_VSS + 4.57·(ΔTKN − 0.12·ΔX_VSS) − 2.86·N_DN；N_DN 仅计预缺氧利用进水碳源的脱氮)</span></span>
           <span><span class="result-value big" id="ifas_r_AOR">—</span><span class="result-unit">kg O₂/d</span></span></div>
-        <div class="result-row"><span class="result-label">SOR 标准需氧量 <span class="sub">(含扩散器水深 Csm 修正；P_b 按海拔当地大气压)</span></span>
+        <div class="result-row"><span class="result-label">SOR nhu cầu oxy tiêu chuẩn <span class="sub">(含扩散器水深 Csm 修正；P_b 按海拔当地大气压)</span></span>
           <span><span class="result-value" id="ifas_r_SOR">—</span><span class="result-unit">kg O₂/d</span></span></div>
-        <div class="result-row"><span class="result-label">氧转移效率 EE <span class="sub">(OTE × 淹没深度)</span></span>
+        <div class="result-row"><span class="result-label">Hiệu suất truyền oxy EE <span class="sub">(OTE × 淹没深度)</span></span>
           <span><span class="result-value" id="ifas_r_ifaSOR">—</span><span class="result-unit">%</span></span></div>
         <div class="result-row"><span class="result-label">需氧气量 / 填料流化下限气量 <span class="sub">(SOR ÷ (EE·0.23·1.293·24) / 流化最小气量强度 × 好氧段池底面积；Nm³ 指 0 °C、101.325 kPa；换算为 20 °C 标态（鼓风机选型页口径）×1.073)</span></span>
           <span><span class="result-value" id="ifas_r_airParts">—</span><span class="result-unit">Nm³/h</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>设计供气量</b> <span class="sub">(取大值；Nm³ 指 0 °C、101.325 kPa；换算为 20 °C 标态（鼓风机选型页口径）×1.073)</span></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>Lưu lượng khí cấp thiết kế</b> <span class="sub">(取大值；Nm³ 指 0 °C、101.325 kPa；换算为 20 °C 标态（鼓风机选型页口径）×1.073)</span></span>
           <span><span class="result-value big" id="ifas_r_ifaAir">—</span><span class="result-unit">Nm³/h</span></span></div>
-        <div class="result-row row-long"><span class="result-label">供气量控制因素</span>
+        <div class="result-row row-long"><span class="result-label">Yếu tố khống chế lưu lượng khí cấp</span>
           <span><span class="result-value" id="ifas_r_airCtrl" style="font-size:12px;">—</span></span></div>
-        <div class="result-row"><span class="result-label">曝气器数量 / 投资</span>
+        <div class="result-row"><span class="result-label">Số lượng thiết bị sục khí / 投资</span>
           <span><span class="result-value" id="ifas_r_ifaCount">—</span><span class="result-unit">个 / 万元</span></span></div>
-        <div class="result-row row-long"><span class="result-label">风机配置 <span class="sub">(N 用 1 备；单台额定 = 设计气量 × 备用系数 ÷ 工作台数)</span></span>
+        <div class="result-row row-long"><span class="result-label">Cấu hình máy thổi khí <span class="sub">(N 用 1 备；单台额定 = 设计气量 × 备用系数 ÷ 工作台数)</span></span>
           <span><span class="result-value" id="ifas_r_blower">—</span></span></div>
-        <div class="result-row"><span class="result-label">风机轴功率 / 好氧段搅拌 / 吨水电耗 <span class="sub">(风机按设计供气量，静压 (H−0.2)×9.81 + 阻力，进气 20 °C、按海拔当地大气压；盘式微孔另计潜水搅拌 25 W/m³)</span></span>
+        <div class="result-row"><span class="result-label">风机轴功率 / 好氧段搅拌 / 吨水电耗 <span class="sub">(风机按Lưu lượng khí cấp thiết kế，静压 (H−0.2)×9.81 + 阻力，进气 20 °C、按海拔当地大气压；Đĩa sục khí lỗ mịn另计潜水搅拌 25 W/m³)</span></span>
           <span><span class="result-value" id="ifas_r_blowerPower">—</span><span class="result-unit">kW / kW / kWh/m³</span></span></div>
         <div class="result-row"><span class="result-label">填料 BOD 负荷 SALR <span class="sub">(附着相承担的 BOD ÷ A)</span></span>
           <span><span class="result-value" id="ifas_r_SALRcheck">—</span><span class="result-unit">g/m²·d</span></span></div>
         <div class="result-row"><span class="result-label">填料硝化进入负荷 / 设计速率 r_nit <span class="sub">(进入 NH₄-N 负荷 ÷ (A − A_BOD)；r 按 T_min、DO、NH₄ₑ 修正)</span></span>
           <span><span class="result-value" id="ifas_r_SNRcheck">—</span><span class="result-unit">g N/m²·d</span></span></div>
-        <div class="result-row"><span class="result-label">温度修正系数 SALR θ_BOD^(T−20) / 硝化 θ_nit^(min(T_min,20)−10)</span>
+        <div class="result-row"><span class="result-label">Hiệu chỉnh nhiệt độ系数 SALR θ_BOD^(T−20) / 硝化 θ_nit^(min(T_min,20)−10)</span>
           <span><span class="result-value" id="ifas_r_SALRfactor">—</span><span class="result-unit">×</span></span></div>
       </div>
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">🔄</span> 回流系统</div>
-        <div class="result-row highlight-row"><span class="result-label"><b>RAS 回流量</b></span>
+        <div class="result-group-title"><span class="ic">🔄</span> Hệ thống tuần hoàn</div>
+        <div class="result-row highlight-row"><span class="result-label"><b>Lưu lượng tuần hoàn RAS</b></span>
           <span><span class="result-value big" id="ifas_r_RAS_Q">—</span><span class="result-unit">m³/h</span></span></div>
-        <div class="result-row" id="ifas_row_MLR_result"><span class="result-label"><b>MLR 内回流量</b></span>
+        <div class="result-row" id="ifas_row_MLR_result"><span class="result-label"><b>Lưu lượng tuần hoàn nội MLR</b></span>
           <span><span class="result-value big" id="ifas_r_MLR_Q">—</span><span class="result-unit">m³/h</span></span></div>
-        <div class="result-row"><span class="result-label">RAS 泵功率</span>
+        <div class="result-row"><span class="result-label">Công suất bơm RAS</span>
           <span><span class="result-value" id="ifas_r_RAS_P">—</span><span class="result-unit">kW</span></span></div>
-        <div class="result-row"><span class="result-label">MLR 泵功率</span>
+        <div class="result-row"><span class="result-label">Công suất bơm MLR</span>
           <span><span class="result-value" id="ifas_r_MLR_P">—</span><span class="result-unit">kW</span></span></div>
-        <div class="result-row"><span class="result-label">回流泵电耗</span>
+        <div class="result-row"><span class="result-label">Điện năng tiêu thụ của bơm tuần hoàn</span>
           <span><span class="result-value" id="ifas_r_pumpPower">—</span><span class="result-unit">kWh/m³</span></span></div>
       </div>
       <div class="result-group" id="ifas_retrofitResult" style="display:none;">
-        <div class="result-group-title"><span class="ic">📈</span> 改造提升效果</div>
-        <div class="result-row"><span class="result-label">改造前处理能力</span>
+        <div class="result-group-title"><span class="ic">📈</span> Hiệu quả nâng công suất sau cải tạo</div>
+        <div class="result-row"><span class="result-label">Công suất xử lý trước cải tạo</span>
           <span><span class="result-value" id="ifas_r_capBefore">—</span><span class="result-unit">万m³/d</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>改造后处理能力</b></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>Công suất xử lý sau cải tạo</b></span>
           <span><span class="result-value big" id="ifas_r_capAfter">—</span><span class="result-unit">万m³/d</span></span></div>
-        <div class="result-row row-long"><span class="result-label">能力控制因素 <span class="sub">(同一模型反算：悬浮相 SRT 质量平衡 / 填料 SALR / 硝化 / 二沉池 A×q)</span></span>
+        <div class="result-row row-long"><span class="result-label">Yếu tố khống chế công suất <span class="sub">(同一模型反算：悬浮相 SRT 质量平衡 / 填料 SALR / 硝化 / 二沉池 A×q)</span></span>
           <span><span class="result-value" id="ifas_r_capCtrl" style="font-size:12px;">—</span></span></div>
-        <div class="result-row"><span class="result-label">提升幅度</span>
+        <div class="result-row"><span class="result-label">Mức tăng</span>
           <span><span class="result-value" id="ifas_r_capBoost">—</span><span class="result-unit">%</span></span></div>
       </div>
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">💊</span> 药剂消耗与成本</div>
+        <div class="result-group-title"><span class="ic">💊</span> Lượng tiêu thụ và chi phí hoá chất</div>
         <div class="result-row" id="ifas_row_carbon2"><span class="result-label">后缺氧去除 N / 需碳 <span class="sub">(按需投加至 TN 目标，≤ SDNR×MLVSS×V_post；C/N = 2.86/(1−1.42·Y_碳源) = 4.98 g COD/g N，未计 DO 消耗与安全系数；纯 MBBR 页另计进入 DO 与 1.15 系数)</span></span>
           <span><span class="result-value" id="ifas_r_carbonNeed">—</span><span class="result-unit">kg N/d / kg COD/d</span></span></div>
-        <div class="result-row" id="ifas_row_carbon"><span class="result-label">后缺氧碳源投加量</span>
+        <div class="result-row" id="ifas_row_carbon"><span class="result-label">Lượng nguồn carbon bổ sung cho ngăn thiếu khí sau</span>
           <span><span class="result-value" id="ifas_r_carbonDose">—</span><span class="result-unit">kg/d</span></span></div>
-        <div class="result-row"><span class="result-label">PAC 投加量</span>
+        <div class="result-row"><span class="result-label">Liều lượng PAC</span>
           <span><span class="result-value" id="ifas_r_PACDose">—</span><span class="result-unit">kg/d</span></span></div>
-        <div class="result-row"><span class="result-label">碱度补充量（NaHCO₃）</span>
+        <div class="result-row"><span class="result-label">Lượng bổ sung độ kiềm (NaHCO₃)</span>
           <span><span class="result-value" id="ifas_r_alkDoseOut">—</span><span class="result-unit">kg/d</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>药剂年总费用</b></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>Tổng chi phí hoá chất hằng năm</b></span>
           <span><span class="result-value big" id="ifas_r_chemCost">—</span><span class="result-unit">万元/年</span></span></div>
       </div>
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">🔎</span> 设计校核</div>
+        <div class="result-group-title"><span class="ic">🔎</span> Kiểm tra thiết kế</div>
         <div class="check-list" id="ifasCheckList"></div>
         <div class="score-ring">
           <div><div class="score-num" id="ifas_scoreNum">—</div><div style="font-size:12px;color:var(--text-muted);">/ 100</div></div>
-          <div><div class="score-title" id="ifas_scoreTitle">综合评分</div>
+          <div><div class="score-title" id="ifas_scoreTitle">Điểm tổng hợp</div>
             <div style="font-size:12px;color:var(--text-muted);" id="ifas_scoreDesc">—</div></div>
         </div>
       </div>
     </div>
 
     <div class="buttons">
-      <button class="btn btn-primary" type="button" onclick="copyIFAS()">📋 复制设计结果</button>
+      <button class="btn btn-primary" type="button" onclick="copyIFAS()">📋 Sao chép kết quả thiết kế</button>
     </div>
 
     <div class="note">
-      ℹ️ <b>IFAS 步骤与 <a href="mbbr-design.html">纯 MBBR 工程设计</a>对应：</b>1.进水出水 → 2.工艺推荐 → 3.工艺模式&段配置 → 4.工艺设计参数 → 5.容积分配 → 6.回流（RAS+MLR，IFAS独有）→ 7.药剂 → 8-11.曝气器&风机&α·β·θ 修正。
+      ℹ️ <b>IFAS 步骤与 <a href="mbbr-design.html">Thiết kế kỹ thuật MBBR thuần tuý</a>对应：</b>1.进水出水 → 2.Đề xuất công nghệ → 3.工艺模式&段配置 → 4.Thông số thiết kế công nghệ → 5.容积分配 → 6.回流（RAS+MLR，IFAS独有）→ 7.药剂 → 8-11.曝气器&风机&α·β·θ 修正。
     </div>
   </div>
 
-  <!-- ===== Tab 2: IFAS 原理 ===== -->
+  <!-- ===== Tab 2: Nguyên lý IFAS ===== -->
   <div class="tab-panel" id="panel-theory">
 
     <div class="carrier-intro">
-      <h3>🔗 IFAS 是什么</h3>
+      <h3>🔗 IFAS là gì</h3>
       <p>IFAS（Integrated Fixed-film Activated Sludge，泥膜复合）= <b>活性污泥 + MBBR 填料</b>：在活性污泥池（好氧段）投加悬浮填料，池内同时存在<b>悬浮污泥（悬浮相）</b>和<b>填料表面的生物膜（附着相）</b>，两相协同去除 BOD 与氨氮。</p>
       <p style="margin-top:8px;"><b>有活性污泥回流（RAS）是与纯 MBBR 的核心区别</b>：RAS 维持悬浮相 MLSS；A/O 工艺另有 MLR 内回流，将硝化液送回缺氧段，利用进水 BOD 免费反硝化。</p>
     </div>
 
     <div class="theory-grid">
       <div class="theory-card">
-        <div class="theory-card-h">🧫 悬浮相（活性污泥）</div>
+        <div class="theory-card-h">🧫 Pha lơ lửng (bùn hoạt tính)</div>
         <ul>
           <li>MLSS 由 RAS 回流维持，IFAS 常 2500-4000 mg/L</li>
-          <li>泥龄 SRT = 水体 × MLSS ÷ 剩余污泥 ΔX（含惰性 SS、化学与碳源污泥，D1 口径）</li>
+          <li>Tuổi bùn SRT = 水体 × MLSS ÷ 剩余污泥 ΔX（含惰性 SS、化学与碳源污泥，D1 口径）</li>
           <li>好氧泥龄（扣缺氧区）≥ SF·SRT_min(T_min) 时才能稳定硝化</li>
         </ul>
       </div>
       <div class="theory-card">
-        <div class="theory-card-h">🧱 附着相（填料生物膜）</div>
+        <div class="theory-card-h">🧱 Pha bám dính (màng sinh học trên giá thể)</div>
         <ul>
           <li>填料停留在池内，生物膜泥龄不受排泥控制，硝化菌可在填料上保留</li>
-          <li>好氧段填充率 IFAS 常 20-40%，上限 50%（维持悬浮污泥流态）</li>
+          <li>好氧段填充率 IFAS thường 20-40%, tối đa 50%（维持悬浮污泥流态）</li>
           <li>比表面积 K3 约 500、K5 约 800 m²/m³；表面生物量文献常用 10-30 g VSS/m²（Ødegaard 等）</li>
         </ul>
       </div>
     </div>
 
-    <div class="section-title"><span class="num">1</span>悬浮相与生物膜如何分担</div>
+    <div class="section-title"><span class="num">1</span>Phân chia tải giữa pha lơ lửng và màng sinh học</div>
     <div class="theory-steps">
       <div class="theory-step"><b>BOD</b>：按活性生物量比分配——填料生物膜 X_bio : 悬浮相 MLSS × VSS/SS。附着相承担的 BOD ÷ 填料面积 A 即填料 BOD 负荷 SALR，须 ≤ SALR₂₀ × θ_BOD^(T−20)；同时附着相 BOD 需占用填料面积 A_BOD：进水 BOD 先扣预缺氧反硝化消耗（3 g sBOD/g N），余量在好氧段悬浮相与填料间按生物量分配，填料部分 ÷ [5 g/m²·d × θ_BOD^(min(T_min,20)−10)]（θ_BOD 默认 1.07）。</div>
       <div class="theory-step"><b>硝化</b>：按悬浮相<b>好氧泥龄</b>判定。满足 SRT_aer ≥ SF·SRT_min(T_min) 时悬浮相可稳定硝化，填料按“生物量 × 比活性 1.4”分担；不满足时，<b>硝化全部由填料承担</b>，须进入 NH₄-N 负荷 ÷ (A − A_BOD) ≤ 设计速率 r_nit，即填料面积 ≥ A_BOD + A_nit（与纯 MBBR 合建方案同一口径）。</div>
-      <div class="theory-step"><b>产泥</b>：ΔX = Y·BOD_susp/(1+Kd·SRT) + 生物膜脱落（Y_bio × 附着相 BOD）+ f·Q·(SS₀−SSₑ) + 化学污泥 + 外加碳源产泥，均经泥水分离后由二沉池排出。</div>
+      <div class="theory-step"><b>产泥</b>：ΔX = Y·BOD_susp/(1+Kd·SRT) + 生物膜脱落（Y_bio × 附着相 BOD）+ f·Q·(SS₀−SSₑ) + Bùn hoá học + 外加碳源产泥，均经泥水分离后由二沉池排出。</div>
     </div>
 
-    <div class="section-title"><span class="num">2</span>什么时候由填料承担硝化</div>
+    <div class="section-title"><span class="num">2</span>Khi nào giá thể đảm nhiệm quá trình nitrat hoá</div>
     <div class="auto-calc-notice">
       <div class="notice-head"><span class="notice-ic">❄️</span>
-        <span>悬浮相硝化需要的最小泥龄 SRT_min = 1/μ，μ = 0.47 · N_a/(K_N + N_a) · e^{0.098(T_min − 15)}（N_a 取出水 NH₄-N，下限 0.5 mg/L；K_N 取 1.0 mg/L；不含 DO 项），设计取 SF·SRT_min（即规范 θ_co = F·1/μ，F 宜 1.5～3.0）。依据 GB 50014-2021 式（7.6.17），θ 按 e^0.098≈1.103/℃，不计衰减，与活性污泥、MBR 工具同口径。<b>低温、池容受限、悬浮相泥龄偏短</b>时，好氧泥龄达不到 SF·SRT_min，悬浮相不能可靠硝化——此时硝化全部由填料承担。<b>IFAS 正是借填料在短泥龄下硝化</b>，从而在不扩池的前提下提升处理能力。</span>
+        <span>悬浮相硝化需要的最小Tuổi bùn SRT_min = 1/μ，μ = 0.47 · N_a/(K_N + N_a) · e^{0.098(T_min − 15)}（N_a 取出水 NH₄-N，下限 0.5 mg/L；K_N 取 1.0 mg/L；不含 DO 项），设计取 SF·SRT_min（即规范 θ_co = F·1/μ，F 宜 1.5～3.0）。依据 GB 50014-2021 式（7.6.17），θ 按 e^0.098≈1.103/℃，不计衰减，与活性污泥、MBR 工具同口径。<b>低温、池容受限、悬浮相泥龄偏短</b>时，好氧泥龄达不到 SF·SRT_min，悬浮相不能可靠硝化——此时硝化全部由填料承担。<b>IFAS 正是借填料在短泥龄下硝化</b>，从而在不扩池的前提下提升处理能力。</span>
       </div>
     </div>
-    <p class="theory-p">填料硝化速率与纯 MBBR 同一函数（经验参考值，以 10 ℃ 为基准、按温度修正、按进入负荷校核）：</p>
+    <p class="theory-p">填料硝化速率与纯 MBBR 同一函数（经验参考值，以 10 ℃ 为基准、按Hiệu chỉnh nhiệt độ、按进入负荷校核）：</p>
     <div class="theory-formula">r_nit = r_类别（10 ℃）× θ^(min(T_min, 20) − 10) × min(DO, 5)/5 × min(1, NH₄ₑ/2)</div>
     <div class="theory-table-wrap">
       <table class="theory-table">
-        <thead><tr><th>前处理类别</th><th>说明</th><th>r_类别（10 ℃）<br>g NH₄-N/m²·d</th></tr></thead>
+        <thead><tr><th>Loại tiền xử lý</th><th>说明</th><th>r_类别（10 ℃）<br>g NH₄-N/m²·d</th></tr></thead>
         <tbody>
           <tr><td>a</td><td>无初沉、无前置反硝化</td><td>0.50</td></tr>
           <tr><td>b</td><td>有初沉或前置反硝化</td><td>0.60</td></tr>
@@ -1423,10 +1423,10 @@ body {
     </div>
     <p class="theory-p">θ_nit = 1.09；设计 DO 上限 5 mg/L（IFAS 好氧段常 3-4 mg/L）；出水 NH₄ 低于 2 mg/L 时速率线性下降。国内项目请结合实测或厂家数据复核。</p>
 
-    <div class="section-title"><span class="num">3</span>四种段配置</div>
+    <div class="section-title"><span class="num">3</span>Bốn cấu hình ngăn</div>
     <div class="theory-table-wrap">
       <table class="theory-table">
-        <thead><tr><th>配置</th><th>流程（默认容积比）</th><th>适用</th></tr></thead>
+        <thead><tr><th>配置</th><th>Sơ đồ công nghệ (tỷ lệ thể tích mặc định)</th><th>适用</th></tr></thead>
         <tbody>
           <tr><td>① 纯好氧 IFAS</td><td>好氧 IFAS(100%) → 二沉池</td><td>仅 BOD 去除和硝化，无缺氧段，不脱氮；适合出水 TN 无严格要求的场景</td></tr>
           <tr><td>② 预缺氧 + 好氧 A/O</td><td>预缺氧(25%) → 好氧 IFAS(75%) → 二沉池 · MLR 200-400%</td><td>进水先进缺氧段利用 BOD 免费反硝化，无需外加碳源，是最常见的 IFAS 工艺</td></tr>
@@ -1436,30 +1436,30 @@ body {
       </table>
     </div>
 
-    <div class="section-title"><span class="num">4</span>IFAS 与纯 MBBR、活性污泥的区别</div>
+    <div class="section-title"><span class="num">4</span>Phân biệt IFAS, MBBR thuần tuý và bùn hoạt tính</div>
     <div class="theory-table-wrap">
       <table class="theory-table">
-        <thead><tr><th>项目</th><th>纯 MBBR</th><th>IFAS（本页）</th><th>活性污泥</th></tr></thead>
+        <thead><tr><th>项目</th><th>纯 MBBR</th><th>IFAS (trang này)</th><th>活性污泥</th></tr></thead>
         <tbody>
           <tr><td>生物量</td><td>仅填料生物膜</td><td>悬浮污泥 + 填料生物膜</td><td>仅悬浮污泥</td></tr>
-          <tr><td>污泥回流 RAS</td><td>无</td><td>有</td><td>有</td></tr>
+          <tr><td>Tuần hoàn bùn RAS</td><td>无</td><td>有</td><td>有</td></tr>
           <tr><td>填充率</td><td>上限 67%</td><td>常 20-40%，上限 50%</td><td>—</td></tr>
           <tr><td>硝化</td><td>全部在填料上</td><td>按好氧泥龄判定：悬浮相为主或全部由填料承担</td><td>靠悬浮相泥龄 ≥ SF·SRT_min</td></tr>
-          <tr><td>曝气口径</td><td>SOFK（现场条件值）按 AOR 推气量</td><td>OTE（标准清水值）经 α/β/θ 由 SOR 推气量；含悬浮污泥，α 比纯 MBBR 低</td><td>—</td></tr>
-          <tr><td>本站工具</td><td><a href="mbbr-design.html">纯 MBBR 工程设计</a></td><td>IFAS 工程设计</td><td><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></td></tr>
+          <tr><td>Cơ sở tính sục khí</td><td>SOFK（现场条件值）按 AOR 推气量</td><td>OTE（标准清水值）经 α/β/θ 由 SOR 推气量；含悬浮污泥，α 比纯 MBBR 低</td><td>—</td></tr>
+          <tr><td>Công cụ trên trang</td><td><a href="mbbr-design.html">Thiết kế kỹ thuật MBBR thuần tuý</a></td><td>Thiết kế kỹ thuật IFAS</td><td><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></td></tr>
         </tbody>
       </table>
     </div>
 
-    <div class="section-title"><span class="num">5</span>典型应用与发展</div>
+    <div class="section-title"><span class="num">5</span>Ứng dụng và phát triển điển hình</div>
     <ul class="theory-list">
-      <li><b>提标改造</b>：现有活性污泥池原池投加填料，不扩池提升硝化与处理能力（本工具“改造 IFAS”模式按同一双相模型反算改造前后能力）。</li>
-      <li><b>2010s</b>：MBBR 衍生工艺涌现，IFAS（混合悬浮 + 附着）是其中之一（见 <a href="mbbr-design.html">纯 MBBR 工程设计</a>的「MBBR 发展史」Tab）。</li>
+      <li><b>Cải tạo nâng chuẩn</b>：现有活性污泥池原池投加填料，不扩池提升硝化与处理能力（本工具“改造 IFAS”模式按同一双相模型反算改造前后能力）。</li>
+      <li><b>2010s</b>：MBBR 衍生工艺涌现，IFAS（混合悬浮 + 附着）是其中之一（见 <a href="mbbr-design.html">Thiết kế kỹ thuật MBBR thuần tuý</a>的「MBBR 发展史」Tab）。</li>
       <li><b>2015-2020</b>：国内污水厂提标改造潮中，IFAS 开始在提标改造中推广。</li>
     </ul>
 
     <div class="note">
-      ℹ️ <b>本工具计算口径：</b>新建模式下总池容取悬浮相 SRT 质量平衡、填料 SALR、硝化（填料面积 A_BOD + A_nit 或悬浮相好氧泥龄）三者所需池容的最大值；预缺氧脱氮取 η·N_nit、进水 BOD 可支持量与预缺氧池容 SDNR_T·MLVSS·V_pre 三者小值；设计供气量取需氧气量与搅拌下限 12.5 Nm³/m²·h 的大值；改造模式下以同一模型按流量反算改造前（无填料）与改造后（填料 + 目标 MLSS）的处理能力，并与二沉池能力取小值。参数均为经验参考值，工程设计请以正式设计文件为准。
+      ℹ️ <b>本工具计算口径：</b>新建模式下总池容取悬浮相 SRT 质量平衡、填料 SALR、硝化（填料面积 A_BOD + A_nit 或悬浮相好氧泥龄）三者所需池容的最大值；预缺氧脱氮取 η·N_nit、进水 BOD 可支持量与预缺氧池容 SDNR_T·MLVSS·V_pre 三者小值；Lưu lượng khí cấp thiết kế取需氧气量与搅拌下限 12.5 Nm³/m²·h 的大值；改造模式下以同一模型按流量反算改造前（无填料）与改造后（填料 + 目标 MLSS）的处理能力，并与二沉池能力取小值。参数均为经验参考值，工程设计请以正式设计文件为准。
     </div>
   </div>
 
@@ -1481,11 +1481,11 @@ body {
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · bởi Dengdeng Technology</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">水处理工具箱(WaterKit)是Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
       </div>
       <div class="footer-col">
         <h4>水力计算</h4>
@@ -1503,9 +1503,9 @@ body {
           <li><a href="aeration-calculator.html">曝气量</a></li>
           <li><a href="sludge-production-calculator.html">污泥产量</a></li>
           <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
           <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
+          <li><a href="ifas-design.html">Thiết kế kỹ thuật IFAS</a></li>
           <li><a href="mbr-design.html">MBR 工程设计</a></li>
           <li><a href="ro-design.html">RO 反渗透设计</a></li>
           <li><a href="pump-selection-calculator.html">水泵选型</a></li>
@@ -1533,12 +1533,12 @@ body {
         <ul>
           <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
           <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">gửi Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
       <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
     </div>
   </div>
@@ -1681,7 +1681,7 @@ function wkBlowerPower(Q_Nm3h, dp_kPa, eff, alt) {
 }
 
 // 曝气器类型切换（ifa_* 输入）
-// 填料流化最小气量强度（Nm³/m²·h）：粗泡气体流化套用纯 MBBR 经验值 BF.mix_air_min；盘式微孔需机械搅拌辅助
+// Cường độ cấp khí tối thiểu để làm chuyển động giá thể（Nm³/m²·h）：粗泡气体流化套用纯 MBBR 经验值 BF.mix_air_min；盘式微孔需机械搅拌辅助
 const IFAS_MIX_AIR = { coarse: BF.mix_air_min, tube: BF.mix_air_min, disc: 3 };   // 射流曝气不提供（11-02 作者定）；共用的 AERATOR_DB 仍含 jet，供纯 MBBR 页使用
 const IFAS_MIXER_W = { disc: BF.mix_power };   // W/m³ 好氧段潜水搅拌（参考值）
 let ifasAerType = 'coarse';
@@ -1760,7 +1760,7 @@ function wkCopy(txt) {
   } else { wkToast('当前浏览器不支持自动复制'); }
 }
 
-// Tab 切换（设计计算 / 原理说明）
+// Tab 切换（Tính toán thiết kế / 原理说明）
 function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + tab));
@@ -1791,7 +1791,7 @@ let ifasConfig = 'nitrif_only';
 const IFAS_CONFIG_DESC = {
   'ao':         '预缺氧+好氧IFAS（A/O含MLR）：进水先进缺氧段利用BOD免费反硝化，MLR将硝化液回流缺氧段，无需外加碳源，是最常见的IFAS工艺。',
   'nitrif_only':'纯好氧IFAS：仅BOD去除和硝化，无缺氧段，不脱氮。适合出水TN无严格要求的场景。',
-  'post_anox':  '好氧IFAS+后缺氧：好氧段硝化后接后缺氧段，需外加碳源（甲醇/乙酸钠）反硝化，脱氮效果好但运营成本高。',
+  'post_anox':  '好氧IFAS+后缺氧：好氧段硝化后接Ngăn thiếu khí sau，需外加碳源（甲醇/乙酸钠）反硝化，脱氮效果好但运营成本高。',
   'full_bnr':   '完整BNR：预缺氧+好氧IFAS+后缺氧+化除磷，双重脱氮+化除磷，适合TN/TP均严格的场景。',
 };
 
@@ -1820,7 +1820,7 @@ function setIFASMode(mode) {
   $('ifas_retrofitParams').style.display = mode === 'retrofit' ? '' : 'none';
   $('ifas_retrofitResult').style.display = mode === 'retrofit' ? '' : 'none';
   $('ifas_titleSub').textContent = mode === 'new' ? 'IFAS 新建' : 'IFAS 改造';
-  $('ifas_paramTitle').textContent = mode === 'new' ? '新建·工艺设计参数' : '改造·现有池参数';
+  $('ifas_paramTitle').textContent = mode === 'new' ? '新建·Thông số thiết kế công nghệ' : '改造·现有池参数';
   calcAndRenderIFAS();
 }
 
@@ -1830,7 +1830,7 @@ function setIFASConfig(cfg) {
     b.classList.toggle('active', b.dataset.ifasConfig === cfg));
   if ($('ifas_config_desc')) $('ifas_config_desc').textContent = IFAS_CONFIG_DESC[cfg] || '';
 
-  // 自动初始化容积分配比
+  // 自动初始化Tỷ lệ phân bổ thể tích
   const IFAS_VOL = {
     nitrif_only: { pre:0,  aer:100, post:0  },
     ao:          { pre:25, aer:75,  post:0  },
@@ -1893,7 +1893,7 @@ function resetIfasDefaults() {
   ifasMode = 'new';
   document.querySelectorAll('[data-ifas-mode]').forEach(b => b.classList.toggle('active', b.dataset.ifasMode === 'new'));
   $('ifas_newParams').style.display = ''; $('ifas_retrofitParams').style.display = 'none'; $('ifas_retrofitResult').style.display = 'none';
-  $('ifas_titleSub').textContent = 'IFAS 新建'; $('ifas_paramTitle').textContent = '新建·工艺设计参数';
+  $('ifas_titleSub').textContent = 'IFAS 新建'; $('ifas_paramTitle').textContent = '新建·Thông số thiết kế công nghệ';
   setIFASConfig(IFAS_DEFAULT_CONFIG);   // 恢复默认构型与容积比并重算
   wkToast('已恢复全部输入为默认值');
 }
@@ -1944,7 +1944,7 @@ function calcIFAS() {
   const settleQ = getP('settleQ', 1.0);           // 新建：设计表面负荷；改造：允许表面负荷（最高时）
   const settleHRT = gd('settleHRT', 2.0);         // 新建：最小沉淀 HRT h
 
-  // 高级参数
+  // Thông số nâng cao
   const theta    = gd('theta', 1.09);            // θ_nit：填料硝化
   const theta_bod = gd('theta_bod', BF.theta_bod); // θ_BOD：SALR 与 A_BOD（与硝化 θ 分开）
   const alpha    = gd('alpha', 0.65);
@@ -1952,7 +1952,7 @@ function calcIFAS() {
   const Kd       = gd('Kd', 0.06);
   const Y_bio    = gd('Y_bio', 0.25);
   const SDNR20   = gd('SDNR', 0.08);
-  const solidFrac = gd('solidFrac', 0.13);       // 填料实体率（实体体积/堆积体积）
+  const solidFrac = gd('solidFrac', 0.13);       // Tỷ phần thể tích rắn của giá thể（实体体积/堆积体积）
   const Kn_nit   = gd('Kn', 1.0);                // 硝化半速率常数 K_N（GB 50014 条文说明 1.0 mg/L）
   const SF       = gd('SF', 2.0);
   const RAS_r    = get('RAS') / 100;
@@ -1966,7 +1966,7 @@ function calcIFAS() {
   const theta_o2 = ga('theta', 1.024);
   const DO_set   = ga('DO', 2.0);
 
-  // 温度修正
+  // Hiệu chỉnh nhiệt độ
   const SALR_T_factor = Math.pow(theta_bod, T - 20);
   const SNR_Tmin_factor = Math.pow(theta, Math.min(Tmin, BF.T_rate_cap) - 10);   // 填料硝化：10 ℃ 基准
   const SALR = SALR_20 * SALR_T_factor;            // BOD：设计水温
@@ -1974,13 +1974,13 @@ function calcIFAS() {
   const hasPreI = ifasConfig === 'ao' || ifasConfig === 'full_bnr';
   const nitI = bfNitRate({ cls: nitClsSelI === 'auto' ? (hasPreI ? 'b' : 'a') : nitClsSelI, custom: getP('rNit', NaN),
                            T: Tmin, DO: DO_set, NH4out: NH4e, theta });
-  const SNR = nitI.r10 * nitI.fT;                   // 类别速率 × 温度修正（T_min）
+  const SNR = nitI.r10 * nitI.fT;                   // 类别速率 × Hiệu chỉnh nhiệt độ（T_min）
   const DO_factor = nitI.fDO * nitI.fNH4;           // DO 与低 NH₄ 修正
   const SNR_DO = nitI.r;                            // 设计速率 g NH₄-N/m²·d
   const SDNR = SDNR20 * Math.pow(1.08, T - 20);    // 反硝化 θ=1.08（GB 50014）
   // 填料 BOD 面积速率（与纯 MBBR 合建方案同一口径）：r_bod 5 g/m²·d × θ_BOD^(min(T_min,20)−10)
   const r_bodT = BF.r_bod_nit * Math.pow(theta_bod, Math.min(Tmin, BF.T_rate_cap) - 10);
-  const Kd_T = Kd * Math.pow(1.04, T - 20);        // Kd 温度修正 1.04^(T−20)
+  const Kd_T = Kd * Math.pow(1.04, T - 20);        // Kd Hiệu chỉnh nhiệt độ 1.04^(T−20)
   // 悬浮相硝化最小泥龄（全站统一口径，GB 50014-2021 第 7.6.17 条；按 T_min）：
   //   SRT_min = 1/μ，μ = 0.47·Na/(K_N+Na)·e^{0.098(T_min−15)}，Na = max(NH₄ₑ, 0.5)；不计衰减、不含 DO 项
   const NH4_use = Math.max(NH4e, 0.5);
@@ -2008,7 +2008,7 @@ function calcIFAS() {
   const Y_carbon = 0.3;                                       // 外加碳源产泥 kgVSS/kgCOD（经验值）
   const c_n = 2.86 / (1 - 1.42 * Y_carbon);                   // 后缺氧 C/N ≈ 4.98 g COD/g NO₃-N（与活性污泥工具 MEOH_COD_N 一致）
 
-  // PAC 化学除磷（液体 PAC，Al 5.29%；Al/P 摩尔比 2；生物除磷 15% 经验值）——化学污泥浓度与流量无关，先算
+  // PAC 化学除磷（液体 PAC，Al 5.29%；Al/P 摩尔比 2；生物除磷 15% 经验值）——Bùn hoá học浓度与流量无关，先算
   const TP_bio_rm = 0.15, AlP = 2, PAC_Al = 0.0529;
   const PAC_per_TP = AlP * 27 / 31 / PAC_Al;                    // mg PAC / mg P
   const dTP_chem_need = Math.max(0, TP0 * (1 - TP_bio_rm) - TPe);
@@ -2020,12 +2020,12 @@ function calcIFAS() {
   const P_chem = Math.min(PAC_dose / PAC_per_TP, TP0 * (1 - TP_bio_rm));   // mg P/L
   const TP_out = Math.max(0, TP0 * (1 - TP_bio_rm) - P_chem);
   const Al_excess = Math.max(0, PAC_dose * PAC_Al / 27 - P_chem / 31);    // mmol/L
-  const chem_c = P_chem / 31 * 122 + Al_excess * 78;            // mg/L 化学污泥（AlPO₄ + Al(OH)₃）
+  const chem_c = P_chem / 31 * 122 + Al_excess * 78;            // mg/L Bùn hoá học（AlPO₄ + Al(OH)₃）
   const inert_c = fSS * Math.max(0, SS0 - SSe);                 // mg/L 进水惰性 SS
 
   // ===== 双相模型（新建池容、改造能力反算共用）=====
-  //   D1 口径：悬浮相固体存量 = 水体 × MLSS（总固体，含惰性），泥龄 SRT = 存量 / 剩余污泥 ΔX_SS
-  //   ΔX_SS = Y·BOD_susp/(1+Kd·SRT) + 生物膜脱落 + f·Q·ΔSS + 化学污泥 + 外加碳源产泥（均经泥水分离后排出）
+  //   D1 口径：悬浮相固体存量 = 水体 × MLSS（总固体，含惰性），Tuổi bùn SRT = 存量 / 剩余污泥 ΔX_SS
+  //   ΔX_SS = Y·BOD_susp/(1+Kd·SRT) + 生物膜脱落 + f·Q·ΔSS + Bùn hoá học + 外加碳源产泥（均经泥水分离后排出）
   //   BOD 按活性生物量比（填料生物膜 : MLSS×VSS/SS）分配；硝化按好氧泥龄（扣缺氧区）与 SF·SRT_min(T_min) 判定：
   //   满足时悬浮相可硝化（按生物量×比活性 1.4 分配），否则全部由填料承担，须进入 NH₄-N 负荷 ≤ A·r_nit（按进入负荷，T_min/DO/NH₄ 修正）
   const model = (Qm, V, MLSS_m, VSSf, media) => {
@@ -2123,7 +2123,7 @@ function calcIFAS() {
     if ($('ifas_V_input')) $('ifas_V_input').placeholder = `自动：${Math.round(V_auto)} m³`;
   } else {
     V      = gd('Vexisting', 12000);
-    MLSS   = gd('MLSS_new', gd('MLSSexisting', 3500));   // 改造后悬浮相按目标 MLSS；改造前能力按原有 MLSS
+    MLSS   = gd('MLSS_new', gd('MLSSexisting', 3500));   // 改造后悬浮相按目标 MLSS；改造前能力按MLSS hiện hữu
     VSS_SS = gd('VSS_SS2', 0.72);
     MLVSS  = MLSS * VSS_SS;
     V_ctrl = '原有池容';
@@ -2132,7 +2132,7 @@ function calcIFAS() {
   const m = model(Q, V, MLSS, VSS_SS, true);
   const V_preAnox = V * r_pre, V_aer = m.V_aer, V_postAnox = m.V_post;
   const V_fill = m.V_fill, A_total = m.A, X_bio_kg = m.X_bio, X_susp_kg = m.X_susp;
-  const MLSS_eq = V > 0 ? (X_bio_kg + m.M_susp) * 1000 / V : 0;   // 等效 MLSS（悬浮相总固体 + 生物膜）
+  const MLSS_eq = V > 0 ? (X_bio_kg + m.M_susp) * 1000 / V : 0;   // MLSS tương đương（悬浮相总固体 + 生物膜）
   const HRT = Q > 0 ? V / Q * 24 : 0;
   const bio_contrib_BOD = m.bio_BOD, susp_contrib_BOD = 1 - m.bio_BOD, bio_contrib_N = m.bio_N;
   const SALR_actual = m.SALR_bio, SNR_bio = m.SNR_bio;
@@ -2212,7 +2212,7 @@ function calcIFAS() {
 
   const totalChemCost = carbonCost + PACcost + alkCost;
 
-  // ===== 产泥：ΔX = ΔX_VSS + f·Q·(SS₀−SSₑ) + 化学污泥 + 外加碳源产泥（与悬浮相泥龄同一口径）=====
+  // ===== 产泥：ΔX = ΔX_VSS + f·Q·(SS₀−SSₑ) + Bùn hoá học + 外加碳源产泥（与悬浮相泥龄同一口径）=====
   const dX_DS = m.dX_total;
   const sludge_mc_ifas = gd('sludge_mc', 80) / 100;
   const sludge_wet_ifas = dX_DS / (1 - sludge_mc_ifas) / 1000; // t/d
@@ -2237,7 +2237,7 @@ function calcIFAS() {
     Q_by_BOD  = maxQ(q => model(q, V, MLSS, VSS_SS, true).SRT_act >= SRT_in * (1 - 1e-9));
     Q_by_SALR = maxQ(q => model(q, V, MLSS, VSS_SS, true).SALR_bio <= SALR * (1 + 1e-6));
     Q_by_N    = maxQ(q => model(q, V, MLSS, VSS_SS, true).nit_ok);
-    // 改造前（无填料 + 原有 MLSS）：同一口径，硝化只能靠悬浮相好氧泥龄 ≥ SF·SRT_min
+    // 改造前（无填料 + MLSS hiện hữu）：同一口径，硝化只能靠悬浮相好氧泥龄 ≥ SF·SRT_min
     Qb_SRT = maxQ(q => model(q, V, MLSS_b, VSS_SS, false).SRT_act >= SRT_in * (1 - 1e-9));
     Qb_N   = maxQ(q => model(q, V, MLSS_b, VSS_SS, false).nit_ok);
     const pick = list => list.reduce((a, b) => b[0] < a[0] ? b : a);
@@ -2249,7 +2249,7 @@ function calcIFAS() {
 
   // ===== 曝气器与风机（§8-11 ifa_* 输入）=====
   const A_aer_ifas = V_aer / poolH_ifas;                                     // 好氧段池底面积 m²
-  // 设计供气量 = max(需氧气量, 填料流化最小气量强度 × 好氧段池底面积)；盘式微孔另配潜水搅拌（25 W/m³ 参考值）
+  // Lưu lượng khí cấp thiết kế = max(需氧气量, Cường độ cấp khí tối thiểu để làm chuyển động giá thể × 好氧段池底面积)；盘式微孔另配潜水搅拌（25 W/m³ 参考值）
   const mixAirI = ga('mixAir', IFAS_MIX_AIR[ifasAerType] ?? BF.mix_air_min);
   const air_mix = mixAirI * A_aer_ifas;
   const mixer_W = IFAS_MIXER_W[ifasAerType] || 0;
@@ -2264,7 +2264,7 @@ function calcIFAS() {
   const ifa_cost = ifa_count * ga('price', 0) / 1e4;
   const ifa_spacing = ifa_count > 0 ? Math.sqrt(A_aer_ifas / ifa_count) : 0;
   const ifa_dp = ifa_sub * 9.81 + ga('dp_aer', 0) + ga('dp_pipe', 0);       // kPa：淹没深度 (H − 0.2 m) 静压 + 阻力（与纯 MBBR 同口径）
-  // 风机效率：输入值超过机型上限（BLOWER_EFF.max）时按上限计并在校核中提示
+  // Hiệu suất máy thổi khí：输入值超过机型上限（BLOWER_EFF.max）时按上限计并在校核中提示
   const bType = $('ifa_blowerType')?.value || 'roots';
   const ifa_effIn = ga('efficiency', 62) / 100;
   const ifa_effMax = ((BLOWER_EFF[bType] || BLOWER_EFF.roots).max) / 100;
@@ -2340,7 +2340,7 @@ function checkIFAS(r) {
     score -= 5;
   }
   if (r.DO_zero) {
-    checks.push({type:'warn', ic:'⚠', text:`<b>好氧段 DO = 0</b>: 好氧段无溶解氧无法硝化，填料硝化速率按 DO 修正为 0；IFAS 好氧段 DO 常 3-4 mg/L，请核对 §11 DO 设计值`});
+    checks.push({type:'warn', ic:'⚠', text:`<b>好氧段 DO = 0</b>: 好氧段无溶解氧无法硝化，填料硝化速率按 DO 修正为 0；IFAS 好氧段 DO 常 3-4 mg/L，请核对 §11 DO thiết kế`});
     score -= 10;
   }
   if (r.DO_set > BF.DO_max_design) {
@@ -2363,12 +2363,12 @@ function checkIFAS(r) {
 
   // 二沉池表面负荷（最高时；GB 50014 活性污泥二沉池 0.6-1.5 m³/m²·h）
   if (r.surfLoad > 1.5 + 1e-9) {
-    checks.push({type:'bad', ic:'✗', text:`<b>沉淀池表面负荷过高</b>: 最高时 ${r.surfLoad.toFixed(2)} m³/m²·h > 1.5（GB 50014 活性污泥二沉池 0.6-1.5，Kz = ${r.Kz.toFixed(2)}）`});
+    checks.push({type:'bad', ic:'✗', text:`<b>Tải trọng bề mặt bể lắng过高</b>: 最高时 ${r.surfLoad.toFixed(2)} m³/m²·h > 1.5（GB 50014 活性污泥二沉池 0.6-1.5，Kz = ${r.Kz.toFixed(2)}）`});
     score -= 12;
   } else if (r.surfLoad < 0.6 - 1e-9) {
-    checks.push({type:'info', ic:'ℹ', text:`<b>沉淀池表面负荷偏低</b>: 最高时 ${r.surfLoad.toFixed(2)} m³/m²·h < 0.6，面积偏保守`});
+    checks.push({type:'info', ic:'ℹ', text:`<b>Tải trọng bề mặt bể lắng偏低</b>: 最高时 ${r.surfLoad.toFixed(2)} m³/m²·h < 0.6，面积偏保守`});
   } else {
-    checks.push({type:'ok', ic:'✓', text:`<b>沉淀池表面负荷合理</b>: 最高时 ${r.surfLoad.toFixed(2)} m³/m²·h（0.6-1.5，Kz = ${r.Kz.toFixed(2)}）`});
+    checks.push({type:'ok', ic:'✓', text:`<b>Tải trọng bề mặt bể lắng合理</b>: 最高时 ${r.surfLoad.toFixed(2)} m³/m²·h（0.6-1.5，Kz = ${r.Kz.toFixed(2)}）`});
   }
   // 二沉池 HRT（最高时 1.5-4 h）
   if (r.HRT_settle < 1.5 - 1e-9) {
@@ -2384,7 +2384,7 @@ function checkIFAS(r) {
   // TN：预测出水 TN = NH₄ₑ + 有机氮ₑ + NOx·(1−η)
   const tnDetail = `NH₄ₑ ${r.NH4e} + 有机氮 1.5 + NOx ${r.NOx_e.toFixed(1)} mg/L${r.N_pre_Climited ? '；预缺氧脱氮受进水 BOD 限制' : ''}${r.N_pre_Vlim ? '；预缺氧脱氮受池容限制' : ''}`;
   if (r.N_pre_Vlim) {
-    checks.push({type:'warn', ic:'⚠', text:`<b>预缺氧脱氮受池容限制</b>: 预缺氧段 ${Math.round(r.V_preAnox).toLocaleString('zh-CN')} m³ 按 SDNR_T·MLVSS·V_pre 只能反硝化 ${r.pre_cap.toFixed(0)} kg N/d，小于内回流可送回量 ${(r.MLR_limit / 100 * r.N_nit).toFixed(0)} kg N/d；${r.config === 'full_bnr' ? '不足部分转由后缺氧外加碳源承担，' : ''}建议增大预缺氧比例或总池容`});
+    checks.push({type:'warn', ic:'⚠', text:`<b>预缺氧脱氮受池容限制</b>: Ngăn thiếu khí trước ${Math.round(r.V_preAnox).toLocaleString('zh-CN')} m³ 按 SDNR_T·MLVSS·V_pre 只能反硝化 ${r.pre_cap.toFixed(0)} kg N/d，小于内回流可送回量 ${(r.MLR_limit / 100 * r.N_nit).toFixed(0)} kg N/d；${r.config === 'full_bnr' ? '不足部分转由后缺氧外加碳源承担，' : ''}建议增大预缺氧比例或总池容`});
     score -= 8;
   }
   if (r.TNe > 0 && r.TN_out > r.TNe * (1 + 1e-6)) {
@@ -2394,7 +2394,7 @@ function checkIFAS(r) {
     checks.push({type:'ok', ic:'✓', text:`<b>TN 可达标</b>: 预计出水 TN ≈ ${r.TN_out.toFixed(1)} mg/L（去除 ${r.total_TN_rm.toFixed(0)}%；${tnDetail}）`});
   }
 
-  // 曝气器布置间距（好氧段均布）
+  // Khoảng cách bố trí thiết bị sục khí（好氧段均布）
   if (r.ifa_count > 0) {
     if (r.ifa_spacing > r.ifa_spacing_set + 1e-9) {
       checks.push({type:'warn', ic:'⚠', text:`<b>曝气器间距超过设定最大间距</b>: 均布间距 ${r.ifa_spacing.toFixed(2)} m &gt; ${r.ifa_spacing_set} m（输入值），搅拌不均易出死角；按间距需 ≥ ${wkFmt(Math.ceil(r.A_aer_ifas / (r.ifa_spacing_set * r.ifa_spacing_set)), 0)} 个曝气器（单个气量相应减小）`});
@@ -2404,7 +2404,7 @@ function checkIFAS(r) {
     }
   }
   // 供气量：需氧 vs 搅拌下限
-  checks.push({type: r.air_mix > r.air_O2 ? 'info' : 'ok', ic: r.air_mix > r.air_O2 ? 'ℹ' : '✓', text:`<b>设计供气量 ${Math.round(r.ifa_air).toLocaleString('zh-CN')} Nm³/h（${r.air_ctrl}）</b>: 需氧气量 ${Math.round(r.air_O2).toLocaleString('zh-CN')} / 填料流化下限 ${r.mixAirI} Nm³/m²·h × 好氧段池底 ${Math.round(r.A_aer_ifas).toLocaleString('zh-CN')} m² = ${Math.round(r.air_mix).toLocaleString('zh-CN')} Nm³/h；风机与电耗按设计供气量计`});
+  checks.push({type: r.air_mix > r.air_O2 ? 'info' : 'ok', ic: r.air_mix > r.air_O2 ? 'ℹ' : '✓', text:`<b>Lưu lượng khí cấp thiết kế ${Math.round(r.ifa_air).toLocaleString('zh-CN')} Nm³/h（${r.air_ctrl}）</b>: 需氧气量 ${Math.round(r.air_O2).toLocaleString('zh-CN')} / 填料流化下限 ${r.mixAirI} Nm³/m²·h × 好氧段池底 ${Math.round(r.A_aer_ifas).toLocaleString('zh-CN')} m² = ${Math.round(r.air_mix).toLocaleString('zh-CN')} Nm³/h；风机与电耗按Lưu lượng khí cấp thiết kế计`});
   if (r.mixer_W > 0) {
     checks.push({type:'info', ic:'ℹ', text:`<b>微孔曝气需机械搅拌辅助</b>: 盘式微孔气泡细、填料流化力弱，流化下限按 ${r.mixAirI} Nm³/m²·h 取，好氧段另配潜水搅拌器约 ${r.mixer_W} W/m³（参考值）× ${wkFmt(r.V_aer, 0)} m³ ≈ ${r.mixer_kW.toFixed(1)} kW，已计入曝气吨水电耗`});
   }
@@ -2414,7 +2414,7 @@ function checkIFAS(r) {
     score -= 6;
   }
   if (r.ifa_effClamped) {
-    checks.push({type:'info', ic:'ℹ', text:`<b>风机效率按机型上限计</b>: 输入 ${(r.ifa_effIn*100).toFixed(0)}% 超过该机型上限 ${(r.ifa_eff*100).toFixed(0)}%，轴功率按 ${(r.ifa_eff*100).toFixed(0)}% 计`});
+    checks.push({type:'info', ic:'ℹ', text:`<b>Hiệu suất máy thổi khí按机型上限计</b>: 输入 ${(r.ifa_effIn*100).toFixed(0)}% 超过该机型上限 ${(r.ifa_eff*100).toFixed(0)}%，轴功率按 ${(r.ifa_eff*100).toFixed(0)}% 计`});
   }
 
   // 改造能力：同一模型反算
@@ -2462,7 +2462,7 @@ function checkIFAS(r) {
     checks.push({type:'warn', ic:'⚠', text:`<b>HRT 偏短</b>: ${r.HRT.toFixed(1)} h < 3h，${hrtRef}`});
     score -= 8;
   } else if (r.HRT > 24 + 1e-9) {
-    checks.push({type:'info', ic:'ℹ', text:`<b>HRT 较长</b>: ${r.HRT.toFixed(1)} h &gt; 24 h（与活性污泥工具同一提示阈值），设计保守、基建投资偏大；${hrtRef}，请核对池容控制因素`});
+    checks.push({type:'info', ic:'ℹ', text:`<b>HRT 较长</b>: ${r.HRT.toFixed(1)} h &gt; 24 h（与活性污泥工具同一提示阈值），设计保守、基建投资偏大；${hrtRef}，请核对Yếu tố khống chế thể tích bể`});
   } else {
     checks.push({type:'ok', ic:'✓', text:`<b>HRT</b>: ${r.HRT.toFixed(1)} h（${hrtRef}）`});
   }
@@ -2517,7 +2517,7 @@ function drawIFASFlow(r) {
   const svg = $('ifasFlowSvg'); if (svg) svg.innerHTML = h;
 }
 
-// 复制设计结果（仿纯 MBBR copyStages：覆盖全部主要结果，数值取自页面显示）
+// 复制Kết quả thiết kế（仿纯 MBBR copyStages：覆盖全部主要结果，数值取自页面显示）
 function copyIFAS() {
   const t = id => ($(id)?.textContent || '—').trim();
   const v = id => ($(id)?.value ?? '').toString().trim();
@@ -2529,35 +2529,35 @@ function copyIFAS() {
   const txt = `IFAS ${isRetro ? '改造' : '新建'} · 方案 ${cfgNum} ${cfgName}
 进水 Q=${v('ifas_Q')} 万m³/d · T=${v('ifas_T')}°C（T_min=${v('ifas_Tmin') || '自动 ' + Math.min(parseFloat(v('ifas_T')), 12)}°C） · BOD₀=${v('ifas_BOD0')} · NH₄₀=${v('ifas_NH40')} · TN₀=${v('ifas_TN0')} · TP₀=${v('ifas_TP0')} · SS₀=${v('ifas_SS0')} mg/L
 出水 BOD≤${v('ifas_BODe')} · NH₄≤${v('ifas_NH4e')} · TN≤${v('ifas_TNe')} · TP≤${v('ifas_TPe')} · SS≤${v('ifas_SSe')} mg/L
-${isRetro ? `原有池容 ${v('ifas_Vexisting')} m³ · 原有 MLSS ${v('ifas_MLSSexisting')} → 目标 MLSS ${v('ifas_MLSS_new')} mg/L` : `MLSS ${v('ifas_MLSS')} mg/L · 设计 SRT ${v('ifas_SRT')} d`} · 填充率 ${v('ifas_fillRatio' + sfx)}% · 比表面积 ${v('ifas_specArea' + sfx)} m²/m³ · 生物量 ${v('ifas_biofilm' + sfx)} g VSS/m²
+${isRetro ? `原有池容 ${v('ifas_Vexisting')} m³ · MLSS hiện hữu ${v('ifas_MLSSexisting')} → 目标 MLSS ${v('ifas_MLSS_new')} mg/L` : `MLSS ${v('ifas_MLSS')} mg/L · 设计 SRT ${v('ifas_SRT')} d`} · 填充率 ${v('ifas_fillRatio' + sfx)}% · 比表面积 ${v('ifas_specArea' + sfx)} m²/m³ · 生物量 ${v('ifas_biofilm' + sfx)} g VSS/m²
 容积比 预缺氧/好氧/后缺氧 = ${v('ifas_r_preAnox_pct')}/${v('ifas_r_aer_pct')}/${v('ifas_r_postAnox_pct')}% · RAS ${v('ifas_RAS')}%${vis('ifas_MLR_field') ? ' · MLR ' + v('ifas_MLR') + '%' : ''}
 
 ─── 池容 ───
 总池容: ${t('ifas_r_V')} m³ · HRT ${t('ifas_r_HRT')} h
-池容控制因素: ${t('ifas_r_Vctrl')}
+Yếu tố khống chế thể tích bể: ${t('ifas_r_Vctrl')}
 ${vis('ifas_row_preAnox') ? `预缺氧 ${t('ifas_r_V_preAnox')} m³ · ` : ''}好氧 IFAS ${t('ifas_r_V_aer')} m³${vis('ifas_row_postAnox') ? ` · 后缺氧 ${t('ifas_r_V_postAnox')} m³` : ''}
-填料体积 ${t('ifas_r_VfillMat')} m³ · 填料面积 ${t('ifas_r_Atotal')} m²（所需 A_BOD + A_nit = ${t('ifas_r_Areq')} m²）
+Thể tích giá thể ${t('ifas_r_VfillMat')} m³ · 填料面积 ${t('ifas_r_Atotal')} m²（所需 A_BOD + A_nit = ${t('ifas_r_Areq')} m²）
 二沉池: 面积 / HRT ${t('ifas_r_settleAH')} m² / h · 表面负荷 ${t('ifas_r_surfLoad')} m/h（Kz ${t('ifas_r_Kz')}） · 容积 ${t('ifas_r_Vsettle')} m³
 ${isRetro ? `
 ─── 改造能力 ───
 改造前 ${t('ifas_r_capBefore')} → 改造后 ${t('ifas_r_capAfter')} 万m³/d（提升 ${t('ifas_r_capBoost')}%）
 ${t('ifas_r_capCtrl')}
 ` : ''}
-─── 双相生物量与产泥 ───
-X_bio ${t('ifas_r_Xbio')} kg VSS · X_susp ${t('ifas_r_Xsusp')} kg VSS · 等效 MLSS ${t('ifas_r_MLSSeq')} mg/L
+─── Sinh khối hai pha与产泥 ───
+X_bio ${t('ifas_r_Xbio')} kg VSS · X_susp ${t('ifas_r_Xsusp')} kg VSS · MLSS tương đương ${t('ifas_r_MLSSeq')} mg/L
 悬浮相泥龄 / 好氧泥龄 / SF·SRT_min: ${t('ifas_r_SRTact')} d
 附着相贡献 BOD ${t('ifas_r_bioContribBOD')}% · 硝化 ${t('ifas_r_bioContribN')}%
-剩余污泥干量: ${t('ifas_r_dX_total')} kg DS/d（ΔX_VSS ${t('ifas_r_dX')} + 惰性 SS ${t('ifas_r_dX_inert')} + 化学 ${t('ifas_r_dX_chem')} + 碳源 ${t('ifas_r_dX_carbon')}） · 泥饼 ${t('ifas_r_sludge_wet')} t/d · 处置 ${t('ifas_r_sludge_cost')} 万元/年
+Khối lượng khô bùn dư: ${t('ifas_r_dX_total')} kg DS/d（ΔX_VSS ${t('ifas_r_dX')} + 惰性 SS ${t('ifas_r_dX_inert')} + 化学 ${t('ifas_r_dX_chem')} + 碳源 ${t('ifas_r_dX_carbon')}） · 泥饼 ${t('ifas_r_sludge_wet')} t/d · 处置 ${t('ifas_r_sludge_cost')} 万元/年
 
 ─── 去除效果 ───
 BOD 去除率 ${t('ifas_r_BODrm')}% · NH₄ 去除率 ${t('ifas_r_NH4rm')}%
 被硝化氮 ${t('ifas_r_Nnit')} kg N/d · 预缺氧/后缺氧脱氮 ${t('ifas_r_NDN')} kg N/d
 TN 去除率 ${t('ifas_r_TNrm')}%（预计出水 ${t('ifas_r_TNout')} mg/L） · 预计出水 TP ${t('ifas_r_TPout')} mg/L · 剩余碱度 ${t('ifas_r_alkRem')} mg/L
 
-─── 需氧量与曝气 ───
+─── Nhu cầu oxy và sục khí ───
 海拔 ${v('ifa_alt')} m（SOR 的 P_b 与鼓风机进气压力按当地大气压）
 AOR ${t('ifas_r_AOR')} kg O₂/d · SOR ${t('ifas_r_SOR')} kg O₂/d · EE ${t('ifas_r_ifaSOR')}%
-需氧气量 / 填料流化下限（${$('ifa_mixAir')?.value} Nm³/m²·h） ${t('ifas_r_airParts')} Nm³/h → 设计供气量 ${t('ifas_r_ifaAir')} Nm³/h（${t('ifas_r_airCtrl')}；Nm³ 指 0 °C、101.325 kPa，换算为 20 °C 标态 ×1.073）
+需氧气量 / 填料流化下限（${$('ifa_mixAir')?.value} Nm³/m²·h） ${t('ifas_r_airParts')} Nm³/h → Lưu lượng khí cấp thiết kế ${t('ifas_r_ifaAir')} Nm³/h（${t('ifas_r_airCtrl')}；Nm³ 指 0 °C、101.325 kPa，换算为 20 °C 标态 ×1.073）
 曝气器（${document.querySelector('#panel-ifas .aerator-tab.active b')?.textContent || ''}）数量/投资 ${t('ifas_r_ifaCount')} 个/万元
 风机（${$('ifa_blowerType')?.selectedOptions[0]?.textContent || ''}）: ${t('ifas_r_blower')}
 风机轴功率 / 好氧段搅拌 / 吨水电耗: ${t('ifas_r_blowerPower')} kW / kW / kWh/m³
@@ -2623,26 +2623,26 @@ function calcAndRenderIFAS() {
     ['ifas_Q','进水流量 Q'], ['ifas_BOD0','进水 BOD₀'], ['ifas_fillRatio' + sfxV,'填充率'], ['ifas_specArea' + sfxV,'比表面积'],
     ['ifas_SALR' + sfxV,'SALR'], ['ifas_SRT' + sfxV,'SRT'],
     ['ifas_poolH' + sfxV,'有效水深'], ['ifas_settleQ' + sfxV,'二沉池表面负荷'],
-    ['ifas_alpha','α'], ['ifas_theta','θ_nit'], ['ifas_theta_bod','θ_BOD'], ['ifas_Y','Y'], ['ifas_Kn','K_N'], ['ifas_SF','硝化安全系数 SF'],
-    ['ifas_pumpEff','泵效率'], ['ifas_acetatePurity','乙酸钠有效含量'], ['ifas_r_aer_pct','好氧 IFAS 段 %'],
-    ['ifa_perDevice','单个曝气器气量'], ['ifa_OTE','OTE'], ['ifa_spacing','曝气器布置间距'], ['ifa_efficiency','风机效率'],
+    ['ifas_alpha','α'], ['ifas_theta','θ_nit'], ['ifas_theta_bod','θ_BOD'], ['ifas_Y','Y'], ['ifas_Kn','K_N'], ['ifas_SF','Hệ số an toàn nitrat hoá SF'],
+    ['ifas_pumpEff','Hiệu suất bơm'], ['ifas_acetatePurity','Hàm lượng hữu hiệu của natri axetat'], ['ifas_r_aer_pct','Ngăn IFAS hiếu khí %'],
+    ['ifa_perDevice','单个曝气器气量'], ['ifa_OTE','OTE'], ['ifa_spacing','Khoảng cách bố trí thiết bị sục khí'], ['ifa_efficiency','Hiệu suất máy thổi khí'],
     ['ifa_backupFactor','备用系数'], ['ifa_beta','§11 β'], ['ifa_theta','§11 θ']
   ].concat(isNew ? [['ifas_MLSS','MLSS'], ['ifas_VSS_SS','MLVSS/MLSS'], ['ifas_settleHRT','沉淀最小 HRT']]
-                 : [['ifas_Vexisting','原有池容'], ['ifas_MLSSexisting','原有 MLSS'], ['ifas_MLSS_new','改造后目标 MLSS'], ['ifas_VSS_SS2','MLVSS/MLSS'], ['ifas_Asettle_r','原有二沉池面积']]);
+                 : [['ifas_Vexisting','原有池容'], ['ifas_MLSSexisting','MLSS hiện hữu'], ['ifas_MLSS_new','MLSS mục tiêu sau cải tạo'], ['ifas_VSS_SS2','MLVSS/MLSS'], ['ifas_Asettle_r','Diện tích bể lắng thứ cấp hiện hữu']]);
   const badI = wkCheckPositive(posList);
   // 非负且必填（空值按无效，不静默按 0 / 默认值计算）
   const nnReq = [
     ['ifas_T','水温'], ['ifas_NH40','进水 NH₄'], ['ifas_TN0','进水 TN'], ['ifas_TP0','进水 TP'], ['ifas_Alk','碱度'],
     ['ifas_BODe','出水 BOD'], ['ifas_NH4e','出水 NH₄'], ['ifas_TNe','出水 TN'], ['ifas_TPe','出水 TP'],
-    ['ifas_SS0','进水 SS₀'], ['ifas_SSe','出水 SSₑ'], ['ifas_fSS','惰性 SS 系数 f'],
-    ['ifas_biofilm' + sfxV,'填料表面生物量'], ['ifas_r_preAnox_pct','预缺氧段 %'], ['ifas_r_postAnox_pct','后缺氧段 %'],
-    ['ifas_RAS','RAS 回流比'], ['ifas_MLR','MLR'], ['ifas_RAS_H','RAS 泵扬程'], ['ifas_MLR_H','MLR 泵扬程'],
-    ['ifas_Kd','Kd'], ['ifas_Y_bio','Y_bio'], ['ifas_SDNR','SDNR₂₀'], ['ifas_solidFrac','填料实体率'],
-    ['ifas_carbonPrice','碳源价格'], ['ifas_PACprice','PAC 价格'], ['ifas_alkDose','补碱量'], ['ifas_alkPrice','NaHCO₃ 价格'],
-    ['ifas_sludge_price','污泥处置费用'], ['ifa_price','曝气器单价'], ['ifa_dp_aer','曝气池阻力'], ['ifa_dp_pipe','管路阻力'], ['ifa_DO','§11 DO'], ['ifa_mixAir','填料流化最小气量强度']
+    ['ifas_SS0','进水 SS₀'], ['ifas_SSe','出水 SSₑ'], ['ifas_fSS','Hệ số SS trơ f'],
+    ['ifas_biofilm' + sfxV,'Sinh khối trên bề mặt giá thể'], ['ifas_r_preAnox_pct','Ngăn thiếu khí trước %'], ['ifas_r_postAnox_pct','Ngăn thiếu khí sau %'],
+    ['ifas_RAS','Tỷ lệ tuần hoàn RAS'], ['ifas_MLR','MLR'], ['ifas_RAS_H','Cột áp bơm RAS'], ['ifas_MLR_H','Cột áp bơm MLR'],
+    ['ifas_Kd','Kd'], ['ifas_Y_bio','Y_bio'], ['ifas_SDNR','SDNR₂₀'], ['ifas_solidFrac','Tỷ phần thể tích rắn của giá thể'],
+    ['ifas_carbonPrice','Giá nguồn carbon'], ['ifas_PACprice','Giá PAC'], ['ifas_alkDose','补碱量'], ['ifas_alkPrice','Giá NaHCO₃'],
+    ['ifas_sludge_price','Chi phí xử lý bùn'], ['ifa_price','曝气器单价'], ['ifa_dp_aer','Tổn thất áp suất bể sục khí'], ['ifa_dp_pipe','Tổn thất áp suất đường ống'], ['ifa_DO','§11 DO'], ['ifa_mixAir','Cường độ cấp khí tối thiểu để làm chuyển động giá thể']
   ];
-  const badI2 = wkCheckNonNeg(nnReq.concat([['ifas_V_input','总池容'], ['ifas_PAC','PAC 投加量'], ['ifas_rNit' + sfxV,'自定义填料硝化速率'], ['ifas_Tmin','最低设计水温 T_min']]));
-  // 可留空的输入：填写时须有效（Kz > 0；填料实体率 < 1）
+  const badI2 = wkCheckNonNeg(nnReq.concat([['ifas_V_input','总池容'], ['ifas_PAC','Liều lượng PAC'], ['ifas_rNit' + sfxV,'Tốc độ nitrat hoá của giá thể tự nhập'], ['ifas_Tmin','最低设计Nhiệt độ nước T_min']]));
+  // 可留空的输入：填写时须有效（Kz > 0；Tỷ phần thể tích rắn của giá thể < 1）
   const kzEl = $('ifas_Kz'), kzBad = !!kzEl && kzEl.value.trim() !== '' && !(parseFloat(kzEl.value) > 0);
   if (kzEl) kzEl.classList.toggle('invalid', kzBad);
   if (kzBad) badI.push('总变化系数 Kz');
@@ -2671,15 +2671,15 @@ function calcAndRenderIFAS() {
   if (tmBad) tmEl.classList.add('invalid');
   if (badI.length || badI2.length || mcBad || tnLtNH || sfBad || bodBad || hBad || altBad || tBad || tmBad) {
     const msgs = [...badI.map(x=>'大于 0 的'+x), ...badI2.map(x=>'不小于 0 的'+x)];
-    if (sfBad) msgs.push('小于 1 的填料实体率');
+    if (sfBad) msgs.push('小于 1 的Tỷ phần thể tích rắn của giá thể');
     if (mcBad) msgs.push('0-100 之间的泥饼含水率');
     if (tnLtNH) msgs.push('不小于进水 NH₄-N 的进水 TN');
     if (bodBad) msgs.push('大于出水 BOD 的进水 BOD₀');
     if (hBad) msgs.push('大于 0.2 m（曝气器安装高度）的好氧池有效水深');
     if (altBad) msgs.push('−500 ~ 6000 m 之间的海拔');
-    if (tBad) msgs.push('不高于 40 ℃ 的水温 T');
-    if (tmBad) msgs.push('不高于 40 ℃ 且不高于水温 T 的最低设计水温 T_min');
-    wkShowInvalid('panel-ifas', ['ifasCheckList'], `<b>输入无效</b>：请输入${msgs.join('、')}`);
+    if (tBad) msgs.push('不高于 40 ℃ 的Nhiệt độ nước T');
+    if (tmBad) msgs.push('不高于 40 ℃ 且不高于Nhiệt độ nước T 的最低设计Nhiệt độ nước T_min');
+    wkShowInvalid('panel-ifas', ['ifasCheckList'], `<b>Dữ liệu nhập không hợp lệ</b>：Vui lòng nhập${msgs.join('、')}`);
     return;
   }
   const r = calcIFAS();
@@ -2771,9 +2771,9 @@ function calcAndRenderIFAS() {
   if (cl) cl.innerHTML = chk.checks.map(c =>
     `<div class="check-item check-${c.type}"><span class="ic">${c.ic}</span><span>${c.text}</span></div>`).join('');
   if ($('ifas_scoreNum')) $('ifas_scoreNum').textContent = chk.score;
-  const t = chk.score >= 85 ? ['✅ 设计优秀','各项指标均衡'] :
-            chk.score >= 70 ? ['👍 设计合格','基本合理'] :
-                              ['⚠ 设计有风险','需调整关键参数'];
+  const t = chk.score >= 85 ? ['✅ Thiết kế tốt','Các chỉ tiêu cân đối'] :
+            chk.score >= 70 ? ['👍 Thiết kế đạt yêu cầu','Cơ bản hợp lý'] :
+                              ['⚠ Thiết kế có rủi ro','Cần điều chỉnh các thông số quan trọng'];
   if ($('ifas_scoreTitle')) $('ifas_scoreTitle').textContent = t[0];
   if ($('ifas_scoreDesc'))  $('ifas_scoreDesc').textContent  = t[1];
 

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MBBR 工程设计平台 · 纯 MBBR 段组合 | 水处理工具箱 · WaterKit</title>
+<title>Nền tảng thiết kế công trình MBBR · Tổ hợp giai đoạn MBBR thuần túy | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="纯 MBBR 工程设计平台：按表面负荷（按进入负荷、10 ℃ 基准温度修正）计算纯 MBBR 池容与 7 种段组合，含需氧量、曝气器与风机选型、产泥与药剂，另有填料选型与案例库；IFAS 泥膜复合工艺见独立工具「IFAS 工程设计」（循环水养殖 RAS 见 iRAS）。">
-<meta name="keywords" content="纯MBBR,pure MBBR,移动床生物膜,生物膜反应器,SALR,填料选型,AnoxKaldnes,Kaldnes,城镇污水提标,渗滤液,水产养殖,工业废水,WaterKit,登登科技">
-<meta name="author" content="海南登登科技咨询有限公司">
+<meta name="description" content="Nền tảng thiết kế công trình MBBR thuần túy: tính thể tích bể và 7 tổ hợp giai đoạn theo tải trọng bề mặt đầu vào, hiệu chỉnh theo nhiệt độ chuẩn 10 ℃; bao gồm nhu cầu oxy, lựa chọn thiết bị sục khí và máy thổi khí, lượng bùn và hóa chất, cùng công cụ chọn giá thể và thư viện dự án. Công nghệ kết hợp bùn và màng IFAS có trong công cụ riêng «Thiết kế công trình IFAS»; hệ thống nuôi trồng thủy sản tuần hoàn RAS xem tại iRAS.">
+<meta name="keywords" content="MBBR thuần túy,pure MBBR,màng sinh học tầng chuyển động,bể phản ứng màng sinh học,SALR,lựa chọn giá thể,AnoxKaldnes,Kaldnes,nâng cấp xử lý nước thải đô thị,nước rỉ rác,nuôi trồng thủy sản,nước thải công nghiệp,WaterKit,Deng Deng Technology">
+<meta name="author" content="Công ty TNHH Tư vấn Công nghệ Deng Deng Hải Nam">
 <link rel="canonical" href="https://waterkit.cn/mbbr-design.html">
 <script>if (location.hash === '#ifas') location.replace('ifas-design.html');  // 旧锚点：IFAS 已独立为单独工具</script>
 <style>
@@ -520,7 +520,7 @@ body {
   background: var(--brand-light);
 }
 .carrier-card.recommended::before {
-  content: '⭐ 推荐';
+  content: '⭐ Khuyến nghị';
   position: absolute; top: -8px; right: 12px;
   background: var(--accent); color: white;
   padding: 2px 8px; border-radius: 99px;
@@ -1504,37 +1504,37 @@ body {
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Công nghệ DengDeng</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-process">工艺计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-process">Tính toán công nghệ</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Công nghệ DengDeng</a>
     </nav>
   </div>
 </header>
-<div class="beta-bar" role="note"><div class="beta-inner">🚧 <b>Beta · 开发中</b>：本平台仍在持续校核与迭代，计算结果仅供方案估算参考，工程设计请以正式设计文件为准。发现问题欢迎 <a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a>。</div></div>
+<div class="beta-bar" role="note"><div class="beta-inner">🚧 <b>Beta · Đang phát triển</b>：Nền tảng vẫn đang được kiểm tra và cập nhật. Kết quả chỉ phục vụ ước tính phương án; thiết kế công trình phải căn cứ vào hồ sơ thiết kế chính thức. Nếu phát hiện vấn đề, vui lòng <a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">gửi Issue</a>。</div></div>
 
 <!-- ========== Hero ========== -->
 <section class="hero">
   <div class="hero-inner">
     <div class="breadcrumb">
-      <a href="index.html">WaterKit</a> / <a href="index.html#cat-process">工艺计算</a> / MBBR 工程设计平台
+      <a href="index.html">WaterKit</a> / <a href="index.html#cat-process">Tính toán công nghệ</a> / Nền tảng thiết kế công trình MBBR
     </div>
-    <div class="hero-badge">🧬 MBBR 工程设计</div>
-    <h1 class="hero-title">MBBR 工程设计平台</h1>
+    <div class="hero-badge">🧬 Thiết kế công trình MBBR</div>
+    <h1 class="hero-title">Nền tảng thiết kế công trình MBBR</h1>
     <p class="hero-sub">
-      移动床生物膜反应器(MBBR)的工程设计平台。涵盖生物膜微观动力学、填料选型、曝气系统、段组合、典型案例、挂膜启动、工艺发展史全流程。
-      依据 Metcalf&Eddy / Ødegaard / HJ 576,覆盖城镇污水提标、垃圾渗滤液、水产养殖尾水、工业废水等场景（循环水养殖 RAS 见 <a href="https://iras.cn/" target="_blank" rel="noopener">iRAS</a>）。
-      本页为纯 MBBR（纯生物膜、无污泥回流）；IFAS 泥膜复合工艺见独立工具 <a href="ifas-design.html">IFAS 工程设计</a>。
+      Nền tảng thiết kế công trình bể phản ứng màng sinh học tầng chuyển động (MBBR), bao gồm động học vi mô của màng sinh học, lựa chọn giá thể, hệ thống sục khí, tổ hợp giai đoạn, dự án điển hình, tạo màng và khởi động, cùng lịch sử phát triển công nghệ.
+      Dựa trên Metcalf&Eddy / Ødegaard / HJ 576, áp dụng cho nâng cấp xử lý nước thải đô thị, nước rỉ rác, nước thải nuôi trồng thủy sản và nước thải công nghiệp (hệ thống nuôi trồng tuần hoàn RAS xem tại <a href="https://iras.cn/" target="_blank" rel="noopener">iRAS</a>）。
+      Trang này dành cho MBBR thuần túy (chỉ có màng sinh học, không tuần hoàn bùn); công nghệ IFAS kết hợp bùn và màng sinh học xem tại công cụ riêng <a href="ifas-design.html">Thiết kế công trình IFAS</a>。
     </p>
     <div class="hero-meta">
-      <span>📘 <b>温度修正 θ</b> BOD 1.07 / 硝化 1.09</span>
-      <span>🧪 <b>生物膜扩散</b> 微观动力学</span>
-      <span>🧱 <b>11 种填料</b> 对比选型</span>
-      <span>🔧 <b>设计院级</b> 参数深度</span>
+      <span>📘 <b>Hiệu chỉnh nhiệt độ θ</b> BOD 1.07 / nitrat hóa 1.09</span>
+      <span>🧪 <b>Khuếch tán trong màng sinh học</b> Động học vi mô</span>
+      <span>🧱 <b>11 loại giá thể</b> So sánh và lựa chọn</span>
+      <span>🔧 <b>Cấp độ thiết kế công trình</b> với thông số chuyên sâu</span>
     </div>
   </div>
 </section>
@@ -1548,25 +1548,25 @@ body {
 
 
       <button class="tab-btn active" data-tab="stages" onclick="switchTab('stages')">
-        MBBR 工艺设计<span class="tab-sub">纯生物膜·无回流</span>
+        Thiết kế công nghệ MBBR<span class="tab-sub">Màng sinh học thuần túy · không tuần hoàn</span>
       </button>
-      <a class="tab-link" href="ifas-design.html" title="IFAS（泥膜复合）已独立为单独工具">
-        IFAS → 独立工具<span class="tab-sub">泥膜复合·含回流 ↗</span>
+      <a class="tab-link" href="ifas-design.html" title="IFAS (kết hợp bùn và màng sinh học) đã có công cụ riêng">
+        IFAS → Công cụ riêng<span class="tab-sub">Kết hợp bùn và màng · có tuần hoàn ↗</span>
       </a>
       <button class="tab-btn" data-tab="ras" onclick="switchTab('ras')">
-        RAS 循环水养殖 ↗<span class="tab-sub">见 iRAS</span>
+        Nuôi trồng thủy sản tuần hoàn RAS ↗<span class="tab-sub">xem iRAS</span>
       </button>
       <button class="tab-btn" data-tab="cases" onclick="switchTab('cases')">
-        案例库<span class="tab-sub">Cases</span>
+        Thư viện ví dụ<span class="tab-sub">Cases</span>
       </button>
       <button class="tab-btn" data-tab="startup" onclick="switchTab('startup')">
-        挂膜与启动<span class="tab-sub">Startup</span>
+        Tạo màng và khởi động<span class="tab-sub">Startup</span>
       </button>
       <button class="tab-btn" data-tab="carriers" onclick="switchTab('carriers')">
-        填料选型<span class="tab-sub">Carriers</span>
+        Lựa chọn giá thể<span class="tab-sub">Carriers</span>
       </button>
       <button class="tab-btn" data-tab="history" onclick="switchTab('history')">
-        MBBR 发展史<span class="tab-sub">History</span>
+        Lịch sử phát triển MBBR<span class="tab-sub">History</span>
       </button>
     </div>
   </div>
@@ -1575,26 +1575,26 @@ body {
   <!-- ===== Tab 4: 段组合 ===== -->
   <div class="tab-panel active" id="panel-stages">
 
-    <div class="ifas-moved"><a href="ifas-design.html">IFAS（泥膜复合）已独立为单独工具 →</a></div>
+    <div class="ifas-moved"><a href="ifas-design.html">IFAS (kết hợp bùn và màng sinh học) đã có công cụ riêng →</a></div>
 
-    <!-- ① 进水 & 出水参数（独立输入） -->
-    <div class="section-title" style="margin-top:8px;"><span class="num">1</span>进水 & 出水参数</div>
+    <!-- ① Thông số nước đầu vào và đầu ra（独立输入） -->
+    <div class="section-title" style="margin-top:8px;"><span class="num">1</span>Thông số nước đầu vào và đầu ra</div>
     <div class="water-preset" style="margin-bottom:10px;">
-      <button class="preset-tab active" data-st-preset="municipal" onclick="setStPreset('municipal')">城镇污水</button>
-      <button class="preset-tab" data-st-preset="leachate" onclick="setStPreset('leachate')">垃圾渗滤液</button>
-      <button class="preset-tab" data-st-preset="aqua" onclick="setStPreset('aqua')">水产养殖尾水</button>
-      <button class="preset-tab" data-st-preset="industrial" onclick="setStPreset('industrial')">工业废水</button>
-      <button class="preset-tab" type="button" onclick="resetStDefaults()" title="恢复本 Tab 全部输入（含高级参数、容积比、曝气与风机参数）为页面初始默认值">↺ 恢复默认</button>
+      <button class="preset-tab active" data-st-preset="municipal" onclick="setStPreset('municipal')">Nước thải đô thị</button>
+      <button class="preset-tab" data-st-preset="leachate" onclick="setStPreset('leachate')">Nước rỉ rác</button>
+      <button class="preset-tab" data-st-preset="aqua" onclick="setStPreset('aqua')">Nước thải nuôi trồng thủy sản</button>
+      <button class="preset-tab" data-st-preset="industrial" onclick="setStPreset('industrial')">Nước thải công nghiệp</button>
+      <button class="preset-tab" type="button" onclick="resetStDefaults()" title="Khôi phục mọi dữ liệu của thẻ này về giá trị mặc định ban đầu, gồm thông số nâng cao, tỷ lệ thể tích, thông số sục khí và máy thổi khí">↺ Khôi phục mặc định</button>
     </div>
     <div class="grid">
       <div class="field"><label for="st_Q">Q <span class="unit">万 m³/d</span></label>
         <input type="number" id="st_Q" value="1" step="0.1" oninput="calcStages()"></div>
-      <div class="field"><label for="st_T">T（平均水温） <span class="unit">°C</span></label>
+      <div class="field"><label for="st_T">T（Nhiệt độ nước trung bình） <span class="unit">°C</span></label>
         <input type="number" id="st_T" value="20" step="1" oninput="calcStages()">
-        <div class="helper">平均水温：需氧量、SOR、产泥按此计</div></div>
-      <div class="field"><label for="st_Tmin">最低设计水温 T_min <span class="unit">°C</span></label>
+        <div class="helper">Nhiệt độ nước trung bình: dùng để tính nhu cầu oxy, SOR và lượng bùn sinh ra</div></div>
+      <div class="field"><label for="st_Tmin">Nhiệt độ nước thiết kế thấp nhất T_min <span class="unit">°C</span></label>
         <input type="number" id="st_Tmin" value="12" step="1" oninput="calcStages()">
-        <div class="helper">各段填料面积按此温度定（速率以 10 ℃ 为基准，θ 修正温度上限 20 ℃）</div></div>
+        <div class="helper">Diện tích giá thể từng giai đoạn được xác định theo nhiệt độ này (tốc độ lấy 10 ℃ làm chuẩn; nhiệt độ hiệu chỉnh θ tối đa 20 ℃)</div></div>
       <div class="field"><label for="st_BOD0">BOD₀ <span class="unit">mg/L</span></label>
         <input type="number" id="st_BOD0" value="180" step="5" oninput="calcStages()"></div>
       <div class="field"><label for="st_NH40">NH₄-N₀ <span class="unit">mg/L</span></label>
@@ -1605,140 +1605,140 @@ body {
         <input type="number" id="st_TP0" value="5" step="0.2" oninput="calcStages()"></div>
     </div>
     <div class="grid">
-      <div class="field"><label for="st_standard">排放标准</label>
+      <div class="field"><label for="st_standard">Tiêu chuẩn xả thải</label>
         <select id="st_standard" onchange="applyStStandard()">
-          <option value="1A">一级 A (GB 18918)</option>
-          <option value="grade4">准 IV 类（地方标准）</option>
-          <option value="grade3">地表 III 类（TP 按河流 0.2；湖库为 0.05，需另行校核）</option>
-          <option value="custom">自定义</option>
+          <option value="1A">Cấp I A (GB 18918)</option>
+          <option value="grade4">Tương đương loại IV (tiêu chuẩn địa phương)</option>
+          <option value="grade3">Nước mặt loại III (TP cho sông 0.2; hồ và hồ chứa 0.05, cần kiểm tra riêng)</option>
+          <option value="custom">Tùy chỉnh</option>
         </select>
-        <div class="helper">准 IV 类为地方标准（TN 10 等），限值按项目所在地调整</div></div>
-      <div class="field"><label for="st_BODe">出水 BOD <span class="unit">mg/L</span></label>
+        <div class="helper">Tương đương loại IV là tiêu chuẩn địa phương (TN 10, v.v.); điều chỉnh giới hạn theo địa điểm dự án</div></div>
+      <div class="field"><label for="st_BODe">BOD đầu ra <span class="unit">mg/L</span></label>
         <input type="number" id="st_BODe" value="10" step="1" oninput="calcStages()"></div>
-      <div class="field"><label for="st_NH4e">出水 NH₄-N <span class="unit">mg/L</span></label>
+      <div class="field"><label for="st_NH4e">NH₄-N đầu ra <span class="unit">mg/L</span></label>
         <input type="number" id="st_NH4e" value="5" step="0.5" oninput="calcStages()"></div>
-      <div class="field"><label for="st_TNe">出水 TN <span class="unit">mg/L</span></label>
+      <div class="field"><label for="st_TNe">TN đầu ra <span class="unit">mg/L</span></label>
         <input type="number" id="st_TNe" value="15" step="0.5" oninput="calcStages()"></div>
-      <div class="field"><label for="st_TPe">出水 TP <span class="unit">mg/L</span></label>
+      <div class="field"><label for="st_TPe">TP đầu ra <span class="unit">mg/L</span></label>
         <input type="number" id="st_TPe" value="0.5" step="0.1" oninput="calcStages()"></div>
     </div>
 
-    <!-- ② 工艺推荐（自动） -->
-    <div class="section-title"><span class="num">2</span>工艺推荐 <span class="sub">根据进出水自动分析</span></div>
+    <!-- ② Đề xuất công nghệ（自动） -->
+    <div class="section-title"><span class="num">2</span>Đề xuất công nghệ <span class="sub">Tự động phân tích theo nước đầu vào và đầu ra</span></div>
     <div id="st_recommend_box" style="margin-bottom:16px;"></div>
 
 
     <!-- 段组合选择 -->
-    <div class="section-title"><span class="num">3</span>段组合方案选择</div>
+    <div class="section-title"><span class="num">3</span>Lựa chọn phương án tổ hợp các giai đoạn</div>
     <div class="stage-configs">
       <button class="stage-config" data-stages="1" onclick="setStageConfig(1)">
         <div class="sc-num">1</div>
-        <div class="sc-title">单级 MBBR</div>
-        <div class="sc-sub">仅硝化 · 最简单</div>
-        <div class="sc-flow">MBBR → 沉淀</div>
+        <div class="sc-title">MBBR một bậc</div>
+        <div class="sc-sub">Chỉ nitrat hoá · đơn giản nhất</div>
+        <div class="sc-flow">MBBR → lắng</div>
       </button>
       <button class="stage-config" data-stages="2" onclick="setStageConfig(2)">
         <div class="sc-num">2</div>
-        <div class="sc-title">前高+后低双好氧</div>
-        <div class="sc-sub">国内最常见 · 分工明确</div>
-        <div class="sc-flow">高负荷MBBR → 低负荷MBBR → 沉淀</div>
+        <div class="sc-title">Hai giai đoạn hiếu khí: tải trọng cao trước, thấp sau</div>
+        <div class="sc-sub">Phổ biến tại Trung Quốc · phân chia chức năng rõ ràng</div>
+        <div class="sc-flow">MBBR tải trọng cao → MBBR tải trọng thấp → 沉淀</div>
       </button>
       <button class="stage-config" data-stages="3" onclick="setStageConfig(3)">
         <div class="sc-num">3</div>
-        <div class="sc-title">硝化 + 后缺氧</div>
-        <div class="sc-sub">脱氮 · 需外加碳源</div>
-        <div class="sc-flow">硝化 → 后缺氧 → 沉淀</div>
+        <div class="sc-title">Nitrat hoá + thiếu khí sau</div>
+        <div class="sc-sub">Khử nitơ · cần bổ sung nguồn cacbon</div>
+        <div class="sc-flow">Nitrat hoá → thiếu khí sau → lắng</div>
       </button>
       <button class="stage-config" data-stages="4" onclick="setStageConfig(4)">
         <div class="sc-num">4</div>
-        <div class="sc-title">预缺氧 + 硝化(A/O)</div>
-        <div class="sc-sub">经典脱氮 · 含内回流 MLR</div>
-        <div class="sc-flow">预缺氧 → 硝化 → 沉淀 · MLR 200-400%</div>
+        <div class="sc-title">Thiếu khí trước + nitrat hoá (A/O)</div>
+        <div class="sc-sub">Khử nitơ kinh điển · có tuần hoàn nội MLR</div>
+        <div class="sc-flow">Thiếu khí trước → nitrat hoá → lắng · MLR 200-400%</div>
       </button>
       <button class="stage-config" data-stages="5" onclick="setStageConfig(5)">
         <div class="sc-num">5</div>
-        <div class="sc-title">预缺氧+硝化+后缺氧</div>
-        <div class="sc-sub">双重脱氮 · 含内回流</div>
-        <div class="sc-flow">预缺氧 → 硝化 → 后缺氧 → 沉淀 · MLR</div>
+        <div class="sc-title">Thiếu khí trước + nitrat hoá + thiếu khí sau</div>
+        <div class="sc-sub">Khử nitơ hai giai đoạn · có tuần hoàn nội</div>
+        <div class="sc-flow">预缺氧 → Nitrat hoá → thiếu khí sau → lắng · MLR</div>
       </button>
       <button class="stage-config active" data-stages="6" onclick="setStageConfig(6)">
         <div class="sc-num">6</div>
-        <div class="sc-title">完整 BNR + 除磷</div>
-        <div class="sc-sub">脱氮 + 化除磷</div>
-        <div class="sc-flow">预缺氧 → 硝化 → 后缺氧 → 化除磷 · MLR</div>
+        <div class="sc-title">BNR hoàn chỉnh + khử phốt pho</div>
+        <div class="sc-sub">Khử nitơ + khử phốt pho bằng hoá chất</div>
+        <div class="sc-flow">Thiếu khí trước → nitrat hoá → thiếu khí sau → khử phốt pho bằng hoá chất · MLR</div>
       </button>
       <button class="stage-config" data-stages="7" onclick="setStageConfig(7)">
         <div class="sc-num">7</div>
-        <div class="sc-title">短程硝化 + 厌氧氨氧化</div>
-        <div class="sc-sub">高氨氮侧流 · 免外加碳源 · 需氧省约 60%</div>
-        <div class="sc-flow">短程硝化 → Anammox → 沉淀</div>
+        <div class="sc-title">Nitrat hoá bán phần + oxy hoá amoni kỵ khí</div>
+        <div class="sc-sub">Dòng phụ có amoni cao · không cần bổ sung nguồn cacbon · giảm khoảng 60% nhu cầu oxy</div>
+        <div class="sc-flow">Nitrat hoá bán phần → Anammox → lắng</div>
       </button>
     </div>
 
     <!-- 工艺参数 -->
-    <div class="section-title"><span class="num">4</span>工艺设计参数</div>
+    <div class="section-title"><span class="num">4</span>Thông số thiết kế công nghệ</div>
     <div class="auto-calc-notice" style="margin-bottom:10px;">
       <div class="notice-head"><span class="notice-ic">📘</span>
-        <span>生物膜设计负荷为经验参考值（以 10 ℃ 为基准、按温度修正），各段按进入该段的负荷定填料面积；国内项目请结合实测或厂家数据复核。</span>
+        <span>Tải trọng thiết kế màng sinh học là giá trị tham khảo theo kinh nghiệm (lấy 10 ℃ làm chuẩn và hiệu chỉnh theo nhiệt độ). Diện tích giá thể của từng giai đoạn được xác định theo tải trọng đầu vào; các dự án tại Trung Quốc cần đối chiếu với số liệu đo thực tế hoặc dữ liệu của nhà sản xuất.</span>
       </div>
     </div>
     <div class="grid">
-      <div class="field"><label for="st_V_total">总池容 V <span class="unit">m³</span></label>
-        <input type="number" id="st_V_total" value="" step="50" onchange="calcStages()" placeholder="留空自动估算">
-        <div class="helper">留空则按各段所需填料面积自动估算：预缺氧 A_pre、BOD 段 A_BOD（进入 BOD₅ 扣除前置反硝化消耗 3 g sBOD₅/g NO₃-Neq）、硝化 A_nit、后缺氧 A_post（r_postDN 1.5）各按进入负荷 ÷ T_min 修正速率计，÷ 比表面积 ÷ 填充率 ÷ 该段容积占比，取最紧的一段（合建好氧段 A_BOD + A_nit 相加；分级独立池各段分别计算）。选方案时容积比按面积需求自动分配</div></div>
-      <div class="field"><label for="st_nitClass">硝化速率·前处理类别</label>
+      <div class="field"><label for="st_V_total">Tổng thể tích bể V <span class="unit">m³</span></label>
+        <input type="number" id="st_V_total" value="" step="50" onchange="calcStages()" placeholder="Để trống để tự ước tính">
+        <div class="helper">Để trống để tự ước tính theo diện tích giá thể cần thiết của từng giai đoạn: thiếu khí trước A_pre, giai đoạn BOD A_BOD (BOD₅ đầu vào trừ lượng tiêu thụ khi khử nitrat trước là 3 g sBOD₅/g NO₃-Neq), nitrat hoá A_nit và thiếu khí sau A_post (r_postDN 1.5). Mỗi diện tích được tính bằng tải trọng đầu vào ÷ tốc độ hiệu chỉnh theo T_min, sau đó chia cho diện tích bề mặt riêng, tỷ lệ nạp giá thể và tỷ lệ thể tích của giai đoạn; lấy giá trị lớn nhất (giai đoạn hiếu khí kết hợp cộng A_BOD + A_nit; các bể riêng tính từng giai đoạn). Khi chọn phương án, tỷ lệ thể tích tự phân bổ theo nhu cầu diện tích.</div></div>
+      <div class="field"><label for="st_nitClass">Tốc độ nitrat hoá · loại tiền xử lý</label>
         <select id="st_nitClass" onchange="calcStages()">
-          <option value="auto">按方案自动（有预缺氧→b，无→a）</option>
-          <option value="a">a：无初沉、无前置反硝化（0.50）</option>
-          <option value="b">b：有初沉或前置反硝化（0.60）</option>
-          <option value="c">c：有初沉且前置反硝化（0.65）</option>
-          <option value="d">d：化学预沉淀（0.75）</option>
+          <option value="auto">Tự động theo phương án (có thiếu khí trước → b, không có → a)</option>
+          <option value="a">a: Không lắng sơ cấp, không khử nitrat trước (0.50)</option>
+          <option value="b">b: Có lắng sơ cấp hoặc khử nitrat trước (0.60)</option>
+          <option value="c">c: Có lắng sơ cấp và khử nitrat trước (0.65)</option>
+          <option value="d">d: Lắng sơ cấp bằng hoá chất (0.75)</option>
         </select>
-        <div class="helper">r_nit（g NH₄-N/m²·d，10 ℃）：按预处理类别 a–d 取经验值</div></div>
-      <div class="field"><label for="st_rNit">自定义硝化速率 <span class="unit">g NH₄-N/m²·d（10 ℃）</span></label>
-        <input type="number" id="st_rNit" value="" step="0.05" placeholder="留空 = 按类别" onchange="calcStages()">
-        <div class="helper">有实测/中试或厂家数据时填写（10 ℃ 基准），留空按上方类别取值；仍按温度、DO、NH₄ 修正</div></div>
-      <div class="field"><label for="st_rBOD">BOD 段面积负荷 r_BOD <span class="unit">g BOD₅/m²·d（10 ℃）</span></label>
+        <div class="helper">r_nit（g NH₄-N/m²·d，10 ℃）: lấy giá trị kinh nghiệm theo loại tiền xử lý a–d</div></div>
+      <div class="field"><label for="st_rNit">Tốc độ nitrat hoá tuỳ chỉnh <span class="unit">g NH₄-N/m²·d（10 ℃）</span></label>
+        <input type="number" id="st_rNit" value="" step="0.05" placeholder="Để trống = theo loại" onchange="calcStages()">
+        <div class="helper">Nhập khi có số liệu đo, thí điểm hoặc của nhà sản xuất (chuẩn 10 ℃); để trống sẽ dùng giá trị theo loại ở trên. Giá trị vẫn được hiệu chỉnh theo nhiệt độ, DO và NH₄.</div></div>
+      <div class="field"><label for="st_rBOD">Tải trọng diện tích giai đoạn BOD r_BOD <span class="unit">g BOD₅/m²·d（10 ℃）</span></label>
         <input type="number" id="st_rBOD" value="5" step="0.5" onchange="calcStages()">
-        <div class="helper">硝化前有机物去除，按进入 BOD 段的剩余 BOD₅ 负荷定面积；参考生物膜设计经验值（5 g/m²·d）</div></div>
-      <div class="field"><label for="st_fillRatio">填充率 <span class="unit">%</span></label>
+        <div class="helper">Loại bỏ chất hữu cơ trước nitrat hoá; xác định diện tích theo tải trọng BOD₅ còn lại vào giai đoạn BOD. Giá trị tham khảo thiết kế màng sinh học theo kinh nghiệm (5 g/m²·d).</div></div>
+      <div class="field"><label for="st_fillRatio">Tỷ lệ nạp giá thể <span class="unit">%</span></label>
         <input type="number" id="st_fillRatio" value="45" step="5" onchange="calcStages()">
-        <div class="helper">常 30-60%；上限 67%</div></div>
-      <div class="field"><label for="st_specArea">比表面积 <span class="unit">m²/m³</span></label>
+        <div class="helper">Thông thường 30-60%; tối đa 67%</div></div>
+      <div class="field"><label for="st_specArea">Diện tích bề mặt riêng <span class="unit">m²/m³</span></label>
         <input type="number" id="st_specArea" value="500" step="50" onchange="calcStages()">
         <div class="helper">K3=500，K5=800，BWT=650</div></div>
-      <div class="field"><label for="st_carrierType">填料形状（氧转移 SOFK）</label>
+      <div class="field"><label for="st_carrierType">Hình dạng giá thể (truyền oxy SOFK)</label>
         <select id="st_carrierType" onchange="calcStages()">
-          <option value="pipe">管状（K1/K3/K5/BWT 等带内格栅的圆柱/扁圆柱）· SOFK 8</option>
-          <option value="coin">片状（BiofilmChip、Z 型等薄片）· SOFK 6.25</option>
+          <option value="pipe">Dạng ống (hình trụ hoặc trụ dẹt có lưới bên trong như K1/K3/K5/BWT) · SOFK 8</option>
+          <option value="coin">Dạng tấm (tấm mỏng như BiofilmChip, loại Z) · SOFK 6.25</option>
         </select>
-        <div class="helper">SOFK（g O₂/Nm³·m，填充率 40-60%，现场条件值）；供氧气量 = AOR ÷ (SOFK × 淹没深度)，峰值工况请另行乘系数</div></div>
-      <div class="field"><label for="st_settleHRT">后置沉淀 HRT <span class="unit">h</span></label>
+        <div class="helper">SOFK（g O₂/Nm³·m, tỷ lệ nạp giá thể 40-60%, giá trị trong điều kiện hiện trường）; lưu lượng khí cấp oxy = AOR ÷ (SOFK × độ sâu ngập). Với điều kiện đỉnh cần nhân thêm hệ số.</div></div>
+      <div class="field"><label for="st_settleHRT">HRT lắng sau <span class="unit">h</span></label>
         <input type="number" id="st_settleHRT" value="1.5" step="0.5" onchange="calcStages()">
-        <div class="helper">典型 1.5-2.5 h；用于估算后置沉淀池容积</div></div>
-      <div class="field"><label for="st_poolH">好氧池有效水深 H <span class="unit">m</span></label>
+        <div class="helper">Điển hình 1.5-2.5 h; dùng để ước tính thể tích bể lắng sau.</div></div>
+      <div class="field"><label for="st_poolH">Chiều sâu nước hữu ích bể hiếu khí H <span class="unit">m</span></label>
         <input type="number" id="st_poolH" value="5.0" step="0.5" onchange="calcStages()">
-        <div class="helper">影响鼓风机静压与供氧气量（淹没深度 H − 0.2 m）；MBBR 常 4-6 m</div></div>
-      <div class="field"><label for="st_alt">海拔 <span class="unit">m</span></label>
+        <div class="helper">Ảnh hưởng đến áp suất tĩnh của máy thổi khí và lưu lượng khí cấp oxy (độ sâu ngập H − 0.2 m); MBBR thường 4-6 m.</div></div>
+      <div class="field"><label for="st_alt">Độ cao so với mực nước biển <span class="unit">m</span></label>
         <input type="number" id="st_alt" value="0" step="100" onchange="calcStages()">
-        <div class="helper">SOR 的 P_b 与鼓风机进气压力按当地大气压计；默认 0 = 海平面（P = 101.325·(1 − 2.25577×10⁻⁵·h)^5.25588 kPa，−500 ~ 6000 m）</div></div>
+        <div class="helper">P_b trong SOR và áp suất khí vào máy thổi khí được tính theo áp suất khí quyển địa phương; mặc định 0 = mực nước biển（P = 101.325·(1 − 2.25577×10⁻⁵·h)^5.25588 kPa，−500 ~ 6000 m）.</div></div>
     </div>
 
     <!-- 高级参数（折叠） -->
     <div class="advanced-toggle" id="stAdvToggle" onclick="toggleStAdv()">
       <span class="chev" id="stAdvChev">▸</span>
-      <span>高级参数（θ温度修正 / α·β曝气修正 / SOFK / 动力学 / 预缺氧格数 / 填料生物膜 / 搅拌功率）</span>
+      <span>高级参数（θHiệu chỉnh nhiệt độ / α·β曝气修正 / SOFK / 动力学 / 预缺氧格数 / 填料生物膜 / 搅拌功率）</span>
     </div>
     <div class="advanced-params" id="stAdvParams">
       <div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:8px;">
-        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🌡️ 温度修正</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🌡️ Hiệu chỉnh nhiệt độ</div>
         <div class="grid">
           <div class="field"><label for="st_theta">θ_BOD (BOD 段温度系数)</label>
             <input type="number" id="st_theta" value="1.07" step="0.01" onchange="calcStages()">
             <div class="helper">r_BOD × θ^(min(T_min,20)−10)（θ_bod = 1.07）</div></div>
           <div class="field"><label for="st_theta_N">θ_N (硝化温度系数)</label>
             <input type="number" id="st_theta_N" value="1.09" step="0.01" onchange="calcStages()">
-            <div class="helper">r_nit × θ^(min(T_min,20)−10)（θ_nit = 1.09）；反硝化 θ_den = 1.07，温度修正上限 20 ℃</div></div>
+            <div class="helper">r_nit × θ^(min(T_min,20)−10)（θ_nit = 1.09）；反硝化 θ_den = 1.07，Hiệu chỉnh nhiệt độ上限 20 ℃</div></div>
           <div class="field"><label for="st_theta_o2">θ_O₂ (好氧速率温度系数)</label>
             <input type="number" id="st_theta_o2" value="1.024" step="0.001" onchange="calcStages()">
             <div class="helper">鼓风曝气传质 1.016-1.025，取 1.024</div></div>
@@ -1749,7 +1749,7 @@ body {
         <div class="grid">
           <div class="field"><label for="st_alpha">α（污水修正）</label>
             <input type="number" id="st_alpha" value="0.70" step="0.05" onchange="calcStages()">
-            <div class="helper">城镇污水 0.65-0.75，工业废水 0.4-0.6</div></div>
+            <div class="helper">Nước thải đô thị 0.65-0.75，Nước thải công nghiệp 0.4-0.6</div></div>
           <div class="field"><label for="st_beta">β（水质修正）</label>
             <input type="number" id="st_beta" value="0.95" step="0.01" onchange="calcStages()">
             <div class="helper">含盐量低时取 0.95-1.0（盐度对饱和溶解氧的影响由下方"盐度"单独修正，不在 β 中重复计）</div></div>
@@ -1759,9 +1759,9 @@ body {
           <div class="field"><label for="st_DO">DO 设计值 <span class="unit">mg/L</span></label>
             <input type="number" id="st_DO" value="4.0" step="0.5" onchange="calcStages()">
             <div class="helper">好氧段 DO，默认 4；硝化速率按 min(DO, 5)/5 线性修正，设计 DO 上限 5</div></div>
-          <div class="field"><label for="st_SOFK">自定义 SOFK <span class="unit">g O₂/Nm³·m</span></label>
+          <div class="field"><label for="st_SOFK">Tùy chỉnh SOFK <span class="unit">g O₂/Nm³·m</span></label>
             <input type="number" id="st_SOFK" value="" step="0.25" placeholder="留空 = 按填料形状" onchange="calcStages()">
-            <div class="helper">留空：管状 8、片状 6.25（经验值，填充率 40-60%）。SOFK 为现场条件值，故供氧气量用实际需氧 AOR ÷ (SOFK × 淹没深度)，不经 α/SOR 换算；峰值工况请另行乘系数</div></div>
+            <div class="helper">留空：管状 8、片状 6.25（经验值，Tỷ lệ nạp giá thể 40-60%）。SOFK 为现场条件值，故供氧气量用实际需氧 AOR ÷ (SOFK × 淹没深度)，不经 α/SOR 换算；峰值工况请另行乘系数</div></div>
           <div class="field"><label for="st_EE">曝气效率 EE <span class="unit">%</span></label>
             <input type="number" id="st_EE" value="13" step="1" readonly tabindex="-1" style="background:#f1f5f9;">
             <div class="helper">只读 = SOFK ÷ 297.4 g O₂/Nm³ × 淹没深度(H−0.2 m)，限 5-40%；仅用于 SOR 的 Csm 修正（SOR 照常显示，供氧气量按 AOR 计）</div></div>
@@ -1778,8 +1778,8 @@ body {
             <div class="helper">产率系数，好氧 0.5-0.7</div></div>
           <div class="field"><label for="st_Kd">Kd <span class="unit">d⁻¹</span></label>
             <input type="number" id="st_Kd" value="0.04" step="0.01" onchange="calcStages()">
-            <div class="helper">内源衰减，20°C 典型 0.04-0.06；按 Kd_T = Kd₂₀·1.04^(T−20) 温度修正</div></div>
-          <div class="field"><label for="st_SRT">生物膜泥龄 SRT <span class="unit">d</span></label>
+            <div class="helper">内源衰减，20°C 典型 0.04-0.06；按 Kd_T = Kd₂₀·1.04^(T−20) Hiệu chỉnh nhiệt độ</div></div>
+          <div class="field"><label for="st_SRT">Tuổi bùn màng sinh học SRT <span class="unit">d</span></label>
             <input type="number" id="st_SRT" value="15" step="1" onchange="calcStages()">
             <div class="helper">用于生物产泥 ΔX_VSS = Y·ΔBOD/(1 + Kd_T·SRT)（参考值，MBBR 生物膜更新周期常 10-30 d）；结果同时用于碳化需氧 GB 式</div></div>
           <div class="field"><label for="st_SDNR20">SDNR₂₀ <span class="unit">g N/g VSS·d</span></label>
@@ -1799,7 +1799,7 @@ body {
           <div class="field"><label for="st_biofilmX">生物膜量 X <span class="unit">g VSS/m²</span></label>
             <input type="number" id="st_biofilmX" value="20" step="5" onchange="calcStages()">
             <div class="helper">文献常用 10-30 g VSS/m²（Ødegaard 等）；用于生物膜量 X_bio、缺氧段反硝化能力校核，以及与泥龄输入的自洽校核（产泥按泥龄输入计算）</div></div>
-          <div class="field"><label for="st_mixPower">缺氧段搅拌功率密度 <span class="unit">W/m³</span></label>
+          <div class="field"><label for="st_mixPower">Mật độ công suất khuấy ngăn thiếu khí <span class="unit">W/m³</span></label>
             <input type="number" id="st_mixPower" value="25" step="1" onchange="calcStages()">
             <div class="helper">预缺氧/后缺氧/Anammox 段潜水搅拌器保持填料悬浮，默认 25 W/m³（文献值），计入电耗</div></div>
         </div>
@@ -1811,11 +1811,11 @@ body {
     <div class="grid" id="volRatioGrid">
       <div class="field" data-stage="preAnox"><label for="st_r_preAnox">预缺氧 %</label>
         <input type="number" id="st_r_preAnox" value="20" step="5" onchange="calcStages()"></div>
-      <div class="field" data-stage="nitrif_hi"><label for="st_r_nitrif_hi">高负荷MBBR %</label>
+      <div class="field" data-stage="nitrif_hi"><label for="st_r_nitrif_hi">MBBR tải trọng cao %</label>
         <input type="number" id="st_r_nitrif_hi" value="0" step="5" onchange="calcStages()"></div>
       <div class="field" data-stage="nitrif"><label for="st_r_nitrif">硝化 %</label>
         <input type="number" id="st_r_nitrif" value="50" step="5" onchange="calcStages()"></div>
-      <div class="field" data-stage="nitrif_lo"><label for="st_r_nitrif_lo">低负荷MBBR %</label>
+      <div class="field" data-stage="nitrif_lo"><label for="st_r_nitrif_lo">MBBR tải trọng thấp %</label>
         <input type="number" id="st_r_nitrif_lo" value="0" step="5" onchange="calcStages()"></div>
       <div class="field" data-stage="partNitrif"><label for="st_r_partNitrif">短程硝化 %</label>
         <input type="number" id="st_r_partNitrif" value="0" step="5" onchange="calcStages()"></div>
@@ -1830,7 +1830,7 @@ body {
 
     <!-- 回流参数(A/O 及含预缺氧工艺) -->
     <div id="recircleSection">
-      <div class="section-title"><span class="num">6</span>混合液内回流参数 (MLR) <span class="sub">硝化段末端→预缺氧段头部</span></div>
+      <div class="section-title"><span class="num">6</span>Thông số tuần hoàn nội hỗn hợp (MLR) <span class="sub">硝化段末端→预缺氧段头部</span></div>
       <div class="auto-calc-notice" style="background:#eff6ff;border-left-color:#3b82f6;color:#1e3a8a;">
         <div class="notice-head"><span class="notice-ic">🔄</span>
           <span><b>混合液内回流(MLR)作用</b>:将硝化段产生的 NO₃ 回流至预缺氧段,利用进水 BOD 做免费反硝化。
@@ -1841,19 +1841,19 @@ body {
         <div class="field"><label for="st_MLR">内回流比 MLR <span class="unit">%(相对进水 Q)</span></label>
           <input type="number" id="st_MLR" value="200" step="25" min="0" max="500" onchange="calcStages()">
           <div class="helper">常 200-400%；按本页 TN 模型（前置去除 = 0.85·R/(1+R)），仅靠前置反硝化达 70% 脱氮需 MLR ≈ 470%，超出常用范围时应配后缺氧。预缺氧进入负荷 = 回流 NO₃-N + 回流 DO × 0.35</div></div>
-        <div class="field"><label for="st_pumpEff">回流泵效率 <span class="unit">%</span></label>
+        <div class="field"><label for="st_pumpEff">Hiệu suất máy bơm tuần hoàn <span class="unit">%</span></label>
           <input type="number" id="st_pumpEff" value="65" step="5" onchange="calcStages()">
           <div class="helper">潜水泵 60-70</div></div>
-        <div class="field"><label for="st_pumpH">回流扬程 <span class="unit">m</span></label>
+        <div class="field"><label for="st_pumpH">Cột áp tuần hoàn <span class="unit">m</span></label>
           <input type="number" id="st_pumpH" value="2" step="0.5" onchange="calcStages()">
           <div class="helper">常 1.5-3,仅克服管道阻力</div></div>
       </div>
     </div>
 
     <!-- 碳源与药剂 -->
-    <div class="section-title"><span class="num">7</span>外加药剂参数</div>
+    <div class="section-title"><span class="num">7</span>Thông số hoá chất bổ sung</div>
     <div class="grid">
-      <div class="field"><label for="st_carbonSrc">后缺氧碳源类型</label>
+      <div class="field"><label for="st_carbonSrc">Loại nguồn carbon cho ngăn thiếu khí sau</label>
         <select id="st_carbonSrc" onchange="calcStages()">
           <option value="methanol">甲醇(COD=1.5 g/g · 最经济)</option>
           <option value="acetate">乙酸钠(无水 COD=0.78 g/g × 有效含量 · 启动快)</option>
@@ -1864,7 +1864,7 @@ body {
         <div class="helper">固体三水乙酸钠约 58%（折合 0.45 gCOD/g 商品）；液体按标称含量；仅选乙酸钠时生效</div></div>
       <div class="field"><label for="st_TNmargin">TN 设计余量 <span class="unit">mg/L</span></label>
         <input type="number" id="st_TNmargin" value="1.0" step="0.5" onchange="calcStages()">
-        <div class="helper">后缺氧按需投碳的控制值 = 出水 TN 目标 − 余量（默认 1.0）；后缺氧进入 NO₃-N 与 TN 模型同口径，按 r_postDN 1.5 g/m²·d（10 ℃）定面积</div></div>
+        <div class="helper">后缺氧按需投碳的控制值 = TN đầu ra 目标 − 余量（默认 1.0）；后缺氧进入 NO₃-N 与 TN 模型同口径，按 r_postDN 1.5 g/m²·d（10 ℃）定面积</div></div>
       <div class="field"><label for="st_c_n_ratio">等效碳氮比 C/N <span class="unit">g COD/g NO₃-N</span></label>
         <input type="number" id="st_c_n_ratio" value="4.3" step="0.1" readonly tabindex="-1" style="background:#f1f5f9;">
         <div class="helper">只读：甲醇 = (2.47 × 后缺氧去除 NO₃-N + 1.0 × 进入 DO) × 1.15，折 COD 1.5 g/g；其他碳源按 COD 当量换算（甲醇化学计量与工程系数为文献值）。本页 C/N 含溶解氧消耗与 1.15 安全系数（不计 DO 时 2.47 × 1.15 × 1.5 = 4.26）；IFAS 页按 4.98 g COD/g N（2.86/(1−1.42×0.3)，未计 DO 消耗），口径不同</div></div>
@@ -1910,7 +1910,7 @@ body {
 
     <!-- ===== 曝气系统设计（原Tab3合并）===== -->
     <!-- 曝气器选型 -->
-    <div class="section-title"><span class="num">8</span>曝气器选型与风机 <span class="sub">基于上方AOR/SOR计算</span></div>
+    <div class="section-title"><span class="num">8</span>Chọn thiết bị sục khí và máy thổi khí <span class="sub">基于上方AOR/SOR计算</span></div>
     <div class="aerator-tabs">
       <button class="aerator-tab active" data-aer="coarse" onclick="setAeratorType('coarse')">
         <b>粗孔旋混</b><span>专为 MBBR 优化 · 抗堵</span>
@@ -1927,7 +1927,7 @@ body {
     </div>
 
     <!-- 曝气器特性参数 -->
-    <div class="section-title"><span class="num">9</span>曝气器性能参数</div>
+    <div class="section-title"><span class="num">9</span>Thông số hiệu suất thiết bị sục khí</div>
     <div class="grid">
       <div class="field"><label for="a_perDevice">单个曝气器额定气量 <span class="unit">Nm³/h</span></label>
         <input type="number" id="a_perDevice" value="7" step="1" onchange="calcAeration()">
@@ -1944,9 +1944,9 @@ body {
     </div>
 
     <!-- 风机选型参数 -->
-    <div class="section-title"><span class="num">10</span>风机参数</div>
+    <div class="section-title"><span class="num">10</span>Thông số máy thổi khí</div>
     <div class="grid">
-      <div class="field"><label for="a_blowerType">风机类型</label>
+      <div class="field"><label for="a_blowerType">Loại máy thổi khí</label>
         <select id="a_blowerType" onchange="setBlowerType()">
           <option value="roots">罗茨风机(常规)</option>
           <option value="multistage">多级离心风机(低噪音)</option>
@@ -1955,11 +1955,11 @@ body {
       <div class="field"><label for="a_dp_aer">曝气池阻力 <span class="unit">kPa</span></label>
         <input type="number" id="a_dp_aer" value="3" step="0.5" onchange="calcAeration()">
         <div class="helper">微孔 3-5, 粗孔 2-3</div></div>
-      <div class="field"><label for="a_dp_pipe">管路阻力 <span class="unit">kPa</span></label>
+      <div class="field"><label for="a_dp_pipe">Tổn thất áp suất đường ống <span class="unit">kPa</span></label>
         <input type="number" id="a_dp_pipe" value="3" step="0.5" onchange="calcAeration()"></div>
-      <div class="field"><label for="a_efficiency">风机效率 <span class="unit">%</span></label>
+      <div class="field"><label for="a_efficiency">Hiệu suất máy thổi khí <span class="unit">%</span></label>
         <input type="number" id="a_efficiency" value="62" step="1" onchange="calcAeration()">
-        <div class="helper">罗茨 55-70, 多级离心 65-78, 磁悬浮 75-85；切换风机类型时自动填入典型值（62/70/80），超出该类型上限按上限计</div></div>
+        <div class="helper">罗茨 55-70, 多级离心 65-78, 磁悬浮 75-85；切换Loại máy thổi khí时自动填入典型值（62/70/80），超出该类型上限按上限计</div></div>
       <div class="field"><label for="a_backupFactor">备用系数</label>
         <input type="number" id="a_backupFactor" value="1.2" step="0.05" onchange="calcAeration()">
         <div class="helper">单台风机选型富余系数（常 1.1-1.2）：单台额定气量 = 设计气量 × 系数 ÷ 工作台数；备用台另按"N 用 1 备"计入装机气量</div></div>
@@ -1972,7 +1972,7 @@ body {
       <!-- 气量汇总 -->
       <div class="result-group">
         <div class="result-group-title"><span class="ic">📊</span> 气量确定(取控制性较大值)</div>
-        <div class="result-row"><span class="result-label">输入 SOR (来自工艺计算)</span>
+        <div class="result-row"><span class="result-label">输入 SOR (来自Tính toán công nghệ)</span>
           <span><span class="result-value" id="ar_SOR_in">—</span><span class="result-unit">kg O₂/d</span></span></div>
         <div class="result-row"><span class="result-label">供氧所需气量</span>
           <span><span class="result-value" id="ar_airO2">—</span><span class="result-unit">Nm³/h</span></span></div>
@@ -2010,7 +2010,7 @@ body {
           <span><span class="result-value big" id="ar_dp">—</span><span class="result-unit">kPa</span></span></div>
         <div class="result-row"><span class="result-label">水深静压 <span class="sub">(淹没深度 H−0.2 m × 9.81，与 SOR 同口径)</span></span>
           <span><span class="result-value" id="ar_dp_water">—</span><span class="result-unit">kPa</span></span></div>
-        <div class="result-row"><span class="result-label">曝气器+管路阻力</span>
+        <div class="result-row"><span class="result-label">曝气器+Tổn thất áp suất đường ống</span>
           <span><span class="result-value" id="ar_dp_sys">—</span><span class="result-unit">kPa</span></span></div>
         <div class="result-row"><span class="result-label">单台风机额定流量 <span class="sub">(设计气量 × 富余系数 ÷ 工作台数)</span></span>
           <span><span class="result-value" id="ar_blowerQ">—</span><span class="result-unit">Nm³/h</span></span></div>
@@ -2052,7 +2052,7 @@ body {
     </div>
 
     <div class="buttons" style="margin-top:24px;">
-      <button class="btn btn-secondary" onclick="switchTab('stages')">← 返回工艺计算</button>
+      <button class="btn btn-secondary" onclick="switchTab('stages')">← 返回Tính toán công nghệ</button>
       <button class="btn btn-primary" onclick="copyAeration()">📋 复制曝气方案</button>
     </div>
 
@@ -2077,7 +2077,7 @@ body {
       <!-- 各段详情 -->
       <div class="result-group">
         <div class="result-group-title"><span class="ic">📐</span> 各段池容与参数</div>
-        <div class="result-row highlight-row"><span class="result-label"><b>采用总池容 V</b> <span id="st_r_Vsrc" style="font-size:11px;color:#64748b;"></span></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>采用Tổng thể tích bể V</b> <span id="st_r_Vsrc" style="font-size:11px;color:#64748b;"></span></span>
           <span><span class="result-value big" id="st_r_Vtotal">—</span><span class="result-unit">m³</span></span></div>
         <div class="result-row"><span class="result-label">预缺氧所需填料面积 A_pre <span class="sub" id="st_r_A_pre_basis">(进入 NO₃-N 当量负荷 ÷ r_preDN)</span></span>
           <span><span class="result-value" id="st_r_A_pre">—</span><span class="result-unit">m²</span></span></div>
@@ -2205,17 +2205,17 @@ body {
     </div>
 
     <div class="buttons" style="margin-top:24px;">
-      <button class="btn btn-secondary" onclick="switchTab('stages')">← 返回工艺计算</button>
+      <button class="btn btn-secondary" onclick="switchTab('stages')">← 返回Tính toán công nghệ</button>
       <button class="btn btn-primary" onclick="copyStages()">📋 复制段组合方案</button>
     </div>
 
     <div class="note">
       ℹ️ <strong>工艺选择与设计原则</strong>:
       <ul style="margin:6px 0 0 20px;padding:0;line-height:1.7;">
-        <li><b>方案 ②(前高+后低双好氧)</b>:国内常见做法,前段高负荷吸收冲击,后段低负荷精细硝化保出水</li>
+        <li><b>方案 ②(Hai giai đoạn hiếu khí: tải trọng cao trước, thấp sau)</b>:国内常见做法,前段高负荷吸收冲击,后段低负荷精细硝化保出水</li>
         <li><b>方案 ③(硝化+后缺氧)</b>:仅后缺氧脱氮,简单但<b>需投外加碳源</b>(甲醇/乙酸钠)</li>
         <li><b>方案 ④(预缺氧+硝化 A/O)</b>:经典 A/O 脱氮 · 利用进水 BOD <b>免费反硝化</b> · 含内回流 MLR · 无需外加碳源</li>
-        <li><b>方案 ⑤(预缺氧+硝化+后缺氧)</b>:A/O 基础上加后缺氧,双段脱氮效率更高(理论 TN 去除 85%+),用于严格 TN 限值</li>
+        <li><b>方案 ⑤(Thiếu khí trước + nitrat hoá + thiếu khí sau)</b>:A/O 基础上加后缺氧,双段脱氮效率更高(理论 TN 去除 85%+),用于严格 TN 限值</li>
         <li><b>方案 ⑥(完整 BNR+除磷)</b>:方案 ⑤ + 化除磷段,适用严格 TP 限值场景</li>
         <li><b>内回流 MLR</b>:硝化段末 → 预缺氧段头,典型 200-400% · 理论 TN 去除极限 = MLR/(1+MLR) · 越高 TN 去除越好但回流能耗/管道造价增大</li>
         <li>硝化段是<b>设计控制段</b>,通常占总容积 50-60%；本工具各段面积按进入负荷计算，选方案时容积比按面积需求自动分配</li>
@@ -2225,7 +2225,7 @@ body {
     </div>
   </div>
 
-  <!-- ===== RAS 循环水养殖：已迁移至 iRAS ===== -->
+  <!-- ===== Nuôi trồng thủy sản tuần hoàn RAS：已迁移至 iRAS ===== -->
   <div class="tab-panel" id="panel-ras">
     <div class="carrier-intro">
       <h3>🐟 循环水养殖（RAS）设计已迁移至 iRAS</h3>
@@ -2238,14 +2238,14 @@ body {
       </div>
     </div>
     <div class="note">
-      ℹ️ 本页仍保留水产养殖<b>尾水</b>等纯 MBBR 工况（见 MBBR 工艺设计 Tab 预设与案例库）；循环水系统的完整设计请使用 iRAS。
+      ℹ️ 本页仍保留水产养殖<b>尾水</b>等纯 MBBR 工况（见 Thiết kế công nghệ MBBR Tab 预设与Thư viện ví dụ）；循环水系统的完整设计请使用 iRAS。
     </div>
   </div>
 
     <div class="tab-panel" id="panel-cases">
     <div class="carrier-intro">
-      <h3>📂 纯 MBBR 典型工程案例库</h3>
-      <p>收录城镇提标、工业废水、特殊场景等<b>纯 MBBR 典型工况</b>，每个案例含水质/推荐工艺/关键参数/出水效果/投资估算。点击"套用参数"可一键将参数载入工艺设计 Tab。</p>
+      <h3>📂 纯 MBBR 典型工程Thư viện ví dụ</h3>
+      <p>收录城镇提标、Nước thải công nghiệp、特殊场景等<b>纯 MBBR 典型工况</b>，每个案例含水质/推荐工艺/关键参数/出水效果/投资估算。点击"套用参数"可一键将参数载入工艺设计 Tab。</p>
       <div class="mini-spec">
         <span>📘 数据来源：行业通用经验值 + 公开技术资料</span>
         <span>🎯 支持一键套用参数 + 自动切换工艺构型</span>
@@ -2259,26 +2259,26 @@ body {
       <span class="filter-label">场景筛选：</span>
       <button class="active" data-cfilter="all" onclick="filterCases('all')">全部</button>
       <button data-cfilter="municipal" onclick="filterCases('municipal')">城镇提标</button>
-      <button data-cfilter="industrial" onclick="filterCases('industrial')">工业废水</button>
+      <button data-cfilter="industrial" onclick="filterCases('industrial')">Nước thải công nghiệp</button>
       <button data-cfilter="aquaculture" onclick="filterCases('aquaculture')">水产养殖</button>
       <button data-cfilter="special" onclick="filterCases('special')">特殊场景</button>
     </div>
 
     <div style="margin:12px 0;padding:10px 14px;background:#eff6ff;border-left:3px solid #3b82f6;border-radius:4px;font-size:12px;color:#1e40af;line-height:1.6;">
-      ℹ️ 套用案例后，进水参数和推荐工艺构型会自动同步到 <b>MBBR 工艺设计 Tab</b>，可直接查看计算结果。
+      ℹ️ 套用案例后，进水参数和推荐工艺构型会自动同步到 <b>Thiết kế công nghệ MBBR Tab</b>，可直接查看计算结果。
     </div>
 
     <div class="case-grid" id="caseGrid"></div>
 
     <div class="note" style="margin-top:20px;">
-      ℹ️ <strong>案例套用说明：</strong>点击"套用参数"按钮后，进水水质、面积负荷（r_BOD / r_nit）、填充率等设计参数自动写入工艺设计 Tab，并根据案例推荐的工艺构型自动切换段组合方案，你可以在工艺设计 Tab 中进一步调整以匹配具体项目需求。
+      ℹ️ <strong>案例套用说明：</strong>点击"套用参数"按钮后，进水水质、面积负荷（r_BOD / r_nit）、Tỷ lệ nạp giá thể等设计参数自动写入工艺设计 Tab，并根据案例推荐的工艺构型自动切换段组合方案，你可以在工艺设计 Tab 中进一步调整以匹配具体项目需求。
     </div>
   </div>
 
-  <!-- ===== 挂膜与启动 ===== -->
+  <!-- ===== Tạo màng và khởi động ===== -->
   <div class="tab-panel" id="panel-startup">
     <div class="carrier-intro">
-      <h3>🌱 MBBR 挂膜与启动指南</h3>
+      <h3>🌱 MBBR Tạo màng và khởi động指南</h3>
       <p>挂膜启动是 MBBR 系统投运的关键环节，通常需要 4-12 周。温度、有机负荷、曝气强度是决定挂膜速度的三个核心因素。过度追求速度（超负荷投加）反而导致生物膜不稳定、启动失败。</p>
       <div class="mini-spec">
         <span>📘 依据：Ødegaard MBBR 工程手册 / 工程经验</span>
@@ -2286,40 +2286,40 @@ body {
       </div>
     </div>
 
-    <div class="section-title"><span class="num">1</span>挂膜三阶段原理</div>
+    <div class="section-title"><span class="num">1</span>Nguyên lý ba giai đoạn hình thành màng sinh học</div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:12px 0 20px;">
       <div style="padding:14px;background:linear-gradient(135deg,#fef3c7,#fff);border-radius:8px;border-top:3px solid #f59e0b;">
-        <div style="font-weight:700;font-size:14px;margin-bottom:8px;">① 初始附着（0-2 周）</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:8px;">① Bám dính ban đầu（0-2 tuần）</div>
         <div style="font-size:12px;line-height:1.7;color:#374151;">
-          细菌通过胞外多糖（EPS）松散附着于填料表面。<b>关键：不能搅拌过强</b>，否则附着菌被冲走。
-          建议曝气量取设计值的 40-60%。出水 SS 偏高属正常。
+          Vi khuẩn bám lỏng lẻo lên bề mặt giá thể nhờ polysaccharide ngoại bào (EPS).<b>Điểm quan trọng: không khuấy quá mạnh</b>，nếu không vi khuẩn đã bám sẽ bị cuốn trôi.
+          Nên lấy lưu lượng sục khí bằng 40-60% giá trị thiết kế. SS nước đầu ra hơi cao là bình thường.
         </div>
       </div>
       <div style="padding:14px;background:linear-gradient(135deg,#dbeafe,#fff);border-radius:8px;border-top:3px solid #3b82f6;">
-        <div style="font-weight:700;font-size:14px;margin-bottom:8px;">② 生物膜成熟（2-6 周）</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:8px;">② Màng sinh học trưởng thành（2-6 tuần）</div>
         <div style="font-size:12px;line-height:1.7;color:#374151;">
-          EPS 分泌增加，生物膜厚度达 100-200 μm。填料开始出现肉眼可见的白色/黄色膜。
-          逐步提升负荷（每周+10-15%），观察出水氨氮变化。
+          EPS được tiết ra nhiều hơn, màng sinh học đạt độ dày 100-200 μm. Trên giá thể bắt đầu xuất hiện màng trắng/vàng nhìn thấy bằng mắt thường.
+          Tăng dần tải trọng (mỗi tuần +10-15%), theo dõi sự thay đổi amoni trong nước đầu ra.
         </div>
       </div>
       <div style="padding:14px;background:linear-gradient(135deg,#dcfce7,#fff);border-radius:8px;border-top:3px solid #16a34a;">
-        <div style="font-weight:700;font-size:14px;margin-bottom:8px;">③ 稳定运行（6 周+）</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:8px;">③ Vận hành ổn định（6 tuần+）</div>
         <div style="font-size:12px;line-height:1.7;color:#374151;">
-          生物膜达到动态平衡（生长 = 剥落）。处理能力达到设计值。
-          NH₄-N 去除率稳定 ≥ 85%，出水 SS 恢复正常水平。
+          Màng sinh học đạt cân bằng động (phát triển = bong tróc). Công suất xử lý đạt giá trị thiết kế.
+          Hiệu suất loại bỏ NH₄-N ổn định ≥ 85%, SS nước đầu ra trở về mức bình thường.
         </div>
       </div>
     </div>
 
-    <div class="section-title"><span class="num">2</span>挂膜时间 – 水温对照表 <span class="sub">（核心）</span></div>
+    <div class="section-title"><span class="num">2</span>Bảng thời gian hình thành màng theo nhiệt độ nước <span class="sub">（核心）</span></div>
     <div style="overflow-x:auto;margin:12px 0 20px;">
     <table style="width:100%;border-collapse:collapse;font-size:13px;background:white;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb;">
       <thead>
         <tr style="background:#0891b2;color:white;">
-          <th style="padding:10px 12px;text-align:left;">水温 T (°C)</th>
-          <th style="padding:10px 12px;">初始附着期</th>
-          <th style="padding:10px 12px;">生物膜成熟期</th>
-          <th style="padding:10px 12px;">总挂膜时间</th>
+          <th style="padding:10px 12px;text-align:left;">Nhiệt độ nước T (°C)</th>
+          <th style="padding:10px 12px;">Giai đoạn bám dính ban đầu</th>
+          <th style="padding:10px 12px;">Giai đoạn màng sinh học trưởng thành</th>
+          <th style="padding:10px 12px;">Tổng thời gian hình thành màng</th>
           <th style="padding:10px 12px;text-align:left;">注意事项</th>
         </tr>
       </thead>
@@ -2370,42 +2370,42 @@ body {
     </table>
     </div>
 
-    <div class="section-title"><span class="num">3</span>挂膜期关键控制参数</div>
+    <div class="section-title"><span class="num">3</span>Các thông số kiểm soát chính trong giai đoạn hình thành màng</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 20px;">
       <div style="padding:14px;background:white;border-radius:8px;border:1px solid #e5e7eb;">
-        <div style="font-weight:700;color:#0891b2;margin-bottom:10px;">💧 水力控制</div>
+        <div style="font-weight:700;color:#0891b2;margin-bottom:10px;">💧 Kiểm soát thủy lực</div>
         <ul style="font-size:12px;line-height:1.9;padding-left:18px;color:#374151;margin:0;">
-          <li>初期 HRT 延长 1.5-2 倍（降低水力冲击）</li>
-          <li>进水量逐步提升，每 3-5 天增加 10-15%</li>
-          <li>避免水量大幅波动（冲击负荷是挂膜最大杀手）</li>
-          <li>出水 SS 升高时暂缓增加进水量</li>
+          <li>Ban đầu kéo dài HRT 1.5-2 lần (giảm sốc thủy lực)</li>
+          <li>Tăng dần lưu lượng đầu vào, cứ 3-5 ngày tăng 10-15%</li>
+          <li>Tránh biến động lưu lượng lớn (tải trọng sốc là nguyên nhân hàng đầu gây thất bại khi hình thành màng)</li>
+          <li>Tạm ngừng tăng lưu lượng đầu vào khi SS đầu ra tăng</li>
         </ul>
       </div>
       <div style="padding:14px;background:white;border-radius:8px;border:1px solid #e5e7eb;">
-        <div style="font-weight:700;color:#059669;margin-bottom:10px;">💨 曝气控制</div>
+        <div style="font-weight:700;color:#059669;margin-bottom:10px;">💨 Kiểm soát sục khí</div>
         <ul style="font-size:12px;line-height:1.9;padding-left:18px;color:#374151;margin:0;">
-          <li>初期曝气量 40-60% 设计值（降低剪切力）</li>
-          <li>DO 控制 2-4 mg/L（气量过大剪切力强、填料剧烈翻滚，不利初期挂膜；过低影响硝化）</li>
+          <li>Lưu lượng sục khí ban đầu bằng 40-60% giá trị thiết kế (giảm lực cắt)</li>
+          <li>Kiểm soát DO ở 2-4 mg/L (lưu lượng khí quá lớn gây lực cắt mạnh và đảo trộn giá thể dữ dội, bất lợi cho sự hình thành màng ban đầu; quá thấp ảnh hưởng đến nitrat hoá)</li>
           <li>填料流化但不剧烈翻滚（"轻柔沸腾"状态）</li>
-          <li>切忌停曝超过 2h（厌氧会损伤生物膜）</li>
+          <li>Không ngừng sục khí quá 2h (điều kiện kỵ khí sẽ làm hỏng màng sinh học)</li>
         </ul>
       </div>
       <div style="padding:14px;background:white;border-radius:8px;border:1px solid #e5e7eb;">
-        <div style="font-weight:700;color:#d97706;margin-bottom:10px;">🧪 水质监测</div>
+        <div style="font-weight:700;color:#d97706;margin-bottom:10px;">🧪 Theo dõi chất lượng nước</div>
         <ul style="font-size:12px;line-height:1.9;padding-left:18px;color:#374151;margin:0;">
-          <li>每日监测：NH₄-N、NO₃-N、DO、pH</li>
+          <li>Theo dõi hằng ngày: NH₄-N, NO₃-N, DO, pH</li>
           <li>NH₄-N 去除率 &gt;50% → 可提升 10% 负荷</li>
-          <li>pH 低于 6.8 → 补充碱度（NaHCO₃ 或石灰）</li>
-          <li>出水 SS 突增 → 曝气过强或负荷过高，立即降低</li>
+          <li>pH dưới 6.8 → bổ sung độ kiềm (NaHCO₃ hoặc vôi)</li>
+          <li>SS đầu ra tăng đột ngột → sục khí quá mạnh hoặc tải trọng quá cao, cần giảm ngay</li>
         </ul>
       </div>
       <div style="padding:14px;background:white;border-radius:8px;border:1px solid #e5e7eb;">
-        <div style="font-weight:700;color:#7c3aed;margin-bottom:10px;">🦠 接种策略</div>
+        <div style="font-weight:700;color:#7c3aed;margin-bottom:10px;">🦠 Chiến lược bổ sung giống vi sinh</div>
         <ul style="font-size:12px;line-height:1.9;padding-left:18px;color:#374151;margin:0;">
-          <li>有条件时接种活性污泥（10% 体积）显著加速</li>
-          <li>低温（&lt;10°C）时接种几乎是必要条件</li>
-          <li>接种污泥来源：同类型污水厂脱水污泥或浓缩液</li>
-          <li>商业菌剂效果参差不齐，慎用</li>
+          <li>Khi có điều kiện, bổ sung bùn hoạt tính (10% thể tích) giúp tăng tốc đáng kể</li>
+          <li>Ở nhiệt độ thấp (&lt;10°C), bổ sung giống vi sinh gần như là điều kiện bắt buộc</li>
+          <li>Nguồn bùn giống: bùn đã tách nước hoặc dịch bùn cô đặc từ nhà máy xử lý nước thải cùng loại</li>
+          <li>Hiệu quả chế phẩm vi sinh thương mại không đồng đều, cần thận trọng khi sử dụng</li>
         </ul>
       </div>
     </div>
@@ -2437,7 +2437,7 @@ body {
       </div>
       <div style="display:flex;gap:10px;align-items:flex-start;padding:12px;background:white;border-radius:8px;border:1px solid #e5e7eb;">
         <span style="font-size:20px;flex-shrink:0;">📊</span>
-        <div style="font-size:12px;line-height:1.6;"><b>水质指标</b>：出水 NH₄-N 去除率 ≥ 85%，COD 去除率 ≥ 80%，且连续 5 天稳定达标。</div>
+        <div style="font-size:12px;line-height:1.6;"><b>水质指标</b>：NH₄-N đầu ra 去除率 ≥ 85%，COD 去除率 ≥ 80%，且连续 5 天稳定达标。</div>
       </div>
       <div style="display:flex;gap:10px;align-items:flex-start;padding:12px;background:white;border-radius:8px;border:1px solid #e5e7eb;">
         <span style="font-size:20px;flex-shrink:0;">🔬</span>
@@ -2463,11 +2463,11 @@ body {
     </div>
   </div>
 
-  <!-- ===== 填料选型 ===== -->
+  <!-- ===== Lựa chọn giá thể ===== -->
   <div class="tab-panel" id="panel-carriers">
     <div class="carrier-intro">
-      <h3>🧱 MBBR 填料选型指南</h3>
-      <p>填料选型直接影响处理效率、能耗、占地和运行稳定性。核心指标：<b>保护比表面积 a</b>（有效挂膜面积）、<b>填料密度</b>（决定流化所需气量）、<b>填料尺寸</b>（影响生物膜剥落）、<b>价格</b>（工程投资）。</p>
+      <h3>🧱 MBBR Lựa chọn giá thể指南</h3>
+      <p>Lựa chọn giá thể直接影响处理效率、能耗、占地和运行稳定性。核心指标：<b>保护Diện tích bề mặt riêng a</b>（有效挂膜面积）、<b>填料密度</b>（决定流化所需气量）、<b>填料尺寸</b>（影响生物膜剥落）、<b>价格</b>（工程投资）。</p>
       <div class="mini-spec">
         <span>📘 数据参考：厂家公开规格 + 工程经验值</span>
         <span>🎯 基于当前工况智能推荐</span>
@@ -2494,14 +2494,14 @@ body {
 
     <div class="compare-section" id="compareSection" style="display:none;">
       <h3>🔍 对比表 <span style="font-size:13px;color:var(--text-muted);font-weight:500">（点击卡片多选 2-4 种对比）</span></h3>
-      <div class="compare-hint">✓ 可对比：比表面积、生物量、流化气量、价格、推荐应用等关键指标。<b>绿色标记</b>表示该项最优。</div>
+      <div class="compare-hint">✓ 可对比：Diện tích bề mặt riêng、生物量、流化气量、价格、推荐应用等关键指标。<b>绿色标记</b>表示该项最优。</div>
       <div class="compare-table-wrap">
         <table class="compare-table" id="compareTable"></table>
       </div>
     </div>
 
     <div class="note" style="margin-top:20px;">
-      ℹ️ <strong>填料选型建议：</strong>
+      ℹ️ <strong>Lựa chọn giá thể建议：</strong>
       (1) 硝化控制场景用 <b>K3 / K5 / BiofilmChip M</b>；
       (2) BOD 去除为主用 <b>K1 / 国产球形</b>；
       (3) 水产养殖循环水/温和工况用 <b>K1</b> 等小尺寸保护型填料（卡片中的 K1 Micro 为英国 Evolution Aqua 的观赏鱼池滤材，不作工程推荐）；
@@ -2510,9 +2510,9 @@ body {
     </div>
 
     <div class="note" style="background:#fef3c7;border-left-color:#f59e0b;margin-top:14px;">
-      ⚠️ <strong>关于"超高比表面积"填料</strong><br>
-      市面上部分填料标称<b>保护比表面积 &gt;3000 m²/m³ 甚至 5000+ m²/m³</b>，厂家常宣传"处理效率高数倍"。但工程实践中：微小孔道易被生物膜迅速堵塞 → <b>实际有效面积远低于标称几何面积</b>；填料之间易聚团 → 内部厌氧；孔壁薄易脆断 → 损耗高。
-      <br><b>🎯 工程最优选择：保护比表面积 500-850 m²/m³ 是经过大量工程验证的"甜点区间"。</b>
+      ⚠️ <strong>关于"超高Diện tích bề mặt riêng"填料</strong><br>
+      市面上部分填料标称<b>保护Diện tích bề mặt riêng &gt;3000 m²/m³ 甚至 5000+ m²/m³</b>，厂家常宣传"处理效率高数倍"。但工程实践中：微小孔道易被生物膜迅速堵塞 → <b>实际有效面积远低于标称几何面积</b>；填料之间易聚团 → 内部厌氧；孔壁薄易脆断 → 损耗高。
+      <br><b>🎯 工程最优选择：保护Diện tích bề mặt riêng 500-850 m²/m³ 是经过大量工程验证的"甜点区间"。</b>
     </div>
 
     <div class="buttons" style="margin-top:24px;">
@@ -2549,7 +2549,7 @@ body {
         <ul>
           <li>堵塞严重、水头损失大</li>
           <li>需定期反冲洗或停机清洗</li>
-          <li>比表面积固定,处理能力难以扩展</li>
+          <li>Diện tích bề mặt riêng固定,处理能力难以扩展</li>
           <li>工艺灵活性低</li>
         </ul>
       </div>
@@ -2732,7 +2732,7 @@ body {
         <div class="tl-content">
           <div class="tl-year">2021</div>
           <div class="tl-title">Krüger Kaldnes 退出水产养殖</div>
-          <div class="tl-desc">专注市政和工业废水 · 聚焦核心竞争力</div>
+          <div class="tl-desc">专注市政和Nước thải công nghiệp · 聚焦核心竞争力</div>
         </div>
       </div>
 
@@ -2811,7 +2811,7 @@ body {
         <div class="ce-body">
           挪威 <b>Biowater Technology</b>(BWT)公司由部分原 Kaldnes 团队成员独立创立,成为 Krüger Kaldnes 之外的另一个挪威 MBBR 品牌。
           <ul>
-            <li>推出 <b>BWT-X</b>(保护比表面积 650 m²/m³)、<b>BWT-15</b>(828 m²/m³)等第二代填料</li>
+            <li>推出 <b>BWT-X</b>(保护Diện tích bề mặt riêng 650 m²/m³)、<b>BWT-15</b>(828 m²/m³)等第二代填料</li>
             <li>主打专利工艺 <b>CFIC®</b>(连续流间歇清洗)</li>
             <li>价格介于国产高端与 Kaldnes 之间(到岸约 ¥8-15 千/m³),是 Veolia 体系之外的挪威原装选项</li>
             <li>与 Krüger Kaldnes 形成良性竞争,共同维持挪威 MBBR 技术领先地位</li>
@@ -2840,7 +2840,7 @@ body {
     <!-- 5. MBBR 在中国 · 引进 30 年 -->
     <div class="section-title" style="margin-top:30px;"><span class="num">5</span>MBBR 在中国 · 引进 30 年</div>
     <p style="font-size:13px;color:var(--text-muted);margin:8px 0 14px;">
-      MBBR 引进中国近 30 年,从工业废水小众应用发展到城镇污水提标主流工艺,走过了引进、扩展、成熟三个阶段。
+      MBBR 引进中国近 30 年,从Nước thải công nghiệp小众应用发展到Nước thải đô thị提标主流工艺,走过了引进、扩展、成熟三个阶段。
     </p>
     <div class="china-grid">
       <div class="china-phase cp-1">
@@ -2850,7 +2850,7 @@ body {
           <ul>
             <li>1990 年代末学术界开始关注 MBBR 工艺</li>
             <li>2000 年前后首批进口 <b>Kaldnes</b> 填料进入中国</li>
-            <li>早期应用集中于<b>工业废水</b>(石化、制药、印染)和<b>垃圾渗滤液</b></li>
+            <li>早期应用集中于<b>Nước thải công nghiệp</b>(石化、制药、印染)和<b>Nước rỉ rác</b></li>
             <li>引进主要靠合资/外方工程公司</li>
             <li>国内设计院对 MBBR 认知有限,多持观望态度</li>
           </ul>
@@ -2864,7 +2864,7 @@ body {
           <ul>
             <li>国产填料开始出现</li>
             <li>早期国产填料主要仿制 K1/K3,品种单一</li>
-            <li>2006 年左右开始用于<b>城镇污水厂一级 A 提标改造</b></li>
+            <li>2006 年左右开始用于<b>Nước thải đô thị厂一级 A 提标改造</b></li>
             <li>渗滤液、制药、食品等工业场景大规模普及</li>
             <li>进口填料与国产填料展开价格竞争</li>
           </ul>
@@ -2892,7 +2892,7 @@ body {
           <ul>
             <li>国产填料占据国内市场主导(成本优势)</li>
             <li>进口填料保留高端/设计院指定项目份额</li>
-            <li>技术创新:短程硝化-Anammox、高比表面积填料、低温优化</li>
+            <li>技术创新:短程硝化-Anammox、高Diện tích bề mặt riêng填料、低温优化</li>
             <li>应用场景持续扩展:城镇、工业、水产、分散式污水</li>
           </ul>
         </div>
@@ -2928,8 +2928,8 @@ body {
     <div class="note" style="margin-top:20px;background:#f0fdf4;border-left-color:#16a34a;">
       ✅ <strong>展望</strong>:MBBR 工艺发明至今近 40 年,仍保持旺盛生命力。
       其核心优势——<b>生物膜附着 + 填料流化 + 无需回流</b>——从工艺原理上是稳定的。
-      未来的创新方向集中在:<b>高比表面积填料 · 短程硝化-Anammox · 低温鲁棒性优化 · 与膜技术集成</b>。
-      在国内双碳战略和严格出水标准背景下,MBBR 仍将是污水提标和工业废水处理的重要选项之一。
+      未来的创新方向集中在:<b>高Diện tích bề mặt riêng填料 · 短程硝化-Anammox · 低温鲁棒性优化 · 与膜技术集成</b>。
+      在国内双碳战略和严格出水标准背景下,MBBR 仍将是污水提标和Nước thải công nghiệp处理的重要选项之一。
     </div>
 
   </div>
@@ -2953,11 +2953,11 @@ body {
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Công nghệ DengDeng</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước(WaterKit)是海南Công nghệ DengDeng咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
       </div>
       <div class="footer-col">
         <h4>水力计算</h4>
@@ -2976,8 +2976,8 @@ body {
           <li><a href="sludge-production-calculator.html">污泥产量</a></li>
           <li><a href="dosing-calculator.html">加药量</a></li>
           <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
+          <li><a href="mbbr-design.html">Thiết kế công trình MBBR</a></li>
+          <li><a href="ifas-design.html">Thiết kế công trình IFAS</a></li>
           <li><a href="mbr-design.html">MBR 工程设计</a></li>
           <li><a href="ro-design.html">RO 反渗透设计</a></li>
           <li><a href="pump-selection-calculator.html">水泵选型</a></li>
@@ -2995,8 +2995,8 @@ body {
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Công nghệ DengDeng官网 ↗</a></li>
+          <li>海南Công nghệ DengDeng咨询</li>
           <li>有限公司</li>
         </ul>
       </div>
@@ -3005,12 +3005,12 @@ body {
         <ul>
           <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
           <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">gửi Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>© 2026 海南Công nghệ DengDeng咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
       <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
     </div>
   </div>
@@ -3147,7 +3147,7 @@ function renderStRecommend() {
   const tpDeep = TP0 > TPe && tpNeedPct > 95 + 1e-9;
   const tpDeepTxt = tpDeep ? `；所需 TP 去除 ${tpNeedPct.toFixed(1)}% 超过化学除磷上限 95%，TP 需深度除磷（如滤池 / 精密过滤）` : '';
   if (needPct > 92 && (tnCfg === 5)) tnReason += `；所需 ${needPct.toFixed(0)}% 超出本页预缺氧 + 后缺氧去除上限 92%，需深度处理`;
-  const TITLES = { 2:'② 前高负荷 + 后低负荷双好氧', 4:'④ 预缺氧 + 硝化（A/O 含 MLR）', 5:'⑤ 预缺氧 + 硝化 + 后缺氧', 6:'⑥ 完整 BNR + 化除磷', 7:'⑦ 短程硝化 + Anammox' };
+  const TITLES = { 2:'② 前高负荷 + 后低负荷双好氧', 4:'④ 预缺氧 + 硝化（A/O 含 MLR）', 5:'⑤ 预缺氧 + Nitrat hoá + thiếu khí sau', 6:'⑥ 完整 BNR + 化除磷', 7:'⑦ 短程硝化 + Anammox' };
   const COLORS = { 2:'#16a34a', 4:'#0891b2', 5: BOD_N >= 4 ? '#0891b2' : '#d97706', 6:'#0891b2', 7:'#7c3aed' };
   if (needChemP && (tnCfg === 4 || tnCfg === 5)) {
     // 需化学除磷：直接推荐含化除磷段的 ⑥，套用后 TN/TP 均按模型达标
@@ -3591,7 +3591,7 @@ function setAeratorType(type) {
   calcStages();  // OTE 变化 → EE → 供氧气量，calcStages 结束后会触发 calcAeration
 }
 
-// 风机类型：典型效率与上限（%）。切换类型时把效率输入改为典型值；计算按 min(输入, 上限)
+// Loại máy thổi khí：典型效率与上限（%）。切换类型时把效率输入改为典型值；计算按 min(输入, 上限)
 const BLOWER_EFF = { roots: { typ: 62, max: 70 }, multistage: { typ: 70, max: 78 }, magnetic: { typ: 80, max: 85 } };
 function setBlowerType() {
   const b = BLOWER_EFF[$('a_blowerType').value];
@@ -3608,10 +3608,10 @@ function calcAeration() {
   if (!(stCalcResult.V_total > 0)) { calcStages(); return; }
   const V     = stCalcResult.V_total;
   const badA = wkCheckPositive([
-    ['a_perDevice','单个曝气器气量'], ['a_OTE','OTE'], ['a_spacing','曝气器布置间距'], ['a_efficiency','风机效率'],
+    ['a_perDevice','单个曝气器气量'], ['a_OTE','OTE'], ['a_spacing','曝气器布置间距'], ['a_efficiency','Hiệu suất máy thổi khí'],
     ['a_backupFactor','备用系数']
   ]);
-  const badA2 = wkCheckNonNeg([['a_price','曝气器单价'], ['a_dp_aer','曝气池阻力'], ['a_dp_pipe','管路阻力']]);
+  const badA2 = wkCheckNonNeg([['a_price','曝气器单价'], ['a_dp_aer','曝气池阻力'], ['a_dp_pipe','Tổn thất áp suất đường ống']]);
   if (badA.length || badA2.length) {
     document.querySelectorAll('[id^="ar_"]').forEach(el => { el.textContent = '—'; });
     $('aerCheckList').innerHTML = `<div class="check-item check-bad"><span class="ic">✗</span><span><b>输入无效</b>：请输入${[...badA.map(x=>'大于 0 的'+x), ...badA2.map(x=>'不小于 0 的'+x)].join('、')}</span></div>`;
@@ -3674,7 +3674,7 @@ function calcAeration() {
   const blowerQ = blowerQ_run * backupFactor;               // 单台额定气量（含选型富余）
   const airTotalDesign = blowerQ * blowerCount;             // 装机气量 = 单台额定 × 总台数（含备用台）
 
-  // 风机效率：取输入值，但不超过该类型上限（切换类型时输入框已改为典型值）
+  // Hiệu suất máy thổi khí：取输入值，但不超过该类型上限（切换类型时输入框已改为典型值）
   const bEff = BLOWER_EFF[blowerType] || { typ: 65, max: 70 };
   const actEfficiency = Math.min(efficiency, bEff.max / 100);
   const effCapped = efficiency > bEff.max / 100 + 1e-9;
@@ -3699,7 +3699,7 @@ function calcAeration() {
   // 年电费(按 0.8 元/度)
   const yearly_cost = daily_kwh * 365 * 0.8 / 10000;  // 万元
 
-  // 推荐型号(按风机类型和流量)
+  // 推荐型号(按Loại máy thổi khí和流量)
   let model = '';
   if (blowerType === 'roots') {
     model = `罗茨风机 ${wkN(blowerQ)} Nm³/h · ${Nmotor_single}kW`;
@@ -3775,13 +3775,13 @@ function calcAeration() {
     checks.push({type:'ok', ic:'✓', text:`<b>布置间距合理</b>: ${actSpacing.toFixed(2)} m ≤ 最大间距 ${spacing} m（数量 = max(按气量 ${wkN(countByAir)}, 按间距 ${wkN(countBySpacingReq)}) = ${wkN(count)} 个，${countCtrl}，单个实际气量 ${perDeviceAct.toFixed(2)} Nm³/h）`});
   }
 
-  // 4. 风机效率（提示中写明实际采用的效率）
+  // 4. Hiệu suất máy thổi khí（提示中写明实际采用的效率）
   if (effCapped) {
-    checks.push({type:'info', ic:'ℹ', text:`<b>风机效率按类型上限计</b>: 输入 ${wkN((efficiency*100))}% 超过该类型上限 ${bEff.max}%，按 ${bEff.max}% 计算`});
+    checks.push({type:'info', ic:'ℹ', text:`<b>Hiệu suất máy thổi khí按类型上限计</b>: 输入 ${wkN((efficiency*100))}% 超过该类型上限 ${bEff.max}%，按 ${bEff.max}% 计算`});
   }
   if (blowerType === 'roots' && Ns_total > 100) {
     const saving = 1 - actEfficiency / (BLOWER_EFF.magnetic.typ / 100);
-    checks.push({type:'info', ic:'ℹ', text:`<b>建议比较磁悬浮</b>: 当前罗茨按效率 ${wkN((actEfficiency*100))}% 计，轴功率 ${wkN(Ns_total)} kW；按磁悬浮典型效率 ${BLOWER_EFF.magnetic.typ}% 计约省 ${wkN((saving*100))}%（切换风机类型即可复算）`});
+    checks.push({type:'info', ic:'ℹ', text:`<b>建议比较磁悬浮</b>: 当前罗茨按效率 ${wkN((actEfficiency*100))}% 计，轴功率 ${wkN(Ns_total)} kW；按磁悬浮典型效率 ${BLOWER_EFF.magnetic.typ}% 计约省 ${wkN((saving*100))}%（切换Loại máy thổi khí即可复算）`});
   } else if (blowerType === 'magnetic') {
     checks.push({type:'ok', ic:'✓', text:`<b>节能风机选择</b>: 磁悬浮，按效率 ${wkN((actEfficiency*100))}% 计算，长期运行成本最低`});
   }
@@ -3916,7 +3916,7 @@ const CASE_DB = [
       carrier: 'K3', fillVol: '约 16,400 m³', airCap: '约 63,600 Nm³/h',
       stageConfig: 6, stageLabel: '⑥ 完整 BNR + 化除磷'
     },
-    outcome: '冬季(10℃)NH₄-N 稳定 ≤ 5 mg/L,TN 约 12-15 mg/L,TP 需配化学除磷,故按方案 ⑥ 设计。'+'<br><i>按本工具当前模型复算（按进入负荷定面积，T_min 取案例设计水温；供氧气量 = AOR ÷ (SOFK × 淹没深度)）：10 ℃ 下 r_nit 0.48 g/m²·d，纯 MBBR 总池容约 41,700 m³（HRT 约 20 h）、填料约 16,400 m³、设计气量约 63,600 Nm³/h（搅拌控制，供氧所需仅约 13,100 Nm³/h），曝气吨水电耗约 0.67 kWh/m³（套用后提示偏高；含缺氧段搅拌约 0.85）；预计出水 TN 14.0（按需投碳控制值）、TP 0.5 mg/L；经验校核需氧约 12,100 kg O₂/d，与 GB 式基本一致。低温下纯 MBBR 池容与搅拌能耗偏大，原工程为原池投加填料（实为 IFAS 改造），请用 <a href="ifas-design.html">IFAS 工程设计</a>工具的改造模式复核。</i>',
+    outcome: '冬季(10℃)NH₄-N 稳定 ≤ 5 mg/L,TN 约 12-15 mg/L,TP 需配化学除磷,故按方案 ⑥ 设计。'+'<br><i>按本工具当前模型复算（按进入负荷定面积，T_min 取案例设计水温；供氧气量 = AOR ÷ (SOFK × 淹没深度)）：10 ℃ 下 r_nit 0.48 g/m²·d，纯 MBBR 总池容约 41,700 m³（HRT 约 20 h）、填料约 16,400 m³、设计气量约 63,600 Nm³/h（搅拌控制，供氧所需仅约 13,100 Nm³/h），曝气吨水电耗约 0.67 kWh/m³（套用后提示偏高；含缺氧段搅拌约 0.85）；预计出水 TN 14.0（按需投碳控制值）、TP 0.5 mg/L；经验校核需氧约 12,100 kg O₂/d，与 GB 式基本一致。低温下纯 MBBR 池容与搅拌能耗偏大，原工程为原池投加填料（实为 IFAS 改造），请用 <a href="ifas-design.html">Thiết kế công trình IFAS</a>工具的改造模式复核。</i>',
     invest: '主材约 480 万元(填料 200 万元 + 筛网 80 万元 + 风机系统 200 万元)'
   },
   {
@@ -3963,7 +3963,7 @@ const CASE_DB = [
     design: {
       rBOD10: 2.0, rNit10: 0.21, specArea: 500, fillRatio: 55, mode: 'nitrification',
       carrier: 'K3', fillVol: '约 910 m³', airCap: '约 4,100 Nm³/h',
-      stageConfig: 2, stageLabel: '② 前高+后低双好氧', alpha: 0.5,
+      stageConfig: 2, stageLabel: '② Hai giai đoạn hiếu khí: tải trọng cao trước, thấp sau', alpha: 0.5,
       note: '抗冲击设计,α=0.5(低于城镇)'
     },
     outcome: 'COD 去除 87%, 生物膜对冲击负荷恢复时间 &lt;6 h。'+'<br><i>按本工具当前模型复算（按进入负荷定面积，T_min 取案例设计水温；供氧气量 = AOR ÷ (SOFK × 淹没深度)）：自定义 r_BOD 2.0、r_nit 0.21（原 SALR₂₀ 4、SNR₂₀ 0.5 按 θ 折算至 10 ℃）：总池容约 1,660 m³（高/低负荷段按面积需求自动分配为 50% / 50%）、填料约 910 m³、设计气量约 4,100 Nm³/h（搅拌控制，供氧所需约 1,300），曝气吨水电耗约 1.4 kWh/m³（套用后提示偏高），填料面积满足，NH₄ 出水按目标 15 mg/L（去除约 75%）；方案 ② 无缺氧段、无化学除磷，出水 TN ≤ 30、TP ≤ 1.5 需另设缺氧段和除磷（套用后 TN/TP 校核提示不达标）。</i>',
@@ -4014,7 +4014,7 @@ const CASE_DB = [
     design: {
       rBOD10: 2.5, rNit10: 0.17, specArea: 500, fillRatio: 60, salinity: 25, mode: 'nitrification',
       carrier: 'K3', fillVol: '约 560 m³', airCap: '约 2,300 Nm³/h',
-      stageConfig: 2, stageLabel: '② 前高+后低双好氧', alpha: 0.5,
+      stageConfig: 2, stageLabel: '② Hai giai đoạn hiếu khí: tải trọng cao trước, thấp sau', alpha: 0.5,
       note: 'α=0.5 · 盐度 25‰（饱和溶解氧按盐度修正）· 耐盐菌驯化 3-6 个月'
     },
     outcome: '启动驯化后 COD 去除 88%, NH₄ 去除 65%(高盐抑制，工具未计盐度抑制)。填料挂膜稳定,不受盐冲击。'+'<br><i>按本工具当前模型复算（按进入负荷定面积，T_min 取案例设计水温；供氧气量 = AOR ÷ (SOFK × 淹没深度)）：α=0.5、盐度 25‰，自定义 r_BOD 2.5、r_nit 0.17（原 SALR₂₀ 5、SNR₂₀ 0.4 按 θ 折算至 10 ℃）：总池容约 930 m³（高/低负荷段 64% / 36%）、填料约 560 m³、设计气量约 2,300 Nm³/h（搅拌控制，供氧所需约 870），曝气吨水电耗约 1.5 kWh/m³——BOD 1,100 mg/L 需氧约 1.0 kg O₂/m³，属高浓度废水的正常量级（套用后按城镇污水基准提示偏高）。工具未计盐度对硝化的抑制，模型按出水目标 15 mg/L 计 NH₄ 去除约 63%（填料面积满足），与实际约 65% 接近只因目标值相近，盐度抑制需中试确认。方案 ② 不脱氮、无化学除磷，出水 TN ≤ 30、TP ≤ 2 需另设缺氧段和除磷（套用后 TN/TP 校核提示不达标）。</i>',
@@ -4049,7 +4049,7 @@ const CASE_DB = [
       specArea: 800, fillRatio: 50, mode: 'nitrification',
       carrier: 'K5', fillVol: '约 250 m³', airCap: '约 1,250 Nm³/h',
       stageConfig: 7, stageLabel: '⑦ 短程硝化 + Anammox',
-      note: '短程硝化 + 厌氧氨氧化 · 控制 AOB(氨氧化菌) + Anammox 菌群共生 · DO 0.3-0.5 mg/L · 启动 6-12 个月'
+      note: 'Nitrat hoá bán phần + oxy hoá amoni kỵ khí · 控制 AOB(氨氧化菌) + Anammox 菌群共生 · DO 0.3-0.5 mg/L · 启动 6-12 个月'
     },
     outcome: 'NH₄ 去除率 95%、TN 去除率 80%+。相比常规硝化-反硝化<b>节省外加碳源 100%、节省曝气能耗 60%</b>。适用于污泥脱水液、食品发酵废水、渗滤液侧流等高氨氮场景。'+'<br><i>按本工具当前模型复算（按进入负荷定面积，T_min 取案例设计水温；供氧气量 = AOR ÷ (SOFK × 淹没深度)）：K5（800 m²/m³）、填充率 50%，方案 ⑦ 按一段式 PN/A 面积负荷 1.2 g N/m²·d（参考值，30 ℃ 基准，不套全程硝化速率式）按进入 NH₄-N 240 kg/d 定面积：总池容约 500 m³（容积负荷约 0.48 kg N/m³·d）、填料约 250 m³、设计气量约 1,250 Nm³/h（曝气兼搅拌，搅拌控制，供氧所需约 490），曝气吨水电耗约 3.3 kWh/m³（约 2.9 kWh/kg N 去除，Anammox 段不另计机械搅拌）；NH₄ 出水按目标 60 mg/L（去除约 95%）、TN 去除约 85%（出水 TN 195 mg/L）。池容与电耗应按厂家 PN/A 面积负荷复核；“省曝气 60%”按需氧量（1.9 对 4.57 kg O₂/kg N）比较成立。本案例无化学除磷，TP 校核提示不达标属预期。</i>',
     invest: '主体设备约 250 万元(含菌种驯化/启动投资占 30%)'
@@ -4321,7 +4321,7 @@ function calcStages() {
   // ── 输入校验：作为除数/幂底的参数须 > 0 ──
   const badPos = wkCheckPositive([
     ['st_Q','进水流量 Q'], ['st_BOD0','进水 BOD₀'], ['st_rBOD','r_BOD'], ['st_preDN_n','预缺氧串联格数'],
-    ['st_fillRatio','填充率'], ['st_specArea','比表面积'], ['st_poolH','好氧池有效水深 H'],
+    ['st_fillRatio','填充率'], ['st_specArea','比表面积'], ['st_poolH','Chiều sâu nước hữu ích bể hiếu khí H'],
     ['st_theta','θ_BOD'], ['st_theta_N','θ_N'], ['st_theta_o2','θ_O₂'], ['st_alpha','α'], ['st_beta','β'],
     ['st_DO','DO 设计值'], ['st_airIntMin','搅拌气量强度'], ['st_Y','产率系数 Y'], ['st_SRT','参考 SRT'],
     ['st_biofilmX','生物膜量 X'], ['st_acetatePurity','乙酸钠有效含量']
@@ -4357,7 +4357,7 @@ function calcStages() {
   const badAll = [...badPos.map(x => '大于 0 的' + x), ...badNN.map(x => '不小于 0 的' + x)];
   if (mcBad) badAll.push('0-100 之间的泥饼含水率');
   if (tnLtNH) badAll.push('不小于进水 NH₄-N 的进水 TN（TN 包含 NH₄-N）');
-  if (peBad) badAll.push('大于 0 的回流泵效率');
+  if (peBad) badAll.push('大于 0 的Hiệu suất máy bơm tuần hoàn');
   if (altBad) badAll.push('−500 ~ 6000 m 之间的海拔');
   // 水温 0–40 ℃（与曝气量页一致）；T_min 不高于 T
   const tEl = $('st_T'), tmEl = $('st_Tmin'), tV = parseFloat(tEl?.value), tmV = parseFloat(tmEl?.value);

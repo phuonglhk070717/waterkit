@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>孔口管嘴出流计算器 | 水处理工具箱 · WaterKit</title>
+<title>Công cụ tính dòng chảy qua lỗ và vòi phun | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="在线孔口管嘴出流计算：薄壁小孔、圆柱外管嘴、锥形收缩管嘴、大孔口的恒定水头流量，以及水池变水头泄流（排空）时间计算。">
+<meta name="description" content="Tính lưu lượng qua lỗ nhỏ thành mỏng, vòi phun trụ ngoài, vòi phun côn co hẹp và lỗ lớn với cột nước không đổi; tính thời gian xả cạn bể với cột nước thay đổi.">
 <link rel="canonical" href="https://waterkit.cn/orifice-nozzle-calculator.html">
 <style>
   :root {
@@ -473,44 +473,44 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Công nghệ Dengdeng</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-hydraulics">水力计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-hydraulics">Tính toán thủy lực</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Công nghệ Dengdeng</a>
     </nav>
   </div>
 </header>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-hydraulics">水力计算</a>
+  <a href="index.html#cat-hydraulics">Tính toán thủy lực</a>
   <span class="sep">/</span>
-  <span class="current">孔口管嘴出流</span>
+  <span class="current">Dòng chảy qua lỗ và vòi phun</span>
 </div>
 
 <main class="main-wrap">
 
 <div class="container">
   <header class="tool-header">
-    <h1>💧 孔口管嘴出流计算器</h1>
-    <p>薄壁小孔 / 圆柱管嘴 / 锥形管嘴 / 大孔口 · 恒定出流 & 变水头泄流时间</p>
+    <h1>💧 Công cụ tính dòng chảy qua lỗ và vòi phun</h1>
+    <p>Lỗ nhỏ thành mỏng / vòi phun trụ / vòi phun côn / lỗ lớn · Dòng chảy ổn định và thời gian xả với cột nước thay đổi</p>
   </header>
 
   <div class="body">
 
     <!-- 出流类型 -->
-    <div class="section-title">① 出流形式</div>
+    <div class="section-title">① Dạng dòng chảy</div>
     <div class="type-tabs">
-      <button class="type-tab active" data-type="thin" onclick="setType('thin')">薄壁小孔</button>
-      <button class="type-tab" data-type="cylin" onclick="setType('cylin')">圆柱外管嘴</button>
-      <button class="type-tab" data-type="conic" onclick="setType('conic')">锥形管嘴</button>
-      <button class="type-tab" data-type="large" onclick="setType('large')">大孔口</button>
+      <button class="type-tab active" data-type="thin" onclick="setType('thin')">Lỗ nhỏ thành mỏng</button>
+      <button class="type-tab" data-type="cylin" onclick="setType('cylin')">Vòi phun trụ ngoài</button>
+      <button class="type-tab" data-type="conic" onclick="setType('conic')">Vòi phun côn</button>
+      <button class="type-tab" data-type="large" onclick="setType('large')">Lỗ lớn</button>
     </div>
 
     <!-- 示意图 -->
@@ -519,244 +519,244 @@
     </div>
 
     <!-- 工况 -->
-    <div class="section-title">② 计算工况</div>
+    <div class="section-title">② Chế độ tính toán</div>
     <div class="scene-tabs">
-      <button class="scene-tab active" data-scene="steady" onclick="setScene('steady')">恒定水头出流</button>
-      <button class="scene-tab" data-scene="draining" onclick="setScene('draining')">变水头泄流（排空）</button>
+      <button class="scene-tab active" data-scene="steady" onclick="setScene('steady')">Dòng chảy với cột nước không đổi</button>
+      <button class="scene-tab" data-scene="draining" onclick="setScene('draining')">Xả với cột nước thay đổi (xả cạn)</button>
     </div>
 
     <!-- 切换选项 -->
     <div class="toggle-row">
       <label>
         <input type="checkbox" id="submerged" onchange="calc()">
-        <span>淹没出流（出口被水淹没）</span>
+        <span>Dòng chảy ngập (cửa ra bị ngập nước)</span>
       </label>
       <label>
         <input type="checkbox" id="autoMu" checked onchange="toggleAutoMu()">
-        <span>自动取流量系数 μ</span>
+        <span>Tự động chọn hệ số lưu lượng μ</span>
       </label>
     </div>
 
     <!-- 参数 -->
-    <div class="section-title">③ 参数输入</div>
+    <div class="section-title">③ Thông số đầu vào</div>
     <div class="grid">
 
       <!-- 孔口形状选择 -->
       <div class="field" id="shape_field">
-        <label for="shape">孔口形状</label>
+        <label for="shape">Hình dạng lỗ</label>
         <select id="shape" onchange="calc()">
-          <option value="circle" selected>圆形</option>
-          <option value="rect">矩形</option>
+          <option value="circle" selected>Tròn</option>
+          <option value="rect">Chữ nhật</option>
         </select>
       </div>
 
       <!-- 圆形:直径 -->
       <div class="field shape-circle">
-        <label for="d">孔径 d <span class="unit">m</span></label>
+        <label for="d">Đường kính lỗ d <span class="unit">m</span></label>
         <input type="number" id="d" value="0.1" step="0.01">
       </div>
 
       <!-- 矩形:宽高 -->
       <div class="field shape-rect" style="display:none;">
-        <label for="a">孔宽 a <span class="unit">m</span></label>
+        <label for="a">Chiều rộng lỗ a <span class="unit">m</span></label>
         <input type="number" id="a" value="0.1" step="0.01">
       </div>
       <div class="field shape-rect" style="display:none;">
-        <label for="e">孔高 e <span class="unit">m</span></label>
+        <label for="e">Chiều cao lỗ e <span class="unit">m</span></label>
         <input type="number" id="e" value="0.1" step="0.01">
       </div>
 
       <!-- 水头 -->
       <div class="field" id="f_H_scene_steady">
-        <label for="H">作用水头 H <span class="unit">m</span></label>
+        <label for="H">Cột nước tác dụng H <span class="unit">m</span></label>
         <input type="number" id="H" value="3.0" step="0.1">
-        <div class="helper" id="H_helper">自由出流:上游水面到孔口中心的高度<br>淹没出流:上下游水位差</div>
+        <div class="helper" id="H_helper">Dòng chảy tự do: chiều cao từ mặt nước thượng lưu đến tâm lỗ<br>Dòng chảy ngập: chênh lệch mực nước thượng lưu và hạ lưu</div>
       </div>
 
       <!-- 变水头泄流参数 -->
       <div class="field scene-draining" id="f_A_tank" style="display:none;">
-        <label for="A_tank">池面面积 A_池 <span class="unit">m²</span></label>
+        <label for="A_tank">Diện tích mặt bể A_tank <span class="unit">m²</span></label>
         <input type="number" id="A_tank" value="100" step="10">
-        <div class="helper">按平均水面面积取值</div>
+        <div class="helper">Lấy theo diện tích mặt nước trung bình</div>
       </div>
       <div class="field scene-draining" id="f_H1" style="display:none;">
-        <label for="H1">初始水头 H₁ <span class="unit">m</span></label>
+        <label for="H1">Cột nước ban đầu H₁ <span class="unit">m</span></label>
         <input type="number" id="H1" value="3.0" step="0.1">
       </div>
       <div class="field scene-draining" id="f_H2" style="display:none;">
-        <label for="H2">终了水头 H₂ <span class="unit">m</span></label>
+        <label for="H2">Cột nước cuối H₂ <span class="unit">m</span></label>
         <input type="number" id="H2" value="1.0" step="0.1">
-        <div class="helper">默认 1.0 m: 使 H₂/d (矩形孔 H₂/e) ≥ 10, 小孔口公式全程适用; 完全排空取 0 或孔口中心处 (末段结果偏乐观, 工具会提示)</div>
+        <div class="helper">Mặc định 1.0 m để H₂/d (lỗ chữ nhật H₂/e) ≥ 10 và công thức lỗ nhỏ áp dụng được trong suốt quá trình. Để tính thời gian xả đến tâm lỗ, nhập 0; kết quả ở giai đoạn cuối có xu hướng lạc quan và công cụ sẽ cảnh báo.</div>
       </div>
 
-      <!-- 流量系数 -->
+      <!-- Hệ số lưu lượng -->
       <div class="field">
-        <label for="mu">流量系数 μ <span class="unit" id="mu_source">自动</span></label>
+        <label for="mu">Hệ số lưu lượng μ <span class="unit" id="mu_source">Tự động</span></label>
         <input type="number" id="mu" value="0.62" step="0.01" disabled>
       </div>
 
-      <!-- 管嘴长度(仅圆柱管嘴显示) -->
+      <!-- Chiều dài vòi(仅圆柱管嘴显示) -->
       <div class="field type-cylin" style="display:none;">
-        <label for="L">管嘴长度 L <span class="unit">m</span></label>
+        <label for="L">Chiều dài vòi L <span class="unit">m</span></label>
         <input type="number" id="L" value="0.4" step="0.05">
-        <div class="helper">圆柱管嘴适用:L = (3-4)·d</div>
+        <div class="helper">Áp dụng cho vòi trụ: L = (3-4)·d</div>
       </div>
 
-      <!-- 大孔口的孔顶水头 -->
+      <!-- Lỗ lớn的孔顶水头 -->
       <div class="field type-large" style="display:none;">
-        <label for="H_top">孔顶以上水头 H_顶 <span class="unit">m</span></label>
+        <label for="H_top">Cột nước trên đỉnh lỗ H_top <span class="unit">m</span></label>
         <input type="number" id="H_top" value="2.0" step="0.1">
-        <div class="helper">大孔口按 H_顶 和 H_底 积分</div>
+        <div class="helper">Lỗ lớn được tính tích phân theo H_top và H_bottom</div>
       </div>
     </div>
 
     <!-- 结果 -->
     <div class="results">
-      <h2>计算结果</h2>
+      <h2>Kết quả tính toán</h2>
 
       <div class="result-group">
-        <div class="result-group-title">出流基本参数</div>
+        <div class="result-group-title">Thông số cơ bản của dòng chảy</div>
         <div class="result-row">
-          <span class="result-label">孔口面积 A</span>
+          <span class="result-label">Diện tích lỗ A</span>
           <span><span class="result-value" id="r_A">—</span><span class="result-unit">m²</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">流量系数 μ</span>
+          <span class="result-label">Hệ số lưu lượng μ</span>
           <span><span class="result-value" id="r_mu">—</span><span class="result-unit">—</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">理论流速 v_理论</span>
+          <span class="result-label">Vận tốc lý thuyết v_lý thuyết</span>
           <span><span class="result-value" id="r_v_t">—</span><span class="result-unit">m/s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">实际出流速度 v_实际</span>
+          <span class="result-label">Vận tốc dòng chảy thực tế v_thực tế</span>
           <span><span class="result-value" id="r_v_r">—</span><span class="result-unit">m/s</span></span>
         </div>
       </div>
 
       <div class="result-group" id="group_steady">
-        <div class="result-group-title">恒定水头出流（瞬时流量）</div>
+        <div class="result-group-title">Dòng chảy với cột nước không đổi (lưu lượng tức thời)</div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>瞬时流量 Q</b></span>
+          <span class="result-label"><b>Lưu lượng tức thời Q</b></span>
           <span><span class="result-value big" id="r_Q">—</span><span class="result-unit">m³/s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">流量（工程常用单位）</span>
+          <span class="result-label">Lưu lượng (đơn vị thường dùng trong kỹ thuật)</span>
           <span><span class="result-value" id="r_Q_h">—</span><span class="result-unit">m³/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">日出流量（持续）</span>
+          <span class="result-label">Lưu lượng xả trong ngày (liên tục)</span>
           <span><span class="result-value" id="r_Q_d">—</span><span class="result-unit">m³/d</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">收缩系数 ε ≈</span>
+          <span class="result-label">Hệ số co hẹp ε ≈</span>
           <span><span class="result-value" id="r_eps">—</span><span class="result-unit">—</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">流速系数 φ ≈</span>
+          <span class="result-label">Hệ số vận tốc φ ≈</span>
           <span><span class="result-value" id="r_phi">—</span><span class="result-unit">—</span></span>
         </div>
       </div>
 
       <div class="result-group" id="group_draining" style="display:none;">
-        <div class="result-group-title">变水头泄流（排空）</div>
+        <div class="result-group-title">Xả với cột nước thay đổi (xả cạn)</div>
         <div class="result-row">
-          <span class="result-label">初始流量 Q₁ (在 H₁)</span>
+          <span class="result-label">Lưu lượng ban đầu Q₁ (tại H₁)</span>
           <span><span class="result-value" id="r_Q1">—</span><span class="result-unit">m³/s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">终了流量 Q₂ (在 H₂)</span>
+          <span class="result-label">Lưu lượng cuối Q₂ (tại H₂)</span>
           <span><span class="result-value" id="r_Q2">—</span><span class="result-unit">m³/s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">平均流量 Q_avg</span>
+          <span class="result-label">Lưu lượng trung bình Q_avg</span>
           <span><span class="result-value" id="r_Qavg">—</span><span class="result-unit">m³/s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">泄流总体积 V</span>
+          <span class="result-label">Tổng thể tích xả V</span>
           <span><span class="result-value" id="r_V">—</span><span class="result-unit">m³</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>泄流时间 t</b></span>
+          <span class="result-label"><b>Thời gian xả t</b></span>
           <span><span class="result-value big" id="r_t">—</span><span class="result-unit" id="r_t_unit">s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">泄流时间（常用单位）</span>
+          <span class="result-label">Thời gian xả (đơn vị thường dùng)</span>
           <span><span class="result-value" id="r_t2">—</span><span class="result-unit">min / h</span></span>
         </div>
       </div>
 
       <div class="result-group">
-        <div class="result-group-title">工况校核</div>
-        <div class="check-box" id="check_info">判定中...</div>
+        <div class="result-group-title">Kiểm tra điều kiện làm việc</div>
+        <div class="check-box" id="check_info">Đang kiểm tra...</div>
       </div>
     </div>
 
     <div class="buttons">
-      <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
-      <button class="btn btn-secondary" onclick="toggleFormula()">📖 查看公式</button>
+      <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
+      <button class="btn btn-secondary" onclick="toggleFormula()">📖 Xem công thức</button>
     </div>
 
     <div class="formula-box" id="formulaBox" style="display:none;">
-      <h3>① 基本出流公式</h3>
-      <p><strong>理论流速（托里拆利公式）</strong>：</p>
-      <code>v_理论 = √(2gH)</code>
-      <p><strong>实际流速 & 流量（引入系数）</strong>：</p>
+      <h3>① Công thức cơ bản của dòng chảy</h3>
+      <p><strong>Vận tốc lý thuyết (công thức Torricelli)</strong>：</p>
+      <code>v_lý thuyết = √(2gH)</code>
+      <p><strong>Vận tốc thực tế & lưu lượng (có xét hệ số)</strong>：</p>
       <code>v = φ·√(2gH)</code>
       <code>Q = μ·A·√(2gH) = ε·φ·A·√(2gH)</code>
-      <p>其中：ε 收缩系数,φ 流速系数,μ = ε·φ 为流量系数。</p>
+      <p>Trong đó: ε là hệ số co hẹp, φ là hệ số vận tốc, μ = ε·φ là hệ số lưu lượng.</p>
 
-      <h3>② 四种出流形式的系数</h3>
+      <h3>② Hệ số của bốn dạng dòng chảy</h3>
       <table>
-        <tr><th>出流形式</th><th>ε</th><th>φ</th><th>μ</th><th>适用条件</th></tr>
-        <tr><td>薄壁小孔（圆形）</td><td>0.64</td><td>0.97</td><td>0.62</td><td>锐边薄壁,H ≥ 10d（矩形孔按孔高 e）</td></tr>
-        <tr><td>圆柱外管嘴</td><td>1.00</td><td>0.82</td><td>0.82</td><td>L = (3~4)d,H &lt; 9m 避免气蚀</td></tr>
-        <tr><td>锥形收缩管嘴（θ=13°）</td><td>0.98</td><td>0.96</td><td>0.94</td><td>收敛角约 13°24′</td></tr>
-        <tr><td>大孔口（矩形）</td><td>0.64</td><td>0.97</td><td>0.62（常见 0.60-0.65）</td><td>e &gt; H/10（即 H/e &lt; 10）,按积分式</td></tr>
+        <tr><th>Dạng dòng chảy</th><th>ε</th><th>φ</th><th>μ</th><th>Điều kiện áp dụng</th></tr>
+        <tr><td>Lỗ nhỏ thành mỏng (tròn)</td><td>0.64</td><td>0.97</td><td>0.62</td><td>Thành mỏng, mép sắc, H ≥ 10d (lỗ chữ nhật dùng chiều cao e)</td></tr>
+        <tr><td>Vòi trụ ngoài</td><td>1.00</td><td>0.82</td><td>0.82</td><td>L = (3~4)d,H &lt; 9m tránh khí thực</td></tr>
+        <tr><td>Vòi côn co hẹp (θ=13°)</td><td>0.98</td><td>0.96</td><td>0.94</td><td>Góc hội tụ khoảng 13°24′</td></tr>
+        <tr><td>Lỗ lớn (chữ nhật)</td><td>0.64</td><td>0.97</td><td>0.62 (thường gặp 0.60-0.65)</td><td>e &gt; H/10 (tức H/e &lt; 10), tính bằng tích phân</td></tr>
       </table>
-      <p>注：管嘴（圆柱外）μ 比同尺寸薄壁孔大约 32%,因为出口断面恢复为整个孔面积,同时内部形成真空增强吸入。</p>
+      <p>Lưu ý: μ của vòi trụ ngoài lớn hơn khoảng 32% so với lỗ thành mỏng cùng kích thước, vì tiết diện dòng tại cửa ra phục hồi bằng toàn bộ diện tích lỗ, đồng thời chân không bên trong tăng sức hút.</p>
 
-      <h3>③ 淹没出流</h3>
-      <p>出口处被下游水淹没时，公式形式不变，但 H 取 <strong>上下游水位差</strong> 而非到孔口中心的高度,μ 值基本相同。</p>
+      <h3>③ Dòng chảy ngập</h3>
+      <p>Khi cửa ra bị nước hạ lưu nhấn chìm, dạng công thức không đổi, nhưng H lấy bằng <strong>chênh lệch mực nước thượng lưu và hạ lưu</strong> thay vì chiều cao đến tâm lỗ; μ gần như không đổi.</p>
       <code>Q = μ·A·√(2g·ΔH)</code>
 
-      <h3>④ 大孔口（按积分式计算）</h3>
-      <p>当孔口高度相对水头较大（e &gt; H/10,即 H/d 或 H/e &lt; 10）时,不能按孔心水头简化,需积分：</p>
-      <code>Q = (2/3)·μ·b·√(2g)·(H_底^1.5 − H_顶^1.5)</code>
-      <p>其中 b 为孔宽（= a）,H_顶 为孔顶水头,H_底 = H_顶 + e 为孔底水头。大孔口模式下"作用水头 H"自动取孔心水头 H_顶 + e/2（只读）,仅用于计算流速 v。</p>
-      <p>若 H/e ≥ 10（H 为孔心水头）,积分式与小孔口式结果接近,可直接按小孔口计算,工具给出提示。</p>
-      <p>变水头泄流工况下,大孔口按孔心水头简化为 Q = μ·A·√(2gH),未采用积分式。</p>
+      <h3>④ Lỗ lớn (tính bằng tích phân)</h3>
+      <p>Khi chiều cao lỗ lớn so với cột nước (e &gt; H/10, tức H/d hoặc H/e &lt; 10), không thể đơn giản hóa theo cột nước tại tâm lỗ mà phải lấy tích phân:</p>
+      <code>Q = (2/3)·μ·b·√(2g)·(H_bottom^1.5 − H_top^1.5)</code>
+      <p>Trong đó b là chiều rộng lỗ (= a), H_top là cột nước trên đỉnh lỗ, H_bottom = H_top + e là cột nước trên đáy lỗ. Ở chế độ lỗ lớn, “cột nước tác dụng H” tự động lấy bằng cột nước tại tâm lỗ H_top + e/2 (chỉ đọc), chỉ dùng để tính vận tốc v.</p>
+      <p>Nếu H/e ≥ 10 (H là cột nước tại tâm lỗ), công thức tích phân cho kết quả gần với công thức lỗ nhỏ; có thể tính trực tiếp theo lỗ nhỏ và công cụ sẽ thông báo.</p>
+      <p>Khi xả với cột nước thay đổi, lỗ lớn được tính gần đúng theo cột nước tại tâm lỗ bằng Q = μ·A·√(2gH), không dùng công thức tích phân.</p>
 
-      <h3>⑤ 变水头泄流时间（容器排空）</h3>
-      <p>假设容器截面面积 A_池 不随水深变化：</p>
-      <code>t = 2·A_池·(√H₁ − √H₂) / (μ·A·√(2g))</code>
-      <p>若容器形状复杂（锥形/球形）,须单独积分。</p>
-      <p>式中按孔心水头的小孔口公式积分;当终了水头 H₂/d（矩形孔按孔高 e）&lt; 10 时,末段已非小孔口出流,工具给出提示,泄流时间结果偏乐观。</p>
+      <h3>⑤ Thời gian xả với cột nước thay đổi (xả cạn bể)</h3>
+      <p>Giả định diện tích mặt cắt bể A_tank không đổi theo độ sâu nước:</p>
+      <code>t = 2·A_tank·(√H₁ − √H₂) / (μ·A·√(2g))</code>
+      <p>Nếu bể có hình dạng phức tạp (hình nón/hình cầu), phải tính tích phân riêng.</p>
+      <p>Công thức tích phân theo công thức lỗ nhỏ với cột nước tại tâm lỗ; khi cột nước cuối H₂/d (lỗ chữ nhật dùng chiều cao e) &lt; 10, dòng chảy giai đoạn cuối không còn thuộc trường hợp lỗ nhỏ. Công cụ sẽ cảnh báo và thời gian xả tính được có xu hướng lạc quan.</p>
 
-      <h3>⑥ 圆柱管嘴气蚀校核</h3>
-      <p>圆柱外管嘴工作时内部形成真空,但水头过大或管嘴过长时会发生气蚀导致断流。经验限值：</p>
-      <code>H_max ≈ 9 m（水温 20℃,海平面）</code>
-      <p>超过此水头建议改用薄壁孔口或锥形管嘴。</p>
+      <h3>⑥ Kiểm tra khí thực ở vòi trụ</h3>
+      <p>Khi vòi trụ ngoài hoạt động, chân không hình thành bên trong; nếu cột nước quá lớn hoặc vòi quá dài, khí thực có thể gây gián đoạn dòng chảy. Giới hạn kinh nghiệm:</p>
+      <code>H_max ≈ 9 m (nhiệt độ nước 20℃, mực nước biển)</code>
+      <p>Khi vượt cột nước này, nên dùng lỗ thành mỏng hoặc vòi côn.</p>
 
-      <h3>⑦ 常见应用</h3>
+      <h3>⑦ Ứng dụng thường gặp</h3>
       <table>
-        <tr><th>应用</th><th>推荐形式</th></tr>
-        <tr><td>水池排空阀</td><td>圆柱管嘴 / 锥形管嘴</td></tr>
-        <tr><td>消防水池应急泄流</td><td>大孔口 / 圆柱管嘴</td></tr>
-        <tr><td>水表实验/计量</td><td>薄壁小孔（精度高）</td></tr>
-        <tr><td>射流喷嘴/消防水枪</td><td>锥形收缩管嘴（出流集中）</td></tr>
-        <tr><td>阀门泄漏量估算</td><td>按薄壁孔口折算</td></tr>
+        <tr><th>Ứng dụng</th><th>Dạng khuyến nghị</th></tr>
+        <tr><td>Van xả cạn bể</td><td>Vòi trụ / vòi côn</td></tr>
+        <tr><td>Xả khẩn cấp bể nước chữa cháy</td><td>Lỗ lớn / vòi trụ</td></tr>
+        <tr><td>Thử nghiệm / đo đếm bằng đồng hồ nước</td><td>Lỗ nhỏ thành mỏng (độ chính xác cao)</td></tr>
+        <tr><td>Đầu phun tia / lăng phun chữa cháy</td><td>Vòi côn co hẹp (tia chảy tập trung)</td></tr>
+        <tr><td>Ước tính lưu lượng rò rỉ qua van</td><td>Quy đổi theo lỗ thành mỏng</td></tr>
       </table>
     </div>
 
     <div class="note">
-      ⚠️ 本工具适用于工程估算,流量系数按教科书典型值。实际工程中孔口边缘加工质量、水温、附近扰动都会影响 μ 值,精确场合建议按产品样本或实测校验。变水头泄流假设池面积恒定,异形池需分段积分。
+      ⚠️ Công cụ dùng để ước tính kỹ thuật, với hệ số lưu lượng theo giá trị điển hình trong giáo trình. Trong thực tế, chất lượng gia công mép lỗ, nhiệt độ nước và nhiễu động gần lỗ đều ảnh hưởng đến μ; khi cần chính xác, nên kiểm tra theo tài liệu sản phẩm hoặc số đo thực tế. Phép tính xả với cột nước thay đổi giả định diện tích mặt bể không đổi; bể có hình dạng bất thường cần tính tích phân theo từng đoạn.
     </div>
 
   </div>
 
-  <footer class="tool-inner-footer">水处理工具箱 · 仅供工程估算参考</footer>
+  <footer class="tool-inner-footer">Bộ công cụ xử lý nước · Chỉ dùng để tham khảo khi ước tính kỹ thuật</footer>
 </div>
 </main>
 
@@ -768,65 +768,65 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Công nghệ Dengdeng</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là tập hợp các công cụ tính toán trực tuyến do Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam cung cấp, được phát triển và duy trì bởi các kỹ sư công nghệ xử lý nước trực tiếp làm việc trong ngành. Miễn phí và được cập nhật liên tục.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thủy lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thủy lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thủy lực đường ống (nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thủy lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính dòng chảy qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lưu lượng sục khí</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn sinh ra</a></li>
+          <li><a href="dosing-calculator.html">Lượng hoá chất định lượng</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">MBBR Thiết kế kỹ thuật</a></li>
+          <li><a href="ifas-design.html">IFAS Thiết kế kỹ thuật</a></li>
+          <li><a href="mbr-design.html">MBR Thiết kế kỹ thuật</a></li>
+          <li><a href="ro-design.html">Thiết kế thẩm thấu ngược (RO)</a></li>
+          <li><a href="pump-selection-calculator.html">Lựa chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Lựa chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Chuyển đổi đơn vị chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thủy sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải từ ao nuôi</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Hướng dẫn tham quan Aqua Nor 2027</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Công ty</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang web chính thức của Công nghệ Dengdeng ↗</a></li>
+          <li>Tư vấn Công nghệ Dengdeng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Open Source</h4>
+        <h4>Mã nguồn mở</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">Giấy phép AGPL-3.0</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Báo lỗi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
@@ -840,15 +840,15 @@
 
   let type = 'thin';
   let scene = 'steady';
-  let userShape = null;   // 进入大孔口前用户选择的孔口形状
-  let userH = null;       // 进入大孔口前用户输入的作用水头 H
+  let userShape = null;   // 进入Lỗ lớn前用户选择的孔口形状
+  let userH = null;       // 进入Lỗ lớn前用户输入的Cột nước tác dụng H
 
   // 默认系数表
   const coefficients = {
-    thin:  {mu: 0.62, eps: 0.64, phi: 0.97, name: '薄壁小孔'},
-    cylin: {mu: 0.82, eps: 1.00, phi: 0.82, name: '圆柱外管嘴'},
-    conic: {mu: 0.94, eps: 0.98, phi: 0.96, name: '锥形收缩管嘴'},
-    large: {mu: 0.62, eps: 0.64, phi: 0.97, name: '大孔口'},
+    thin:  {mu: 0.62, eps: 0.64, phi: 0.97, name: 'Lỗ nhỏ thành mỏng'},
+    cylin: {mu: 0.82, eps: 1.00, phi: 0.82, name: 'Vòi trụ ngoài'},
+    conic: {mu: 0.94, eps: 0.98, phi: 0.96, name: 'Vòi côn co hẹp'},
+    large: {mu: 0.62, eps: 0.64, phi: 0.97, name: 'Lỗ lớn'},
   };
 
   function setType(t) {
@@ -859,24 +859,24 @@
     document.querySelectorAll('.type-cylin').forEach(el => el.style.display = (t==='cylin') ? '' : 'none');
     document.querySelectorAll('.type-large').forEach(el => el.style.display = (t==='large' && scene==='steady') ? '' : 'none');
 
-    // 大孔口强制矩形,H 由 H_顶 + e/2 自动计算（只读）;离开时恢复用户此前的选择
+    // Lỗ lớn强制矩形,H 由 H_top + e/2 Tự động计算（只读）;离开时恢复用户此前的选择
     if (t === 'large') {
       if (userShape === null) userShape = $('shape').value;
       if (userH === null) userH = $('H').value;
       $('shape').value = 'rect';
       $('shape').disabled = true;
       $('H').disabled = true;
-      $('H_helper').innerHTML = '大孔口:自动取孔心水头 H = H_顶 + e/2（只读）,用于计算流速';
+      $('H_helper').innerHTML = 'Lỗ lớn: tự động lấy cột nước tại tâm lỗ H = H_top + e/2 (chỉ đọc), dùng để tính vận tốc';
     } else {
       if (userShape !== null) { $('shape').value = userShape; userShape = null; }
       if (userH !== null) { $('H').value = userH; userH = null; }
       $('shape').disabled = false;
       $('H').disabled = false;
-      $('H_helper').innerHTML = '自由出流:上游水面到孔口中心的高度<br>淹没出流:上下游水位差';
+      $('H_helper').innerHTML = 'Dòng chảy tự do: chiều cao từ mặt nước thượng lưu đến tâm lỗ<br>Dòng chảy ngập: chênh lệch mực nước thượng lưu và hạ lưu';
     }
     updateShape();
 
-    // 自动填入系数
+    // Tự động填入系数
     if ($('autoMu').checked) {
       $('mu').value = coefficients[t].mu;
     }
@@ -901,7 +901,7 @@
   function toggleAutoMu() {
     const auto = $('autoMu').checked;
     $('mu').disabled = auto;
-    $('mu_source').textContent = auto ? '自动' : '自定义';
+    $('mu_source').textContent = auto ? 'Tự động' : 'Tùy chỉnh';
     if (auto) $('mu').value = coefficients[type].mu;
     calc();
   }
@@ -912,7 +912,7 @@
     document.querySelectorAll('.shape-rect').forEach(el => el.style.display = (s==='rect') ? '' : 'none');
   }
 
-  // 孔口面积
+  // Diện tích lỗ
   function orificeArea() {
     if (type === 'large' || $('shape').value === 'rect') {
       return num('a') * num('e');
@@ -958,7 +958,7 @@
 
     // 根据不同类型绘制孔口
     if (type === 'thin') {
-      // 薄壁小孔:一个小圆形开口 + 射流收缩
+      // Lỗ nhỏ thành mỏng:一个小圆形开口 + 射流收缩
       content += `<rect x="${orifX - 2}" y="${orifY - 12}" width="4" height="24" fill="${dark}"/>`;
       // 射流（先收缩后扩展为散束）
       content += `<path d="M ${orifX+2} ${orifY-10} Q ${orifX+15} ${orifY-3} ${orifX+25} ${orifY-6} L ${orifX+80} ${orifY-10}" fill="none" stroke="${blue}" stroke-width="1.2"/>`;
@@ -966,7 +966,7 @@
       // 收缩断面
       content += `<line x1="${orifX+22}" y1="${orifY-8}" x2="${orifX+22}" y2="${orifY+8}" stroke="#ef4444" stroke-width="0.8" stroke-dasharray="2,2"/>`;
       content += `<text x="${orifX+25}" y="${orifY-10}" font-size="9" fill="#ef4444">ε·A</text>`;
-      content += `<text x="${orifX + 40}" y="${orifY + 30}" font-size="11" fill="${dark}">薄壁小孔</text>`;
+      content += `<text x="${orifX + 40}" y="${orifY + 30}" font-size="11" fill="${dark}">Lỗ nhỏ thành mỏng</text>`;
     } else if (type === 'cylin') {
       // 圆柱管嘴:有厚度,L=3-4d
       const L = 40;
@@ -984,9 +984,9 @@
       // L标注
       content += `<text x="${orifX + L/2 - 3}" y="${orifY - 20}" font-size="11" fill="${dark}">L</text>`;
       content += `<line x1="${orifX}" y1="${orifY - 15}" x2="${orifX+L}" y2="${orifY - 15}" stroke="${dark}" stroke-width="0.6"/>`;
-      content += `<text x="${orifX + L/2 - 15}" y="${orifY + 35}" font-size="11" fill="${dark}">圆柱外管嘴</text>`;
+      content += `<text x="${orifX + L/2 - 15}" y="${orifY + 35}" font-size="11" fill="${dark}">Vòi trụ ngoài</text>`;
     } else if (type === 'conic') {
-      // 锥形收缩管嘴
+      // Vòi côn co hẹp
       content += `<rect x="${orifX - 2}" y="${orifY - 16}" width="2" height="32" fill="${dark}"/>`;
       const L = 40;
       content += `<line x1="${orifX}" y1="${orifY - 14}" x2="${orifX + L}" y2="${orifY - 8}" stroke="${dark}" stroke-width="1.5"/>`;
@@ -997,9 +997,9 @@
       content += `<path d="M ${orifX + L} ${orifY + 8} L ${orifX + L + 50} ${orifY + 8}" stroke="${blue}" stroke-width="1.2"/>`;
       // 角度
       content += `<text x="${orifX + L/2 - 3}" y="${orifY - 20}" font-size="10" fill="${dark}">13°</text>`;
-      content += `<text x="${orifX + 5}" y="${orifY + 35}" font-size="11" fill="${dark}">锥形收缩管嘴</text>`;
+      content += `<text x="${orifX + 5}" y="${orifY + 35}" font-size="11" fill="${dark}">Vòi côn co hẹp</text>`;
     } else { // large
-      // 大孔口:高度显著
+      // Lỗ lớn:高度显著
       content += `<rect x="${orifX - 2}" y="${orifY - 30}" width="4" height="12" fill="${dark}"/>`;
       content += `<rect x="${orifX - 2}" y="${orifY + 18}" width="4" height="12" fill="${dark}"/>`;
       // 水流
@@ -1009,14 +1009,14 @@
       // 标注孔高
       content += `<text x="${orifX + 10}" y="${orifY - 25}" font-size="10" fill="${dark}">e</text>`;
       content += `<line x1="${orifX+5}" y1="${orifY-18}" x2="${orifX+5}" y2="${orifY+18}" stroke="${dark}" stroke-width="0.6"/>`;
-      content += `<text x="${orifX + 20}" y="${orifY + 40}" font-size="11" fill="${dark}">大孔口</text>`;
+      content += `<text x="${orifX + 20}" y="${orifY + 40}" font-size="11" fill="${dark}">Lỗ lớn</text>`;
     }
 
-    // 淹没出流
+    // Dòng chảy ngập
     if ($('submerged').checked) {
       content += `<rect x="${orifX + 20}" y="${orifY - 5}" width="140" height="70" fill="url(#wavesO)" opacity="0.7"/>`;
       content += `<line x1="${orifX + 20}" y1="${orifY - 5}" x2="${orifX + 160}" y2="${orifY - 5}" stroke="${blue}" stroke-width="1.5" stroke-dasharray="3,2"/>`;
-      content += `<text x="${orifX + 90}" y="${orifY - 10}" font-size="11" fill="${blue}">下游水面</text>`;
+      content += `<text x="${orifX + 90}" y="${orifY - 10}" font-size="11" fill="${blue}">Mặt nước hạ lưu</text>`;
     }
 
     // 左侧水流箭头
@@ -1040,25 +1040,25 @@
     const bad = [];
     const need = (id, name, allowZero) => {
       const v = parseFloat($(id).value);
-      if (isNaN(v) || v < 0 || (!allowZero && v === 0)) { $(id).classList.add('invalid'); bad.push(`请输入${allowZero ? '不小于' : '大于'} 0 的${name}`); }
+      if (isNaN(v) || v < 0 || (!allowZero && v === 0)) { $(id).classList.add('invalid'); bad.push(`Vui lòng nhập ${name} ${allowZero ? 'lớn hơn hoặc bằng' : 'lớn hơn'} 0`); }
     };
     const isRect = (type === 'large' || $('shape').value === 'rect');
-    if (isRect) { need('a', '孔宽 a'); need('e', '孔高 e'); } else need('d', '孔径 d');
-    need('mu', '流量系数 μ');
+    if (isRect) { need('a', 'Chiều rộng lỗ a'); need('e', 'Chiều cao lỗ e'); } else need('d', 'Đường kính lỗ d');
+    need('mu', 'Hệ số lưu lượng μ');
     if (scene === 'steady') {
-      if (type === 'large') need('H_top', '孔顶以上水头 H_顶', true);
-      else need('H', '作用水头 H');
+      if (type === 'large') need('H_top', 'Cột nước trên đỉnh lỗ H_top', true);
+      else need('H', 'Cột nước tác dụng H');
     } else {
-      need('A_tank', '池面面积 A_池');
+      need('A_tank', 'Diện tích mặt bể A_tank');
     }
     if (bad.length) {
       document.querySelectorAll('.results .result-value').forEach(el => el.textContent = '—');
       ck.className = 'check-box check-warn';
-      ck.innerHTML = `⚠ <b>输入无效</b> · ${bad.join(';')}。`;
+      ck.innerHTML = `⚠ <b>Dữ liệu không hợp lệ</b> · ${bad.join(';')}.`;
       drawViz();
       return;
     }
-    const subNote = $('submerged').checked ? ' <b>淹没出流</b>:H 取上下游水位差（μ 取值不变）。' : '';
+    const subNote = $('submerged').checked ? ' <b>Dòng chảy ngập</b>: H là chênh lệch mực nước thượng lưu và hạ lưu (μ không đổi).' : '';
 
     $('r_A').textContent = A.toFixed(5);
     $('r_mu').textContent = mu.toFixed(3);
@@ -1068,7 +1068,7 @@
     if (scene === 'steady') {
       // 恒定水头
       if (type === 'large') {
-        // 大孔口:作用水头取孔心水头 H_顶 + e/2（只读显示）,与积分式口径一致
+        // Lỗ lớn:Cột nước tác dụng取孔心水头 H_top + e/2（只读显示）,与积分式口径一致
         $('H').value = +(num('H_top') + num('e') / 2).toFixed(4);
       }
       const H = num('H');
@@ -1077,7 +1077,7 @@
       let Q;
 
       if (type === 'large') {
-        // 大孔口用积分式
+        // Lỗ lớn用积分式
         const H_top = num('H_top');
         const H_bot = H_top + num('e');
         const b = num('a');
@@ -1095,19 +1095,19 @@
       // 适用性提示
       if (type === 'cylin' && H > 9) {
         ck.className = 'check-box check-warn';
-        ck.innerHTML = `⚠ <b>气蚀风险</b> · 圆柱管嘴在 H = ${H.toFixed(1)} m 下容易气蚀断流（临界水头约 9 m）,建议改用薄壁孔或锥形管嘴。`;
+        ck.innerHTML = `⚠ <b>Nguy cơ khí thực</b> · Vòi trụ dễ bị khí thực và gián đoạn dòng chảy khi H = ${H.toFixed(1)} m (cột nước tới hạn khoảng 9 m); nên dùng lỗ thành mỏng hoặc vòi côn.`;
       } else if (type === 'thin') {
-        // 小孔口判别:H/d ≥ 10（矩形孔按孔高 e）
+        // 小孔口判别:H/d ≥ 10（矩形孔按Chiều cao lỗ e）
         const isR = $('shape').value === 'rect';
         const dim = isR ? num('e') : num('d');
         const lbl = isR ? 'H/e' : 'H/d';
         const ratio = H / dim;
         if (ratio < 10) {
           ck.className = 'check-box check-warn';
-          ck.innerHTML = `⚠ <b>小水头</b> · ${lbl} = ${ratio.toFixed(1)} &lt; 10,属大孔口范畴,建议切换到"大孔口"模式积分计算。`;
+          ck.innerHTML = `⚠ <b>Cột nước nhỏ</b> · ${lbl} = ${ratio.toFixed(1)} &lt; 10, thuộc trường hợp lỗ lớn; nên chuyển sang chế độ “Lỗ lớn” để tính bằng tích phân.`;
         } else {
           ck.className = 'check-box check-ok';
-          ck.innerHTML = `✓ <b>薄壁小孔适用</b> · ${lbl} = ${ratio.toFixed(1)} ≥ 10,按小孔口完全收缩计算,μ = ${mu}。`;
+          ck.innerHTML = `✓ <b>Áp dụng lỗ nhỏ thành mỏng</b> · ${lbl} = ${ratio.toFixed(1)} ≥ 10, tính theo lỗ nhỏ với dòng co hẹp hoàn toàn, μ = ${mu}.`;
         }
       } else if (type === 'cylin') {
         const isR = $('shape').value === 'rect';
@@ -1115,21 +1115,21 @@
         const Ld = L / d;
         if (Ld < 3 || Ld > 4) {
           ck.className = 'check-box check-warn';
-          ck.innerHTML = `⚠ <b>管嘴长度不匹配</b> · L/d = ${Ld.toFixed(2)},推荐 3-4 之间。过短内部收缩未恢复,过长摩擦增加。`;
+          ck.innerHTML = `⚠ <b>Chiều dài vòi không phù hợp</b> · L/d = ${Ld.toFixed(2)}, khuyến nghị từ 3-4. Vòi quá ngắn khiến dòng co hẹp chưa phục hồi, quá dài làm tăng ma sát.`;
         } else {
           ck.className = 'check-box check-ok';
-          ck.innerHTML = `✓ <b>圆柱管嘴适用</b> · L/d = ${Ld.toFixed(2)},μ = ${mu}。管嘴内形成真空增强吸入,出流能力比薄壁孔大约 32%。`;
+          ck.innerHTML = `✓ <b>Áp dụng vòi trụ</b> · L/d = ${Ld.toFixed(2)}, μ = ${mu}. Chân không trong vòi tăng sức hút, khả năng xả lớn hơn lỗ thành mỏng khoảng 32%.`;
         }
       } else if (type === 'large') {
         ck.className = 'check-box check-info';
-        ck.innerHTML = `ℹ <b>大孔口</b> · 按积分式计算,H_顶 = ${num('H_top')} m,H_底 = ${(num('H_top') + num('e')).toFixed(3)} m;流速按孔心水头 H = ${H} m 计算。μ = ${mu}。`;
+        ck.innerHTML = `ℹ <b>Lỗ lớn</b> · Tính bằng tích phân, H_top = ${num('H_top')} m, H_bottom = ${(num('H_top') + num('e')).toFixed(3)} m; vận tốc tính theo cột nước tại tâm lỗ H = ${H} m. μ = ${mu}.`;
         const He = H / num('e');
         if (He >= 10) {
-          ck.innerHTML += `<br>ℹ H/e = ${He.toFixed(1)} ≥ 10,孔高相对水头已很小,可按小孔口（Q = μ·A·√(2gH)）计算,两者结果接近。`;
+          ck.innerHTML += `<br>ℹ H/e = ${He.toFixed(1)} ≥ 10, chiều cao lỗ rất nhỏ so với cột nước; có thể tính theo lỗ nhỏ (Q = μ·A·√(2gH)), hai kết quả gần nhau.`;
         }
       } else {
         ck.className = 'check-box check-info';
-        ck.innerHTML = `ℹ <b>${coef.name}</b> · 流量系数 μ = ${mu},理论流速 ${v_t.toFixed(2)} m/s,实际流速 ${v_r.toFixed(2)} m/s。`;
+        ck.innerHTML = `ℹ <b>${coef.name}</b> · Hệ số lưu lượng μ = ${mu}, vận tốc lý thuyết ${v_t.toFixed(2)} m/s, vận tốc thực tế ${v_r.toFixed(2)} m/s.`;
       }
       ck.innerHTML += subNote;
     } else {
@@ -1138,7 +1138,7 @@
 
       if (H1 <= H2 || H2 < 0) {
         ck.className = 'check-box check-warn';
-        ck.innerHTML = `⚠ 请输入有效的初始水头 H₁ > 终了水头 H₂ ≥ 0。`;
+        ck.innerHTML = `⚠ Vui lòng nhập cột nước hợp lệ: cột nước ban đầu H₁ > cột nước cuối H₂ ≥ 0.`;
         $('r_Q1').textContent = '—';
         $('r_Q2').textContent = '—';
         $('r_Qavg').textContent = '—';
@@ -1152,7 +1152,7 @@
       const Q2 = mu * A * Math.sqrt(2 * g * Math.max(H2, 0));
       const Qavg = (Q1 + Q2) / 2;
       const V = A_tank * (H1 - H2);
-      // t = 2·A_池·(√H₁ − √H₂) / (μ·A·√(2g))
+      // t = 2·A_tank·(√H₁ − √H₂) / (μ·A·√(2g))
       const t_sec = 2 * A_tank * (Math.sqrt(H1) - Math.sqrt(Math.max(H2, 0))) / (mu * A * Math.sqrt(2*g));
 
       $('r_Q1').textContent = Q1.toFixed(4);
@@ -1182,16 +1182,16 @@
         $('r_t2').textContent = `${(t_sec/3600).toFixed(1)} h`;
       }
 
-      // 末段适用性:H₂/d（矩形孔按孔高 e）< 10 时已非小孔口出流
+      // 末段适用性:H₂/d（矩形孔按Chiều cao lỗ e）< 10 时已非小Dòng chảy qua lỗ
       const isRd = (type === 'large' || $('shape').value === 'rect');
       const dimD = isRd ? num('e') : num('d');
       const lblD = isRd ? 'H₂/e' : 'H₂/d';
       const r2 = H2 / dimD;
       const endWarn = r2 < 10
-        ? `<br>⚠ <b>末段已非小孔口出流</b> · ${lblD} = ${r2.toFixed(1)} &lt; 10,孔口尺寸相对水头不可忽略（并可能出现漩涡、掺气）,按孔心水头计算的末段流量偏大,泄流时间结果偏乐观（偏短）。`
+        ? `<br>⚠ <b>Giai đoạn cuối không còn là dòng chảy qua lỗ nhỏ</b> · ${lblD} = ${r2.toFixed(1)} &lt; 10, kích thước lỗ không thể bỏ qua so với cột nước (và có thể xuất hiện xoáy, cuốn khí); lưu lượng giai đoạn cuối tính theo cột nước tại tâm lỗ bị ước tính cao, nên thời gian xả có xu hướng lạc quan (ngắn hơn thực tế).`
         : '';
       ck.className = 'check-box ' + (endWarn ? 'check-warn' : 'check-ok');
-      ck.innerHTML = `${endWarn ? '⚠' : '✓'} <b>池面积 ${A_tank} m² 的水池,由 ${H1} m 泄放到 ${H2} m</b>,共排水 ${V.toFixed(1)} m³,初始流量 ${Q1.toFixed(3)} m³/s,终了流量 ${Q2.toFixed(3)} m³/s,泄流时间见上。假设池面积恒定。${type === 'large' ? ' 大孔口在变水头工况按孔心水头简化（Q = μ·A·√(2gH),未用积分式）。' : ''}` + endWarn + subNote;
+      ck.innerHTML = `${endWarn ? '⚠' : '✓'} <b>Bể có diện tích mặt ${A_tank} m², xả từ ${H1} m xuống ${H2} m</b>, tổng lượng nước xả ${V.toFixed(1)} m³, lưu lượng ban đầu ${Q1.toFixed(3)} m³/s, lưu lượng cuối ${Q2.toFixed(3)} m³/s; thời gian xả xem ở trên. Giả định diện tích mặt bể không đổi.${type === 'large' ? ' Lỗ lớn trong chế độ cột nước thay đổi được tính gần đúng theo cột nước tại tâm lỗ (Q = μ·A·√(2gH), không dùng tích phân).' : ''}` + endWarn + subNote;
     }
 
     drawViz();
@@ -1201,35 +1201,35 @@
     const typeName = coefficients[type].name;
     let txt;
     if (scene === 'steady') {
-      txt = `孔口管嘴出流计算 · ${typeName}（恒定水头）
+      txt = `Tính dòng chảy qua lỗ và vòi phun · ${typeName} (cột nước không đổi)
 ————————————————
-孔口面积 A = ${$('r_A').textContent} m²
-作用水头 H = ${num('H')} m${type === 'large' ? `（孔心水头;H_顶 = ${num('H_top')} m,孔高 e = ${num('e')} m）` : ''}${$('submerged').checked ? '（淹没出流,取上下游水位差）' : ''}
-流量系数 μ = ${$('r_mu').textContent}
+Diện tích lỗ A = ${$('r_A').textContent} m²
+Cột nước tác dụng H = ${num('H')} m${type === 'large' ? ` (cột nước tại tâm lỗ; H_top = ${num('H_top')} m, chiều cao lỗ e = ${num('e')} m)` : ''}${$('submerged').checked ? ' (dòng chảy ngập, lấy chênh lệch mực nước thượng lưu và hạ lưu)' : ''}
+Hệ số lưu lượng μ = ${$('r_mu').textContent}
 
-理论流速 = ${$('r_v_t').textContent} m/s
-实际流速 = ${$('r_v_r').textContent} m/s
+Vận tốc lý thuyết = ${$('r_v_t').textContent} m/s
+Vận tốc thực tế = ${$('r_v_r').textContent} m/s
 
-瞬时流量 Q = ${$('r_Q').textContent} m³/s
+Lưu lượng tức thời Q = ${$('r_Q').textContent} m³/s
          = ${$('r_Q_h').textContent} m³/h
          = ${$('r_Q_d').textContent} m³/d`;
     } else {
-      txt = `孔口管嘴出流计算 · ${typeName}（变水头泄流）
+      txt = `Tính dòng chảy qua lỗ và vòi phun · ${typeName} (xả với cột nước thay đổi)
 ————————————————
-孔口面积 A = ${$('r_A').textContent} m²
-池面面积 A_池 = ${num('A_tank')} m²
-初始水头 H₁ = ${num('H1')} m
-终了水头 H₂ = ${num('H2')} m
-流量系数 μ = ${$('r_mu').textContent}
+Diện tích lỗ A = ${$('r_A').textContent} m²
+Diện tích mặt bể A_tank = ${num('A_tank')} m²
+Cột nước ban đầu H₁ = ${num('H1')} m
+Cột nước cuối H₂ = ${num('H2')} m
+Hệ số lưu lượng μ = ${$('r_mu').textContent}
 
-初始流量 Q₁ = ${$('r_Q1').textContent} m³/s
-终了流量 Q₂ = ${$('r_Q2').textContent} m³/s
-平均流量 Q_avg = ${$('r_Qavg').textContent} m³/s
-泄流总体积 = ${$('r_V').textContent} m³
-泄流时间 t = ${$('r_t').textContent} ${$('r_t_unit').textContent} (${$('r_t2').textContent})`;
+Lưu lượng ban đầu Q₁ = ${$('r_Q1').textContent} m³/s
+Lưu lượng cuối Q₂ = ${$('r_Q2').textContent} m³/s
+Lưu lượng trung bình Q_avg = ${$('r_Qavg').textContent} m³/s
+Tổng thể tích xả = ${$('r_V').textContent} m³
+Thời gian xả t = ${$('r_t').textContent} ${$('r_t_unit').textContent} (${$('r_t2').textContent})`;
     }
     navigator.clipboard.writeText(txt).then(() => {
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     }).catch(() => {
       const ta = document.createElement('textarea');
       ta.value = txt;
@@ -1237,7 +1237,7 @@
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     });
   }
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>曝气量计算器 | 水处理工具箱 · WaterKit</title>
+<title>Công cụ tính lượng khí sục | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="在线计算活性污泥法曝气需氧量与供气量：按污泥龄法求 BOD 去除、硝化与反硝化需氧量，经 α、β、温度、海拔、水深修正得到 SOR 与标准供气量 Gs。">
+<meta name="description" content="Tính trực tuyến nhu cầu oxy và lượng khí cấp cho quá trình bùn hoạt tính: tính nhu cầu oxy để loại bỏ BOD, nitrat hoá và khử nitrat theo phương pháp tuổi bùn, sau đó hiệu chỉnh theo α, β, nhiệt độ, độ cao và độ sâu để xác định SOR và lượng khí cấp tiêu chuẩn Gs.">
 <link rel="canonical" href="https://waterkit.cn/aeration-calculator.html">
 <style>
   :root {
@@ -342,210 +342,210 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Deng Deng Technology</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-process">工艺计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-process">Tính toán công nghệ</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Deng Deng Technology</a>
     </nav>
   </div>
 </header>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-process">工艺计算</a>
+  <a href="index.html#cat-process">Tính toán công nghệ</a>
   <span class="sep">/</span>
-  <span class="current">曝气量</span>
+  <span class="current">Lượng khí sục</span>
 </div>
 
 <main class="main-wrap">
 
 <div class="container">
   <header class="tool-header">
-    <h1>💨 曝气量计算器</h1>
-    <p>依据 GB 50014、HJ 576，适用于活性污泥法需氧量与供气量估算</p>
+    <h1>💨 Công cụ tính lượng khí sục</h1>
+    <p>Theo GB 50014 và HJ 576, dùng để ước tính nhu cầu oxy và lượng khí cấp cho quá trình bùn hoạt tính</p>
   </header>
 
   <div class="body">
 
-    <div class="section-title">基本水质水量参数</div>
+    <div class="section-title">Thông số cơ bản về chất lượng và lưu lượng nước</div>
     <div class="grid">
       <div class="field">
-        <label for="Q">处理水量 Q <span class="unit">m³/d</span></label>
+        <label for="Q">Lưu lượng nước xử lý Q <span class="unit">m³/d</span></label>
         <input type="number" id="Q" value="10000" step="100">
       </div>
       <div class="field">
-        <label for="So">进水 BOD₅ <span class="unit">mg/L</span></label>
+        <label for="So">BOD₅ đầu vào <span class="unit">mg/L</span></label>
         <input type="number" id="So" value="200" step="10">
       </div>
       <div class="field">
-        <label for="Se">出水 BOD₅ <span class="unit">mg/L</span></label>
+        <label for="Se">BOD₅ đầu ra <span class="unit">mg/L</span></label>
         <input type="number" id="Se" value="10" step="1">
       </div>
       <div class="field">
-        <label for="TKNo">进水 TKN <span class="unit">mg/L</span></label>
+        <label for="TKNo">TKN đầu vào <span class="unit">mg/L</span></label>
         <input type="number" id="TKNo" value="40" step="1">
       </div>
       <div class="field">
-        <label for="Ne">出水 NH₃-N <span class="unit">mg/L</span></label>
+        <label for="Ne">NH₃-N đầu ra <span class="unit">mg/L</span></label>
         <input type="number" id="Ne" value="1.5" step="0.1">
       </div>
       <div class="field">
-        <label for="ONe">出水有机氮 <span class="unit">mg/L</span></label>
+        <label for="ONe">Nitơ hữu cơ đầu ra <span class="unit">mg/L</span></label>
         <input type="number" id="ONe" value="1.5" step="0.1">
       </div>
       <div class="field">
-        <label for="dNO3">反硝化脱氮量 ΔNO₃-N <span class="unit">mg/L</span></label>
+        <label for="dNO3">Lượng nitơ loại bỏ bằng khử nitrat ΔNO₃-N <span class="unit">mg/L</span></label>
         <input type="number" id="dNO3" value="0" step="1">
       </div>
     </div>
 
-    <div class="section-title">生物反应参数</div>
+    <div class="section-title">Thông số phản ứng sinh học</div>
     <div class="grid">
       <div class="field">
-        <label for="Y">污泥产率系数 Y <span class="unit">kgVSS/kgBOD</span></label>
+        <label for="Y">Hệ số sinh khối bùn Y <span class="unit">kgVSS/kgBOD</span></label>
         <input type="number" id="Y" value="0.6" step="0.05">
       </div>
       <div class="field">
-        <label for="Kd">污泥自身氧化率 Kd₂₀（20 ℃） <span class="unit">d⁻¹</span></label>
+        <label for="Kd">Hệ số phân huỷ nội sinh của bùn Kd₂₀ (20 ℃) <span class="unit">d⁻¹</span></label>
         <input type="number" id="Kd" value="0.05" step="0.01">
       </div>
       <div class="field">
-        <label for="SRT">污泥龄 SRT <span class="unit">d</span></label>
+        <label for="SRT">Tuổi bùn SRT <span class="unit">d</span></label>
         <input type="number" id="SRT" value="15" step="1">
       </div>
       <div class="field">
-        <label for="sf">安全系数（需氧） <span class="unit">—</span></label>
+        <label for="sf">Hệ số an toàn (nhu cầu oxy) <span class="unit">—</span></label>
         <input type="number" id="sf" value="1.1" step="0.05">
       </div>
     </div>
 
-    <div class="section-title">环境与充氧修正条件</div>
+    <div class="section-title">Điều kiện môi trường và hiệu chỉnh cấp oxy</div>
     <div class="grid">
       <div class="field">
-        <label for="T">水温 T <span class="unit">℃</span></label>
+        <label for="T">Nhiệt độ nước T <span class="unit">℃</span></label>
         <input type="number" id="T" value="20" step="1">
       </div>
       <div class="field">
-        <label for="alt">海拔高度 <span class="unit">m</span></label>
+        <label for="alt">Độ cao so với mực nước biển <span class="unit">m</span></label>
         <input type="number" id="alt" value="0" step="50">
       </div>
       <div class="field">
-        <label for="H">曝气池水深 H（仅用于校核 Hd ≤ H） <span class="unit">m</span></label>
+        <label for="H">Độ sâu nước bể sục khí H (chỉ dùng để kiểm tra Hd ≤ H) <span class="unit">m</span></label>
         <input type="number" id="H" value="5.0" step="0.1">
       </div>
       <div class="field">
-        <label for="Hd">扩散器安装深度 <span class="unit">m</span></label>
+        <label for="Hd">Độ sâu lắp đặt bộ phân phối khí <span class="unit">m</span></label>
         <input type="number" id="Hd" value="4.8" step="0.1">
       </div>
       <div class="field">
-        <label for="alpha">α（传质修正） <span class="unit">—</span></label>
+        <label for="alpha">α (hiệu chỉnh truyền khối) <span class="unit">—</span></label>
         <input type="number" id="alpha" value="0.82" step="0.01">
       </div>
       <div class="field">
-        <label for="beta">β（饱和度修正） <span class="unit">—</span></label>
+        <label for="beta">β (hiệu chỉnh độ bão hoà) <span class="unit">—</span></label>
         <input type="number" id="beta" value="0.95" step="0.01">
       </div>
       <div class="field">
-        <label for="Cw">运行池混合液 DO <span class="unit">mg/L</span></label>
+        <label for="Cw">DO của hỗn hợp trong bể khi vận hành <span class="unit">mg/L</span></label>
         <input type="number" id="Cw" value="2.0" step="0.1">
       </div>
       <div class="field">
-        <label for="EA">扩散器氧转移效率 EA <span class="unit">%</span></label>
+        <label for="EA">Hiệu suất truyền oxy của bộ phân phối khí EA <span class="unit">%</span></label>
         <input type="number" id="EA" value="25" step="1">
       </div>
       <div class="field">
-        <label for="kh">供气峰值系数 Kz <span class="unit">—</span></label>
+        <label for="kh">Hệ số đỉnh cấp khí Kz <span class="unit">—</span></label>
         <input type="number" id="kh" value="1.5" step="0.1">
       </div>
     </div>
 
     <div class="results">
-      <h2>计算结果</h2>
+      <h2>Kết quả tính toán</h2>
       <div class="result-row">
-        <span class="result-label">剩余污泥产量 ΔXv</span>
+        <span class="result-label">Lượng bùn dư ΔXv</span>
         <span><span class="result-value" id="r_Px">—</span><span class="result-unit">kgVSS/d</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">去除 BOD 所需氧量 O₁</span>
+        <span class="result-label">Lượng oxy cần để loại bỏ BOD O₁</span>
         <span><span class="result-value" id="r_O1">—</span><span class="result-unit">kgO₂/d</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">硝化所需氧量 O₂</span>
+        <span class="result-label">Lượng oxy cần cho nitrat hoá O₂</span>
         <span><span class="result-value" id="r_O2">—</span><span class="result-unit">kgO₂/d</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">反硝化回收氧量 O₃</span>
+        <span class="result-label">Lượng oxy thu hồi nhờ khử nitrat O₃</span>
         <span><span class="result-value" id="r_O3">—</span><span class="result-unit">kgO₂/d</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">实际需氧量 AOR</span>
+        <span class="result-label">Nhu cầu oxy thực tế AOR</span>
         <span><span class="result-value" id="r_AOR">—</span><span class="result-unit">kgO₂/d</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">标准需氧量 SOR</span>
+        <span class="result-label">Nhu cầu oxy tiêu chuẩn SOR</span>
         <span><span class="result-value" id="r_SOR">—</span><span class="result-unit">kgO₂/d</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">标准供气量 Gs</span>
-        <span><span class="result-value" id="r_Gs">—</span><span class="result-unit">m³/min（标准状态 20 ℃、101.325 kPa）</span></span>
+        <span class="result-label">Lượng khí cấp tiêu chuẩn Gs</span>
+        <span><span class="result-value" id="r_Gs">—</span><span class="result-unit">m³/min (điều kiện tiêu chuẩn 20 ℃, 101.325 kPa)</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">平均气水比</span>
-        <span><span class="result-value" id="r_ratio">—</span><span class="result-unit">m³气/m³水</span></span>
+        <span class="result-label">Tỷ số khí/nước trung bình</span>
+        <span><span class="result-value" id="r_ratio">—</span><span class="result-unit">m³ khí/m³ nước</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">最大时供气量（峰值系数 <span id="r_kh">1.5</span>）</span>
-        <span><span class="result-value" id="r_Gmax">—</span><span class="result-unit">m³/min（标准状态）</span></span>
+        <span class="result-label">Lượng khí cấp giờ lớn nhất (hệ số đỉnh <span id="r_kh">1.5</span>)</span>
+        <span><span class="result-value" id="r_Gmax">—</span><span class="result-unit">m³/min (điều kiện tiêu chuẩn)</span></span>
       </div>
       <div class="warn-box" id="warnBox" style="display:none;"></div>
       <div class="warn-box soft" id="hintBox" style="display:none;"></div>
     </div>
 
     <div class="buttons">
-      <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
-      <button class="btn btn-secondary" onclick="toggleFormula()">📖 查看公式</button>
+      <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
+      <button class="btn btn-secondary" onclick="toggleFormula()">📖 Xem công thức</button>
     </div>
 
     <div class="formula-box" id="formulaBox" style="display:none;">
-      <h3>计算原理与公式</h3>
-      <p><strong>① 去除 BOD 所需氧量</strong></p>
-      <p>按污泥龄法，先求净剩余污泥产量 Px（kgVSS/d），再按 BOD₅ 的最终需氧量（1.47 kgO₂/kgBOD₅，即 BOD_u/BOD₅ ≈ 1/0.68）扣除排泥带走的氧当量（1.42 kgO₂/kgVSS）：</p>
+      <h3>Nguyên lý và công thức tính</h3>
+      <p><strong>① Lượng oxy cần để loại bỏ BOD</strong></p>
+      <p>Theo phương pháp tuổi bùn, trước hết tính lượng bùn dư thuần Px (kgVSS/d), sau đó lấy nhu cầu oxy cuối cùng của BOD₅ (1.47 kgO₂/kgBOD₅, tức BOD_u/BOD₅ ≈ 1/0.68) trừ đi lượng oxy tương đương theo bùn thải ra (1.42 kgO₂/kgVSS):</p>
       <code>ΔXv = Px = Y · Q · (So − Se) / (1 + Kd_T · SRT) / 1000</code>
       <code>Kd_T = Kd₂₀ · 1.04^(T − 20)</code>
       <code>O₁ = 1.47 · Q · (So − Se) / 1000 − 1.42 · Px</code>
 
-      <p><strong>② 硝化所需氧量</strong>（每氧化1 kg NH₃-N约需 4.57 kg O₂；被氧化的氮 = 进水 TKN − 出水 NH₃-N − 出水有机氮，并扣除污泥同化氮 0.12 kgN/kgVSS）</p>
+      <p><strong>② Lượng oxy cần cho nitrat hoá</strong> (Oxy hoá mỗi 1 kg NH₃-N cần khoảng 4.57 kg O₂; nitơ bị oxy hoá = TKN đầu vào − NH₃-N đầu ra − nitơ hữu cơ đầu ra, đồng thời trừ lượng nitơ đồng hoá vào bùn 0.12 kgN/kgVSS)</p>
       <code>O₂ = 4.57 · [Q · (TKNo − Ne − ONe) / 1000 − 0.12 · Px]</code>
 
-      <p><strong>③ 实际需氧量</strong>（反硝化每还原 1 kg NO₃-N 回收 2.86 kg O₂，仅对设有缺氧段的工艺填入 ΔNO₃-N）</p>
+      <p><strong>③ Nhu cầu oxy thực tế</strong> (Khử nitrat thu hồi 2.86 kg O₂ cho mỗi 1 kg NO₃-N được khử; chỉ nhập ΔNO₃-N đối với công nghệ có ngăn thiếu khí)</p>
       <code>O₃ = 2.86 · Q · ΔNO₃-N / 1000</code>
-      <code>AOR = (O₁ + O₂ − O₃) × 安全系数</code>
+      <code>AOR = (O₁ + O₂ − O₃) × Hệ số an toàn</code>
 
-      <p><strong>④ 标准需氧量（SOR）—— 修正到 20℃、清水、DO=0 条件</strong></p>
+      <p><strong>④ Nhu cầu oxy tiêu chuẩn (SOR) — hiệu chỉnh về điều kiện 20℃, nước sạch, DO=0</strong></p>
       <code>SOR = AOR · Cs20 / [α · (β · Csm(T) − Cw) · 1.024^(T−20)]</code>
       <code>Csm(T) = Cs(T) · [ρ + Hd · 9.81 / 101.325 + ρ · Ot / 21] / 2</code>
-      <p>其中 Cs20 = Cs(20) = 9.09 mg/L（与 Cs(T) 同一张表）；ρ 为海拔大气压比 P/P₀；Hd·9.81/101.325 为扩散器深度处的静水压（atm）；Ot = 21·(1 − EA) / [79 + 21·(1 − EA)] × 100 为出气含氧 %（Metcalf &amp; Eddy 式 5-67）。池底按当地气压与扩散器水深的压力叠加，池面出气在当地气压下，故池面项也乘 ρ；不再对整个括号重复乘 ρ。Cs(T) 取 101.325 kPa、淡水的饱和溶解氧表（APHA Standard Methods 4500-O，Benson &amp; Krause 式；0–40 ℃ 每 1 ℃，如 20 ℃ 9.09、25 ℃ 8.26、30 ℃ 7.56、35 ℃ 6.95、40 ℃ 6.41 mg/L），表间线性插值，水温限 0–40 ℃、海拔限 −500–6000 m。池深 H 仅用于校核 Hd ≤ H，不参与计算。若 Cw ≥ β·Csm，则无传质推动力，SOR 无解。</p>
+      <p>Trong đó Cs20 = Cs(20) = 9.09 mg/L (cùng bảng với Cs(T)); ρ là tỷ số áp suất khí quyển theo độ cao P/P₀; Hd·9.81/101.325 là áp suất thuỷ tĩnh tại độ sâu bộ phân phối khí (atm); Ot = 21·(1 − EA) / [79 + 21·(1 − EA)] × 100 là hàm lượng oxy trong khí thoát ra (%) (công thức 5-67 của Metcalf &amp; Eddy). Áp suất ở đáy bể là tổng áp suất khí quyển địa phương và áp suất do độ sâu bộ phân phối khí; khí thoát tại mặt bể ở áp suất khí quyển địa phương, vì vậy số hạng mặt bể cũng nhân với ρ; không nhân lại toàn bộ biểu thức trong ngoặc với ρ. Cs(T) lấy từ bảng oxy hoà tan bão hoà của nước ngọt ở 101.325 kPa (APHA Standard Methods 4500-O, công thức Benson &amp; Krause; từ 0–40 ℃ với bước 1 ℃, ví dụ 20 ℃ 9.09, 25 ℃ 8.26, 30 ℃ 7.56, 35 ℃ 6.95, 40 ℃ 6.41 mg/L), nội suy tuyến tính giữa các giá trị; nhiệt độ nước giới hạn trong 0–40 ℃ và độ cao trong −500–6000 m. Độ sâu bể H chỉ dùng để kiểm tra Hd ≤ H, không tham gia tính toán. Nếu Cw ≥ β·Csm thì không có động lực truyền khối và không thể tính SOR.</p>
 
-      <p><strong>⑤ 标准供气量</strong></p>
-      <code>Gs = SOR / (0.28 · EA · 1440)  [m³/min，标准状态 20 ℃、101.325 kPa]</code>
+      <p><strong>⑤ Lượng khí cấp tiêu chuẩn</strong></p>
+      <code>Gs = SOR / (0.28 · EA · 1440)  [m³/min, điều kiện tiêu chuẩn 20 ℃, 101.325 kPa]</code>
       <code>Gmax = Kz · Gs</code>
-      <p>注：0.28 kgO₂/m³ = 标准状态（20 ℃、101.325 kPa）空气密度 1.2 kg/m³ × 氧质量分数 23.2%；若按 0 ℃ 的 Nm³ 计，系数应为 0.30，二者相差约 7%。除以 1440 是将 kg/d 换算成每分钟。Kz 为供气峰值系数，可参照 GB 50014 污水量总变化系数（约 1.2–2.3，随规模减小而增大）取值。</p>
+      <p>Lưu ý: 0.28 kgO₂/m³ = khối lượng riêng không khí 1.2 kg/m³ ở điều kiện tiêu chuẩn (20 ℃, 101.325 kPa) × phần khối lượng oxy 23.2%; nếu tính theo Nm³ ở 0 ℃, hệ số là 0.30, chênh lệch khoảng 7%. Chia cho 1440 để đổi từ kg/d sang mỗi phút. Kz là hệ số đỉnh cấp khí, có thể chọn theo hệ số biến đổi tổng lưu lượng nước thải trong GB 50014 (khoảng 1.2–2.3, tăng khi quy mô giảm).</p>
     </div>
 
     <div class="note">
-      ⚠️ 本工具用于方案阶段估算与校核，施工图设计须结合具体工艺、水质特性、设备样本参数进行复核。α、β、EA 值建议参考设备厂商提供的测试数据。
+      ⚠️ Công cụ này dùng để ước tính và kiểm tra ở giai đoạn lập phương án. Thiết kế bản vẽ thi công cần được kiểm tra lại theo công nghệ cụ thể, đặc tính nước và thông số thiết bị. Nên chọn α, β và EA theo dữ liệu thử nghiệm của nhà sản xuất thiết bị.
     </div>
 
   </div>
 
-  <footer class="tool-inner-footer">水处理工具箱 · 仅供工程估算参考</footer>
+  <footer class="tool-inner-footer">Bộ công cụ xử lý nước · Chỉ dùng tham khảo để ước tính kỹ thuật</footer>
 </div>
 </main>
 
@@ -557,65 +557,65 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Deng Deng Technology</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là tập hợp các công cụ tính toán trực tuyến do Công ty TNHH Tư vấn Công nghệ Deng Deng Hải Nam cung cấp, được phát triển và duy trì bởi các kỹ sư công nghệ xử lý nước giàu kinh nghiệm thực tế. Miễn phí và được cập nhật liên tục.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thuỷ lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thuỷ lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thuỷ lực đường ống (nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thuỷ lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính dòng chảy qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lượng khí sục</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn phát sinh</a></li>
+          <li><a href="dosing-calculator.html">Lượng hoá chất định lượng</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">Thiết kế kỹ thuật MBBR</a></li>
+          <li><a href="ifas-design.html">Thiết kế kỹ thuật IFAS</a></li>
+          <li><a href="mbr-design.html">Thiết kế kỹ thuật MBR</a></li>
+          <li><a href="ro-design.html">Thiết kế thẩm thấu ngược (RO)</a></li>
+          <li><a href="pump-selection-calculator.html">Lựa chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Lựa chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Chuyển đổi đơn vị chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thuỷ sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải sau nuôi ao</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Hướng dẫn tham quan triển lãm Aqua Nor 2027</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Công ty</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang web chính thức của Deng Deng Technology ↗</a></li>
+          <li>Tư vấn Công nghệ Deng Deng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Open Source</h4>
+        <h4>Mã nguồn mở</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho mã GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">Giấy phép AGPL-3.0</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Gửi phản hồi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Deng Deng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
@@ -639,19 +639,19 @@
     return CS_TABLE[i] + (CS_TABLE[i + 1] - CS_TABLE[i]) * (t - i);
   }
 
-  // 大气压修正因子（按海拔，标准大气压为1）
+  // 大气压修正因子（按Độ cao，标准大气压为1）
   function rho_alt(alt) {
     // P/P0 = (1 - 0.0000225577*alt)^5.25588
     return Math.pow(1 - 0.0000225577 * alt, 5.25588);
   }
 
   const VALIDATE = [
-    ['Q', '处理水量 Q', 'pos'], ['So', '进水 BOD₅', 'nn'], ['Se', '出水 BOD₅', 'nn'],
-    ['TKNo', '进水 TKN', 'nn'], ['Ne', '出水 NH₃-N', 'nn'], ['ONe', '出水有机氮', 'nn'], ['dNO3', '反硝化脱氮量', 'nn'],
-    ['Y', '污泥产率系数 Y', 'nn'], ['Kd', '污泥自身氧化率 Kd₂₀', 'nn'], ['SRT', '污泥龄 SRT', 'pos'],
-    ['sf', '安全系数', 'pos'], ['H', '曝气池水深 H', 'pos'], ['Hd', '扩散器安装深度', 'nn'],
-    ['alpha', 'α', 'pos'], ['beta', 'β', 'pos'], ['Cw', '运行 DO', 'nn'],
-    ['EA', '氧转移效率 EA', 'pos'], ['kh', '供气峰值系数', 'pos']
+    ['Q', 'Lưu lượng nước xử lý Q', 'pos'], ['So', 'BOD₅ đầu vào', 'nn'], ['Se', 'BOD₅ đầu ra', 'nn'],
+    ['TKNo', 'TKN đầu vào', 'nn'], ['Ne', 'NH₃-N đầu ra', 'nn'], ['ONe', 'Nitơ hữu cơ đầu ra', 'nn'], ['dNO3', 'Lượng nitơ loại bỏ bằng khử nitrat', 'nn'],
+    ['Y', 'Hệ số sinh khối bùn Y', 'nn'], ['Kd', 'Hệ số phân huỷ nội sinh của bùn Kd₂₀', 'nn'], ['SRT', 'Tuổi bùn SRT', 'pos'],
+    ['sf', 'Hệ số an toàn', 'pos'], ['H', 'Độ sâu nước bể sục khí H', 'pos'], ['Hd', 'Độ sâu lắp đặt bộ phân phối khí', 'nn'],
+    ['alpha', 'α', 'pos'], ['beta', 'β', 'pos'], ['Cw', 'DO vận hành', 'nn'],
+    ['EA', 'Hiệu suất truyền oxy EA', 'pos'], ['kh', 'Hệ số đỉnh cấp khí', 'pos']
   ];
   const OUT_IDS = ['r_Px','r_O1','r_O2','r_O3','r_AOR','r_SOR','r_Gs','r_ratio','r_Gmax'];
 
@@ -668,24 +668,24 @@
       const v = parseFloat($(id).value);
       const bad = isNaN(v) || (rule === 'pos' ? v <= 0 : v < 0);
       $(id).classList.toggle('invalid', bad);
-      if (bad) errs.push(rule === 'pos' ? `请输入大于 0 的${name}` : `${name}不能为负值`);
+      if (bad) errs.push(rule === 'pos' ? `Vui lòng nhập ${name} lớn hơn 0` : `${name} không được âm`);
     });
     {
       const vTK = parseFloat($('TKNo').value), vNe = parseFloat($('Ne').value), vON = parseFloat($('ONe').value);
       if (!isNaN(vTK) && !isNaN(vNe) && !isNaN(vON) && vNe >= 0 && vON >= 0 && vNe + vON > vTK) {
         ['Ne','ONe'].forEach(id => $(id).classList.add('invalid'));
-        errs.push('出水 NH₃-N 与出水有机氮之和不应大于进水 TKN');
+        errs.push('Tổng NH₃-N và nitơ hữu cơ đầu ra không được lớn hơn TKN đầu vào');
       }
     }
-    if (num('EA') > 100) { $('EA').classList.add('invalid'); errs.push('氧转移效率 EA 不应超过 100%'); }
-    // 水温、海拔：空/非数字或超出适用范围均按无效处理
+    if (num('EA') > 100) { $('EA').classList.add('invalid'); errs.push('Hiệu suất truyền oxy EA không được vượt quá 100%'); }
+    // Nhiệt độ nước、Độ cao：空/非数字或超出适用范围均按无效处理
     const vT = parseFloat($('T').value), vAlt = parseFloat($('alt').value);
     const badT = isNaN(vT) || vT < 0 || vT > 40;
     const badAlt = isNaN(vAlt) || vAlt < -500 || vAlt > 6000;
     $('T').classList.toggle('invalid', badT);
     $('alt').classList.toggle('invalid', badAlt);
-    if (badT) errs.push(isNaN(vT) ? '请输入水温 T' : '水温 T 应在 0–40 ℃ 之间（饱和溶解氧表适用范围）');
-    if (badAlt) errs.push(isNaN(vAlt) ? '请输入海拔高度' : '海拔高度应在 −500–6000 m 之间');
+    if (badT) errs.push(isNaN(vT) ? 'Vui lòng nhập nhiệt độ nước T' : 'Nhiệt độ nước T phải nằm trong khoảng 0–40 ℃ (phạm vi áp dụng của bảng oxy hoà tan bão hoà)');
+    if (badAlt) errs.push(isNaN(vAlt) ? 'Vui lòng nhập độ cao so với mực nước biển' : 'Độ cao so với mực nước biển phải nằm trong khoảng −500–6000 m');
     if (errs.length) {
       OUT_IDS.forEach(id => $(id).textContent = '—');
       showMsg('warnBox', '⚠️ ' + errs.join('；'));
@@ -703,16 +703,16 @@
     const kh = num('kh');
 
     const hints = [];
-    if (Hd > H) hints.push(`扩散器安装深度 Hd（${Hd} m）大于曝气池水深 H（${H} m），请核对`);
+    if (Hd > H) hints.push(`Độ sâu lắp đặt bộ phân phối khí Hd (${Hd} m) lớn hơn độ sâu nước bể sục khí H (${H} m), vui lòng kiểm tra`);
 
-    // ① 去除BOD需氧量（污泥龄法）：净剩余污泥 Px，1.47 = BOD_u/BOD5，1.42 = VSS 氧当量
+    // ① Oxy cần để loại bỏ BOD量（Tuổi bùn法）：净剩余污泥 Px，1.47 = BOD_u/BOD5，1.42 = VSS 氧当量
     const Px = Y * Q * (So - Se) / (1 + Kd * SRT) / 1000;  // kgVSS/d
     const O1 = Math.max(1.47 * Q * (So - Se) / 1000 - 1.42 * Px, 0);
 
-    // ② 硝化需氧量（扣除污泥同化氮 0.12 kgN/kgVSS）
+    // ② Oxy cần cho nitrat hoá量（扣除污泥同化氮 0.12 kgN/kgVSS）
     const O2 = 4.57 * Math.max(Q * (TKNo - Ne - ONe) / 1000 - 0.12 * Px, 0);
 
-    // ③ 反硝化回收氧量（2.86 kgO2/kgNO3-N），AOR
+    // ③ Lượng oxy thu hồi nhờ khử nitrat（2.86 kgO2/kgNO3-N），AOR
     const O3 = 2.86 * Q * dNO3 / 1000;
     const AOR = Math.max(O1 + O2 - O3, 0) * sf;
 
@@ -737,13 +737,13 @@
     if (!(denom > 0)) {
       ['r_SOR','r_Gs','r_ratio','r_Gmax'].forEach(id => $(id).textContent = '—');
       $('Cw').classList.add('invalid');
-      showMsg('warnBox', `⚠️ 运行 DO 过高，无法传质：混合液 DO（${Cw} mg/L）≥ β·Csm（${(beta*Csm).toFixed(2)} mg/L），请降低运行 DO 或核对 β、水温、海拔参数。`);
+      showMsg('warnBox', `⚠️ DO vận hành quá cao, không thể truyền khối: DO hỗn hợp (${Cw} mg/L) ≥ β·Csm (${(beta*Csm).toFixed(2)} mg/L). Hãy giảm DO vận hành hoặc kiểm tra β, nhiệt độ nước và độ cao.`);
       return;
     }
     showMsg('warnBox', '');
     const SOR = AOR * Cs20 / denom;
 
-    // ⑤ 标准供气量：标准状态（20℃、101.325 kPa）1 m³ 空气含氧约 0.28 kg
+    // ⑤ Lượng khí cấp tiêu chuẩn：điều kiện tiêu chuẩn（20℃、101.325 kPa）1 m³ 空气含氧约 0.28 kg
     // SOR [kg/d] / 0.28 [kgO2/m³] / EA / 1440 [min/d] = m³/min
     const Gs = SOR / 0.28 / EA / 1440;
     const Gmax = Gs * kh;
@@ -756,28 +756,28 @@
   }
 
   function copyResults() {
-    const txt = `曝气量计算结果
+    const txt = `Kết quả tính lượng khí sục
 ————————————————
-处理水量: ${num('Q')} m³/d
-进/出水BOD: ${num('So')}/${num('Se')} mg/L
-进水TKN/出水NH3-N/出水有机氮: ${num('TKNo')}/${num('Ne')}/${num('ONe')} mg/L
+Lưu lượng nước xử lý: ${num('Q')} m³/d
+BOD đầu vào/đầu ra: ${num('So')}/${num('Se')} mg/L
+TKN đầu vào/NH3-N đầu ra/nitơ hữu cơ đầu ra: ${num('TKNo')}/${num('Ne')}/${num('ONe')} mg/L
 Kd₂₀: ${num('Kd')} d⁻¹  →  Kd_T: ${(num('Kd') * Math.pow(1.04, num('T') - 20)).toFixed(4)} d⁻¹
-反硝化脱氮量 ΔNO3-N: ${num('dNO3')} mg/L
-水温: ${num('T')} ℃  海拔: ${num('alt')} m
-池深 H / 扩散器深度 Hd: ${num('H')} / ${num('Hd')} m
+Lượng nitơ loại bỏ bằng khử nitrat ΔNO3-N: ${num('dNO3')} mg/L
+Nhiệt độ nước: ${num('T')} ℃  Độ cao: ${num('alt')} m
+Độ sâu bể H / độ sâu bộ phân phối khí Hd: ${num('H')} / ${num('Hd')} m
 α / β / DO / EA: ${num('alpha')} / ${num('beta')} / ${num('Cw')} mg/L / ${num('EA')}%
 
-剩余污泥产量 ΔXv = ${$('r_Px').textContent} kgVSS/d
-去除BOD需氧 O1 = ${$('r_O1').textContent} kgO₂/d
-硝化需氧  O2 = ${$('r_O2').textContent} kgO₂/d
-反硝化回收 O3 = ${$('r_O3').textContent} kgO₂/d
-实际需氧量 AOR = ${$('r_AOR').textContent} kgO₂/d
-标准需氧量 SOR = ${$('r_SOR').textContent} kgO₂/d
-标准供气量 Gs = ${$('r_Gs').textContent} m³/min（标准状态 20 ℃、101.325 kPa）
-最大时供气量（峰值系数 ${num('kh')}） = ${$('r_Gmax').textContent} m³/min（标准状态）
-平均气水比   = ${$('r_ratio').textContent} m³气/m³水${$('warnBox').style.display !== 'none' ? '\n\n' + $('warnBox').textContent : ''}`;
+Lượng bùn dư ΔXv = ${$('r_Px').textContent} kgVSS/d
+Oxy cần để loại bỏ BOD O1 = ${$('r_O1').textContent} kgO₂/d
+Oxy cần cho nitrat hoá  O2 = ${$('r_O2').textContent} kgO₂/d
+Oxy thu hồi nhờ khử nitrat O3 = ${$('r_O3').textContent} kgO₂/d
+Nhu cầu oxy thực tế AOR = ${$('r_AOR').textContent} kgO₂/d
+Nhu cầu oxy tiêu chuẩn SOR = ${$('r_SOR').textContent} kgO₂/d
+Lượng khí cấp tiêu chuẩn Gs = ${$('r_Gs').textContent} m³/min (điều kiện tiêu chuẩn 20 ℃, 101.325 kPa)
+Lượng khí cấp giờ lớn nhất (hệ số đỉnh ${num('kh')}) = ${$('r_Gmax').textContent} m³/min (điều kiện tiêu chuẩn)
+Tỷ số khí/nước trung bình   = ${$('r_ratio').textContent} m³ khí/m³ nước${$('warnBox').style.display !== 'none' ? '\n\n' + $('warnBox').textContent : ''}`;
     navigator.clipboard.writeText(txt).then(() => {
-      alert('结果已复制到剪贴板');
+      alert('Đã sao chép kết quả vào bộ nhớ tạm');
     }).catch(() => {
       // fallback
       const ta = document.createElement('textarea');
@@ -786,7 +786,7 @@ Kd₂₀: ${num('Kd')} d⁻¹  →  Kd_T: ${(num('Kd') * Math.pow(1.04, num('T')
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     });
   }
 

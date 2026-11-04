@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RO 反渗透系统设计计算 | 水处理工具箱 · WaterKit</title>
-<meta name="keywords" content="反渗透,RO设计,反渗透计算,膜元件,海水淡化,苦咸水,二级RO,除硼,结垢,LSI,阻垢剂,能量回收,WaterKit">
-<meta name="description" content="反渗透 (RO) 系统设计计算: 逐支膜元件模拟进水压力、通量与产水水质, 支持苦咸水、回用水与海水, 二级 RO, 浓水结垢校核、加酸阻垢、能量回收与能耗。">
+<title>Tính toán thiết kế hệ thống thẩm thấu ngược RO | Bộ công cụ xử lý nước · WaterKit</title>
+<meta name="keywords" content="thẩm thấu ngược,thiết kế RO,tính toán RO,phần tử màng,khử mặn nước biển,nước lợ,RO hai cấp,khử bo,cáu cặn,LSI,chất chống cáu cặn,thu hồi năng lượng,WaterKit">
+<meta name="description" content="Tính toán thiết kế hệ thống thẩm thấu ngược (RO): mô phỏng áp suất nước cấp, thông lượng và chất lượng nước sản phẩm cho từng phần tử màng; hỗ trợ nước lợ, nước tái sử dụng, nước biển, RO hai cấp, kiểm tra cáu cặn nước cô đặc, châm axit chống cáu cặn, thu hồi năng lượng và tiêu thụ điện.">
 <link rel="canonical" href="https://waterkit.cn/ro-design.html">
-<meta name="author" content="海南登登科技咨询有限公司">
+<meta name="author" content="Công ty TNHH Tư vấn Công nghệ Đăng Đăng Hải Nam">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:site_name" content="水处理工具箱 WaterKit">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Bộ công cụ xử lý nước WaterKit">
 <meta property="og:url" content="https://waterkit.cn/ro-design.html">
-<meta property="og:title" content="RO 反渗透系统设计计算">
-<meta property="og:description" content="逐支膜元件模拟进水压力、通量与产水水质，支持苦咸水、回用水、海水与二级 RO，含结垢校核与能耗。">
+<meta property="og:title" content="Tính toán thiết kế hệ thống thẩm thấu ngược RO">
+<meta property="og:description" content="Mô phỏng áp suất nước cấp, thông lượng và chất lượng nước sản phẩm cho từng phần tử màng; hỗ trợ nước lợ, nước tái sử dụng, nước biển và RO hai cấp, kèm kiểm tra cáu cặn và tiêu thụ năng lượng.">
 <!--
-  RO 反渗透系统设计计算 v1.4 (独立单文件工具)
+  Tính toán thiết kế hệ thống thẩm thấu ngược RO v1.4 (独立单文件工具)
   计算核心在 id 为 ro-core 的 script 块, 单元测试在 id 为 ro-tests 的 script 块; 页面自检: ro-design.html?selftest=1
   表单本地保存: localStorage['roForm_v1']
 -->
@@ -338,31 +338,31 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Công nghệ Đăng Đăng</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-process">工艺计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-process">Tính toán công nghệ</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Công nghệ Đăng Đăng</a>
     </nav>
   </div>
 </header>
-<div class="beta-bar">🚧 <b>Beta · 开发中</b>：本工具仍在开发与校核中，计算结果仅供方案估算参考。发现问题欢迎 <a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a>。</div>
+<div class="beta-bar">🚧 <b>Beta · Đang phát triển</b>：Công cụ vẫn đang được phát triển và kiểm tra; kết quả chỉ dùng để tham khảo khi ước tính phương án. Nếu phát hiện vấn đề, vui lòng <a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">báo lỗi qua Issue</a>。</div>
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="breadcrumb no-print"><a href="index.html">WaterKit</a> / <a href="index.html#cat-process">工艺计算</a> / RO 反渗透设计</div>
+    <div class="breadcrumb no-print"><a href="index.html">WaterKit</a> / <a href="index.html#cat-process">Tính toán công nghệ</a> / Thiết kế thẩm thấu ngược RO</div>
     <div class="hero-row">
       <div>
-        <h1 class="hero-title">💧 RO 反渗透系统设计计算</h1>
-        <div class="meta hero-sub" id="metaLine">逐支元件模拟 · 苦咸水 / 回用水 / 海水 · 二级 RO · 结垢与加药 · 能量回收 · v1.4</div>
+        <h1 class="hero-title">💧 Tính toán thiết kế hệ thống thẩm thấu ngược RO</h1>
+        <div class="meta hero-sub" id="metaLine">Mô phỏng từng phần tử · Nước lợ / nước tái sử dụng / nước biển · RO hai cấp · Cáu cặn và định lượng hoá chất · Thu hồi năng lượng · v1.4</div>
       </div>
       <div class="hero-actions no-print">
-        <button class="btn" id="btnCopy" type="button">📋 复制结果</button>
-        <button class="btn" id="btnReset" type="button">↺ 恢复默认</button>
-        <button class="btn" id="btnPrint" type="button">🖨️ 打印</button>
+        <button class="btn" id="btnCopy" type="button">📋 Sao chép kết quả</button>
+        <button class="btn" id="btnReset" type="button">↺ Khôi phục mặc định</button>
+        <button class="btn" id="btnPrint" type="button">🖨️ In</button>
       </div>
     </div>
   </div>
@@ -370,11 +370,11 @@
 
 <div class="tab-nav-wrap no-print">
   <nav class="tabs" role="tablist">
-    <button type="button" class="tab" role="tab" id="tabbtn-calc" aria-controls="tab-calc" data-tab="calc">设计计算</button>
-    <button type="button" class="tab" role="tab" id="tabbtn-scale" aria-controls="tab-scale" data-tab="scale">结垢与加药</button>
-    <button type="button" class="tab" role="tab" id="tabbtn-energy" aria-controls="tab-energy" data-tab="energy">能耗与费用</button>
-    <button type="button" class="tab" role="tab" id="tabbtn-elem" aria-controls="tab-elem" data-tab="elem">元件与清洗</button>
-    <button type="button" class="tab" role="tab" id="tabbtn-guide" aria-controls="tab-guide" data-tab="guide">使用说明</button>
+    <button type="button" class="tab" role="tab" id="tabbtn-calc" aria-controls="tab-calc" data-tab="calc">Tính toán thiết kế</button>
+    <button type="button" class="tab" role="tab" id="tabbtn-scale" aria-controls="tab-scale" data-tab="scale">Cáu cặn và định lượng hoá chất</button>
+    <button type="button" class="tab" role="tab" id="tabbtn-energy" aria-controls="tab-energy" data-tab="energy">Năng lượng và chi phí</button>
+    <button type="button" class="tab" role="tab" id="tabbtn-elem" aria-controls="tab-elem" data-tab="elem">Phần tử màng và vệ sinh</button>
+    <button type="button" class="tab" role="tab" id="tabbtn-guide" aria-controls="tab-guide" data-tab="guide">Hướng dẫn sử dụng</button>
   </nav>
 </div>
 
@@ -382,83 +382,83 @@
   <div class="layout" id="mainLayout">
     <form class="input-section no-print" id="form" autocomplete="off" onsubmit="return false">
       <div class="input-grid">
-        <div class="group-title">① 水源与规模</div>
+        <div class="group-title">① Nguồn nước và quy mô</div>
         <div class="preset-row" id="presetRow">
-          <button type="button" class="btn" data-preset="tap">自来水 / 地表水</button>
-          <button type="button" class="btn" data-preset="well">苦咸地下水</button>
-          <button type="button" class="btn" data-preset="reuse">中水回用</button>
-          <button type="button" class="btn" data-preset="sea">海水淡化</button>
+          <button type="button" class="btn" data-preset="tap">Nước máy / nước mặt</button>
+          <button type="button" class="btn" data-preset="well">Nước ngầm lợ</button>
+          <button type="button" class="btn" data-preset="reuse">Tái sử dụng nước</button>
+          <button type="button" class="btn" data-preset="sea">Khử mặn nước biển</button>
         </div>
-        <div class="field wide"><label for="source">水源类型 <span class="hint">决定设计导则限值</span></label><select id="source"></select></div>
-        <div class="field"><label for="Qp">产品水量 <span class="hint">m³/h</span></label><input id="Qp" type="number" min="0" step="10"></div>
-        <div class="field"><label for="T">计算水温 <span class="hint">°C，常年运行</span></label><input id="T" type="number" step="1"></div>
-        <div class="field"><label for="Tmin">最低水温 <span class="hint">°C，校核最高压力</span></label><input id="Tmin" type="number" step="1"></div>
-        <div class="field"><label for="Tmax">最高水温 <span class="hint">°C，新膜校核水质</span></label><input id="Tmax" type="number" step="1"></div>
-        <div class="field"><label for="FF">流量因子 FF <span class="hint">污染/老化</span></label><input id="FF" type="number" min="0.3" max="1" step="0.05"></div>
-        <div class="field"><label for="target">产水 TDS 目标 <span class="hint">mg/L，0 = 不校核</span></label><input id="target" type="number" min="0" step="10"></div>
-        <div class="field"><label for="targetB">产水硼目标 <span class="hint">mg/L，0 = 不校核</span></label><input id="targetB" type="number" min="0" step="0.1"></div>
+        <div class="field wide"><label for="source">Loại nguồn nước <span class="hint">Quyết định giới hạn theo hướng dẫn thiết kế</span></label><select id="source"></select></div>
+        <div class="field"><label for="Qp">Lưu lượng nước sản phẩm <span class="hint">m³/h</span></label><input id="Qp" type="number" min="0" step="10"></div>
+        <div class="field"><label for="T">Nhiệt độ nước tính toán <span class="hint">°C，vận hành quanh năm</span></label><input id="T" type="number" step="1"></div>
+        <div class="field"><label for="Tmin">Nhiệt độ nước thấp nhất <span class="hint">°C，kiểm tra áp suất lớn nhất</span></label><input id="Tmin" type="number" step="1"></div>
+        <div class="field"><label for="Tmax">Nhiệt độ nước cao nhất <span class="hint">°C，kiểm tra chất lượng nước với màng mới</span></label><input id="Tmax" type="number" step="1"></div>
+        <div class="field"><label for="FF">Hệ số lưu lượng FF <span class="hint">nhiễm bẩn/lão hoá</span></label><input id="FF" type="number" min="0.3" max="1" step="0.05"></div>
+        <div class="field"><label for="target">TDS nước sản phẩm mục tiêu <span class="hint">mg/L，0 = không kiểm tra</span></label><input id="target" type="number" min="0" step="10"></div>
+        <div class="field"><label for="targetB">Bo nước sản phẩm mục tiêu <span class="hint">mg/L，0 = không kiểm tra</span></label><input id="targetB" type="number" min="0" step="0.1"></div>
 
-        <div class="group-title">② 进水水质 <small>mg/L，均以离子本身计（不是以 CaCO₃ 或 N 计）；阴阳离子不平衡时自动以 Na 或 Cl 补平</small></div>
-        <div class="field"><label for="pH">进水 pH</label><input id="pH" type="number" min="3" max="11" step="0.1"></div>
+        <div class="group-title">② Chất lượng nước cấp <small>mg/L, tính theo bản thân ion (không tính theo CaCO₃ hoặc N); tự động bổ sung Na hoặc Cl để cân bằng anion và cation</small></div>
+        <div class="field"><label for="pH">pH nước cấp</label><input id="pH" type="number" min="3" max="11" step="0.1"></div>
         <div class="ion-grid" id="ionGrid"></div>
-        <details class="conv no-print"><summary>单位换算：碱度、硬度以 CaCO₃ 计，硝酸盐、氨氮以 N 计，硅以 Si 计</summary>
+        <details class="conv no-print"><summary>Quy đổi đơn vị: độ kiềm và độ cứng tính theo CaCO₃, nitrat và nitơ amoni tính theo N, silic tính theo Si</summary>
           <div class="conv-row">
-            <select id="convType" aria-label="换算类型">
-              <option value="HCO3|1.2192">碱度 mg/L（以 CaCO₃ 计）→ HCO₃⁻</option>
-              <option value="HCO3|61.017">碱度 mmol/L → HCO₃⁻</option>
-              <option value="Ca|0.4004">钙硬度 mg/L（以 CaCO₃ 计）→ Ca²⁺</option>
-              <option value="Mg|0.2428">镁硬度 mg/L（以 CaCO₃ 计）→ Mg²⁺</option>
-              <option value="NO3|4.4268">硝酸盐氮 mg/L（以 N 计）→ NO₃⁻</option>
-              <option value="NH4|1.2878">氨氮 mg/L（以 N 计）→ NH₄⁺</option>
-              <option value="SiO2|2.1393">硅 mg/L（以 Si 计）→ SiO₂</option>
+            <select id="convType" aria-label="Loại quy đổi">
+              <option value="HCO3|1.2192">Độ kiềm mg/L (tính theo CaCO₃)→ HCO₃⁻</option>
+              <option value="HCO3|61.017">Độ kiềm mmol/L → HCO₃⁻</option>
+              <option value="Ca|0.4004">Độ cứng canxi mg/L (tính theo CaCO₃)→ Ca²⁺</option>
+              <option value="Mg|0.2428">Độ cứng magiê mg/L (tính theo CaCO₃)→ Mg²⁺</option>
+              <option value="NO3|4.4268">Nitơ nitrat mg/L (tính theo N)→ NO₃⁻</option>
+              <option value="NH4|1.2878">Nitơ amoni mg/L (tính theo N)→ NH₄⁺</option>
+              <option value="SiO2|2.1393">Silic mg/L (tính theo Si)→ SiO₂</option>
             </select>
-            <input id="convVal" type="number" min="0" step="any" aria-label="换算数值">
+            <input id="convVal" type="number" min="0" step="any" aria-label="Giá trị quy đổi">
             <span id="convOut">—</span>
-            <button type="button" class="btn" id="convApply">填入</button>
+            <button type="button" class="btn" id="convApply">Điền vào</button>
           </div>
         </details>
 
-        <div class="group-title">③ 一级 RO</div>
-        <div class="field wide"><label for="elem1">膜元件</label><select id="elem1"></select></div>
-        <div class="field"><label for="R1">一级回收率 <span class="hint">%</span></label><input id="R1" type="number" min="10" max="95" step="1"></div>
-        <div class="field"><label for="nst1">段数</label><select id="nst1"><option value="1">1 段</option><option value="2">2 段</option><option value="3">3 段</option></select></div>
+        <div class="group-title">③ RO cấp một</div>
+        <div class="field wide"><label for="elem1">Phần tử màng</label><select id="elem1"></select></div>
+        <div class="field"><label for="R1">Tỷ lệ thu hồi cấp một <span class="hint">%</span></label><input id="R1" type="number" min="10" max="95" step="1"></div>
+        <div class="field"><label for="nst1">Số đoạn</label><select id="nst1"><option value="1">1 đoạn</option><option value="2">2 đoạn</option><option value="3">3 đoạn</option></select></div>
         <div id="stages1" style="display:contents"></div>
 
-        <div class="group-title">④ 二级 RO <small>一级产水再处理，二级浓水回流到一级进水</small></div>
-        <label class="check"><input type="checkbox" id="pass2on"> 设置二级 RO</label>
+        <div class="group-title">④ RO cấp hai <small>Xử lý tiếp nước sản phẩm cấp một, tuần hoàn nước cô đặc cấp hai về nước cấp cấp một</small></div>
+        <label class="check"><input type="checkbox" id="pass2on"> Bật RO cấp hai</label>
         <div id="pass2box" style="display:contents">
-          <div class="field wide"><label for="elem2">二级膜元件</label><select id="elem2"></select></div>
-          <div class="field"><label for="R2">二级回收率 <span class="hint">%</span></label><input id="R2" type="number" min="50" max="95" step="1"></div>
-          <div class="field"><label for="pHt2">二级前加碱至 pH <span class="hint">0 = 不加；除硼常用 10–10.5</span></label><input id="pHt2" type="number" min="0" max="11" step="0.1"></div>
-          <div class="field"><label for="nst2">段数</label><select id="nst2"><option value="1">1 段</option><option value="2">2 段</option></select></div>
+          <div class="field wide"><label for="elem2">Phần tử màng cấp hai</label><select id="elem2"></select></div>
+          <div class="field"><label for="R2">Tỷ lệ thu hồi cấp hai <span class="hint">%</span></label><input id="R2" type="number" min="50" max="95" step="1"></div>
+          <div class="field"><label for="pHt2">Châm kiềm trước cấp hai đến pH <span class="hint">0 = không châm; khử bo thường dùng 10–10.5</span></label><input id="pHt2" type="number" min="0" max="11" step="0.1"></div>
+          <div class="field"><label for="nst2">Số đoạn</label><select id="nst2"><option value="1">1 đoạn</option><option value="2">2 đoạn</option></select></div>
           <div id="stages2" style="display:contents"></div>
         </div>
 
-        <div class="group-title">⑤ 自定义元件 <small>选「自定义元件」时使用，按样本测试条件填写</small></div>
-        <div class="field"><label for="cArea">有效面积 <span class="hint">m²</span></label><input id="cArea" type="number" min="1" step="0.1"></div>
-        <div class="field"><label for="cFlow">测试产水量 <span class="hint">m³/d</span></label><input id="cFlow" type="number" min="0.1" step="0.1"></div>
-        <div class="field"><label for="cRej">稳定脱盐率 <span class="hint">%</span></label><input id="cRej" type="number" min="80" max="99.99" step="0.01"></div>
-        <div class="field"><label for="cNaCl">测试 NaCl <span class="hint">mg/L</span></label><input id="cNaCl" type="number" min="100" step="100"></div>
-        <div class="field"><label for="cP">测试压力 <span class="hint">bar</span></label><input id="cP" type="number" min="1" step="0.1"></div>
-        <div class="field"><label for="cR">测试回收率 <span class="hint">%</span></label><input id="cR" type="number" min="1" max="30" step="1"></div>
-        <div class="field"><label for="cType">类型</label><select id="cType"><option value="bw">苦咸水（最高 41 bar）</option><option value="sw">海水（最高 83 bar）</option></select></div>
-        <div class="field"><label for="cSpacer">进水隔网 <span class="hint">mil</span></label><select id="cSpacer"><option value="28">28</option><option value="34">34</option></select></div>
+        <div class="group-title">⑤ Phần tử tuỳ chỉnh <small>Dùng khi chọn «Phần tử tuỳ chỉnh», nhập theo điều kiện thử nghiệm trong tài liệu kỹ thuật</small></div>
+        <div class="field"><label for="cArea">Diện tích hữu hiệu <span class="hint">m²</span></label><input id="cArea" type="number" min="1" step="0.1"></div>
+        <div class="field"><label for="cFlow">Lưu lượng nước sản phẩm thử nghiệm <span class="hint">m³/d</span></label><input id="cFlow" type="number" min="0.1" step="0.1"></div>
+        <div class="field"><label for="cRej">Tỷ lệ loại muối ổn định <span class="hint">%</span></label><input id="cRej" type="number" min="80" max="99.99" step="0.01"></div>
+        <div class="field"><label for="cNaCl">NaCl thử nghiệm <span class="hint">mg/L</span></label><input id="cNaCl" type="number" min="100" step="100"></div>
+        <div class="field"><label for="cP">Áp suất thử nghiệm <span class="hint">bar</span></label><input id="cP" type="number" min="1" step="0.1"></div>
+        <div class="field"><label for="cR">Tỷ lệ thu hồi thử nghiệm <span class="hint">%</span></label><input id="cR" type="number" min="1" max="30" step="1"></div>
+        <div class="field"><label for="cType">Loại</label><select id="cType"><option value="bw">Nước lợ (tối đa 41 bar)</option><option value="sw">Nước biển (tối đa 83 bar)</option></select></div>
+        <div class="field"><label for="cSpacer">Lưới đệm nước cấp <span class="hint">mil</span></label><select id="cSpacer"><option value="28">28</option><option value="34">34</option></select></div>
 
-        <div class="group-title">⑥ 预处理加药</div>
-        <div class="field"><label for="acid">加酸调 pH</label><select id="acid"><option value="none">不加酸</option><option value="H2SO4">硫酸 H₂SO₄</option><option value="HCl">盐酸 HCl</option></select></div>
-        <div class="field"><label for="pHt">加酸后 pH</label><input id="pHt" type="number" min="4" max="9" step="0.1"></div>
-        <div class="field"><label for="anti">阻垢剂 <span class="hint">mg/L，0 = 不加</span></label><input id="anti" type="number" min="0" step="0.5"></div>
-        <div class="field"><label for="cl2">进水余氯 <span class="hint">mg/L，投亚硫酸氢钠</span></label><input id="cl2" type="number" min="0" step="0.1"></div>
+        <div class="group-title">⑥ Định lượng hoá chất tiền xử lý</div>
+        <div class="field"><label for="acid">Châm axit điều chỉnh pH</label><select id="acid"><option value="none">Không châm axit</option><option value="H2SO4">Axit sulfuric H₂SO₄</option><option value="HCl">Axit clohidric HCl</option></select></div>
+        <div class="field"><label for="pHt">pH sau châm axit</label><input id="pHt" type="number" min="4" max="9" step="0.1"></div>
+        <div class="field"><label for="anti">Chất chống cáu cặn <span class="hint">mg/L，0 = không châm</span></label><input id="anti" type="number" min="0" step="0.5"></div>
+        <div class="field"><label for="cl2">Clo dư nước cấp <span class="hint">mg/L，châm natri bisulfit</span></label><input id="cl2" type="number" min="0" step="0.1"></div>
 
-        <div class="group-title">⑦ 泵与能量回收</div>
-        <div class="field"><label for="pumpEff">泵效率 <span class="hint">%</span></label><input id="pumpEff" type="number" min="30" max="95" step="1"></div>
-        <div class="field"><label for="motorEff">电机效率 <span class="hint">%</span></label><input id="motorEff" type="number" min="50" max="99" step="1"></div>
-        <div class="field"><label for="Psuc">高压泵吸入压力 <span class="hint">bar</span></label><input id="Psuc" type="number" min="0" step="0.5"></div>
-        <div class="field"><label for="price">电价 <span class="hint">元/kWh</span></label><input id="price" type="number" min="0" step="0.05"></div>
-        <label class="check"><input type="checkbox" id="erdOn"> 等压式能量回收装置（ERD，海水常用）</label>
-        <div class="field" id="wrapErdDP"><label for="erdDP">ERD 高压侧压损 <span class="hint">bar</span></label><input id="erdDP" type="number" min="0" step="0.1"></div>
-        <div class="field" id="wrapErdLeak"><label for="erdLeak">润滑流 <span class="hint">% 浓水</span></label><input id="erdLeak" type="number" min="0" step="0.1"></div>
-        <div class="field" id="wrapErdMix"><label for="erdMix">混合使进水盐度升高 <span class="hint">%</span></label><input id="erdMix" type="number" min="0" step="0.1"></div>
+        <div class="group-title">⑦ Bơm và thu hồi năng lượng</div>
+        <div class="field"><label for="pumpEff">Hiệu suất bơm <span class="hint">%</span></label><input id="pumpEff" type="number" min="30" max="95" step="1"></div>
+        <div class="field"><label for="motorEff">Hiệu suất động cơ <span class="hint">%</span></label><input id="motorEff" type="number" min="50" max="99" step="1"></div>
+        <div class="field"><label for="Psuc">Áp suất hút bơm cao áp <span class="hint">bar</span></label><input id="Psuc" type="number" min="0" step="0.5"></div>
+        <div class="field"><label for="price">Giá điện <span class="hint">nhân dân tệ/kWh</span></label><input id="price" type="number" min="0" step="0.05"></div>
+        <label class="check"><input type="checkbox" id="erdOn"> Thiết bị thu hồi năng lượng đẳng áp (ERD, thường dùng cho nước biển)</label>
+        <div class="field" id="wrapErdDP"><label for="erdDP">Tổn thất áp suất phía cao áp ERD <span class="hint">bar</span></label><input id="erdDP" type="number" min="0" step="0.1"></div>
+        <div class="field" id="wrapErdLeak"><label for="erdLeak">Dòng bôi trơn <span class="hint">% nước cô đặc</span></label><input id="erdLeak" type="number" min="0" step="0.1"></div>
+        <div class="field" id="wrapErdMix"><label for="erdMix">Độ mặn nước cấp tăng do pha trộn <span class="hint">%</span></label><input id="erdMix" type="number" min="0" step="0.1"></div>
       </div>
     </form>
 
@@ -472,70 +472,70 @@
 
   <section id="tab-guide" class="tab-panel" role="tabpanel" aria-labelledby="tabbtn-guide" hidden>
     <div class="doc">
-      <h2>使用说明</h2>
-      <p class="lead">本工具用于反渗透（RO）系统的方案和初步设计：按进水水质、产水量和回收率，逐支模拟膜元件，给出进水压力、各段通量、产水水质，并校核设计导则、浓水结垢和能耗。全部计算在浏览器本地完成，断网可用。</p>
+      <h2>Hướng dẫn sử dụng</h2>
+      <p class="lead">Công cụ này hỗ trợ lập phương án và thiết kế sơ bộ hệ thống thẩm thấu ngược (RO): mô phỏng từng phần tử màng theo chất lượng nước cấp, lưu lượng nước sản phẩm và tỷ lệ thu hồi; xác định áp suất nước cấp, thông lượng từng đoạn và chất lượng nước sản phẩm, đồng thời kiểm tra theo hướng dẫn thiết kế, đánh giá cáu cặn trong nước cô đặc và tiêu thụ năng lượng. Mọi phép tính được thực hiện cục bộ trên trình duyệt và có thể sử dụng khi không có mạng.</p>
 
       <nav class="toc">
-        <a href="#g1">1. 适用范围</a><a href="#g2">2. 五分钟上手</a><a href="#g3">3. 计算方法</a><a href="#g4">4. 设计导则</a>
-        <a href="#g5">5. 结垢与加药</a><a href="#g6">6. 能耗</a><a href="#g7">7. 精度与局限</a><a href="#g8">8. 依据与来源</a>
+        <a href="#g1">1. Phạm vi áp dụng</a><a href="#g2">2. Bắt đầu trong năm phút</a><a href="#g3">3. Phương pháp tính</a><a href="#g4">4. Hướng dẫn thiết kế</a>
+        <a href="#g5">5. Cáu cặn và định lượng hóa chất</a><a href="#g6">6. Tiêu thụ năng lượng</a><a href="#g7">7. Độ chính xác và giới hạn</a><a href="#g8">8. Cơ sở và nguồn tài liệu</a>
       </nav>
 
-      <h3 id="g1">1. 适用范围</h3>
+      <h3 id="g1">1. Phạm vi áp dụng</h3>
       <ul>
-        <li><b>适用</b>：8 英寸卷式聚酰胺复合膜的苦咸水除盐、自来水和地表水除盐、市政污水回用、工业纯水的一级和二级 RO，以及海水淡化（含等压式能量回收）。</li>
-        <li><b>不适用</b>：纳滤软化、碟管式 DTRO、垃圾渗滤液等高浓度废水、闭路循环（CCRO）、4 英寸及以下小型元件。</li>
-        <li><b>阶段</b>：方案比选、可行性研究、初步设计。施工图和性能担保请以厂家设计软件和厂家确认为准。</li>
+        <li><b>Áp dụng</b>: Khử muối nước lợ, nước máy và nước mặt; tái sử dụng nước thải đô thị; RO một cấp và hai cấp để sản xuất nước tinh khiết công nghiệp; khử mặn nước biển (bao gồm thu hồi năng lượng đẳng áp), dùng màng composite polyamide cuộn xoắn 8 inch.</li>
+        <li><b>Không áp dụng</b>: Làm mềm bằng màng nano, DTRO dạng đĩa ống, nước thải nồng độ cao như nước rỉ rác, tuần hoàn kín (CCRO), phần tử nhỏ từ 4 inch trở xuống.</li>
+        <li><b>Giai đoạn</b>: So sánh phương án, nghiên cứu khả thi và thiết kế sơ bộ. Thiết kế bản vẽ thi công và bảo đảm hiệu suất cần dựa trên phần mềm thiết kế và xác nhận của nhà sản xuất.</li>
       </ul>
 
-      <h3 id="g2">2. 五分钟上手</h3>
+      <h3 id="g2">2. Bắt đầu trong năm phút</h3>
       <ol class="steps">
-        <li><b>选预设</b>：点「自来水 / 地表水」「苦咸地下水」「中水回用」「海水淡化」之一，带入典型水质、元件和排列。</li>
-        <li><b>填水质</b>：在②填入本项目的全分析（mg/L，<b>均以离子本身计</b>）。国内水质报告常把碱度、硬度写成「以 CaCO₃ 计」或 mmol/L，硝酸盐、氨氮写成「以 N 计」，硅写成「以 Si 计」，请用②下方的「单位换算」换算后再填；硅填错（以 Si 计少了一半多）会漏报硅垢，风险最大。阴阳离子不平衡时工具以 Na 或 Cl 补平，差 5% 以上给 ⚠、10% 以上给 ✗。钡、锶未测时，BaSO₄、SrSO₄ 显示「未校核」。数字请用小数点，不要用逗号。</li>
-        <li><b>定规模</b>：填产品水量、回收率和三个水温：计算水温（常年运行，用于主要结果）、最低水温（校核最高压力、选高压泵）、最高水温（按新膜 FF = 1 校核产水 TDS、硼和首支元件通量，产水水质最差的工况）。水源类型决定通量等导则限值。饮用水可在「产水硼目标」填 1.0（GB 5749-2022）。</li>
-        <li><b>调排列</b>：在③调整段数、每段压力容器数和每容器元件数，直到「设计校核」显示 ✓。一般先调元件总数使平均通量落在导则范围，再调两段比例（常用 2:1）和一段产水背压来均衡各段通量。</li>
-        <li><b>看结垢</b>：在「结垢与加药」页检查浓水饱和度，必要时加阻垢剂、加酸或降低回收率。</li>
+        <li><b>Chọn cấu hình mẫu</b>：Chọn «Nước máy / nước mặt», «Nước ngầm lợ», «Tái sử dụng nước» hoặc «Khử mặn nước biển» để nạp chất lượng nước, phần tử màng và cách bố trí điển hình.</li>
+        <li><b>Nhập chất lượng nước</b>：Nhập kết quả phân tích đầy đủ của dự án tại ② (mg/L, <b>đều tính theo chính ion đó</b>). Báo cáo chất lượng nước ở Trung Quốc thường ghi độ kiềm và độ cứng «tính theo CaCO₃» hoặc mmol/L, nitrat và nitơ amoni «tính theo N», silic «tính theo Si»; hãy dùng «Chuyển đổi đơn vị» bên dưới ② trước khi nhập. Nhập sai silic (tính theo Si thấp hơn một nửa) có thể bỏ sót cảnh báo cáu cặn silica, gây rủi ro lớn nhất. Khi cation và anion mất cân bằng, công cụ bổ sung Na hoặc Cl để cân bằng; sai lệch trên 5% hiển thị ⚠, trên 10% hiển thị ✗. Khi chưa đo bari và stronti, BaSO₄ và SrSO₄ hiển thị «Chưa kiểm tra». Dùng dấu chấm thập phân, không dùng dấu phẩy.</li>
+        <li><b>Xác định quy mô</b>：Nhập lưu lượng nước sản phẩm, tỷ lệ thu hồi và ba mức nhiệt độ nước: nhiệt độ tính toán (vận hành quanh năm, dùng cho kết quả chính), nhiệt độ thấp nhất (kiểm tra áp suất cao nhất và chọn bơm cao áp), nhiệt độ cao nhất (kiểm tra TDS, bo trong nước sản phẩm và thông lượng phần tử đầu tiên với màng mới FF = 1, là điều kiện chất lượng nước sản phẩm kém nhất). Loại nguồn nước quyết định các giới hạn hướng dẫn về thông lượng và các thông số khác. Với nước uống, có thể nhập 1.0 vào «Mục tiêu bo trong nước sản phẩm» (GB 5749-2022).</li>
+        <li><b>Điều chỉnh bố trí</b>：Tại ③, điều chỉnh số đoạn, số bình áp lực mỗi đoạn và số phần tử mỗi bình cho đến khi «Kiểm tra thiết kế» hiển thị ✓. Thông thường, trước hết điều chỉnh tổng số phần tử để thông lượng trung bình nằm trong phạm vi hướng dẫn, sau đó điều chỉnh tỷ lệ hai đoạn (thường là 2:1) và áp suất đối kháng nước sản phẩm ở đoạn đầu để cân bằng thông lượng giữa các đoạn.</li>
+        <li><b>Kiểm tra cáu cặn</b>：Trong trang «Cáu cặn và định lượng hoá chất», kiểm tra độ bão hoà của nước cô đặc; khi cần, bổ sung chất chống cáu cặn, axit hoặc giảm tỷ lệ thu hồi.</li>
       </ol>
-      <p class="tip">默认算例：自来水，产品水 100 m³/h，回收率 75%，标准苦咸水元件，13:6 两段、每容器 6 支，一段产水背压 1.0 bar；计算水温 25 °C，最高水温 30 °C 时新膜首支通量仍在导则内。各项导则均满足。</p>
+      <p class="tip">Ví dụ mặc định: nước máy, nước sản phẩm 100 m³/h, tỷ lệ thu hồi 75%, phần tử nước lợ tiêu chuẩn, hai đoạn 13:6, mỗi bình 6 phần tử, áp suất đối kháng nước sản phẩm đoạn đầu 1.0 bar; nhiệt độ tính toán 25 °C, ở nhiệt độ cao nhất 30 °C, thông lượng phần tử đầu tiên của màng mới vẫn nằm trong giới hạn hướng dẫn. Tất cả các tiêu chí hướng dẫn đều được đáp ứng.</p>
 
-      <h3 id="g3">3. 计算方法</h3>
-      <p>采用溶解-扩散模型逐支计算膜元件，方法与 DuPont FilmTec 技术手册的手算公式一致：</p>
-      <div class="formula">产水量 Q<sub>p</sub> = A · TCF · FF · S · [P<sub>f</sub> − ΔP/2 − P<sub>p</sub> − (β·π<sub>fc</sub> − π<sub>p</sub>)]<br>
-        产水浓度 C<sub>p,i</sub> = B<sub>i</sub>·TCF·S·β·C<sub>fc,i</sub> ÷ (Q<sub>p</sub> + B<sub>i</sub>·TCF·S)<br>
-        浓差极化 β = exp(0.7 · r)，r 为单支元件回收率<br>
-        浓水侧平均浓度 C<sub>fc</sub> = C<sub>f</sub> · ln[1/(1 − r)] / r<br>
-        温度修正 TCF = exp[3020·(1/298 − 1/T)]（T ≤ 25 °C），exp[2640·(1/298 − 1/T)]（T &gt; 25 °C）<br>
-        渗透压 π = 1.12 psi/K · (273 + t) · Σm<sub>i</sub><br>
-        元件压降 ΔP = 0.0213 · q̄<sup>1.23</sup> psi（q̄ 为进浓水平均流量 gpm；按 ROSA 9.1 三段算例逐支压力拟合，与 WAVE 1.82、Toray DS2 吻合；不区分 28/34 mil 隔网）</div>
+      <h3 id="g3">3. Phương pháp tính</h3>
+      <p>Sử dụng mô hình hoà tan–khuếch tán để tính từng phần tử màng, theo cùng phương pháp với các công thức tính tay trong sổ tay kỹ thuật DuPont FilmTec:</p>
+      <div class="formula">Lưu lượng nước sản phẩm Q<sub>p</sub> = A · TCF · FF · S · [P<sub>f</sub> − ΔP/2 − P<sub>p</sub> − (β·π<sub>fc</sub> − π<sub>p</sub>)]<br>
+        Nồng độ nước sản phẩm C<sub>p,i</sub> = B<sub>i</sub>·TCF·S·β·C<sub>fc,i</sub> ÷ (Q<sub>p</sub> + B<sub>i</sub>·TCF·S)<br>
+        Phân cực nồng độ β = exp(0.7 · r), r là tỷ lệ thu hồi của một phần tử<br>
+        Nồng độ trung bình phía nước cô đặc C<sub>fc</sub> = C<sub>f</sub> · ln[1/(1 − r)] / r<br>
+        Hiệu chỉnh nhiệt độ TCF = exp[3020·(1/298 − 1/T)] (T ≤ 25 °C), exp[2640·(1/298 − 1/T)] (T &gt; 25 °C)<br>
+        Áp suất thẩm thấu π = 1.12 psi/K · (273 + t) · Σm<sub>i</sub><br>
+        Độ giảm áp phần tử ΔP = 0.0213 · q̄<sup>1.23</sup> psi (q̄ là lưu lượng trung bình của nước cấp và nước cô đặc, gpm; khớp theo áp suất từng phần tử trong ví dụ ba đoạn ROSA 9.1, phù hợp với WAVE 1.82 và Toray DS2; không phân biệt lưới đệm 28/34 mil)</div>
       <ul>
-        <li><b>A、B 值</b>：由所选元件规格书的测试条件（测试 NaCl 浓度、压力、单支回收率、产水量、稳定脱盐率）用同一模型反算，不使用厂家保密参数。</li>
-        <li><b>离子透过</b>：二价离子 B 值取 NaCl 的 0.15 倍，硝酸根 5 倍，HCO₃⁻ 1.2 倍，硅 1.0 倍（回用厂实测 0.2–1.2）。产水最后修正为电中性。</li>
-        <li><b>硼</b>：硼以硼酸 B(OH)₃（中性，透过高）和硼酸根 B(OH)₄⁻（带电，按一价离子透过）两种形态存在，硼酸根比例 = 1/(1 + 10<sup>pKa − pH</sup>)；pKa 纯水 25 °C 9.24、随水温降低，海水约 8.6。硼酸的透过倍数由样本硼脱除率在测试 pH 8 下反算（样本未给时苦咸水按 65%、海水按 90%），硼的温度敏感性另乘 exp[0.02·(t − 25)]。对照实测：太平洋海水进水 pH 8.14 → 9.24 产水硼降 64%（实测 62%）；苦咸水膜 pH 10.5 时硼脱除率约 93%（实测 94.5–95%）；10 → 25 °C 一级产水硼约 ×1.9（实测 ×2.2）。</li>
-        <li><b>进水压力</b>：每支元件对单支回收率用有界求根法求解（必收敛）；给定回收率后，用二分法求一级进水压力，使总产水量等于设计值；后段可设段前增压和产水背压。各段进水压力（含段前增压）都与元件最高操作压力比较；出现无产水或负压的元件时报 ✗。</li>
-        <li><b>二级 RO</b>：二级进水为一级产水（电中性修正后），二级浓水回流到一级进水，迭代至各离子都收敛。二级流量因子取一级加 0.05。可在二级前加 NaOH 调 pH（除硼常用 10–10.5）：加碱量按碳酸平衡和硼酸根计算，CO₂ 转为 HCO₃⁻/CO₃²⁻ 后不再透过；不加碱时 CO₂ 全部透过，产水 pH 约 5–6，后接 EDI 时宜加碱或设脱气。</li>
-        <li><b>最低、最高水温</b>：最低水温下重算，校核元件最高操作压力（含段前增压后的各段）和选高压泵扬程；最高水温下按新膜（FF = 1）重算，校核产水 TDS、硼和首支元件通量、单支回收率。</li>
+        <li><b>Giá trị A, B</b>：Được tính ngược bằng cùng mô hình từ điều kiện thử trong bảng thông số của phần tử đã chọn (nồng độ NaCl thử nghiệm, áp suất, tỷ lệ thu hồi mỗi phần tử, lưu lượng nước sản phẩm và tỷ lệ khử muối ổn định), không dùng các thông số bảo mật của nhà sản xuất.</li>
+        <li><b>Sự thẩm thấu của ion</b>：Giá trị B của ion hoá trị hai lấy bằng 0.15 lần NaCl, nitrat 5 lần, HCO₃⁻ 1.2 lần, silic 1.0 lần (giá trị đo tại nhà máy tái sử dụng nước 0.2–1.2). Nước sản phẩm cuối cùng được hiệu chỉnh về trung hoà điện.</li>
+        <li><b>Bo</b>：Bo tồn tại dưới dạng axit boric B(OH)₃ (trung hoà, thẩm thấu cao) và ion borat B(OH)₄⁻ (mang điện, thẩm thấu như ion hoá trị một), tỷ lệ borat = 1/(1 + 10<sup>pKa − pH</sup>); pKa của nước tinh khiết ở 25 °C là 9.24 và giảm khi nhiệt độ nước giảm, trong nước biển khoảng 8.6. Hệ số thẩm thấu của axit boric được tính ngược từ tỷ lệ loại bỏ bo trong tài liệu tại pH thử nghiệm 8 (nếu tài liệu không nêu thì lấy 65% cho nước lợ, 90% cho nước biển); độ nhạy nhiệt độ của bo được nhân thêm exp[0.02·(t − 25)]. Đối chiếu số liệu đo: nước biển Thái Bình Dương có pH nước cấp tăng từ 8.14 → 9.24 thì bo trong nước sản phẩm giảm 64% (đo được 62%); màng nước lợ ở pH 10.5 có tỷ lệ loại bỏ bo khoảng 93% (đo được 94.5–95%); khi nhiệt độ tăng từ 10 → 25 °C, bo trong nước sản phẩm cấp một tăng khoảng ×1.9 (đo được ×2.2).</li>
+        <li><b>Áp suất nước cấp</b>：Với mỗi phần tử, tỷ lệ thu hồi được giải bằng phương pháp tìm nghiệm có chặn (luôn hội tụ); sau khi cho tỷ lệ thu hồi, dùng phương pháp chia đôi để tìm áp suất nước cấp cấp một sao cho tổng lưu lượng nước sản phẩm bằng giá trị thiết kế. Các đoạn sau có thể được tăng áp trước đoạn và đặt áp suất đối kháng nước sản phẩm. Áp suất nước cấp của mỗi đoạn (kể cả tăng áp trước đoạn) được so sánh với áp suất vận hành tối đa của phần tử; hiển thị ✗ nếu có phần tử không tạo nước sản phẩm hoặc có áp suất âm.</li>
+        <li><b>RO hai cấp</b>：Nước cấp cấp hai là nước sản phẩm cấp một (sau hiệu chỉnh trung hoà điện); nước cô đặc cấp hai được tuần hoàn về nước cấp cấp một, lặp đến khi tất cả ion hội tụ. Hệ số lưu lượng cấp hai bằng cấp một cộng 0.05. Có thể bổ sung NaOH trước cấp hai để điều chỉnh pH (thường dùng 10–10.5 để loại bo): lượng kiềm được tính theo cân bằng cacbonat và borat; CO₂ sau khi chuyển thành HCO₃⁻/CO₃²⁻ không còn thẩm thấu qua màng. Khi không bổ sung kiềm, toàn bộ CO₂ thẩm thấu, pH nước sản phẩm khoảng 5–6; nếu tiếp theo là EDI thì nên bổ sung kiềm hoặc khử khí.</li>
+        <li><b>Nhiệt độ nước thấp nhất, cao nhất</b>：Tính lại tại nhiệt độ thấp nhất để kiểm tra áp suất vận hành tối đa của phần tử (ở từng đoạn sau tăng áp trước đoạn) và chọn cột áp bơm cao áp; tính lại tại nhiệt độ cao nhất với màng mới (FF = 1) để kiểm tra TDS, bo trong nước sản phẩm, thông lượng phần tử đầu tiên và tỷ lệ thu hồi mỗi phần tử.</li>
       </ul>
 
-      <h3 id="g4">4. 设计导则</h3>
-      <p>水源类型对应 DuPont FilmTec 8 英寸系统设计导则（45-D01695，2026 版）：平均通量范围、单支元件最大通量、单支最大回收率、单个压力容器最大进水和最小浓水流量。浓差极化 β 上限按 WAVE 与 TWDB 2014 取 1.2（RO 产水进水取 1.4，不在 FilmTec 导则表中）。导则表中海水只有 400 ft² 及以下元件的流量限值，440 ft² 海水元件沿用 400 ft² 值；各品牌统一按 FilmTec 导则校核（Hydranautics 允许单容器进水 19.3、浓水 2.7 m³/h），偏保守。平均通量低于导则下限不报警，但元件用量偏多、投资偏高。</p>
-      <p>另按元件样本校核：单支元件压降 ≤ 1.0 bar，单个压力容器压降 ≤ 3.4 bar；产水背压 &gt; 1 bar 给 ⚠（样本要求任何时候避免静态产水背压，设背压时产水管应设止回阀或爆破膜）。平均通量低于导则下限、相邻两段通量比 &gt; 1.5 时给中性提示。</p>
-      <p>一般经验：回收率 ≤ 75% 用两段、每容器 6 支；76–87% 用两段 7 支；更高回收率用三段（TWDB 2014）。</p>
-      <p><b>工程配套要点</b>（HJ 579-2010、GB/T 19249-2017，本工具不计算）：保安过滤器 5 μm；进水 SDI ≤ 5（微滤、超滤出水 ≤ 3）；高压泵入口设低压保护、出口设高压保护，升压速率 &lt; 0.07 MPa/s；加酸时设 pH 上下限保护；运行水温 5–45 °C；停机时冲洗、置换浓水；元件数宜留设计余量。</p>
+      <h3 id="g4">4. Hướng dẫn thiết kế</h3>
+      <p>Loại nguồn nước tương ứng với hướng dẫn thiết kế hệ thống 8 inch của DuPont FilmTec (45-D01695, phiên bản 2026): phạm vi thông lượng trung bình, thông lượng và tỷ lệ thu hồi tối đa của mỗi phần tử, lưu lượng nước cấp tối đa và nước cô đặc tối thiểu của mỗi bình áp lực. Giới hạn trên của hệ số phân cực nồng độ β lấy bằng 1.2 theo WAVE và TWDB 2014 (nước cấp là nước sản phẩm RO lấy 1.4, không nằm trong bảng hướng dẫn FilmTec). Bảng hướng dẫn chỉ có giới hạn lưu lượng nước biển cho phần tử từ 400 ft² trở xuống; phần tử nước biển 440 ft² dùng giá trị của 400 ft². Tất cả các thương hiệu đều được kiểm tra theo hướng dẫn FilmTec (Hydranautics cho phép lưu lượng nước cấp 19.3 và nước cô đặc 2.7 m³/h mỗi bình), theo hướng bảo thủ. Thông lượng trung bình thấp hơn giới hạn dưới không gây cảnh báo, nhưng có thể cần nhiều phần tử và chi phí đầu tư cao hơn.</p>
+      <p>Kiểm tra thêm theo tài liệu phần tử: độ giảm áp mỗi phần tử ≤ 1.0 bar, mỗi bình áp lực ≤ 3.4 bar; áp suất đối kháng nước sản phẩm &gt; 1 bar hiển thị ⚠ (tài liệu yêu cầu luôn tránh áp suất đối kháng tĩnh phía nước sản phẩm; khi đặt áp suất đối kháng, đường ống nước sản phẩm cần có van một chiều hoặc màng nổ). Khi thông lượng trung bình dưới giới hạn hướng dẫn hoặc tỷ số thông lượng giữa hai đoạn liền kề &gt; 1.5, công cụ hiển thị thông báo.</p>
+      <p>Kinh nghiệm chung: tỷ lệ thu hồi ≤ 75% dùng hai đoạn, 6 phần tử mỗi bình; 76–87% dùng hai đoạn, 7 phần tử; tỷ lệ thu hồi cao hơn dùng ba đoạn (TWDB 2014).</p>
+      <p><b>Các điểm cần lưu ý về thiết bị phụ trợ</b> (HJ 579-2010, GB/T 19249-2017, công cụ này không tính): bộ lọc bảo vệ 5 μm; SDI nước cấp ≤ 5 (nước sau vi lọc, siêu lọc ≤ 3); bảo vệ áp suất thấp ở đầu vào và áp suất cao ở đầu ra bơm cao áp, tốc độ tăng áp &lt; 0.07 MPa/s; khi châm axit cần bảo vệ giới hạn trên và dưới của pH; nhiệt độ vận hành 5–45 °C; khi dừng máy cần rửa và thay thế nước cô đặc; nên dự phòng số lượng phần tử trong thiết kế.</p>
 
-      <h3 id="g5">5. 结垢与加药</h3>
+      <h3 id="g5">5. Cáu cặn và định lượng hóa chất</h3>
       <ul>
         <li><b>浓水水质与 pH</b>：浓水水质由逐支计算的物料平衡得到。CO₂ 自由透过膜，浓水 CO₂ 活度与进水相同；碳酸盐碱度（HCO₃⁻ + 2CO₃²⁻，含 CaHCO₃⁺、MgHCO₃⁺、NaHCO₃⁰、CaCO₃⁰、NaCO₃⁻ 等离子对）按物料平衡浓缩；按完整碳酸平衡（K1、K2）和离子对活度求浓水 pH，与 PHREEQC 同口径。对照 PHREEQC（自来水、苦咸水、高氟水、海水，10 °C 与 25 °C），浓水 pH 相差 ≤ 0.01（旧版简化式偏高 0.02–0.18）。进水 CO₂ 同样按游离 HCO₃⁻ 活度计算。</li>
         <li><b>碳酸钙</b>：浓水 TDS ≤ 8000 mg/L 用 LSI（Carrier 式），≥ 12 000 mg/L 用 S&amp;DSI（ASTM D4582；ASTM 分界为 10 000），其间按 TDS 线性过渡，避免回收率跨过分界时指数跳变、报警时有时无。进水无碱度时浓水 pH、LSI 显示「—」，硫酸盐饱和度按进水 pH 计算。</li>
         <li><b>硫酸盐、氟化钙</b>：饱和度 = 离子活度积 ÷ 溶度积。活度按离子对形态计算（Debye-Hückel 离子尺寸参数，计硫酸盐、氟化物、碳酸盐离子对），溶度积取 USGS PHREEQC 数据库（重晶石取 WATEQ4F 式，与 PHREEQC vitens.dat / wateq4f.dat 一致）；与 PHREEQC 对照（6 种水质 × 5–40 °C），苦咸水浓水饱和指数相差 ≤ 0.1，海水浓水 ≤ 0.2 个对数单位。</li>
         <li><b>二氧化硅</b>：无定形硅溶解度 25 °C 约 117 mg/L，随温度升高、pH &gt; 7.8 时随 pH 升高。加阻垢剂时仍按溶解度的 100% 控制：美国垦务局 Report 119 的中试中，阻垢剂软件允许 92% 回收率（硅约 229%），实际 90% 即无法运行，膜解剖发现硅垢。</li>
-        <li><b>钡、锶</b>：国内水质全分析常不测。未提供时 BaSO₄、SrSO₄ 不校核并提示补测；高硫酸盐地下水、矿井水常由 BaSO₄ 控制回收率。</li>
-        <li><b>限值</b>：无阻垢剂时各项 ≤ 100%、LSI ≤ 0；加阻垢剂时采用 Hydranautics TAB111 的报警点：LSI / S&amp;DSI 1.8、CaSO₄ 230%、SrSO₄ 800%、BaSO₄ 6000%、CaF₂ 12 000%、SiO₂ 100%。</li>
+        <li><b>Bari và stronti</b>: Các chỉ tiêu này thường không được đo trong phân tích đầy đủ chất lượng nước tại Trung Quốc. Nếu không có dữ liệu, BaSO₄ và SrSO₄ không được kiểm tra và hệ thống nhắc đo bổ sung; tỷ lệ thu hồi của nước ngầm giàu sunfat và nước mỏ thường bị giới hạn bởi BaSO₄.</li>
+        <li><b>Giới hạn</b>: Không dùng chất chống cáu cặn: các chỉ tiêu ≤ 100%, LSI ≤ 0; khi dùng chất chống cáu cặn, áp dụng ngưỡng cảnh báo của Hydranautics TAB111: LSI / S&amp;DSI 1.8, CaSO₄ 230%, SrSO₄ 800%, BaSO₄ 6000%, CaF₂ 12 000%, SiO₂ 100%.</li>
         <li><b>加酸</b>：与浓水 pH 同一套离子对形态计算：总无机碳守恒，加酸消耗碳酸盐碱度（含离子对）、硼酸根碱度和 OH⁻，求达到目标 pH 所需的硫酸或盐酸，化学计量与 ASTM D4582 一致（每 1 mg/L H₂SO₄ 降低碱度 1.02 mg/L 以 CaCO₃ 计）。硼酸根（pKa 同硼脱除计算）和硅酸根（pKa 9.83）在加酸时同样被中和。对照 PHREEQC 滴定：淡水、苦咸水、高碱度水、含 CO₃²⁻ 的高 pH 水相差约 ±1%（PHREEQC 复算 pH 与目标差 ≤ 0.01）；海水与 PHREEQC Pitzer 库相差 ≤ 5%（与缺省库差 5–19%，两个数据库对海水硼酸根、离子对的处理本身不同）。目标 pH 低于 4 时未计 HSO₄⁻，加酸量略偏低。旧版简化式在高碱度、高 pH 水中偏低 7–47%，个别 pH 8.4–9 的水甚至算出负值。投加量按 100% 酸计，另给出 98% 硫酸或 31% 盐酸的商品量。加酸且不加阻垢剂时，TAB111 建议浓水 LSI ≤ −0.2，本工具按 ≤ 0 校核。</li>
       </ul>
 
-      <h3 id="g6">6. 能耗</h3>
+      <h3 id="g6">6. Tiêu thụ năng lượng</h3>
       <p>泵电功率 = 流量 × 扬压 ÷ 36 ÷（泵效率 × 电机效率）。海水淡化可选等压式能量回收（ERD）：浓水压力经 ERD 传给等量进水，参数按 ERI PX 白皮书（高压侧压损约 0.67 bar、润滑流约 1.2%、混合使进水盐度升高约 1.3%）。「不设能量回收时」的对比按不含混合升盐重算；浓水压力低、设 ERD 反而多耗能时给 ⚠。润滑流是原水经 ERD 低压侧直接排放的水量，计入原水量和系统回收率。开二级时，二级高压泵直接接一级产水，吸入压力取一级各段产水背压中的最小值（即产水汇管压力，有一段不设背压时为 0），不按全厂吸入压力扣减。混合升盐按偏保守处理：膜进水各离子统一乘以 1.013，浓水 TDS 和结垢计算因此略偏高约 1%。阻垢剂按一级进水量（含二级浓水回流）计。只统计 RO 本体，不含原水泵、预处理和产水输送。</p>
 
-      <h3 id="g7">7. 精度与局限</h3>
+      <h3 id="g7">7. Độ chính xác và giới hạn</h3>
       <ul>
         <li>对照 ROSA 8 原始报告（2000 mg/L NaCl，BW30-400，2:1×4，70%），进水压力相差 −2%，产水 TDS 相差 −2%，逐支元件产水相差 ≤ 12%（ROSA 8 的元件压降比新式大，后段元件产水比它多 5–12%）。</li>
         <li>对照 WAVE 1.82 单段算例（BW30XFR-400/34，1×6，20 °C）：进水压力、容器压降、首末支产水和产水 TDS 相差均在 ±2% 内。对照 ROSA 9.1 三段算例（5:3:1×6，84%，25/10 °C）：进水压力 +4% / −6%，第三段产水 −2% / +2%。对照 Toray DS2 三段算例（7 °C）：进水压力 +1%，第三段产水 +9%。</li>
@@ -545,13 +545,13 @@
         <li>元件参数来自样本标称值，实际元件产水量公差约 ±15%；硼与各离子透过为估算。硼的 pH、温度影响按形态与经验系数估算：海水一级产水硼在 15–20 °C 时可能比实测偏高（偏安全），地中海进水 pH 7.0 → 8.6 的降幅偏小（36% vs 实测 54%）。二级加碱后浓水的 Mg(OH)₂、CaCO₃ 结垢未校核（二级进水硬度很低，一般不控制）。</li>
         <li>元件压降按现代软件拟合（2015 年后的 ROSA 9.x、WAVE、Toray DS2 给出的苦咸水元件压降约为 FilmTec 609-02057 手算式 0.01·q̄<sup>1.7</sup> 的 1/3–1/2，旧式只与 ROSA 8 一代吻合）。未计水温（黏度）修正：ROSA 9.1 在 10 °C 时压降约为 25 °C 的 1.35 倍，加入后低温对照反而变差，暂未采用；也未计段前约 0.3 bar 的管路压损。</li>
         <li>产水 TDS 的偏差主要与水温和离子组成有关，现有对照中未见与段数相关：7–10 °C 时与厂家软件相差约 15% 以内（Toray DS2 三段 +2%，ROSA 9.1 三段 −13%）；25–30 °C 的混合离子水可能偏低约 20–45%（TWDB 两段比 ROSA 8 低 21–23%，ROSA 9.1 三段低 37%）。可能的原因是厂家软件中盐透过随水温和浓水浓度上升更快、二价离子透过更高。产水水质要求严格时，按最高水温工况的结果再留余量。</li>
-        <li>NH₄⁺ 按全部离子态计；pH &gt; 8.5 时部分为 NH₃，可透过膜，产水氨氮会偏低。</li>
-        <li>产水 pH 按电荷平衡计算，CO₂ 全部透过、未计脱气；每级只能选一种元件（不支持分段混装）。</li>
-        <li>未计段间管路压损（一般 0.2–0.5 bar）、元件间产水管压损和通量年衰减；流量因子 FF 用于综合反映污染和老化。</li>
-        <li>海水浓水离子强度约 1–1.5，活度系数模型为外推，S&amp;DSI 的 K 值为对 ASTM 曲线的拟合。</li>
+        <li>NH₄⁺ được tính hoàn toàn ở dạng ion; khi pH &gt; 8.5, một phần ở dạng NH₃ có thể đi qua màng, khiến nitơ amoni trong nước sản phẩm được tính thấp hơn thực tế.</li>
+        <li>pH nước sản phẩm được tính theo cân bằng điện tích; CO₂ đi qua hoàn toàn và không tính khử khí. Mỗi cấp chỉ chọn được một loại phần tử (không hỗ trợ lắp kết hợp theo đoạn).</li>
+        <li>Chưa tính tổn thất áp suất đường ống giữa các đoạn (thường 0.2–0.5 bar), tổn thất áp suất trong ống nước sản phẩm giữa các phần tử và suy giảm thông lượng hằng năm; hệ số lưu lượng FF phản ánh tổng hợp tình trạng bám bẩn và lão hóa.</li>
+        <li>Lực ion của nước biển cô đặc khoảng 1–1.5; mô hình hệ số hoạt độ được ngoại suy và giá trị K của S&amp;DSI được khớp theo đường cong ASTM.</li>
       </ul>
 
-      <h3 id="g8">8. 依据与来源</h3>
+      <h3 id="g8">8. Cơ sở và nguồn tài liệu</h3>
       <ul class="src">
         <li>DuPont FilmTec, System Design: System Performance Projection（Form 609-02057，设计方程）；8-inch System Design Guidelines（45-D01695 Rev.14, 2026）；Cleaning Procedures（45-D01696, 2026）；各元件规格书。</li>
         <li>Hydranautics 元件规格书；TAB111 Chemical Pretreatment for RO and NF（2022）；TSB107 清洗导则。Toray 元件规格书。</li>
@@ -564,12 +564,12 @@
     </div>
   </section>
 
-  <div class="note" id="calcDisclaimer"><span class="label">适用范围</span>：本工具用于方案和初步设计阶段的估算。元件参数由厂家公开样本反算，计算方法与厂家设计软件同类但更简化：对照公开算例，进水压力一般相差 ±10%，产水 TDS 为同一量级。最终设计、性能担保和元件选型请以厂家设计软件（WAVE、IMSDesign、TorayDS 等）和厂家确认为准。</div>
+  <div class="note" id="calcDisclaimer"><span class="label">Phạm vi áp dụng</span>：Công cụ này dùng để ước tính trong giai đoạn lập phương án và thiết kế sơ bộ. Thông số phần tử được tính ngược từ tài liệu công khai của nhà sản xuất; phương pháp tính cùng loại với phần mềm thiết kế của nhà sản xuất nhưng đơn giản hơn: khi đối chiếu các ví dụ công khai, áp suất nước cấp thường chênh lệch ±10%, TDS nước sản phẩm cùng bậc độ lớn. Thiết kế cuối cùng, bảo đảm hiệu suất và lựa chọn phần tử cần dựa trên phần mềm thiết kế của nhà sản xuất (WAVE、IMSDesign、TorayDS v.v.) và xác nhận của nhà sản xuất.</div>
 </div>
 
 <div class="disclaimer-wrap">
   <div class="disclaimer">
-    ⚠️ <b>免责声明：</b>计算结果仅供工程概算参考，实际工程需结合现场水质监测、试验数据与专业判断。品牌与型号仅用于标识样本参数，不构成推荐。
+    ⚠️ <b>Tuyên bố miễn trừ trách nhiệm:</b> Kết quả tính toán chỉ dùng để tham khảo khi ước tính sơ bộ; công trình thực tế cần kết hợp quan trắc chất lượng nước tại hiện trường, dữ liệu thử nghiệm và đánh giá chuyên môn. Nhãn hiệu và mẫu mã chỉ dùng để xác định thông số trong tài liệu, không hàm ý khuyến nghị.
   </div>
 </div>
 
@@ -581,69 +581,69 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Công nghệ Đăng Đăng</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là tập hợp các công cụ tính toán xử lý nước trực tuyến do Công ty TNHH Tư vấn Công nghệ Đăng Đăng Hải Nam phát hành, được các kỹ sư công nghệ xử lý nước trực tiếp phát triển và bảo trì. Miễn phí và được cập nhật liên tục.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thủy lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thủy lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thủy lực đường ống (bản nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thủy lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính lưu lượng qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lượng khí sục</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn phát sinh</a></li>
+          <li><a href="dosing-calculator.html">Lượng hóa chất định lượng</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">Thiết kế MBBR</a></li>
+          <li><a href="ifas-design.html">Thiết kế IFAS</a></li>
+          <li><a href="mbr-design.html">Thiết kế MBR</a></li>
+          <li><a href="ro-design.html">Thiết kế thẩm thấu ngược RO</a></li>
+          <li><a href="pump-selection-calculator.html">Lựa chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Lựa chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Chuyển đổi đơn vị chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thủy sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải sau nuôi ao</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Hướng dẫn tham quan Aqua Nor 2027</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Công ty</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang web Công nghệ Đăng Đăng ↗</a></li>
+          <li>Tư vấn Công nghệ Đăng Đăng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Open Source</h4>
+        <h4>Mã nguồn mở</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho mã GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">Giấy phép AGPL-3.0</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Gửi phản hồi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Đăng Đăng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
-<div id="selftest" role="dialog" aria-label="自检结果"></div>
+<div id="selftest" role="dialog" aria-label="Kết quả tự kiểm tra"></div>
 
 <script id="ro-core">
 /*
@@ -689,7 +689,7 @@
 
   // 各类离子 B 值相对 NaCl 的倍数 (工程估算; 来源见 PASSAGE_NOTE)
   var PASSAGE = { mono: 1.0, div: 0.15, hco3: 1.2, nh4: 1.5, no3: 5.0, f: 0.8, sio2: 1.0, boron: null };   // sio2: 回用厂实测 0.2–1.2、IMSDesign 海水 0.47 (10-21 第二轮审查), 取 1.0 偏保守
-  var PASSAGE_NOTE = '按离子类别估算: 二价离子透过约为 NaCl 的 0.15 倍, 硝酸根约 5 倍, 硼另按元件硼脱除率计';
+  var PASSAGE_NOTE = 'Ước tính theo loại ion: độ thấm ion hóa trị hai khoảng 0.15 lần NaCl, nitrat khoảng 5 lần; bo được tính riêng theo tỷ lệ loại bỏ bo của phần tử';
 
   /* ---------------- 2. 物性与水化学 ---------------- */
   function TK(T) { return T + 273.15; }
@@ -1139,17 +1139,17 @@
    * qfMax: 单个 8" 压力容器最大进水 m³/h; qcMin: 单个 8" 压力容器最小浓水 m³/h; beta: 最大浓差极化 */
   // DuPont FilmTec 45-D01695 Rev.14 (2026-02) Table 1 (gpm、gfd 已换算); β 上限按 WAVE / TWDB 2014 取 1.2 (RO 产水进水取 1.4)
   var GUIDE = {
-    ro_perm: { name: 'RO 产水（二级 RO 进水，SDI < 1）',       flux: [36, 43], fluxMax: 48, rMax: 0.30, qfMax: 17.0, qcMin: 2.3, beta: 1.40 },
-    well:    { name: '地下水 / 井水（SDI < 3）',               flux: [27, 34], fluxMax: 39, rMax: 0.19, qfMax: 17.0, qcMin: 3.0, beta: 1.20 },
-    surf_uf: { name: '地表水，超滤预处理（SDI < 2.5）',        flux: [27, 34], fluxMax: 39, rMax: 0.19, qfMax: 17.0, qcMin: 3.0, beta: 1.20 },
-    surf_mf: { name: '地表水，微滤或强化常规预处理（SDI < 3）', flux: [22, 29], fluxMax: 34, rMax: 0.17, qfMax: 16.6, qcMin: 3.0, beta: 1.20 },
-    surf:    { name: '地表水 / 自来水，常规预处理（SDI < 5）',  flux: [20, 27], fluxMax: 31, rMax: 0.15, qfMax: 15.2, qcMin: 3.4, beta: 1.20 },
-    ww_uf:   { name: '污水回用，超滤预处理（SDI < 2.5）',      flux: [19, 26], fluxMax: 29, rMax: 0.15, qfMax: 13.9, qcMin: 3.2, beta: 1.20 },
-    ww_mf:   { name: '污水回用，MBR / 微滤（SDI < 3）',        flux: [17, 24], fluxMax: 27, rMax: 0.14, qfMax: 13.9, qcMin: 3.2, beta: 1.20 },
-    ww:      { name: '污水回用，常规预处理（SDI < 5）',         flux: [14, 20], fluxMax: 24, rMax: 0.13, qfMax: 13.9, qcMin: 3.6, beta: 1.20 },
-    sw_uf:   { name: '海水，海滩井或超滤预处理（SDI < 2.5）',   flux: [15, 19], fluxMax: 36, rMax: 0.15, qfMax: 15.9, qcMin: 3.0, beta: 1.20 },
-    sw_mf:   { name: '海水，开放取水 + 微滤或强化常规（SDI < 3）', flux: [14, 17], fluxMax: 34, rMax: 0.14, qfMax: 15.0, qcMin: 3.2, beta: 1.20 },
-    sw_open: { name: '海水，开放取水 + 常规预处理（SDI < 5）',  flux: [12, 17], fluxMax: 32, rMax: 0.13, qfMax: 14.1, qcMin: 3.4, beta: 1.20 }
+    ro_perm: { name: 'Nước sản phẩm RO (nước cấp RO cấp hai, SDI < 1)',       flux: [36, 43], fluxMax: 48, rMax: 0.30, qfMax: 17.0, qcMin: 2.3, beta: 1.40 },
+    well:    { name: 'Nước ngầm / nước giếng (SDI < 3)',               flux: [27, 34], fluxMax: 39, rMax: 0.19, qfMax: 17.0, qcMin: 3.0, beta: 1.20 },
+    surf_uf: { name: 'Nước mặt, tiền xử lý bằng siêu lọc (SDI < 2.5)',        flux: [27, 34], fluxMax: 39, rMax: 0.19, qfMax: 17.0, qcMin: 3.0, beta: 1.20 },
+    surf_mf: { name: 'Nước mặt, vi lọc hoặc tiền xử lý thông thường tăng cường (SDI < 3)', flux: [22, 29], fluxMax: 34, rMax: 0.17, qfMax: 16.6, qcMin: 3.0, beta: 1.20 },
+    surf:    { name: 'Nước mặt / nước máy, tiền xử lý thông thường (SDI < 5)',  flux: [20, 27], fluxMax: 31, rMax: 0.15, qfMax: 15.2, qcMin: 3.4, beta: 1.20 },
+    ww_uf:   { name: 'Nước thải tái sử dụng, tiền xử lý bằng siêu lọc (SDI < 2.5)',      flux: [19, 26], fluxMax: 29, rMax: 0.15, qfMax: 13.9, qcMin: 3.2, beta: 1.20 },
+    ww_mf:   { name: 'Nước thải tái sử dụng, MBR / vi lọc (SDI < 3)',        flux: [17, 24], fluxMax: 27, rMax: 0.14, qfMax: 13.9, qcMin: 3.2, beta: 1.20 },
+    ww:      { name: 'Nước thải tái sử dụng, tiền xử lý thông thường (SDI < 5)',         flux: [14, 20], fluxMax: 24, rMax: 0.13, qfMax: 13.9, qcMin: 3.6, beta: 1.20 },
+    sw_uf:   { name: 'Nước biển, giếng ven biển hoặc tiền xử lý bằng siêu lọc (SDI < 2.5)',   flux: [15, 19], fluxMax: 36, rMax: 0.15, qfMax: 15.9, qcMin: 3.0, beta: 1.20 },
+    sw_mf:   { name: 'Nước biển, lấy nước hở + vi lọc hoặc xử lý thông thường tăng cường (SDI < 3)', flux: [14, 17], fluxMax: 34, rMax: 0.14, qfMax: 15.0, qcMin: 3.2, beta: 1.20 },
+    sw_open: { name: 'Nước biển, lấy nước hở + tiền xử lý thông thường (SDI < 5)',  flux: [12, 17], fluxMax: 32, rMax: 0.13, qfMax: 14.1, qcMin: 3.4, beta: 1.20 }
   };
 
   /* ---------------- 10. 系统设计入口 ---------------- */
@@ -2105,9 +2105,9 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
 
   /* ---------- 复制结果 ---------- */
   function copyText() {
-    if (!last) return '输入有误，暂无结果';
+    if (!last) return 'Dữ liệu nhập không hợp lệ, chưa có kết quả';
     var d = last.d, inp = last.inp, L = [];
-    L.push('RO 反渗透系统设计计算结果（WaterKit）', '————————————————');
+    L.push('Kết quả tính toán thiết kế hệ thống thẩm thấu ngược RO (WaterKit)', '————————————————');
     L.push('水源：' + T.GUIDE[inp.source].name + '；产品水 ' + fmt(inp.Qp, 1) + ' m³/h；计算水温 ' + inp.T + ' °C（' + num('Tmin') + '–' + tmax() + ' °C）；流量因子 ' + inp.pass1.FF);
     L.push('原水 ' + fmt(d.Qraw, 1) + ' m³/h（TDS ' + fmt(T.tds(d.balance.C), 0) + ' mg/L，pH ' + inp.pH + '）；浓水 ' + fmt(d.Qconc, 1) + ' m³/h；系统回收率 ' + fmt(d.sysRecovery * 100, 1) + '%');
     L.push('一级：' + specOf($('elem1').value).model + '，' + d.pass1.stages.map(function (s) { return s.nv + '×' + s.ne; }).join(' + ') + '，共 ' + d.pass1.nElements + ' 支；进水压力 ' + fmt(d.pass1.Pf, 2) + ' bar（' + num('Tmin') + ' °C 时 ' + fmt(last.dmin.pass1.Pf, 2) + ' bar）；平均通量 ' + fmt(d.pass1.flux, 1) + ' LMH');
@@ -2117,8 +2117,8 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
       '，CaSO₄ ' + fmt(d.conc.sat.CaSO4, 0) + '%，BaSO₄ ' + fmt(d.conc.sat.BaSO4, 0) + '%，SrSO₄ ' + fmt(d.conc.sat.SrSO4, 0) + '%，CaF₂ ' + fmt(d.conc.sat.CaF2, 0) + '%，SiO₂ ' + fmt(d.check.siPct, 0) + '%');
     L.push('加药：' + (d.acid.doseMgL > 0 ? (inp.acid.type === 'HCl' ? '盐酸 ' : '硫酸 ') + fmt(d.acid.doseMgL, 1) + ' mg/L（100%）、' : '') + '阻垢剂 ' + fmt(inp.antiscalant, 1) + ' mg/L' + (inp.cl2 > 0 ? '、亚硫酸氢钠 ' + fmt(d.chem.sbsMgL, 2) + ' mg/L' : '') + (d.chem.naohMgL > 0 ? '、二级前 NaOH ' + fmt(d.chem.naohMgL, 1) + ' mg/L（pH ' + fmt(d.caustic.pHt, 1) + '）' : ''));
     L.push('能耗：总功率 ' + fmt(d.energy.kW, 1) + ' kW，比能耗 ' + fmt(d.energy.sec, 3) + ' kWh/m³，年电费 ' + fmt(d.energy.costYear, 1) + ' 万元');
-    L.push('设计校核：' + (last.items.length ? last.items.map(function (x) { return x.text; }).join('；') : '各项均满足导则'));
-    L.push('注：方案估算，最终以厂家设计软件为准。');
+    L.push('Kiểm tra thiết kế: ' + (last.items.length ? last.items.map(function (x) { return x.text; }).join('；') : 'Tất cả các mục đều đáp ứng hướng dẫn'));
+    L.push('Lưu ý: Đây là ước tính phương án; kết quả cuối cùng cần dựa trên phần mềm thiết kế của nhà sản xuất.');
     return L.join('\n');
   }
 
@@ -2161,9 +2161,9 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
     $('btnPrint').addEventListener('click', function () { window.print(); });
     $('btnCopy').addEventListener('click', function () {
       var t = copyText(), b = $('btnCopy');
-      var done = function () { b.textContent = '✓ 已复制'; setTimeout(function () { b.textContent = '📋 复制结果'; }, 1500); };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, function () { window.prompt('复制以下内容', t); });
-      else window.prompt('复制以下内容', t);
+      var done = function () { b.textContent = '✓ Đã sao chép'; setTimeout(function () { b.textContent = '📋 Sao chép kết quả'; }, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, function () { window.prompt('Sao chép nội dung sau', t); });
+      else window.prompt('Sao chép nội dung sau', t);
     });
     [].forEach.call(document.querySelectorAll('.tab'), function (b) {
       b.addEventListener('click', function () { showTab(b.getAttribute('data-tab')); window.scrollTo(0, 0); });

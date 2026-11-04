@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MBR 工程设计平台 | 水处理工具箱 · WaterKit</title>
+<title>Nền tảng thiết kế bể sinh học màng (MBR) | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="MBR(膜生物反应器)工程设计平台，覆盖主设计计算、深度膜选型、清洗方案、能耗分析、案例库、发展史。依据 HJ 2010-2011 / Metcalf&Eddy。">
-<meta name="keywords" content="MBR,膜生物反应器,中空纤维膜,平板膜,膜通量,膜污染,ZeeWeed,Kubota,碧水源,三菱化学,水处理,WaterKit">
+<meta name="description" content="Nền tảng thiết kế bể sinh học màng (MBR): tính toán thiết kế, lựa chọn màng, làm sạch, phân tích năng lượng, thư viện công trình và lịch sử phát triển. Theo HJ 2010-2011 / Metcalf&Eddy.">
+<meta name="keywords" content="MBR,bể sinh học màng,màng sợi rỗng,màng phẳng,thông lượng màng,tắc nghẽn màng,ZeeWeed,Kubota,OriginWater,Mitsubishi Chemical,xử lý nước,WaterKit">
 <link rel="canonical" href="https://waterkit.cn/mbr-design.html">
 <style>
   :root {
@@ -352,36 +352,36 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Dengdeng Technology</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-process">工艺计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-process">Tính toán công nghệ</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Dengdeng Technology</a>
     </nav>
   </div>
 </header>
-<div class="beta-bar">🚧 <b>Beta · 开发中</b>：本工具仍在开发与校核中，计算结果仅供方案估算参考。发现问题欢迎 <a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a>。</div>
+<div class="beta-bar">🚧 <b>Beta · Đang phát triển</b>：Công cụ đang được phát triển và kiểm tra; kết quả chỉ dùng để tham khảo khi ước tính phương án. Nếu phát hiện vấn đề, vui lòng <a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">gửi Issue</a>。</div>
 
 <!-- ===== Hero ===== -->
 <div class="hero">
   <div class="hero-inner">
     <div class="breadcrumb">
-      <a href="index.html">WaterKit</a> / <a href="index.html#cat-process">工艺计算</a> / MBR 工程设计平台
+      <a href="index.html">WaterKit</a> / <a href="index.html#cat-process">Tính toán công nghệ</a> / Nền tảng thiết kế bể sinh học màng (MBR)
     </div>
-    <div class="hero-badge">🧫 MBR 工程设计</div>
-    <h1 class="hero-title">MBR 工程设计平台</h1>
+    <div class="hero-badge">🧫 Thiết kế bể sinh học màng (MBR)</div>
+    <h1 class="hero-title">Nền tảng thiết kế bể sinh học màng (MBR)</h1>
     <p class="hero-sub">
-      膜生物反应器(MBR)工程设计平台，覆盖主设计计算、深度膜选型、清洗方案设计、能耗分析、典型案例、工艺发展史全流程。
-      依据 HJ 2010-2011 / Metcalf&Eddy，覆盖市政污水再生利用、垃圾渗滤液、工业废水等场景。
+      Nền tảng thiết kế bể sinh học màng (MBR), bao gồm tính toán thiết kế, lựa chọn màng chi tiết, thiết kế phương án làm sạch, phân tích năng lượng, công trình tiêu biểu và lịch sử phát triển công nghệ.
+      Theo HJ 2010-2011 / Metcalf&Eddy, áp dụng cho tái sử dụng nước thải đô thị, nước rỉ rác và nước thải công nghiệp.
     </p>
     <div class="hero-meta">
-      <span>📘 <b>依据 HJ 2010-2011</b></span>
-      <span>🌡️ <b>通量温度修正 3%/°C（经验值）</b></span>
-      <span>🧫 <b>4 大品牌 5 个系列参数库</b></span>
-      <span>⚠️ 方案估算级，工程实施以设计院施工图为准</span>
+      <span>📘 <b>Theo HJ 2010-2011</b></span>
+      <span>🌡️ <b>Hiệu chỉnh thông lượng theo nhiệt độ 3%/°C (giá trị kinh nghiệm)</b></span>
+      <span>🧫 <b>Cơ sở dữ liệu thông số của 4 thương hiệu, 5 dòng sản phẩm</b></span>
+      <span>⚠️ Dùng để ước tính phương án; khi thi công phải theo bản vẽ của đơn vị thiết kế</span>
     </div>
   </div>
 </div>
@@ -390,22 +390,22 @@
 <div class="tab-nav-wrap">
   <div class="tab-nav">
     <button class="tab-btn active" data-tab="design" onclick="switchTab('design')">
-      主设计计算<span class="tab-sub">Design</span>
+      Tính toán thiết kế chính<span class="tab-sub">Design</span>
     </button>
     <button class="tab-btn" data-tab="membrane" onclick="switchTab('membrane')">
-      膜选型<span class="tab-sub">Membrane</span>
+      Lựa chọn màng<span class="tab-sub">Membrane</span>
     </button>
     <button class="tab-btn" data-tab="cleaning" onclick="switchTab('cleaning')">
-      清洗方案<span class="tab-sub">Cleaning</span>
+      Phương án làm sạch<span class="tab-sub">Cleaning</span>
     </button>
     <button class="tab-btn" data-tab="energy" onclick="switchTab('energy')">
-      能耗分析<span class="tab-sub">Energy</span>
+      Phân tích năng lượng<span class="tab-sub">Energy</span>
     </button>
     <button class="tab-btn" data-tab="cases" onclick="switchTab('cases')">
-      案例库<span class="tab-sub">Cases</span>
+      Thư viện công trình<span class="tab-sub">Cases</span>
     </button>
     <button class="tab-btn" data-tab="history" onclick="switchTab('history')">
-      MBR 发展史<span class="tab-sub">History</span>
+      Lịch sử phát triển MBR<span class="tab-sub">History</span>
     </button>
   </div>
 </div>
@@ -415,188 +415,188 @@
 <!-- ===== Tab 1: 主设计计算 ===== -->
 <div class="tab-panel active" id="panel-design">
 
-  <div class="section-title"><span class="num">1</span>水种 & 生物段配置</div>
+  <div class="section-title"><span class="num">1</span>Loại nước thải & cấu hình công đoạn sinh học</div>
   <div class="water-preset">
-    <button class="preset-tab active" data-preset="municipal" onclick="setPreset('municipal')">城镇污水</button>
-    <button class="preset-tab" data-preset="industrial" onclick="setPreset('industrial')">工业废水</button>
-    <button class="preset-tab" data-preset="leachate" onclick="setPreset('leachate')">垃圾渗滤液</button>
-    <button class="preset-tab" data-preset="reuse" onclick="setPreset('reuse')">中水回用</button>
+    <button class="preset-tab active" data-preset="municipal" onclick="setPreset('municipal')">Nước thải đô thị</button>
+    <button class="preset-tab" data-preset="industrial" onclick="setPreset('industrial')">Nước thải công nghiệp</button>
+    <button class="preset-tab" data-preset="leachate" onclick="setPreset('leachate')">Nước rỉ rác</button>
+    <button class="preset-tab" data-preset="reuse" onclick="setPreset('reuse')">Tái sử dụng nước</button>
   </div>
   <div class="subtype-tabs">
     <button class="subtype-tab active" data-bio="aao" onclick="setBioConfig('aao')">
-      <b>MBR + AAO</b><span>脱氮除磷 · 最常用</span>
+      <b>MBR + AAO</b><span>Khử nitơ và phốt pho · phổ biến nhất</span>
     </button>
     <button class="subtype-tab" data-bio="ao_an" onclick="setBioConfig('ao_an')">
-      <b>MBR + AO 缺氧</b><span>脱氮 · 省厌氧段</span>
+      <b>MBR + AO thiếu khí</b><span>Khử nitơ · không cần ngăn kỵ khí</span>
     </button>
     <button class="subtype-tab" data-bio="single_o" onclick="setBioConfig('single_o')">
-      <b>MBR + 单好氧</b><span>只除 COD · 最简</span>
+      <b>MBR + chỉ hiếu khí</b><span>Chỉ loại bỏ COD · đơn giản nhất</span>
     </button>
   </div>
 
-  <div class="section-title"><span class="num">2</span>进水条件</div>
+  <div class="section-title"><span class="num">2</span>Điều kiện nước đầu vào</div>
   <div class="grid">
-    <div class="field"><label for="d_Q">Q <span class="unit">万 m³/d</span></label>
+    <div class="field"><label for="d_Q">Q <span class="unit">vạn m³/d</span></label>
       <input type="number" id="d_Q" value="3" step="0.5" oninput="calc()"></div>
     <div class="field"><label for="d_T">T <span class="unit">°C</span></label>
       <input type="number" id="d_T" value="20" step="1" oninput="calc()"></div>
-    <div class="field"><label for="d_COD0">COD₀ <span class="unit">mg/L（仅校核）</span></label>
+    <div class="field"><label for="d_COD0">COD₀ <span class="unit">mg/L（chỉ kiểm tra）</span></label>
       <input type="number" id="d_COD0" value="400" step="10" oninput="calc()">
-      <div class="helper">仅校核 COD₀ > COD出；需氧量与污泥按 BOD₅ 计</div></div>
+      <div class="helper">Chỉ kiểm tra COD₀ > COD đầu ra; nhu cầu oxy và lượng bùn tính theo BOD₅</div></div>
     <div class="field"><label for="d_BOD0">BOD₅₀ <span class="unit">mg/L</span></label>
       <input type="number" id="d_BOD0" value="180" step="5" oninput="calc()"></div>
     <div class="field"><label for="d_TN0">TN₀ <span class="unit">mg/L</span></label>
       <input type="number" id="d_TN0" value="45" step="1" oninput="calc()"></div>
-    <div class="field"><label for="d_NH40">NH₄-N₀ <span class="unit">mg/L（仅记录）</span></label>
+    <div class="field"><label for="d_NH40">NH₄-N₀ <span class="unit">mg/L（chỉ ghi nhận）</span></label>
       <input type="number" id="d_NH40" value="35" step="1" oninput="calc()">
-      <div class="helper">不参与计算：硝化量按 TN₀ 代 TKN₀ 计</div></div>
+      <div class="helper">Không dùng trong tính toán: lượng nitrat hóa được tính với TN₀ thay cho TKN₀</div></div>
     <div class="field"><label for="d_TP0">TP₀ <span class="unit">mg/L</span></label>
       <input type="number" id="d_TP0" value="5" step="0.2" oninput="calc()"></div>
     <div class="field"><label for="d_SS0">SS₀ <span class="unit">mg/L</span></label>
       <input type="number" id="d_SS0" value="200" step="10" oninput="calc()"></div>
   </div>
 
-  <div class="section-title"><span class="num">3</span>出水目标</div>
+  <div class="section-title"><span class="num">3</span>Mục tiêu nước đầu ra</div>
   <div class="grid">
-    <div class="field"><label for="d_standard">排放标准</label>
+    <div class="field"><label for="d_standard">Tiêu chuẩn xả thải</label>
       <select id="d_standard" onchange="applyStandard()">
-        <option value="1A">一级 A (GB18918)</option>
-        <option value="grade4" selected>准 IV 类（地方标准）</option>
-        <option value="grade3">地表 III 类（TP 按河流 0.2；湖库为 0.05，需另行校核）</option>
-        <option value="reuse">城市杂用水</option>
-        <option value="gb16889">GB 16889 渗滤液（后接 NF/RO）</option>
-        <option value="custom">自定义</option>
+        <option value="1A">Cấp 1 A (GB18918)</option>
+        <option value="grade4" selected>Tương đương loại IV (tiêu chuẩn địa phương)</option>
+        <option value="grade3">Nước mặt loại III (TP theo sông 0.2; hồ và hồ chứa là 0.05, cần kiểm tra riêng)</option>
+        <option value="reuse">Nước tái sử dụng cho mục đích đô thị</option>
+        <option value="gb16889">GB 16889 nước rỉ rác (sau đó qua NF/RO)</option>
+        <option value="custom">Tùy chỉnh</option>
       </select>
-      <div class="helper" id="d_std_helper">准 IV 类为地方标准，限值按项目所在地调整</div></div>
-    <div class="field"><label for="d_CODe">COD出 <span class="unit">（仅校核）</span></label><input type="number" id="d_CODe" value="30" step="1" oninput="calc()"></div>
-    <div class="field"><label for="d_BODe">BOD出</label><input type="number" id="d_BODe" value="6" step="0.5" oninput="calc()"></div>
-    <div class="field"><label for="d_NH4e">NH₄-N出</label><input type="number" id="d_NH4e" value="1.5" step="0.5" oninput="calc()"></div>
-    <div class="field"><label for="d_TNe">TN出</label><input type="number" id="d_TNe" value="10" step="0.5" oninput="calc()"></div>
-    <div class="field"><label for="d_TPe">TP出</label><input type="number" id="d_TPe" value="0.3" step="0.1" oninput="calc()"></div>
+      <div class="helper" id="d_std_helper">Tương đương loại IV là tiêu chuẩn địa phương; điều chỉnh giới hạn theo địa điểm dự án</div></div>
+    <div class="field"><label for="d_CODe">COD đầu ra <span class="unit">（chỉ kiểm tra）</span></label><input type="number" id="d_CODe" value="30" step="1" oninput="calc()"></div>
+    <div class="field"><label for="d_BODe">BOD đầu ra</label><input type="number" id="d_BODe" value="6" step="0.5" oninput="calc()"></div>
+    <div class="field"><label for="d_NH4e">NH₄-N đầu ra</label><input type="number" id="d_NH4e" value="1.5" step="0.5" oninput="calc()"></div>
+    <div class="field"><label for="d_TNe">TN đầu ra</label><input type="number" id="d_TNe" value="10" step="0.5" oninput="calc()"></div>
+    <div class="field"><label for="d_TPe">TP đầu ra</label><input type="number" id="d_TPe" value="0.3" step="0.1" oninput="calc()"></div>
   </div>
 
-  <div class="section-title"><span class="num">4</span>生物段参数</div>
+  <div class="section-title"><span class="num">4</span>Thông số công đoạn sinh học</div>
   <div class="grid">
     <div class="field"><label for="d_MLSS">MLSS <span class="unit">mg/L</span></label>
       <input type="number" id="d_MLSS" value="10000" step="500" oninput="calc()">
-      <div class="helper">MBR 常 8000-12000</div></div>
+      <div class="helper">MBR thường 8000-12000</div></div>
     <div class="field"><label for="d_VSS_SS">MLVSS/MLSS</label>
       <input type="number" id="d_VSS_SS" value="0.72" step="0.01" oninput="calc()"></div>
     <div class="field"><label for="d_SRT">SRT <span class="unit">d</span></label>
       <input type="number" id="d_SRT" value="30" step="1" oninput="calc()">
-      <div class="helper">MBR 常 20-30d</div></div>
-    <div class="field"><label for="d_SF">硝化安全系数 SF</label>
+      <div class="helper">MBR thường 20-30d</div></div>
+    <div class="field"><label for="d_SF">Hệ số an toàn nitrat hóa SF</label>
       <input type="number" id="d_SF" value="2.0" step="0.1" oninput="calc()">
-      <div class="helper">即 GB 50014 式中 F（宜 1.5～3.0；城镇默认 2.0、工业 3.0）。仅用于校核好氧泥龄 ≥ F × SRT_min(T_min)，不乘池容</div></div>
-    <div class="field"><label for="d_HRT_AN">厌氧段 HRT <span class="unit">h</span></label>
+      <div class="helper">Tức F trong công thức GB 50014 (nên chọn 1.5～3.0; mặc định đô thị 2.0, công nghiệp 3.0). Chỉ dùng để kiểm tra tuổi bùn hiếu khí ≥ F × SRT_min(T_min), không nhân với thể tích bể</div></div>
+    <div class="field"><label for="d_HRT_AN">HRT ngăn kỵ khí <span class="unit">h</span></label>
       <input type="number" id="d_HRT_AN" value="1.0" step="0.1" oninput="calc()">
-      <div class="helper">仅 AAO 配置有效</div></div>
-    <div class="field"><label for="d_bioP">生物除磷量 <span class="unit">mg/L</span></label>
+      <div class="helper">Chỉ áp dụng cho cấu hình AAO</div></div>
+    <div class="field"><label for="d_bioP">Lượng phốt pho loại bỏ bằng sinh học <span class="unit">mg/L</span></label>
       <input type="number" id="d_bioP" value="1.5" step="0.1" oninput="calc()">
-      <div class="helper">仅含厌氧段的 AAO 配置有效（本页无单独厌氧-好氧配置）；与站内加药页一致取 1.5，从化学除磷量中扣除</div></div>
+      <div class="helper">Chỉ áp dụng cho cấu hình AAO có ngăn kỵ khí (trang này không có cấu hình kỵ khí - hiếu khí riêng); lấy 1.5 như trang tính hóa chất và trừ khỏi lượng phốt pho cần loại bỏ bằng hóa chất</div></div>
   </div>
 
-  <div class="section-title"><span class="num">5</span>膜系统参数</div>
+  <div class="section-title"><span class="num">5</span>Thông số hệ thống màng</div>
   <div class="auto-calc-notice">
     <div class="notice-head"><span class="notice-ic">🌡️</span>
-      <span>膜通量温度修正：J(T) = J₂₀ × 1.03^(T-20)。温度每降 1°C 通量减少约 3%。膜面积取两种工况的较大值：① 冬季低温（最低设计水温 T_min、平均流量 Q）A = Q / J(T_min)；② 峰值流量（峰值系数 × Q、平均水温 T）A = PF·Q / 通量上限。</span>
+      <span>Hiệu chỉnh thông lượng màng theo nhiệt độ: J(T) = J₂₀ × 1.03^(T-20). Mỗi khi nhiệt độ giảm 1°C, thông lượng giảm khoảng 3%. Chọn diện tích màng lớn hơn trong hai chế độ: ① nhiệt độ thấp mùa đông (nhiệt độ nước thiết kế tối thiểu T_min, lưu lượng trung bình Q) A = Q / J(T_min); ② lưu lượng đỉnh (hệ số đỉnh × Q, nhiệt độ nước trung bình T) A = PF·Q / giới hạn thông lượng.</span>
     </div>
   </div>
   <div class="grid">
-    <div class="field"><label for="d_memType">膜类型</label>
+    <div class="field"><label for="d_memType">Loại màng</label>
       <select id="d_memType" onchange="applyMemType()">
-        <option value="hf">中空纤维膜 (HF)</option>
-        <option value="fs">平板式膜 (FS)</option>
+        <option value="hf">Màng sợi rỗng (HF)</option>
+        <option value="fs">Màng phẳng (FS)</option>
       </select></div>
-    <div class="field"><label for="d_J20">设计通量 J₂₀ <span class="unit">LMH @20°C</span></label>
+    <div class="field"><label for="d_J20">Thông lượng thiết kế J₂₀ <span class="unit">LMH @20°C</span></label>
       <input type="number" id="d_J20" value="20" step="1" oninput="calc()">
-      <div class="helper" id="d_J_helper">中空纤维: 12-30，平板: 16-50</div></div>
-    <div class="field"><label for="d_peakFactor">峰值系数</label>
+      <div class="helper" id="d_J_helper">Sợi rỗng: 12-30, màng phẳng: 16-50</div></div>
+    <div class="field"><label for="d_peakFactor">Hệ số đỉnh</label>
       <input type="number" id="d_peakFactor" value="1.3" step="0.1" oninput="calc()">
-      <div class="helper">应对峰值 1.3-1.8；峰值流量下通量不超过 1.5×J(T_min)，且不超过膜型上限</div></div>
-    <div class="field"><label for="d_Tmin">最低设计水温 T_min <span class="unit">°C</span></label>
+      <div class="helper">Đáp ứng lưu lượng đỉnh 1.3-1.8; thông lượng ở lưu lượng đỉnh không vượt quá 1.5×J(T_min) và giới hạn của loại màng</div></div>
+    <div class="field"><label for="d_Tmin">Nhiệt độ nước thiết kế tối thiểu T_min <span class="unit">°C</span></label>
       <input type="number" id="d_Tmin" value="12" step="1" oninput="calc()">
-      <div class="helper">冬季校核水温，按此温度通量核算膜面积</div></div>
-    <div class="field"><label for="d_runRatio">运行时间比 <span class="unit">%</span></label>
+      <div class="helper">Nhiệt độ nước dùng để kiểm tra vào mùa đông; tính diện tích màng theo thông lượng ở nhiệt độ này</div></div>
+    <div class="field"><label for="d_runRatio">Tỷ lệ thời gian vận hành <span class="unit">%</span></label>
       <input type="number" id="d_runRatio" value="95" step="1" oninput="calc()">
-      <div class="helper">产水 95%，5% 停机（松弛/清洗）；反洗消耗的产水（HF 约 2-5%）未扣，需要时可下调</div></div>
-    <div class="field"><label for="d_moduleArea">单组件膜面积 <span class="unit">m²</span></label>
+      <div class="helper">Tạo nước 95%, dừng 5% (thư giãn/làm sạch); chưa trừ lượng nước sản phẩm dùng để rửa ngược (HF khoảng 2-5%), có thể giảm tỷ lệ khi cần</div></div>
+    <div class="field"><label for="d_moduleArea">Diện tích màng mỗi mô-đun <span class="unit">m²</span></label>
       <input type="number" id="d_moduleArea" value="25" step="1" oninput="calc()">
-      <div class="helper" id="d_mod_helper">三菱 25m², ZeeWeed 500D 约 31.6-40.9m²</div></div>
-    <div class="field"><label for="d_TMP">设计 TMP <span class="unit">kPa</span></label>
+      <div class="helper" id="d_mod_helper">Mitsubishi 25m², ZeeWeed 500D khoảng 31.6-40.9m²</div></div>
+    <div class="field"><label for="d_TMP">TMP thiết kế <span class="unit">kPa</span></label>
       <input type="number" id="d_TMP" value="25" step="5" oninput="calc()">
-      <div class="helper">正常 10-35；>35-40 安排 CIP</div></div>
+      <div class="helper">Bình thường 10-35; >35-40 bố trí CIP</div></div>
   </div>
 
   <div class="advanced-toggle" onclick="toggleAdv()">
     <span id="advChev">▸</span>
-    <span>高级参数 (动力学 / 曝气 / α β)</span>
+    <span>Thông số nâng cao (động học / sục khí / α β)</span>
   </div>
   <div class="advanced-params" id="advParams">
     <div class="grid">
       <div class="field"><label for="d_Y">Y</label><input type="number" id="d_Y" value="0.55" step="0.05" oninput="calc()"></div>
       <div class="field"><label for="d_Kd">Kd</label><input type="number" id="d_Kd" value="0.05" step="0.01" oninput="calc()"></div>
-      <div class="field"><label for="d_Kn">硝化半速率常数 K_N <span class="unit">mg/L</span></label><input type="number" id="d_Kn" value="1.0" step="0.1" oninput="calc()">
-        <div class="helper">全站口径固定 1.0（GB 50014）；改动后将与活性污泥工具不一致。SRT_min = 1/μ，μ = 0.47·N_a/(K_N+N_a)·e^0.098(T_min−15)，依据 GB 50014-2021 式（7.6.17），θ 按 e^0.098≈1.103/℃，不计衰减</div></div>
+      <div class="field"><label for="d_Kn">Hằng số bán bão hòa nitrat hoá K_N <span class="unit">mg/L</span></label><input type="number" id="d_Kn" value="1.0" step="0.1" oninput="calc()">
+        <div class="helper">Giá trị thống nhất trên toàn trang là 1.0 (GB 50014); thay đổi sẽ làm kết quả không thống nhất với công cụ bùn hoạt tính. SRT_min = 1/μ, μ = 0.47·N_a/(K_N+N_a)·e^0.098(T_min−15), theo công thức (7.6.17) GB 50014-2021, θ theo e^0.098≈1.103/℃, không tính phân huỷ</div></div>
       <div class="field"><label for="d_SDNR20">SDNR₂₀ <span class="unit">g N/g VSS·d</span></label><input type="number" id="d_SDNR20" value="0.08" step="0.01" oninput="calc()">
-        <div class="helper">用于缺氧池容校核（θ=1.08，依据 GB 50014）</div></div>
-      <div class="field"><label for="d_fss">进水 SS 污泥转换率 f</label><input type="number" id="d_fss" value="0.5" step="0.05" oninput="calc()">
-        <div class="helper">GB 50014 取 0.5-0.7；计入进水惰性固体，膜出水 SSₑ 取 0</div></div>
-      <div class="field"><label for="d_alpha">α (膜池 FOC)</label><input type="number" id="d_alpha" value="0.55" step="0.05" oninput="calc()">
-        <div class="helper">MBR α 偏低 0.5-0.6</div></div>
+        <div class="helper">Dùng để kiểm tra thể tích bể thiếu khí (θ=1.08, theo GB 50014)</div></div>
+      <div class="field"><label for="d_fss">Hệ số chuyển đổi SS đầu vào thành bùn f</label><input type="number" id="d_fss" value="0.5" step="0.05" oninput="calc()">
+        <div class="helper">Theo GB 50014 lấy 0.5-0.7; tính cả chất rắn trơ đầu vào, SSₑ sau màng lấy bằng 0</div></div>
+      <div class="field"><label for="d_alpha">α (FOC bể màng)</label><input type="number" id="d_alpha" value="0.55" step="0.05" oninput="calc()">
+        <div class="helper">MBR có α tương đối thấp 0.5-0.6</div></div>
       <div class="field"><label for="d_beta">β</label><input type="number" id="d_beta" value="0.95" step="0.01" oninput="calc()"></div>
-      <div class="field"><label for="d_SADm">膜曝气强度 SADm <span class="unit">m³空气/m²膜·h</span></label>
+      <div class="field"><label for="d_SADm">Cường độ sục khí màng SADm <span class="unit">m³ không khí/m² màng·h</span></label>
         <input type="number" id="d_SADm" value="0.20" step="0.02" oninput="calc()">
-        <div class="helper">HF 0.15-0.30；FS 持续曝气，常用 0.30-0.75，通常高于 HF（以厂家为准；与 Tab 4 同口径计能耗）</div></div>
-      <div class="field"><label for="d_cleanCycle">化学清洗周期 <span class="unit">月</span></label>
+        <div class="helper">HF 0.15-0.30; FS sục khí liên tục, thường dùng 0.30-0.75, thường cao hơn HF (theo nhà sản xuất; tính điện năng cùng cơ sở với Tab 4)</div></div>
+      <div class="field"><label for="d_cleanCycle">Chu kỳ rửa hoá chất <span class="unit">tháng</span></label>
         <input type="number" id="d_cleanCycle" value="4" step="1" oninput="calc()">
-        <div class="helper">HF 约 3-4, FS 约 6</div></div>
-      <div class="field"><label for="d_Hd">扩散器淹没深度 H_d <span class="unit">m</span></label>
+        <div class="helper">HF khoảng 3-4, FS khoảng 6</div></div>
+      <div class="field"><label for="d_Hd">Độ sâu ngập của bộ phân phối khí H_d <span class="unit">m</span></label>
         <input type="number" id="d_Hd" value="5.5" step="0.1" oninput="calc()">
-        <div class="helper">用于 SOR 水深修正（Pb = Pa + 9.81·H_d）与曝气效率</div></div>
-      <div class="field"><label for="d_alt">海拔 <span class="unit">m</span></label>
+        <div class="helper">Dùng để hiệu chỉnh SOR theo độ sâu nước (Pb = Pa + 9.81·H_d) và tính hiệu suất sục khí</div></div>
+      <div class="field"><label for="d_alt">Độ cao <span class="unit">m</span></label>
         <input type="number" id="d_alt" value="0" step="100" oninput="calc()">
-        <div class="helper">SOR 的 P_b 与鼓风机进气压力按当地大气压计；默认 0 = 海平面</div></div>
-      <div class="field"><label for="d_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
+        <div class="helper">P_b của SOR và áp suất khí vào máy thổi khí tính theo áp suất khí quyển địa phương; mặc định 0 = mực nước biển</div></div>
+      <div class="field"><label for="d_OTE">Hiệu suất truyền oxy OTE <span class="unit">%/m</span></label>
         <input type="number" id="d_OTE" value="6" step="0.5" oninput="calc()">
-        <div class="helper">微孔 5-7 %/m；EE = OTE × H_d</div></div>
-      <div class="field"><label for="d_blowerEff">鼓风机效率 <span class="unit">%</span></label>
+        <div class="helper">Lỗ mịn 5-7 %/m; EE = OTE × H_d</div></div>
+      <div class="field"><label for="d_blowerEff">Hiệu suất máy thổi khí <span class="unit">%</span></label>
         <input type="number" id="d_blowerEff" value="70" step="5" oninput="calc()">
-        <div class="helper">绝热压缩功率计能耗（与 Tab 4 同口径）</div></div>
-      <div class="field"><label for="d_recirc">内回流比 <span class="unit">% of Q</span></label>
+        <div class="helper">Tính điện năng theo công suất nén đoạn nhiệt (cùng cơ sở với Tab 4)</div></div>
+      <div class="field"><label for="d_recirc">Tỷ lệ tuần hoàn nội <span class="unit">% of Q</span></label>
         <input type="number" id="d_recirc" value="300" step="50" oninput="calc()">
-        <div class="helper">好氧→缺氧硝化液回流；扬程 2 m、η 0.65 计能耗</div></div>
-      <div class="field"><label for="d_memRecirc">膜池回流比 <span class="unit">% of Q</span></label>
+        <div class="helper">Tuần hoàn hỗn hợp đã nitrat hoá từ hiếu khí → thiếu khí; tính điện năng với cột áp 2 m, η 0.65</div></div>
+      <div class="field"><label for="d_memRecirc">Tỷ lệ tuần hoàn bể màng <span class="unit">% of Q</span></label>
         <input type="number" id="d_memRecirc" value="400" step="50" oninput="calc()">
-        <div class="helper">膜池→生物池污泥回流，分置膜池常 400-500%；膜组件直接置于好氧池时填 0。扬程 2 m、η 0.65 计能耗</div></div>
+        <div class="helper">Tuần hoàn bùn từ bể màng → bể sinh học, bể màng đặt riêng thường 400-500%; nhập 0 khi mô-đun màng đặt trực tiếp trong bể hiếu khí. Tính điện năng với cột áp 2 m, η 0.65</div></div>
     </div>
   </div>
 
   <!-- 结果 -->
   <div class="results">
-    <h2>🎯 <span id="d_titleSub">MBR + AAO</span> 设计结果</h2>
+    <h2>🎯 <span id="d_titleSub">MBR + AAO</span> Kết quả thiết kế</h2>
 
     <div class="flow-diagram">
       <svg id="mbrFlowSvg" width="100%" height="240" viewBox="0 0 960 240" xmlns="http://www.w3.org/2000/svg"></svg>
     </div>
 
     <div class="result-group">
-      <div class="result-group-title"><span class="ic">📐</span> 生物段池容</div>
-      <div class="result-row highlight-row"><span class="result-label"><b>生物池总容 V</b></span>
+      <div class="result-group-title"><span class="ic">📐</span> Thể tích bể sinh học</div>
+      <div class="result-row highlight-row"><span class="result-label"><b>Tổng thể tích bể sinh học V</b></span>
         <span><span class="result-value big" id="d_r_V">—</span><span class="result-unit">m³</span></span></div>
-      <div class="result-row highlight-row"><span class="result-label"><b>总 HRT</b></span>
+      <div class="result-row highlight-row"><span class="result-label"><b>Tổng HRT</b></span>
         <span><span class="result-value big" id="d_r_HRT">—</span><span class="result-unit">h</span></span></div>
-      <div class="result-row"><span class="result-label">其中化学污泥占 ΔX（即占生物池容）比例</span>
+      <div class="result-row"><span class="result-label">Tỷ lệ bùn hoá học trong ΔX (tương ứng tỷ lệ thể tích bể sinh học)</span>
         <span><span class="result-value" id="d_r_chemShare">—</span><span class="result-unit">%</span></span></div>
-      <div class="result-row" id="row_AN"><span class="result-label">厌氧段 V_AN</span>
+      <div class="result-row" id="row_AN"><span class="result-label">Ngăn kỵ khí V_AN</span>
         <span><span class="result-value" id="d_r_VAN">—</span><span class="result-unit">m³</span></span></div>
-      <div class="result-row" id="row_AX"><span class="result-label">缺氧段 V_AX</span>
+      <div class="result-row" id="row_AX"><span class="result-label">Ngăn thiếu khí V_AX</span>
         <span><span class="result-value" id="d_r_VAX">—</span><span class="result-unit">m³</span></span></div>
-      <div class="result-row"><span class="result-label">好氧/膜段 V_O</span>
+      <div class="result-row"><span class="result-label">Ngăn hiếu khí/màng V_O</span>
         <span><span class="result-value" id="d_r_VO">—</span><span class="result-unit">m³</span></span></div>
       <div class="result-row"><span class="result-label">较传统活性污泥省池容（按 MLSS 3500 折算，传统池容另 ×1.15 计二沉池，理论值）</span>
         <span><span class="result-value" id="d_r_saveV">—</span><span class="result-unit">%</span></span></div>
-      <div class="result-row"><span class="result-label">硝化最小泥龄 SRT_min / SF×SRT_min</span>
+      <div class="result-row"><span class="result-label">Tuổi bùn nitrat hoá tối thiểu SRT_min / SF×SRT_min</span>
         <span><span class="result-value" id="d_r_SRTmin">—</span><span class="result-unit">d</span></span></div>
       <div class="result-row" id="row_AXreq"><span class="result-label">缺氧段需求 V_AX,req（SDNR 校核）</span>
         <span><span class="result-value" id="d_r_VAXreq">—</span><span class="result-unit">m³</span></span></div>
@@ -609,92 +609,92 @@
     </div>
 
     <div class="result-group">
-      <div class="result-group-title"><span class="ic">🧫</span> 膜系统设计</div>
-      <div class="result-row highlight-row"><span class="result-label"><b>总膜面积 A_m</b></span>
+      <div class="result-group-title"><span class="ic">🧫</span> Thiết kế hệ thống màng</div>
+      <div class="result-row highlight-row"><span class="result-label"><b>Tổng diện tích màng A_m</b></span>
         <span><span class="result-value big" id="d_r_Am">—</span><span class="result-unit">m²</span></span></div>
-      <div class="result-row"><span class="result-label">膜面积控制工况</span>
+      <div class="result-row"><span class="result-label">Điều kiện chi phối diện tích màng</span>
         <span><span class="result-value" id="d_r_ctrl">—</span></span></div>
-      <div class="result-row highlight-row"><span class="result-label"><b>允许通量 J(T) / J(T_min)</b></span>
+      <div class="result-row highlight-row"><span class="result-label"><b>Thông lượng cho phép J(T) / J(T_min)</b></span>
         <span><span class="result-value big" id="d_r_JT">—</span><span class="result-unit">LMH</span></span></div>
-      <div class="result-row"><span class="result-label">平均流量运行通量</span>
+      <div class="result-row"><span class="result-label">Thông lượng vận hành ở lưu lượng trung bình</span>
         <span><span class="result-value" id="d_r_Javg">—</span><span class="result-unit">LMH</span></span></div>
-      <div class="result-row"><span class="result-label">膜组件数量</span>
-        <span><span class="result-value" id="d_r_modules">—</span><span class="result-unit">个</span></span></div>
-      <div class="result-row"><span class="result-label">峰值流量运行通量</span>
+      <div class="result-row"><span class="result-label">Số mô-đun màng</span>
+        <span><span class="result-value" id="d_r_modules">—</span><span class="result-unit">cái</span></span></div>
+      <div class="result-row"><span class="result-label">Thông lượng vận hành ở lưu lượng cực đại</span>
         <span><span class="result-value" id="d_r_Jpeak">—</span><span class="result-unit">LMH</span></span></div>
-      <div class="result-row"><span class="result-label">峰值允许通量 min(膜型上限, 1.5×J(T_min))</span>
+      <div class="result-row"><span class="result-label">Thông lượng cực đại cho phép min(giới hạn loại màng, 1.5×J(T_min))</span>
         <span><span class="result-value" id="d_r_Jlim">—</span><span class="result-unit">LMH</span></span></div>
-      <div class="result-row"><span class="result-label">温度修正系数 1.03^(T-20) / 1.03^(T_min-20)</span>
+      <div class="result-row"><span class="result-label">Hệ số hiệu chỉnh nhiệt độ 1.03^(T-20) / 1.03^(T_min-20)</span>
         <span><span class="result-value" id="d_r_Tfactor">—</span><span class="result-unit">×</span></span></div>
     </div>
 
     <div class="result-group">
-      <div class="result-group-title"><span class="ic">💨</span> 需氧量 & 污泥</div>
+      <div class="result-group-title"><span class="ic">💨</span> Nhu cầu oxy & bùn</div>
       <div class="result-row highlight-row"><span class="result-label"><b>AOR</b></span>
         <span><span class="result-value big" id="d_r_AOR">—</span><span class="result-unit">kg O₂/d</span></span></div>
-      <div class="result-row"><span class="result-label">SOR (标准氧；P_b 按海拔大气压 + 水深)</span>
+      <div class="result-row"><span class="result-label">SOR (oxy tiêu chuẩn; P_b theo áp suất khí quyển tại độ cao + độ sâu nước)</span>
         <span><span class="result-value" id="d_r_SOR">—</span><span class="result-unit">kg O₂/d</span></span></div>
-      <div class="result-row"><span class="result-label">生物曝气量 G = SOR/(24·0.28·EE)，EE = OTE×H_d（0.28 kg O₂/m³ 为 20 °C 标态）</span>
-        <span><span class="result-value" id="d_r_bioAir">—</span><span class="result-unit">m³/h（20°C 标态）</span></span></div>
-      <div class="result-row highlight-row"><span class="result-label"><b>剩余污泥 ΔX</b>（生物污泥 + 进水惰性 SS + 化学污泥 + 外加碳源产泥）</span>
+      <div class="result-row"><span class="result-label">Lưu lượng khí sinh học G = SOR/(24·0.28·EE), EE = OTE×H_d (0.28 kg O₂/m³ ở điều kiện chuẩn 20 °C)</span>
+        <span><span class="result-value" id="d_r_bioAir">—</span><span class="result-unit">m³/h (điều kiện chuẩn 20°C)</span></span></div>
+      <div class="result-row highlight-row"><span class="result-label"><b>Bùn dư ΔX</b>(bùn sinh học + SS trơ đầu vào + bùn hoá học + bùn sinh ra từ nguồn carbon bổ sung)</span>
         <span><span class="result-value big" id="d_r_dX">—</span><span class="result-unit">kg DS/d</span></span></div>
-      <div class="result-row"><span class="result-label">MLSS 浓缩比 (vs 进水 SS)</span>
+      <div class="result-row"><span class="result-label">Tỷ lệ cô đặc MLSS (so với SS đầu vào)</span>
         <span><span class="result-value" id="d_r_MLSS_ratio">—</span><span class="result-unit">×</span></span></div>
     </div>
 
     <div class="result-group">
-      <div class="result-group-title"><span class="ic">🧪</span> 化学除磷 PAC 估算</div>
+      <div class="result-group-title"><span class="ic">🧪</span> Ước tính PAC khử phốt pho bằng hoá chất</div>
       <div class="result-row"><span class="result-label">需化学去除 P（TP₀−TPe − 污泥同化磷 0.02·ΔX_VSS − 生物除磷〔AAO〕）</span>
         <span><span class="result-value" id="d_r_Pchem">—</span><span class="result-unit">kg P/d</span></span></div>
-      <div class="result-row highlight-row"><span class="result-label"><b>PAC 商品投加量</b></span>
+      <div class="result-row highlight-row"><span class="result-label"><b>Liều lượng PAC thương phẩm</b></span>
         <span><span class="result-value big" id="d_r_PAC">—</span><span class="result-unit">kg/d</span></span></div>
-      <div class="result-row"><span class="result-label">折合投加浓度</span>
+      <div class="result-row"><span class="result-label">Nồng độ định lượng quy đổi</span>
         <span><span class="result-value" id="d_r_PACmg">—</span><span class="result-unit">mg/L</span></span></div>
-      <div class="result-row"><span class="result-label">化学污泥（AlPO₄ 122/31 + 余 Al(OH)₃ 78/31，计入 ΔX）</span>
+      <div class="result-row"><span class="result-label">Bùn hoá học (AlPO₄ 122/31 + Al(OH)₃ dư 78/31, tính vào ΔX)</span>
         <span><span class="result-value" id="d_r_chemSl">—</span><span class="result-unit">kg DS/d</span></span></div>
       <div class="helper">Al/P 摩尔比 2；PAC 含 Al₂O₃ 10%（Al 质量分数 0.0529）。已扣除污泥同化磷（按 0.02 gP/gVSS，经验值）与 AAO 生物除磷量（输入值）。</div>
     </div>
 
     <div class="result-group">
-      <div class="result-group-title"><span class="ic">⚡</span> 能耗概算 <span class="auto-tag">AUTO</span></div>
-      <div class="result-row"><span class="result-label">生物曝气能耗</span>
+      <div class="result-group-title"><span class="ic">⚡</span> Ước tính điện năng <span class="auto-tag">AUTO</span></div>
+      <div class="result-row"><span class="result-label">Điện năng sục khí sinh học</span>
         <span><span class="result-value" id="d_r_eBio">—</span><span class="result-unit">kWh/m³</span></span></div>
-      <div class="result-row"><span class="result-label">膜曝气能耗</span>
+      <div class="result-row"><span class="result-label">Điện năng sục khí màng</span>
         <span><span class="result-value" id="d_r_eMem">—</span><span class="result-unit">kWh/m³</span></span></div>
-      <div class="result-row"><span class="result-label">产水泵能耗</span>
+      <div class="result-row"><span class="result-label">Điện năng máy bơm nước sản phẩm</span>
         <span><span class="result-value" id="d_r_ePump">—</span><span class="result-unit">kWh/m³</span></span></div>
-      <div class="result-row"><span class="result-label">内回流泵能耗</span>
+      <div class="result-row"><span class="result-label">Điện năng máy bơm tuần hoàn nội</span>
         <span><span class="result-value" id="d_r_eRecirc">—</span><span class="result-unit">kWh/m³</span></span></div>
-      <div class="result-row"><span class="result-label">膜池回流泵能耗</span>
+      <div class="result-row"><span class="result-label">Điện năng máy bơm tuần hoàn bể màng</span>
         <span><span class="result-value" id="d_r_eMemRecirc">—</span><span class="result-unit">kWh/m³</span></span></div>
-      <div class="result-row"><span class="result-label">其他（仪控/照明等）</span>
+      <div class="result-row"><span class="result-label">Khác (điều khiển/chiếu sáng, v.v.)</span>
         <span><span class="result-value">0.05</span><span class="result-unit">kWh/m³</span></span></div>
-      <div class="result-row highlight-row"><span class="result-label"><b>生化 + 膜段能耗</b>（与 Tab 4 同口径）<br><small style="font-weight:400;color:var(--text-faint);">统计范围：生物曝气、膜曝气、产水泵、内回流、膜池回流、仪控照明；不含进水提升、格栅/预处理、厌氧/缺氧搅拌、污泥脱水处置，全厂电耗通常再加 0.1-0.3 kWh/m³</small></span>
+      <div class="result-row highlight-row"><span class="result-label"><b>Điện năng công đoạn sinh học + màng</b>(cùng cơ sở với Tab 4)<br><small style="font-weight:400;color:var(--text-faint);">统计范围：生物曝气、膜曝气、产水泵、内回流、膜池回流、仪控照明；不含进水提升、格栅/预处理、厌氧/缺氧搅拌、污泥脱水处置，全厂电耗通常再加 0.1-0.3 kWh/m³</small></span>
         <span><span class="result-value big" id="d_r_eTotal">—</span><span class="result-unit">kWh/m³</span></span></div>
     </div>
 
     <div class="result-group">
-      <div class="result-group-title"><span class="ic">🔎</span> 设计校核 & 警告</div>
+      <div class="result-group-title"><span class="ic">🔎</span> Kiểm tra thiết kế & cảnh báo</div>
       <div class="check-list" id="d_checkList"></div>
       <div class="score-ring">
         <div><div class="score-num" id="d_scoreNum">—</div><div class="score-label">/ 100</div></div>
-        <div><div class="score-title" id="d_scoreTitle">设计合理性评分</div>
-          <div class="score-label" id="d_scoreDesc">综合评估</div></div>
+        <div><div class="score-title" id="d_scoreTitle">Điểm đánh giá thiết kế</div>
+          <div class="score-label" id="d_scoreDesc">Đánh giá tổng hợp</div></div>
       </div>
     </div>
   </div>
 
   <div class="buttons">
-    <button class="btn btn-primary" onclick="copyDesignResult()">📋 复制结果</button>
-    <button class="btn btn-secondary" onclick="resetAll()">🔄 恢复默认</button>
+    <button class="btn btn-primary" onclick="copyDesignResult()">📋 Sao chép kết quả</button>
+    <button class="btn btn-secondary" onclick="resetAll()">🔄 Khôi phục mặc định</button>
   </div>
 
   <div class="note">
-    ℹ️ <b>硝化泥龄校核：</b>θ_co = F · SRT_min，SRT_min = 1/μ，μ = 0.47 · N_a/(K_N + N_a) · e^{0.098(T_min − 15)}；N_a 取出水 NH₄-N（下限 0.5 mg/L），K_N 取 1.0 mg/L，T 取最低设计水温 T_min，不含 DO 项。依据 GB 50014-2021 式（7.6.17），θ 按 e^0.098≈1.103/℃，不计衰减。以好氧泥龄 SRT × V_O / V 与 F × SRT_min 比较。
+    ℹ️ <b>Kiểm tra tuổi bùn nitrat hoá:</b>θ_co = F · SRT_min，SRT_min = 1/μ，μ = 0.47 · N_a/(K_N + N_a) · e^{0.098(T_min − 15)}；N_a 取出水 NH₄-N（下限 0.5 mg/L），K_N 取 1.0 mg/L，T 取最低设计水温 T_min，不含 DO 项。依据 GB 50014-2021 式（7.6.17），θ 按 e^0.098≈1.103/℃，不计衰减。以好氧泥龄 SRT × V_O / V 与 F × SRT_min 比较。
   </div>
 
   <div class="note">
-    ℹ️ <b>MBR 与传统活性污泥的核心差异：</b>MBR 以膜分离替代二沉池，可维持 MLSS 8000-12000 mg/L（工程常用值；HJ 2010-2011 表 2 设计取值中空纤维 6000-12000、平板 6000-20000；传统 3000-4000），
+    ℹ️ <b>Khác biệt chính giữa MBR và bùn hoạt tính truyền thống:</b>MBR 以膜分离替代二沉池，可维持 MLSS 8000-12000 mg/L（工程常用值；HJ 2010-2011 表 2 设计取值中空纤维 6000-12000、平板 6000-20000；传统 3000-4000），
     生物池容理论上按 MLSS 之比减小（上方「省池容」即按 MLSS 3500 mg/L 折算的理论值），计入设计余量后工程上常见节省 30-50%；出水 SS &lt;1 mg/L、浊度 &lt;0.5 NTU；无需污泥回流泵和二沉池。
     代价是膜需维护清洗，能耗比传统工艺高 0.3-0.6 kWh/m³。
   </div>
@@ -707,96 +707,96 @@
 <div class="tab-panel" id="panel-membrane">
 
   <div class="carrier-intro">
-    <h3>🧫 深度膜选型指南</h3>
-    <p>膜构型选择是 MBR 设计最关键的决定之一，直接影响运营成本、清洗频率和膜寿命。本指南覆盖
-    <b>4 大主流品牌 5 个系列参数库</b>、<b>中空纤维 vs 平板式深度对比</b>、<b>场景选型决策树</b>和<b>组件数计算</b>。</p>
+    <h3>🧫 Hướng dẫn chi tiết lựa chọn màng</h3>
+    <p>Lựa chọn cấu hình màng là một trong những quyết định quan trọng nhất khi thiết kế MBR, ảnh hưởng trực tiếp đến chi phí vận hành, tần suất rửa và tuổi thọ màng. Hướng dẫn này bao gồm
+    <b>thông số của 5 dòng sản phẩm thuộc 4 thương hiệu phổ biến</b>、<b>so sánh chi tiết màng sợi rỗng và màng tấm phẳng</b>、<b>cây quyết định lựa chọn theo ứng dụng</b>和<b>tính số mô-đun</b>。</p>
     <div class="mini-spec">
-      <span>🏭 4 个品牌 · 5 个系列</span>
-      <span>📐 HJ 2010-2011 通量范围</span>
-      <span>🔄 清洗周期对比</span>
+      <span>🏭 4 thương hiệu · 5 dòng sản phẩm</span>
+      <span>📐 Dải thông lượng theo HJ 2010-2011</span>
+      <span>🔄 So sánh chu kỳ rửa</span>
     </div>
   </div>
 
   <!-- 1. 两类构型深度对比 -->
-  <div class="section-title"><span class="num">1</span>中空纤维 vs 平板式 · 深度对比</div>
+  <div class="section-title"><span class="num">1</span>Màng sợi rỗng và màng tấm phẳng · So sánh chi tiết</div>
   <div style="overflow-x:auto;">
   <table class="compare-table">
     <thead>
       <tr>
-        <th style="width:160px;">参数</th>
-        <th class="td-hf">中空纤维 (HF)</th>
-        <th class="td-fs">平板式 (FS)</th>
+        <th style="width:160px;">Thông số</th>
+        <th class="td-hf">Sợi rỗng (HF)</th>
+        <th class="td-fs">Tấm phẳng (FS)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="td-label">代表产品</td>
+        <td class="td-label">Sản phẩm tiêu biểu</td>
         <td class="td-hf">GE/Veolia ZeeWeed · 三菱化学 STERAPORE™ · 碧水源 S-MBR</td>
         <td class="td-fs">Kubota SMU · 碧水源 H-MBR</td>
       </tr>
       <tr>
-        <td class="td-label">设计通量 (市政)</td>
-        <td class="td-hf">12-30 LMH <span class="tag-good">通量高</span></td>
-        <td class="td-fs">16-50 LMH <span class="tag-good">适应性宽</span></td>
+        <td class="td-label">Thông lượng thiết kế (nước thải đô thị)</td>
+        <td class="td-hf">12-30 LMH <span class="tag-good">Thông lượng cao</span></td>
+        <td class="td-fs">16-50 LMH <span class="tag-good">Phạm vi ứng dụng rộng</span></td>
       </tr>
       <tr>
-        <td class="td-label">运行 MLSS<br><small style="font-weight:400;color:var(--text-faint);">厂家样本典型值，规范值见下方 HJ 行</small></td>
+        <td class="td-label">运行 MLSS<br><small style="font-weight:400;color:var(--text-faint);">Giá trị điển hình từ tài liệu nhà sản xuất; xem giá trị theo tiêu chuẩn tại dòng HJ bên dưới</small></td>
         <td class="td-hf">8-12 g/L</td>
-        <td class="td-fs">10-15 g/L <span class="tag-good">耐高浓度</span></td>
+        <td class="td-fs">10-15 g/L <span class="tag-good">Chịu nồng độ cao</span></td>
       </tr>
       <tr>
-        <td class="td-label">曝气清洗方式</td>
-        <td class="td-hf">间歇曝气 + 间歇反冲洗</td>
-        <td class="td-fs">持续曝气鼓泡 <span class="tag-good">不需反冲</span></td>
+        <td class="td-label">Phương thức rửa bằng sục khí</td>
+        <td class="td-hf">Sục khí gián đoạn + rửa ngược gián đoạn</td>
+        <td class="td-fs">Sục khí tạo bọt liên tục <span class="tag-good">Không cần rửa ngược</span></td>
       </tr>
       <tr>
-        <td class="td-label">CIP 化学清洗周期</td>
-        <td class="td-hf">3-4 个月 <span class="tag-warn">较频繁</span></td>
-        <td class="td-fs">6 个月+ <span class="tag-good">较少</span></td>
+        <td class="td-label">CIP Chu kỳ rửa hoá chất</td>
+        <td class="td-hf">3-4 tháng <span class="tag-warn">Khá thường xuyên</span></td>
+        <td class="td-fs">6 tháng+ <span class="tag-good">Ít hơn</span></td>
       </tr>
       <tr>
-        <td class="td-label">膜预处理要求</td>
-        <td class="td-hf">严格，需细格栅 ≤3mm <span class="tag-warn">严格</span></td>
-        <td class="td-fs">较宽松，耐高 SS</td>
+        <td class="td-label">Yêu cầu tiền xử lý cho màng</td>
+        <td class="td-hf">Nghiêm ngặt, cần song chắn rác tinh ≤3mm <span class="tag-warn">Nghiêm ngặt</span></td>
+        <td class="td-fs">Ít nghiêm ngặt hơn, chịu được SS cao</td>
       </tr>
       <tr>
-        <td class="td-label">毛发/纤维缠绕问题</td>
-        <td class="td-hf">⚠️ 易缠绕膜丝，需除毛格栅</td>
-        <td class="td-fs">✅ 无缠绕风险，平板结构</td>
+        <td class="td-label">Vấn đề tóc/sợi quấn vào màng</td>
+        <td class="td-hf">⚠️ Dễ quấn vào sợi màng, cần song chắn giữ tóc</td>
+        <td class="td-fs">✅ Không có nguy cơ quấn nhờ cấu trúc tấm phẳng</td>
       </tr>
       <tr>
-        <td class="td-label">反冲洗可行性</td>
-        <td class="td-hf">✅ 可反冲，控制膜污染灵活</td>
-        <td class="td-fs">❌ 平板无法反冲</td>
+        <td class="td-label">Khả năng rửa ngược</td>
+        <td class="td-hf">✅ Có thể rửa ngược, kiểm soát tắc nghẽn màng linh hoạt</td>
+        <td class="td-fs">❌ Màng tấm phẳng không thể rửa ngược</td>
       </tr>
       <tr>
-        <td class="td-label">能耗 (膜曝气)</td>
+        <td class="td-label">Điện năng (sục khí màng)</td>
         <td class="td-hf">0.2-0.35 kWh/m³</td>
-        <td class="td-fs">0.3-0.6 kWh/m³ <span class="tag-warn">通常较高</span>（持续曝气）</td>
+        <td class="td-fs">0.3-0.6 kWh/m³ <span class="tag-warn">Thường cao hơn</span>(sục khí liên tục)</td>
       </tr>
       <tr>
-        <td class="td-label">膜组件装填密度</td>
-        <td class="td-hf">高 (帘式多层叠放)</td>
-        <td class="td-fs">中 (板式占更多空间)</td>
+        <td class="td-label">Mật độ lắp đặt mô-đun màng</td>
+        <td class="td-hf">Cao (dạng rèm xếp nhiều lớp)</td>
+        <td class="td-fs">Trung bình (dạng tấm chiếm nhiều không gian hơn)</td>
       </tr>
       <tr>
-        <td class="td-label">适合场景</td>
-        <td class="td-hf">大中型市政 · 中水回用 · 出水水质要求高</td>
-        <td class="td-fs">工业高浓废水 · 含高 SS / 毛发场景 · 小型工程</td>
+        <td class="td-label">Ứng dụng phù hợp</td>
+        <td class="td-hf">Đô thị quy mô lớn và vừa · tái sử dụng nước · yêu cầu chất lượng nước đầu ra cao</td>
+        <td class="td-fs">Nước thải công nghiệp nồng độ cao · nước chứa nhiều SS/tóc · công trình nhỏ</td>
       </tr>
       <tr>
-        <td class="td-label">HJ 2010-2011 范围<br><small style="font-weight:400;color:var(--text-faint);">通量见 7.1.3；MLSS 设计取值见表 2，运行控制见 8.2.2.1</small></td>
-        <td class="td-hf">中空纤维: 12-30 LMH · MLSS 6-12 g/L（运行控制 3-10）</td>
-        <td class="td-fs">平板: 16-50 LMH · MLSS 6-20 g/L</td>
+        <td class="td-label">HJ 2010-2011 范围<br><small style="font-weight:400;color:var(--text-faint);">Thông lượng xem 7.1.3; MLSS thiết kế xem bảng 2, kiểm soát vận hành xem 8.2.2.1</small></td>
+        <td class="td-hf">Sợi rỗng: 12-30 LMH · MLSS 6-12 g/L (kiểm soát vận hành 3-10)</td>
+        <td class="td-fs">Tấm phẳng: 16-50 LMH · MLSS 6-20 g/L</td>
       </tr>
     </tbody>
   </table>
   </div>
 
-  <!-- 2. 4 大品牌 5 个系列参数库 -->
-  <div class="section-title"><span class="num">2</span>主流品牌参数库 <span class="sub">点击卡片查看详情</span></div>
+  <!-- 2. 4 大品牌 5 个系列Thông số库 -->
+  <div class="section-title"><span class="num">2</span>Thông số các thương hiệu phổ biến <span class="sub">Nhấn vào thẻ để xem chi tiết</span></div>
   <div class="mem-selector-notice">
-    ℹ️ 以下参数为厂家典型规格和工程经验范围。实际项目请以厂家最新技术文件为准。价格区间为到岸含税参考，随采购规模和市场行情波动。
+    ℹ️ 以下Thông số为厂家典型规格和工程经验范围。实际项目请以厂家最新技术文件为准。价格区间为到岸含税参考，随采购规模和市场行情波动。
   </div>
   <div class="membrane-cards">
 
@@ -808,21 +808,21 @@
           <div class="mem-card-product">LEAPmbr 系列 · PVDF 中空纤维</div>
           <div class="mem-card-origin">🇺🇸 美/加 → 匈牙利生产 (Veolia 旗下)</div>
         </div>
-        <span class="mem-card-type mem-hf">中空纤维 HF</span>
+        <span class="mem-card-type mem-hf">Sợi rỗng HF</span>
       </div>
       <div class="mem-specs">
-        <div class="mem-spec-item"><div class="mem-spec-label">膜材料</div><div class="mem-spec-value">PVDF + 编织增强</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">孔径</div><div class="mem-spec-value">0.04 µm (UF)</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">单组件面积</div><div class="mem-spec-value">27.9 / 31.6 / 34.4 / 40.9 m²</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">设计通量</div><div class="mem-spec-value">15-25 LMH</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">运行 MLSS（样本）</div><div class="mem-spec-value">8-12 g/L</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">外径</div><div class="mem-spec-value">1.9 mm</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Vật liệu màng</div><div class="mem-spec-value">PVDF + 编织增强</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Kích thước lỗ</div><div class="mem-spec-value">0.04 µm (UF)</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Diện tích mỗi mô-đun</div><div class="mem-spec-value">27.9 / 31.6 / 34.4 / 40.9 m²</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Thông lượng thiết kế</div><div class="mem-spec-value">15-25 LMH</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">MLSS vận hành (tài liệu mẫu)</div><div class="mem-spec-value">8-12 g/L</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Đường kính ngoài</div><div class="mem-spec-value">1.9 mm</div></div>
       </div>
       <div class="mem-card-footer" id="detail-zw" style="display:none;">
         <b>优势：</b>全球应用最广，技术成熟，四十年验证记录，膜寿命 &gt;10 年（官方 15 年）<br>
         <b>特点：</b>LEAPmbr 技术通过脉冲曝气节约 30-50% 曝气能耗；zeeDENSE™ 强化 MLSS 控制<br>
         <b>适用：</b>大中型市政污水厂、再生水回用、工业废水中水回用<br>
-        <b>CIP 周期：</b>HF 标准 3-4 个月一次<br>
+        <b>CIP 周期：</b>HF 标准 3-4 tháng一次<br>
         <b>价格参考：</b>进口价较高，国内工程到岸含税约 ¥800-1500/m²（随项目规模差异大）
       </div>
     </div>
@@ -835,21 +835,21 @@
           <div class="mem-card-product">60E 系列 · PVDF 中空纤维帘式</div>
           <div class="mem-card-origin">🇯🇵 日本 (三菱化学株式会社)</div>
         </div>
-        <span class="mem-card-type mem-hf">中空纤维 HF</span>
+        <span class="mem-card-type mem-hf">Sợi rỗng HF</span>
       </div>
       <div class="mem-specs">
-        <div class="mem-spec-item"><div class="mem-spec-label">膜材料</div><div class="mem-spec-value">PVDF 双层复合</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">孔径</div><div class="mem-spec-value">0.1-0.4 µm</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">单组件面积</div><div class="mem-spec-value">6 / 15 / 25 / 40 m²</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">设计通量</div><div class="mem-spec-value">20-33 LMH</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">运行 MLSS（样本）</div><div class="mem-spec-value">8-12 g/L</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">外径</div><div class="mem-spec-value">2.8 mm</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Vật liệu màng</div><div class="mem-spec-value">PVDF 双层复合</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Kích thước lỗ</div><div class="mem-spec-value">0.1-0.4 µm</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Diện tích mỗi mô-đun</div><div class="mem-spec-value">6 / 15 / 25 / 40 m²</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Thông lượng thiết kế</div><div class="mem-spec-value">20-33 LMH</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">MLSS vận hành (tài liệu mẫu)</div><div class="mem-spec-value">8-12 g/L</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Đường kính ngoài</div><div class="mem-spec-value">2.8 mm</div></div>
       </div>
       <div class="mem-card-footer" id="detail-mmc" style="display:none;">
         <b>优势：</b>双层复合膜结构，外层损伤内层仍有效；单边产水设计，膜丝更均匀；型号多，可按膜池尺寸灵活选配<br>
-        <b>特点：</b>不需反冲洗（上下两端出水），无需外部循环泵，维护简单；抗拉力 &gt;200 N，断丝率低<br>
+        <b>特点：</b>Không cần rửa ngược洗（上下两端出水），无需外部循环泵，维护简单；抗拉力 &gt;200 N，断丝率低<br>
         <b>适用：</b>市政污水/工业废水/渗滤液等多种场景，国内市场占有率高<br>
-        <b>CIP 周期：</b>3-4 个月<br>
+        <b>CIP 周期：</b>3-4 tháng<br>
         <b>价格参考：</b>进口原装，25 m²/支，市场价约 ¥600-1000/m²
       </div>
     </div>
@@ -862,21 +862,21 @@
           <div class="mem-card-product">Submerged Membrane Unit · 平板式</div>
           <div class="mem-card-origin">🇯🇵 日本 (久保田株式会社)</div>
         </div>
-        <span class="mem-card-type mem-fs">平板式 FS</span>
+        <span class="mem-card-type mem-fs">Tấm phẳng FS</span>
       </div>
       <div class="mem-specs">
-        <div class="mem-spec-item"><div class="mem-spec-label">膜材料</div><div class="mem-spec-value">CPE (氯化聚乙烯)</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">孔径</div><div class="mem-spec-value">标称 0.4 µm (平均约 0.2 µm, MF)</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">单组件面积</div><div class="mem-spec-value">10 m²/模块 (SP 系列, 40 片)</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">设计通量</div><div class="mem-spec-value">8-20 LMH</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">运行 MLSS（样本）</div><div class="mem-spec-value">10-15 g/L</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Vật liệu màng</div><div class="mem-spec-value">CPE (氯化聚乙烯)</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Kích thước lỗ</div><div class="mem-spec-value">标称 0.4 µm (平均约 0.2 µm, MF)</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Diện tích mỗi mô-đun</div><div class="mem-spec-value">10 m²/模块 (SP 系列, 40 片)</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Thông lượng thiết kế</div><div class="mem-spec-value">8-20 LMH</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">MLSS vận hành (tài liệu mẫu)</div><div class="mem-spec-value">10-15 g/L</div></div>
         <div class="mem-spec-item"><div class="mem-spec-label">重力出水</div><div class="mem-spec-value">✅ 可重力出水</div></div>
       </div>
       <div class="mem-card-footer" id="detail-kbt" style="display:none;">
         <b>优势：</b>最高 MLSS 15 g/L，池容最省；重力出水不需抽吸泵，能耗低；平板结构无毛发缠绕；适合利用原有池体改造扩容<br>
-        <b>特点：</b>不能反冲洗（平板特性），靠持续曝气鼓泡控制污染；Kubota "Combined MBR" 生物曝气与膜曝气合一节能<br>
+        <b>特点：</b>不能反冲洗（平板特性），靠Sục khí tạo bọt liên tục控制污染；Kubota "Combined MBR" 生物曝气与膜曝气合一节能<br>
         <b>适用：</b>工业废水（高 SS）、小型工程、改造扩容、含毛发/纤维废水<br>
-        <b>CIP 周期：</b>6 个月+（平板优势）<br>
+        <b>CIP 周期：</b>6 tháng+（平板优势）<br>
         <b>价格参考：</b>进口，含框架和曝气系统，综合成本约 ¥1200-2000/m²
       </div>
     </div>
@@ -889,20 +889,20 @@
           <div class="mem-card-product">纤维增强型 PVDF 中空纤维</div>
           <div class="mem-card-origin">🇨🇳 北京 (北京碧水源科技股份有限公司)</div>
         </div>
-        <span class="mem-card-type mem-hf">中空纤维 HF</span>
+        <span class="mem-card-type mem-hf">Sợi rỗng HF</span>
       </div>
       <div class="mem-specs">
-        <div class="mem-spec-item"><div class="mem-spec-label">膜材料</div><div class="mem-spec-value">PVDF + 亲水改性</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">孔径</div><div class="mem-spec-value">0.1 µm</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">单组件面积</div><div class="mem-spec-value">5 / 10 / 35 m²</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">设计通量</div><div class="mem-spec-value">20-30 LMH</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">运行 MLSS（样本）</div><div class="mem-spec-value">8-12 g/L</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Vật liệu màng</div><div class="mem-spec-value">PVDF + 亲水改性</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Kích thước lỗ</div><div class="mem-spec-value">0.1 µm</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Diện tích mỗi mô-đun</div><div class="mem-spec-value">5 / 10 / 35 m²</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Thông lượng thiết kế</div><div class="mem-spec-value">20-30 LMH</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">MLSS vận hành (tài liệu mẫu)</div><div class="mem-spec-value">8-12 g/L</div></div>
         <div class="mem-spec-item"><div class="mem-spec-label">寿命</div><div class="mem-spec-value">&gt;5 年 (实际 8-10 年)</div></div>
       </div>
       <div class="mem-card-footer" id="detail-bws" style="display:none;">
         <b>优势：</b>2010 年打破进口垄断，现国内市场主导品牌；性能已达国际第一梯队；膜通量最新版可达 30 LMH，吨水能耗 &lt;0.3 kWh/m³<br>
         <b>代表项目：</b>北京密云再生水工程(4.5万t/d)·清河再生水厂(15万t/d)·湖北神定河(11万t/d)<br>
-        <b>CIP 周期：</b>3-6 个月<br>
+        <b>CIP 周期：</b>3-6 tháng<br>
         <b>价格参考：</b>国产，性价比突出，约 ¥200-400/m²（含组器约 ¥400-600/m²）
       </div>
     </div>
@@ -915,49 +915,49 @@
           <div class="mem-card-product">弦纹阵列平板膜</div>
           <div class="mem-card-origin">🇨🇳 北京 (北京碧水源科技股份有限公司)</div>
         </div>
-        <span class="mem-card-type mem-fs">平板式 FS</span>
+        <span class="mem-card-type mem-fs">Tấm phẳng FS</span>
       </div>
       <div class="mem-specs">
-        <div class="mem-spec-item"><div class="mem-spec-label">膜材料</div><div class="mem-spec-value">PVDF</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">孔径</div><div class="mem-spec-value">0.1 µm</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">单组件面积</div><div class="mem-spec-value">2.3 / 5 m²</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">设计通量</div><div class="mem-spec-value">16-30 LMH</div></div>
-        <div class="mem-spec-item"><div class="mem-spec-label">运行 MLSS（样本）</div><div class="mem-spec-value">8-15 g/L</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Vật liệu màng</div><div class="mem-spec-value">PVDF</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Kích thước lỗ</div><div class="mem-spec-value">0.1 µm</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Diện tích mỗi mô-đun</div><div class="mem-spec-value">2.3 / 5 m²</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">Thông lượng thiết kế</div><div class="mem-spec-value">16-30 LMH</div></div>
+        <div class="mem-spec-item"><div class="mem-spec-label">MLSS vận hành (tài liệu mẫu)</div><div class="mem-spec-value">8-15 g/L</div></div>
         <div class="mem-spec-item"><div class="mem-spec-label">毛发问题</div><div class="mem-spec-value">✅ 无缠绕</div></div>
       </div>
       <div class="mem-card-footer" id="detail-bwh" style="display:none;">
         <b>优势：</b>弦纹结构（非传统刚性平板）装填密度比传统平板高 200%+；能耗低于传统平板 50%；无毛发缠绕<br>
         <b>特点：</b>独特"上下气通道"设计顺畅，不积泥；大型工程选小间距高层叠放节能，小型工程选大间距降维护<br>
         <b>适用：</b>含毛发/纤维废水、食品/养殖废水、工业高 SS 场景<br>
-        <b>CIP 周期：</b>约 6 个月（平板优势）<br>
+        <b>CIP 周期：</b>约 6 tháng（平板优势）<br>
         <b>价格参考：</b>国产，约 ¥300-500/m²（含组器约 ¥500-800/m²）
       </div>
     </div>
   </div>
 
-  <!-- 3. 场景选型决策树 -->
-  <div class="section-title"><span class="num">3</span>场景选型决策树</div>
+  <!-- 3. cây quyết định lựa chọn theo ứng dụng -->
+  <div class="section-title"><span class="num">3</span>cây quyết định lựa chọn theo ứng dụng</div>
   <div class="decision-tree">
     <div class="dt-title">根据你的工程场景，推荐膜构型：</div>
     <div class="dt-row">
       <div class="dt-condition">🏙️ <b>大中型市政污水</b>（&gt;1 万 m³/d）· 出水中水回用</div>
       <div class="dt-arrow">→</div>
-      <div class="dt-result dt-hf">中空纤维 HF<br><small>推荐 ZeeWeed 或 碧水源 S-MBR</small></div>
+      <div class="dt-result dt-hf">Sợi rỗng HF<br><small>推荐 ZeeWeed 或 碧水源 S-MBR</small></div>
     </div>
     <div class="dt-row">
       <div class="dt-condition">🐄 <b>含毛发/纤维</b> 废水（屠宰/养殖/纺织）</div>
       <div class="dt-arrow">→</div>
-      <div class="dt-result dt-fs">平板式 FS<br><small>推荐 碧水源 H-MBR 或 Kubota</small></div>
+      <div class="dt-result dt-fs">Tấm phẳng FS<br><small>推荐 碧水源 H-MBR 或 Kubota</small></div>
     </div>
     <div class="dt-row">
       <div class="dt-condition">🏭 <b>高浓度工业废水</b>（MLSS 需 &gt;12 g/L）</div>
       <div class="dt-arrow">→</div>
-      <div class="dt-result dt-fs">平板式 FS<br><small>Kubota SMU（耐高 MLSS 15 g/L）</small></div>
+      <div class="dt-result dt-fs">Tấm phẳng FS<br><small>Kubota SMU（耐高 MLSS 15 g/L）</small></div>
     </div>
     <div class="dt-row">
       <div class="dt-condition">🗑️ <b>垃圾渗滤液</b>（高 COD、高 SS、难降解）</div>
       <div class="dt-arrow">→</div>
-      <div class="dt-result dt-hf">中空纤维 HF · 需严格预处理<br><small>三菱 STERAPORE™ 应用广泛</small></div>
+      <div class="dt-result dt-hf">Sợi rỗng HF · 需Nghiêm ngặt预处理<br><small>三菱 STERAPORE™ 应用广泛</small></div>
     </div>
     <div class="dt-row">
       <div class="dt-condition">🔧 <b>老厂改造扩容</b>（利用原有池体，不新建）</div>
@@ -967,25 +967,25 @@
     <div class="dt-row">
       <div class="dt-condition">💰 <b>预算敏感型项目</b>（国产优先、性价比）</div>
       <div class="dt-arrow">→</div>
-      <div class="dt-result dt-hf">中空纤维 HF (国产)<br><small>碧水源 S-MBR · 价格约 1/3-1/5 进口</small></div>
+      <div class="dt-result dt-hf">Sợi rỗng HF (国产)<br><small>碧水源 S-MBR · 价格约 1/3-1/5 进口</small></div>
     </div>
     <div class="dt-row">
       <div class="dt-condition">⚡ <b>极低能耗</b>优先（运营成本敏感）</div>
       <div class="dt-arrow">→</div>
-      <div class="dt-result dt-hf">中空纤维 HF（脉冲/间歇曝气）<br><small>膜曝气能耗通常低于平板；平板的优势是抗污堵、免反洗，Kubota 可重力出水省产水泵</small></div>
+      <div class="dt-result dt-hf">Sợi rỗng HF（脉冲/间歇曝气）<br><small>Điện năng sục khí màng通常低于平板；平板的优势是抗污堵、免反洗，Kubota 可重力出水省产水泵</small></div>
     </div>
   </div>
 
-  <!-- 4. 组件数计算 -->
-  <div class="section-title"><span class="num">4</span>膜面积与组件数计算</div>
+  <!-- 4. tính số mô-đun -->
+  <div class="section-title"><span class="num">4</span>膜面积与tính số mô-đun</div>
   <div class="calc-area">
-    <div class="calc-title">📐 基于当前主设计结果自动计算</div>
+    <div class="calc-title">📐 基于当前主Kết quả thiết kế自动计算</div>
     <label class="sync-row"><input type="checkbox" id="m_sync" checked onchange="syncTabs()"> 与主设计同步 <span class="sync-note">（数据来自主设计 Tab 1：A_m、单组件膜面积）</span></label>
     <div class="grid" style="max-width:600px;">
-      <div class="field"><label for="m_Am">设计总膜面积 A_m <span class="unit">m²</span></label>
+      <div class="field"><label for="m_Am">设计Tổng diện tích màng A_m <span class="unit">m²</span></label>
         <input type="number" id="m_Am" value="" step="10" oninput="calcModules()" placeholder="来自 Tab 1 结果">
         <div class="helper">勾选同步时跟随 Tab 1；取消勾选可手动输入</div></div>
-      <div class="field"><label for="m_singleArea">单组件面积 <span class="unit">m²/个</span></label>
+      <div class="field"><label for="m_singleArea">Diện tích mỗi mô-đun <span class="unit">m²/个</span></label>
         <input type="number" id="m_singleArea" value="25" step="1" oninput="calcModules()">
         <div class="helper">三菱 6/15/25/40 · ZeeWeed 500D 31.6-40.9 · Kubota SP 10/模块</div></div>
       <div class="field"><label for="m_redundancy">备用系数</label>
@@ -1006,7 +1006,7 @@
   <div class="note">
     ℹ️ <b>膜选型最重要的注意事项：</b>
     <br>(1) <b>预处理决定膜寿命</b>：中空纤维膜对毛发/纤维极敏感，必须配置 1-3mm 细格栅；平板式耐受力强但仍需粗格栅
-    <br>(2) <b>通量不是越高越好</b>：超临界通量运行会加速不可逆污染，建议设计通量不超过临界通量的 80%
+    <br>(2) <b>通量不是越高越好</b>：超临界通量运行会加速不可逆污染，建议Thông lượng thiết kế不超过临界通量的 80%
     <br>(3) <b>温度修正必须做</b>：冬季 T=10°C 时通量下降约 26%，若不做温度修正则冬季产水量严重不足
   </div>
 
@@ -1039,7 +1039,7 @@
         <b>曝气增强（Air Scour）</b><br>
         · 持续或间歇曝气<br>
         · HF：间歇曝气（节能 30-50%）<br>
-        · FS：持续曝气鼓泡
+        · FS：Sục khí tạo bọt liên tục
       </div>
     </div>
     <div class="clean-card clean-ceb">
@@ -1074,8 +1074,8 @@
         &nbsp;&nbsp;&nbsp;或 盐酸（2000-3000 ppm）<br>
         · 时间：1-4 h<br><br>
         <b>周期（HJ 2010-2011）</b><br>
-        · 中空纤维：约 3-4 个月<br>
-        · 平板式：约 6 个月+
+        · 中空纤维：约 3-4 tháng<br>
+        · 平板式：约 6 tháng+
       </div>
     </div>
   </div>
@@ -1102,18 +1102,18 @@
   </div>
 
   <div class="section-title"><span class="num">3</span>药剂用量估算</div>
-  <label class="sync-row"><input type="checkbox" id="c_sync" checked onchange="syncTabs()"> 与主设计同步 <span class="sync-note">（数据来自主设计 Tab 1：Q、膜类型、A_m、化学清洗周期）</span></label>
+  <label class="sync-row"><input type="checkbox" id="c_sync" checked onchange="syncTabs()"> 与主设计同步 <span class="sync-note">（数据来自主设计 Tab 1：Q、膜类型、A_m、Chu kỳ rửa hoá chất）</span></label>
   <div class="grid" style="max-width:760px;">
     <div class="field"><label for="c_Q">设计规模 Q <span class="unit">万 m³/d</span></label>
       <input type="number" id="c_Q" value="3" step="0.5" oninput="calcChem()"></div>
     <div class="field"><label for="c_memType">膜类型</label>
       <select id="c_memType" onchange="calcChem()">
-        <option value="hf">中空纤维 HF</option>
-        <option value="fs">平板式 FS</option>
+        <option value="hf">Sợi rỗng HF</option>
+        <option value="fs">Tấm phẳng FS</option>
       </select></div>
-    <div class="field"><label for="c_cipCycle">CIP 周期 <span class="unit">月</span></label>
+    <div class="field"><label for="c_cipCycle">CIP 周期 <span class="unit">tháng</span></label>
       <input type="number" id="c_cipCycle" value="4" step="1" oninput="calcChem()">
-      <div class="helper">HF 建议 3-4，FS 建议 6；同步时取 Tab 1 高级参数「化学清洗周期」</div></div>
+      <div class="helper">HF 建议 3-4，FS 建议 6；同步时取 Tab 1 高级Thông số「Chu kỳ rửa hoá chất」</div></div>
     <div class="field"><label for="c_days">水厂运行天数/年</label>
       <input type="number" id="c_days" value="365" step="1" oninput="calcChem()"></div>
     <div class="field"><label for="c_cebFreq">维护性清洗频次 <span class="unit">次/周</span></label>
@@ -1169,7 +1169,7 @@
     <h3>⚡ MBR 能耗分析</h3>
     <p>MBR 吨水能耗通常为 0.6-1.2 kWh/m³，高于传统活性污泥（0.3-0.5 kWh/m³）约 0.3-0.6 kWh/m³。
     主要增量来自膜曝气（控制膜污染）和产水泵（TMP 驱动产水）。合理设计可将总能耗控制在 0.8 kWh/m³ 以内。
-    <br><b>注意：</b>下方计算器只统计生化 + 膜段（生物曝气、膜曝气、产水泵、内回流、膜池回流、仪控照明），不含进水提升、格栅/预处理、厌氧/缺氧搅拌、污泥脱水处置，与上述全厂范围比较时需另加约 0.1-0.3 kWh/m³。膜吹扫空气的供氧没有抵扣生物曝气量，生物曝气能耗偏保守；膜池回流宜回好氧区，避免把高 DO 带入缺氧区。</p>
+    <br><b>注意：</b>下方计算器只统计生化 + 膜段（生物曝气、膜曝气、产水泵、内回流、膜池回流、仪控照明），不含进水提升、格栅/预处理、厌氧/缺氧搅拌、污泥脱水处置，与上述全厂范围比较时需另加约 0.1-0.3 kWh/m³。膜吹扫空气的供氧没有抵扣生物曝气量，Điện năng sục khí sinh học偏保守；膜池回流宜回好氧区，避免把高 DO 带入缺氧区。</p>
     <div class="mini-spec">
       <span>📐 依据：Metcalf&Eddy MBR 能耗章节</span>
       <span>🏭 典型范围：0.6-1.2 kWh/m³</span>
@@ -1177,34 +1177,34 @@
   </div>
 
   <div class="section-title"><span class="num">1</span>能耗分项计算器</div>
-  <label class="sync-row"><input type="checkbox" id="e_sync" checked onchange="syncTabs()"> 与主设计同步 <span class="sync-note">（数据来自主设计 Tab 1：Q、膜类型、A_m、SADm、TMP、生物曝气量、鼓风机效率、内回流比、膜池回流比）</span></label>
+  <label class="sync-row"><input type="checkbox" id="e_sync" checked onchange="syncTabs()"> 与主设计同步 <span class="sync-note">（数据来自主设计 Tab 1：Q、膜类型、A_m、SADm、TMP、生物曝气量、Hiệu suất máy thổi khí、Tỷ lệ tuần hoàn nội、Tỷ lệ tuần hoàn bể màng）</span></label>
   <div class="grid">
     <div class="field"><label for="e_Q">Q <span class="unit">万 m³/d</span></label>
       <input type="number" id="e_Q" value="3" step="0.5" oninput="calcEnergy()"></div>
     <div class="field"><label for="e_memType">膜类型</label>
       <select id="e_memType" onchange="onEnergyMemType()">
-        <option value="hf">中空纤维 HF</option>
-        <option value="fs">平板式 FS</option>
+        <option value="hf">Sợi rỗng HF</option>
+        <option value="fs">Tấm phẳng FS</option>
       </select></div>
     <div class="field"><label for="e_Am">膜面积 A_m <span class="unit">m²</span></label>
       <input type="number" id="e_Am" value="5000" step="100" oninput="calcEnergy()">
       <div class="helper">来自 Tab 1 主设计</div></div>
-    <div class="field"><label for="e_SADm">SADm <span class="unit">m³空气/m²膜·h</span></label>
+    <div class="field"><label for="e_SADm">SADm <span class="unit">m³ không khí/m² màng·h</span></label>
       <input type="number" id="e_SADm" value="0.20" step="0.02" oninput="calcEnergy()">
-      <div class="helper">HF 0.15-0.30；FS 0.30-0.75；不同步时切换膜类型会带入该膜型默认值；生物曝气出口压力按 Tab 1 高级参数 H_d 计；鼓风机进气压力按 Tab 1 海拔计</div></div>
+      <div class="helper">HF 0.15-0.30；FS 0.30-0.75；不同步时切换膜类型会带入该膜型默认值；生物曝气出口压力按 Tab 1 高级Thông số H_d 计；鼓风机进气压力按 Tab 1 Độ cao计</div></div>
     <div class="field"><label for="e_TMP">设计 TMP <span class="unit">kPa</span></label>
       <input type="number" id="e_TMP" value="25" step="5" oninput="calcEnergy()"></div>
     <div class="field"><label for="e_pumpEff">产水泵效率 <span class="unit">%</span></label>
       <input type="number" id="e_pumpEff" value="65" step="5" oninput="calcEnergy()"></div>
-    <div class="field"><label for="e_bioAir">生物曝气量 <span class="unit">m³/h（20°C 标态）</span></label>
+    <div class="field"><label for="e_bioAir">生物曝气量 <span class="unit">m³/h (điều kiện chuẩn 20°C)</span></label>
       <input type="number" id="e_bioAir" value="2000" step="100" oninput="calcEnergy()">
       <div class="helper">同步时 = Tab 1 SOR/(24·0.28·EE)，EE = OTE×H_d</div></div>
-    <div class="field"><label for="e_blowerEff">鼓风机效率 <span class="unit">%</span></label>
+    <div class="field"><label for="e_blowerEff">Hiệu suất máy thổi khí <span class="unit">%</span></label>
       <input type="number" id="e_blowerEff" value="70" step="5" oninput="calcEnergy()"></div>
-    <div class="field"><label for="e_recirc">内回流比 <span class="unit">% of Q</span></label>
+    <div class="field"><label for="e_recirc">Tỷ lệ tuần hoàn nội <span class="unit">% of Q</span></label>
       <input type="number" id="e_recirc" value="300" step="50" oninput="calcEnergy()">
       <div class="helper">好氧→缺氧硝化液回流 200-400%</div></div>
-    <div class="field"><label for="e_memRecirc">膜池回流比 <span class="unit">% of Q</span></label>
+    <div class="field"><label for="e_memRecirc">Tỷ lệ tuần hoàn bể màng <span class="unit">% of Q</span></label>
       <input type="number" id="e_memRecirc" value="400" step="50" oninput="calcEnergy()">
       <div class="helper">膜池→生物池 400-500%；扬程 2 m、η 0.65</div></div>
     <div class="field"><label for="e_price">电价 <span class="unit">元/kWh</span></label>
@@ -1226,9 +1226,9 @@
         <span><span class="result-value" id="e_r_recirc">—</span><span class="result-unit">kWh/m³</span></span></div>
       <div class="result-row"><span class="result-label">⑤ 膜池回流泵</span>
         <span><span class="result-value" id="e_r_memRecirc">—</span><span class="result-unit">kWh/m³</span></span></div>
-      <div class="result-row"><span class="result-label">⑥ 其他（仪控/照明等）</span>
+      <div class="result-row"><span class="result-label">⑥ Khác (điều khiển/chiếu sáng, v.v.)</span>
         <span><span class="result-value">约 0.05</span><span class="result-unit">kWh/m³</span></span></div>
-      <div class="result-row highlight-row"><span class="result-label"><b>生化 + 膜段能耗</b><br><small style="font-weight:400;color:var(--text-faint);">不含进水提升、格栅/预处理、厌氧/缺氧搅拌、污泥脱水处置</small></span>
+      <div class="result-row highlight-row"><span class="result-label"><b>Điện năng công đoạn sinh học + màng</b><br><small style="font-weight:400;color:var(--text-faint);">不含进水提升、格栅/预处理、厌氧/缺氧搅拌、污泥脱水处置</small></span>
         <span><span class="result-value big" id="e_r_total">—</span><span class="result-unit">kWh/m³</span></span></div>
     </div>
     <div class="result-group">
@@ -1281,7 +1281,7 @@
 
   <div class="note">
     ℹ️ <b>能耗优化方向：</b>
-    <br>(1) <b>间歇曝气（HF）</b>：ZeeWeed LEAPmbr 等通过脉冲曝气可节省 30-50% 膜曝气能耗
+    <br>(1) <b>间歇曝气（HF）</b>：ZeeWeed LEAPmbr 等通过脉冲曝气可节省 30-50% Điện năng sục khí màng
     <br>(2) <b>膜通量优化</b>：适当提高通量可减少膜面积，进而减少膜曝气量
     <br>(3) <b>Kubota 重力出水</b>：取消产水泵，节省泵送能耗
     <br>(4) <b>碧水源最新版本</b>吨水能耗已降至 0.3 kWh/m³ 以下（不含生物曝气）
@@ -1293,13 +1293,13 @@
 <div class="tab-panel" id="panel-cases">
   <div class="carrier-intro">
     <h3>📂 MBR 典型工程案例库</h3>
-    <p>收录市政污水再生利用、工业高浓废水、垃圾渗滤液等典型 MBR 工程参数，仅供工程方案参考，非具体实际项目引用。</p>
+    <p>收录市政污水再生利用、工业高浓废水、垃圾渗滤液等典型 MBR 工程Thông số，仅供工程方案参考，非具体实际项目引用。</p>
   </div>
 
   <div class="case-cards-mbr" id="casesContainer"></div>
 
   <div class="note">
-    ℹ️ <b>本案例库为典型参考模板，非特指实际项目。</b>参数来源于工程经验范围和公开资料，具体项目应以设计院施工图为准。
+    ℹ️ <b>本案例库为典型参考模板，非特指实际项目。</b>Thông số来源于工程经验范围和公开资料，具体项目应以设计院施工图为准。
   </div>
 </div>
 <!-- Tab 5 end -->
@@ -1449,7 +1449,7 @@
           <li>碧水源最新膜通量 30 LMH，吨水能耗 &lt;0.3 kWh/m³</li>
           <li>技术方向：低能耗、高通量、膜电极集成</li>
           <li>双碳背景下，MBR 能耗优化成为研究热点</li>
-          <li>地表 IV 类及以上标准推动更严格出水需求</li>
+          <li>地表 IV 类及以上标准推动更Nghiêm ngặt出水需求</li>
         </ul>
       </div>
     </div>
@@ -1468,7 +1468,7 @@
 
 <div class="disclaimer-wrap">
   <div style="padding:12px 16px;background:#fef9c3;border-left:3px solid #ca8a04;border-radius:4px;font-size:12px;color:#713f12;line-height:1.6;">
-    ⚠️ <b>免责声明：</b>本工具提供的膜通量、价格区间、工艺参数等数据仅供方案估算参考，实际以厂家最新官方数据和项目具体情况为准。品牌名和产品名仅作技术识别用途，不代表本工具与相关厂家有任何授权或背书关系。工程实施请以正规设计院出具的施工图为准。依据 HJ 2010-2011。
+    ⚠️ <b>免责声明：</b>本工具提供的膜通量、价格区间、工艺Thông số等数据仅供方案估算参考，实际以厂家最新官方数据和项目具体情况为准。品牌名和产品名仅作技术识别用途，不代表本工具与相关厂家有任何授权或背书关系。工程实施请以正规设计院出具的施工图为准。依据 HJ 2010-2011。
   </div>
 </div>
 
@@ -1575,42 +1575,42 @@ const PRESETS = {
 const MBR_CASES = [
   {
     type:'muni', tag:'市政污水', title:'北方城镇污水再生利用',
-    scale:'3 万 m³/d', bio:'AAO+MBR', membrane:'中空纤维 HF',
+    scale:'3 万 m³/d', bio:'AAO+MBR', membrane:'Sợi rỗng HF',
     data:{ Q:3, T:15, COD0:400, BOD0:180, NH40:35, TN0:45, TP0:5 },
     outlet:'一级 A / 中水回用', J_design:'20 LMH', MLSS:'10000 mg/L',
     Am:'62500 m²', energy:'0.95 kWh/m³', note:'冬季 T=10°C 需按 0.74 倍通量校核膜面积，建议备用系数 1.2'
   },
   {
     type:'muni', tag:'市政污水', title:'南方城镇污水提标改造',
-    scale:'5 万 m³/d', bio:'AAO+MBR', membrane:'中空纤维 HF',
+    scale:'5 万 m³/d', bio:'AAO+MBR', membrane:'Sợi rỗng HF',
     data:{ Q:5, T:22, COD0:350, BOD0:160, NH40:30, TN0:40, TP0:4 },
     outlet:'地表 IV 类', J_design:'25 LMH', MLSS:'10000 mg/L',
     Am:'83300 m²', energy:'0.85 kWh/m³', note:'南方水温高，通量可取上限；出水直排河道，TP 须 ≤0.3 mg/L 需配合 PAC'
   },
   {
     type:'ind', tag:'工业废水', title:'食品加工废水 MBR 处理',
-    scale:'0.5 万 m³/d', bio:'AO缺氧+MBR', membrane:'平板式 FS',
+    scale:'0.5 万 m³/d', bio:'AO缺氧+MBR', membrane:'Tấm phẳng FS',
     data:{ Q:0.5, T:25, COD0:2000, BOD0:800, NH40:80, TN0:100, TP0:15 },
     outlet:'园区排放标准', J_design:'16 LMH', MLSS:'12000 mg/L',
     Am:'13000 m²', energy:'1.1 kWh/m³', note:'食品废水含大量油脂/蛋白，选平板式避免毛发缠绕；需强化除磷（PAC）'
   },
   {
     type:'ind', tag:'工业废水', title:'制药废水深度处理',
-    scale:'0.2 万 m³/d', bio:'AAO+MBR', membrane:'中空纤维 HF',
+    scale:'0.2 万 m³/d', bio:'AAO+MBR', membrane:'Sợi rỗng HF',
     data:{ Q:0.2, T:30, COD0:3000, BOD0:1200, NH40:120, TN0:150, TP0:10 },
     outlet:'制药行业排放标准', J_design:'18 LMH', MLSS:'10000 mg/L',
     Am:'4600 m²', energy:'1.2 kWh/m³', note:'制药废水含抑制性物质，SRT 需延长至 30-40d；关注 TMP 上升速率，可能需要更频繁 CIP'
   },
   {
     type:'leach', tag:'垃圾渗滤液', title:'垃圾填埋场渗滤液处理',
-    scale:'200 m³/d', bio:'AAO+MBR+NF/RO', membrane:'中空纤维 HF',
+    scale:'200 m³/d', bio:'AAO+MBR+NF/RO', membrane:'Sợi rỗng HF',
     data:{ Q:0.02, T:20, COD0:8000, BOD0:3000, NH40:1800, TN0:2000, TP0:20 },
     outlet:'垃圾填埋场污染控制标准', J_design:'12 LMH', MLSS:'12000 mg/L',
-    Am:'700 m²', energy:'1.5 kWh/m³(MBR段)', note:'高氨氮需预吹脱；MBR 后接 NF/RO 才能达标排放；SRT 40-60d；膜污染速率快，CIP 周期缩短至 2-3 个月'
+    Am:'700 m²', energy:'1.5 kWh/m³(MBR段)', note:'高氨氮需预吹脱；MBR 后接 NF/RO 才能达标排放；SRT 40-60d；膜污染速率快，CIP 周期缩短至 2-3 tháng'
   },
   {
     type:'muni', tag:'中水回用', title:'中水回用 · RO 预处理',
-    scale:'2 万 m³/d', bio:'单好氧+MBR', membrane:'中空纤维 HF',
+    scale:'2 万 m³/d', bio:'单好氧+MBR', membrane:'Sợi rỗng HF',
     data:{ Q:2, T:20, COD0:300, BOD0:120, NH40:25, TN0:35, TP0:3.5 },
     outlet:'RO 进水 / 工业用水', J_design:'22 LMH', MLSS:'9000 mg/L',
     Am:'37900 m²', energy:'0.8 kWh/m³', note:'MBR 出水直接进 RO，无需砂滤等三级处理；SDI &lt;3，满足 RO 进水要求；运营成本低于"二级+三级过滤+RO"路线'
@@ -1680,7 +1680,7 @@ function toggleAdv() {
 
 // ============ 主设计计算 ============
 const FLUX_LIMIT = { hf: 30, fs: 50 };          // 与页面「HJ 2010-2011 范围」文字一致
-const PEAK_FLUX_RATIO = 1.5;                     // 短时峰值允许通量 = 1.5 × 冬季设计通量 J(T_min)，且不超过膜型上限
+const PEAK_FLUX_RATIO = 1.5;                     // 短时峰值允许通量 = 1.5 × 冬季Thông lượng thiết kế J(T_min)，且不超过膜型上限
 const MEM_NAME = { hf: '中空纤维膜', fs: '平板膜' };
 const RESULT_IDS_D = ['d_r_V','d_r_HRT','d_r_VAN','d_r_VAX','d_r_VO','d_r_saveV','d_r_SRTmin','d_r_VAXreq','d_r_Am','d_r_ctrl','d_r_JT','d_r_Javg','d_r_modules','d_r_Jpeak','d_r_Jlim','d_r_Tfactor','d_r_AOR','d_r_SOR','d_r_bioAir','d_r_dX','d_r_MLSS_ratio','d_r_Pchem','d_r_PAC','d_r_PACmg','d_r_chemSl','d_r_chemShare','d_r_Ndn','d_r_Cext','d_r_TNpred','d_r_eBio','d_r_eMem','d_r_ePump','d_r_eRecirc','d_r_eMemRecirc','d_r_eTotal'];
 
@@ -1734,7 +1734,7 @@ function syncTabs() {
 function csSat(T) { return 14.652 - 0.41022 * T + 0.007991 * T * T - 0.000077774 * T * T * T; }
 // 标准需氧量 SOR = AOR·Cs(20) / [α·(β·Csm(T) − C)·1.024^(T−20)]
 // 鼓风曝气水深修正：Csm = Cs(T)·(Pb/2.026×10⁵ + (Pa/101325)·Ot/42)，Pb = Pa + 9810·H_d (Pa)（池面出气在当地气压下），Ot = 21(1−E_A)/[79+21(1−E_A)]×100
-// 海拔修正（标准大气式，与曝气量/鼓风机选型页一致）：Pa = 101.325·(1 − 2.25577×10⁻⁵·h)^5.25588 kPa，h = 0 时为海平面
+// Độ cao修正（标准大气式，与曝气量/鼓风机选型页一致）：Pa = 101.325·(1 − 2.25577×10⁻⁵·h)^5.25588 kPa，h = 0 时为海平面
 function atmRatio(alt) { return Math.pow(1 - 2.25577e-5 * (alt || 0), 5.25588); } // P/P₀
 function calcSORstd(AOR, T, alpha, beta, Hd, CL, EA, alt) {
   const Cs20 = csSat(20), CsT = csSat(T);
@@ -1756,7 +1756,7 @@ function blowerKW(air_m3h, pOut_kPa, eff, alt) {
 // 统计范围：生化 + 膜段（生物曝气、膜曝气、产水泵、内回流、膜池回流、仪控照明），不含进水提升、格栅、厌氧/缺氧搅拌、污泥处理
 function energyBreakdown({ Q, bioAir, Am, SADm, TMP, pumpEff, blowerEff, recirc, memRecirc, Hd, alt }) {
   const pBio = 9.81 * (Hd > 0 ? Hd : 5.5) + 6;                  // kPa
-  const h = isFinite(alt) && alt > -500 && alt < 6000 ? alt : 0; // 海拔 m（无效时按海平面）
+  const h = isFinite(alt) && alt > -500 && alt < 6000 ? alt : 0; // Độ cao m（无效时按海平面）
   const eBio = blowerKW(bioAir, pBio, blowerEff, h) * 24 / Q;
   const eMem = blowerKW(SADm * Am, 50, blowerEff, h) * 24 / Q;
   const ePump = TMP * 1000 / (pumpEff * 3.6e6);                 // kWh/m³
@@ -1773,9 +1773,9 @@ function calc() {
     ['d_COD0','COD₀','nn'], ['d_BOD0','BOD₅₀','nn'], ['d_TN0','TN₀','nn'], ['d_NH40','NH₄-N₀','nn'], ['d_TP0','TP₀','nn'], ['d_SS0','SS₀','nn'],
     ['d_CODe','COD出','nn'], ['d_BODe','BOD出','nn'], ['d_NH4e','NH₄-N出','nn'], ['d_TNe','TN出','nn'], ['d_TPe','TP出','nn'],
     ['d_MLSS','MLSS','pos'], ['d_VSS_SS','MLVSS/MLSS','pos'], ['d_SRT','SRT','pos'], ['d_SF','安全系数 SF','pos'], ['d_HRT_AN','厌氧段 HRT','nn'],
-    ['d_J20','设计通量 J₂₀','pos'], ['d_peakFactor','峰值系数','pos'], ['d_Tmin','最低设计水温 T_min','num'], ['d_runRatio','运行时间比','pos'], ['d_moduleArea','单组件膜面积','pos'], ['d_TMP','设计 TMP','nn'],
+    ['d_J20','Thông lượng thiết kế J₂₀','pos'], ['d_peakFactor','峰值系数','pos'], ['d_Tmin','最低设计水温 T_min','num'], ['d_runRatio','运行时间比','pos'], ['d_moduleArea','单组件膜面积','pos'], ['d_TMP','设计 TMP','nn'],
     ['d_Y','Y','nn'], ['d_Kd','Kd','nn'], ['d_fss','SS 污泥转换率 f','nn'], ['d_Kn','K_N','pos'], ['d_SDNR20','SDNR₂₀','pos'], ['d_bioP','生物除磷量','nn'], ['d_alpha','α','pos'], ['d_beta','β','pos'],
-    ['d_SADm','膜曝气强度 SADm','nn'], ['d_Hd','淹没深度 H_d','pos'], ['d_alt','海拔','num'], ['d_OTE','OTE','pos'], ['d_blowerEff','鼓风机效率','pos'], ['d_recirc','内回流比','nn'], ['d_memRecirc','膜池回流比','nn'], ['d_cleanCycle','化学清洗周期','pos'],
+    ['d_SADm','Cường độ sục khí màng SADm','nn'], ['d_Hd','淹没深度 H_d','pos'], ['d_alt','Độ cao','num'], ['d_OTE','OTE','pos'], ['d_blowerEff','Hiệu suất máy thổi khí','pos'], ['d_recirc','Tỷ lệ tuần hoàn nội','nn'], ['d_memRecirc','Tỷ lệ tuần hoàn bể màng','nn'], ['d_cleanCycle','Chu kỳ rửa hoá chất','pos'],
   ]);
   // 进出水逻辑校验：COD₀ > 0，且进水须高于出水
   const pv = id => parseFloat($(id).value);
@@ -1784,7 +1784,7 @@ function calc() {
     relRule(pv('d_COD0') > 0, ['d_COD0'], '请输入大于 0 的 COD₀');
     relRule(pv('d_COD0') > pv('d_CODe'), ['d_COD0', 'd_CODe'], '进水 COD₀ 须大于出水 COD');
     relRule(pv('d_BOD0') > pv('d_BODe'), ['d_BOD0', 'd_BODe'], '进水 BOD₅ 须大于出水 BOD');
-    relRule(pv('d_alt') > -500 && pv('d_alt') < 6000, ['d_alt'], '海拔应在 −500 ~ 6000 m 之间');
+    relRule(pv('d_alt') > -500 && pv('d_alt') < 6000, ['d_alt'], 'Độ cao应在 −500 ~ 6000 m 之间');
     relRule(pv('d_OTE') * pv('d_Hd') < 100, ['d_OTE', 'd_Hd'], '曝气效率 EE = OTE × H_d 须小于 100%');
     relRule(pv('d_T') >= 0 && pv('d_T') <= 40, ['d_T'], '平均水温 T 应在 0–40 ℃ 之间');
     relRule(pv('d_Tmin') >= 0 && pv('d_Tmin') <= 40, ['d_Tmin'], '最低设计水温 T_min 应在 0–40 ℃ 之间');
@@ -1920,7 +1920,7 @@ function calc() {
   const V_AX_req = N_need * 1e3 / (SDNR_T * MLVSS); // m³
 
   // 预计出水 TN（mg/L，简化）：单好氧无反硝化 → TN₀ − 同化氮；
-  //   AO/AAO：回流可达 NO₃ₑ ≈ 硝化氮/(1 + R)，R = 内回流比 + 膜池回流比（膜池回流按回到缺氧段计）
+  //   AO/AAO：回流可达 NO₃ₑ ≈ 硝化氮/(1 + R)，R = Tỷ lệ tuần hoàn nội + Tỷ lệ tuần hoàn bể màng（膜池回流按回到缺氧段计）
   const TN_single = TN0 - N_assim * 1e3 / Q;
   const R_tot = recirc + memRecirc;
   const TN_rec = NH4e + ON_E + N_nit * 1e3 / Q / (1 + R_tot);
@@ -1983,7 +1983,7 @@ function calc() {
   $('d_checkList').innerHTML = checks.items.map(c => `<div class="check-item check-${c.type}"><span class="ic">${c.ic}</span><span>${c.text}</span></div>`).join('');
   const scoreNum = checks.score;
   $('d_scoreNum').textContent = scoreNum;
-  const [st, sd] = scoreNum >= 80 ? ['✅ 设计合理','参数在工程常规范围内'] : scoreNum >= 60 ? ['⚠️ 设计有风险','请关注上方警告项'] : ['✗ 设计有重大问题','需重新核查主要参数'];
+  const [st, sd] = scoreNum >= 80 ? ['✅ 设计合理','Thông số在工程常规范围内'] : scoreNum >= 60 ? ['⚠️ 设计有风险','请关注上方警告项'] : ['✗ 设计有重大问题','需重新核查主要Thông số'];
   $('d_scoreTitle').textContent = st;
   $('d_scoreDesc').textContent = sd;
 }
@@ -1992,9 +1992,9 @@ function checkDesign({ J_pkAllow, J_T, J20, T, Tmin, A_m, V_total, HRT_total, ML
   const items = []; let score = 100;
   const memName = MEM_NAME[memType] || '中空纤维膜';
   if (J_T < 12) { items.push({type:'warn',ic:'⚠',text:`<b>通量偏低</b>: 当前 T=${T}°C 下通量 ${J_T.toFixed(1)} LMH < 12，膜面积偏大，可适当提高 J₂₀ 设计值`}); score -= 10; }
-  if (J20 > J_lim) { items.push({type:'bad',ic:'✗',text:`<b>设计通量超限</b>: J₂₀ = ${J20} LMH 超过 HJ 2010 ${memName}上限 ${J_lim} LMH，有超临界通量风险`}); score -= 20; }
+  if (J20 > J_lim) { items.push({type:'bad',ic:'✗',text:`<b>Thông lượng thiết kế超限</b>: J₂₀ = ${J20} LMH 超过 HJ 2010 ${memName}上限 ${J_lim} LMH，有超临界通量风险`}); score -= 20; }
   // 膜面积已按峰值允许通量取大值，下面这条按构造不会触发，仅作防御
-  else if (J_peak > J_pkAllow * 1.0001) { items.push({type:'warn',ic:'⚠',text:`<b>峰值通量超限</b>: 峰值流量运行通量 ${J_peak.toFixed(1)} LMH > 峰值允许通量 ${J_pkAllow.toFixed(1)} LMH（min(${memName}上限 ${J_lim}, 1.5×J(T_min))），峰值期需增加膜面积或设调节池`}); score -= 8; }
+  else if (J_peak > J_pkAllow * 1.0001) { items.push({type:'warn',ic:'⚠',text:`<b>峰值通量超限</b>: Thông lượng vận hành ở lưu lượng cực đại ${J_peak.toFixed(1)} LMH > 峰值允许通量 ${J_pkAllow.toFixed(1)} LMH（min(${memName}上限 ${J_lim}, 1.5×J(T_min))），峰值期需增加膜面积或设调节池`}); score -= 8; }
   if (Tmin_factor < 0.75) { items.push({type:'warn',ic:'⚠',text:`<b>低温影响显著</b>: T_min=${Tmin}°C 下通量修正系数 ${Tmin_factor.toFixed(2)}，冬季膜面积较 20°C 增加 ${((1/Tmin_factor-1)*100).toFixed(0)}%`}); score -= 10; }
   if (MLSS < 8000) { items.push({type:'warn',ic:'⚠',text:`<b>MLSS 偏低</b>: ${MLSS} mg/L < 8000，未充分发挥 MBR 浓缩优势`}); score -= 8; }
   if (MLSS > 12000) { items.push({type:'warn',ic:'⚠',text:`<b>MLSS 偏高</b>: ${MLSS} mg/L > 12000，膜污染速率加快，需强化清洗`}); score -= 8; }
@@ -2012,14 +2012,14 @@ function checkDesign({ J_pkAllow, J_T, J20, T, Tmin, A_m, V_total, HRT_total, ML
       ['生物曝气', eBio, '优化供氧（精确曝气/DO 控制、提高氧利用率），高氨氮/高 COD 进水宜加强预处理或前置脱氮减负'],
       ['膜曝气', eMem_val, '优化膜曝气方式（如脉冲/间歇曝气）或适当降低 SADm'],
       ['产水泵', ePump, '降低 TMP（加强清洗、降低通量）或采用重力出水'],
-      ['内回流泵', eRecirc, '核减内回流比或降低回流扬程'],
-      ['膜池回流泵', eMemRecirc, '核减膜池回流比或降低回流扬程'],
+      ['内回流泵', eRecirc, '核减Tỷ lệ tuần hoàn nội或降低回流扬程'],
+      ['膜池回流泵', eMemRecirc, '核减Tỷ lệ tuần hoàn bể màng或降低回流扬程'],
     ].sort((a, b) => b[1] - a[1]);
     const [nm, val, tip] = parts[0];
-    items.push({type:'warn',ic:'⚠',text:`<b>生化 + 膜段能耗偏高</b>: ${eTotal.toFixed(2)} kWh/m³ > 1.2，最大项为${nm} ${val.toFixed(2)} kWh/m³（${(val / eTotal * 100).toFixed(0)}%），建议${tip}`}); score -= 8;
+    items.push({type:'warn',ic:'⚠',text:`<b>Điện năng công đoạn sinh học + màng偏高</b>: ${eTotal.toFixed(2)} kWh/m³ > 1.2，最大项为${nm} ${val.toFixed(2)} kWh/m³（${(val / eTotal * 100).toFixed(0)}%），建议${tip}`}); score -= 8;
   }
-  if (eTotal < 0.6) { items.push({type:'ok',ic:'✓',text:`<b>生化 + 膜段能耗较低</b>: ${eTotal.toFixed(2)} kWh/m³（不含提升、搅拌、污泥处理；全厂通常再加 0.1-0.3 kWh/m³）`}); }
-  if (items.length === 0 || items.every(i => i.type === 'ok' || i.type === 'info')) { items.push({type:'ok',ic:'✓',text:'<b>设计参数合理</b>: 通量、MLSS、SRT、HRT 均在工程常规范围内'}); }
+  if (eTotal < 0.6) { items.push({type:'ok',ic:'✓',text:`<b>Điện năng công đoạn sinh học + màng较低</b>: ${eTotal.toFixed(2)} kWh/m³（不含提升、搅拌、污泥处理；全厂通常再加 0.1-0.3 kWh/m³）`}); }
+  if (items.length === 0 || items.every(i => i.type === 'ok' || i.type === 'info')) { items.push({type:'ok',ic:'✓',text:'<b>设计Thông số合理</b>: 通量、MLSS、SRT、HRT 均在工程常规范围内'}); }
   return { items, score: Math.max(10, score) };
 }
 
@@ -2082,7 +2082,7 @@ function toggleMemCard(id) {
 }
 
 function calcModules() {
-  const bad = validateInputs([['m_Am','设计总膜面积','pos'], ['m_singleArea','单组件面积','pos'], ['m_redundancy','备用系数','pos']]);
+  const bad = validateInputs([['m_Am','设计总膜面积','pos'], ['m_singleArea','Diện tích mỗi mô-đun','pos'], ['m_redundancy','备用系数','pos']]);
   showWarn('m_warn', bad);
   if (bad.length) { ['m_r_modules_min','m_r_modules_total','m_r_Am_actual'].forEach(id => { if ($(id)) $(id).textContent = '—'; }); return; }
   const Am = parseFloat($('m_Am').value);
@@ -2123,7 +2123,7 @@ function calcChem() {
   const ceb_citric_year = hasCEB ? Am_est * 0.002 * acidPpm / 1000 * acidFreq * days / 7 : 0;
 
   // CIP 次数/年
-  const cip_times = 12 / cipCycle;   // 年均次数，不取整（周期 >12 个月时 <1 次/年）
+  const cip_times = 12 / cipCycle;   // 年均次数，不取整（周期 >12 tháng时 <1 次/年）
   // CIP 用药（每次药液约 5-10 L/m² 膜）：NaOCl 1000-2000 ppm → 约 10 kg/1000 m²；柠檬酸 3000-5000 ppm → 约 30 kg/1000 m²
   const cip_naocl_once = Am_est / 1000 * 10;
   const cip_citric_once = Am_est / 1000 * 30;
@@ -2146,7 +2146,7 @@ function calcChem() {
 // ============ Tab 4: 能耗分析 ============
 function calcEnergy() {
   const bad = validateInputs([['e_Q','Q','pos'], ['e_Am','膜面积 A_m','pos'], ['e_SADm','SADm','nn'], ['e_TMP','设计 TMP','nn'], ['e_pumpEff','产水泵效率','pos'],
-    ['e_bioAir','生物曝气量','nn'], ['e_blowerEff','鼓风机效率','pos'], ['e_recirc','内回流比','nn'], ['e_memRecirc','膜池回流比','nn'], ['e_price','电价','nn']]);
+    ['e_bioAir','生物曝气量','nn'], ['e_blowerEff','Hiệu suất máy thổi khí','pos'], ['e_recirc','Tỷ lệ tuần hoàn nội','nn'], ['e_memRecirc','Tỷ lệ tuần hoàn bể màng','nn'], ['e_price','电价','nn']]);
   showWarn('e_warn', bad);
   if (bad.length) {
     ['e_r_bio','e_r_mem','e_r_pump','e_r_recirc','e_r_memRecirc','e_r_total','e_r_kwhYear','e_r_costYear','e_r_costTon','e_r_extra','e_r_extraCost'].forEach(id => { if ($(id)) $(id).textContent = '—'; });
@@ -2159,13 +2159,13 @@ function calcEnergy() {
   const SADm = v('e_SADm');
   const TMP = v('e_TMP');
   const pumpEff = v('e_pumpEff') / 100;
-  const bioAir = v('e_bioAir'); // m³/h（20°C 标态）
+  const bioAir = v('e_bioAir'); // m³/h (điều kiện chuẩn 20°C)
   const blowerEff = v('e_blowerEff') / 100;
   const recirc = v('e_recirc') / 100;
   const memRecirc = v('e_memRecirc') / 100;
   const price = v('e_price');
 
-  // 与 Tab 1 同一函数 energyBreakdown：生物曝气（出口表压 9.81×H_d + 6 kPa，H_d 与海拔取 Tab 1 高级参数）、膜曝气 SADm×A_m（50 kPa）按鼓风机绝热压缩功率，
+  // 与 Tab 1 同一函数 energyBreakdown：生物曝气（出口表压 9.81×H_d + 6 kPa，H_d 与Độ cao取 Tab 1 高级Thông số）、膜曝气 SADm×A_m（50 kPa）按鼓风机绝热压缩功率，
   // 产水泵 TMP/η，内回流与膜池回流泵 ρgH·R/η（H = 2 m、η = 0.65），其他 0.05 kWh/m³
   // 统计范围仅生化 + 膜段，不含进水提升、格栅、厌氧/缺氧搅拌、污泥处理
   const { eBio, eMem, ePump, eRecirc, eMemRecirc, eTotal } = energyBreakdown({ Q, bioAir, Am, SADm, TMP, pumpEff, blowerEff, recirc, memRecirc, Hd: parseFloat($('d_Hd').value), alt: parseFloat($('d_alt').value) });
@@ -2215,7 +2215,7 @@ function renderCases() {
       </div>
       <div class="ccm-specs">
         <div class="ccm-spec"><div class="ccm-spec-label">膜类型</div><div class="ccm-spec-value">${c.membrane}</div></div>
-        <div class="ccm-spec"><div class="ccm-spec-label">设计通量</div><div class="ccm-spec-value">${c.J_design}</div></div>
+        <div class="ccm-spec"><div class="ccm-spec-label">Thông lượng thiết kế</div><div class="ccm-spec-value">${c.J_design}</div></div>
         <div class="ccm-spec"><div class="ccm-spec-label">MLSS</div><div class="ccm-spec-value">${c.MLSS}</div></div>
         <div class="ccm-spec"><div class="ccm-spec-label">膜面积</div><div class="ccm-spec-value">${c.Am}</div></div>
         <div class="ccm-spec"><div class="ccm-spec-label">出水标准</div><div class="ccm-spec-value">${c.outlet}</div></div>
@@ -2239,18 +2239,18 @@ function switchTab(tab) {
 
 function copyDesignResult() {
   const r = id => $(id)?.textContent || '—';
-  const txt = `MBR 工程设计结果（${$('d_titleSub').textContent}）
-生物池容: ${r('d_r_V')} m³  总 HRT: ${r('d_r_HRT')} h
-厌氧 V_AN: ${r('d_r_VAN')} m³  缺氧 V_AX: ${r('d_r_VAX')} m³  好氧/膜段 V_O: ${r('d_r_VO')} m³
+  const txt = `MBR 工程Kết quả thiết kế（${$('d_titleSub').textContent}）
+生物池容: ${r('d_r_V')} m³  Tổng HRT: ${r('d_r_HRT')} h
+厌氧 V_AN: ${r('d_r_VAN')} m³  缺氧 V_AX: ${r('d_r_VAX')} m³  Ngăn hiếu khí/màng V_O: ${r('d_r_VO')} m³
 硝化 SRT_min / SF×SRT_min（GB 50014-2021 式 7.6.17，按最低设计水温 T_min，SF=${$('d_SF').value}）: ${r('d_r_SRTmin')} d
 反硝化氮量 内碳源/需外加碳源: ${r('d_r_Ndn')} kg N/d  外加碳源: ${r('d_r_Cext')} kg COD/d
 总膜面积: ${r('d_r_Am')} m²（控制工况: ${r('d_r_ctrl')}）  允许通量 J(T)/J(T_min): ${r('d_r_JT')} LMH
 运行通量 平均/峰值: ${r('d_r_Javg')} / ${r('d_r_Jpeak')} LMH（峰值允许 ${r('d_r_Jlim')}）
 膜组件数: ${r('d_r_modules')} 个
 AOR: ${r('d_r_AOR')} kg O₂/d  SOR: ${r('d_r_SOR')} kg O₂/d  生物曝气量: ${r('d_r_bioAir')} m³/h（20 °C 标态）  污泥: ${r('d_r_dX')} kg DS/d（含化学污泥 ${r('d_r_chemSl')}）
-预计出水 TN: ${r('d_r_TNpred')} mg/L（目标 ${$('d_TNe').value}）  海拔: ${$('d_alt').value} m（SOR 与鼓风机按当地大气压）
+预计出水 TN: ${r('d_r_TNpred')} mg/L（目标 ${$('d_TNe').value}）  Độ cao: ${$('d_alt').value} m（SOR 与鼓风机按当地大气压）
 PAC（扣同化磷与生物除磷）: ${r('d_r_PAC')} kg/d（${r('d_r_PACmg')} mg/L）
-生化 + 膜段能耗: 生物曝气 ${r('d_r_eBio')} + 膜曝气 ${r('d_r_eMem')} + 产水泵 ${r('d_r_ePump')} + 内回流 ${r('d_r_eRecirc')} + 膜池回流 ${r('d_r_eMemRecirc')} + 其他 0.05 = ${r('d_r_eTotal')} kWh/m³（不含提升、格栅、搅拌、污泥处理）
+Điện năng công đoạn sinh học + màng: 生物曝气 ${r('d_r_eBio')} + 膜曝气 ${r('d_r_eMem')} + 产水泵 ${r('d_r_ePump')} + 内回流 ${r('d_r_eRecirc')} + 膜池回流 ${r('d_r_eMemRecirc')} + 其他 0.05 = ${r('d_r_eTotal')} kWh/m³（不含提升、格栅、搅拌、污泥处理）
 设计评分: ${r('d_scoreNum')} / 100
 —— 由 WaterKit MBR 工程设计平台生成`;
   writeClipboard(txt);
@@ -2272,12 +2272,12 @@ function writeClipboard(txt) {
   navigator.clipboard.writeText(txt).then(() => alert('结果已复制到剪贴板')).catch(fallback);
 }
 
-// 页面初始值快照（含 select、高级参数、同步复选框），供「恢复默认」完整还原
+// 页面初始值快照（含 select、高级Thông số、同步复选框），供「Khôi phục mặc định」完整还原
 const INIT_VALUES = {};
 document.querySelectorAll('input[id], select[id]').forEach(el => { INIT_VALUES[el.id] = el.type === 'checkbox' ? el.checked : el.value; });
 
 function resetAll() {
-  if (confirm('重置所有参数为城镇污水默认值？')) {
+  if (confirm('重置所有Thông số为城镇污水默认值？')) {
     Object.keys(INIT_VALUES).forEach(id => {
       const el = $(id); if (!el) return;
       if (el.type === 'checkbox') el.checked = INIT_VALUES[id]; else el.value = INIT_VALUES[id];

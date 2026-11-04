@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>水质单位换算器 | 水处理工具箱 · WaterKit</title>
+<title>Công cụ chuyển đổi đơn vị chất lượng nước | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="水质单位在线换算：硬度（mg/L CaCO₃、mmol/L、°dH、°fH、°e、gpg、meq/L）、碱度、pH 与 H⁺/OH⁻、氮磷形态（以 N/P 计与以离子计）、电导率/TDS/盐度、常见离子 mg/L↔mmol/L↔meq/L，改任意一格实时联动。">
+<meta name="description" content="Chuyển đổi trực tuyến đơn vị chất lượng nước: độ cứng (mg/L CaCO₃, mmol/L, °dH, °fH, °e, gpg, meq/L), độ kiềm, pH và H⁺/OH⁻, các dạng nitơ và phốt pho (tính theo N/P hoặc ion), độ dẫn điện/TDS/độ mặn và các ion thường gặp mg/L↔mmol/L↔meq/L. Thay đổi một ô để cập nhật các ô khác theo thời gian thực.">
 <link rel="canonical" href="https://waterkit.cn/water-quality-unit-converter.html">
 <style>
   :root {
@@ -478,66 +478,66 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Công nghệ Dengdeng</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-utilities">基础换算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-utilities">Chuyển đổi cơ bản</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Công nghệ Dengdeng</a>
     </nav>
   </div>
 </header>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-utilities">基础换算</a>
+  <a href="index.html#cat-utilities">Chuyển đổi cơ bản</a>
   <span class="sep">/</span>
-  <span class="current">水质单位换算</span>
+  <span class="current">Chuyển đổi đơn vị chất lượng nước</span>
 </div>
 
 <main class="main-wrap">
 
 <div class="container">
   <header class="tool-header">
-    <h1>🧪 水质单位换算器</h1>
-    <p>硬度 · 碱度 · pH/H⁺ · 氮磷 · 盐度/电导 · 常见离子  六大模块，改任意一格实时联动</p>
+    <h1>🧪 Công cụ chuyển đổi đơn vị chất lượng nước</h1>
+    <p>Sáu mô-đun: độ cứng · độ kiềm · pH/H⁺ · nitơ và phốt pho · độ mặn/độ dẫn điện · các ion thường gặp. Thay đổi một ô để cập nhật các ô khác theo thời gian thực</p>
   </header>
 
   <div class="body">
 
     <div class="tabs">
       <button class="tab active" data-panel="hardness" onclick="setTab('hardness')">
-        <span class="icon">💎</span>硬度
+        <span class="icon">💎</span>Độ cứng
       </button>
       <button class="tab" data-panel="alkalinity" onclick="setTab('alkalinity')">
-        <span class="icon">🧂</span>碱度
+        <span class="icon">🧂</span>Độ kiềm
       </button>
       <button class="tab" data-panel="ph" onclick="setTab('ph')">
         <span class="icon">⚗️</span>pH/H⁺
       </button>
       <button class="tab" data-panel="nitrogen" onclick="setTab('nitrogen')">
-        <span class="icon">🌿</span>氮磷
+        <span class="icon">🌿</span>Nitơ và phốt pho
       </button>
       <button class="tab" data-panel="salinity" onclick="setTab('salinity')">
-        <span class="icon">💧</span>盐度/电导
+        <span class="icon">💧</span>Độ mặn/độ dẫn điện
       </button>
       <button class="tab" data-panel="ion" onclick="setTab('ion')">
-        <span class="icon">⚛️</span>离子换算
+        <span class="icon">⚛️</span>Chuyển đổi ion
       </button>
     </div>
 
     <!-- ============ 硬度 ============ -->
     <div class="panel active" id="panel-hardness">
-      <div class="panel-intro">💎 硬度表示水中 Ca²⁺、Mg²⁺ 的总量。国标常用 mg/L（以 CaCO₃ 计），德国用 °dH，美国用 gpg。修改任意一个输入框，其他自动同步。</div>
+      <div class="panel-intro">💎 Độ cứng biểu thị tổng hàm lượng Ca²⁺ và Mg²⁺ trong nước. Tiêu chuẩn quốc gia Trung Quốc thường dùng mg/L (tính theo CaCO₃), Đức dùng °dH, Mỹ dùng gpg. Thay đổi bất kỳ ô nhập nào, các ô khác sẽ tự động cập nhật.</div>
 
       <div class="conv-row" data-group="hardness" data-unit="mgL_CaCO3">
         <div class="conv-label">
-          <span class="name">mg/L（以 CaCO₃ 计）</span>
-          <span class="desc">中国国标常用，GB 5749</span>
+          <span class="name">mg/L（tính theo CaCO₃）</span>
+          <span class="desc">Thường dùng trong tiêu chuẩn quốc gia Trung Quốc, GB 5749</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="150" oninput="convertHardness('mgL_CaCO3', this.value)">
@@ -547,8 +547,8 @@
 
       <div class="conv-row" data-group="hardness" data-unit="mmolL">
         <div class="conv-label">
-          <span class="name">mmol/L（以 Ca²⁺ / CaCO₃ 计）</span>
-          <span class="desc">化学式计量常用；1/2 Ca²⁺ 口径 = meq/L 行</span>
+          <span class="name">mmol/L（tính theo Ca²⁺ / CaCO₃）</span>
+          <span class="desc">Thường dùng trong tính toán hóa học; tính theo 1/2 Ca²⁺ thì bằng giá trị ở dòng meq/L</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="1.5" oninput="convertHardness('mmolL', this.value)">
@@ -558,8 +558,8 @@
 
       <div class="conv-row" data-group="hardness" data-unit="dH">
         <div class="conv-label">
-          <span class="name">°dH（德国度）</span>
-          <span class="desc">欧洲/工业锅炉水</span>
+          <span class="name">°dH（độ Đức）</span>
+          <span class="desc">Nước nồi hơi tại châu Âu/trong công nghiệp</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="8.4" oninput="convertHardness('dH', this.value)">
@@ -569,7 +569,7 @@
 
       <div class="conv-row" data-group="hardness" data-unit="fH">
         <div class="conv-label">
-          <span class="name">°fH（法国度）</span>
+          <span class="name">°fH（độ Pháp）</span>
           <span class="desc">1°fH = 10 mg/L CaCO₃</span>
         </div>
         <div class="conv-input">
@@ -580,7 +580,7 @@
 
       <div class="conv-row" data-group="hardness" data-unit="eH">
         <div class="conv-label">
-          <span class="name">°e（英国度 / Clark 度）</span>
+          <span class="name">°e（độ Anh / độ Clark）</span>
           <span class="desc">1°e = 14.25 mg/L CaCO₃</span>
         </div>
         <div class="conv-input">
@@ -591,7 +591,7 @@
 
       <div class="conv-row" data-group="hardness" data-unit="gpg">
         <div class="conv-label">
-          <span class="name">gpg（美国度）</span>
+          <span class="name">gpg（độ Mỹ）</span>
           <span class="desc">grains per gallon</span>
         </div>
         <div class="conv-input">
@@ -603,7 +603,7 @@
       <div class="conv-row" data-group="hardness" data-unit="meqL">
         <div class="conv-label">
           <span class="name">meq/L</span>
-          <span class="desc">毫克当量浓度</span>
+          <span class="desc">Nồng độ mili đương lượng</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="3" oninput="convertHardness('meqL', this.value)">
@@ -614,18 +614,18 @@
       <div class="conv-warn" id="warn_hardness" role="alert"></div>
 
       <div id="hardness_level" style="margin-top:14px;font-size:14px;color:#374151;">
-        硬度等级：<span class="badge badge-soft" id="hardness_badge">软水</span>
+        Phân loại độ cứng：<span class="badge badge-soft" id="hardness_badge">Nước mềm</span>
       </div>
     </div>
 
     <!-- ============ 碱度 ============ -->
     <div class="panel" id="panel-alkalinity">
-      <div class="panel-intro">🧂 碱度反映水的缓冲能力，主要由 HCO₃⁻、CO₃²⁻、OH⁻ 组成。锅炉水、生物处理、消毒工艺都要看碱度。</div>
+      <div class="panel-intro">🧂 Độ kiềm phản ánh khả năng đệm của nước, chủ yếu do HCO₃⁻, CO₃²⁻ và OH⁻ tạo thành. Độ kiềm là thông số cần xét trong nước nồi hơi, xử lý sinh học và khử trùng.</div>
 
       <div class="conv-row" data-group="alk" data-unit="mgL_CaCO3">
         <div class="conv-label">
-          <span class="name">mg/L（以 CaCO₃ 计）</span>
-          <span class="desc">国标/工业常用</span>
+          <span class="name">mg/L（tính theo CaCO₃）</span>
+          <span class="desc">Thường dùng trong tiêu chuẩn quốc gia Trung Quốc/công nghiệp</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="200" oninput="convertAlk('mgL_CaCO3', this.value)">
@@ -635,7 +635,7 @@
 
       <div class="conv-row" data-group="alk" data-unit="mmolL">
         <div class="conv-label">
-          <span class="name">mmol/L（碱度 1价）</span>
+          <span class="name">mmol/L（độ kiềm hóa trị 1）</span>
           <span class="desc">1 mmol/L ≈ 50 mg/L CaCO₃</span>
         </div>
         <div class="conv-input">
@@ -646,8 +646,8 @@
 
       <div class="conv-row" data-group="alk" data-unit="mgL_HCO3">
         <div class="conv-label">
-          <span class="name">mg/L（以 HCO₃⁻ 计）</span>
-          <span class="desc">水质分析报告常用</span>
+          <span class="name">mg/L（tính theo HCO₃⁻）</span>
+          <span class="desc">Thường dùng trong báo cáo phân tích chất lượng nước</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="244" oninput="convertAlk('mgL_HCO3', this.value)">
@@ -658,7 +658,7 @@
       <div class="conv-row" data-group="alk" data-unit="meqL">
         <div class="conv-label">
           <span class="name">meq/L</span>
-          <span class="desc">与 mmol/L 等值（1价）</span>
+          <span class="desc">Tương đương mmol/L (hóa trị 1)</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="4" oninput="convertAlk('meqL', this.value)">
@@ -668,8 +668,8 @@
 
       <div class="conv-row" data-group="alk" data-unit="dH">
         <div class="conv-label">
-          <span class="name">°dH（德国碱度）</span>
-          <span class="desc">与硬度换算系数相同</span>
+          <span class="name">°dH（độ kiềm Đức）</span>
+          <span class="desc">Cùng hệ số chuyển đổi với độ cứng</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="11.2" oninput="convertAlk('dH', this.value)">
@@ -681,12 +681,12 @@
 
     <!-- ============ pH/H+ ============ -->
     <div class="panel" id="panel-ph">
-      <div class="panel-intro">⚗️ pH 与 H⁺ 浓度互换。pH = -log[H⁺]，每差 1 个单位 H⁺ 浓度差 10 倍。</div>
+      <div class="panel-intro">⚗️ Chuyển đổi giữa pH và nồng độ H⁺. pH = -log[H⁺]; chênh lệch 1 đơn vị pH tương ứng với chênh lệch 10 lần về nồng độ H⁺.</div>
 
       <div class="conv-row" data-group="ph" data-unit="pH">
         <div class="conv-label">
-          <span class="name">pH 值</span>
-          <span class="desc">0-14，中性=7</span>
+          <span class="name">Giá trị pH</span>
+          <span class="desc">0-14，trung tính=7</span>
         </div>
         <div class="conv-input">
           <input type="number" step="0.01" min="0" max="14" value="7.0" oninput="convertPH('pH', this.value)">
@@ -696,7 +696,7 @@
 
       <div class="conv-row" data-group="ph" data-unit="H_molL">
         <div class="conv-label">
-          <span class="name">[H⁺] 浓度</span>
+          <span class="name">Nồng độ [H⁺]</span>
           <span class="desc">mol/L</span>
         </div>
         <div class="conv-input">
@@ -707,7 +707,7 @@
 
       <div class="conv-row" data-group="ph" data-unit="H_mgL">
         <div class="conv-label">
-          <span class="name">[H⁺] 质量浓度</span>
+          <span class="name">Nồng độ khối lượng [H⁺]</span>
           <span class="desc">mg/L，M(H⁺)=1.008</span>
         </div>
         <div class="conv-input">
@@ -718,7 +718,7 @@
 
       <div class="conv-row" data-group="ph" data-unit="OH_molL">
         <div class="conv-label">
-          <span class="name">[OH⁻] 浓度（25℃）</span>
+          <span class="name">Nồng độ [OH⁻]（25℃）</span>
           <span class="desc">[OH⁻]=10⁻¹⁴/[H⁺]</span>
         </div>
         <div class="conv-input">
@@ -729,7 +729,7 @@
 
       <div class="conv-row" data-group="ph" data-unit="pOH">
         <div class="conv-label">
-          <span class="name">pOH 值</span>
+          <span class="name">Giá trị pOH</span>
           <span class="desc">pH + pOH = 14</span>
         </div>
         <div class="conv-input">
@@ -742,31 +742,31 @@
 
       <div class="ph-scale">
         <div style="font-size:13px;color:#475569;margin-bottom:6px;">
-          水质定性：<span class="badge badge-soft" id="ph_badge">中性</span>
+          Tính chất nước：<span class="badge badge-soft" id="ph_badge">Trung tính</span>
         </div>
         <div class="ph-bar">
           <div class="ph-pointer" id="ph_pointer" style="left: 50%;"></div>
         </div>
         <div class="ph-labels">
-          <span>0 强酸</span><span>3</span><span>5</span><span>7 中性</span><span>9</span><span>11</span><span>14 强碱</span>
+          <span>0 Axit mạnh</span><span>3</span><span>5</span><span>7 Trung tính</span><span>9</span><span>11</span><span>14 Kiềm mạnh</span>
         </div>
       </div>
     </div>
 
     <!-- ============ 氮磷 ============ -->
     <div class="panel" id="panel-nitrogen">
-      <div class="panel-intro">🌿 氮的形态互换：NH₃-N、NO₂⁻-N、NO₃⁻-N、TKN、TN。水质报告经常出现"以 N 计"与"以离子计"两种口径，搞错换算差十几倍很常见。</div>
+      <div class="panel-intro">🌿 Chuyển đổi các dạng nitơ: NH₃-N, NO₂⁻-N, NO₃⁻-N, TKN, TN. Báo cáo chất lượng nước thường dùng hai cách biểu thị “tính theo N” và “tính theo ion”; nhầm lẫn có thể gây sai lệch hàng chục lần.</div>
 
       <div class="params-box">
-        <div class="title">选择形态</div>
+        <div class="title">Chọn dạng</div>
         <div class="params-grid">
           <div class="field">
-            <label for="n_form">氮形态</label>
+            <label for="n_form">Dạng nitơ</label>
             <select id="n_form" onchange="convertN()">
-              <option value="NH3" selected>氨氮 NH₃-N，以 NH₄⁺ 计（M≈18）</option>
-              <option value="NH3m">氨氮 NH₃-N，以 NH₃ 计（M=17.03）</option>
-              <option value="NO2">亚硝酸盐 NO₂⁻-N（M_ion=46, M_N=14）</option>
-              <option value="NO3">硝酸盐 NO₃⁻-N（M_ion=62, M_N=14）</option>
+              <option value="NH3" selected>Nitơ amoni NH₃-N, tính theo NH₄⁺（M≈18）</option>
+              <option value="NH3m">Nitơ amoni NH₃-N, tính theo NH₃（M=17.03）</option>
+              <option value="NO2">Nitrit NO₂⁻-N（M_ion=46, M_N=14）</option>
+              <option value="NO3">Nitrat NO₃⁻-N（M_ion=62, M_N=14）</option>
             </select>
           </div>
         </div>
@@ -774,8 +774,8 @@
 
       <div class="conv-row" data-group="n" data-unit="mgL_N">
         <div class="conv-label">
-          <span class="name">mg/L（以 N 计）</span>
-          <span class="desc">国标默认，GB 3838/18918</span>
+          <span class="name">mg/L（tính theo N）</span>
+          <span class="desc">Mặc định trong tiêu chuẩn quốc gia Trung Quốc, GB 3838/18918</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="5" oninput="convertN('mgL_N', this.value)">
@@ -785,8 +785,8 @@
 
       <div class="conv-row" data-group="n" data-unit="mgL_ion">
         <div class="conv-label">
-          <span class="name">mg/L（以离子计）</span>
-          <span class="desc">欧美水质报告常用</span>
+          <span class="name">mg/L（tính theo ion）</span>
+          <span class="desc">Thường dùng trong báo cáo chất lượng nước ở châu Âu và Mỹ</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="6.43" oninput="convertN('mgL_ion', this.value)">
@@ -797,7 +797,7 @@
       <div class="conv-row" data-group="n" data-unit="mmolL">
         <div class="conv-label">
           <span class="name">mmol/L</span>
-          <span class="desc">摩尔浓度</span>
+          <span class="desc">Nồng độ mol</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="0.357" oninput="convertN('mmolL', this.value)">
@@ -808,16 +808,16 @@
       <div class="conv-warn" id="warn_n" role="alert"></div>
 
       <hr style="margin:20px 0;border:none;border-top:1px solid #e5e7eb;">
-      <div class="panel-intro" style="margin-top:0;">磷的形态：TP、PO₄³⁻-P、P₂O₅（化肥行业）</div>
+      <div class="panel-intro" style="margin-top:0;">Các dạng phốt pho: TP, PO₄³⁻-P, P₂O₅ (ngành phân bón)</div>
 
       <div class="params-box">
-        <div class="title">磷形态</div>
+        <div class="title">Dạng phốt pho</div>
         <div class="params-grid">
           <div class="field">
-            <label for="p_form">磷形态</label>
+            <label for="p_form">Dạng phốt pho</label>
             <select id="p_form" onchange="convertP()">
-              <option value="PO4" selected>正磷酸盐 PO₄³⁻-P（M_ion=95, M_P=31）</option>
-              <option value="P2O5">五氧化二磷 P₂O₅（化肥/岩相）</option>
+              <option value="PO4" selected>Orthophosphat PO₄³⁻-P（M_ion=95, M_P=31）</option>
+              <option value="P2O5">Điphotpho pentaoxit P₂O₅（phân bón/thạch học）</option>
             </select>
           </div>
         </div>
@@ -825,8 +825,8 @@
 
       <div class="conv-row" data-group="p" data-unit="mgL_P">
         <div class="conv-label">
-          <span class="name">mg/L（以 P 计）</span>
-          <span class="desc">国标默认</span>
+          <span class="name">mg/L（tính theo P）</span>
+          <span class="desc">Mặc định trong tiêu chuẩn quốc gia Trung Quốc</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="1.0" oninput="convertP('mgL_P', this.value)">
@@ -836,8 +836,8 @@
 
       <div class="conv-row" data-group="p" data-unit="mgL_ion">
         <div class="conv-label">
-          <span class="name">mg/L（以离子/化合物计）</span>
-          <span class="desc">分析报告常用</span>
+          <span class="name">mg/L（tính theo ion/hợp chất）</span>
+          <span class="desc">Thường dùng trong báo cáo phân tích</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="3.065" oninput="convertP('mgL_ion', this.value)">
@@ -848,7 +848,7 @@
       <div class="conv-row" data-group="p" data-unit="mmolL">
         <div class="conv-label">
           <span class="name">mmol/L</span>
-          <span class="desc">摩尔浓度</span>
+          <span class="desc">Nồng độ mol</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="0.0323" oninput="convertP('mmolL', this.value)">
@@ -860,32 +860,32 @@
 
     <!-- ============ 盐度/电导 ============ -->
     <div class="panel" id="panel-salinity">
-      <div class="panel-intro">💧 电导率、TDS、盐度之间的估算。电导率-TDS 是估算关系（系数 0.5-0.8 视水质而定），高精度需实测。</div>
+      <div class="panel-intro">💧 Ước tính giữa độ dẫn điện, TDS và độ mặn. Quan hệ độ dẫn điện–TDS chỉ mang tính ước tính (hệ số 0.5-0.8 tùy chất lượng nước); cần đo thực tế khi yêu cầu độ chính xác cao.</div>
 
       <div class="params-box">
-        <div class="title">换算参数</div>
+        <div class="title">Thông số chuyển đổi</div>
         <div class="params-grid">
           <div class="field">
-            <label for="tds_K">TDS 换算系数 K</label>
+            <label for="tds_K">Hệ số chuyển đổi TDS K</label>
             <select id="tds_K" onchange="convertSalinity()">
-              <option value="0.5">0.5（NaCl 标定）</option>
-              <option value="0.64" selected>0.64（常规淡水）</option>
-              <option value="0.7">0.7（442 标定，含混合盐）</option>
-              <option value="0.8">0.8（硬水/高碳酸盐）</option>
+              <option value="0.5">0.5（hiệu chuẩn bằng NaCl）</option>
+              <option value="0.64" selected>0.64（nước ngọt thông thường）</option>
+              <option value="0.7">0.7（hiệu chuẩn 442, chứa hỗn hợp muối）</option>
+              <option value="0.8">0.8（nước cứng/nhiều cacbonat）</option>
             </select>
           </div>
           <div class="field">
-            <label for="temp">水温 ℃（电导温补，按 2%/℃ 折算到 25 ℃）</label>
+            <label for="temp">Nhiệt độ nước ℃ (bù nhiệt độ dẫn điện, quy đổi về 25 ℃ theo 2%/℃)</label>
             <input type="number" id="temp" value="25" step="1" oninput="convertSalinity()">
           </div>
         </div>
-        <div style="margin-top:8px;font-size:12px;color:#713f12;">EC 行为水温 T 下的实测值；TDS / 盐度 / 电阻率按 EC₂₅ = EC_T / [1 + 0.02·(T − 25)] 折算后计算。当前 EC₂₅ = <b id="ec25_show">—</b></div>
+        <div style="margin-top:8px;font-size:12px;color:#713f12;">Dòng EC là giá trị đo tại nhiệt độ nước T; TDS / độ mặn / điện trở suất được tính sau khi quy đổi theo EC₂₅ = EC_T / [1 + 0.02·(T − 25)]. EC₂₅ hiện tại = <b id="ec25_show">—</b></div>
       </div>
 
       <div class="conv-row" data-group="sal" data-unit="EC_uS">
         <div class="conv-label">
-          <span class="name">电导率 EC</span>
-          <span class="desc">水温 T 下实测值</span>
+          <span class="name">Độ dẫn điện EC</span>
+          <span class="desc">Giá trị đo tại nhiệt độ nước T</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="1000" oninput="convertSalinity('EC_uS', this.value)">
@@ -895,8 +895,8 @@
 
       <div class="conv-row" data-group="sal" data-unit="EC_mS">
         <div class="conv-label">
-          <span class="name">电导率 EC</span>
-          <span class="desc">毫西门子</span>
+          <span class="name">Độ dẫn điện EC</span>
+          <span class="desc">milisiemens</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="1.0" oninput="convertSalinity('EC_mS', this.value)">
@@ -906,7 +906,7 @@
 
       <div class="conv-row" data-group="sal" data-unit="TDS">
         <div class="conv-label">
-          <span class="name">TDS（估算）</span>
+          <span class="name">TDS (ước tính)</span>
           <span class="desc">= EC × K</span>
         </div>
         <div class="conv-input">
@@ -917,8 +917,8 @@
 
       <div class="conv-row" data-group="sal" data-unit="salinity">
         <div class="conv-label">
-          <span class="name">盐度（近似）</span>
-          <span class="desc">PSU 或 ‰</span>
+          <span class="name">Độ mặn (xấp xỉ)</span>
+          <span class="desc">PSU hoặc ‰</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="0.64" oninput="convertSalinity('salinity', this.value)">
@@ -928,8 +928,8 @@
 
       <div class="conv-row" data-group="sal" data-unit="resistivity">
         <div class="conv-label">
-          <span class="name">电阻率</span>
-          <span class="desc">纯水/超纯水用</span>
+          <span class="name">Điện trở suất</span>
+          <span class="desc">Dùng cho nước tinh khiết/nước siêu tinh khiết</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="1000" oninput="convertSalinity('resistivity', this.value)">
@@ -940,52 +940,52 @@
       <div class="conv-warn" id="warn_sal" role="alert"></div>
 
       <div id="salinity_category" style="margin-top:14px;font-size:14px;color:#374151;">
-        水质分类：<span class="badge badge-info" id="salinity_badge">—</span>
+        Phân loại nước：<span class="badge badge-info" id="salinity_badge">—</span>
       </div>
     </div>
 
     <!-- ============ 通用离子 ============ -->
     <div class="panel" id="panel-ion">
-      <div class="panel-intro">⚛️ 通用离子的 mg/L ↔ mmol/L ↔ meq/L 换算。选择离子后自动带出摩尔质量与价数。</div>
+      <div class="panel-intro">⚛️ Chuyển đổi mg/L ↔ mmol/L ↔ meq/L cho các ion thông dụng. Khối lượng mol và hóa trị được tự động điền sau khi chọn ion.</div>
 
       <div class="params-box">
-        <div class="title">选择离子</div>
+        <div class="title">Chọn ion</div>
         <div class="params-grid">
           <div class="field">
-            <label for="ion_sel">离子</label>
+            <label for="ion_sel">ion</label>
             <select id="ion_sel" onchange="updateIonParams()">
-              <optgroup label="阳离子">
-                <option value="Na">Na⁺（23, 1价）</option>
-                <option value="K">K⁺（39.1, 1价）</option>
-                <option value="Ca">Ca²⁺（40, 2价）</option>
-                <option value="Mg">Mg²⁺（24.3, 2价）</option>
-                <option value="Fe2">Fe²⁺（55.85, 2价）</option>
-                <option value="Fe3">Fe³⁺（55.85, 3价）</option>
-                <option value="Al">Al³⁺（27, 3价）</option>
-                <option value="NH4">NH₄⁺（18, 1价）</option>
-                <option value="Mn">Mn²⁺（54.9, 2价）</option>
+              <optgroup label="Cation">
+                <option value="Na">Na⁺（23, hóa trị 1）</option>
+                <option value="K">K⁺（39.1, hóa trị 1）</option>
+                <option value="Ca">Ca²⁺（40, hóa trị 2）</option>
+                <option value="Mg">Mg²⁺（24.3, hóa trị 2）</option>
+                <option value="Fe2">Fe²⁺（55.85, hóa trị 2）</option>
+                <option value="Fe3">Fe³⁺（55.85, hóa trị 3）</option>
+                <option value="Al">Al³⁺（27, hóa trị 3）</option>
+                <option value="NH4">NH₄⁺（18, hóa trị 1）</option>
+                <option value="Mn">Mn²⁺（54.9, hóa trị 2）</option>
               </optgroup>
-              <optgroup label="阴离子">
-                <option value="Cl" selected>Cl⁻（35.5, 1价）</option>
-                <option value="SO4">SO₄²⁻（96, 2价）</option>
-                <option value="HCO3">HCO₃⁻（61, 1价）</option>
-                <option value="CO3">CO₃²⁻（60, 2价）</option>
-                <option value="NO3">NO₃⁻（62, 1价）</option>
-                <option value="NO2">NO₂⁻（46, 1价）</option>
-                <option value="PO4">PO₄³⁻（95, 3价）</option>
-                <option value="F">F⁻（19, 1价）</option>
-                <option value="OH">OH⁻（17, 1价）</option>
-                <option value="S">S²⁻（32, 2价）</option>
-                <option value="SiO2">SiO₂（60，按 HSiO₃⁻ 1 价当量）</option>
+              <optgroup label="Anion">
+                <option value="Cl" selected>Cl⁻（35.5, hóa trị 1）</option>
+                <option value="SO4">SO₄²⁻（96, hóa trị 2）</option>
+                <option value="HCO3">HCO₃⁻（61, hóa trị 1）</option>
+                <option value="CO3">CO₃²⁻（60, hóa trị 2）</option>
+                <option value="NO3">NO₃⁻（62, hóa trị 1）</option>
+                <option value="NO2">NO₂⁻（46, hóa trị 1）</option>
+                <option value="PO4">PO₄³⁻（95, hóa trị 3）</option>
+                <option value="F">F⁻（19, hóa trị 1）</option>
+                <option value="OH">OH⁻（17, hóa trị 1）</option>
+                <option value="S">S²⁻（32, hóa trị 2）</option>
+                <option value="SiO2">SiO₂（60，theo đương lượng HSiO₃⁻ hóa trị 1）</option>
               </optgroup>
             </select>
           </div>
           <div class="field">
-            <label for="ion_M">摩尔质量 (g/mol)</label>
+            <label for="ion_M">Khối lượng mol (g/mol)</label>
             <input type="number" id="ion_M" value="35.5" step="0.1" oninput="convertIon()">
           </div>
           <div class="field">
-            <label for="ion_v">价数</label>
+            <label for="ion_v">hóa trị</label>
             <input type="number" id="ion_v" value="1" step="1" oninput="convertIon()">
           </div>
         </div>
@@ -993,8 +993,8 @@
 
       <div class="conv-row" data-group="ion" data-unit="mgL">
         <div class="conv-label">
-          <span class="name">mg/L（质量浓度）</span>
-          <span class="desc">以离子本身计</span>
+          <span class="name">mg/L（Nồng độ khối lượng）</span>
+          <span class="desc">tính theo chính ion</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="100" oninput="convertIon('mgL', this.value)">
@@ -1004,7 +1004,7 @@
 
       <div class="conv-row" data-group="ion" data-unit="mmolL">
         <div class="conv-label">
-          <span class="name">mmol/L（摩尔浓度）</span>
+          <span class="name">mmol/L（Nồng độ mol）</span>
           <span class="desc">= mg/L ÷ M</span>
         </div>
         <div class="conv-input">
@@ -1015,8 +1015,8 @@
 
       <div class="conv-row" data-group="ion" data-unit="meqL">
         <div class="conv-label">
-          <span class="name">meq/L（当量浓度）</span>
-          <span class="desc">= mmol/L × 价数</span>
+          <span class="name">meq/L（Nồng độ đương lượng）</span>
+          <span class="desc">= mmol/L × hóa trị</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="2.82" oninput="convertIon('meqL', this.value)">
@@ -1026,7 +1026,7 @@
 
       <div class="conv-row" data-group="ion" data-unit="mgL_CaCO3">
         <div class="conv-label">
-          <span class="name">mg/L（以 CaCO₃ 计）</span>
+          <span class="name">mg/L（tính theo CaCO₃）</span>
           <span class="desc">= meq/L × 50</span>
         </div>
         <div class="conv-input">
@@ -1037,8 +1037,8 @@
 
       <div class="conv-row" data-group="ion" data-unit="ppm">
         <div class="conv-label">
-          <span class="name">ppm（质量比）</span>
-          <span class="desc">淡水中 ppm ≈ mg/L</span>
+          <span class="name">ppm（tỷ lệ khối lượng）</span>
+          <span class="desc">Trong nước ngọt ppm ≈ mg/L</span>
         </div>
         <div class="conv-input">
           <input type="number" step="any" value="100" oninput="convertIon('ppm', this.value)">
@@ -1049,79 +1049,79 @@
     </div>
 
     <div class="buttons">
-      <button class="btn btn-primary" onclick="copyResults()">📋 复制当前结果</button>
-      <button class="btn btn-secondary" onclick="toggleRef()">📖 查看速查表</button>
+      <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả hiện tại</button>
+      <button class="btn btn-secondary" onclick="toggleRef()">📖 Xem bảng tra nhanh</button>
     </div>
 
     <div class="ref-box" id="refBox" style="display:none;">
-      <h3>① 硬度换算系数</h3>
+      <h3>① Hệ số chuyển đổi độ cứng</h3>
       <table>
-        <tr><th>单位</th><th>= mg/L CaCO₃</th></tr>
-        <tr><td>1 mmol/L（Ca²⁺）</td><td>100 mg/L CaCO₃ = 2 meq/L（1/2 Ca²⁺ 口径 = meq/L 行）</td></tr>
-        <tr><td>1 °dH（德国度）</td><td>17.848 mg/L</td></tr>
-        <tr><td>1 °fH（法国度）</td><td>10 mg/L</td></tr>
-        <tr><td>1 °e（英国度 / Clark 度）</td><td>14.25 mg/L</td></tr>
-        <tr><td>1 gpg（美国度）</td><td>17.118 mg/L</td></tr>
+        <tr><th>Đơn vị</th><th>= mg/L CaCO₃</th></tr>
+        <tr><td>1 mmol/L（Ca²⁺）</td><td>100 mg/L CaCO₃ = 2 meq/L（tính theo 1/2 Ca²⁺ = dòng meq/L）</td></tr>
+        <tr><td>1 °dH（độ Đức）</td><td>17.848 mg/L</td></tr>
+        <tr><td>1 °fH（độ Pháp）</td><td>10 mg/L</td></tr>
+        <tr><td>1 °e（độ Anh / độ Clark）</td><td>14.25 mg/L</td></tr>
+        <tr><td>1 gpg（độ Mỹ）</td><td>17.118 mg/L</td></tr>
         <tr><td>1 meq/L</td><td>50 mg/L</td></tr>
       </table>
 
-      <h3>② 硬度等级（以 CaCO₃ 计）</h3>
+      <h3>② Phân loại độ cứng（tính theo CaCO₃）</h3>
       <table>
-        <tr><th>分类</th><th>mg/L</th><th>°dH</th></tr>
-        <tr><td>极软水</td><td>0-75</td><td>0-4.2</td></tr>
-        <tr><td>软水</td><td>75-150</td><td>4.2-8.4</td></tr>
-        <tr><td>中硬水</td><td>150-300</td><td>8.4-16.8</td></tr>
-        <tr><td>硬水</td><td>300-450</td><td>16.8-25.2</td></tr>
-        <tr><td>极硬水</td><td>&gt; 450</td><td>&gt; 25.2</td></tr>
+        <tr><th>Phân loại</th><th>mg/L</th><th>°dH</th></tr>
+        <tr><td>Nước rất mềm</td><td>0-75</td><td>0-4.2</td></tr>
+        <tr><td>Nước mềm</td><td>75-150</td><td>4.2-8.4</td></tr>
+        <tr><td>Nước cứng trung bình</td><td>150-300</td><td>8.4-16.8</td></tr>
+        <tr><td>Nước cứng</td><td>300-450</td><td>16.8-25.2</td></tr>
+        <tr><td>Nước rất cứng</td><td>&gt; 450</td><td>&gt; 25.2</td></tr>
       </table>
-      <p style="margin-top:6px;font-size:12px;color:#64748b;">注：本表为常用工程分级，WHO/USGS 等标准分级不同，饮用水总硬度限值见 GB 5749（450 mg/L）。</p>
+      <p style="margin-top:6px;font-size:12px;color:#64748b;">Lưu ý: Bảng này sử dụng phân loại kỹ thuật thông dụng; các tiêu chuẩn WHO/USGS và các tiêu chuẩn khác có cách phân loại khác nhau. Giới hạn độ cứng tổng của nước uống theo GB 5749 là 450 mg/L.</p>
 
-      <h3>③ 氮形态换算（以 N 计 ↔ 以离子计）</h3>
+      <h3>③ Chuyển đổi dạng nitơ（tính theo N ↔ tính theo ion）</h3>
       <table>
-        <tr><th>形态</th><th>换算系数（离子→N）</th></tr>
-        <tr><td>NH₃-N（以 NH₄⁺ 计）</td><td>× 14/18 = 0.778</td></tr>
-        <tr><td>NH₃-N（以 NH₃ 计）</td><td>× 14/17.03 = 0.822</td></tr>
+        <tr><th>Dạng</th><th>Hệ số chuyển đổi（ion→N）</th></tr>
+        <tr><td>NH₃-N（tính theo NH₄⁺）</td><td>× 14/18 = 0.778</td></tr>
+        <tr><td>NH₃-N（tính theo NH₃）</td><td>× 14/17.03 = 0.822</td></tr>
         <tr><td>NO₂⁻-N</td><td>× 14/46 = 0.304</td></tr>
         <tr><td>NO₃⁻-N</td><td>× 14/62 = 0.226</td></tr>
       </table>
 
-      <h3>④ 磷形态换算</h3>
+      <h3>④ Chuyển đổi dạng phốt pho</h3>
       <table>
-        <tr><th>形态</th><th>换算系数</th></tr>
+        <tr><th>Dạng</th><th>Hệ số chuyển đổi</th></tr>
         <tr><td>PO₄³⁻ → P</td><td>× 31/95 = 0.326</td></tr>
-        <tr><td>P₂O₅ → P</td><td>× 62/142 = 0.437（mmol 行按 P 原子计，单位 mmol P/L）</td></tr>
+        <tr><td>P₂O₅ → P</td><td>× 62/142 = 0.437（dòng mmol tính theo nguyên tử P, đơn vị mmol P/L）</td></tr>
       </table>
 
-      <h3>⑤ 电导率-TDS-盐度</h3>
+      <h3>⑤ Độ dẫn điện-TDS-độ mặn</h3>
       <table>
-        <tr><th>水类型</th><th>EC (μS/cm)</th><th>TDS (mg/L)</th></tr>
-        <tr><td>超纯水</td><td>&lt; 1</td><td>&lt; 0.5</td></tr>
-        <tr><td>纯净水/RO 产水</td><td>1 - 50</td><td>0.5 - 30</td></tr>
-        <tr><td>自来水/地表淡水</td><td>50 - 1500</td><td>30 - 1000</td></tr>
-        <tr><td>微咸水</td><td>1500 - 5000</td><td>1000 - 3000</td></tr>
-        <tr><td>咸水</td><td>5000 - 50000</td><td>3000 - 30000</td></tr>
-        <tr><td>海水</td><td>≈ 50000</td><td>≈ 35000</td></tr>
+        <tr><th>Loại nước</th><th>EC (μS/cm)</th><th>TDS (mg/L)</th></tr>
+        <tr><td>Nước siêu tinh khiết</td><td>&lt; 1</td><td>&lt; 0.5</td></tr>
+        <tr><td>Nước tinh khiết/nước sản phẩm RO</td><td>1 - 50</td><td>0.5 - 30</td></tr>
+        <tr><td>Nước máy/nước ngọt mặt</td><td>50 - 1500</td><td>30 - 1000</td></tr>
+        <tr><td>Nước lợ nhẹ</td><td>1500 - 5000</td><td>1000 - 3000</td></tr>
+        <tr><td>Nước mặn</td><td>5000 - 50000</td><td>3000 - 30000</td></tr>
+        <tr><td>Nước biển</td><td>≈ 50000</td><td>≈ 35000</td></tr>
       </table>
 
-      <h3>⑥ pH 水质分级</h3>
+      <h3>⑥ Phân loại chất lượng nước theo pH</h3>
       <table>
-        <tr><th>pH 范围</th><th>分级</th></tr>
-        <tr><td>&lt; 4.5</td><td>强酸</td></tr>
-        <tr><td>4.5 - 6.5</td><td>酸性</td></tr>
-        <tr><td>6.5 - 7.5</td><td>中性（饮用水要求 6.5-8.5）</td></tr>
-        <tr><td>7.5 - 9.0</td><td>微碱性</td></tr>
-        <tr><td>9.0 - 10.5</td><td>碱性</td></tr>
-        <tr><td>&gt; 10.5</td><td>强碱</td></tr>
+        <tr><th>Khoảng pH</th><th>Phân loại</th></tr>
+        <tr><td>&lt; 4.5</td><td>Axit mạnh</td></tr>
+        <tr><td>4.5 - 6.5</td><td>Có tính axit</td></tr>
+        <tr><td>6.5 - 7.5</td><td>Trung tính (nước uống yêu cầu 6.5-8.5)</td></tr>
+        <tr><td>7.5 - 9.0</td><td>Hơi kiềm</td></tr>
+        <tr><td>9.0 - 10.5</td><td>Có tính kiềm</td></tr>
+        <tr><td>&gt; 10.5</td><td>Kiềm mạnh</td></tr>
       </table>
     </div>
 
     <div class="note">
-      ⚠️ 本工具用于快速换算与参考，严格分析请以实验数据为准。电导率-TDS、电导率-盐度为估算关系，高精度应用须结合水质特性测定换算系数。<br>摩尔质量取整（如 Cl 35.5、Ca 40、SO₄ 96、HCO₃ 61、NO₃ 62、PO₄ 95、NH₄ 18，CaCO₃ 当量按 50 / 100），误差 &lt;0.3%。
+      ⚠️ Công cụ này dùng để chuyển đổi nhanh và tham khảo; khi phân tích chính xác, hãy căn cứ vào số liệu thí nghiệm. Quan hệ độ dẫn điện–TDS và độ dẫn điện–độ mặn chỉ là ước tính; ứng dụng cần độ chính xác cao phải xác định hệ số chuyển đổi theo đặc tính chất lượng nước.<br>Khối lượng mol được làm tròn (như Cl 35.5, Ca 40, SO₄ 96, HCO₃ 61, NO₃ 62, PO₄ 95, NH₄ 18; đương lượng CaCO₃ tính theo 50 / 100), sai số &lt;0.3%。
     </div>
 
   </div>
 
-  <footer class="tool-inner-footer">水处理工具箱 · 仅供工程估算参考</footer>
+  <footer class="tool-inner-footer">Bộ công cụ xử lý nước · Chỉ dùng để tham khảo khi ước tính kỹ thuật</footer>
 </div>
 </main>
 
@@ -1133,65 +1133,65 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Công nghệ Dengdeng</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là bộ công cụ tính toán trực tuyến do Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam cung cấp, được các kỹ sư công nghệ xử lý nước trực tiếp phát triển và bảo trì. Miễn phí và liên tục cập nhật.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thủy lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thủy lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thủy lực đường ống (bản nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thủy lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính lưu lượng qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lưu lượng khí sục</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn phát sinh</a></li>
+          <li><a href="dosing-calculator.html">Lượng hóa chất định lượng</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">Thiết kế kỹ thuật MBBR</a></li>
+          <li><a href="ifas-design.html">Thiết kế kỹ thuật IFAS</a></li>
+          <li><a href="mbr-design.html">Thiết kế kỹ thuật MBR</a></li>
+          <li><a href="ro-design.html">Thiết kế thẩm thấu ngược (RO)</a></li>
+          <li><a href="pump-selection-calculator.html">Lựa chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Lựa chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Chuyển đổi chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thủy sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải từ ao nuôi</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Hướng dẫn tham quan Aqua Nor 2027</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang web chính thức của Công nghệ Dengdeng ↗</a></li>
+          <li>Tư vấn Công nghệ Dengdeng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Open Source</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho mã nguồn GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">Giấy phép AGPL-3.0</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Gửi phản hồi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
@@ -1259,7 +1259,7 @@
   // 负值统一处理：返回 true 表示已拦截
   function rejectNegative(g, unit, v, what) {
     if (v >= 0) return false;
-    showWarn(g, what + '不能为负值，请输入 ≥ 0 的数值', srcInput(g, unit));
+    showWarn(g, what + ' không được âm, vui lòng nhập giá trị ≥ 0', srcInput(g, unit));
     clearOthers(g, unit);
     return true;
   }
@@ -1270,7 +1270,7 @@
     markSource('hardness', fromUnit);
     const v = parseFloat(val);
     if (!isFinite(v)) return;
-    if (rejectNegative('hardness', fromUnit, v, '硬度')) return;
+    if (rejectNegative('hardness', fromUnit, v, 'Độ cứng')) return;
     showWarn('hardness', '');
     let caco3;  // mg/L CaCO3
     switch(fromUnit) {
@@ -1292,11 +1292,11 @@
 
     // 等级分类
     const b = $('hardness_badge');
-    if (caco3 < 75)       { b.className = 'badge badge-soft';   b.textContent = '极软水'; }
-    else if (caco3 < 150) { b.className = 'badge badge-soft';   b.textContent = '软水'; }
-    else if (caco3 < 300) { b.className = 'badge badge-medium'; b.textContent = '中硬水'; }
-    else if (caco3 < 450) { b.className = 'badge badge-hard';   b.textContent = '硬水'; }
-    else                  { b.className = 'badge badge-hard';   b.textContent = '极硬水'; }
+    if (caco3 < 75)       { b.className = 'badge badge-soft';   b.textContent = 'Nước rất mềm'; }
+    else if (caco3 < 150) { b.className = 'badge badge-soft';   b.textContent = 'Nước mềm'; }
+    else if (caco3 < 300) { b.className = 'badge badge-medium'; b.textContent = 'Nước cứng trung bình'; }
+    else if (caco3 < 450) { b.className = 'badge badge-hard';   b.textContent = 'Nước cứng'; }
+    else                  { b.className = 'badge badge-hard';   b.textContent = 'Nước rất cứng'; }
   }
 
   // ======== 碱度 ========
@@ -1305,7 +1305,7 @@
     markSource('alk', fromUnit);
     const v = parseFloat(val);
     if (!isFinite(v)) return;
-    if (rejectNegative('alk', fromUnit, v, '碱度')) return;
+    if (rejectNegative('alk', fromUnit, v, 'Độ kiềm')) return;
     showWarn('alk', '');
     let caco3;
     switch(fromUnit) {
@@ -1328,7 +1328,7 @@
     const v = parseFloat(val);
     if (!isFinite(v)) return;
     if ((fromUnit === 'H_molL' || fromUnit === 'H_mgL' || fromUnit === 'OH_molL') && v <= 0) {
-      showWarn('ph', '浓度必须大于 0（pH 按对数计算，0 或负值无意义）', srcInput('ph', fromUnit));
+      showWarn('ph', 'Nồng độ phải lớn hơn 0 (pH được tính theo logarit, giá trị 0 hoặc âm không có ý nghĩa)', srcInput('ph', fromUnit));
       clearOthers('ph', fromUnit);
       return;
     }
@@ -1342,7 +1342,7 @@
     }
     // 超出 0–14 不再静默钳位：照常换算，但给出提示
     if (pH < 0 || pH > 14) {
-      showWarn('ph', `对应 pH = ${pH.toFixed(2)}，超出 0–14 常规范围（浓酸/浓碱中活度 ≠ 浓度，结果仅供参考）`);
+      showWarn('ph', `pH tương ứng = ${pH.toFixed(2)}, nằm ngoài khoảng thông thường 0–14 (trong axit/kiềm đậm đặc, hoạt độ ≠ nồng độ; kết quả chỉ để tham khảo)`);
     } else {
       showWarn('ph', '');
     }
@@ -1360,12 +1360,12 @@
     const pHbar = Math.max(0, Math.min(14, pH));   // 仅指针位置限制在色条范围内
     $('ph_pointer').style.left = `calc(${(pHbar/14)*100}% - 2px)`;
     const b = $('ph_badge');
-    if (pH < 4.5)      { b.className = 'badge badge-hard';   b.textContent = '强酸'; }
-    else if (pH < 6.5) { b.className = 'badge badge-medium'; b.textContent = '酸性'; }
-    else if (pH < 7.5) { b.className = 'badge badge-soft';   b.textContent = '中性'; }
-    else if (pH < 9.0) { b.className = 'badge badge-soft';   b.textContent = '微碱性'; }
-    else if (pH <10.5) { b.className = 'badge badge-medium'; b.textContent = '碱性'; }
-    else               { b.className = 'badge badge-hard';   b.textContent = '强碱'; }
+    if (pH < 4.5)      { b.className = 'badge badge-hard';   b.textContent = 'Axit mạnh'; }
+    else if (pH < 6.5) { b.className = 'badge badge-medium'; b.textContent = 'Có tính axit'; }
+    else if (pH < 7.5) { b.className = 'badge badge-soft';   b.textContent = 'Trung tính'; }
+    else if (pH < 9.0) { b.className = 'badge badge-soft';   b.textContent = 'Hơi kiềm'; }
+    else if (pH <10.5) { b.className = 'badge badge-medium'; b.textContent = 'Có tính kiềm'; }
+    else               { b.className = 'badge badge-hard';   b.textContent = 'Kiềm mạnh'; }
   }
 
   // ======== 氮磷 ========
@@ -1389,7 +1389,7 @@
     }
     const v = parseFloat(val);
     if (!isFinite(v)) return;
-    if (rejectNegative('n', fromUnit, v, '浓度')) return;
+    if (rejectNegative('n', fromUnit, v, 'Nồng độ')) return;
     showWarn('n', '');
 
     let N_mgL;
@@ -1421,7 +1421,7 @@
     }
     const v = parseFloat(val);
     if (!isFinite(v)) return;
-    if (rejectNegative('p', fromUnit, v, '浓度')) return;
+    if (rejectNegative('p', fromUnit, v, 'Nồng độ')) return;
     showWarn('p', '');
 
     let P_mgL;
@@ -1451,7 +1451,7 @@
     }
     const v = parseFloat(val);
     if (!isFinite(v)) return;
-    if (rejectNegative('sal', fromUnit, v, '该参数')) return;
+    if (rejectNegative('sal', fromUnit, v, 'Thông số này')) return;
     showWarn('sal', '');
 
     // EC 行为水温 T 下的实测值；TDS / 盐度 / 电阻率均按折算到 25 ℃ 的 EC25 计算
@@ -1474,12 +1474,12 @@
 
     const tds = EC25 * K;
     const b = $('salinity_badge');
-    if (tds < 0.5)        { b.className='badge badge-info'; b.textContent='超纯水'; }
-    else if (tds < 30)    { b.className='badge badge-info'; b.textContent='纯净水/RO产水'; }
-    else if (tds < 1000)  { b.className='badge badge-soft'; b.textContent='淡水/自来水'; }
-    else if (tds < 3000)  { b.className='badge badge-medium'; b.textContent='微咸水'; }
-    else if (tds < 30000) { b.className='badge badge-hard'; b.textContent='咸水'; }
-    else                  { b.className='badge badge-hard'; b.textContent='海水/卤水'; }
+    if (tds < 0.5)        { b.className='badge badge-info'; b.textContent='Nước siêu tinh khiết'; }
+    else if (tds < 30)    { b.className='badge badge-info'; b.textContent='Nước tinh khiết/nước sản phẩm RO'; }
+    else if (tds < 1000)  { b.className='badge badge-soft'; b.textContent='Nước ngọt/nước máy'; }
+    else if (tds < 3000)  { b.className='badge badge-medium'; b.textContent='Nước lợ nhẹ'; }
+    else if (tds < 30000) { b.className='badge badge-hard'; b.textContent='Nước mặn'; }
+    else                  { b.className='badge badge-hard'; b.textContent='Nước biển/nước muối đậm đặc'; }
   }
 
   // ======== 通用离子 ========
@@ -1511,17 +1511,17 @@
     }
     const v = parseFloat(val);
     if (!isFinite(M) || M <= 0) {
-      showWarn('ion', '请输入大于 0 的摩尔质量', $('ion_M'));
+      showWarn('ion', 'Vui lòng nhập khối lượng mol lớn hơn 0', $('ion_M'));
       clearOthers('ion', fromUnit);
       return;
     }
     if (!isFinite(z) || z <= 0) {
-      showWarn('ion', '请输入大于 0 的价数', $('ion_v'));
+      showWarn('ion', 'Vui lòng nhập hóa trị lớn hơn 0', $('ion_v'));
       clearOthers('ion', fromUnit);
       return;
     }
     if (!isFinite(v)) return;
-    if (rejectNegative('ion', fromUnit, v, '浓度')) return;
+    if (rejectNegative('ion', fromUnit, v, 'Nồng độ')) return;
     showWarn('ion', '');
 
     let mgL;
@@ -1542,16 +1542,16 @@
   function copyResults() {
     const panel = $('panel-'+currentTab);
     const titles = {
-      hardness: '硬度换算', alkalinity: '碱度换算', ph: 'pH/H⁺换算',
-      nitrogen: '氮磷换算', salinity: '盐度/电导换算', ion: '通用离子换算'
+      hardness: 'Chuyển đổi độ cứng', alkalinity: 'Chuyển đổi độ kiềm', ph: 'Chuyển đổi pH/H⁺',
+      nitrogen: 'Chuyển đổi nitơ và phốt pho', salinity: 'Chuyển đổi độ mặn/độ dẫn điện', ion: 'Chuyển đổi ion thông dụng'
     };
-    let txt = '水质单位换算 - ' + titles[currentTab] + '\n————————————————\n';
+    let txt = 'Chuyển đổi đơn vị chất lượng nước - ' + titles[currentTab] + '\n————————————————\n';
     // 换算参数（氮/磷形态、TDS 系数、水温、离子及 M/价数）
     panel.querySelectorAll('.params-box .field').forEach(f => {
       const lab = f.querySelector('label').innerText.trim();
       const ctl = f.querySelector('select, input');
       const val = ctl.tagName === 'SELECT' ? ctl.options[ctl.selectedIndex].text : ctl.value;
-      txt += `[参数] ${lab}: ${val}\n`;
+      txt += `[Thông số] ${lab}: ${val}\n`;
     });
     panel.querySelectorAll('.conv-row').forEach(row => {
       const name = row.querySelector('.name').innerText.trim();
@@ -1559,7 +1559,7 @@
       const unit = row.querySelector('.unit').innerText.trim();
       txt += `${name}: ${val} ${unit}\n`;
     });
-    if (panel.querySelector('#ec25_show')) txt += `折算 EC₂₅: ${$('ec25_show').textContent}\n`;
+    if (panel.querySelector('#ec25_show')) txt += `EC₂₅ quy đổi: ${$('ec25_show').textContent}\n`;
     panel.querySelectorAll('.badge').forEach(b => {
       txt += `${b.parentElement.firstChild.textContent.trim()}${b.textContent}\n`;
     });
@@ -1567,7 +1567,7 @@
       if (w.textContent.trim()) txt += `⚠ ${w.textContent.trim()}\n`;
     });
     navigator.clipboard.writeText(txt).then(() => {
-      alert('已复制当前换算结果');
+      alert('Đã sao chép kết quả chuyển đổi hiện tại');
     }).catch(() => {
       const ta = document.createElement('textarea');
       ta.value = txt;
@@ -1575,7 +1575,7 @@
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      alert('已复制');
+      alert('Đã sao chép');
     });
   }
 

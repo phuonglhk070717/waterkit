@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>明渠水力计算器 | 水处理工具箱 · WaterKit</title>
+<title>Máy tính thủy lực kênh hở | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="明渠水力计算器：按 Manning 公式计算梯形、矩形、圆形断面的流量、正常水深或底坡，求临界水深、临界坡度与弗劳德数，给出水力最佳断面和圆管充满度校核。">
+<meta name="description" content="Máy tính thủy lực kênh hở: tính lưu lượng, độ sâu dòng đều hoặc độ dốc đáy cho mặt cắt hình thang, chữ nhật và tròn theo công thức Manning; xác định độ sâu tới hạn, độ dốc tới hạn, số Froude, mặt cắt thủy lực tối ưu và kiểm tra độ đầy của ống tròn.">
 <link rel="canonical" href="https://waterkit.cn/open-channel-calculator.html">
 <style>
   :root {
@@ -455,43 +455,43 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Dengdeng Technology</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-hydraulics">水力计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-hydraulics">Tính toán thủy lực</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Dengdeng Technology</a>
     </nav>
   </div>
 </header>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-hydraulics">水力计算</a>
+  <a href="index.html#cat-hydraulics">Tính toán thủy lực</a>
   <span class="sep">/</span>
-  <span class="current">明渠水力</span>
+  <span class="current">Thủy lực kênh hở</span>
 </div>
 
 <main class="main-wrap">
 
 <div class="container">
   <header class="tool-header">
-    <h1>🌊 明渠水力计算器</h1>
-    <p>Manning 公式 · 三种断面 · 临界水深 · 水力最佳断面 · 弗劳德数判流</p>
+    <h1>🌊 Máy tính thủy lực kênh hở</h1>
+    <p>Công thức Manning · Ba loại mặt cắt · Độ sâu tới hạn · Mặt cắt thủy lực tối ưu · Phân loại dòng chảy theo số Froude</p>
   </header>
 
   <div class="body">
 
     <!-- 断面类型 -->
-    <div class="section-title">① 断面形式</div>
+    <div class="section-title">① Hình dạng mặt cắt</div>
     <div class="section-tabs">
-      <button class="section-tab active" data-shape="trapezoidal" onclick="setShape('trapezoidal')">梯形断面</button>
-      <button class="section-tab" data-shape="rectangular" onclick="setShape('rectangular')">矩形断面</button>
-      <button class="section-tab" data-shape="circular" onclick="setShape('circular')">圆形断面</button>
+      <button class="section-tab active" data-shape="trapezoidal" onclick="setShape('trapezoidal')">Mặt cắt hình thang</button>
+      <button class="section-tab" data-shape="rectangular" onclick="setShape('rectangular')">Mặt cắt hình chữ nhật</button>
+      <button class="section-tab" data-shape="circular" onclick="setShape('circular')">Mặt cắt hình tròn</button>
     </div>
 
     <!-- 断面示意图 -->
@@ -502,217 +502,217 @@
     </div>
 
     <!-- 求解模式 -->
-    <div class="section-title">② 求解目标</div>
+    <div class="section-title">② Đại lượng cần tìm</div>
     <div class="mode-tabs" id="modeTabs">
-      <button class="mode-tab active" data-mode="Q" onclick="setMode('Q')">已知 h 求 Q</button>
-      <button class="mode-tab" data-mode="h" onclick="setMode('h')">已知 Q 求 h</button>
-      <button class="mode-tab" data-mode="i" onclick="setMode('i')">已知 Q、h 求 i</button>
+      <button class="mode-tab active" data-mode="Q" onclick="setMode('Q')">Biết h, tìm Q</button>
+      <button class="mode-tab" data-mode="h" onclick="setMode('h')">Biết Q, tìm h</button>
+      <button class="mode-tab" data-mode="i" onclick="setMode('i')">Biết Q, h, tìm i</button>
     </div>
 
     <!-- 断面参数 -->
-    <div class="section-title">③ 断面与水力参数</div>
+    <div class="section-title">③ Thông số mặt cắt và thủy lực</div>
     <div class="grid" id="paramsGrid">
       <!-- 梯形/矩形参数 -->
       <div class="field shape-rect shape-trap">
-        <label for="b">底宽 b <span class="unit">m</span></label>
+        <label for="b">Chiều rộng đáy b <span class="unit">m</span></label>
         <input type="number" id="b" value="2.0" step="0.1">
       </div>
       <div class="field shape-trap">
-        <label for="m">边坡系数 m <span class="unit">横:竖</span></label>
+        <label for="m">Hệ số mái dốc m <span class="unit">ngang:đứng</span></label>
         <input type="number" id="m" value="1.5" step="0.1">
       </div>
 
       <!-- 圆形参数 -->
       <div class="field shape-circ" style="display:none;">
-        <label for="D">管径 D <span class="unit">m</span></label>
+        <label for="D">Đường kính ống D <span class="unit">m</span></label>
         <input type="number" id="D" value="1.0" step="0.1">
       </div>
 
       <!-- 共用 -->
       <div class="field" id="f_h">
-        <label for="h">水深 h <span class="unit">m</span></label>
+        <label for="h">Độ sâu nước h <span class="unit">m</span></label>
         <input type="number" id="h" value="1.0" step="0.05">
       </div>
       <div class="field" id="f_Q">
-        <label for="Q">流量 Q <span class="unit">m³/s</span></label>
+        <label for="Q">Lưu lượng Q <span class="unit">m³/s</span></label>
         <input type="number" id="Q" value="2.5" step="0.1">
       </div>
       <div class="field" id="f_i">
-        <label for="i">底坡 i <span class="unit">— (如 0.001)</span></label>
+        <label for="i">Độ dốc đáy i <span class="unit">— (ví dụ 0.001)</span></label>
         <input type="number" id="i" value="0.001" step="0.0001">
       </div>
 
       <div class="field">
-        <label for="n_preset">曼宁粗糙系数 n</label>
+        <label for="n_preset">Hệ số nhám Manning n</label>
         <select id="n_preset" onchange="updateN()">
-          <option value="0.011">光滑水泥抹面 (n=0.011)</option>
-          <option value="0.013" selected>混凝土 (n=0.013)</option>
-          <option value="0.014">粗糙混凝土/砖砌 (n=0.014)</option>
-          <option value="0.017">浆砌毛石 (n=0.017)</option>
-          <option value="0.020">干砌块石 (n=0.020)</option>
-          <option value="0.025">土渠(顺直) (n=0.025)</option>
-          <option value="0.030">土渠(杂草) (n=0.030)</option>
-          <option value="0.035">天然河道 (n=0.035)</option>
-          <option value="0.009">PVC/PE塑料管 (n=0.009)</option>
-          <option value="custom">自定义</option>
+          <option value="0.011">Bề mặt trát xi măng nhẵn (n=0.011)</option>
+          <option value="0.013" selected>Bê tông (n=0.013)</option>
+          <option value="0.014">Bê tông nhám/xây gạch (n=0.014)</option>
+          <option value="0.017">Đá hộc xây vữa (n=0.017)</option>
+          <option value="0.020">Đá khối xếp khan (n=0.020)</option>
+          <option value="0.025">Kênh đất (thẳng) (n=0.025)</option>
+          <option value="0.030">Kênh đất (có cỏ) (n=0.030)</option>
+          <option value="0.035">Sông tự nhiên (n=0.035)</option>
+          <option value="0.009">Ống nhựa PVC/PE (n=0.009)</option>
+          <option value="custom">Tùy chỉnh</option>
         </select>
       </div>
       <div class="field">
-        <label for="n">n 值 <span class="unit">曼宁</span></label>
+        <label for="n">Giá trị n <span class="unit">Manning</span></label>
         <input type="number" id="n" value="0.013" step="0.001">
       </div>
     </div>
 
     <!-- 结果 -->
     <div class="results">
-      <h2>计算结果</h2>
+      <h2>Kết quả tính toán</h2>
 
       <div class="result-group">
-        <div class="result-group-title">正常流水力要素（均匀流）</div>
+        <div class="result-group-title">Các yếu tố thủy lực của dòng chảy đều</div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>流量 Q</b></span>
+          <span class="result-label"><b>Lưu lượng Q</b></span>
           <span><span class="result-value big" id="r_Q">—</span><span class="result-unit">m³/s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">流速 v</span>
+          <span class="result-label">Vận tốc v</span>
           <span><span class="result-value" id="r_v">—</span><span class="result-unit">m/s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">水深 h（正常水深 h₀）</span>
+          <span class="result-label">Độ sâu nước h (độ sâu dòng đều h₀)</span>
           <span><span class="result-value" id="r_h">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">过水断面面积 A</span>
+          <span class="result-label">Diện tích mặt cắt ướt A</span>
           <span><span class="result-value" id="r_A">—</span><span class="result-unit">m²</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">湿周 χ</span>
+          <span class="result-label">Chu vi ướt χ</span>
           <span><span class="result-value" id="r_P">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">水力半径 R</span>
+          <span class="result-label">Bán kính thủy lực R</span>
           <span><span class="result-value" id="r_R">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">水面宽 B</span>
+          <span class="result-label">Chiều rộng mặt nước B</span>
           <span><span class="result-value" id="r_B">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">谢才系数 C</span>
+          <span class="result-label">Hệ số Chézy C</span>
           <span><span class="result-value" id="r_C">—</span><span class="result-unit">m^0.5/s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">底坡 i</span>
+          <span class="result-label">Độ dốc đáy i</span>
           <span><span class="result-value" id="r_i">—</span><span class="result-unit">—</span></span>
         </div>
       </div>
 
       <div class="result-group">
-        <div class="result-group-title">流态判定</div>
+        <div class="result-group-title">Phân loại dòng chảy</div>
         <div class="result-row">
-          <span class="result-label">临界水深 h_c</span>
+          <span class="result-label">Độ sâu tới hạn h_c</span>
           <span><span class="result-value" id="r_hc">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">临界坡度 i_c</span>
+          <span class="result-label">Độ dốc tới hạn i_c</span>
           <span><span class="result-value" id="r_ic">—</span><span class="result-unit">—</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">弗劳德数 Fr</span>
+          <span class="result-label">Số Froude Fr</span>
           <span><span class="result-value" id="r_Fr">—</span><span class="result-unit" id="r_Fr_state">—</span></span>
         </div>
-        <div class="check-box" id="flowCheck">判定中...</div>
+        <div class="check-box" id="flowCheck">Đang phân loại...</div>
       </div>
 
       <div class="result-group">
-        <div class="result-group-title">水力最佳断面（按当前流量校核）</div>
+        <div class="result-group-title">Mặt cắt thủy lực tối ưu (kiểm tra theo lưu lượng hiện tại)</div>
         <div class="result-row">
-          <span class="result-label">最佳断面水深</span>
+          <span class="result-label">Độ sâu mặt cắt tối ưu</span>
           <span><span class="result-value" id="r_h_best">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">最佳断面底宽/直径</span>
+          <span class="result-label">Chiều rộng đáy/đường kính mặt cắt tối ưu</span>
           <span><span class="result-value" id="r_b_best">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label" id="r_beta_l">宽深比 β</span>
+          <span class="result-label" id="r_beta_l">Tỷ số rộng/sâu β</span>
           <span><span class="result-value" id="r_beta">—</span><span class="result-unit">—</span></span>
         </div>
-        <div class="check-box check-info" id="bestHint">最佳断面提示</div>
+        <div class="check-box check-info" id="bestHint">Gợi ý mặt cắt tối ưu</div>
       </div>
     </div>
 
     <div class="buttons">
-      <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
-      <button class="btn btn-secondary" onclick="toggleFormula()">📖 查看公式</button>
+      <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
+      <button class="btn btn-secondary" onclick="toggleFormula()">📖 Xem công thức</button>
     </div>
 
     <div class="formula-box" id="formulaBox" style="display:none;">
-      <h3>① Manning 公式（谢才-曼宁,均匀流）</h3>
+      <h3>① Công thức Manning (Chézy-Manning, dòng đều)</h3>
       <code>Q = A · v = (1/n) · A · R^(2/3) · i^(1/2)</code>
       <code>v = (1/n) · R^(2/3) · i^(1/2) = C · √(R · i)</code>
-      <p>C = R^(1/6)/n 为谢才系数,n 为曼宁粗糙系数。</p>
+      <p>C = R^(1/6)/n là hệ số Chézy, n là hệ số nhám Manning.</p>
 
-      <h3>② 各断面水力要素</h3>
+      <h3>② Các yếu tố thủy lực của từng mặt cắt</h3>
 
-      <p><strong>梯形断面</strong>（底宽 b,边坡 m = 水平:竖直,水深 h）：</p>
+      <p><strong>Mặt cắt hình thang</strong> (chiều rộng đáy b, mái dốc m = ngang:đứng, độ sâu nước h):</p>
       <code>A = (b + m·h) · h</code>
       <code>χ = b + 2h·√(1+m²)</code>
       <code>R = A / χ</code>
-      <code>B = b + 2m·h（水面宽）</code>
+      <code>B = b + 2m·h (chiều rộng mặt nước)</code>
 
-      <p><strong>矩形断面</strong>（相当于 m=0 的梯形）：</p>
+      <p><strong>Mặt cắt hình chữ nhật</strong> (tương đương hình thang có m=0):</p>
       <code>A = b · h,  χ = b + 2h,  R = bh / (b+2h),  B = b</code>
 
-      <p><strong>圆形断面</strong>（管径 D,水深 h）：</p>
-      <code>θ = 2 · arccos(1 − 2h/D)  [弧度]</code>
+      <p><strong>Mặt cắt hình tròn</strong> (đường kính ống D, độ sâu nước h):</p>
+      <code>θ = 2 · arccos(1 − 2h/D)  [radian]</code>
       <code>A = D²/8 · (θ − sin θ)</code>
       <code>χ = D · θ / 2</code>
       <code>R = A / χ</code>
-      <code>B = D · sin(θ/2)（水面宽）</code>
+      <code>B = D · sin(θ/2) (chiều rộng mặt nước)</code>
 
-      <h3>③ 临界水深与临界坡度</h3>
-      <code>α · Q² · B / (g · A³) = 1  →  求 h_c</code>
-      <p>α 动能修正系数取 1.0,g = 9.81 m/s²。本工具采用二分法迭代求解。</p>
-      <code>i_c = n² · Q² / (A² · R^(4/3))  代入 h = h_c</code>
+      <h3>③ Độ sâu tới hạn và độ dốc tới hạn</h3>
+      <code>α · Q² · B / (g · A³) = 1  →  tìm h_c</code>
+      <p>Hệ số hiệu chỉnh động năng α lấy bằng 1.0, g = 9.81 m/s². Công cụ dùng phương pháp chia đôi để giải lặp.</p>
+      <code>i_c = n² · Q² / (A² · R^(4/3))  thay h = h_c</code>
 
-      <h3>④ 弗劳德数与流态</h3>
+      <h3>④ Số Froude và chế độ dòng chảy</h3>
       <code>Fr = v / √(g · A / B) = v / √(g · h_m)</code>
-      <p>h_m = A/B 为平均水深。Fr &lt; 1 缓流(h &gt; h_c),Fr = 1 临界流,Fr &gt; 1 急流(h &lt; h_c)。</p>
+      <p>h_m = A/B là độ sâu thủy lực trung bình. Fr &lt; 1 là dòng chảy êm (h &gt; h_c), Fr = 1 là dòng chảy tới hạn, Fr &gt; 1 là dòng chảy xiết (h &lt; h_c).</p>
 
-      <h3>⑤ 水力最佳断面</h3>
-      <p><strong>矩形</strong>：h = b/2（宽深比 β = b/h = 2）</p>
-      <p><strong>梯形</strong>：β = b/h = 2·(√(1+m²) − m)</p>
-      <p>例如 m=1.5 时,最佳 β ≈ 0.606,即 b/h ≈ 0.606。</p>
-      <p><strong>圆形</strong>：充满度 h/D = 0.938 时流量最大（0.813 时流速最大）,为非满流效应;超过 0.938 后流量反而减小,满流退化为压力流。圆形断面时该栏显示充满度 h/D。</p>
-      <p><strong>圆管设计充满度校核</strong>（GB 50014,污水管,仅作提示）：DN200–300 ≤ 0.55;DN350–450 ≤ 0.65;DN500–900 ≤ 0.70;≥ DN1000 ≤ 0.75。</p>
-      <p>梯形/矩形求正常水深与临界水深的二分搜索上界为 20 m,超出时页面给出提示;圆管临界水深上界为 0.999D,截断时同样提示。</p>
+      <h3>⑤ Mặt cắt thủy lực tối ưu</h3>
+      <p><strong>Hình chữ nhật</strong>: h = b/2 (tỷ số rộng/sâu β = b/h = 2)</p>
+      <p><strong>Hình thang</strong>: β = b/h = 2·(√(1+m²) − m)</p>
+      <p>Ví dụ khi m=1.5, β tối ưu ≈ 0.606, tức b/h ≈ 0.606.</p>
+      <p><strong>Hình tròn</strong>: lưu lượng lớn nhất khi độ đầy h/D = 0.938 (vận tốc lớn nhất khi bằng 0.813), do hiệu ứng chảy không đầy; trên 0.938, lưu lượng giảm và dòng chảy đầy trở thành dòng có áp. Với mặt cắt tròn, mục này hiển thị độ đầy h/D.</p>
+      <p><strong>Kiểm tra độ đầy thiết kế của ống tròn</strong> (GB 50014, ống thoát nước thải, chỉ để tham khảo): DN200–300 ≤ 0.55; DN350–450 ≤ 0.65; DN500–900 ≤ 0.70; ≥ DN1000 ≤ 0.75.</p>
+      <p>Giới hạn trên của phép tìm kiếm chia đôi cho độ sâu dòng đều và độ sâu tới hạn của mặt cắt hình thang/chữ nhật là 20 m; trang sẽ cảnh báo khi vượt giới hạn. Với ống tròn, giới hạn trên của độ sâu tới hạn là 0.999D và cũng có cảnh báo khi kết quả bị giới hạn.</p>
 
-      <h3>⑥ 常用曼宁 n 值（GB 50014 / 水力学手册）</h3>
+      <h3>⑥ Giá trị n Manning thường dùng (GB 50014 / sổ tay thủy lực)</h3>
       <table>
-        <tr><th>渠道/管道类型</th><th>n 值</th></tr>
-        <tr><td>光滑水泥抹面</td><td>0.010-0.012</td></tr>
-        <tr><td>混凝土 / 钢模浇筑</td><td>0.013-0.014</td></tr>
-        <tr><td>浆砌块石（条石）</td><td>0.015-0.017</td></tr>
-        <tr><td>浆砌毛石</td><td>0.017-0.025</td></tr>
-        <tr><td>干砌块石</td><td>0.020-0.030</td></tr>
-        <tr><td>土渠(顺直,整齐)</td><td>0.020-0.025</td></tr>
-        <tr><td>土渠(一般,有杂草)</td><td>0.025-0.030</td></tr>
-        <tr><td>土渠(杂草、弯曲)</td><td>0.030-0.040</td></tr>
-        <tr><td>天然河道(顺直、杂草少)</td><td>0.030-0.040</td></tr>
-        <tr><td>天然河道(弯曲、石滩)</td><td>0.040-0.060</td></tr>
-        <tr><td>PVC / PE 塑料管</td><td>0.009-0.011</td></tr>
+        <tr><th>Loại kênh/đường ống</th><th>Giá trị n</th></tr>
+        <tr><td>Bề mặt trát xi măng nhẵn</td><td>0.010-0.012</td></tr>
+        <tr><td>Bê tông / đổ bằng ván khuôn thép</td><td>0.013-0.014</td></tr>
+        <tr><td>Đá khối xây vữa (đá đẽo)</td><td>0.015-0.017</td></tr>
+        <tr><td>Đá hộc xây vữa</td><td>0.017-0.025</td></tr>
+        <tr><td>Đá khối xếp khan</td><td>0.020-0.030</td></tr>
+        <tr><td>Kênh đất (thẳng, đều)</td><td>0.020-0.025</td></tr>
+        <tr><td>Kênh đất (thông thường, có cỏ)</td><td>0.025-0.030</td></tr>
+        <tr><td>Kênh đất (có cỏ, uốn khúc)</td><td>0.030-0.040</td></tr>
+        <tr><td>Sông tự nhiên (thẳng, ít cỏ)</td><td>0.030-0.040</td></tr>
+        <tr><td>Sông tự nhiên (uốn khúc, có bãi đá)</td><td>0.040-0.060</td></tr>
+        <tr><td>Ống nhựa PVC / PE</td><td>0.009-0.011</td></tr>
       </table>
     </div>
 
     <div class="note">
-      ⚠️ 本工具按均匀流(正常流)计算,即水深沿程不变,流量、流速、水深与底坡满足 Manning 公式。非均匀流(水面曲线)、变底坡、渐变流等须单独分析。圆形断面适用于无压排水管渠,满流时退化为压力流,应用管道水力工具。
+      ⚠️ Công cụ tính theo dòng chảy đều, nghĩa là độ sâu nước không đổi dọc dòng chảy và lưu lượng, vận tốc, độ sâu nước và độ dốc đáy thỏa mãn công thức Manning. Dòng không đều (đường mặt nước), độ dốc đáy thay đổi, dòng biến đổi dần... phải được phân tích riêng. Mặt cắt tròn áp dụng cho ống và kênh thoát nước không áp; khi chảy đầy, dòng trở thành có áp và cần dùng công cụ tính thủy lực đường ống.
     </div>
 
   </div>
 
-  <footer class="tool-inner-footer">水处理工具箱 · 仅供工程估算参考</footer>
+  <footer class="tool-inner-footer">Bộ công cụ xử lý nước · Chỉ dùng tham khảo để ước tính kỹ thuật</footer>
 </div>
 </main>
 
@@ -724,65 +724,65 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Dengdeng Technology</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là tập hợp các công cụ tính toán xử lý nước trực tuyến của Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam, do các kỹ sư có kinh nghiệm trong lĩnh vực xử lý nước phát triển và duy trì. Miễn phí và được cập nhật liên tục.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thủy lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thủy lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thủy lực đường ống (bản nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thủy lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính dòng chảy qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lượng khí sục</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn phát sinh</a></li>
+          <li><a href="dosing-calculator.html">Lượng hóa chất cần định lượng</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">Thiết kế kỹ thuật MBBR</a></li>
+          <li><a href="ifas-design.html">Thiết kế kỹ thuật IFAS</a></li>
+          <li><a href="mbr-design.html">Thiết kế kỹ thuật MBR</a></li>
+          <li><a href="ro-design.html">Thiết kế thẩm thấu ngược (RO)</a></li>
+          <li><a href="pump-selection-calculator.html">Lựa chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Lựa chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Chuyển đổi đơn vị chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thủy sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải sau nuôi ao</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Hướng dẫn tham quan triển lãm Aqua Nor 2027</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Công ty</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang chủ Dengdeng Technology ↗</a></li>
+          <li>Tư vấn Công nghệ Dengdeng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Open Source</h4>
+        <h4>Mã nguồn mở</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho mã GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">Giấy phép AGPL-3.0</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Gửi phản hồi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
@@ -919,7 +919,7 @@
     return Math.pow(Q_target * n / denom, 2);
   }
 
-  // 临界水深:α Q² B / (g A³) = 1
+  // Độ sâu tới hạn:α Q² B / (g A³) = 1
   function criticalDepth(Q_val) {
     let lo = 0.001, hi = (shape === 'circular') ? num('D') * 0.999 : H_UPPER;
     {   // 梯形/矩形上界 20 m;圆管上界 0.999D(接近满管时水面宽趋于 0,临界水深解截断于此)
@@ -970,7 +970,7 @@
         <polyline points="${cx-bs/2-ms-15},${cy-hs-10} ${cx-bs/2-ms},${cy-hs} ${cx-bs/2},${cy} ${cx+bs/2},${cy} ${cx+bs/2+ms},${cy-hs} ${cx+bs/2+ms+15},${cy-hs-10}" fill="none" stroke="${lineColor}" stroke-width="2"/>
         <polygon points="${cx-bs/2-ms},${cy-hs} ${cx-bs/2},${cy} ${cx+bs/2},${cy} ${cx+bs/2+ms},${cy-hs}" fill="url(#waterWaves)" stroke="${lineColor}" stroke-width="0.5"/>
         <line x1="${cx-bs/2-ms}" y1="${cy-hs}" x2="${cx+bs/2+ms}" y2="${cy-hs}" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,2"/>
-        <text x="${cx-bs/2-ms-30}" y="${cy-hs-5}" font-size="11" fill="#0e7490">水面</text>
+        <text x="${cx-bs/2-ms-30}" y="${cy-hs-5}" font-size="11" fill="#0e7490">Mặt nước</text>
 
         <text x="${cx}" y="${cy+18}" font-size="11" fill="#333" text-anchor="middle">b</text>
         <line x1="${cx-bs/2}" y1="${cy+7}" x2="${cx+bs/2}" y2="${cy+7}" stroke="#333" stroke-width="0.8" marker-start="url(#arrL)" marker-end="url(#arrR)"/>
@@ -1048,7 +1048,7 @@
 
     // ============ 输入校验 ============
     document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
-    const names = {n: '曼宁系数 n', b: '底宽 b', D: '管径 D', h: '水深 h', Q: '流量 Q', i: '底坡 i'};
+    const names = {n: 'Hệ số Manning n', b: 'Chiều rộng đáy b', D: 'Đường kính ống D', h: 'Độ sâu nước h', Q: 'Lưu lượng Q', i: 'Độ dốc đáy i'};
     const need = ['n'];
     if (shape === 'circular') need.push('D'); else need.push('b');
     if (mode === 'Q') need.push('h', 'i');
@@ -1056,15 +1056,15 @@
     else need.push('Q', 'h');
     const bad = need.filter(id => !(num(id) > 0));
     if (bad.length) {
-      showInvalid(bad, `请输入大于 0 的${bad.map(id => names[id]).join('、')}`);
+      showInvalid(bad, `Vui lòng nhập giá trị lớn hơn 0 cho ${bad.map(id => names[id]).join(', ')}`);
       return;
     }
     if (shape === 'trapezoidal' && num('m') < 0) {
-      showInvalid(['m'], '边坡系数 m 不能为负');
+      showInvalid(['m'], 'Hệ số mái dốc m không được âm');
       return;
     }
     if (shape === 'circular' && mode !== 'h' && num('h') > num('D')) {
-      showInvalid(['h'], `水深 h (${num('h')} m) 大于管径 D (${num('D')} m):已为满管压力流,Manning 无压流公式不适用,请改用管道水力计算器`);
+      showInvalid(['h'], `Độ sâu nước h (${num('h')} m) lớn hơn đường kính ống D (${num('D')} m): đây là dòng chảy đầy có áp, công thức Manning cho dòng không áp không áp dụng được; hãy dùng máy tính thủy lực đường ống`);
       drawSection();
       return;
     }
@@ -1116,37 +1116,37 @@
     const st = $('r_Fr_state');
     const cb = $('flowCheck');
     if (hOverBound) {
-      st.textContent = Fr < 0.95 ? '缓流' : (Fr > 1.05 ? '急流' : '临界流');
+      st.textContent = Fr < 0.95 ? 'Dòng chảy êm' : (Fr > 1.05 ? 'Dòng chảy xiết' : 'Dòng chảy tới hạn');
       cb.className = 'check-box check-bad';
-      cb.innerHTML = `✗ <b>超出计算范围</b> · 目标 Q = ${fmtQ(Q_val)} m³/s 超过水深 ${H_UPPER} m 时的过流能力（求解上界）,结果按 h = ${H_UPPER} m 给出,不可用。请检查流量、底宽或底坡。`;
+      cb.innerHTML = `✗ <b>Vượt phạm vi tính toán</b> · Q yêu cầu = ${fmtQ(Q_val)} m³/s vượt khả năng dẫn nước ở độ sâu ${H_UPPER} m (giới hạn trên của phép giải). Kết quả được đưa ra với h = ${H_UPPER} m và không sử dụng được. Hãy kiểm tra lưu lượng, chiều rộng đáy hoặc độ dốc đáy.`;
     } else if (circOverCapacity !== null) {
-      st.textContent = Fr < 0.95 ? '缓流' : (Fr > 1.05 ? '急流' : '临界流');
+      st.textContent = Fr < 0.95 ? 'Dòng chảy êm' : (Fr > 1.05 ? 'Dòng chảy xiết' : 'Dòng chảy tới hạn');
       cb.className = 'check-box check-bad';
-      cb.innerHTML = `✗ <b>超过无压过流能力</b> · 目标 Q = ${fmtQ(Q_val)} m³/s &gt; Q_max = ${fmtQ(circOverCapacity)} m³/s（h/D = 0.938 时）,需加大管径或坡度。结果按 h = 0.938D 给出。`;
+      cb.innerHTML = `✗ <b>Vượt khả năng dẫn nước không áp</b> · Q yêu cầu = ${fmtQ(Q_val)} m³/s &gt; Q_max = ${fmtQ(circOverCapacity)} m³/s (khi h/D = 0.938); cần tăng đường kính ống hoặc độ dốc. Kết quả được đưa ra với h = 0.938D.`;
     } else if (Fr < 0.95) {
-      st.textContent = '缓流';
+      st.textContent = 'Dòng chảy êm';
       cb.className = 'check-box check-ok';
-      cb.innerHTML = `✓ <b>缓流 (Subcritical)</b> · Fr = ${Fr.toFixed(3)} &lt; 1, h (${h_val.toFixed(2)} m) &gt; h_c (${hc.toFixed(2)} m),扰动可向上游传播,常见于平原渠道、水处理主流渠。`;
+      cb.innerHTML = `✓ <b>Dòng chảy êm (Subcritical)</b> · Fr = ${Fr.toFixed(3)} &lt; 1, h (${h_val.toFixed(2)} m) &gt; h_c (${hc.toFixed(2)} m), nhiễu động có thể truyền lên thượng lưu; thường gặp ở kênh đồng bằng và kênh dòng chính trong xử lý nước.`;
     } else if (Fr > 1.05) {
-      st.textContent = '急流';
+      st.textContent = 'Dòng chảy xiết';
       cb.className = 'check-box check-warn';
-      cb.innerHTML = `⚠ <b>急流 (Supercritical)</b> · Fr = ${Fr.toFixed(3)} &gt; 1, h (${h_val.toFixed(2)} m) &lt; h_c (${hc.toFixed(2)} m),扰动不能向上游传播,注意陡坡、溢流下游、消能设计。`;
+      cb.innerHTML = `⚠ <b>Dòng chảy xiết (Supercritical)</b> · Fr = ${Fr.toFixed(3)} &gt; 1, h (${h_val.toFixed(2)} m) &lt; h_c (${hc.toFixed(2)} m), nhiễu động không thể truyền lên thượng lưu; cần lưu ý độ dốc lớn, hạ lưu công trình tràn và thiết kế tiêu năng.`;
     } else {
-      st.textContent = '临界流';
+      st.textContent = 'Dòng chảy tới hạn';
       cb.className = 'check-box check-info';
-      cb.innerHTML = `ℹ <b>临界流 (Critical)</b> · Fr ≈ 1,流态不稳,工程上应避免此状态作为正常运行工况。`;
+      cb.innerHTML = `ℹ <b>Dòng chảy tới hạn (Critical)</b> · Fr ≈ 1, chế độ dòng chảy không ổn định; cần tránh dùng trạng thái này làm điều kiện vận hành bình thường trong thiết kế.`;
     }
 
     if (shape === 'circular' && circOverCapacity === null && !(gm.B > 1e-9)) {
       st.textContent = '—';
       cb.className = 'check-box check-info';
-      cb.innerHTML = `ℹ <b>满管</b> · h = D,水面宽 B = 0,弗劳德数与流态判定不适用;满管时按压力流考虑,建议改用管道水力计算器。`;
+      cb.innerHTML = `ℹ <b>Ống chảy đầy</b> · h = D, chiều rộng mặt nước B = 0; số Froude và phân loại dòng chảy không áp dụng. Khi ống chảy đầy, coi là dòng có áp và nên dùng máy tính thủy lực đường ống.`;
     }
     if (hcOverBound) {
       if (cb.className.indexOf('check-ok') >= 0) cb.className = 'check-box check-warn';
       cb.innerHTML += shape === 'circular'
-        ? `<br>⚠ 临界水深已接近满管(h_c 截断于 0.999D = ${(num('D') * 0.999).toFixed(3)} m),h_c、i_c 及流态判定不可靠,建议加大管径。`
-        : `<br>⚠ 临界水深超过求解上界 ${H_UPPER} m,h_c、i_c 及流态判定不可靠。`;
+        ? `<br>⚠ Độ sâu tới hạn đã gần đầy ống (h_c bị giới hạn tại 0.999D = ${(num('D') * 0.999).toFixed(3)} m); h_c, i_c và kết quả phân loại dòng chảy không đáng tin cậy, nên tăng đường kính ống.`
+        : `<br>⚠ Độ sâu tới hạn vượt giới hạn trên ${H_UPPER} m; h_c, i_c và kết quả phân loại dòng chảy không đáng tin cậy.`;
     }
 
     // ============ 水力最佳断面 ============
@@ -1158,7 +1158,7 @@
         h_best = Math.pow(Q_val * n / (2 * Math.pow(0.5, 2/3) * Math.sqrt(i_val)), 3/8);
         b_best = 2 * h_best;
         beta = 2;
-        hint = `矩形最佳断面: b/h = 2,当 Q=${Q_val.toFixed(2)} m³/s, i=${i_val.toFixed(4)} 时,最佳尺寸约 b=${b_best.toFixed(2)} m, h=${h_best.toFixed(2)} m。当前 b=${num('b').toFixed(2)} m。`;
+        hint = `Mặt cắt chữ nhật tối ưu: b/h = 2; với Q=${Q_val.toFixed(2)} m³/s, i=${i_val.toFixed(4)}, kích thước tối ưu xấp xỉ b=${b_best.toFixed(2)} m, h=${h_best.toFixed(2)} m. Hiện tại b=${num('b').toFixed(2)} m.`;
       }
     } else if (shape === 'trapezoidal') {
       const m = num('m');
@@ -1170,7 +1170,7 @@
         if (coeff > 0) {
           h_best = Math.pow(Q_val / coeff, 3/8);
           b_best = beta * h_best;
-          hint = `梯形最佳断面 (m=${m.toFixed(1)}): b/h = ${beta.toFixed(3)},最佳尺寸约 b=${b_best.toFixed(2)} m, h=${h_best.toFixed(2)} m。当前 b=${num('b').toFixed(2)} m, h=${h_val.toFixed(2)} m。`;
+          hint = `Mặt cắt hình thang tối ưu (m=${m.toFixed(1)}): b/h = ${beta.toFixed(3)}, kích thước tối ưu xấp xỉ b=${b_best.toFixed(2)} m, h=${h_best.toFixed(2)} m. Hiện tại b=${num('b').toFixed(2)} m, h=${h_val.toFixed(2)} m.`;
         }
       }
     } else { // circular
@@ -1178,18 +1178,18 @@
       h_best = 0.938 * D;   // 最大流量对应充满度
       b_best = D;
       beta = h_best / D;
-      hint = `圆形断面充满度 h/D = 0.938 时流量最大（0.813 时流速最大）,即 h=${h_best.toFixed(2)} m (D=${D.toFixed(2)} m)。当前充满度 h/D = ${(h_val/D).toFixed(3)}。满流后退化为压力流。`;
+      hint = `Mặt cắt tròn có lưu lượng lớn nhất khi độ đầy h/D = 0.938 (vận tốc lớn nhất khi bằng 0.813), tức h=${h_best.toFixed(2)} m (D=${D.toFixed(2)} m). Độ đầy hiện tại h/D = ${(h_val/D).toFixed(3)}. Khi chảy đầy, dòng trở thành có áp.`;
       // GB 50014 设计充满度校核(仅提示)
       const mf = maxFullness(D * 1000), fr = h_val / D;
       if (mf) {
         if (fr > mf.lim + 1e-9) {
           hintCls = 'check-warn';
-          hint += `<br>⚠ 设计充满度校核：GB 50014 污水管 ${mf.rng} 最大设计充满度 ${mf.lim},当前 ${fr.toFixed(3)} 超限（仅提示,不影响计算结果）。`;
+          hint += `<br>⚠ Kiểm tra độ đầy thiết kế: ống thoát nước thải ${mf.rng} theo GB 50014 có độ đầy thiết kế tối đa ${mf.lim}; giá trị hiện tại ${fr.toFixed(3)} vượt giới hạn (chỉ cảnh báo, không ảnh hưởng kết quả tính toán).`;
         } else {
-          hint += `<br>✓ 设计充满度校核：GB 50014 污水管 ${mf.rng} 最大设计充满度 ${mf.lim},当前 ${fr.toFixed(3)} 满足。`;
+          hint += `<br>✓ Kiểm tra độ đầy thiết kế: ống thoát nước thải ${mf.rng} theo GB 50014 có độ đầy thiết kế tối đa ${mf.lim}; giá trị hiện tại ${fr.toFixed(3)} đạt yêu cầu.`;
         }
       } else {
-        hint += `<br>管径小于 DN200,不在 GB 50014 设计充满度表内。`;
+        hint += `<br>Đường kính ống nhỏ hơn DN200, không thuộc bảng độ đầy thiết kế của GB 50014.`;
       }
     }
     $('r_h_best').textContent = h_best > 0 ? h_best.toFixed(3) : '—';
@@ -1197,44 +1197,44 @@
     $('r_beta').textContent = beta > 0 ? beta.toFixed(3) : '—';
     $('bestHint').className = 'check-box ' + hintCls;
     $('bestHint').innerHTML = hint;
-    $('r_beta_l').textContent = shape === 'circular' ? '充满度 h/D' : '宽深比 β';
+    $('r_beta_l').textContent = shape === 'circular' ? 'Độ đầy h/D' : 'Tỷ số rộng/sâu β';
 
     // 重绘断面(圆形水深变化时)
     if (shape === 'circular') drawSection();
   }
 
   function copyResults() {
-    const shapes = {trapezoidal:'梯形', rectangular:'矩形', circular:'圆形'};
-    const txt = `明渠水力计算结果（${shapes[shape]}断面）
+    const shapes = {trapezoidal:'hình thang', rectangular:'hình chữ nhật', circular:'hình tròn'};
+    const txt = `Kết quả tính toán thủy lực kênh hở (mặt cắt ${shapes[shape]})
 ————————————————
-流量 Q = ${$('r_Q').textContent} m³/s
-流速 v = ${$('r_v').textContent} m/s
-水深 h = ${$('r_h').textContent} m
-底坡 i = ${$('r_i').textContent}
-曼宁 n = ${num('n')}
+Lưu lượng Q = ${$('r_Q').textContent} m³/s
+Vận tốc v = ${$('r_v').textContent} m/s
+Độ sâu nước h = ${$('r_h').textContent} m
+Độ dốc đáy i = ${$('r_i').textContent}
+Manning n = ${num('n')}
 
-【水力要素】
-过水面积 A = ${$('r_A').textContent} m²
-湿周 χ = ${$('r_P').textContent} m
-水力半径 R = ${$('r_R').textContent} m
-水面宽 B = ${$('r_B').textContent} m
-谢才系数 C = ${$('r_C').textContent}
+【Các yếu tố thủy lực】
+Diện tích mặt cắt ướt A = ${$('r_A').textContent} m²
+Chu vi ướt χ = ${$('r_P').textContent} m
+Bán kính thủy lực R = ${$('r_R').textContent} m
+Chiều rộng mặt nước B = ${$('r_B').textContent} m
+Hệ số Chézy C = ${$('r_C').textContent}
 
-【流态】
+【Chế độ dòng chảy】
 Fr = ${$('r_Fr').textContent} (${$('r_Fr_state').textContent})
-临界水深 h_c = ${$('r_hc').textContent} m
-临界坡度 i_c = ${$('r_ic').textContent}
+Độ sâu tới hạn h_c = ${$('r_hc').textContent} m
+Độ dốc tới hạn i_c = ${$('r_ic').textContent}
 
-【最佳断面参考】
-推荐 h = ${$('r_h_best').textContent} m
-推荐 b = ${$('r_b_best').textContent} m
+【Tham khảo mặt cắt tối ưu】
+h khuyến nghị = ${$('r_h_best').textContent} m
+b khuyến nghị = ${$('r_b_best').textContent} m
 ${$('r_beta_l').textContent} = ${$('r_beta').textContent}
 
-【校核】
+【Kiểm tra】
 ${$('flowCheck').innerText}
 ${$('bestHint').innerText}`;
     navigator.clipboard.writeText(txt).then(() => {
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     }).catch(() => {
       const ta = document.createElement('textarea');
       ta.value = txt;
@@ -1242,7 +1242,7 @@ ${$('bestHint').innerText}`;
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     });
   }
 

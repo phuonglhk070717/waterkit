@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>水泵选型计算器 | 水处理工具箱 · WaterKit</title>
+<title>Công cụ tính chọn máy bơm | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="水泵选型在线计算：系统扬程组成、水功率/轴功率/配套电机功率、运行电耗与电费、NPSH 汽蚀校核及并联与变频调速分析，适用于给排水与污水提升泵初步选型。">
+<meta name="description" content="Tính chọn máy bơm trực tuyến: thành phần cột áp hệ thống, công suất thủy lực, trục và động cơ, điện năng và chi phí vận hành, kiểm tra xâm thực NPSH và phân tích bơm song song, điều tốc biến tần; phục vụ lựa chọn sơ bộ bơm cấp thoát nước và nâng nước thải.">
 <link rel="canonical" href="https://waterkit.cn/pump-selection-calculator.html">
 <style>
   :root {
@@ -430,380 +430,380 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Dengdeng Tech</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-equipment">设备选型</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-equipment">Lựa chọn thiết bị</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Dengdeng Tech</a>
     </nav>
   </div>
 </header>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-equipment">设备选型</a>
+  <a href="index.html#cat-equipment">Lựa chọn thiết bị</a>
   <span class="sep">/</span>
-  <span class="current">水泵选型</span>
+  <span class="current">Chọn máy bơm</span>
 </div>
 
 <main class="main-wrap">
 
 <div class="container">
   <header class="tool-header">
-    <h1>⚙️ 水泵选型计算器</h1>
-    <p>系统扬程 · 轴功率/电机功率 · NPSH 汽蚀校核 · 并联/变频分析</p>
+    <h1>⚙️ Công cụ tính chọn máy bơm</h1>
+    <p>Cột áp hệ thống · Công suất trục/động cơ · Kiểm tra xâm thực NPSH · Phân tích song song/biến tần</p>
   </header>
 
   <div class="body">
 
-    <div class="section-title">① 基本工况参数</div>
+    <div class="section-title">① Thông số vận hành cơ bản</div>
     <div class="grid">
       <div class="field">
-        <label for="Q">设计流量 Q <span class="unit">m³/h</span></label>
+        <label for="Q">Lưu lượng thiết kế Q <span class="unit">m³/h</span></label>
         <input type="number" id="Q" value="100" step="10">
       </div>
       <div class="field">
-        <label for="fluid">介质类型</label>
+        <label for="fluid">Loại môi chất</label>
         <select id="fluid" onchange="updateFluid()">
-          <option value="clean_water" selected>清水</option>
-          <option value="sewage">污水（粗/中格栅后）</option>
-          <option value="sludge">污泥（含水率≥97%）</option>
-          <option value="seawater">海水</option>
-          <option value="chemical">化学药液</option>
-          <option value="custom">自定义</option>
+          <option value="clean_water" selected>Nước sạch</option>
+          <option value="sewage">Nước thải (sau song chắn rác thô/trung bình)</option>
+          <option value="sludge">Bùn (độ ẩm ≥97%)</option>
+          <option value="seawater">Nước biển</option>
+          <option value="chemical">Dung dịch hóa chất</option>
+          <option value="custom">Tùy chỉnh</option>
         </select>
       </div>
       <div class="field">
-        <label for="rho">介质密度 ρ <span class="unit">kg/m³</span></label>
+        <label for="rho">Khối lượng riêng môi chất ρ <span class="unit">kg/m³</span></label>
         <input type="number" id="rho" value="1000" step="10">
       </div>
       <div class="field">
-        <label for="T">介质温度 T <span class="unit">℃</span></label>
+        <label for="T">Nhiệt độ môi chất T <span class="unit">℃</span></label>
         <input type="number" id="T" value="20" step="1">
       </div>
       <div class="field">
-        <label for="pump_type">泵类型</label>
+        <label for="pump_type">Loại máy bơm</label>
         <select id="pump_type" onchange="updatePumpType()">
-          <option value="centrifugal" selected>离心泵（ISG/IH/IS）</option>
-          <option value="submerged">潜水泵（WQ/QW）</option>
-          <option value="axial">轴流泵（ZLB）</option>
-          <option value="screw">螺杆泵</option>
-          <option value="dosing">计量泵</option>
+          <option value="centrifugal" selected>Bơm ly tâm (ISG/IH/IS)</option>
+          <option value="submerged">Bơm chìm (WQ/QW)</option>
+          <option value="axial">Bơm hướng trục (ZLB)</option>
+          <option value="screw">Bơm trục vít</option>
+          <option value="dosing">Bơm định lượng</option>
         </select>
       </div>
     </div>
 
-    <div class="section-title">② 系统扬程（自动求和或直接输入）</div>
+    <div class="section-title">② Cột áp hệ thống (tự động cộng hoặc nhập trực tiếp)</div>
 
     <div class="sub-section">
-      <h3>几何扬程（静扬程）</h3>
+      <h3>Cột áp hình học (cột áp tĩnh)</h3>
       <div class="grid">
         <div class="field">
-          <label for="z_suck">吸水池最低水位 <span class="unit">m</span></label>
+          <label for="z_suck">Mực nước thấp nhất bể hút <span class="unit">m</span></label>
           <input type="number" id="z_suck" value="0" step="0.1">
         </div>
         <div class="field">
-          <label for="z_disch">出水池最高水位 <span class="unit">m</span></label>
+          <label for="z_disch">Mực nước cao nhất bể xả <span class="unit">m</span></label>
           <input type="number" id="z_disch" value="15" step="0.5">
         </div>
       </div>
     </div>
 
     <div class="sub-section">
-      <h3>压力扬程（非开口系统时填写）</h3>
+      <h3>Cột áp áp suất (nhập khi hệ thống kín)</h3>
       <div class="grid">
         <div class="field">
-          <label for="P1">吸水侧表压 P₁ <span class="unit">kPa</span></label>
+          <label for="P1">Áp suất dư phía hút P₁ <span class="unit">kPa</span></label>
           <input type="number" id="P1" value="0" step="10">
-          <div class="helper">吸水池/容器液面表压，开口水池取 0；同时计入 NPSHa</div>
+          <div class="helper">Áp suất dư trên mặt chất lỏng bể/bình hút; lấy 0 với bể hở; cũng tính vào NPSHa</div>
         </div>
         <div class="field">
-          <label for="P2">出水侧表压 P₂ <span class="unit">kPa</span></label>
+          <label for="P2">Áp suất dư phía đẩy P₂ <span class="unit">kPa</span></label>
           <input type="number" id="P2" value="0" step="10">
         </div>
       </div>
     </div>
 
     <div class="sub-section">
-      <h3>管路水头损失</h3>
+      <h3>Tổn thất cột áp đường ống</h3>
       <div class="grid">
         <div class="field">
-          <label for="hf_s">吸水管损失（沿程+局部） <span class="unit">m</span></label>
+          <label for="hf_s">Tổn thất ống hút (dọc đường + cục bộ) <span class="unit">m</span></label>
           <input type="number" id="hf_s" value="0.5" step="0.1">
-          <div class="helper">含进口、底阀、弯头、闸阀等吸水侧局部损失；同时用于 NPSHa</div>
+          <div class="helper">Gồm tổn thất cục bộ phía hút tại cửa vào, van chân, cút, van cổng...; cũng dùng tính NPSHa</div>
         </div>
         <div class="field">
-          <label for="hf_d">压水管沿程损失 <span class="unit">m</span></label>
+          <label for="hf_d">Tổn thất dọc đường ống đẩy <span class="unit">m</span></label>
           <input type="number" id="hf_d" value="3.0" step="0.1">
         </div>
         <div class="field">
-          <label for="hj">压水管局部损失 <span class="unit">m</span></label>
+          <label for="hj">Tổn thất cục bộ ống đẩy <span class="unit">m</span></label>
           <input type="number" id="hj" value="1.5" step="0.1">
-          <div class="helper">止回阀、闸阀、弯头、出口等；吸水侧局部损失填入左侧吸水管损失</div>
+          <div class="helper">Van một chiều, van cổng, cút, cửa ra...; nhập tổn thất cục bộ phía hút vào ô tổn thất ống hút bên trái</div>
         </div>
         <div class="field">
-          <label for="H_margin">富余扬程（安全系数） <span class="unit">%</span></label>
+          <label for="H_margin">Cột áp dự phòng (hệ số an toàn) <span class="unit">%</span></label>
           <input type="number" id="H_margin" value="10" step="1">
         </div>
       </div>
     </div>
 
-    <div class="section-title">③ 效率与电机</div>
+    <div class="section-title">③ Hiệu suất và động cơ</div>
     <div class="grid">
       <div class="field">
-        <label for="eta_pump">泵效率 η_pump <span class="unit">%</span></label>
+        <label for="eta_pump">Hiệu suất bơm η_pump <span class="unit">%</span></label>
         <input type="number" id="eta_pump" value="75" step="1">
         <div class="helper" id="eta_hint" style="display:none;"></div>
       </div>
       <div class="field">
-        <label for="eta_trans">传动效率 η_trans <span class="unit">%</span></label>
+        <label for="eta_trans">Hiệu suất truyền động η_trans <span class="unit">%</span></label>
         <input type="number" id="eta_trans" value="98" step="1">
       </div>
       <div class="field">
-        <label for="eta_motor">电机效率 η_motor <span class="unit">%</span></label>
+        <label for="eta_motor">Hiệu suất động cơ η_motor <span class="unit">%</span></label>
         <input type="number" id="eta_motor" value="92" step="1">
       </div>
       <div class="field">
-        <label for="K">电机功率储备系数 K</label>
+        <label for="K">Hệ số dự phòng công suất động cơ K</label>
         <input type="number" id="K" value="1.15" step="0.05">
       </div>
       <div class="field">
-        <label for="hours">日运行时间 <span class="unit">h/d</span></label>
+        <label for="hours">Thời gian vận hành mỗi ngày <span class="unit">h/d</span></label>
         <input type="number" id="hours" value="24" step="1">
       </div>
       <div class="field">
-        <label for="price">电费单价 <span class="unit">元/kWh</span></label>
+        <label for="price">Đơn giá điện <span class="unit">nhân dân tệ/kWh</span></label>
         <input type="number" id="price" value="0.65" step="0.01">
       </div>
     </div>
 
-    <div class="section-title">④ NPSH 汽蚀校核</div>
+    <div class="section-title">④ Kiểm tra xâm thực NPSH</div>
     <div class="grid">
       <div class="field">
-        <label for="altitude">海拔高度 <span class="unit">m</span></label>
+        <label for="altitude">Độ cao so với mực nước biển <span class="unit">m</span></label>
         <input type="number" id="altitude" value="0" step="50">
       </div>
       <div class="field">
-        <label for="Hs_geom">吸水几何高度 Hs <span class="unit">m</span></label>
+        <label for="Hs_geom">Chiều cao hút hình học Hs <span class="unit">m</span></label>
         <input type="number" id="Hs_geom" value="3" step="0.5">
-        <div class="helper">水面到泵中心线（吸上为正，倒灌为负）</div>
+        <div class="helper">Từ mặt nước đến đường tâm bơm (hút lên lấy dấu dương, ngập hút lấy dấu âm)</div>
       </div>
       <div class="field">
-        <label for="NPSHr">泵必需汽蚀余量 NPSHr <span class="unit">m</span></label>
+        <label for="NPSHr">NPSH yêu cầu của bơm NPSHr <span class="unit">m</span></label>
         <input type="number" id="NPSHr" value="3.5" step="0.1">
-        <div class="helper">查泵样本或厂家提供</div>
+        <div class="helper">Tra tài liệu bơm hoặc thông tin từ nhà sản xuất</div>
       </div>
       <div class="field">
-        <label for="NPSH_safe">汽蚀安全余量 <span class="unit">m</span></label>
+        <label for="NPSH_safe">Dự phòng an toàn chống xâm thực <span class="unit">m</span></label>
         <input type="number" id="NPSH_safe" value="0.5" step="0.1">
       </div>
     </div>
 
-    <div class="section-title">⑤ 并联/变频分析（选填）</div>
+    <div class="section-title">⑤ Phân tích song song/biến tần (không bắt buộc)</div>
     <div class="grid">
       <div class="field">
-        <label for="n_parallel">并联台数 n <span class="unit">台</span></label>
+        <label for="n_parallel">Số bơm lắp song song n <span class="unit">bơm</span></label>
         <input type="number" id="n_parallel" value="2" step="1">
       </div>
       <div class="field">
-        <label for="n_backup">其中备用 <span class="unit">台</span></label>
+        <label for="n_backup">Trong đó dự phòng <span class="unit">bơm</span></label>
         <input type="number" id="n_backup" value="1" step="1">
       </div>
       <div class="field">
-        <label for="speed_ratio">变频调速比 <span class="unit">%（相对额定转速）</span></label>
+        <label for="speed_ratio">Tỷ lệ điều tốc biến tần <span class="unit">% (so với tốc độ định mức)</span></label>
         <input type="number" id="speed_ratio" value="100" step="5">
       </div>
       <div class="field">
-        <label for="H0_ratio">关死扬程系数 H₀/H（高级） <span class="unit">倍</span></label>
+        <label for="H0_ratio">Hệ số cột áp đóng van H₀/H (nâng cao) <span class="unit">lần</span></label>
         <input type="number" id="H0_ratio" value="1.25" step="0.05">
-        <div class="helper">变频估算用假定泵曲线 H = H₀ − k·Q²，H₀ = 系数 × 设计扬程；离心泵常见 1.1–1.4</div>
+        <div class="helper">Ước tính biến tần dùng đường đặc tính bơm giả định H = H₀ − k·Q², H₀ = hệ số × cột áp thiết kế; bơm ly tâm thường có hệ số 1.1–1.4</div>
       </div>
     </div>
 
     <div class="results">
-      <h2>计算结果</h2>
+      <h2>Kết quả tính toán</h2>
 
       <div class="result-group">
-        <div class="result-group-title">系统扬程分解</div>
+        <div class="result-group-title">Các thành phần cột áp hệ thống</div>
         <div class="result-row">
-          <span class="result-label">几何扬程 Hg</span>
+          <span class="result-label">Cột áp hình học Hg</span>
           <span><span class="result-value" id="r_Hg">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">压力扬程 Hp</span>
+          <span class="result-label">Cột áp áp suất Hp</span>
           <span><span class="result-value" id="r_Hp">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">总水头损失 hw</span>
+          <span class="result-label">Tổng tổn thất cột áp hw</span>
           <span><span class="result-value" id="r_hw">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>系统所需扬程 H（含富余）</b></span>
+          <span class="result-label"><b>Cột áp hệ thống yêu cầu H (gồm dự phòng)</b></span>
           <span><span class="result-value big" id="r_H">—</span><span class="result-unit">m</span></span>
         </div>
       </div>
 
       <div class="result-group">
-        <div class="result-group-title" id="pw_title">功率计算（单泵）</div>
+        <div class="result-group-title" id="pw_title">Tính công suất (một bơm)</div>
         <div class="result-row">
-          <span class="result-label">有效功率 Pe（水功率）</span>
+          <span class="result-label">Công suất hữu ích Pe (công suất thủy lực)</span>
           <span><span class="result-value" id="r_Pe">—</span><span class="result-unit">kW</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">泵轴功率 Psh</span>
+          <span class="result-label">Công suất trục bơm Psh</span>
           <span><span class="result-value" id="r_Psh">—</span><span class="result-unit">kW</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b id="lbl_Pm">电机配套功率 Pm（含 K 系数）</b></span>
+          <span class="result-label"><b id="lbl_Pm">Công suất động cơ lắp đặt Pm (gồm hệ số K)</b></span>
           <span><span class="result-value big" id="r_Pm">—</span><span class="result-unit">kW</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label" id="lbl_Pm_std">推荐电机功率（标准规格）</span>
+          <span class="result-label" id="lbl_Pm_std">Công suất động cơ đề xuất (cỡ tiêu chuẩn)</span>
           <span><span class="result-value" id="r_Pm_std">—</span><span class="result-unit">kW</span></span>
         </div>
         <div class="check-box" id="checkHead" style="display:none;"></div>
       </div>
 
       <div class="result-group">
-        <div class="result-group-title">运行能耗与成本</div>
+        <div class="result-group-title">Điện năng và chi phí vận hành</div>
         <div class="result-row">
-          <span class="result-label">吨水提升能耗</span>
+          <span class="result-label">Điện năng tiêu thụ để nâng mỗi tấn nước</span>
           <span><span class="result-value" id="r_ekwh">—</span><span class="result-unit">kWh/m³</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">日耗电量</span>
+          <span class="result-label">Điện năng tiêu thụ mỗi ngày</span>
           <span><span class="result-value" id="r_day_kwh">—</span><span class="result-unit">kWh/d</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>年运行电费（全部工作泵）</b></span>
-          <span><span class="result-value big" id="r_year_cost">—</span><span class="result-unit">万元/a</span></span>
+          <span class="result-label"><b>Chi phí điện hằng năm (tất cả bơm làm việc)</b></span>
+          <span><span class="result-value big" id="r_year_cost">—</span><span class="result-unit">vạn nhân dân tệ/a</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">吨水电耗成本</span>
-          <span><span class="result-value" id="r_unit_cost">—</span><span class="result-unit">元/m³</span></span>
+          <span class="result-label">Chi phí điện mỗi tấn nước</span>
+          <span><span class="result-value" id="r_unit_cost">—</span><span class="result-unit">nhân dân tệ/m³</span></span>
         </div>
       </div>
 
       <div class="result-group">
-        <div class="result-group-title">NPSH 汽蚀校核</div>
+        <div class="result-group-title">Kiểm tra xâm thực NPSH</div>
         <div class="result-row">
-          <span class="result-label">大气压 Pa</span>
+          <span class="result-label">Áp suất khí quyển Pa</span>
           <span><span class="result-value" id="r_Pa">—</span><span class="result-unit">kPa</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">饱和蒸汽压 Pv</span>
+          <span class="result-label">Áp suất hơi bão hòa Pv</span>
           <span><span class="result-value" id="r_Pv">—</span><span class="result-unit">kPa</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">可用汽蚀余量 NPSHa</span>
+          <span class="result-label">NPSH khả dụng NPSHa</span>
           <span><span class="result-value" id="r_NPSHa">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">最大允许吸水高度 Hs,max</span>
+          <span class="result-label">Chiều cao hút cho phép lớn nhất Hs,max</span>
           <span><span class="result-value" id="r_Hs_max">—</span><span class="result-unit">m</span></span>
         </div>
-        <div class="check-box" id="checkNPSH">校核中...</div>
+        <div class="check-box" id="checkNPSH">Đang kiểm tra...</div>
       </div>
 
       <div class="result-group" id="parallel_group" style="display:none;">
-        <div class="result-group-title">并联分析</div>
+        <div class="result-group-title">Phân tích song song</div>
         <div class="result-row">
-          <span class="result-label">工作泵数量</span>
-          <span><span class="result-value" id="r_n_work">—</span><span class="result-unit">台</span></span>
+          <span class="result-label">Số bơm làm việc</span>
+          <span><span class="result-value" id="r_n_work">—</span><span class="result-unit">bơm</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">单泵流量</span>
+          <span class="result-label">Lưu lượng mỗi bơm</span>
           <span><span class="result-value" id="r_Q_each">—</span><span class="result-unit">m³/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">单泵电机功率</span>
+          <span class="result-label">Công suất động cơ mỗi bơm</span>
           <span><span class="result-value" id="r_Pm_each">—</span><span class="result-unit">kW</span></span>
         </div>
         <div class="check-box" id="checkParallel" style="display:none;"></div>
       </div>
 
       <div class="result-group" id="vfd_group" style="display:none;">
-        <div class="result-group-title">变频运行（假定二次泵曲线 × 系统曲线交点估算）</div>
+        <div class="result-group-title">Vận hành biến tần (ước tính tại giao điểm đường bơm bậc hai giả định và đường hệ thống)</div>
         <div class="result-row">
-          <span class="result-label">变频后流量 Q'</span>
+          <span class="result-label">Lưu lượng sau điều tốc Q'</span>
           <span><span class="result-value" id="r_Q_vfd">—</span><span class="result-unit">m³/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">变频后扬程 H'</span>
+          <span class="result-label">Cột áp sau điều tốc H'</span>
           <span><span class="result-value" id="r_H_vfd">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">变频后功率 P'</span>
+          <span class="result-label">Công suất sau điều tốc P'</span>
           <span><span class="result-value" id="r_P_vfd">—</span><span class="result-unit">kW</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">节能率估算</span>
+          <span class="result-label">Tỷ lệ tiết kiệm điện ước tính</span>
           <span><span class="result-value" id="r_save">—</span><span class="result-unit">%</span></span>
         </div>
         <div class="check-box" id="checkVFD" style="display:none;"></div>
-        <div class="helper" id="vfd_note" style="margin-top:8px;color:#64748b;">按假定二次泵曲线估算（功率按设计效率近似），以厂家曲线为准。</div>
+        <div class="helper" id="vfd_note" style="margin-top:8px;color:#64748b;">Ước tính theo đường đặc tính bơm bậc hai giả định (công suất xấp xỉ theo hiệu suất thiết kế); lấy đường đặc tính của nhà sản xuất làm chuẩn.</div>
       </div>
 
       <div class="model-card">
-        <div class="title">🔖 选型建议</div>
+        <div class="title">🔖 Đề xuất lựa chọn</div>
         <div class="model-name" id="r_suggest">Q = — m³/h, H = — m</div>
-        <div class="model-desc" id="r_suggest_desc">在泵厂样本中按此流量、扬程选择，优先工作点落在高效区（Q_opt 的 80-110%）。</div>
+        <div class="model-desc" id="r_suggest_desc">Chọn theo lưu lượng và cột áp này trong tài liệu nhà sản xuất; ưu tiên điểm làm việc trong vùng hiệu suất cao (80-110% Q_opt).</div>
       </div>
     </div>
 
     <div class="buttons">
-      <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
-      <button class="btn btn-secondary" onclick="toggleFormula()">📖 查看公式</button>
+      <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
+      <button class="btn btn-secondary" onclick="toggleFormula()">📖 Xem công thức</button>
     </div>
 
     <div class="formula-box" id="formulaBox" style="display:none;">
-      <h3>① 系统扬程组成</h3>
+      <h3>① Thành phần cột áp hệ thống</h3>
       <code>H = Hg + Hp + hw + H_margin</code>
-      <p>Hg = z₂ − z₁（出水液面高 − 吸水液面高，m）<br>
-         Hp = (P₂ − P₁)/(ρ·g) × 1000（两侧表压差 kPa 换算成液柱，m）<br>
-         hw = hf_s + hf_d + hj（吸水管沿程+局部、压水管沿程、压水管局部）<br>
-         H_margin：富余量，一般取总扬程的 5-15%。</p>
+      <p>Hg = z₂ − z₁（cao độ mặt nước bể xả − cao độ mặt nước bể hút, m）<br>
+         Hp = (P₂ − P₁)/(ρ·g) × 1000（chênh lệch áp suất dư hai phía, kPa, quy đổi sang cột chất lỏng, m）<br>
+         hw = hf_s + hf_d + hj（tổn thất ống hút dọc đường + cục bộ, ống đẩy dọc đường, ống đẩy cục bộ）<br>
+         H_margin：phần dự phòng, thường lấy 5-15% tổng cột áp。</p>
 
-      <h3>② 功率计算</h3>
-      <code>Pe = ρ·g·Q·H / 1000 / 3600  [kW]（水功率）</code>
-      <code>Psh = Pe / η_pump / η_trans  [kW]（轴功率）</code>
-      <code>Pm = K · Psh  [kW]（配套电机，K 为储备系数）</code>
-      <code>P_in = Psh / η_motor  [kW]（电机输入电功率，用于电耗计算）</code>
-      <p>简化公式（清水 ρ=1000, g=9.81）：</p>
-      <code>P_e = Q·H / 367  [kW]  （Q in m³/h, H in m）</code>
+      <h3>② Tính công suất</h3>
+      <code>Pe = ρ·g·Q·H / 1000 / 3600  [kW]（công suất thủy lực）</code>
+      <code>Psh = Pe / η_pump / η_trans  [kW]（công suất trục）</code>
+      <code>Pm = K · Psh  [kW]（động cơ lắp đặt, K là hệ số dự phòng）</code>
+      <code>P_in = Psh / η_motor  [kW]（công suất điện đầu vào động cơ, dùng tính điện năng）</code>
+      <p>Công thức đơn giản hóa (nước sạch ρ=1000, g=9.81)：</p>
+      <code>P_e = Q·H / 367  [kW]  （Q tính bằng m³/h, H tính bằng m）</code>
 
-      <h3>③ NPSH 汽蚀校核</h3>
+      <h3>③ Kiểm tra xâm thực NPSH</h3>
       <code>NPSHa = (Pa + P₁ − Pv)/(ρ·g) × 1000 − Hs − hf_s  [m]</code>
-      <p>Pa 大气压（按海拔），P₁ 吸水池液面表压（开口水池为 0），Pv 饱和蒸汽压（按水温），Hs 吸水几何高度（吸上为正），hf_s 吸水管总水头损失（沿程 + 进口、底阀、弯头等局部损失；底阀、滤网阻力大，漏计会高估 NPSHa）。</p>
-      <code>NPSHa ≥ NPSHr + 安全余量（0.5~1.0 m）</code>
-      <p><strong>最大允许吸水高度</strong>：</p>
-      <code>Hs_max = (Pa + P₁ − Pv)/(ρ·g)·1000 − NPSHr − hf_s − 安全余量</code>
+      <p>Pa là áp suất khí quyển (theo độ cao), P₁ là áp suất dư trên mặt nước bể hút (bể hở bằng 0), Pv là áp suất hơi bão hòa (theo nhiệt độ nước), Hs là chiều cao hút hình học (hút lên lấy dấu dương), hf_s là tổng tổn thất cột áp ống hút (dọc đường + tổn thất cục bộ tại cửa vào, van chân, cút...; van chân và lưới lọc có trở lực lớn, bỏ sót sẽ làm NPSHa bị đánh giá cao).</p>
+      <code>NPSHa ≥ NPSHr + dự phòng an toàn（0.5~1.0 m）</code>
+      <p><strong>Chiều cao hút cho phép lớn nhất</strong>：</p>
+      <code>Hs_max = (Pa + P₁ − Pv)/(ρ·g)·1000 − NPSHr − hf_s − dự phòng an toàn</code>
 
-      <h3>④ 变频调速工作点（假定泵曲线 × 系统曲线）</h3>
-      <p>相似律 Q∝n、H∝n² 只描述泵曲线本身的平移，实际工作点由泵曲线与系统曲线的交点决定；有静扬程时不能直接取 Q'=rQ、H'=r²H。本工具按以下近似求交点（r = n'/n）：</p>
-      <code>泵曲线（假定二次式）：H = r²·H₀ − k·Q²，H₀ = 关死扬程系数 × H_design，k = (H₀ − H_design)/Q_design²</code>
-      <code>系统曲线：H = Hst + (H_design − Hst)·(Q/Q_design)²，Hst = Hg + Hp（静扬程，富余扬程计入动扬程部分，曲线过设计点）</code>
-      <code>Q' = Q_design·√[(r²·H₀ − Hst)/(H₀ − Hst)]，H' 代入系统曲线；r²·H₀ ≤ Hst 时泵无法出流</code>
-      <code>P' = ρ·g·Q'·H' / (η_pump·η_trans) / 1000  [kW]（η 取设计效率，近似；实际降速后效率点会偏移）</code>
-      <p>节能率 = 1 − P'/Psh。多台同速并联时按总流量计算，结果相同。⚠️ 泵曲线为假定的二次式，仅作估算，以厂家特性曲线为准。</p>
+      <h3>④ Điểm làm việc khi điều tốc biến tần (đường bơm giả định × đường hệ thống)</h3>
+      <p>Các định luật tương tự Q∝n, H∝n² chỉ mô tả sự dịch chuyển của đường bơm; điểm làm việc thực tế do giao điểm đường bơm và đường hệ thống quyết định. Khi có cột áp tĩnh, không thể trực tiếp lấy Q'=rQ, H'=r²H. Công cụ tìm giao điểm theo phép gần đúng sau (r = n'/n):</p>
+      <code>Đường bơm (giả định bậc hai)：H = r²·H₀ − k·Q²，H₀ = hệ số cột áp đóng van × H_design，k = (H₀ − H_design)/Q_design²</code>
+      <code>đường đặc tính hệ thống：H = Hst + (H_design − Hst)·(Q/Q_design)²，Hst = Hg + Hp（cột áp tĩnh, cột áp dự phòng tính vào phần cột áp động, đường cong đi qua điểm thiết kế）</code>
+      <code>Q' = Q_design·√[(r²·H₀ − Hst)/(H₀ − Hst)]，H' thay vào đường đặc tính hệ thống；r²·H₀ ≤ Hst thì bơm không thể tạo dòng chảy</code>
+      <code>P' = ρ·g·Q'·H' / (η_pump·η_trans) / 1000  [kW]（η lấy theo hiệu suất thiết kế, gần đúng; điểm hiệu suất thực tế thay đổi sau khi giảm tốc）</code>
+      <p>Tỷ lệ tiết kiệm điện = 1 − P'/Psh. Với nhiều bơm chạy song song cùng tốc độ, tính theo tổng lưu lượng cho kết quả tương tự. ⚠️ Đường đặc tính bơm bậc hai chỉ là giả định để ước tính; lấy đường đặc tính của nhà sản xuất làm chuẩn.</p>
 
-      <h3>⑤ 海拔-大气压-水汽压关系</h3>
+      <h3>⑤ Quan hệ giữa độ cao, áp suất khí quyển và áp suất hơi nước</h3>
       <table>
-        <tr><th>海拔 (m)</th><th>大气压 (kPa)</th></tr>
-        <tr><td>0 (海平面)</td><td>101.3</td></tr>
+        <tr><th>Độ cao (m)</th><th>Áp suất khí quyển (kPa)</th></tr>
+        <tr><td>0 (mực nước biển)</td><td>101.3</td></tr>
         <tr><td>500</td><td>95.5</td></tr>
         <tr><td>1000</td><td>89.9</td></tr>
         <tr><td>2000</td><td>79.5</td></tr>
         <tr><td>3000</td><td>70.1</td></tr>
       </table>
       <table>
-        <tr><th>水温 (℃)</th><th>饱和蒸汽压 Pv (kPa)</th></tr>
+        <tr><th>Nhiệt độ nước (℃)</th><th>Áp suất hơi bão hòa Pv (kPa)</th></tr>
         <tr><td>10</td><td>1.23</td></tr>
         <tr><td>20</td><td>2.34</td></tr>
         <tr><td>30</td><td>4.24</td></tr>
@@ -811,28 +811,28 @@
         <tr><td>60</td><td>19.92</td></tr>
       </table>
 
-      <h3>⑥ 标准电机功率规格 (Y/Y2/YE3 系列，GB/T 功率等级)</h3>
+      <h3>⑥ Cỡ công suất động cơ tiêu chuẩn (dòng Y/Y2/YE3, cấp công suất GB/T)</h3>
       <p>0.37、0.55、0.75、1.1、1.5、2.2、3、4、5.5、7.5、11、15、18.5、22、30、37、45、55、75、90、110、132、160、185、200、220、250、280、315、355、400、450、500、560、630、710、800、900、1000 kW</p>
-      <p>按 Pm 向上取最近一档；超过 1000 kW 时按 100 kW 向上取整，须向厂家确认。鼓风机选型计算器使用同一档位表。</p>
+      <p>Chọn cấp gần nhất lớn hơn hoặc bằng Pm; trên 1000 kW làm tròn lên theo bước 100 kW và phải xác nhận với nhà sản xuất. Công cụ chọn máy thổi khí dùng cùng bảng cấp công suất.</p>
 
-      <h3>⑦ 常见场景推荐参数</h3>
+      <h3>⑦ Thông số đề xuất cho các ứng dụng phổ biến</h3>
       <table>
-        <tr><th>应用场景</th><th>泵型</th><th>典型效率</th></tr>
-        <tr><td>给水提升（清水）</td><td>IS/ISG/SH 离心泵</td><td>75-85%</td></tr>
-        <tr><td>污水提升</td><td>WQ/QW 潜污泵</td><td>55-70%</td></tr>
-        <tr><td>低扬程大流量（雨水/排涝）</td><td>ZLB 轴流泵</td><td>70-85%</td></tr>
-        <tr><td>污泥输送</td><td>螺杆泵/凸轮转子泵</td><td>40-60%</td></tr>
-        <tr><td>药剂投加</td><td>柱塞/隔膜计量泵</td><td>85-95%</td></tr>
+        <tr><th>Ứng dụng</th><th>Loại bơm</th><th>Hiệu suất điển hình</th></tr>
+        <tr><td>Bơm nâng nước cấp (nước sạch)</td><td>IS/ISG/SH bơm ly tâm</td><td>75-85%</td></tr>
+        <tr><td>Bơm nâng nước thải</td><td>WQ/QW bơm chìm nước thải</td><td>55-70%</td></tr>
+        <tr><td>Cột áp thấp, lưu lượng lớn (nước mưa/tiêu úng)</td><td>ZLB bơm hướng trục</td><td>70-85%</td></tr>
+        <tr><td>Vận chuyển bùn</td><td>Bơm trục vít/bơm rôto thùy</td><td>40-60%</td></tr>
+        <tr><td>Định lượng hóa chất</td><td>Bơm định lượng pít-tông/màng</td><td>85-95%</td></tr>
       </table>
     </div>
 
     <div class="note">
-      ⚠️ 本工具用于方案与初步选型，最终型号须根据厂家样本特性曲线确认，使工作点位于 Q_opt 的 80-110% 高效区。对于含杂质介质（污水、污泥）应留有足够过流通道，并在铭牌功率基础上留 15-20% 裕量。
+      ⚠️ Công cụ hỗ trợ lập phương án và lựa chọn sơ bộ. Phải xác nhận mẫu cuối cùng theo đường đặc tính của nhà sản xuất, sao cho điểm làm việc nằm trong vùng hiệu suất cao 80-110% Q_opt. Với môi chất chứa tạp chất (nước thải, bùn), cần bảo đảm đường dẫn dòng đủ rộng và dự phòng 15-20% so với công suất trên nhãn.
     </div>
 
   </div>
 
-  <footer class="tool-inner-footer">水处理工具箱 · 仅供工程估算参考</footer>
+  <footer class="tool-inner-footer">Bộ công cụ xử lý nước · Chỉ để tham khảo khi ước tính kỹ thuật</footer>
 </div>
 </main>
 
@@ -844,65 +844,65 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Dengdeng Tech</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là tập hợp công cụ tính toán trực tuyến do Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam giới thiệu, được các kỹ sư công nghệ xử lý nước trực tiếp phát triển và duy trì. Miễn phí và cập nhật liên tục.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thủy lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thủy lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thủy lực đường ống (nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thủy lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính dòng chảy qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lượng khí sục</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn phát sinh</a></li>
+          <li><a href="dosing-calculator.html">Lượng hóa chất định lượng</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">Thiết kế công trình MBBR</a></li>
+          <li><a href="ifas-design.html">Thiết kế công trình IFAS</a></li>
+          <li><a href="mbr-design.html">Thiết kế công trình MBR</a></li>
+          <li><a href="ro-design.html">Thiết kế thẩm thấu ngược RO</a></li>
+          <li><a href="pump-selection-calculator.html">Chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Chuyển đổi đơn vị chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thủy sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải sau nuôi ao</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Hướng dẫn tham quan triển lãm Aqua Nor 2027</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Công ty</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang chủ Dengdeng Tech ↗</a></li>
+          <li>Tư vấn Công nghệ Dengdeng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Open Source</h4>
+        <h4>Mã nguồn mở</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">Giấy phép AGPL-3.0</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Gửi phản hồi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
@@ -914,13 +914,13 @@
   const num = id => parseFloat($(id).value) || 0;
 
   // 标准电机功率规格
-  // 标准电机功率档位（GB/T 系列，与鼓风机选型计算器共用同一列表）
+  // 标准电机功率档位（GB/T 系列，与Chọn máy thổi khí计算器共用同一列表）
   const STD_MOTORS = [0.37,0.55,0.75,1.1,1.5,2.2,3,4,5.5,7.5,11,15,18.5,22,30,37,45,55,75,90,110,132,160,185,200,220,250,280,315,355,400,450,500,560,630,710,800,900,1000];
   // 读取原始数值（空/非数字返回 NaN，用于校验）
   const raw = id => { const s = $(id).value.trim(); return s === '' ? NaN : Number(s); };
 
-  const FLUID_NAMES = {clean_water:'清水', sewage:'污水', sludge:'污泥', seawater:'海水', chemical:'化学药液'};
-  const PUMP_NAMES = {centrifugal:'离心泵', submerged:'潜水泵', axial:'轴流泵', screw:'螺杆泵', dosing:'计量泵'};
+  const FLUID_NAMES = {clean_water:'Nước sạch', sewage:'Nước thải', sludge:'Bùn', seawater:'Nước biển', chemical:'Dung dịch hóa chất'};
+  const PUMP_NAMES = {centrifugal:'bơm ly tâm', submerged:'Bơm chìm', axial:'bơm hướng trục', screw:'Bơm trục vít', dosing:'Bơm định lượng'};
   function setEtaHint(txt) {
     const h = $('eta_hint');
     if (!h) return;
@@ -928,7 +928,7 @@
     h.style.display = txt ? 'block' : 'none';
   }
 
-  // 介质类型默认参数
+  // Loại môi chất默认参数
   function updateFluid() {
     const t = $('fluid').value;
     const defaults = {
@@ -941,12 +941,12 @@
     if (defaults[t]) {
       $('rho').value = defaults[t].rho;
       $('eta_pump').value = defaults[t].eta_pump;
-      setEtaHint(`已按介质「${FLUID_NAMES[t]}」取默认效率 ${defaults[t].eta_pump}%（会覆盖泵类型给出的默认值，可手动修改）`);
+      setEtaHint(`Đã đặt hiệu suất mặc định ${defaults[t].eta_pump}% theo môi chất «${FLUID_NAMES[t]}» (ghi đè giá trị mặc định theo loại bơm; có thể sửa thủ công)`);
     }
     calc();
   }
 
-  // 泵类型推荐效率
+  // Loại máy bơm推荐效率
   function updatePumpType() {
     const t = $('pump_type').value;
     const defaults = {
@@ -959,16 +959,16 @@
     if (defaults[t]) {
       $('eta_pump').value = defaults[t].eta_pump;
       $('NPSHr').value = defaults[t].NPSHr;
-      setEtaHint(`已按泵类型「${PUMP_NAMES[t]}」取默认效率 ${defaults[t].eta_pump}%、NPSHr ${defaults[t].NPSHr} m（会覆盖介质类型给出的默认效率，可手动修改）`);
+      setEtaHint(`Đã đặt hiệu suất mặc định ${defaults[t].eta_pump}% và NPSHr ${defaults[t].NPSHr} m theo loại bơm «${PUMP_NAMES[t]}» (ghi đè hiệu suất mặc định theo môi chất; có thể sửa thủ công)`);
     }
     calc();
   }
 
-  // 大气压随海拔变化
+  // Áp suất khí quyển随Độ cao变化
   function Pa_by_alt(alt) {
     return 101.325 * Math.pow(1 - 0.0000225577 * alt, 5.25588);
   }
-  // 饱和蒸汽压 Antoine 简化
+  // Áp suất hơi bão hòa Antoine 简化
   function Pv_by_T(T) {
     // Tetens: Pv(kPa) = 0.611 * exp(17.27*T/(T+237.3))
     return 0.611 * Math.exp(17.27 * T / (T + 237.3));
@@ -986,21 +986,21 @@
   // 输入校验：不合格时结果区显示“—”并在 NPSH 校核框提示
   function validateInputs() {
     const rules = [
-      ['Q',         v => v > 0,              '请输入大于 0 的设计流量 Q'],
-      ['rho',       v => v > 0,              '请输入大于 0 的介质密度 ρ'],
-      ['H_margin',  v => v >= 0,             '富余扬程不能为负值'],
-      ['eta_pump',  v => v > 0 && v <= 100,  '泵效率 η_pump 应在 0–100% 之间（大于 0）'],
-      ['eta_trans', v => v > 0 && v <= 100,  '传动效率 η_trans 应在 0–100% 之间（大于 0）'],
-      ['eta_motor', v => v > 0 && v <= 100,  '电机效率 η_motor 应在 0–100% 之间（大于 0）'],
-      ['K',         v => v > 0,              '请输入大于 0 的电机功率储备系数 K'],
-      ['hours',     v => v >= 0 && v <= 24,  '日运行时间应在 0–24 h 之间'],
-      ['price',     v => v >= 0,             '电费单价不能为负值'],
-      ['NPSHr',     v => v >= 0,             '必需汽蚀余量 NPSHr 不能为负值'],
-      ['NPSH_safe', v => v >= 0,             '汽蚀安全余量不能为负值'],
-      ['n_parallel',v => Number.isInteger(v) && v >= 1, '并联台数应为不少于 1 的整数'],
-      ['n_backup',  v => Number.isInteger(v) && v >= 0, '备用台数应为不小于 0 的整数'],
-      ['speed_ratio', v => v > 0,            '请输入大于 0 的变频调速比'],
-      ['H0_ratio',  v => v > 1 && v <= 3,    '关死扬程系数 H₀/H 应在 1–3 之间（大于 1）'],
+      ['Q',         v => v > 0,              'Nhập lưu lượng thiết kế Q lớn hơn 0'],
+      ['rho',       v => v > 0,              'Nhập khối lượng riêng môi chất ρ lớn hơn 0'],
+      ['H_margin',  v => v >= 0,             'Cột áp dự phòng không được âm'],
+      ['eta_pump',  v => v > 0 && v <= 100,  'Hiệu suất bơm η_pump phải trong khoảng 0–100% (lớn hơn 0)'],
+      ['eta_trans', v => v > 0 && v <= 100,  'Hiệu suất truyền động η_trans phải trong khoảng 0–100% (lớn hơn 0)'],
+      ['eta_motor', v => v > 0 && v <= 100,  'Hiệu suất động cơ η_motor phải trong khoảng 0–100% (lớn hơn 0)'],
+      ['K',         v => v > 0,              'Nhập hệ số dự phòng công suất động cơ K lớn hơn 0'],
+      ['hours',     v => v >= 0 && v <= 24,  'Thời gian vận hành mỗi ngày phải trong khoảng 0–24 h'],
+      ['price',     v => v >= 0,             'Đơn giá điện không được âm'],
+      ['NPSHr',     v => v >= 0,             'NPSH yêu cầu NPSHr không được âm'],
+      ['NPSH_safe', v => v >= 0,             'Dự phòng an toàn chống xâm thực không được âm'],
+      ['n_parallel',v => Number.isInteger(v) && v >= 1, 'Số bơm lắp song song phải là số nguyên không nhỏ hơn 1'],
+      ['n_backup',  v => Number.isInteger(v) && v >= 0, 'Số bơm dự phòng phải là số nguyên không nhỏ hơn 0'],
+      ['speed_ratio', v => v > 0,            'Nhập tỷ lệ điều tốc biến tần lớn hơn 0'],
+      ['H0_ratio',  v => v > 1 && v <= 3,    'Hệ số cột áp đóng van H₀/H phải trong khoảng 1–3 (lớn hơn 1)'],
     ];
     const errs = [];
     rules.forEach(([id, ok, msg]) => {
@@ -1014,19 +1014,19 @@
     const T = raw('T');
     const badT = isNaN(T) || T <= -50 || T >= 200;
     $('T').classList.toggle('invalid', badT);
-    if (badT) errs.push('介质温度 T 应在 -50 ~ 200 ℃ 之间');
-    // 海拔：留空按 0 m（海平面）；填写时限 −500–6000 m（与其他工具一致）
+    if (badT) errs.push('Nhiệt độ môi chất T phải trong khoảng -50 ~ 200 ℃');
+    // Độ cao：留空按 0 m（mực nước biển）；填写时限 −500–6000 m（与其他工具一致）
     const altRaw = $('altitude').value.trim(), alt = raw('altitude');
     const badAlt = altRaw !== '' && !(alt >= -500 && alt <= 6000);
     $('altitude').classList.toggle('invalid', badAlt);
-    if (badAlt) errs.push('海拔高度应在 −500–6000 m 之间（与其他工具一致）');
+    if (badAlt) errs.push('Độ cao so với mực nước biển phải trong khoảng −500–6000 m (thống nhất với các công cụ khác)');
     return errs;
   }
 
   function showInvalid(errs) {
     document.querySelectorAll('.results [id^="r_"]').forEach(el => { el.textContent = '—'; });
     $('r_suggest').textContent = 'Q = — m³/h, H = — m';
-    $('r_suggest_desc').textContent = '输入有误，请先修正标红的参数。';
+    $('r_suggest_desc').textContent = 'Dữ liệu không hợp lệ; hãy sửa các thông số được đánh dấu đỏ.';
     $('parallel_group').style.display = 'none';
     $('vfd_group').style.display = 'none';
     $('checkHead').style.display = 'none';
@@ -1062,7 +1062,7 @@
     // 功率
     const Pe = rho * g * (Q/3600) * H / 1000;  // kW
     const Psh = eta_pump > 0 && eta_trans > 0 ? Pe / eta_pump / eta_trans : 0;
-    const Pm = K * Psh;  // 配套电机功率（K 为储备系数，不再除以电机效率）
+    const Pm = K * Psh;  // 配套电机功率（K 为储备系数，不再除以Hiệu suất động cơ）
     const P_in = eta_motor > 0 ? Psh / eta_motor : 0;  // 电机输入电功率 kW
     const Pm_std = pickStdMotor(Pm);
 
@@ -1072,7 +1072,7 @@
     const n_work = Math.max(1, n_parallel - n_backup);
     const Q_each = Q / n_work;
 
-    // 为了给每台泵算功率，按单泵流量重算（扬程H在并联中基本不变）
+    // 为了给每台泵算功率，按Lưu lượng mỗi bơm重算（扬程H在并联中基本不变）
     const Pe_each = rho * g * (Q_each/3600) * H / 1000;
     const Psh_each = eta_pump > 0 && eta_trans > 0 ? Pe_each / eta_pump / eta_trans : 0;
     const Pm_each = K * Psh_each;
@@ -1084,7 +1084,7 @@
     const price = num('price');
     const total_power = P_in_each * n_work;  // kW
     const day_kwh = total_power * hours;
-    const year_cost = day_kwh * 365 * price / 10000;  // 万元
+    const year_cost = day_kwh * 365 * price / 10000;  // vạn 元
     const unit_cost = Q > 0 ? (total_power * price) / Q : 0;  // 元/m³
     const ekwh = Q > 0 ? total_power / Q : 0;  // kWh/m³
 
@@ -1102,8 +1102,8 @@
     const NPSH_margin = NPSHa - NPSHr;
 
     // 变频分析
-    // 假定泵曲线 H = r²·H0 − k·Q²（H0 = 关死扬程系数 × H，k 由设计点求出），
-    // 系统曲线 H = Hst + (H − Hst)·(Q/Q)²（Hst = Hg + Hp 静扬程，富余扬程计入动扬程，曲线过设计点），联立求交点
+    // 假定泵曲线 H = r²·H0 − k·Q²（H0 = hệ số cột áp đóng van × H，k 由设计点求出），
+    // đường đặc tính hệ thống H = Hst + (H − Hst)·(Q/Q)²（Hst = Hg + Hp 静扬程，富余扬程计入动扬程，曲线过设计点），联立求交点
     const speed_ratio = num('speed_ratio') / 100;
     const H0 = num('H0_ratio') * H;
     const Hst = Hg + Hp;
@@ -1114,7 +1114,7 @@
     const x_vfd = vfd_curve_ok && vfd_num > 0 ? Math.sqrt(vfd_num / (H0 - Hst)) : NaN;  // Q'/Q
     const Q_vfd = Q * x_vfd;
     const H_vfd = Hst + (H - Hst) * x_vfd * x_vfd;
-    const P_vfd = rho * g * (Q_vfd/3600) * H_vfd / 1000 / eta_pump / eta_trans;  // 轴功率，η 取设计效率（近似）
+    const P_vfd = rho * g * (Q_vfd/3600) * H_vfd / 1000 / eta_pump / eta_trans;  // công suất trục，η 取设计效率（近似）
     const save = Psh > 0 ? (1 - P_vfd/Psh) * 100 : 0;
 
     // 渲染结果
@@ -1141,33 +1141,33 @@
     const cbox = $('checkNPSH');
     if (NPSH_margin >= NPSH_safe) {
       cbox.className = 'check-box check-ok';
-      cbox.innerHTML = `✓ 通过 NPSHa (${NPSHa.toFixed(2)} m) ≥ NPSHr (${NPSHr.toFixed(2)} m) + ${NPSH_safe.toFixed(1)} m 安全余量，余量 ${NPSH_margin.toFixed(2)} m`;
+      cbox.innerHTML = `✓ Đạt: NPSHa (${NPSHa.toFixed(2)} m) ≥ NPSHr (${NPSHr.toFixed(2)} m) + ${NPSH_safe.toFixed(1)} m dự phòng an toàn; mức dự phòng ${NPSH_margin.toFixed(2)} m`;
     } else if (NPSH_margin >= 0) {
       cbox.className = 'check-box check-warn';
-      cbox.innerHTML = `⚠ 安全余量不足 NPSHa − NPSHr = ${NPSH_margin.toFixed(2)} m，小于要求安全余量 ${NPSH_safe.toFixed(1)} m，建议降低 Hs 或换低 NPSHr 泵`;
+      cbox.innerHTML = `⚠ Dự phòng an toàn không đủ: NPSHa − NPSHr = ${NPSH_margin.toFixed(2)} m, nhỏ hơn mức yêu cầu ${NPSH_safe.toFixed(1)} m; nên giảm Hs hoặc chọn bơm có NPSHr thấp hơn`;
     } else {
       cbox.className = 'check-box check-bad';
-      cbox.innerHTML = `✗ 汽蚀风险 NPSHa (${NPSHa.toFixed(2)} m) &lt; NPSHr (${NPSHr.toFixed(2)} m)，必然发生汽蚀！必须将泵位置降低 ≥ ${(NPSHr - NPSHa + NPSH_safe).toFixed(2)} m 或倒灌安装`;
+      cbox.innerHTML = `✗ Nguy cơ xâm thực: NPSHa (${NPSHa.toFixed(2)} m) &lt; NPSHr (${NPSHr.toFixed(2)} m), chắc chắn xảy ra xâm thực! Phải hạ vị trí bơm ≥ ${(NPSHr - NPSHa + NPSH_safe).toFixed(2)} m hoặc lắp đặt ngập hút`;
     }
 
-    // 多台工作泵时，顶部功率按总流量计算，仅为单泵等效参考；实际单泵电机见并联分析
+    // 多台工作泵时，顶部功率按总流量计算，仅为单泵等效参考；实际单泵电机见Phân tích song song
     const multiWork = n_work > 1;
-    $('pw_title').textContent = multiWork ? `功率计算（按总流量单泵等效，仅参考；实际单泵见下方并联分析）` : '功率计算（单泵）';
-    $('lbl_Pm').textContent = multiWork ? '总流量单泵等效 Pm（仅参考）' : '电机配套功率 Pm（含 K 系数）';
-    $('lbl_Pm_std').textContent = multiWork ? '总流量单泵等效标准规格（仅参考）' : '推荐电机功率（标准规格）';
+    $('pw_title').textContent = multiWork ? `Tính công suất (quy đổi một bơm theo tổng lưu lượng, chỉ tham khảo; xem từng bơm thực tế trong phân tích song song bên dưới)` : 'Tính công suất (một bơm)';
+    $('lbl_Pm').textContent = multiWork ? 'Pm quy đổi một bơm theo tổng lưu lượng (chỉ tham khảo)' : 'Công suất động cơ lắp đặt Pm (gồm hệ số K)';
+    $('lbl_Pm_std').textContent = multiWork ? 'Cỡ tiêu chuẩn quy đổi một bơm theo tổng lưu lượng (chỉ tham khảo)' : 'Công suất động cơ đề xuất (cỡ tiêu chuẩn)';
 
     // 并联显示
     const backup_overflow = n_backup > 0 && n_backup >= n_parallel;
     if (n_parallel > 1 || backup_overflow) {
       $('parallel_group').style.display = 'block';
-      $('r_n_work').textContent = `${n_work} （总 ${n_parallel} 台，含 ${n_backup} 台备用）`;
+      $('r_n_work').textContent = `${n_work} (tổng ${n_parallel} bơm, gồm ${n_backup} bơm dự phòng)`;
       $('r_Q_each').textContent = Q_each.toFixed(1);
-      $('r_Pm_each').textContent = `${Pm_each.toFixed(2)} → ${fmtMotor(Pm_each_std)} (标准)`;
+      $('r_Pm_each').textContent = `${Pm_each.toFixed(2)} → ${fmtMotor(Pm_each_std)} (tiêu chuẩn)`;
       const pbox = $('checkParallel');
       if (backup_overflow) {
         pbox.style.display = 'block';
         pbox.className = 'check-box check-warn';
-        pbox.textContent = `⚠ 备用台数（${n_backup}）不少于并联台数（${n_parallel}），已按 1 台工作计算，请核对台数`;
+        pbox.textContent = `⚠ Số bơm dự phòng (${n_backup}) không nhỏ hơn số bơm lắp song song (${n_parallel}); đã tính với 1 bơm làm việc, hãy kiểm tra lại số lượng`;
       } else {
         pbox.style.display = 'none';
       }
@@ -1180,17 +1180,17 @@
       $('vfd_group').style.display = 'block';
       const vbox = $('checkVFD');
       if (!vfd_curve_ok || vfd_below_static) {
-        $('r_Q_vfd').textContent = vfd_below_static ? '— 无出流' : '—';
+        $('r_Q_vfd').textContent = vfd_below_static ? '— Không có dòng chảy' : '—';
         $('r_H_vfd').textContent = '—';
         $('r_P_vfd').textContent = '—';
         $('r_save').textContent = '—';
         vbox.style.display = 'block';
         if (!vfd_curve_ok) {
           vbox.className = 'check-box check-warn';
-          vbox.textContent = `⚠ 设计扬程或关死扬程 H₀ (${H0.toFixed(2)} m) 不高于静扬程 Hst (${Hst.toFixed(2)} m)，假定泵曲线无法与系统曲线求交点，未做变频估算`;
+          vbox.textContent = `⚠ Cột áp thiết kế hoặc cột áp đóng van H₀ (${H0.toFixed(2)} m) không cao hơn cột áp tĩnh Hst (${Hst.toFixed(2)} m); không tìm được giao điểm giữa đường bơm giả định và đường hệ thống, chưa ước tính biến tần`;
         } else {
           vbox.className = 'check-box check-bad';
-          vbox.textContent = `✗ 调速比 ${(speed_ratio*100).toFixed(0)}% 下关死扬程 r²·H₀ = ${(speed_ratio*speed_ratio*H0).toFixed(2)} m ≤ 静扬程 Hst = ${Hst.toFixed(2)} m，泵曲线与系统曲线无正交点，泵无法出流；最低调速比约 ${(Math.sqrt(Math.max(Hst,0)/H0)*100).toFixed(0)}%（按假定泵曲线）`;
+          vbox.textContent = `✗ Ở tỷ lệ điều tốc ${(speed_ratio*100).toFixed(0)}%, cột áp đóng van r²·H₀ = ${(speed_ratio*speed_ratio*H0).toFixed(2)} m ≤ cột áp tĩnh Hst = ${Hst.toFixed(2)} m; đường bơm và đường hệ thống không có giao điểm dương, bơm không thể tạo dòng chảy; tỷ lệ điều tốc tối thiểu khoảng ${(Math.sqrt(Math.max(Hst,0)/H0)*100).toFixed(0)}% (theo đường bơm giả định)`;
         }
       } else {
         $('r_Q_vfd').textContent = Q_vfd.toFixed(1);
@@ -1203,14 +1203,14 @@
       $('vfd_group').style.display = 'none';
     }
 
-    // 选型建议
+    // Đề xuất lựa chọn
     if (n_parallel > 1) {
-      $('r_suggest').textContent = `单泵：Q = ${Q_each.toFixed(0)} m³/h, H = ${H.toFixed(1)} m, N = ${Pm_each_std} kW × ${n_parallel} 台`;
+      $('r_suggest').textContent = `Mỗi bơm: Q = ${Q_each.toFixed(0)} m³/h, H = ${H.toFixed(1)} m, N = ${Pm_each_std} kW × ${n_parallel} bơm`;
     } else {
       $('r_suggest').textContent = `Q = ${Q.toFixed(0)} m³/h, H = ${H.toFixed(1)} m, N = ${Pm_std} kW`;
     }
-    const type_names = {centrifugal:'ISG立式离心泵', submerged:'WQ潜污泵', axial:'ZLB轴流泵', screw:'螺杆泵', dosing:'计量泵'};
-    $('r_suggest_desc').textContent = `建议选型：${type_names[$('pump_type').value] || '离心泵'}。查厂家样本使工作点落在高效区（Q_opt 的 80-110%）。`;
+    const type_names = {centrifugal:'bơm ly tâm đứng ISG', submerged:'bơm chìm nước thải WQ', axial:'bơm hướng trục ZLB', screw:'Bơm trục vít', dosing:'Bơm định lượng'};
+    $('r_suggest_desc').textContent = `Đề xuất lựa chọn: ${type_names[$('pump_type').value] || 'bơm ly tâm'}. Tra tài liệu nhà sản xuất và chọn bơm sao cho điểm làm việc nằm trong vùng hiệu suất cao (80-110% Q_opt).`;
 
     // 系统扬程 ≤ 0（吸水液面高于出水液面等）：不输出负功率/负电费，不推荐电机
     const hbox = $('checkHead');
@@ -1220,58 +1220,58 @@
       $('vfd_group').style.display = 'none';
       hbox.style.display = 'block';
       hbox.className = 'check-box check-warn';
-      hbox.textContent = '⚠ 系统扬程 ≤ 0：可自流，无需提升（或请核对液面标高）';
+      hbox.textContent = '⚠ Cột áp hệ thống ≤ 0: có thể tự chảy, không cần bơm nâng (hoặc hãy kiểm tra cao độ mặt nước)';
       $('r_suggest').textContent = `Q = ${Q.toFixed(0)} m³/h, H = ${H.toFixed(1)} m, N = —`;
-      $('r_suggest_desc').textContent = '系统扬程 ≤ 0，可自流，无需配泵；请核对吸水/出水液面标高及压力输入。';
+      $('r_suggest_desc').textContent = 'Cột áp hệ thống ≤ 0, có thể tự chảy và không cần lắp bơm; hãy kiểm tra cao độ mặt nước hút/xả và áp suất nhập vào.';
     } else {
       hbox.style.display = 'none';
     }
   }
 
   function copyResults() {
-    const txt = `水泵选型计算结果
+    const txt = `Kết quả tính chọn máy bơm
 ————————————————
-设计流量 Q = ${num('Q')} m³/h
-系统扬程 H = ${$('r_H').textContent} m
-介质: ${$('fluid').options[$('fluid').selectedIndex].text}, ρ=${num('rho')} kg/m³, T=${num('T')}℃
+Lưu lượng thiết kế Q = ${num('Q')} m³/h
+Cột áp hệ thống H = ${$('r_H').textContent} m
+Môi chất: ${$('fluid').options[$('fluid').selectedIndex].text}, ρ=${num('rho')} kg/m³, T=${num('T')}℃
 
-【扬程分解】
-几何扬程 Hg = ${$('r_Hg').textContent} m
-压力扬程 Hp = ${$('r_Hp').textContent} m
-水头损失 hw = ${$('r_hw').textContent} m（吸水管 ${num('hf_s')} + 压水管沿程 ${num('hf_d')} + 压水管局部 ${num('hj')}）
+【Các thành phần cột áp】
+Cột áp hình học Hg = ${$('r_Hg').textContent} m
+Cột áp áp suất Hp = ${$('r_Hp').textContent} m
+Tổn thất cột áp hw = ${$('r_hw').textContent} m（ống hút ${num('hf_s')} + ống đẩy dọc đường ${num('hf_d')} + ống đẩy cục bộ ${num('hj')}）
 
-【功率${$('pw_title').textContent.replace('功率计算', '')}】
-有效功率 Pe = ${$('r_Pe').textContent} kW
-泵轴功率 Psh = ${$('r_Psh').textContent} kW
-${$('lbl_Pm').textContent} = ${$('r_Pm').textContent} kW → 标准 ${$('r_Pm_std').textContent} kW
+【Công suất${$('pw_title').textContent.replace('Tính công suất', '')}】
+Công suất hữu ích Pe = ${$('r_Pe').textContent} kW
+Công suất trục bơm Psh = ${$('r_Psh').textContent} kW
+${$('lbl_Pm').textContent} = ${$('r_Pm').textContent} kW → tiêu chuẩn ${$('r_Pm_std').textContent} kW
 
-【能耗】
-吨水能耗 = ${$('r_ekwh').textContent} kWh/m³
-日耗电 = ${$('r_day_kwh').textContent} kWh/d
-年电费 = ${$('r_year_cost').textContent} 万元
-吨水电耗成本 = ${$('r_unit_cost').textContent} 元/m³${$('checkHead').style.display !== 'none' ? '\n' + $('checkHead').textContent : ''}
+【Điện năng】
+Điện năng mỗi tấn nước = ${$('r_ekwh').textContent} kWh/m³
+Điện năng mỗi ngày = ${$('r_day_kwh').textContent} kWh/d
+Chi phí điện hằng năm = ${$('r_year_cost').textContent} vạn nhân dân tệ
+Chi phí điện mỗi tấn nước = ${$('r_unit_cost').textContent} nhân dân tệ/m³${$('checkHead').style.display !== 'none' ? '\n' + $('checkHead').textContent : ''}
 
-【NPSH 校核】
+【Kiểm tra NPSH】
 Pa = ${$('r_Pa').textContent} kPa, Pv = ${$('r_Pv').textContent} kPa
 NPSHa = ${$('r_NPSHa').textContent} m, NPSHr = ${num('NPSHr')} m
-最大允许吸水高度 = ${$('r_Hs_max').textContent} m
+Chiều cao hút cho phép lớn nhất = ${$('r_Hs_max').textContent} m
 ${$('checkNPSH').textContent}
 ${$('parallel_group').style.display !== 'none' ? `
-【并联分析】
-工作泵数量 = ${$('r_n_work').textContent} 台
-单泵流量 = ${$('r_Q_each').textContent} m³/h
-单泵电机功率 = ${$('r_Pm_each').textContent} kW${$('checkParallel').style.display !== 'none' ? '\n' + $('checkParallel').textContent : ''}
+【Phân tích song song】
+Số bơm làm việc = ${$('r_n_work').textContent} bơm
+Lưu lượng mỗi bơm = ${$('r_Q_each').textContent} m³/h
+Công suất động cơ mỗi bơm = ${$('r_Pm_each').textContent} kW${$('checkParallel').style.display !== 'none' ? '\n' + $('checkParallel').textContent : ''}
 ` : ''}${$('vfd_group').style.display !== 'none' ? `
-【变频运行（调速比 ${num('speed_ratio')}%，关死扬程系数 ${num('H0_ratio')}，按假定二次泵曲线估算，以厂家曲线为准）】
+【Vận hành biến tần (tỷ lệ điều tốc ${num('speed_ratio')}%，hệ số cột áp đóng van ${num('H0_ratio')}，ước tính theo đường bơm bậc hai giả định, lấy đường đặc tính nhà sản xuất làm chuẩn)】
 Q' = ${$('r_Q_vfd').textContent} m³/h
 H' = ${$('r_H_vfd').textContent} m
 P' = ${$('r_P_vfd').textContent} kW
-节能率 = ${$('r_save').textContent} %${$('checkVFD').style.display !== 'none' ? '\n' + $('checkVFD').textContent : ''}
+Tỷ lệ tiết kiệm điện = ${$('r_save').textContent} %${$('checkVFD').style.display !== 'none' ? '\n' + $('checkVFD').textContent : ''}
 ` : ''}
-【选型建议】
+【Đề xuất lựa chọn】
 ${$('r_suggest').textContent}`;
     navigator.clipboard.writeText(txt).then(() => {
-      alert('结果已复制到剪贴板');
+      alert('Đã sao chép kết quả vào bộ nhớ tạm');
     }).catch(() => {
       const ta = document.createElement('textarea');
       ta.value = txt;
@@ -1279,7 +1279,7 @@ ${$('r_suggest').textContent}`;
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     });
   }
 
@@ -1302,7 +1302,7 @@ ${$('r_suggest').textContent}`;
     el.addEventListener('input', calc);
     el.addEventListener('change', calc);
   });
-  $('eta_pump').addEventListener('input', () => setEtaHint('手动输入的泵效率；切换介质或泵类型会重新覆盖此值'));
+  $('eta_pump').addEventListener('input', () => setEtaHint('Hiệu suất bơm nhập thủ công; đổi môi chất hoặc loại bơm sẽ ghi đè giá trị này'));
 
   calc();
 </script>

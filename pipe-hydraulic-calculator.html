@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>管道水力计算器 | 水处理工具箱 · WaterKit</title>
+<title>Máy tính thủy lực đường ống | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="管道水力计算器：已知流量、流速、管径任意两项求第三项，按 Darcy-Weisbach（Colebrook-White）、Hazen-Williams 或 Manning 公式计算沿程与局部水头损失，并推荐公称直径、校核流速。">
+<meta name="description" content="Máy tính thủy lực đường ống: biết hai trong ba thông số lưu lượng, vận tốc và đường kính để tính thông số còn lại; tính tổn thất cột áp dọc đường và cục bộ theo Darcy-Weisbach (Colebrook-White), Hazen-Williams hoặc Manning, đề xuất đường kính danh nghĩa và kiểm tra vận tốc.">
 <link rel="canonical" href="https://waterkit.cn/pipe-hydraulic-calculator.html">
 <style>
   :root {
@@ -436,47 +436,47 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Công nghệ Dengdeng</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-hydraulics">水力计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-hydraulics">Tính toán thủy lực</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Công nghệ Dengdeng</a>
     </nav>
   </div>
 </header>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-hydraulics">水力计算</a>
+  <a href="index.html#cat-hydraulics">Tính toán thủy lực</a>
   <span class="sep">/</span>
-  <span class="current">管道水力</span>
+  <span class="current">Thủy lực đường ống</span>
 </div>
 
 <main class="main-wrap">
 <div class="container">
   <header class="tool-header">
-    <h1>🔧 管道水力计算器</h1>
-    <p>已知任意两项求第三项：流量 Q / 流速 v / 管径 D，含水头损失计算</p>
+    <h1>🔧 Máy tính thủy lực đường ống</h1>
+    <p>Biết hai thông số bất kỳ để tính thông số còn lại: lưu lượng Q / vận tốc v / đường kính ống D, bao gồm tính tổn thất cột áp</p>
   </header>
 
   <div class="body">
 
-    <div class="section-title">计算模式（点击切换求解对象）</div>
+    <div class="section-title">Chế độ tính (nhấn để chọn đại lượng cần tính)</div>
     <div class="mode-tabs">
-      <button class="mode-tab active" data-mode="D" onclick="setMode('D')">已知 Q、v，求 D</button>
-      <button class="mode-tab" data-mode="v" onclick="setMode('v')">已知 Q、D，求 v</button>
-      <button class="mode-tab" data-mode="Q" onclick="setMode('Q')">已知 v、D，求 Q</button>
+      <button class="mode-tab active" data-mode="D" onclick="setMode('D')">Biết Q, v, tính D</button>
+      <button class="mode-tab" data-mode="v" onclick="setMode('v')">Biết Q, D, tính v</button>
+      <button class="mode-tab" data-mode="Q" onclick="setMode('Q')">Biết v, D, tính Q</button>
     </div>
 
-    <div class="section-title">基本参数</div>
+    <div class="section-title">Thông số cơ bản</div>
     <div class="grid">
       <div class="field" id="f_Q">
-        <label for="Q">流量 Q <span class="unit" id="u_Q">m³/h</span></label>
+        <label for="Q">Lưu lượng Q <span class="unit" id="u_Q">m³/h</span></label>
         <input type="number" id="Q" value="100" step="10">
         <select id="unit_Q">
           <option value="m3/h" selected>m³/h</option>
@@ -486,46 +486,46 @@
         </select>
       </div>
       <div class="field" id="f_v">
-        <label for="v">流速 v <span class="unit">m/s</span></label>
+        <label for="v">Vận tốc v <span class="unit">m/s</span></label>
         <input type="number" id="v" value="1.2" step="0.1">
       </div>
       <div class="field" id="f_D">
-        <label for="D">管内径 D <span class="unit">mm</span></label>
+        <label for="D">Đường kính trong ống D <span class="unit">mm</span></label>
         <input type="number" id="D" value="150" step="10">
         <div class="hint" id="D_hint"></div>
       </div>
     </div>
 
-    <div class="section-title">水头损失参数</div>
+    <div class="section-title">Thông số tổn thất cột áp</div>
     <div class="grid">
       <div class="field">
-        <label for="hfMethod">沿程损失公式</label>
+        <label for="hfMethod">Công thức tổn thất dọc đường</label>
         <select id="hfMethod">
-          <option value="dw" selected>Darcy-Weisbach（Colebrook-White，用 ε）</option>
-          <option value="hw">Hazen-Williams（用 C）</option>
-          <option value="manning">Manning（用 n）</option>
+          <option value="dw" selected>Darcy-Weisbach (Colebrook-White, dùng ε)</option>
+          <option value="hw">Hazen-Williams (dùng C)</option>
+          <option value="manning">Manning (dùng n)</option>
         </select>
       </div>
       <div class="field">
-        <label for="L">管长 L <span class="unit">m</span></label>
+        <label for="L">Chiều dài ống L <span class="unit">m</span></label>
         <input type="number" id="L" value="100" step="10">
       </div>
       <div class="field">
-        <label for="material">管材 <span class="unit">粗糙度 n/C/ε</span></label>
+        <label for="material">Vật liệu ống <span class="unit">Độ nhám n/C/ε</span></label>
         <select id="material" onchange="updateMaterial()">
-          <option value="steel">钢管（新）</option>
-          <option value="steel_old">钢管（旧/结垢）</option>
-          <option value="ductile">球墨铸铁</option>
-          <option value="cast_iron">铸铁（旧）</option>
-          <option value="concrete">混凝土</option>
-          <option value="pvc" selected>PVC/PE 塑料管</option>
-          <option value="ss">不锈钢</option>
-          <option value="frp">玻璃钢</option>
-          <option value="custom">自定义</option>
+          <option value="steel">Ống thép (mới)</option>
+          <option value="steel_old">Ống thép (cũ/đóng cặn)</option>
+          <option value="ductile">Gang cầu</option>
+          <option value="cast_iron">Gang (cũ)</option>
+          <option value="concrete">Bê tông</option>
+          <option value="pvc" selected>Ống nhựa PVC/PE</option>
+          <option value="ss">Thép không gỉ</option>
+          <option value="frp">Nhựa gia cường sợi thủy tinh</option>
+          <option value="custom">Tùy chỉnh</option>
         </select>
       </div>
       <div class="field">
-        <label for="n">曼宁系数 n <span class="unit">—</span></label>
+        <label for="n">Hệ số Manning n <span class="unit">—</span></label>
         <input type="number" id="n" value="0.009" step="0.001">
         <div class="hint unused-note" id="note_n"></div>
       </div>
@@ -535,140 +535,140 @@
         <div class="hint unused-note" id="note_C"></div>
       </div>
       <div class="field">
-        <label for="eps">绝对粗糙度 ε <span class="unit">mm</span></label>
+        <label for="eps">Độ nhám tuyệt đối ε <span class="unit">mm</span></label>
         <input type="number" id="eps" value="0.0015" step="0.001">
         <div class="hint unused-note" id="note_eps"></div>
       </div>
       <div class="field">
-        <label for="T">水温 T <span class="unit">℃</span></label>
+        <label for="T">Nhiệt độ nước T <span class="unit">℃</span></label>
         <input type="number" id="T" value="20" step="1">
       </div>
       <div class="field">
-        <label for="zeta">局部阻力系数 Σζ <span class="unit">—</span></label>
+        <label for="zeta">Hệ số trở lực cục bộ Σζ <span class="unit">—</span></label>
         <input type="number" id="zeta" value="2.0" step="0.5">
       </div>
     </div>
 
     <div class="results">
-      <h2>计算结果</h2>
+      <h2>Kết quả tính toán</h2>
       <div class="result-row">
-        <span class="result-label">管道流量</span>
+        <span class="result-label">Lưu lượng đường ống</span>
         <span><span class="result-value" id="r_Q">—</span><span class="result-unit" id="r_Q_u">m³/h</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">管内流速 v</span>
+        <span class="result-label">Vận tốc trong ống v</span>
         <span><span class="result-value" id="r_v">—</span><span class="result-unit">m/s</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">管内径 D</span>
+        <span class="result-label">Đường kính trong ống D</span>
         <span><span class="result-value" id="r_D">—</span><span class="result-unit">mm</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">推荐公称直径 DN</span>
+        <span class="result-label">Đường kính danh nghĩa đề xuất DN</span>
         <span><span class="result-value" id="r_DN">—</span><span class="result-unit">mm</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">雷诺数 Re</span>
+        <span class="result-label">Số Reynolds Re</span>
         <span><span class="result-value" id="r_Re">—</span><span class="result-unit" id="r_Re_t">—</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label" id="r_lambda_l">沿程阻力系数 λ</span>
+        <span class="result-label" id="r_lambda_l">Hệ số ma sát dọc đường λ</span>
         <span><span class="result-value" id="r_lambda">—</span><span class="result-unit">—</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">沿程损失公式</span>
+        <span class="result-label">Công thức tổn thất dọc đường</span>
         <span><span class="result-value" id="r_method" style="font-size:14px">—</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">沿程水头损失 hf</span>
+        <span class="result-label">Tổn thất cột áp dọc đường hf</span>
         <span><span class="result-value" id="r_hf">—</span><span class="result-unit">m</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">局部水头损失 hj</span>
+        <span class="result-label">Tổn thất cột áp cục bộ hj</span>
         <span><span class="result-value" id="r_hj">—</span><span class="result-unit">m</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">总水头损失 H</span>
+        <span class="result-label">Tổng tổn thất cột áp H</span>
         <span><span class="result-value" id="r_H">—</span><span class="result-unit">m</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">千米水头损失 i</span>
+        <span class="result-label">Tổn thất cột áp trên mỗi kilômét i</span>
         <span><span class="result-value" id="r_i">—</span><span class="result-unit">‰</span></span>
       </div>
-      <div class="check-box" id="checkBox">校核中...</div>
+      <div class="check-box" id="checkBox">Đang kiểm tra...</div>
     </div>
 
     <div class="buttons">
-      <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
-      <button class="btn btn-secondary" onclick="toggleFormula()">📖 查看公式</button>
+      <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
+      <button class="btn btn-secondary" onclick="toggleFormula()">📖 Xem công thức</button>
     </div>
 
     <div class="formula-box" id="formulaBox" style="display:none;">
-      <h3>计算原理</h3>
+      <h3>Nguyên lý tính toán</h3>
 
-      <p><strong>① 连续性方程</strong>（流量/流速/管径三者关系）</p>
+      <p><strong>① Phương trình liên tục</strong> (quan hệ giữa lưu lượng/vận tốc/đường kính ống)</p>
       <code>Q = v · A = v · π · D² / 4</code>
-      <p>单位需统一：Q [m³/s]、v [m/s]、D [m]。工具内部自动换算。</p>
+      <p>Các đơn vị phải thống nhất: Q [m³/s], v [m/s], D [m]. Công cụ tự động quy đổi.</p>
 
-      <p><strong>② 雷诺数 Re</strong></p>
+      <p><strong>② Số Reynolds Re</strong></p>
       <code>Re = v · D / ν</code>
-      <p>ν 为水的运动黏度 [m²/s]，按手册"水的物性表"表值线性插值（0–100 ℃，超出范围提示并按端点钳位）：</p>
+      <p>ν là độ nhớt động học của nước [m²/s], nội suy tuyến tính từ bảng tính chất vật lý của nước trong sổ tay (0–100 ℃; ngoài phạm vi sẽ cảnh báo và dùng giá trị tại đầu mút):</p>
       <table>
         <tr><th>T (℃)</th><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td></tr>
         <tr><th>ν (×10⁻⁶ m²/s)</th><td>1.792</td><td>1.519</td><td>1.307</td><td>1.139</td><td>1.004</td><td>0.893</td><td>0.801</td><td>0.724</td></tr>
         <tr><th>T (℃)</th><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td><td></td></tr>
         <tr><th>ν (×10⁻⁶ m²/s)</th><td>0.658</td><td>0.553</td><td>0.474</td><td>0.413</td><td>0.364</td><td>0.326</td><td>0.294</td><td></td></tr>
       </table>
-      <p>来源：水的物性表（给水排水 / 流体力学手册）。Re &lt; 2300 层流；Re &gt; 4000 紊流（给排水管道几乎都是紊流）。</p>
+      <p>Nguồn: bảng tính chất vật lý của nước (sổ tay cấp thoát nước / cơ học chất lưu). Re &lt; 2300: chảy tầng; Re &gt; 4000: chảy rối (dòng chảy trong đường ống cấp thoát nước hầu hết là chảy rối).</p>
 
-      <p><strong>③ 沿程阻力系数 λ —— Colebrook-White 公式（隐式，迭代求解）</strong></p>
+      <p><strong>③ Hệ số ma sát dọc đường λ — công thức Colebrook-White (ẩn, giải lặp)</strong></p>
       <code>1/√λ = −2·log₁₀(ε/(3.7D) + 2.51/(Re·√λ))</code>
-      <p>层流时 λ = 64/Re。本工具采用 Swamee-Jain 显式近似作为初值，再用 Colebrook-White 迭代至收敛（|Δλ| &lt; 10⁻⁸，最多 30 次）。2300 ≤ Re &lt; 4000 的过渡区仍按 Colebrook-White 计算，λ 不确定性较大。</p>
+      <p>Khi chảy tầng, λ = 64/Re. Công cụ dùng công thức xấp xỉ tường minh Swamee-Jain làm giá trị ban đầu, sau đó lặp theo Colebrook-White đến khi hội tụ (|Δλ| &lt; 10⁻⁸, tối đa 30 lần). Trong vùng chuyển tiếp 2300 ≤ Re &lt; 4000 vẫn tính theo Colebrook-White, nhưng λ có độ bất định lớn.</p>
 
-      <p><strong>④ 沿程水头损失 hf —— Darcy-Weisbach 公式</strong></p>
+      <p><strong>④ Tổn thất cột áp dọc đường hf — công thức Darcy-Weisbach</strong></p>
       <code>hf = λ · (L/D) · v² / (2g)</code>
-      <p>默认公式。也可在"沿程损失公式"中切换为下列经验公式（Q [m³/s]、D [m]、L [m]）：</p>
+      <p>Công thức mặc định. Có thể chọn các công thức thực nghiệm sau trong mục "Công thức tổn thất dọc đường" (Q [m³/s], D [m], L [m]):</p>
       <code>Hazen-Williams：hf = 10.67 · L · Q^1.852 / (C^1.852 · D^4.87)</code>
       <code>Manning：hf = 10.29 · n² · L · Q² / D^5.333</code>
-      <p>选用经验公式时，结果中的 λ 为由 hf 反算的等效值 λ = hf · D · 2g / (L · v²)。</p>
+      <p>Khi chọn công thức thực nghiệm, λ trong kết quả là giá trị tương đương tính ngược từ hf: λ = hf · D · 2g / (L · v²).</p>
 
-      <p><strong>⑤ 局部水头损失 hj</strong></p>
+      <p><strong>⑤ Tổn thất cột áp cục bộ hj</strong></p>
       <code>hj = Σζ · v² / (2g)</code>
-      <p>弯头、阀门、三通、进出口的阻力系数之和。一般管线按沿程的 10-30% 估算，或查《给水排水设计手册》。</p>
+      <p>Tổng hệ số trở lực của co, van, tê, cửa vào và cửa ra. Với đường ống thông thường, có thể ước tính tổn thất cục bộ bằng 10-30% tổn thất dọc đường hoặc tra Sổ tay thiết kế cấp thoát nước.</p>
 
-      <p><strong>⑥ 常用管材粗糙度参考</strong></p>
+      <p><strong>⑥ Độ nhám tham khảo của các vật liệu ống thông dụng</strong></p>
       <table>
-        <tr><th>管材</th><th>ε (mm)</th><th>曼宁 n</th><th>H-W 系数 C</th></tr>
-        <tr><td>新钢管</td><td>0.05</td><td>0.011</td><td>130</td></tr>
-        <tr><td>旧钢管/结垢</td><td>0.5-1.0</td><td>0.013</td><td>100</td></tr>
-        <tr><td>球墨铸铁（水泥衬里）</td><td>0.1</td><td>0.011</td><td>130</td></tr>
-        <tr><td>旧铸铁</td><td>1.5</td><td>0.014</td><td>90</td></tr>
-        <tr><td>混凝土</td><td>0.3-3.0</td><td>0.013-0.015</td><td>120</td></tr>
-        <tr><td>PVC/PE 塑料</td><td>0.0015</td><td>0.009</td><td>150</td></tr>
-        <tr><td>不锈钢</td><td>0.002</td><td>0.009</td><td>150</td></tr>
-        <tr><td>玻璃钢</td><td>0.01</td><td>0.010</td><td>140</td></tr>
+        <tr><th>Vật liệu ống</th><th>ε (mm)</th><th>Manning n</th><th>Hệ số H-W C</th></tr>
+        <tr><td>Ống thép mới</td><td>0.05</td><td>0.011</td><td>130</td></tr>
+        <tr><td>Ống thép cũ/đóng cặn</td><td>0.5-1.0</td><td>0.013</td><td>100</td></tr>
+        <tr><td>Gang cầu (lót xi măng)</td><td>0.1</td><td>0.011</td><td>130</td></tr>
+        <tr><td>Gang cũ</td><td>1.5</td><td>0.014</td><td>90</td></tr>
+        <tr><td>Bê tông</td><td>0.3-3.0</td><td>0.013-0.015</td><td>120</td></tr>
+        <tr><td>Nhựa PVC/PE</td><td>0.0015</td><td>0.009</td><td>150</td></tr>
+        <tr><td>Thép không gỉ</td><td>0.002</td><td>0.009</td><td>150</td></tr>
+        <tr><td>Nhựa gia cường sợi thủy tinh</td><td>0.01</td><td>0.010</td><td>140</td></tr>
       </table>
 
-      <p><strong>⑦ 给排水常用流速校核参考</strong></p>
+      <p><strong>⑦ Vận tốc tham khảo để kiểm tra đường ống cấp thoát nước</strong></p>
       <table>
-        <tr><th>管道类型</th><th>推荐流速范围 (m/s)</th></tr>
-        <tr><td>生活/生产给水主管</td><td>1.0 - 1.5</td></tr>
-        <tr><td>生活/生产给水支管</td><td>0.6 - 1.2</td></tr>
-        <tr><td>污水重力流（最小/最大）</td><td>0.6 / 2.5 - 5.0</td></tr>
-        <tr><td>污水压力流</td><td>0.7 - 2.0</td></tr>
-        <tr><td>加药管（避沉淀）</td><td>1.0 - 2.5</td></tr>
-        <tr><td>空气管（鼓风）</td><td>10 - 25</td></tr>
+        <tr><th>Loại đường ống</th><th>Khoảng vận tốc khuyến nghị (m/s)</th></tr>
+        <tr><td>Ống cấp nước chính cho sinh hoạt/sản xuất</td><td>1.0 - 1.5</td></tr>
+        <tr><td>Ống cấp nước nhánh cho sinh hoạt/sản xuất</td><td>0.6 - 1.2</td></tr>
+        <tr><td>Nước thải tự chảy (tối thiểu/tối đa)</td><td>0.6 / 2.5 - 5.0</td></tr>
+        <tr><td>Nước thải chảy có áp</td><td>0.7 - 2.0</td></tr>
+        <tr><td>Ống định lượng hoá chất (tránh lắng cặn)</td><td>1.0 - 2.5</td></tr>
+        <tr><td>Ống dẫn khí (máy thổi khí)</td><td>10 - 25</td></tr>
       </table>
     </div>
 
     <div class="note">
-      ⚠️ 本工具仅用于方案估算与初步校核。实际工程须按 GB 50013《室外给水设计标准》、GB 50014《室外排水设计标准》进行详细设计，局部阻力系数建议按管件实际组合查表。
+      ⚠️ Công cụ chỉ dùng để ước tính phương án và kiểm tra sơ bộ. Thiết kế chi tiết công trình thực tế phải tuân theo GB 50013 (Tiêu chuẩn thiết kế cấp nước ngoài nhà) và GB 50014 (Tiêu chuẩn thiết kế thoát nước ngoài nhà) của Trung Quốc; nên tra hệ số trở lực cục bộ theo tổ hợp phụ kiện thực tế.
     </div>
 
   </div>
 
-  <footer class="tool-inner-footer">水处理工具箱 · 仅供工程估算参考</footer>
+  <footer class="tool-inner-footer">Bộ công cụ xử lý nước · Chỉ dùng tham khảo để ước tính kỹ thuật</footer>
 </div>
 </main>
 
@@ -680,65 +680,65 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Công nghệ Dengdeng</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là tập hợp công cụ tính toán trực tuyến do Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam cung cấp, được các kỹ sư công nghệ xử lý nước trực tiếp phát triển và duy trì. Miễn phí, cập nhật liên tục.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thủy lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thủy lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thủy lực đường ống (nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thủy lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính lưu lượng qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lượng khí sục</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn phát sinh</a></li>
+          <li><a href="dosing-calculator.html">Định lượng hoá chất</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">Thiết kế công trình MBBR</a></li>
+          <li><a href="ifas-design.html">Thiết kế công trình IFAS</a></li>
+          <li><a href="mbr-design.html">Thiết kế công trình MBR</a></li>
+          <li><a href="ro-design.html">Thiết kế thẩm thấu ngược RO</a></li>
+          <li><a href="pump-selection-calculator.html">Lựa chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Lựa chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Quy đổi chỉ tiêu chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thủy sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải từ ao nuôi</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Hướng dẫn tham quan Aqua Nor 2027</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Công ty</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang web chính thức của Công nghệ Dengdeng ↗</a></li>
+          <li>Tư vấn Công nghệ Dengdeng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Open Source</h4>
+        <h4>Mã nguồn mở</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho mã GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">Giấy phép AGPL-3.0</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Gửi phản hồi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
@@ -749,7 +749,7 @@
 
   let mode = 'D'; // 默认求管径
 
-  // 管材粗糙度库
+  // Vật liệu ốngĐộ nhám库
   const materials = {
     steel:    {eps: 0.05,   n: 0.011, C: 130},
     steel_old:{eps: 0.8,    n: 0.013, C: 100},
@@ -774,8 +774,8 @@
     calc();
   }
 
-  // 按所选沿程损失公式启用对应粗糙度输入（D-W 用 ε，H-W 用 C，Manning 用 n），其余禁用灰显
-  // 禁用框仍由 updateMaterial() 写入管材值，便于切换公式后直接使用
+  // 按所选Công thức tổn thất dọc đường启用对应Độ nhám输入（D-W 用 ε，H-W 用 C，Manning 用 n），其余禁用灰显
+  // 禁用框仍由 updateMaterial() 写入Vật liệu ống值，便于切换公式后直接使用
   const COEF_FOR = {dw: 'eps', hw: 'C', manning: 'n'};
   function updateCoefState() {
     const use = COEF_FOR[$('hfMethod').value] || 'eps';
@@ -783,7 +783,7 @@
       const off = id !== use;
       $(id).disabled = off;
       $(id).closest('.field').classList.toggle('coef-unused', off);
-      $('note_' + id).textContent = off ? '当前公式不使用' : '';
+      $('note_' + id).textContent = off ? 'Không dùng trong công thức hiện tại' : '';
     });
   }
 
@@ -816,7 +816,7 @@
     return NU_TABLE[NU_TABLE.length - 1][1] * 1e-6;
   }
 
-  // 流量单位换算到 m³/s
+  // Lưu lượng单位换算到 m³/s
   function Q_to_m3s(Q, unit) {
     switch(unit) {
       case 'm3/h': return Q / 3600;
@@ -838,7 +838,7 @@
 
   // Colebrook-White 迭代求 λ
   function solveLambda(Re, eps_D) {
-    if (Re < 2300) return 64 / Re; // 层流
+    if (Re < 2300) return 64 / Re; // Chảy tầng
     // Swamee-Jain 显式近似作初值
     let lambda = 0.25 / Math.pow(Math.log10(eps_D/3.7 + 5.74/Math.pow(Re,0.9)), 2);
     // Colebrook-White 迭代
@@ -851,7 +851,7 @@
     return lambda;
   }
 
-  // 推荐公称直径（超出 DN 系列上限时返回 null）
+  // Đường kính danh nghĩa đề xuất（超出 DN 系列上限时返回 null）
   function recommendDN(D_mm) {
     for (let dn of dnList) {
       if (dn >= D_mm) return dn;
@@ -859,17 +859,17 @@
     return null;
   }
 
-  // 流速校核
+  // Kiểm tra vận tốc
   function velocityCheck(v) {
-    if (v < 0.3) return {cls: 'check-warn', msg: `⚠ 流速 ${v.toFixed(2)} m/s 偏低（&lt;0.3），易沉积，建议放大流速或减小管径`};
-    if (v < 0.6) return {cls: 'check-warn', msg: `⚠ 流速 ${v.toFixed(2)} m/s 对给水管偏低（支管宜 ≥ 0.6 m/s）；若为污水压力管需 ≥ 0.7 m/s、污水重力流需 ≥ 0.6 m/s 防沉积`};
-    if (v <= 1.5) return {cls: 'check-ok', msg: `✓ 流速 ${v.toFixed(2)} m/s 处于常规给水管道推荐范围（0.6-1.5 m/s）`};
-    if (v <= 2.5) return {cls: 'check-warn', msg: `⚠ 流速 ${v.toFixed(2)} m/s 偏高，注意经济流速（给水干管一般 ≤ 1.5–2.0 m/s；压力管/加药管可取至 2.5 m/s）`};
-    if (v <= 5.0) return {cls: 'check-warn', msg: `⚠ 流速 ${v.toFixed(2)} m/s 偏高，注意水锤和管道冲刷`};
-    return {cls: 'check-bad', msg: `✗ 流速 ${v.toFixed(2)} m/s 超过 5 m/s，水锤风险极高，建议放大管径`};
+    if (v < 0.3) return {cls: 'check-warn', msg: `⚠ Vận tốc ${v.toFixed(2)} m/s thấp (&lt;0.3), dễ gây lắng cặn; nên tăng vận tốc hoặc giảm đường kính ống`};
+    if (v < 0.6) return {cls: 'check-warn', msg: `⚠ Vận tốc ${v.toFixed(2)} m/s thấp đối với ống cấp nước (ống nhánh nên ≥ 0.6 m/s); để tránh lắng cặn, ống nước thải có áp cần ≥ 0.7 m/s, ống nước thải tự chảy cần ≥ 0.6 m/s`};
+    if (v <= 1.5) return {cls: 'check-ok', msg: `✓ Vận tốc ${v.toFixed(2)} m/s nằm trong khoảng khuyến nghị cho đường ống cấp nước thông thường (0.6-1.5 m/s)`};
+    if (v <= 2.5) return {cls: 'check-warn', msg: `⚠ Vận tốc ${v.toFixed(2)} m/s cao; lưu ý vận tốc kinh tế (ống cấp nước chính thường ≤ 1.5–2.0 m/s; ống có áp/ống định lượng hoá chất có thể đến 2.5 m/s)`};
+    if (v <= 5.0) return {cls: 'check-warn', msg: `⚠ Vận tốc ${v.toFixed(2)} m/s cao; lưu ý búa nước và xói mòn đường ống`};
+    return {cls: 'check-bad', msg: `✗ Vận tốc ${v.toFixed(2)} m/s vượt 5 m/s, nguy cơ búa nước rất cao; nên tăng đường kính ống`};
   }
 
-  // 流量按单位取小数位
+  // Lưu lượng按单位取小数位
   function fmtQ(val, unit) {
     const dp = unit === 'm3/s' ? 5 : (unit === 'm3/d' ? 1 : 2);
     return val.toFixed(dp);
@@ -906,21 +906,21 @@
 
     // 输入校验
     document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
-    const need = {D: [['Q','流量 Q'],['v','流速 v']], v: [['Q','流量 Q'],['D','管内径 D']], Q: [['v','流速 v'],['D','管内径 D']]}[mode];
+    const need = {D: [['Q','Lưu lượng Q'],['v','Vận tốc v']], v: [['Q','Lưu lượng Q'],['D','Đường kính trong ống D']], Q: [['v','Vận tốc v'],['D','Đường kính trong ống D']]}[mode];
     const bad = need.filter(([id]) => !(num(id) > 0));
     if (bad.length) {
-      showInvalid(bad.map(b => b[0]), `请输入大于 0 的${bad.map(b => b[1]).join('、')}`);
+      showInvalid(bad.map(b => b[0]), `Hãy nhập giá trị lớn hơn 0 cho ${bad.map(b => b[1]).join(', ')}`);
       return;
     }
-    const neg = [['L','管长 L'],['eps','粗糙度 ε'],['zeta','局部阻力系数 Σζ']]
+    const neg = [['L','Chiều dài ống L'],['eps','Độ nhám ε'],['zeta','Hệ số trở lực cục bộ Σζ']]
       .filter(([id]) => num(id) < 0 && !(id === 'eps' && method !== 'dw'));
     if (neg.length) {
-      showInvalid(neg.map(b => b[0]), `${neg.map(b => b[1]).join('、')}不能为负`);
+      showInvalid(neg.map(b => b[0]), `${neg.map(b => b[1]).join(', ')} không được âm`);
       return;
     }
-    if (!isFinite(parseFloat($('T').value))) { showInvalid(['T'], '请输入水温 T（℃）'); return; }
-    if (method === 'hw' && !(C_hw > 0)) { showInvalid(['C'], '请输入大于 0 的 Hazen-Williams 系数 C'); return; }
-    if (method === 'manning' && !(n_m > 0)) { showInvalid(['n'], '请输入大于 0 的曼宁系数 n'); return; }
+    if (!isFinite(parseFloat($('T').value))) { showInvalid(['T'], 'Hãy nhập nhiệt độ nước T (℃)'); return; }
+    if (method === 'hw' && !(C_hw > 0)) { showInvalid(['C'], 'Hãy nhập hệ số Hazen-Williams C lớn hơn 0'); return; }
+    if (method === 'manning' && !(n_m > 0)) { showInvalid(['n'], 'Hãy nhập hệ số Manning n lớn hơn 0'); return; }
 
     let Q_m3s, v, D_m;
 
@@ -941,14 +941,14 @@
       $('Q').value = fmtQ(Q_from_m3s(Q_m3s, unit), unit);
     }
 
-    // 雷诺数
+    // Số Reynolds
     const Re = v * D_m / nu;
 
-    // 沿程阻力系数
+    // Hệ số ma sát dọc đường
     const eps_m = eps / 1000;
     let lambda = solveLambda(Re, eps_m / D_m);
 
-    // 沿程水头损失（按所选公式）
+    // Tổn thất cột áp dọc đường（按所选公式）
     let hf;
     if (method === 'hw') {
       hf = 10.67 * L * Math.pow(Q_m3s, 1.852) / (Math.pow(C_hw, 1.852) * Math.pow(D_m, 4.87));
@@ -963,7 +963,7 @@
     const H_total = hf + hj;
     const i_per_km = L > 0 ? (hf / L) * 1000 : 0;
 
-    // 推荐公称直径
+    // Đường kính danh nghĩa đề xuất
     const DN = recommendDN(D_m * 1000);
 
     // 更新结果显示
@@ -973,9 +973,9 @@
     $('r_D').textContent = (D_m * 1000).toFixed(1);
     $('r_DN').textContent = DN === null ? '—' : 'DN ' + DN;
     $('r_Re').textContent = Re.toExponential(2);
-    $('r_Re_t').textContent = Re < 2300 ? '层流' : (Re < 4000 ? '过渡' : '紊流');
+    $('r_Re_t').textContent = Re < 2300 ? 'Chảy tầng' : (Re < 4000 ? 'Chuyển tiếp' : 'Chảy rối');
     $('r_lambda').textContent = (method !== 'dw' && !(L > 0)) ? '—' : lambda.toFixed(4);
-    $('r_lambda_l').textContent = method === 'dw' ? '沿程阻力系数 λ' : '等效沿程阻力系数 λ';
+    $('r_lambda_l').textContent = method === 'dw' ? 'Hệ số ma sát dọc đường λ' : 'Hệ số ma sát dọc đường tương đương λ';
     $('r_method').textContent = METHOD_NAME[method];
     $('r_hf').textContent = hf.toFixed(3);
     $('r_hj').textContent = hj.toFixed(3);
@@ -985,51 +985,51 @@
     // 管径提示
     if (mode === 'D') {
       $('D_hint').textContent = DN === null
-        ? `所需内径超出 DN 系列上限 DN ${dnList[dnList.length-1]}，请按实际内径选管或多管并联`
-        : `推荐取 DN ${DN}（实际内径按管材壁厚确定）`;
+        ? `Đường kính trong yêu cầu vượt giới hạn trên của dãy DN ${dnList[dnList.length-1]}; hãy chọn ống theo đường kính trong thực tế hoặc dùng nhiều ống song song`
+        : `Đề xuất chọn DN ${DN} (đường kính trong thực tế xác định theo chiều dày thành ống)`;
     } else {
       $('D_hint').textContent = '';
     }
 
-    // 流速校核
+    // Kiểm tra vận tốc
     const check = velocityCheck(v);
     const cbox = $('checkBox');
     const dnOver = DN === null && mode === 'D';
     const dnMsg = dnOver
-      ? `✗ 所需内径 ${(D_m * 1000).toFixed(0)} mm 超出 DN 系列上限（DN ${dnList[dnList.length-1]}），请按实际内径选管或多管并联<br>`
+      ? `✗ Đường kính trong yêu cầu ${(D_m * 1000).toFixed(0)} mm vượt giới hạn trên của dãy DN (DN ${dnList[dnList.length-1]}); hãy chọn ống theo đường kính trong thực tế hoặc dùng nhiều ống song song<br>`
       : '';
     cbox.className = 'check-box ' + (dnOver ? 'check-bad' : check.cls);
     cbox.innerHTML = dnMsg + check.msg
-      + (Re >= 2300 && Re < 4000 ? '<br>⚠ Re 处于 2300–4000 过渡区，λ 不确定性较大' : '')
-      + (T < 0 || T > 100 ? `<br>⚠ 水温 ${T} ℃ 超出黏度表范围 0–100 ℃，ν 已按 ${T < 0 ? 0 : 100} ℃ 取值` : '');
+      + (Re >= 2300 && Re < 4000 ? '<br>⚠ Re nằm trong vùng chuyển tiếp 2300–4000, λ có độ bất định lớn' : '')
+      + (T < 0 || T > 100 ? `<br>⚠ Nhiệt độ nước ${T} ℃ ngoài phạm vi bảng độ nhớt 0–100 ℃; ν được lấy theo ${T < 0 ? 0 : 100} ℃` : '');
   }
 
   function copyResults() {
     const Q = $('r_Q').textContent, Qu = $('r_Q_u').textContent;
-    const txt = `管道水力计算结果
+    const txt = `Kết quả tính toán thủy lực đường ống
 ————————————————
-流量 Q = ${Q} ${Qu}
-流速 v = ${$('r_v').textContent} m/s
-管内径 D = ${$('r_D').textContent} mm
-推荐 ${$('r_DN').textContent}
+Lưu lượng Q = ${Q} ${Qu}
+Vận tốc v = ${$('r_v').textContent} m/s
+Đường kính trong ống D = ${$('r_D').textContent} mm
+Đề xuất ${$('r_DN').textContent}
 
-雷诺数 Re = ${$('r_Re').textContent} (${$('r_Re_t').textContent})
+Số Reynolds Re = ${$('r_Re').textContent} (${$('r_Re_t').textContent})
 ${$('r_lambda_l').textContent} = ${$('r_lambda').textContent}
-沿程损失公式 = ${$('r_method').textContent}
-沿程水头损失 hf = ${$('r_hf').textContent} m
-局部水头损失 hj = ${$('r_hj').textContent} m
-总水头损失 H = ${$('r_H').textContent} m
-千米水头损失 i = ${$('r_i').textContent} ‰
+Công thức tổn thất dọc đường = ${$('r_method').textContent}
+Tổn thất cột áp dọc đường hf = ${$('r_hf').textContent} m
+Tổn thất cột áp cục bộ hj = ${$('r_hj').textContent} m
+Tổng tổn thất cột áp H = ${$('r_H').textContent} m
+Tổn thất cột áp trên mỗi kilômét i = ${$('r_i').textContent} ‰
 
-管长 L = ${num('L')} m
-管材 = ${$('material').options[$('material').selectedIndex].text}
-ε = ${num('eps')} mm，n = ${num('n')}，C = ${num('C')}
-水温 T = ${num('T')} ℃
-局部阻力系数 Σζ = ${num('zeta')}
+Chiều dài ống L = ${num('L')} m
+Vật liệu ống = ${$('material').options[$('material').selectedIndex].text}
+ε = ${num('eps')} mm, n = ${num('n')}, C = ${num('C')}
+Nhiệt độ nước T = ${num('T')} ℃
+Hệ số trở lực cục bộ Σζ = ${num('zeta')}
 
-流速校核：${$('checkBox').textContent}`;
+Kiểm tra vận tốc: ${$('checkBox').textContent}`;
     navigator.clipboard.writeText(txt).then(() => {
-      alert('结果已复制到剪贴板');
+      alert('Đã sao chép kết quả vào bộ nhớ tạm');
     }).catch(() => {
       const ta = document.createElement('textarea');
       ta.value = txt;
@@ -1037,7 +1037,7 @@ ${$('r_lambda_l').textContent} = ${$('r_lambda').textContent}
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     });
   }
 

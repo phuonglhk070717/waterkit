@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>堰流计算器 | 水处理工具箱 · WaterKit</title>
+<title>Công cụ tính lưu lượng qua đập tràn | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="在线堰流计算：矩形薄壁堰、三角堰、Cipoletti 梯形堰、宽顶堰，已知水头求流量或已知流量求水头，含侧收缩、行近流速与淹没出流修正。">
+<meta name="description" content="Tính lưu lượng qua đập tràn trực tuyến: đập thành mỏng chữ nhật, tam giác, hình thang Cipoletti và đập đỉnh rộng; tính lưu lượng từ cột nước hoặc ngược lại, có hiệu chỉnh co hẹp bên, vận tốc tới gần và dòng chảy ngập.">
 <link rel="canonical" href="https://waterkit.cn/weir-flow-calculator.html">
 <style>
   :root {
@@ -483,44 +483,44 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Deng Deng Technology</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-hydraulics">水力计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-hydraulics">Tính toán thủy lực</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Deng Deng Technology</a>
     </nav>
   </div>
 </header>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-hydraulics">水力计算</a>
+  <a href="index.html#cat-hydraulics">Tính toán thủy lực</a>
   <span class="sep">/</span>
-  <span class="current">堰流计算</span>
+  <span class="current">Tính lưu lượng qua đập tràn</span>
 </div>
 
 <main class="main-wrap">
 
 <div class="container">
   <header class="tool-header">
-    <h1>🌊 堰流计算器</h1>
-    <p>矩形 / 三角 / 梯形(Cipoletti) / 宽顶 四种堰型 · 自由与淹没出流 · 量水应用</p>
+    <h1>🌊 Công cụ tính lưu lượng qua đập tràn</h1>
+    <p>Bốn loại đập: chữ nhật / tam giác / hình thang (Cipoletti) / đỉnh rộng · Dòng chảy tự do và chảy ngập · Đo lưu lượng</p>
   </header>
 
   <div class="body">
 
     <!-- 堰型选择 -->
-    <div class="section-title">① 堰型选择</div>
+    <div class="section-title">① Chọn loại đập</div>
     <div class="weir-tabs">
-      <button class="weir-tab active" data-type="rect" onclick="setWeir('rect')">矩形薄壁堰</button>
-      <button class="weir-tab" data-type="tri" onclick="setWeir('tri')">三角堰（V形）</button>
-      <button class="weir-tab" data-type="trap" onclick="setWeir('trap')">梯形堰（Cipoletti）</button>
-      <button class="weir-tab" data-type="broad" onclick="setWeir('broad')">宽顶堰</button>
+      <button class="weir-tab active" data-type="rect" onclick="setWeir('rect')">Đập thành mỏng chữ nhật</button>
+      <button class="weir-tab" data-type="tri" onclick="setWeir('tri')">Đập tam giác (chữ V)</button>
+      <button class="weir-tab" data-type="trap" onclick="setWeir('trap')">Đập hình thang (Cipoletti)</button>
+      <button class="weir-tab" data-type="broad" onclick="setWeir('broad')">Đập đỉnh rộng</button>
     </div>
 
     <!-- 示意图 -->
@@ -529,27 +529,27 @@
     </div>
 
     <!-- 求解模式 -->
-    <div class="section-title">② 求解目标</div>
+    <div class="section-title">② Mục tiêu tính toán</div>
     <div class="mode-tabs">
-      <button class="mode-tab active" data-mode="Q" onclick="setMode('Q')">已知 H 求 Q</button>
-      <button class="mode-tab" data-mode="H" onclick="setMode('H')">已知 Q 求 H</button>
+      <button class="mode-tab active" data-mode="Q" onclick="setMode('Q')">Biết H, tìm Q</button>
+      <button class="mode-tab" data-mode="H" onclick="setMode('H')">Biết Q, tìm H</button>
     </div>
 
     <!-- 参数 -->
-    <div class="section-title">③ 堰参数</div>
+    <div class="section-title">③ Thông số đập</div>
     <div class="grid">
 
       <!-- 矩形堰参数 -->
       <div class="field weir-rect weir-trap weir-broad">
-        <label for="b">堰宽 b <span class="unit">m</span></label>
+        <label for="b">Chiều rộng đập b <span class="unit">m</span></label>
         <input type="number" id="b" value="1.0" step="0.1">
       </div>
 
       <!-- 三角堰参数 -->
       <div class="field weir-tri" style="display:none;">
-        <label for="theta">顶角 θ <span class="unit">°</span></label>
+        <label for="theta">Góc đỉnh θ <span class="unit">°</span></label>
         <select id="theta" onchange="calc()">
-          <option value="90" selected>90° (标准)</option>
+          <option value="90" selected>90° (tiêu chuẩn)</option>
           <option value="60">60°</option>
           <option value="45">45°</option>
           <option value="30">30°</option>
@@ -559,51 +559,51 @@
 
       <!-- 梯形堰说明（Cipoletti 固定1:4边坡） -->
       <div class="field weir-trap" style="display:none;">
-        <label for="trap_slope">边坡 <span class="unit">1:4 (Cipoletti)</span></label>
-        <input type="text" id="trap_slope" value="1:4 (固定)" disabled>
+        <label for="trap_slope">Độ dốc cạnh <span class="unit">1:4 (Cipoletti)</span></label>
+        <input type="text" id="trap_slope" value="1:4 (cố định)" disabled>
       </div>
 
       <!-- 宽顶堰宽度（堰顶长度 δ） -->
       <div class="field weir-broad" style="display:none;">
-        <label for="delta">堰顶长度 δ <span class="unit">m</span></label>
+        <label for="delta">Chiều dài đỉnh đập δ <span class="unit">m</span></label>
         <input type="number" id="delta" value="1.5" step="0.1">
       </div>
 
       <!-- 宽顶堰进口形式 -->
       <div class="field weir-broad" style="display:none;">
-        <label for="broad_inlet">堰顶进口形式</label>
+        <label for="broad_inlet">Kiểu cửa vào đỉnh đập</label>
         <select id="broad_inlet">
-          <option value="square" selected>直角进口</option>
-          <option value="round">圆角进口</option>
+          <option value="square" selected>Cửa vào góc vuông</option>
+          <option value="round">Cửa vào góc tròn</option>
         </select>
-        <div class="helper">m 按别列津斯基公式随 P/H 连续取值（直角 0.32–0.385，圆角 0.36–0.385）</div>
+        <div class="helper">m được xác định liên tục theo P/H bằng công thức Berezinsky (góc vuông 0.32–0.385, góc tròn 0.36–0.385)</div>
       </div>
 
       <!-- 共用:水头H -->
       <div class="field" id="f_H">
-        <label for="H">堰上水头 H <span class="unit">m</span></label>
+        <label for="H">Cột nước trên đỉnh đập H <span class="unit">m</span></label>
         <input type="number" id="H" value="0.3" step="0.01">
-        <div class="helper">上游水面超过堰顶的高度</div>
+        <div class="helper">Độ cao mặt nước thượng lưu so với đỉnh đập</div>
       </div>
 
       <!-- 共用:流量Q -->
       <div class="field" id="f_Q">
-        <label for="Q">流量 Q <span class="unit">m³/s</span></label>
+        <label for="Q">Lưu lượng Q <span class="unit">m³/s</span></label>
         <input type="number" id="Q" value="0.4" step="0.05">
       </div>
 
       <!-- 堰高P -->
       <div class="field">
-        <label for="P">堰高 P <span class="unit">m</span></label>
+        <label for="P">Chiều cao đập P <span class="unit">m</span></label>
         <input type="number" id="P" value="0.5" step="0.1">
-        <div class="helper">上游渠底到堰顶的高度</div>
+        <div class="helper">Độ cao từ đáy kênh thượng lưu đến đỉnh đập</div>
       </div>
 
       <!-- 上游渠宽 -->
       <div class="field weir-rect weir-tri weir-trap weir-broad">
-        <label for="B">上游渠宽 B <span class="unit">m</span></label>
+        <label for="B">Chiều rộng kênh thượng lưu B <span class="unit">m</span></label>
         <input type="number" id="B" value="2.0" step="0.1">
-        <div class="helper">B ≥ b,B = b 时为无侧收缩;三角堰要求 B ≥ 3H
+        <div class="helper">B ≥ b; khi B = b không có co hẹp bên; đập tam giác yêu cầu B ≥ 3H
       </div>
     </div>
 
@@ -611,147 +611,147 @@
     <div class="toggle-section">
       <label>
         <input type="checkbox" id="submerged" onchange="toggleSubmerged()">
-        <span>开启淹没出流修正（下游水位高于堰顶）</span>
+        <span>Bật hiệu chỉnh dòng chảy ngập (mực nước hạ lưu cao hơn đỉnh đập)</span>
       </label>
       <div class="grid" id="submerged_params" style="display:none; margin-top:10px;">
         <div class="field">
-          <label for="hs">下游水深 h_s <span class="unit">m</span></label>
+          <label for="hs">Chiều sâu nước hạ lưu h_s <span class="unit">m</span></label>
           <input type="number" id="hs" value="0.1" step="0.05">
-          <div class="helper">下游水面到堰顶的高度</div>
+          <div class="helper">Độ cao mặt nước hạ lưu so với đỉnh đập</div>
         </div>
       </div>
     </div>
 
     <!-- 结果 -->
     <div class="results">
-      <h2>计算结果</h2>
+      <h2>Kết quả tính toán</h2>
 
       <div class="result-group">
-        <div class="result-group-title">核心结果</div>
+        <div class="result-group-title">Kết quả chính</div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>流量 Q</b></span>
+          <span class="result-label"><b>Lưu lượng Q</b></span>
           <span><span class="result-value big" id="r_Q">—</span><span class="result-unit">m³/s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">流量 Q（常用单位）</span>
+          <span class="result-label">Lưu lượng Q (đơn vị thông dụng)</span>
           <span><span class="result-value" id="r_Q_h">—</span><span class="result-unit">m³/h</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>堰上水头 H</b></span>
+          <span class="result-label"><b>Cột nước trên đỉnh đập H</b></span>
           <span><span class="result-value big" id="r_H">—</span><span class="result-unit">m</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">堰上水头 H</span>
+          <span class="result-label">Cột nước trên đỉnh đập H</span>
           <span><span class="result-value" id="r_H2">—</span><span class="result-unit">mm</span></span>
         </div>
       </div>
 
       <div class="result-group">
-        <div class="result-group-title">水力参数</div>
+        <div class="result-group-title">Thông số thủy lực</div>
         <div class="result-row">
-          <span class="result-label">流量系数 m₀ / C_d</span>
+          <span class="result-label">Hệ số lưu lượng m₀ / C_d</span>
           <span><span class="result-value" id="r_m0">—</span><span class="result-unit">—</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">侧收缩系数 ε</span>
+          <span class="result-label">Hệ số co hẹp bên ε</span>
           <span><span class="result-value" id="r_eps">—</span><span class="result-unit">—</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">淹没系数 σ</span>
+          <span class="result-label">Hệ số ngập σ</span>
           <span><span class="result-value" id="r_sigma">—</span><span class="result-unit">—</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label" id="r_v_l">堰口平均流速 Q/(b·H)</span>
+          <span class="result-label" id="r_v_l">Vận tốc trung bình qua cửa đập Q/(b·H)</span>
           <span><span class="result-value" id="r_v">—</span><span class="result-unit">m/s</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">上游行近流速 v₀</span>
+          <span class="result-label">Vận tốc tới gần thượng lưu v₀</span>
           <span><span class="result-value" id="r_v0">—</span><span class="result-unit">m/s</span></span>
         </div>
       </div>
 
       <div class="result-group">
-        <div class="result-group-title">适用性校核</div>
-        <div class="check-box" id="check_H">校核中...</div>
-        <div class="check-box" id="check_sub">校核中...</div>
+        <div class="result-group-title">Kiểm tra điều kiện áp dụng</div>
+        <div class="check-box" id="check_H">Đang kiểm tra...</div>
+        <div class="check-box" id="check_sub">Đang kiểm tra...</div>
         <div class="check-box" id="check_delta" style="display:none;"></div>
       </div>
     </div>
 
     <div class="buttons">
-      <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
-      <button class="btn btn-secondary" onclick="toggleFormula()">📖 查看公式</button>
+      <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
+      <button class="btn btn-secondary" onclick="toggleFormula()">📖 Xem công thức</button>
     </div>
 
     <div class="formula-box" id="formulaBox" style="display:none;">
-      <h3>① 矩形薄壁堰（Rehbock 公式）</h3>
-      <p><strong>自由出流基本式</strong>：</p>
+      <h3>① Đập thành mỏng chữ nhật（Công thức Rehbock）</h3>
+      <p><strong>Công thức cơ bản cho dòng chảy tự do</strong>：</p>
       <code>Q = m₀ · ε · σ · b · √(2g) · H^(3/2)</code>
-      <p>其中 m₀ 为流量系数,ε 为侧收缩系数,σ 为淹没系数（自由出流时=1）。</p>
-      <p><strong>Rehbock 流量系数</strong>（无侧收缩,B=b）：</p>
+      <p>Trong đó m₀ là hệ số lưu lượng, ε là hệ số co hẹp bên, σ là hệ số ngập (bằng 1 khi chảy tự do).</p>
+      <p><strong>Hệ số lưu lượng Rehbock</strong> (không co hẹp bên, B=b)：</p>
       <code>m₀ = 0.403 + 0.053 · H/P + 0.0007/H</code>
-      <p>适用条件：0.03 ≤ H ≤ 0.75 m;H/P ≤ 1（ISO 1438）;P ≥ 0.1 m。H/P &gt; 1 时工具提示"超出 Rehbock 适用范围"。</p>
-      <p><strong>有侧收缩（B &gt; b）</strong>：采用 Francis 修正 或 ε 系数,工具中取：</p>
-      <code>ε = 1 − 0.1·n·H/b（n 为收缩边数,两侧收缩取 n = 2;工具中 ε 下限取 0.5）</code>
-      <p>注:ε 下限 0.5 为经验取值,以规范 / 手册原文为准。</p>
-      <p>上游渠宽 B 不得小于堰宽 b;B = b 时 ε = 1。单侧间距 (B − b)/2 &lt; H 时收缩不充分,工具将收缩量按 (B − b)/(2H) 线性折减（B → b 时 ε 连续趋于 1）并提示,结果仅供参考。</p>
+      <p>Điều kiện áp dụng: 0.03 ≤ H ≤ 0.75 m; H/P ≤ 1 (ISO 1438); P ≥ 0.1 m. Khi H/P &gt; 1, công cụ cảnh báo "Ngoài phạm vi áp dụng của Rehbock".</p>
+      <p><strong>Có co hẹp bên (B &gt; b)</strong>：Dùng hiệu chỉnh Francis hoặc hệ số ε; công cụ lấy:</p>
+      <code>ε = 1 − 0.1·n·H/b (n là số bên co hẹp, lấy n = 2 khi co hẹp hai bên; công cụ lấy giới hạn dưới của ε là 0.5)</code>
+      <p>Lưu ý: Giới hạn dưới 0.5 của ε là giá trị kinh nghiệm; cần đối chiếu nguyên văn tiêu chuẩn / sổ tay.</p>
+      <p>Chiều rộng kênh thượng lưu B không được nhỏ hơn chiều rộng đập b; khi B = b thì ε = 1. Khi khoảng cách mỗi bên (B − b)/2 &lt; H, co hẹp không đầy đủ; công cụ giảm tuyến tính mức co hẹp theo (B − b)/(2H) (ε tiến liên tục về 1 khi B → b) và cảnh báo; kết quả chỉ để tham khảo.</p>
 
-      <h3>② 三角堰（V形堰,Kindsvater-Shen 公式）</h3>
-      <code>Q = (8/15) · C_e · tan(θ/2) · √(2g) · (H + k_h)^(5/2)   （SI 单位）</code>
-      <p>C_e 为有效流量系数,k_h 为水头修正值,均随顶角 θ（°）变化（USBR《Water Measurement Manual》/ ISO 1438 曲线的多项式拟合,完全收缩 V 形堰）：</p>
+      <h3>② Đập tam giác (đập chữ V, công thức Kindsvater-Shen)</h3>
+      <code>Q = (8/15) · C_e · tan(θ/2) · √(2g) · (H + k_h)^(5/2)   (đơn vị SI)</code>
+      <p>C_e là hệ số lưu lượng hiệu dụng, k_h là giá trị hiệu chỉnh cột nước; cả hai thay đổi theo góc đỉnh θ (°) (khớp đa thức với đường cong trong Water Measurement Manual của USBR / ISO 1438 cho đập chữ V co hẹp hoàn toàn):</p>
       <code>C_e = 0.607165052 − 0.000874466963·θ + 6.10393334×10⁻⁶·θ²</code>
       <code>k_h [ft] = 0.0144902648 − 0.00033955535·θ + 3.29819003×10⁻⁶·θ² − 1.06215442×10⁻⁸·θ³;k_h [m] = k_h [ft] × 0.3048</code>
-      <p>90° 时 C_e ≈ 0.578、k_h ≈ 0.89 mm,Q ≈ 1.365 · (H + 0.00089)^(5/2)。拟合式适用 20° ≤ θ ≤ 100°,超出时工具给出提示（120° 为外推,仅供参考）。</p>
-      <p>适用：0.05 ≤ H ≤ 0.38 m; P ≥ 2H; 上游渠宽 ≥ 3H。</p>
+      <p>Ở 90°, C_e ≈ 0.578, k_h ≈ 0.89 mm, Q ≈ 1.365 · (H + 0.00089)^(5/2). Công thức khớp áp dụng cho 20° ≤ θ ≤ 100°; ngoài phạm vi này công cụ sẽ cảnh báo (120° là giá trị ngoại suy, chỉ để tham khảo).</p>
+      <p>Phạm vi áp dụng: 0.05 ≤ H ≤ 0.38 m; P ≥ 2H; chiều rộng kênh thượng lưu ≥ 3H.</p>
 
-      <h3>③ 梯形堰 Cipoletti（边坡 1:4）</h3>
-      <p>特点：侧边向外倾斜，补偿侧收缩损失，流量系数近似为常数。</p>
-      <code>Q = 1.86 · b · H^(3/2)   (Cipoletti 公式)</code>
-      <p>即 m₀ ≈ 0.42,ε ≈ 1.0（自动补偿）。适用：0.06 ≤ H ≤ 0.60 m;b ≥ 3H;P ≥ 2H。</p>
+      <h3>③ Đập hình thang Cipoletti (độ dốc cạnh 1:4)</h3>
+      <p>Đặc điểm: Hai cạnh nghiêng ra ngoài để bù tổn thất do co hẹp bên; hệ số lưu lượng gần như không đổi.</p>
+      <code>Q = 1.86 · b · H^(3/2)   (Công thức Cipoletti)</code>
+      <p>Trong đó m₀ ≈ 0.42, ε ≈ 1.0 (tự bù). Phạm vi áp dụng: 0.06 ≤ H ≤ 0.60 m; b ≥ 3H; P ≥ 2H.</p>
 
-      <h3>④ 宽顶堰</h3>
+      <h3>④ Đập đỉnh rộng</h3>
       <code>Q = m · ε · b · √(2g) · H₀^(3/2)</code>
-      <p>其中 H₀ = H + v₀²/(2g) 为包含行近流速头的全水头（v₀ = Q/[B·(P+H)],迭代中 Q 同样计入 m·ε,迭代 10 次求解,使 H₀ 与最终 Q 自洽）,ε 为侧收缩系数（ε = 1 − 0.2·H/b,下限 0.7,仅 B &gt; b 时计入,单侧间距 (B − b)/2 &lt; H 时收缩量按 (B − b)/(2H) 线性折减;经验值,以规范 / 手册原文为准）,m 为流量系数,按"堰顶进口形式"取值:</p>
-      <p><strong>别列津斯基（Березинский）经验公式</strong>（P 为上游堰高,m 随 P/H 连续变化）:</p>
-      <code>直角进口:m = 0.32 + 0.01 · (3 − P/H) / (0.46 + 0.75 · P/H)   （P/H ≥ 3 时 m = 0.32）</code>
-      <code>圆角进口（r/H ≥ 0.2）:m = 0.36 + 0.01 · (3 − P/H) / (1.2 + 1.5 · P/H)   （P/H ≥ 3 时 m = 0.36）</code>
-      <p>P/H → 0 时两式均趋于理论上限 0.385;直角进口 m 在 0.32–0.385 之间,圆角进口在 0.36–0.385 之间。m 随 H 连续变化,"已知 H 求 Q"与"已知 Q 求 H"两条路径结果互逆一致。默认按直角进口计算。来源:水力学教材（如吴持恭《水力学》）宽顶堰流量系数经验公式,以规范 / 手册原文为准。</p>
-      <p>宽顶堰适用范围 2.5 ≤ δ/H ≤ 10:δ/H &lt; 2.5 不属宽顶堰,宜按实用堰/薄壁堰计算;δ/H &gt; 10 属长堰,需计入堰顶沿程水头损失,本式会高估流量。</p>
+      <p>Trong đó H₀ = H + v₀²/(2g) là tổng cột nước kể đến cột nước vận tốc tới gần (v₀ = Q/[B·(P+H)]; trong phép lặp, Q cũng tính đến m·ε; giải qua 10 lần lặp để H₀ nhất quán với Q cuối cùng); ε là hệ số co hẹp bên (ε = 1 − 0.2·H/b, giới hạn dưới 0.7, chỉ tính khi B &gt; b; khi khoảng cách mỗi bên (B − b)/2 &lt; H, mức co hẹp giảm tuyến tính theo (B − b)/(2H); giá trị kinh nghiệm, cần đối chiếu nguyên văn tiêu chuẩn / sổ tay); m là hệ số lưu lượng, lấy theo "kiểu cửa vào đỉnh đập":</p>
+      <p><strong>Công thức kinh nghiệm Berezinsky (Березинский)</strong> (P là chiều cao đập phía thượng lưu, m biến thiên liên tục theo P/H):</p>
+      <code>Cửa vào góc vuông:m = 0.32 + 0.01 · (3 − P/H) / (0.46 + 0.75 · P/H)   (khi P/H ≥ 3 thì m = 0.32)</code>
+      <code>Cửa vào góc tròn（r/H ≥ 0.2）:m = 0.36 + 0.01 · (3 − P/H) / (1.2 + 1.5 · P/H)   (khi P/H ≥ 3 thì m = 0.36)</code>
+      <p>Khi P/H → 0, cả hai công thức đều tiến tới giới hạn trên lý thuyết 0.385; m nằm trong khoảng 0.32–0.385 với cửa vào góc vuông và 0.36–0.385 với cửa vào góc tròn. m biến thiên liên tục theo H; kết quả của hai phép tính "biết H tìm Q" và "biết Q tìm H" nhất quán khi tính ngược. Mặc định tính với cửa vào góc vuông. Nguồn: công thức kinh nghiệm về hệ số lưu lượng đập đỉnh rộng trong giáo trình thủy lực (ví dụ Thủy lực học của Ngô Trì Cung); cần đối chiếu nguyên văn tiêu chuẩn / sổ tay.</p>
+      <p>Phạm vi áp dụng của đập đỉnh rộng: 2.5 ≤ δ/H ≤ 10. Khi δ/H &lt; 2.5, đây không phải đập đỉnh rộng, nên tính theo đập mặt cắt thực dụng / đập thành mỏng; khi δ/H &gt; 10, đây là đập dài, cần tính tổn thất cột áp dọc đỉnh đập; công thức này sẽ ước tính lưu lượng quá cao.</p>
 
-      <h3>⑤ 淹没出流修正</h3>
-      <p>当下游水位 h_s &gt; 0（下游水面高于堰顶）时:</p>
-      <code>宽顶堰:h_s / H₀ &gt; 0.8 进入淹没状态;薄壁堰:h_s &gt; 0 即按 Villemonte 式修正</code>
-      <p>注:薄壁堰真正形成淹没出流,还需下游水位高于堰顶且 z/P &lt; 0.7（z 为上下游水位差）;工具在 h_s &gt; 0 时即按淹没修正,偏于保守。</p>
-      <p><strong>薄壁堰（矩形 / 三角 / 梯形）</strong>采用 Villemonte 公式:</p>
-      <code>σ = [1 − (h_s/H)ⁿ]^0.385    (矩形、梯形堰 n = 1.5;三角堰 n = 2.5)</code>
-      <p><strong>宽顶堰</strong>按 h_s/H₀ 查表（线性插值）,h_s/H₀ ≤ 0.8 时 σ = 1（表值为经验值,以规范 / 手册原文为准）:</p>
+      <h3>⑤ Hiệu chỉnh dòng chảy ngập</h3>
+      <p>Khi mực nước hạ lưu h_s &gt; 0 (mặt nước hạ lưu cao hơn đỉnh đập):</p>
+      <code>Đập đỉnh rộng: h_s / H₀ &gt; 0.8 là trạng thái ngập; đập thành mỏng: hiệu chỉnh theo công thức Villemonte ngay khi h_s &gt; 0</code>
+      <p>Lưu ý: Để đập thành mỏng thực sự chảy ngập, mực nước hạ lưu còn phải cao hơn đỉnh đập và z/P &lt; 0.7 (z là chênh lệch mực nước thượng và hạ lưu); công cụ hiệu chỉnh ngập ngay khi h_s &gt; 0, theo hướng thận trọng.</p>
+      <p><strong>Đập thành mỏng (chữ nhật / tam giác / hình thang)</strong> dùng công thức Villemonte:</p>
+      <code>σ = [1 − (h_s/H)ⁿ]^0.385    (đập chữ nhật, hình thang n = 1.5; đập tam giác n = 2.5)</code>
+      <p><strong>Đập đỉnh rộng</strong> tra bảng theo h_s/H₀ (nội suy tuyến tính); khi h_s/H₀ ≤ 0.8 thì σ = 1 (giá trị bảng là giá trị kinh nghiệm, cần đối chiếu nguyên văn tiêu chuẩn / sổ tay):</p>
       <table>
         <tr><th>h_s/H₀</th><td>0.80</td><td>0.82</td><td>0.84</td><td>0.86</td><td>0.88</td><td>0.90</td></tr>
         <tr><th>σ</th><td>1.00</td><td>0.99</td><td>0.97</td><td>0.95</td><td>0.90</td><td>0.84</td></tr>
         <tr><th>h_s/H₀</th><td>0.92</td><td>0.94</td><td>0.95</td><td>0.96</td><td>0.97</td><td>0.98</td></tr>
         <tr><th>σ</th><td>0.78</td><td>0.70</td><td>0.65</td><td>0.59</td><td>0.50</td><td>0.40</td></tr>
       </table>
-      <p>工具按 0.01 间隔表值插值（吴持恭《水力学》宽顶堰淹没系数表，据华南农业大学水力学课件转引）;h_s/H₀ &gt; 0.98 时按 0.98→1.0 线性降至 0。</p>
+      <p>Công cụ nội suy các giá trị bảng cách nhau 0.01 (bảng hệ số ngập của đập đỉnh rộng trong Thủy lực học của Ngô Trì Cung, dẫn theo bài giảng thủy lực của Đại học Nông nghiệp Hoa Nam); khi h_s/H₀ &gt; 0.98, hệ số giảm tuyến tính về 0 trong khoảng 0.98→1.0.</p>
 
-      <h3>⑥ 常见应用场景</h3>
+      <h3>⑥ Các ứng dụng thường gặp</h3>
       <table>
-        <tr><th>应用</th><th>推荐堰型</th><th>理由</th></tr>
-        <tr><td>水厂进水量测量</td><td>矩形堰 / 宽顶堰</td><td>流量大,H 变化范围适中</td></tr>
-        <tr><td>小流量实验室量水</td><td>90° 三角堰</td><td>Q ∝ H^2.5,小流量灵敏度极高</td></tr>
-        <tr><td>明渠量水</td><td>Cipoletti 梯形堰</td><td>流量公式简单,无需侧收缩修正</td></tr>
-        <tr><td>溢流坝 / 溢洪道</td><td>宽顶堰 / 实用堰</td><td>过流能力大,结构稳定</td></tr>
-        <tr><td>污水厂出水计量</td><td>矩形堰 + 超声波液位计</td><td>工程成熟,精度 ±3%</td></tr>
+        <tr><th>Ứng dụng</th><th>Loại đập khuyến nghị</th><th>Lý do</th></tr>
+        <tr><td>Đo lưu lượng nước vào nhà máy nước</td><td>Đập chữ nhật / Đập đỉnh rộng</td><td>Lưu lượng lớn, phạm vi biến thiên H vừa phải</td></tr>
+        <tr><td>Đo lưu lượng nhỏ trong phòng thí nghiệm</td><td>Đập tam giác 90°</td><td>Q ∝ H^2.5, độ nhạy rất cao với lưu lượng nhỏ</td></tr>
+        <tr><td>Đo lưu lượng kênh hở</td><td>Đập hình thang Cipoletti</td><td>Công thức lưu lượng đơn giản, không cần hiệu chỉnh co hẹp bên</td></tr>
+        <tr><td>Đập tràn / đường tràn xả lũ</td><td>Đập đỉnh rộng / Đập mặt cắt thực dụng</td><td>Khả năng tháo nước lớn, kết cấu ổn định</td></tr>
+        <tr><td>Đo lưu lượng nước ra của nhà máy xử lý nước thải</td><td>Đập chữ nhật + Thiết bị đo mức siêu âm</td><td>Công nghệ ứng dụng rộng rãi, độ chính xác ±3%</td></tr>
       </table>
     </div>
 
     <div class="note">
-      ⚠️ 本工具用于工程估算与量水堰选型,实际测量精度需堰板加工、上游平直段长度、水面波动、液位计精度共同保证。现场安装须满足各堰型的适用条件（H 范围、P 值、B/b 比值等）。
+      ⚠️ Công cụ dùng để ước tính kỹ thuật và chọn đập đo lưu lượng. Độ chính xác đo thực tế phụ thuộc vào chế tạo tấm đập, chiều dài đoạn thẳng thượng lưu, dao động mặt nước và độ chính xác của thiết bị đo mức. Lắp đặt tại hiện trường phải đáp ứng điều kiện áp dụng của từng loại đập (phạm vi H, giá trị P, tỷ số B/b, v.v.).
     </div>
 
   </div>
 
-  <footer class="tool-inner-footer">水处理工具箱 · 仅供工程估算参考</footer>
+  <footer class="tool-inner-footer">Bộ công cụ xử lý nước · Chỉ dùng tham khảo cho ước tính kỹ thuật</footer>
 </div>
 </main>
 
@@ -763,65 +763,65 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Deng Deng Technology</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là tập hợp các công cụ tính toán xử lý nước trực tuyến do Công ty TNHH Tư vấn Công nghệ Deng Deng Hải Nam cung cấp, được phát triển và duy trì bởi các kỹ sư công nghệ xử lý nước trực tiếp làm việc trong ngành. Miễn phí và cập nhật thường xuyên.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thủy lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thủy lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thủy lực đường ống (nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thủy lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính lưu lượng qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lượng khí sục</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn phát sinh</a></li>
+          <li><a href="dosing-calculator.html">Lượng hoá chất định lượng</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">MBBR Thiết kế kỹ thuật</a></li>
+          <li><a href="ifas-design.html">IFAS Thiết kế kỹ thuật</a></li>
+          <li><a href="mbr-design.html">MBR Thiết kế kỹ thuật</a></li>
+          <li><a href="ro-design.html">Thiết kế thẩm thấu ngược (RO)</a></li>
+          <li><a href="pump-selection-calculator.html">Chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Chuyển đổi đơn vị chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thủy sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải sau nuôi ao</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Hướng dẫn tham quan Aqua Nor 2027</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang chủ Deng Deng Technology ↗</a></li>
+          <li>Tư vấn Công nghệ Deng Deng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Open Source</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">Giấy phép AGPL-3.0</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Gửi phản hồi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Deng Deng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
@@ -884,10 +884,10 @@
 
   // 堰口平均流速所用过水面积（随堰型而异）
   const V_LABEL = {
-    rect:  '堰口平均流速 Q/(b·H)',
-    tri:   '堰口平均流速 Q/[H²·tan(θ/2)]',
-    trap:  '堰口平均流速 Q/[(b + H/4)·H]',
-    broad: '堰口平均流速 Q/(b·H)'
+    rect:  'Vận tốc trung bình qua cửa đập Q/(b·H)',
+    tri:   'Vận tốc trung bình qua cửa đập Q/[H²·tan(θ/2)]',
+    trap:  'Vận tốc trung bình qua cửa đập Q/[(b + H/4)·H]',
+    broad: 'Vận tốc trung bình qua cửa đập Q/(b·H)'
   };
 
   // ============ 流量计算（自由出流） ============
@@ -1010,10 +1010,10 @@
     ['r_Q','r_Q_h','r_H','r_H2','r_m0','r_eps','r_sigma','r_v','r_v0'].forEach(id => $(id).textContent = '—');
     const ck1 = $('check_H');
     ck1.className = 'check-box check-bad';
-    ck1.innerHTML = `✗ <b>输入无效</b> · ${msg}`;
+    ck1.innerHTML = `✗ <b>Dữ liệu không hợp lệ</b> · ${msg}`;
     const ck2 = $('check_sub');
     ck2.className = 'check-box check-info';
-    ck2.innerHTML = 'ℹ 请先修正输入参数。';
+    ck2.innerHTML = 'ℹ Vui lòng sửa thông số đầu vào trước.';
     $('check_delta').style.display = 'none';
   }
 
@@ -1072,7 +1072,7 @@
       content += `<line x1="${cx - weirWidth/2 - 8}" y1="${weirTop}" x2="${cx - weirWidth/2 - 8}" y2="${cy}" stroke="${dark}" stroke-width="0.8"/>`;
 
       // 堰型标注
-      if (weir === 'rect') content += `<text x="${cx - weirWidth/2 + 2}" y="${weirTop - 8}" font-size="10" fill="${dark}">矩形薄壁</text>`;
+      if (weir === 'rect') content += `<text x="${cx - weirWidth/2 + 2}" y="${weirTop - 8}" font-size="10" fill="${dark}">Đập thành mỏng chữ nhật</text>`;
       if (weir === 'trap') content += `<text x="${cx - weirWidth/2 - 5}" y="${weirTop - 8}" font-size="10" fill="${dark}">Cipoletti</text>`;
       if (weir === 'broad') content += `<text x="${cx - 15}" y="${weirTop - 4}" font-size="10" fill="${dark}">δ</text>`;
 
@@ -1129,18 +1129,18 @@
     // ============ 输入校验 ============
     document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
     const bad = [];
-    const need = (id, name) => { if (!(num(id) > 0)) { $(id).classList.add('invalid'); bad.push(`请输入大于 0 的${name}`); } };
-    if (mode === 'Q') need('H', '堰上水头 H'); else need('Q', '流量 Q');
-    need('P', '堰高 P');
-    need('B', '上游渠宽 B');
+    const need = (id, name) => { if (!(num(id) > 0)) { $(id).classList.add('invalid'); bad.push(`Vui lòng nhập giá trị lớn hơn 0 cho ${name}`); } };
+    if (mode === 'Q') need('H', 'Cột nước trên đỉnh đập H'); else need('Q', 'Lưu lượng Q');
+    need('P', 'Chiều cao đập P');
+    need('B', 'Chiều rộng kênh thượng lưu B');
     if (weir !== 'tri') {
-      need('b', '堰宽 b');
+      need('b', 'Chiều rộng đập b');
       if (num('b') > 0 && num('B') > 0 && num('B') < num('b')) {
         $('B').classList.add('invalid');
-        bad.push('上游渠宽 B 不得小于堰宽 b（B = b 为无侧收缩）');
+        bad.push('Chiều rộng kênh thượng lưu B không được nhỏ hơn chiều rộng đập b (B = b là không co hẹp bên)');
       }
     }
-    if (weir === 'broad') need('delta', '堰顶长度 δ');
+    if (weir === 'broad') need('delta', 'Chiều dài đỉnh đập δ');
     if (bad.length) {
       clearResults(bad.join(';') + '。');
       drawWeir();
@@ -1191,25 +1191,25 @@
     // ============ 校核 ============
     const ck1 = $('check_H');
     const conditions = {
-      rect:   {min: 0.03, max: 0.75, name: '矩形薄壁堰'},
-      tri:    {min: 0.05, max: 0.38, name: '三角堰'},
-      trap:   {min: 0.06, max: 0.60, name: '梯形堰（Cipoletti）'},
-      broad:  {min: 0.10, max: 2.00, name: '宽顶堰'}
+      rect:   {min: 0.03, max: 0.75, name: 'Đập thành mỏng chữ nhật'},
+      tri:    {min: 0.05, max: 0.38, name: 'Đập tam giác'},
+      trap:   {min: 0.06, max: 0.60, name: 'Đập hình thang (Cipoletti)'},
+      broad:  {min: 0.10, max: 2.00, name: 'Đập đỉnh rộng'}
     };
     const c = conditions[weir];
     if (H_val >= c.min && H_val <= c.max) {
       ck1.className = 'check-box check-ok';
-      ck1.innerHTML = `✓ <b>堰上水头适用</b> · H = ${H_val.toFixed(3)} m,在${c.name}推荐范围 ${c.min}-${c.max} m 内。`;
+      ck1.innerHTML = `✓ <b>Cột nước trên đỉnh đập phù hợp</b> · H = ${H_val.toFixed(3)} m, nằm trong phạm vi khuyến nghị ${c.min}-${c.max} m của ${c.name}.`;
     } else if (H_val < c.min) {
       ck1.className = 'check-box check-warn';
-      ck1.innerHTML = `⚠ <b>水头偏低</b> · H = ${H_val.toFixed(3)} m &lt; ${c.min} m,公式精度下降,建议选更小堰或三角堰。`;
+      ck1.innerHTML = `⚠ <b>Cột nước quá thấp</b> · H = ${H_val.toFixed(3)} m &lt; ${c.min} m, độ chính xác công thức giảm; nên chọn đập nhỏ hơn hoặc đập tam giác.`;
     } else {
       ck1.className = 'check-box check-warn';
-      ck1.innerHTML = `⚠ <b>水头偏高</b> · H = ${H_val.toFixed(3)} m &gt; ${c.max} m,超出该堰型推荐范围,建议选宽顶堰或加大堰宽。`;
+      ck1.innerHTML = `⚠ <b>Cột nước quá cao</b> · H = ${H_val.toFixed(3)} m &gt; ${c.max} m, vượt phạm vi khuyến nghị của loại đập này; nên chọn đập đỉnh rộng hoặc tăng chiều rộng đập.`;
     }
     if (mode === 'H' && H_val >= H_SEARCH_MAX - 1e-3) {
       ck1.className = 'check-box check-bad';
-      ck1.innerHTML = `✗ <b>超出求解范围</b> · 所需堰上水头已超过求解上限 ${H_SEARCH_MAX} m,H 被截断在 ${H_SEARCH_MAX} m,结果不可信。请加大堰宽 b 或改用其他堰型。`;
+      ck1.innerHTML = `✗ <b>Vượt phạm vi giải</b> · Cột nước trên đỉnh đập cần thiết vượt giới hạn giải ${H_SEARCH_MAX} m; H bị giới hạn ở ${H_SEARCH_MAX} m, kết quả không đáng tin cậy. Hãy tăng chiều rộng đập b hoặc chọn loại đập khác.`;
     }
 
     // 矩形薄壁堰 Rehbock 适用范围 H/P ≤ 1（ISO 1438）
@@ -1217,23 +1217,23 @@
       const side = (num('B') - num('b')) / 2;
       if (side > 0 && side < H_val) {
         if (ck1.className.indexOf('check-ok') >= 0) ck1.className = 'check-box check-warn';
-        ck1.innerHTML += `<br>⚠ <b>侧收缩不充分</b> · 单侧间距 (B − b)/2 = ${+side.toFixed(4)} m &lt; H = ${H_val.toFixed(3)} m,ε 按间距线性折减,经验式适用性下降,结果仅供参考。`;
+        ck1.innerHTML += `<br>⚠ <b>Co hẹp bên không đầy đủ</b> · Khoảng cách mỗi bên (B − b)/2 = ${+side.toFixed(4)} m &lt; H = ${H_val.toFixed(3)} m, ε được giảm tuyến tính theo khoảng cách, khả năng áp dụng công thức kinh nghiệm giảm; kết quả chỉ để tham khảo.`;
       }
     }
     if (weir === 'rect') {
       const hp = H_val / num('P');
       if (hp > 1) {
         if (ck1.className.indexOf('check-ok') >= 0) ck1.className = 'check-box check-warn';
-        ck1.innerHTML += `<br>⚠ <b>超出 Rehbock 适用范围</b> · H/P = ${hp.toFixed(2)} &gt; 1（ISO 1438 要求 H/P ≤ 1）,流量系数 m₀ 外推,结果仅供参考,建议加高堰板 P。`;
+        ck1.innerHTML += `<br>⚠ <b>Ngoài phạm vi áp dụng của Rehbock</b> · H/P = ${hp.toFixed(2)} &gt; 1 (ISO 1438 yêu cầu H/P ≤ 1); hệ số lưu lượng m₀ được ngoại suy, kết quả chỉ để tham khảo; nên tăng chiều cao tấm đập P.`;
       }
       if (num('P') < 0.1) {
         if (ck1.className.indexOf('check-ok') >= 0) ck1.className = 'check-box check-warn';
-        ck1.innerHTML += `<br>⚠ <b>堰高偏低</b> · P = ${num('P')} m &lt; 0.1 m,不满足 Rehbock 公式适用条件,行近流速影响增大,结果仅供参考,建议加高堰板。`;
+        ck1.innerHTML += `<br>⚠ <b>Chiều cao đập quá thấp</b> · P = ${num('P')} m &lt; 0.1 m, không đáp ứng điều kiện áp dụng công thức Rehbock, ảnh hưởng của vận tốc tới gần tăng; kết quả chỉ để tham khảo, nên tăng chiều cao tấm đập.`;
       }
       const side = (num('B') - num('b')) / 2;
       if (side > 0 && side < H_val) {
         if (ck1.className.indexOf('check-ok') >= 0) ck1.className = 'check-box check-warn';
-        ck1.innerHTML += `<br>⚠ <b>侧收缩不充分</b> · 单侧间距 (B − b)/2 = ${+side.toFixed(4)} m &lt; H = ${H_val.toFixed(3)} m,ε 按间距线性折减,经验式适用性下降,结果仅供参考。`;
+        ck1.innerHTML += `<br>⚠ <b>Co hẹp bên không đầy đủ</b> · Khoảng cách mỗi bên (B − b)/2 = ${+side.toFixed(4)} m &lt; H = ${H_val.toFixed(3)} m, ε được giảm tuyến tính theo khoảng cách, khả năng áp dụng công thức kinh nghiệm giảm; kết quả chỉ để tham khảo.`;
       }
     }
     // Cipoletti 堰适用条件:b ≥ 3H、P ≥ 2H
@@ -1243,7 +1243,7 @@
       if (num('P') < 2 * H_val) geo.push(`P = ${num('P')} m &lt; 2H = ${(2 * H_val).toFixed(3)} m`);
       if (geo.length) {
         if (ck1.className.indexOf('check-ok') >= 0) ck1.className = 'check-box check-warn';
-        ck1.innerHTML += `<br>⚠ <b>不满足 Cipoletti 适用条件</b> · ${geo.join('; ')},公式系数 1.86 的适用性下降,结果仅供参考,建议加宽堰口或加高堰板。`;
+        ck1.innerHTML += `<br>⚠ <b>Không đáp ứng điều kiện áp dụng Cipoletti</b> · ${geo.join('; ')}, khả năng áp dụng hệ số 1.86 của công thức giảm; kết quả chỉ để tham khảo, nên mở rộng cửa đập hoặc tăng chiều cao tấm đập.`;
       }
     }
     // 三角堰 Kindsvater-Shen 拟合式适用 20°–100°
@@ -1251,7 +1251,7 @@
       const th = num('theta');
       if (th < 20 || th > 100) {
         if (ck1.className.indexOf('check-ok') >= 0) ck1.className = 'check-box check-warn';
-        ck1.innerHTML += `<br>⚠ <b>顶角超出适用范围</b> · θ = ${th}° 不在 Kindsvater-Shen 拟合式适用范围 20°–100° 内,C_e、k_h 为外推值,结果仅供参考。`;
+        ck1.innerHTML += `<br>⚠ <b>Góc đỉnh ngoài phạm vi áp dụng</b> · θ = ${th}° nằm ngoài phạm vi áp dụng 20°–100° của công thức khớp Kindsvater-Shen; C_e, k_h là giá trị ngoại suy, kết quả chỉ để tham khảo.`;
       }
       // 完全收缩三角堰的几何条件（ISO 1438 / 公式说明）: P ≥ 2H、上游渠宽 B ≥ 3H
       const geo = [];
@@ -1259,7 +1259,7 @@
       if (num('B') < 3 * H_val) geo.push(`B = ${num('B')} m &lt; 3H = ${(3 * H_val).toFixed(3)} m`);
       if (geo.length) {
         if (ck1.className.indexOf('check-ok') >= 0) ck1.className = 'check-box check-warn';
-        ck1.innerHTML += `<br>⚠ <b>不满足完全收缩条件</b> · ${geo.join('; ')},行近流速影响不可忽略,${mode === 'Q' ? '按水头算出的流量偏小' : '按流量反算的水头偏高'},建议加高堰板或加宽堰槽。`;
+        ck1.innerHTML += `<br>⚠ <b>Không đáp ứng điều kiện co hẹp hoàn toàn</b> · ${geo.join('; ')}, không thể bỏ qua ảnh hưởng của vận tốc tới gần,${mode === 'Q' ? 'lưu lượng tính từ cột nước thấp hơn thực tế' : 'cột nước tính ngược từ lưu lượng cao hơn thực tế'}, nên tăng chiều cao tấm đập hoặc mở rộng máng đập.`;
       }
     }
 
@@ -1270,13 +1270,13 @@
       ckd.style.display = '';
       if (dr < 2.5) {
         ckd.className = 'check-box check-warn';
-        ckd.innerHTML = `⚠ <b>δ/H = ${dr.toFixed(2)} &lt; 2.5</b> · 不属宽顶堰,宜按实用堰/薄壁堰计算,当前结果仅供参考。`;
+        ckd.innerHTML = `⚠ <b>δ/H = ${dr.toFixed(2)} &lt; 2.5</b> · không phải đập đỉnh rộng; nên tính theo đập mặt cắt thực dụng / đập thành mỏng, kết quả hiện tại chỉ để tham khảo.`;
       } else if (dr > 10) {
         ckd.className = 'check-box check-warn';
-        ckd.innerHTML = `⚠ <b>δ/H = ${dr.toFixed(2)} &gt; 10</b> · 属长堰,需计入堰顶沿程水头损失,本公式会高估流量。`;
+        ckd.innerHTML = `⚠ <b>δ/H = ${dr.toFixed(2)} &gt; 10</b> · là đập dài; cần tính tổn thất cột áp dọc đỉnh đập, công thức này sẽ ước tính lưu lượng quá cao.`;
       } else {
         ckd.className = 'check-box check-ok';
-        ckd.innerHTML = `✓ <b>δ/H = ${dr.toFixed(2)}</b> · 在宽顶堰范围 2.5-10 内,${$('broad_inlet').value === 'round' ? '圆角进口' : '直角进口'} m 按别列津斯基公式取值（P/H = ${(num('P') / H_val).toFixed(2)}）。`;
+        ckd.innerHTML = `✓ <b>δ/H = ${dr.toFixed(2)}</b> · nằm trong phạm vi 2.5-10 của đập đỉnh rộng, ${$('broad_inlet').value === 'round' ? 'Cửa vào góc tròn' : 'Cửa vào góc vuông'} m được xác định theo công thức Berezinsky (P/H = ${(num('P') / H_val).toFixed(2)}).`;
       }
     } else {
       ckd.style.display = 'none';
@@ -1286,7 +1286,7 @@
     const ck2 = $('check_sub');
     if (!$('submerged').checked) {
       ck2.className = 'check-box check-info';
-      ck2.innerHTML = `ℹ <b>自由出流状态</b> · 下游水位低于堰顶,流量不受下游影响。若下游水位上升应启用淹没修正。`;
+      ck2.innerHTML = `ℹ <b>Trạng thái chảy tự do</b> · Mực nước hạ lưu thấp hơn đỉnh đập, lưu lượng không chịu ảnh hưởng của hạ lưu. Nếu mực nước hạ lưu tăng, cần bật hiệu chỉnh ngập.`;
     } else {
       const hs_val = num('hs');
       if (weir === 'broad') {
@@ -1296,26 +1296,26 @@
         const sig = submergenceSigma(H_val, weir, H0b);
         if (ratio <= 0.8) {
           ck2.className = 'check-box check-ok';
-          ck2.innerHTML = `✓ <b>未淹没</b> · h_s/H₀ = ${ratio.toFixed(3)} ≤ 0.8,宽顶堰仍为自由出流,σ = 1。`;
+          ck2.innerHTML = `✓ <b>Chưa ngập</b> · h_s/H₀ = ${ratio.toFixed(3)} ≤ 0.8, đập đỉnh rộng vẫn chảy tự do, σ = 1.`;
         } else if (ratio < 0.95) {
           ck2.className = 'check-box check-warn';
-          ck2.innerHTML = `⚠ <b>淹没出流</b> · h_s/H₀ = ${ratio.toFixed(3)} &gt; 0.8,流量已受下游影响,淹没系数 σ = ${sig.toFixed(3)}（查表插值）。`;
+          ck2.innerHTML = `⚠ <b>Dòng chảy ngập</b> · h_s/H₀ = ${ratio.toFixed(3)} &gt; 0.8, lưu lượng đã chịu ảnh hưởng của hạ lưu, hệ số ngập σ = ${sig.toFixed(3)} (nội suy từ bảng).`;
         } else {
           ck2.className = 'check-box check-bad';
-          ck2.innerHTML = `✗ <b>深度淹没</b> · h_s/H₀ = ${ratio.toFixed(3)} ≥ 0.95,σ = ${sig.toFixed(3)},堰失去量水功能,工程上不推荐此运行工况。`;
+          ck2.innerHTML = `✗ <b>Ngập sâu</b> · h_s/H₀ = ${ratio.toFixed(3)} ≥ 0.95, σ = ${sig.toFixed(3)}, đập mất chức năng đo lưu lượng; không khuyến nghị điều kiện vận hành này trong thực tế.`;
         }
       } else {
       const ratio = H_val > 0 ? hs_val / H_val : 0;
-      const zNote = ' 注:薄壁堰形成淹没出流另需满足下游水位高于堰顶且 z/P&lt;0.7（z 为上下游水位差）。';
+      const zNote = ' Lưu ý: Đập thành mỏng chảy ngập còn cần mực nước hạ lưu cao hơn đỉnh đập và z/P&lt;0.7 (z là chênh lệch mực nước thượng và hạ lưu).';
       if (ratio < 0.15) {
         ck2.className = 'check-box check-ok';
-        ck2.innerHTML = `✓ <b>轻微淹没</b> · h_s/H = ${ratio.toFixed(3)} &lt; 0.15,淹没影响很小（σ = ${submergenceSigma(H_val, weir).toFixed(3)}）。` + zNote;
+        ck2.innerHTML = `✓ <b>Ngập nhẹ</b> · h_s/H = ${ratio.toFixed(3)} &lt; 0.15, ảnh hưởng ngập rất nhỏ (σ = ${submergenceSigma(H_val, weir).toFixed(3)}).` + zNote;
       } else if (ratio < 0.7) {
         ck2.className = 'check-box check-warn';
-        ck2.innerHTML = `⚠ <b>显著淹没</b> · h_s/H = ${ratio.toFixed(3)},流量已受下游影响,淹没系数 σ = ${submergenceSigma(H_val, weir).toFixed(3)}。` + zNote;
+        ck2.innerHTML = `⚠ <b>Ngập đáng kể</b> · h_s/H = ${ratio.toFixed(3)}, lưu lượng đã chịu ảnh hưởng của hạ lưu, hệ số ngập σ = ${submergenceSigma(H_val, weir).toFixed(3)}.` + zNote;
       } else {
         ck2.className = 'check-box check-bad';
-        ck2.innerHTML = `✗ <b>深度淹没</b> · h_s/H = ${ratio.toFixed(3)} &gt; 0.7,堰失去量水功能,工程上不推荐此运行工况。` + zNote;
+        ck2.innerHTML = `✗ <b>Ngập sâu</b> · h_s/H = ${ratio.toFixed(3)} &gt; 0.7, đập mất chức năng đo lưu lượng; không khuyến nghị điều kiện vận hành này trong thực tế.` + zNote;
       }
       }
     }
@@ -1324,32 +1324,32 @@
   }
 
   function copyResults() {
-    const names = {rect:'矩形薄壁堰', tri:`${num('theta')}°三角堰`, trap:'Cipoletti梯形堰', broad:'宽顶堰'};
+    const names = {rect:'Đập thành mỏng chữ nhật', tri:`${num('theta')}° đập tam giác`, trap:'Đập hình thang Cipoletti', broad:'Đập đỉnh rộng'};
     let params = '';
-    const triNote = weir === 'tri' ? `（Kindsvater-Shen,k_h = ${((Q_free(num('H')).kh || 0) * 1000).toFixed(2)} mm）` : '';
-    if (weir === 'rect') params = `堰宽 b = ${num('b')} m,上游渠宽 B = ${num('B')} m`;
-    else if (weir === 'tri') params = `顶角 θ = ${num('theta')}°`;
-    else if (weir === 'trap') params = `堰宽 b = ${num('b')} m,边坡 1:4,上游渠宽 B = ${num('B')} m`;
-    else if (weir === 'broad') params = `堰宽 b = ${num('b')} m,堰顶 δ = ${num('delta')} m,${$('broad_inlet').value === 'round' ? '圆角进口' : '直角进口'},上游渠宽 B = ${num('B')} m`;
-    if ($('submerged').checked) params += `\n下游水深 h_s = ${num('hs')} m`;
+    const triNote = weir === 'tri' ? ` (Kindsvater-Shen, k_h = ${((Q_free(num('H')).kh || 0) * 1000).toFixed(2)} mm)` : '';
+    if (weir === 'rect') params = `Chiều rộng đập b = ${num('b')} m, Chiều rộng kênh thượng lưu B = ${num('B')} m`;
+    else if (weir === 'tri') params = `Góc đỉnh θ = ${num('theta')}°`;
+    else if (weir === 'trap') params = `Chiều rộng đập b = ${num('b')} m, Độ dốc cạnh 1:4, Chiều rộng kênh thượng lưu B = ${num('B')} m`;
+    else if (weir === 'broad') params = `Chiều rộng đập b = ${num('b')} m,Đỉnh đập δ = ${num('delta')} m, ${$('broad_inlet').value === 'round' ? 'Cửa vào góc tròn' : 'Cửa vào góc vuông'}, Chiều rộng kênh thượng lưu B = ${num('B')} m`;
+    if ($('submerged').checked) params += `\nChiều sâu nước hạ lưu h_s = ${num('hs')} m`;
 
-    const txt = `堰流计算结果 · ${names[weir]}
+    const txt = `Kết quả tính lưu lượng qua đập tràn · ${names[weir]}
 ————————————————
 ${params}
-堰高 P = ${num('P')} m
+Chiều cao đập P = ${num('P')} m
 
-流量 Q = ${$('r_Q').textContent} m³/s (${$('r_Q_h').textContent} m³/h)
-堰上水头 H = ${$('r_H').textContent} m (${$('r_H2').textContent} mm)
+Lưu lượng Q = ${$('r_Q').textContent} m³/s (${$('r_Q_h').textContent} m³/h)
+Cột nước trên đỉnh đập H = ${$('r_H').textContent} m (${$('r_H2').textContent} mm)
 
-流量系数 = ${$('r_m0').textContent}${triNote}
-侧收缩系数 ε = ${$('r_eps').textContent}
-淹没系数 σ = ${$('r_sigma').textContent}
+Hệ số lưu lượng = ${$('r_m0').textContent}${triNote}
+Hệ số co hẹp bên ε = ${$('r_eps').textContent}
+Hệ số ngập σ = ${$('r_sigma').textContent}
 ${V_LABEL[weir]} = ${$('r_v').textContent} m/s
-上游行近流速 v₀ = ${$('r_v0').textContent} m/s
+Vận tốc tới gần thượng lưu v₀ = ${$('r_v0').textContent} m/s
 
-适用性校核:${$('check_H').innerText}`;
+Kiểm tra điều kiện áp dụng:${$('check_H').innerText}`;
     navigator.clipboard.writeText(txt).then(() => {
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     }).catch(() => {
       const ta = document.createElement('textarea');
       ta.value = txt;
@@ -1357,7 +1357,7 @@ ${V_LABEL[weir]} = ${$('r_v').textContent} m/s
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     });
   }
 

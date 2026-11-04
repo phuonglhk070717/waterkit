@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>污泥产量计算器 | 水处理工具箱 · WaterKit</title>
+<title>Công cụ tính lượng bùn phát sinh | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="在线估算污水处理厂初沉污泥、剩余活性污泥与化学除磷污泥干泥量，换算浓缩、脱水后湿泥量与体积，并估算年处置费用与吨水成本。">
+<meta name="description" content="Ước tính trực tuyến lượng bùn khô từ lắng sơ cấp, bùn hoạt tính dư và bùn khử phốt pho bằng hóa chất tại nhà máy xử lý nước thải; quy đổi khối lượng và thể tích bùn ướt sau cô đặc, tách nước và ước tính chi phí xử lý hằng năm cùng chi phí trên mỗi mét khối nước.">
 <link rel="canonical" href="https://waterkit.cn/sludge-production-calculator.html">
 <style>
   :root {
@@ -391,305 +391,305 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Công nghệ Dengdeng</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-process">工艺计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-process">Tính toán công nghệ</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Công nghệ Dengdeng</a>
     </nav>
   </div>
 </header>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-process">工艺计算</a>
+  <a href="index.html#cat-process">Tính toán công nghệ</a>
   <span class="sep">/</span>
-  <span class="current">污泥产量</span>
+  <span class="current">Lượng bùn phát sinh</span>
 </div>
 
 <main class="main-wrap">
 
 <div class="container">
   <header class="tool-header">
-    <h1>🪨 污泥产量计算器</h1>
-    <p>生物+化学+原生污泥综合估算，含脱水前后体积换算与处置成本</p>
+    <h1>🪨 Công cụ tính lượng bùn phát sinh</h1>
+    <p>Ước tính tổng hợp bùn sinh học, bùn hóa học và bùn sơ cấp, gồm quy đổi thể tích trước và sau tách nước và chi phí xử lý</p>
   </header>
 
   <div class="body">
 
-    <div class="section-title">① 基本水质水量</div>
+    <div class="section-title">① Thông số cơ bản về chất lượng và lưu lượng nước</div>
     <div class="grid">
       <div class="field">
-        <label for="Q">处理水量 Q <span class="unit">m³/d</span></label>
+        <label for="Q">Lưu lượng xử lý Q <span class="unit">m³/d</span></label>
         <input type="number" id="Q" value="10000" step="100">
       </div>
       <div class="field">
-        <label for="SSo">进水 SS <span class="unit">mg/L</span></label>
+        <label for="SSo">SS đầu vào <span class="unit">mg/L</span></label>
         <input type="number" id="SSo" value="200" step="10">
       </div>
       <div class="field">
-        <label for="BODo">进水 BOD₅ <span class="unit">mg/L</span></label>
+        <label for="BODo">BOD₅ đầu vào <span class="unit">mg/L</span></label>
         <input type="number" id="BODo" value="200" step="10">
       </div>
       <div class="field">
-        <label for="BODe">出水 BOD₅ <span class="unit">mg/L</span></label>
+        <label for="BODe">BOD₅ đầu ra <span class="unit">mg/L</span></label>
         <input type="number" id="BODe" value="10" step="1">
       </div>
       <div class="field">
-        <label for="SSe">出水 SS <span class="unit">mg/L</span></label>
+        <label for="SSe">SS đầu ra <span class="unit">mg/L</span></label>
         <input type="number" id="SSe" value="10" step="1">
       </div>
     </div>
 
     <div class="section-title">
-      ② 生物处理段（活性污泥法）
+      ② Công đoạn xử lý sinh học (phương pháp bùn hoạt tính)
     </div>
     <div class="process-type">
-      <label><input type="radio" name="method" value="Y" checked> 按产率系数法（Y & Kd）</label>
-      <label><input type="radio" name="method" value="load"> 按污泥负荷法（Fr 系数）</label>
+      <label><input type="radio" name="method" value="Y" checked> Theo phương pháp hệ số sinh bùn (Y & Kd)</label>
+      <label><input type="radio" name="method" value="load"> Theo phương pháp tải trọng bùn (hệ số Fr)</label>
     </div>
 
     <div class="grid" id="bio_Y_block">
       <div class="field">
-        <label for="Y">污泥产率 Y <span class="unit">kgVSS/kgBOD</span></label>
+        <label for="Y">Hệ số sinh bùn Y <span class="unit">kgVSS/kgBOD</span></label>
         <input type="number" id="Y" value="0.6" step="0.05">
       </div>
       <div class="field">
-        <label for="Kd">内源呼吸率 Kd₂₀（20 ℃） <span class="unit">d⁻¹</span></label>
+        <label for="Kd">Hệ số hô hấp nội bào Kd₂₀ (20 ℃) <span class="unit">d⁻¹</span></label>
         <input type="number" id="Kd" value="0.05" step="0.01">
       </div>
       <div class="field">
-        <label for="Tw">设计水温 T（用于 Kd 温度修正） <span class="unit">℃</span></label>
+        <label for="Tw">Nhiệt độ nước thiết kế T (dùng để hiệu chỉnh Kd theo nhiệt độ) <span class="unit">℃</span></label>
         <input type="number" id="Tw" value="20" step="1">
       </div>
       <div class="field">
-        <label for="SRT">污泥龄 SRT <span class="unit">d</span></label>
+        <label for="SRT">Tuổi bùn SRT <span class="unit">d</span></label>
         <input type="number" id="SRT" value="15" step="1">
       </div>
       <div class="field">
-        <label for="f_inert">进水 SS 不可降解系数 f <span class="unit">—</span></label>
+        <label for="f_inert">Hệ số chất không phân hủy trong SS đầu vào f <span class="unit">—</span></label>
         <input type="number" id="f_inert" value="0.5" step="0.05">
       </div>
     </div>
 
     <div class="grid" id="bio_load_block" style="display:none;">
       <div class="field">
-        <label for="Fr">污泥产率系数 Fr <span class="unit">kgSS/kgBOD</span></label>
+        <label for="Fr">Hệ số sinh bùn Fr <span class="unit">kgSS/kgBOD</span></label>
         <input type="number" id="Fr" value="0.8" step="0.05">
       </div>
     </div>
 
     <div class="section-title">
-      ③ 初沉池（原生污泥）
-      <span class="toggle"><input type="checkbox" id="usePS" checked onchange="togglePS()"> 启用</span>
+      ③ Bể lắng sơ cấp (bùn sơ cấp)
+      <span class="toggle"><input type="checkbox" id="usePS" checked onchange="togglePS()"> Bật</span>
     </div>
     <div class="grid" id="ps_block">
       <div class="field">
-        <label for="eta_SS">初沉 SS 去除率 <span class="unit">%</span></label>
+        <label for="eta_SS">Hiệu suất loại bỏ SS ở bể lắng sơ cấp <span class="unit">%</span></label>
         <input type="number" id="eta_SS" value="55" step="5">
       </div>
       <div class="field">
-        <label for="eta_BOD">初沉 BOD 去除率 <span class="unit">%</span></label>
+        <label for="eta_BOD">Hiệu suất loại bỏ BOD ở bể lắng sơ cấp <span class="unit">%</span></label>
         <input type="number" id="eta_BOD" value="30" step="5">
       </div>
       <div class="field">
-        <label for="w_ps">初沉污泥含水率 <span class="unit">%</span></label>
+        <label for="w_ps">Độ ẩm bùn sơ cấp <span class="unit">%</span></label>
         <input type="number" id="w_ps" value="97" step="0.5">
       </div>
     </div>
 
     <div class="section-title">
-      ④ 化学除磷污泥
-      <span class="toggle"><input type="checkbox" id="useChem" onchange="toggleChem()"> 启用</span>
+      ④ Bùn khử phốt pho bằng hóa chất
+      <span class="toggle"><input type="checkbox" id="useChem" onchange="toggleChem()"> Bật</span>
     </div>
     <div class="grid disabled-section" id="chem_block">
       <div class="field">
-        <label for="TPo">进水 TP <span class="unit">mg/L</span></label>
+        <label for="TPo">TP đầu vào <span class="unit">mg/L</span></label>
         <input type="number" id="TPo" value="4" step="0.5">
       </div>
       <div class="field">
-        <label for="TPe">出水 TP <span class="unit">mg/L</span></label>
+        <label for="TPe">TP đầu ra <span class="unit">mg/L</span></label>
         <input type="number" id="TPe" value="0.3" step="0.1">
       </div>
       <div class="field">
-        <label for="bioP">生物除磷/同化量 <span class="unit">mg/L</span></label>
+        <label for="bioP">Lượng khử phốt pho sinh học/đồng hóa <span class="unit">mg/L</span></label>
         <input type="number" id="bioP" value="1.5" step="0.5">
       </div>
       <div class="field">
-        <label for="chem_type">药剂类型</label>
+        <label for="chem_type">Loại hóa chất</label>
         <select id="chem_type">
-          <option value="PAC">PAC（聚合氯化铝）</option>
-          <option value="FeCl3">FeCl₃（三氯化铁）</option>
-          <option value="PFS">PFS（聚合硫酸铁）</option>
-          <option value="lime">石灰</option>
+          <option value="PAC">PAC（polynhôm clorua）</option>
+          <option value="FeCl3">FeCl₃（sắt(III) clorua）</option>
+          <option value="PFS">PFS（polysắt sunfat）</option>
+          <option value="lime">Vôi</option>
         </select>
-        <span style="font-size:11.5px;color:#9ca3af;margin-top:4px;">石灰按所填 Ca/P 估算；实际投量由碱度决定（Ca/P 常远高于 1.5），石灰污泥可达数十 kgDS/kgP</span>
+        <span style="font-size:11.5px;color:#9ca3af;margin-top:4px;">Vôi được ước tính theo Ca/P đã nhập; lượng châm thực tế phụ thuộc vào độ kiềm (Ca/P thường lớn hơn nhiều so với 1.5), lượng bùn vôi có thể đạt hàng chục kgDS/kgP</span>
       </div>
       <div class="field">
-        <label for="mole_ratio">投药比（摩尔比 Me/P） <span class="unit">—</span></label>
+        <label for="mole_ratio">Tỷ lệ châm hóa chất (tỷ lệ mol Me/P) <span class="unit">—</span></label>
         <input type="number" id="mole_ratio" value="1.5" step="0.1">
       </div>
     </div>
 
-    <div class="section-title">⑤ 脱水与处置</div>
+    <div class="section-title">⑤ Tách nước và xử lý</div>
     <div class="grid">
       <div class="field">
-        <label for="w_thick">浓缩后含水率 <span class="unit">%</span></label>
+        <label for="w_thick">Độ ẩm sau cô đặc <span class="unit">%</span></label>
         <input type="number" id="w_thick" value="97" step="0.5">
       </div>
       <div class="field">
-        <label for="w_dewater">脱水后含水率 <span class="unit">%</span></label>
+        <label for="w_dewater">Độ ẩm sau tách nước <span class="unit">%</span></label>
         <input type="number" id="w_dewater" value="80" step="1">
       </div>
       <div class="field">
-        <label for="rho">浓缩污泥密度 <span class="unit">t/m³</span></label>
+        <label for="rho">Khối lượng riêng bùn cô đặc <span class="unit">t/m³</span></label>
         <input type="number" id="rho" value="1.02" step="0.01">
       </div>
       <div class="field">
-        <label for="rho_cake">泥饼密度 <span class="unit">t/m³</span></label>
+        <label for="rho_cake">Khối lượng riêng bánh bùn <span class="unit">t/m³</span></label>
         <input type="number" id="rho_cake" value="1.05" step="0.01">
       </div>
       <div class="field">
-        <label for="price">处置单价 <span class="unit">元/吨湿泥</span></label>
+        <label for="price">Đơn giá xử lý <span class="unit">nhân dân tệ/tấn bùn ướt</span></label>
         <input type="number" id="price" value="300" step="10">
       </div>
     </div>
 
     <div class="results">
-      <h2>计算结果</h2>
+      <h2>Kết quả tính toán</h2>
       <div class="warn-box" id="warnBox" style="display:none;margin:0 0 12px;"></div>
       <div class="warn-box soft" id="hintBox" style="display:none;margin:0 0 12px;"></div>
 
       <div class="result-group">
-        <div class="result-group-title">分项干泥产量（kgDS/d）</div>
+        <div class="result-group-title">Lượng bùn khô theo từng loại（kgDS/d）</div>
         <div class="result-row">
-          <span class="result-label">初沉污泥（原生）</span>
+          <span class="result-label">Bùn lắng sơ cấp (bùn sơ cấp)</span>
           <span><span class="result-value" id="r_ps">—</span><span class="result-unit">kgDS/d</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">剩余活性污泥（生物<span id="r_bio_note">，含进水惰性固体</span>）</span>
+          <span class="result-label">Bùn hoạt tính dư (sinh học<span id="r_bio_note">, bao gồm chất rắn trơ đầu vào</span>)</span>
           <span><span class="result-value" id="r_bio">—</span><span class="result-unit">kgDS/d</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">化学除磷污泥</span>
+          <span class="result-label">Bùn khử phốt pho bằng hóa chất</span>
           <span><span class="result-value" id="r_chem">—</span><span class="result-unit">kgDS/d</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>干污泥总量 ΔX</b></span>
+          <span class="result-label"><b>Tổng lượng bùn khô ΔX</b></span>
           <span><span class="result-value big" id="r_total_dry">—</span><span class="result-unit">kgDS/d</span></span>
         </div>
       </div>
 
       <div class="result-group">
-        <div class="result-group-title">湿污泥产量与体积</div>
+        <div class="result-group-title">Khối lượng và thể tích bùn ướt</div>
         <div class="result-row">
-          <span class="result-label">浓缩后污泥量（初沉泥按初沉含水率，剩余+化学泥按浓缩后含水率）</span>
+          <span class="result-label">Lượng bùn sau cô đặc (bùn sơ cấp theo độ ẩm bùn sơ cấp, bùn dư + bùn hóa học theo độ ẩm sau cô đặc)</span>
           <span><span class="result-value" id="r_thick_m">—</span><span class="result-unit">t/d</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">浓缩后污泥体积</span>
+          <span class="result-label">Thể tích bùn sau cô đặc</span>
           <span><span class="result-value" id="r_thick_v">—</span><span class="result-unit">m³/d</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>脱水后泥饼量</b></span>
+          <span class="result-label"><b>Lượng bánh bùn sau tách nước</b></span>
           <span><span class="result-value big" id="r_cake_m">—</span><span class="result-unit">t/d</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">脱水后泥饼体积（按泥饼密度）</span>
+          <span class="result-label">Thể tích bánh bùn sau tách nước (theo khối lượng riêng bánh bùn)</span>
           <span><span class="result-value" id="r_cake_v">—</span><span class="result-unit">m³/d</span></span>
         </div>
       </div>
 
       <div class="result-group">
-        <div class="result-group-title">年处置规模与成本</div>
+        <div class="result-group-title">Quy mô và chi phí xử lý hằng năm</div>
         <div class="result-row">
-          <span class="result-label">年干泥产量</span>
+          <span class="result-label">Lượng bùn khô hằng năm</span>
           <span><span class="result-value" id="r_year_dry">—</span><span class="result-unit">tDS/a</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">年脱水泥饼产量</span>
+          <span class="result-label">Lượng bánh bùn sau tách nước hằng năm</span>
           <span><span class="result-value" id="r_year_cake">—</span><span class="result-unit">t/a</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>年处置费用估算</b></span>
-          <span><span class="result-value big" id="r_year_cost">—</span><span class="result-unit">万元/a</span></span>
+          <span class="result-label"><b>Chi phí xử lý hằng năm ước tính</b></span>
+          <span><span class="result-value big" id="r_year_cost">—</span><span class="result-unit">vạn nhân dân tệ/a</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">吨水污泥处置成本</span>
-          <span><span class="result-value" id="r_unit_cost">—</span><span class="result-unit">元/m³水</span></span>
+          <span class="result-label">Chi phí xử lý bùn trên mỗi mét khối nước</span>
+          <span><span class="result-value" id="r_unit_cost">—</span><span class="result-unit">nhân dân tệ/m³ nước</span></span>
         </div>
       </div>
     </div>
 
     <div class="buttons">
-      <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
-      <button class="btn btn-secondary" onclick="toggleFormula()">📖 查看公式</button>
+      <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
+      <button class="btn btn-secondary" onclick="toggleFormula()">📖 Xem công thức</button>
     </div>
 
     <div class="formula-box" id="formulaBox" style="display:none;">
 
-      <h3>① 初沉污泥（原生污泥）</h3>
+      <h3>① Bùn lắng sơ cấp (bùn sơ cấp)</h3>
       <code>ΔX_ps = Q · SS_o · η_SS / 1000  [kgDS/d]</code>
-      <p>初沉SS去除率 η_SS 一般 40-70%，BOD去除率 20-35%。经过初沉后，进入生物段的BOD要扣除去除部分。</p>
+      <p>Hiệu suất loại bỏ SS ở bể lắng sơ cấp η_SS thường là 40-70%, hiệu suất loại bỏ BOD là 20-35%. BOD đi vào công đoạn sinh học được tính sau khi trừ phần đã loại bỏ ở bể lắng sơ cấp.</p>
 
-      <h3>② 生物污泥（剩余活性污泥）</h3>
-      <p><strong>方法一：产率系数法（Lawrence-McCarty 模型）</strong></p>
+      <h3>② Bùn sinh học (bùn hoạt tính dư)</h3>
+      <p><strong>Phương pháp 1: hệ số sinh bùn (mô hình Lawrence-McCarty)</strong></p>
       <code>ΔX_bio_VSS = Y · Q · ΔBOD / (1 + Kd_T · SRT) / 1000</code>
       <code>Kd_T = Kd₂₀ · 1.04^(T − 20)</code>
       <code>ΔX_bio = ΔX_bio_VSS + f · Q · (SS₀ − SSₑ) / 1000</code>
-      <p>后一项为进水中不可降解（惰性）固体在系统内的积累（GB 50014 剩余污泥量公式中的 f·Q·(SS₀−SSₑ) 项）：f 为进水 SS 中不可生物降解及惰性部分的比例，一般取 0.5-0.7，默认 0.5；SS₀ 为进入生物段的 SS（启用初沉时取初沉出水 SS = SS_o·(1−η_SS)，否则取进水 SS），SSₑ 为出水 SS。生物量项不再除以 VSS/SS：进水惰性及无机固体已由 f 项计入，再除以 VSS/SS 会重复计算（与 GB 50014 剩余污泥量公式口径一致）。</p>
-      <p>其中 ΔBOD 为进入生物段后的 BOD 去除量（若有初沉，需扣除初沉去除部分）。Y 典型值 0.4-0.8 kgVSS/kgBOD；Kd₂₀（20 ℃ 值）典型值 0.04-0.08 d⁻¹，按设计水温 T 以 θ = 1.04 修正为 Kd_T（T 取 5–35 ℃）。</p>
+      <p>Số hạng sau biểu thị lượng chất rắn không phân hủy (trơ) trong nước đầu vào tích lũy trong hệ thống (số hạng f·Q·(SS₀−SSₑ) trong công thức tính lượng bùn dư của GB 50014): f là tỷ lệ thành phần trơ và không phân hủy sinh học trong SS đầu vào, thường lấy 0.5-0.7, mặc định 0.5; SS₀ là SS đi vào công đoạn sinh học (khi có lắng sơ cấp, lấy SS sau lắng sơ cấp = SS_o·(1−η_SS); nếu không, lấy SS đầu vào), SSₑ là SS đầu ra. Số hạng sinh khối không chia thêm cho VSS/SS: chất rắn trơ và vô cơ đầu vào đã được tính trong số hạng f; chia thêm cho VSS/SS sẽ tính trùng (phù hợp với công thức tính bùn dư trong GB 50014).</p>
+      <p>Trong đó ΔBOD là lượng BOD được loại bỏ trong công đoạn sinh học (nếu có lắng sơ cấp, cần trừ phần đã loại bỏ ở công đoạn này). Giá trị điển hình của Y là 0.4-0.8 kgVSS/kgBOD; Kd₂₀ (giá trị ở 20 ℃) là 0.04-0.08 d⁻¹, được hiệu chỉnh thành Kd_T theo nhiệt độ nước thiết kế T với θ = 1.04 (T từ 5–35 ℃).</p>
 
-      <p><strong>方法二：污泥负荷法（经验系数）</strong></p>
+      <p><strong>Phương pháp 2: tải trọng bùn (hệ số kinh nghiệm)</strong></p>
       <code>ΔX_bio = Fr · Q · ΔBOD / 1000</code>
-      <p>Fr 为总污泥产率（包含衰减），典型值 0.6-1.0 kgSS/kgBOD。此法简单，适合工程估算。Fr 为按 SS 计的总产率经验值，已隐含进水惰性固体，不再另加 f·Q·(SS₀−SSₑ) 项。</p>
+      <p>Fr là hệ số tổng lượng bùn sinh ra (bao gồm phân hủy nội bào), giá trị điển hình 0.6-1.0 kgSS/kgBOD. Phương pháp này đơn giản, phù hợp để ước tính kỹ thuật. Fr là giá trị kinh nghiệm của tổng hệ số sinh bùn tính theo SS, đã bao gồm chất rắn trơ đầu vào nên không cộng thêm số hạng f·Q·(SS₀−SSₑ).</p>
 
-      <h3>③ 化学除磷污泥</h3>
+      <h3>③ Bùn khử phốt pho bằng hóa chất</h3>
       <code>ΔP = Q · max(0, TP_o − TP_e − P_bio) / 1000  [kgP/d]</code>
-      <p>P_bio 为生物除磷及污泥同化去除的磷（默认 1.5 mg/L，与加药量计算器“生物除磷贡献”默认值一致），只有剩余部分需化学沉淀。</p>
-      <p>根据药剂类型，化学污泥包括两部分：反应生成的金属磷酸盐 + 过量投药生成的金属氢氧化物。</p>
-      <p>按化学计量：每 1 mol P 生成 1 mol 金属磷酸盐，过量的 (Me/P − 1) mol 金属生成氢氧化物。摩尔质量：P=31，AlPO₄=122，Al(OH)₃=78，FePO₄=150.8，Fe(OH)₃=106.87（55.845 + 3×17.007）。</p>
-      <p><strong>PAC/铝系</strong>：</p>
+      <p>P_bio là lượng phốt pho được loại bỏ bằng khử phốt pho sinh học và đồng hóa vào bùn (mặc định 1.5 mg/L, tương ứng với giá trị mặc định “phần khử phốt pho sinh học” trong công cụ tính lượng hóa chất); chỉ phần còn lại cần kết tủa hóa học.</p>
+      <p>Tùy loại hóa chất, bùn hóa học gồm hai phần: phốt phát kim loại tạo thành trong phản ứng + hydroxit kim loại tạo thành do hóa chất châm dư.</p>
+      <p>Theo tỷ lượng hóa học: mỗi 1 mol P tạo ra 1 mol phốt phát kim loại, phần (Me/P − 1) mol kim loại dư tạo thành hydroxit. Khối lượng mol: P=31, AlPO₄=122, Al(OH)₃=78, FePO₄=150.8, Fe(OH)₃=106.87 (55.845 + 3×17.007).</p>
+      <p><strong>PAC/hóa chất nhôm</strong>：</p>
       <code>ΔX_chem = ΔP · [122/31 + (Al/P − 1) · 78/31]</code>
-      <p><strong>FeCl₃/PFS 铁系</strong>：</p>
+      <p><strong>FeCl₃/PFS hóa chất sắt</strong>：</p>
       <code>ΔX_chem = ΔP · [150.8/31 + (Fe/P − 1) · 106.87/31]</code>
-      <p><strong>石灰</strong>（经验式，按所填 Ca/P 摩尔比计算；石灰除磷主要受 pH 控制）：</p>
+      <p><strong>Vôi</strong> (công thức kinh nghiệm, tính theo tỷ lệ mol Ca/P đã nhập; khử phốt pho bằng vôi chủ yếu phụ thuộc vào pH)：</p>
       <code>ΔX_chem ≈ ΔP · (5.0 + 2.0 · Ca/P)</code>
-      <p>Me/P 摩尔比一般取 1.2-2.0。摩尔比 1.5 时：PAC ≈ 5.19 kgDS/kgP，铁盐 ≈ 6.59 kgDS/kgP。石灰式仅按所填 Ca/P 计算，未单独计入与碱度反应生成的 CaCO₃；实际石灰投量由碱度（需将 pH 提至约 10 以上）决定，Ca/P 常远高于 1.5，石灰污泥可达数十 kgDS/kgP，宜按碱度核算投量后输入相应 Ca/P。</p>
+      <p>Tỷ lệ mol Me/P thường lấy 1.2-2.0. Khi tỷ lệ mol là 1.5: PAC ≈ 5.19 kgDS/kgP, muối sắt ≈ 6.59 kgDS/kgP. Công thức cho vôi chỉ tính theo Ca/P đã nhập, chưa tính riêng CaCO₃ tạo thành do phản ứng với độ kiềm; lượng vôi thực tế phụ thuộc vào độ kiềm (cần nâng pH lên khoảng trên 10), Ca/P thường lớn hơn nhiều so với 1.5 và lượng bùn vôi có thể đạt hàng chục kgDS/kgP. Nên tính lượng vôi theo độ kiềm rồi nhập Ca/P tương ứng.</p>
 
-      <h3>④ 污泥浓缩脱水换算</h3>
+      <h3>④ Quy đổi cô đặc và tách nước bùn</h3>
       <code>M_wet = M_dry / (1 − w)  [kg/d]</code>
       <code>V_sludge = M_wet / (ρ × 1000)  [m³/d]</code>
-      <p>其中 w 为含水率（小数）。浓缩后污泥量分别计算再汇总：初沉污泥按“初沉污泥含水率”，剩余活性污泥与化学污泥按“浓缩后含水率”：</p>
-      <code>M_浓缩 = ΔX_ps / (1 − w_ps) + (ΔX_bio + ΔX_chem) / (1 − w_thick)</code>
-      <p>浓缩污泥体积按“浓缩污泥密度”，泥饼体积按“泥饼密度”（默认 1.05 t/m³）换算。含水率关系示例：</p>
+      <p>Trong đó w là độ ẩm (dạng số thập phân). Lượng bùn sau cô đặc được tính riêng rồi cộng lại: bùn sơ cấp theo “độ ẩm bùn sơ cấp”, bùn hoạt tính dư và bùn hóa học theo “độ ẩm sau cô đặc”:</p>
+      <code>M<sub>cô đặc</sub> = ΔX_ps / (1 − w_ps) + (ΔX_bio + ΔX_chem) / (1 − w_thick)</code>
+      <p>Thể tích bùn cô đặc được quy đổi theo “khối lượng riêng bùn cô đặc”, thể tích bánh bùn theo “khối lượng riêng bánh bùn” (mặc định 1.05 t/m³). Ví dụ về mối quan hệ với độ ẩm:</p>
       <table>
-        <tr><th>含水率</th><th>含固率</th><th>体积比（相对99%）</th></tr>
+        <tr><th>Độ ẩm</th><th>Hàm lượng chất rắn</th><th>Tỷ lệ thể tích (so với 99%)</th></tr>
         <tr><td>99%</td><td>1%</td><td>100</td></tr>
         <tr><td>97%</td><td>3%</td><td>33</td></tr>
         <tr><td>95%</td><td>5%</td><td>20</td></tr>
         <tr><td>80%</td><td>20%</td><td>5</td></tr>
-        <tr><td>60%（深度脱水）</td><td>40%</td><td>2.5</td></tr>
+        <tr><td>60% (tách nước sâu)</td><td>40%</td><td>2.5</td></tr>
       </table>
 
-      <h3>⑤ 处置成本估算</h3>
-      <code>年成本 = M_cake_年 × 单价</code>
-      <p>目前国内常见污泥处置单价：卫生填埋 150-300 元/t；焚烧 300-600 元/t；堆肥 200-400 元/t；水泥窑协同处置 200-400 元/t。本工具按“脱水后含水率”下的泥饼湿重计价（默认 80%）；部分处置途径（如填埋）要求含水率 ≤60%，此时需深度脱水，泥饼量与单价均应按对应含水率取值。</p>
+      <h3>⑤ Ước tính chi phí xử lý</h3>
+      <code>Chi phí hằng năm = M<sub>cake, năm</sub> × đơn giá</code>
+      <p>Đơn giá xử lý bùn thường gặp hiện nay tại Trung Quốc: chôn lấp hợp vệ sinh 150-300 nhân dân tệ/t; đốt 300-600 nhân dân tệ/t; ủ phân 200-400 nhân dân tệ/t; đồng xử lý trong lò xi măng 200-400 nhân dân tệ/t. Công cụ tính chi phí theo khối lượng ướt của bánh bùn ở “độ ẩm sau tách nước” (mặc định 80%); một số phương án xử lý (như chôn lấp) yêu cầu độ ẩm ≤60%, khi đó cần tách nước sâu và lấy cả lượng bánh bùn lẫn đơn giá theo độ ẩm tương ứng.</p>
     </div>
 
     <div class="note">
-      ⚠️ 本工具用于方案阶段估算与概算，详细设计须根据原水水质特性、工艺流程、药剂种类、脱水设备类型等进行复核。化学污泥铝/铁系按化学计量下限估算、石灰为经验值，严格计算建议采用 Metcalf & Eddy 或 GB 50014 附录公式。
+      ⚠️ Công cụ này dùng để ước tính và lập dự toán sơ bộ ở giai đoạn phương án. Thiết kế chi tiết phải được kiểm tra lại theo đặc tính nước đầu vào, quy trình công nghệ, loại hóa chất, loại thiết bị tách nước và các yếu tố khác. Bùn hóa học từ hóa chất nhôm/sắt được ước tính theo giới hạn dưới của tỷ lượng hóa học, còn bùn vôi theo giá trị kinh nghiệm; để tính toán chính xác, nên dùng công thức trong Metcalf & Eddy hoặc phụ lục GB 50014.
     </div>
 
   </div>
 
-  <footer class="tool-inner-footer">水处理工具箱 · 仅供工程估算参考</footer>
+  <footer class="tool-inner-footer">Bộ công cụ xử lý nước · Chỉ dùng tham khảo cho ước tính kỹ thuật</footer>
 </div>
 </main>
 
@@ -701,65 +701,65 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Công nghệ Dengdeng</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là tập hợp công cụ tính toán trực tuyến do Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam cung cấp, được phát triển và duy trì bởi các kỹ sư công nghệ xử lý nước có kinh nghiệm thực tế. Miễn phí và liên tục cập nhật.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thủy lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thủy lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thủy lực đường ống (bản nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thủy lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính dòng chảy qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lượng khí sục</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn phát sinh</a></li>
+          <li><a href="dosing-calculator.html">Lượng hóa chất châm</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">Thiết kế kỹ thuật MBBR</a></li>
+          <li><a href="ifas-design.html">Thiết kế kỹ thuật IFAS</a></li>
+          <li><a href="mbr-design.html">Thiết kế kỹ thuật MBR</a></li>
+          <li><a href="ro-design.html">Thiết kế thẩm thấu ngược RO</a></li>
+          <li><a href="pump-selection-calculator.html">Lựa chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Lựa chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Quy đổi chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thủy sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải sau nuôi trồng trong ao</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Hướng dẫn tham quan triển lãm Aqua Nor 2027</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Công ty</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang web chính thức của Công nghệ Dengdeng ↗</a></li>
+          <li>Tư vấn Công nghệ Dengdeng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Open Source</h4>
+        <h4>Mã nguồn mở</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho mã nguồn trên GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">Giấy phép AGPL-3.0</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Gửi phản hồi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
@@ -803,26 +803,26 @@
     const useChem = $('useChem').checked;
     const methodSel = document.querySelector('input[name="method"]:checked').value;
 
-    // 输入校验（pos：须 > 0；nn：不能为负；w：含水率 0 ≤ w < 100）
+    // 输入校验（pos：须 > 0；nn：不能为负；w：Độ ẩm 0 ≤ w < 100）
     const rules = [
-      ['Q', '处理水量 Q', 'pos'], ['SSo', '进水 SS', 'nn'], ['SSe', '出水 SS', 'nn'], ['BODo', '进水 BOD₅', 'nn'], ['BODe', '出水 BOD₅', 'nn'],
-      ['w_thick', '浓缩后含水率', 'w'], ['w_dewater', '脱水后含水率', 'w'],
-      ['rho', '浓缩污泥密度', 'pos'], ['rho_cake', '泥饼密度', 'pos'], ['price', '处置单价', 'nn']
+      ['Q', 'Lưu lượng xử lý Q', 'pos'], ['SSo', 'SS đầu vào', 'nn'], ['SSe', 'SS đầu ra', 'nn'], ['BODo', 'BOD₅ đầu vào', 'nn'], ['BODe', 'BOD₅ đầu ra', 'nn'],
+      ['w_thick', 'Độ ẩm sau cô đặc', 'w'], ['w_dewater', 'Độ ẩm sau tách nước', 'w'],
+      ['rho', 'Khối lượng riêng bùn cô đặc', 'pos'], ['rho_cake', 'Khối lượng riêng bánh bùn', 'pos'], ['price', 'Đơn giá xử lý', 'nn']
     ];
-    if (methodSel === 'Y') rules.push(['Y', '污泥产率 Y', 'nn'], ['Kd', '内源呼吸率 Kd₂₀', 'nn'], ['Tw', '设计水温 T', 'T'], ['SRT', '污泥龄 SRT', 'pos'], ['f_inert', '不可降解系数 f', 'nn']);
-    else rules.push(['Fr', '污泥产率系数 Fr', 'nn']);
-    if (usePS) rules.push(['eta_SS', '初沉 SS 去除率', 'nn'], ['eta_BOD', '初沉 BOD 去除率', 'nn'], ['w_ps', '初沉污泥含水率', 'w']);
-    if (useChem) rules.push(['TPo', '进水 TP', 'nn'], ['TPe', '出水 TP', 'nn'], ['bioP', '生物除磷/同化量', 'nn'], ['mole_ratio', '投药比', 'nn']);
+    if (methodSel === 'Y') rules.push(['Y', 'Hệ số sinh bùn Y', 'nn'], ['Kd', 'Hệ số hô hấp nội bào Kd₂₀', 'nn'], ['Tw', 'Nhiệt độ nước thiết kế T', 'T'], ['SRT', 'Tuổi bùn SRT', 'pos'], ['f_inert', 'Hệ số chất không phân hủy f', 'nn']);
+    else rules.push(['Fr', 'Hệ số sinh bùn Fr', 'nn']);
+    if (usePS) rules.push(['eta_SS', 'Hiệu suất loại bỏ SS ở bể lắng sơ cấp', 'nn'], ['eta_BOD', 'Hiệu suất loại bỏ BOD ở bể lắng sơ cấp', 'nn'], ['w_ps', 'Độ ẩm bùn sơ cấp', 'w']);
+    if (useChem) rules.push(['TPo', 'TP đầu vào', 'nn'], ['TPe', 'TP đầu ra', 'nn'], ['bioP', 'Lượng khử phốt pho sinh học/đồng hóa', 'nn'], ['mole_ratio', 'Tỷ lệ châm hóa chất', 'nn']);
     document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
     const errs = [];
     rules.forEach(([id, name, rule]) => {
       const v = parseFloat($(id).value);
       let msg = '';
-      if (isNaN(v)) msg = `请输入${name}`;
-      else if (rule === 'pos' && v <= 0) msg = `请输入大于 0 的${name}`;
-      else if (rule === 'nn' && v < 0) msg = `${name}不能为负值`;
-      else if (rule === 'w' && (v < 0 || v >= 100)) msg = `${name}应在 0 ~ 100% 之间（不含 100%）`;
-      else if (rule === 'T' && (v < 5 || v > 35)) msg = `${name}应在 5 ~ 35 ℃ 之间`;
+      if (isNaN(v)) msg = `Vui lòng nhập ${name}`;
+      else if (rule === 'pos' && v <= 0) msg = `Vui lòng nhập ${name} lớn hơn 0`;
+      else if (rule === 'nn' && v < 0) msg = `${name} không được âm`;
+      else if (rule === 'w' && (v < 0 || v >= 100)) msg = `${name} phải nằm trong khoảng 0 ~ 100% (không bao gồm 100%)`;
+      else if (rule === 'T' && (v < 5 || v > 35)) msg = `${name} phải nằm trong khoảng 5 ~ 35 ℃`;
       if (msg) { $(id).classList.add('invalid'); errs.push(msg); }
     });
     if (errs.length) {
@@ -835,14 +835,14 @@
     const hints = [];
     if (num('w_dewater') > num('w_thick')) {
       $('w_dewater').classList.add('invalid');
-      hints.push('脱水后含水率高于浓缩后含水率（脱水后反而更稀），请核对');
+      hints.push('Độ ẩm sau tách nước cao hơn độ ẩm sau cô đặc (bùn loãng hơn sau tách nước), vui lòng kiểm tra lại');
     }
     showMsg('hintBox', hints.length ? '💡 ' + hints.join('；') : '');
 
     const Q = num('Q');
     const SSo = num('SSo'), BODo = num('BODo'), BODe = num('BODe');
 
-    // ① 初沉污泥
+    // ① Bùn lắng sơ cấp
     let X_ps = 0;
     let BOD_bio_in = BODo;  // 进入生物段的BOD
     let SS_bio_in = SSo;    // 进入生物段的SS（SS₀）
@@ -875,7 +875,7 @@
     let X_chem = 0;
     if (useChem) {
       const TPo = num('TPo'), TPe = num('TPe'), bioP = num('bioP');
-      // 化学除磷量须扣除生物除磷/污泥同化量（与加药量计算器“生物除磷贡献”口径一致）
+      // 化学除磷量须扣除生物除磷/污泥同化量（与Lượng hóa chất châm计算器“生物除磷贡献”口径一致）
       const dP = Q * Math.max(TPo - TPe - bioP, 0) / 1000;  // kgP/d
       const mole = num('mole_ratio');
       const chemType = $('chem_type').value;
@@ -889,7 +889,7 @@
         // Fe基：1 mol P → 1 mol FePO4 + (mole−1) mol Fe(OH)3
         factor = 150.8/31 + (mole - 1) * 106.87/31; // mole=1.5 时 ≈ 6.59 kg/kgP
       } else {
-        factor = 5.0 + 2.0 * mole;   // 石灰系：经验式，仅按所填 Ca/P 计算，未单独计入碱度生成的 CaCO3（实际投量由碱度决定，可达数十 kgDS/kgP）
+        factor = 5.0 + 2.0 * mole;   // Vôi系：经验式，仅按所填 Ca/P 计算，未单独计入碱度生成的 CaCO3（实际投量由碱度决定，可达数十 kgDS/kgP）
       }
       X_chem = dP * factor;
     }
@@ -902,7 +902,7 @@
     const w_ps = num('w_ps') / 100;
     const rho = num('rho'), rho_cake = num('rho_cake');
 
-    // 浓缩后：初沉污泥按初沉含水率 w_ps，剩余+化学污泥按浓缩后含水率 w_thick，分别计算后汇总
+    // Sau cô đặc：Bùn lắng sơ cấp按初沉Độ ẩm w_ps，剩余+化学污泥按Độ ẩm sau cô đặc w_thick，分别计算后汇总
     const M_thick = (X_ps / (1 - w_ps) + (X_bio + X_chem) / (1 - w_thick)) / 1000;  // t/d
     const V_thick = M_thick / rho;  // m³/d
     const M_cake = X_total / (1 - w_dewater) / 1000;  // t/d
@@ -912,13 +912,13 @@
     const year_dry = X_total * 365 / 1000;  // tDS/a
     const year_cake = M_cake * 365;          // t/a
     const price = num('price');
-    const year_cost = year_cake * price / 10000;  // 万元/a
-    const unit_cost = Q > 0 ? (M_cake * 1000 * price) / (Q * 1000) : 0; // 元/m³水
+    const year_cost = year_cake * price / 10000;  // vạn nhân dân tệ/a
+    const unit_cost = Q > 0 ? (M_cake * 1000 * price) / (Q * 1000) : 0; // nhân dân tệ/m³ nước
 
     // 输出
     $('r_ps').textContent = X_ps.toFixed(1);
     $('r_bio').textContent = X_bio.toFixed(1);
-    $('r_bio_note').textContent = method === 'Y' ? '，含进水惰性固体' : '';
+    $('r_bio_note').textContent = method === 'Y' ? ', bao gồm chất rắn trơ đầu vào' : '';
     $('r_chem').textContent = X_chem.toFixed(1);
     $('r_total_dry').textContent = X_total.toFixed(1);
     $('r_thick_m').textContent = M_thick.toFixed(2);
@@ -932,29 +932,29 @@
   }
 
   function copyResults() {
-    const txt = `污泥产量计算结果
+    const txt = `Kết quả tính lượng bùn phát sinh
 ————————————————
-处理水量: ${num('Q')} m³/d
-进/出水 BOD: ${num('BODo')}/${num('BODe')} mg/L
-进/出水 SS: ${num('SSo')}/${num('SSe')} mg/L
+Lưu lượng xử lý: ${num('Q')} m³/d
+BOD đầu vào/đầu ra: ${num('BODo')}/${num('BODe')} mg/L
+SS đầu vào/đầu ra: ${num('SSo')}/${num('SSe')} mg/L
 
-【干污泥产量】
-初沉污泥 = ${$('r_ps').textContent} kgDS/d
-剩余生物污泥 = ${$('r_bio').textContent} kgDS/d${document.querySelector('input[name="method"]:checked').value === 'Y' ? '（Y=' + num('Y') + '，Kd₂₀=' + num('Kd') + ' d⁻¹，T=' + num('Tw') + ' ℃ → Kd_T=' + (num('Kd') * Math.pow(1.04, num('Tw') - 20)).toFixed(4) + ' d⁻¹，SRT=' + num('SRT') + ' d；含惰性固体 f=' + num('f_inert') + '）' : ''}
-化学除磷污泥 = ${$('r_chem').textContent} kgDS/d${$('useChem').checked ? '（TP ' + num('TPo') + '→' + num('TPe') + ' mg/L，扣生物除磷/同化 ' + num('bioP') + ' mg/L）' : ''}
-干污泥总量 ΔX = ${$('r_total_dry').textContent} kgDS/d
+【Lượng bùn khô phát sinh】
+Bùn lắng sơ cấp = ${$('r_ps').textContent} kgDS/d
+Bùn sinh học dư = ${$('r_bio').textContent} kgDS/d${document.querySelector('input[name="method"]:checked').value === 'Y' ? ' (Y=' + num('Y') + ', Kd₂₀=' + num('Kd') + ' d⁻¹, T=' + num('Tw') + ' ℃ → Kd_T=' + (num('Kd') * Math.pow(1.04, num('Tw') - 20)).toFixed(4) + ' d⁻¹, SRT=' + num('SRT') + ' d; bao gồm chất rắn trơ f=' + num('f_inert') + ')' : ''}
+Bùn khử phốt pho bằng hóa chất = ${$('r_chem').textContent} kgDS/d${$('useChem').checked ? ' (TP ' + num('TPo') + '→' + num('TPe') + ' mg/L, trừ phần khử phốt pho sinh học/đồng hóa ' + num('bioP') + ' mg/L)' : ''}
+Tổng lượng bùn khô ΔX = ${$('r_total_dry').textContent} kgDS/d
 
-【湿污泥】
-浓缩后(${$('usePS').checked ? '初沉 ' + num('w_ps') + '%，剩余+化学 ' : ''}${num('w_thick')}%): ${$('r_thick_m').textContent} t/d (${$('r_thick_v').textContent} m³/d)
-脱水后泥饼(${num('w_dewater')}%): ${$('r_cake_m').textContent} t/d (${$('r_cake_v').textContent} m³/d)
+【Bùn ướt】
+Sau cô đặc (${$('usePS').checked ? 'Lắng sơ cấp ' + num('w_ps') + '%, bùn dư + bùn hóa học ' : ''}${num('w_thick')}%): ${$('r_thick_m').textContent} t/d (${$('r_thick_v').textContent} m³/d)
+Bánh bùn sau tách nước (${num('w_dewater')}%): ${$('r_cake_m').textContent} t/d (${$('r_cake_v').textContent} m³/d)
 
-【年处置】
-年干泥 = ${$('r_year_dry').textContent} tDS/a
-年泥饼 = ${$('r_year_cake').textContent} t/a
-年处置费 = ${$('r_year_cost').textContent} 万元/a
-吨水成本 = ${$('r_unit_cost').textContent} 元/m³水`;
+【Xử lý hằng năm】
+Bùn khô hằng năm = ${$('r_year_dry').textContent} tDS/a
+Bánh bùn hằng năm = ${$('r_year_cake').textContent} t/a
+Chi phí xử lý hằng năm = ${$('r_year_cost').textContent} vạn nhân dân tệ/a
+Chi phí trên mỗi mét khối nước = ${$('r_unit_cost').textContent} nhân dân tệ/m³ nước`;
     navigator.clipboard.writeText(txt).then(() => {
-      alert('结果已复制到剪贴板');
+      alert('Đã sao chép kết quả vào bộ nhớ tạm');
     }).catch(() => {
       const ta = document.createElement('textarea');
       ta.value = txt;
@@ -962,7 +962,7 @@
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     });
   }
 

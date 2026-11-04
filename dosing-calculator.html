@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>加药量计算器 | 水处理工具箱 · WaterKit</title>
+<title>Công cụ tính lượng hoá chất định lượng | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="在线计算 PAC、PAM、次氯酸钠、碳源、除磷剂与 pH 调节剂的投加量、药液体积、计量泵流量、日/月用量及年采购与吨水药剂成本。">
+<meta name="description" content="Tính trực tuyến lượng PAC, PAM, natri hypoclorit, nguồn cacbon, hoá chất khử phốt pho và điều chỉnh pH cần định lượng; thể tích dung dịch, lưu lượng bơm định lượng, lượng dùng ngày/tháng, chi phí mua hằng năm và chi phí hoá chất trên mỗi mét khối nước.">
 <link rel="canonical" href="https://waterkit.cn/dosing-calculator.html">
 <style>
   :root {
@@ -409,571 +409,571 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Công nghệ Dengdeng</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-process">工艺计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-process">Tính toán công nghệ</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Công nghệ Dengdeng</a>
     </nav>
   </div>
 </header>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-process">工艺计算</a>
+  <a href="index.html#cat-process">Tính toán công nghệ</a>
   <span class="sep">/</span>
-  <span class="current">加药量</span>
+  <span class="current">Lượng hoá chất định lượng</span>
 </div>
 
 <main class="main-wrap">
 
 <div class="container">
   <header class="tool-header">
-    <h1>💊 加药量计算器</h1>
-    <p>PAC / PAM / 次氯酸钠 / 碳源 / 除磷剂 / pH调节 六大类药剂投加量估算</p>
+    <h1>💊 Công cụ tính lượng hoá chất định lượng</h1>
+    <p>Ước tính lượng cần định lượng cho sáu nhóm hoá chất: PAC / PAM / natri hypoclorit / nguồn cacbon / hoá chất khử phốt pho / điều chỉnh pH</p>
   </header>
 
   <div class="body">
 
     <!-- 共用参数 -->
     <div class="shared-box">
-      <h2>📌 共用参数（所有药剂共享）</h2>
+      <h2>📌 Thông số chung (áp dụng cho mọi hoá chất)</h2>
       <div class="grid">
         <div class="field">
-          <label for="Q">处理水量 Q <span class="unit" style="color:#0e7490;font-weight:600;">m³/h（按小时，非 m³/d）</span></label>
+          <label for="Q">Lưu lượng nước xử lý Q <span class="unit" style="color:#0e7490;font-weight:600;">m³/h (theo giờ, không phải m³/d)</span></label>
           <input type="number" id="Q" value="500" step="10">
         </div>
         <div class="field">
-          <label for="hours">每天运行时间 <span class="unit">h/d</span></label>
+          <label for="hours">Thời gian vận hành mỗi ngày <span class="unit">h/d</span></label>
           <input type="number" id="hours" value="24" step="1">
         </div>
       </div>
     </div>
 
-    <!-- 药剂切换 -->
+    <!-- Hoá chất切换 -->
     <div class="drug-tabs">
       <button class="drug-tab active" data-drug="PAC" onclick="setDrug('PAC')">
-        <span class="icon">🟤</span>PAC混凝
+        <span class="icon">🟤</span>Keo tụ PAC
       </button>
       <button class="drug-tab" data-drug="PAM" onclick="setDrug('PAM')">
-        <span class="icon">🧵</span>PAM絮凝
+        <span class="icon">🧵</span>Tạo bông PAM
       </button>
       <button class="drug-tab" data-drug="NaClO" onclick="setDrug('NaClO')">
-        <span class="icon">🟡</span>次氯酸钠
+        <span class="icon">🟡</span>Natri hypoclorit
       </button>
       <button class="drug-tab" data-drug="carbon" onclick="setDrug('carbon')">
-        <span class="icon">⚫</span>碳源
+        <span class="icon">⚫</span>Nguồn cacbon
       </button>
       <button class="drug-tab" data-drug="P" onclick="setDrug('P')">
-        <span class="icon">🔶</span>除磷剂
+        <span class="icon">🔶</span>Hoá chất khử phốt pho
       </button>
       <button class="drug-tab" data-drug="pH" onclick="setDrug('pH')">
-        <span class="icon">🧪</span>pH调节
+        <span class="icon">🧪</span>Điều chỉnh pH
       </button>
     </div>
 
     <!-- ===================== PAC ===================== -->
     <div class="drug-panel active" id="panel-PAC">
-      <div class="section-title">混凝剂 PAC（聚合氯化铝）参数</div>
+      <div class="section-title">Thông số chất keo tụ PAC (polyaluminium clorua)</div>
       <div class="grid">
         <div class="field">
-          <label for="pac_dose">投药浓度（以商品药剂计） <span class="unit">mg/L</span></label>
+          <label for="pac_dose">Nồng độ định lượng (theo hoá chất thương phẩm) <span class="unit">mg/L</span></label>
           <input type="number" id="pac_dose" value="30" step="5">
         </div>
         <div class="field">
-          <label for="pac_al2o3">商品药剂 Al₂O₃ 含量 <span class="unit">%</span></label>
+          <label for="pac_al2o3">Hàm lượng Al₂O₃ trong hoá chất thương phẩm <span class="unit">%</span></label>
           <input type="number" id="pac_al2o3" value="30" step="1">
         </div>
         <div class="field">
-          <label for="pac_conc">药液配制浓度 <span class="unit">%（W/W）</span></label>
+          <label for="pac_conc">Nồng độ pha dung dịch hoá chất <span class="unit">% (W/W)</span></label>
           <input type="number" id="pac_conc" value="10" step="1">
         </div>
         <div class="field">
-          <label for="pac_rho">药液密度 <span class="unit">kg/L</span></label>
+          <label for="pac_rho">Khối lượng riêng dung dịch hoá chất <span class="unit">kg/L</span></label>
           <input type="number" id="pac_rho" value="1.08" step="0.01">
         </div>
         <div class="field">
-          <label for="pac_price">采购单价 <span class="unit">元/t</span></label>
+          <label for="pac_price">Đơn giá mua <span class="unit">nhân dân tệ/t</span></label>
           <input type="number" id="pac_price" value="1800" step="50">
         </div>
       </div>
 
       <div class="results">
-        <h2>PAC 加药计算结果</h2>
+        <h2>Kết quả tính định lượng PAC</h2>
         <div class="result-row">
-          <span class="result-label">投药浓度（以 Al₂O₃ 计）</span>
+          <span class="result-label">Nồng độ định lượng (tính theo Al₂O₃)</span>
           <span><span class="result-value" id="pac_r_al2o3">—</span><span class="result-unit">mg/L</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>固体药剂时用量（商品药）</b></span>
+          <span class="result-label"><b>Lượng hoá chất rắn dùng mỗi giờ (thương phẩm)</b></span>
           <span><span class="result-value big" id="pac_r_solid">—</span><span class="result-unit">kg/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">药液投加量（稀释后）</span>
+          <span class="result-label">Lưu lượng định lượng dung dịch (sau pha loãng)</span>
           <span><span class="result-value" id="pac_r_liquid">—</span><span class="result-unit">L/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">计量泵选型流量（含 1.3 安全系数）</span>
+          <span class="result-label">Lưu lượng chọn bơm định lượng (gồm hệ số an toàn 1.3)</span>
           <span><span class="result-value" id="pac_r_pump">—</span><span class="result-unit">L/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">日用量（固体）</span>
+          <span class="result-label">Lượng dùng hằng ngày (dạng rắn)</span>
           <span><span class="result-value" id="pac_r_day">—</span><span class="result-unit">kg/d</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">月用量</span>
-          <span><span class="result-value" id="pac_r_month">—</span><span class="result-unit">t/月</span></span>
+          <span class="result-label">Lượng dùng hằng tháng</span>
+          <span><span class="result-value" id="pac_r_month">—</span><span class="result-unit">t/tháng</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>年采购成本</b></span>
-          <span><span class="result-value big" id="pac_r_year_cost">—</span><span class="result-unit">万元/a</span></span>
+          <span class="result-label"><b>Chi phí mua hằng năm</b></span>
+          <span><span class="result-value big" id="pac_r_year_cost">—</span><span class="result-unit">vạn nhân dân tệ/a</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">吨水药剂成本</span>
-          <span><span class="result-value" id="pac_r_unit_cost">—</span><span class="result-unit">元/m³水</span></span>
+          <span class="result-label">Chi phí hoá chất trên mỗi mét khối nước</span>
+          <span><span class="result-value" id="pac_r_unit_cost">—</span><span class="result-unit">nhân dân tệ/m³ nước</span></span>
         </div>
       </div>
-      <div class="info-box">💡 PAC 常规投加浓度：市政给水 10-30 mg/L；市政污水 20-80 mg/L；印染/化工废水 50-500 mg/L。建议通过烧杯试验确定最佳投药量。</div>
+      <div class="info-box">💡 Nồng độ PAC thường dùng: nước cấp đô thị 10-30 mg/L; nước thải đô thị 20-80 mg/L; nước thải dệt nhuộm/hoá chất 50-500 mg/L. Nên xác định liều tối ưu bằng thử nghiệm Jartest.</div>
     </div>
 
     <!-- ===================== PAM ===================== -->
     <div class="drug-panel" id="panel-PAM">
-      <div class="section-title">絮凝剂 PAM（聚丙烯酰胺）参数</div>
+      <div class="section-title">Thông số chất tạo bông PAM (polyacrylamit)</div>
       <div class="grid">
         <div class="field">
-          <label for="pam_type">离子类型</label>
+          <label for="pam_type">Loại ion</label>
           <select id="pam_type">
-            <option value="cation">阳离子（CPAM）—— 污泥脱水常用</option>
-            <option value="anion">阴离子（APAM）—— 给水/矿山常用</option>
-            <option value="nonion">非离子（NPAM）—— 特殊场合</option>
+            <option value="cation">Cation (CPAM) — thường dùng để tách nước bùn</option>
+            <option value="anion">Anion (APAM) — thường dùng cho nước cấp/khai khoáng</option>
+            <option value="nonion">Không ion (NPAM) — ứng dụng đặc biệt</option>
           </select>
         </div>
         <div class="field">
-          <label for="pam_use">应用场景</label>
+          <label for="pam_use">Ứng dụng</label>
           <select id="pam_use">
-            <option value="water">给水/污水助凝（按水量投加）</option>
-            <option value="sludge">污泥脱水（按干泥量投加）</option>
+            <option value="water">Trợ keo tụ nước cấp/nước thải (theo lưu lượng nước)</option>
+            <option value="sludge">Tách nước bùn (theo lượng bùn khô)</option>
           </select>
         </div>
         <div class="field" id="pam_dose_water_field">
-          <label for="pam_dose_water">投药浓度（按水量） <span class="unit">mg/L</span></label>
+          <label for="pam_dose_water">Nồng độ định lượng (theo lưu lượng nước) <span class="unit">mg/L</span></label>
           <input type="number" id="pam_dose_water" value="1.0" step="0.1">
         </div>
         <div class="field" id="pam_dose_sludge_field" style="display:none;">
-          <label for="pam_dose_sludge">投药比（按干泥量） <span class="unit">kg药/tDS</span></label>
+          <label for="pam_dose_sludge">Tỷ lệ định lượng (theo lượng bùn khô) <span class="unit">kg hoá chất/tDS</span></label>
           <input type="number" id="pam_dose_sludge" value="5" step="0.5">
         </div>
         <div class="field" id="pam_sludge_q_field" style="display:none;">
-          <label for="pam_sludge_q">干泥处理量 <span class="unit">kgDS/h</span></label>
+          <label for="pam_sludge_q">Lượng bùn khô xử lý <span class="unit">kgDS/h</span></label>
           <input type="number" id="pam_sludge_q" value="100" step="10">
         </div>
         <div class="field">
-          <label for="pam_conc">药液配制浓度 <span class="unit">‰ (g/L)</span></label>
+          <label for="pam_conc">Nồng độ pha dung dịch hoá chất <span class="unit">‰ (g/L)</span></label>
           <input type="number" id="pam_conc" value="2" step="0.5">
         </div>
         <div class="field">
-          <label for="pam_price">采购单价 <span class="unit">元/kg</span></label>
+          <label for="pam_price">Đơn giá mua <span class="unit">nhân dân tệ/kg</span></label>
           <input type="number" id="pam_price" value="22" step="1">
         </div>
       </div>
 
       <div class="results">
-        <h2>PAM 加药计算结果</h2>
+        <h2>Kết quả tính định lượng PAM</h2>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>PAM 固体消耗量</b></span>
+          <span class="result-label"><b>Lượng PAM rắn tiêu thụ</b></span>
           <span><span class="result-value big" id="pam_r_solid">—</span><span class="result-unit">kg/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">药液配制量（稀释后）</span>
+          <span class="result-label">Lưu lượng dung dịch pha chế (sau pha loãng)</span>
           <span><span class="result-value" id="pam_r_liquid">—</span><span class="result-unit">L/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">溶解水量</span>
+          <span class="result-label">Lượng nước hoà tan</span>
           <span><span class="result-value" id="pam_r_water">—</span><span class="result-unit">L/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">日用量（固体）</span>
+          <span class="result-label">Lượng dùng hằng ngày (dạng rắn)</span>
           <span><span class="result-value" id="pam_r_day">—</span><span class="result-unit">kg/d</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">月用量</span>
-          <span><span class="result-value" id="pam_r_month">—</span><span class="result-unit">kg/月</span></span>
+          <span class="result-label">Lượng dùng hằng tháng</span>
+          <span><span class="result-value" id="pam_r_month">—</span><span class="result-unit">kg/tháng</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>年采购成本</b></span>
-          <span><span class="result-value big" id="pam_r_year_cost">—</span><span class="result-unit">万元/a</span></span>
+          <span class="result-label"><b>Chi phí mua hằng năm</b></span>
+          <span><span class="result-value big" id="pam_r_year_cost">—</span><span class="result-unit">vạn nhân dân tệ/a</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">吨水药剂成本<span id="pam_unit_note"></span></span>
-          <span><span class="result-value" id="pam_r_unit_cost">—</span><span class="result-unit">元/m³水</span></span>
+          <span class="result-label">Chi phí hoá chất trên mỗi mét khối nước<span id="pam_unit_note"></span></span>
+          <span><span class="result-value" id="pam_r_unit_cost">—</span><span class="result-unit">nhân dân tệ/m³ nước</span></span>
         </div>
       </div>
-      <div class="info-box">💡 PAM 常规投加：助凝 0.5-2.0 mg/L；污泥脱水 CPAM 3-8 kg/tDS。药液配制浓度宜 0.1-0.3%，熟化时间≥30min，不宜过浓否则不易溶解。</div>
+      <div class="info-box">💡 Liều PAM thường dùng: trợ keo tụ 0.5-2.0 mg/L; tách nước bùn bằng CPAM 3-8 kg/tDS. Nồng độ dung dịch nên là 0.1-0.3%, thời gian ủ ≥30min; không nên pha quá đặc vì sẽ khó hoà tan.</div>
     </div>
 
     <!-- ===================== NaClO ===================== -->
     <div class="drug-panel" id="panel-NaClO">
-      <div class="section-title">消毒剂 次氯酸钠（NaClO）参数</div>
+      <div class="section-title">Thông số chất khử trùng natri hypoclorit (NaClO)</div>
       <div class="grid">
         <div class="field">
-          <label for="cl_dose">投加浓度（以有效氯计） <span class="unit">mg/L</span></label>
+          <label for="cl_dose">Nồng độ định lượng (theo clo hoạt tính) <span class="unit">mg/L</span></label>
           <input type="number" id="cl_dose" value="5" step="0.5">
         </div>
         <div class="field">
-          <label for="cl_active">商品溶液有效氯含量 <span class="unit">%</span></label>
+          <label for="cl_active">Hàm lượng clo hoạt tính trong dung dịch thương phẩm <span class="unit">%</span></label>
           <input type="number" id="cl_active" value="10" step="1">
         </div>
         <div class="field">
-          <label for="cl_rho">商品溶液密度 <span class="unit">kg/L</span></label>
+          <label for="cl_rho">Khối lượng riêng dung dịch thương phẩm <span class="unit">kg/L</span></label>
           <input type="number" id="cl_rho" value="1.20" step="0.01">
         </div>
         <div class="field">
-          <label for="cl_price">采购单价 <span class="unit">元/t（商品液）</span></label>
+          <label for="cl_price">Đơn giá mua <span class="unit">nhân dân tệ/t (dung dịch thương phẩm)</span></label>
           <input type="number" id="cl_price" value="900" step="50">
         </div>
       </div>
 
       <div class="results">
-        <h2>次氯酸钠加药计算结果</h2>
+        <h2>Kết quả tính định lượng natri hypoclorit</h2>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>商品溶液投加量</b></span>
+          <span class="result-label"><b>Lưu lượng định lượng dung dịch thương phẩm</b></span>
           <span><span class="result-value big" id="cl_r_liquid">—</span><span class="result-unit">L/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">等效有效氯量</span>
+          <span class="result-label">Lượng clo hoạt tính tương đương</span>
           <span><span class="result-value" id="cl_r_cl">—</span><span class="result-unit">kg/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">商品溶液日用量</span>
+          <span class="result-label">Lượng dung dịch thương phẩm dùng hằng ngày</span>
           <span><span class="result-value" id="cl_r_day">—</span><span class="result-unit">L/d</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">计量泵选型流量（含 1.3 安全系数）</span>
+          <span class="result-label">Lưu lượng chọn bơm định lượng (gồm hệ số an toàn 1.3)</span>
           <span><span class="result-value" id="cl_r_pump">—</span><span class="result-unit">L/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">年商品液用量</span>
+          <span class="result-label">Lượng dung dịch thương phẩm dùng hằng năm</span>
           <span><span class="result-value" id="cl_r_year_m">—</span><span class="result-unit">t/a</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>年采购成本</b></span>
-          <span><span class="result-value big" id="cl_r_year_cost">—</span><span class="result-unit">万元/a</span></span>
+          <span class="result-label"><b>Chi phí mua hằng năm</b></span>
+          <span><span class="result-value big" id="cl_r_year_cost">—</span><span class="result-unit">vạn nhân dân tệ/a</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">吨水药剂成本</span>
-          <span><span class="result-value" id="cl_r_unit_cost">—</span><span class="result-unit">元/m³水</span></span>
+          <span class="result-label">Chi phí hoá chất trên mỗi mét khối nước</span>
+          <span><span class="result-value" id="cl_r_unit_cost">—</span><span class="result-unit">nhân dân tệ/m³ nước</span></span>
         </div>
       </div>
-      <div class="info-box">💡 有效氯投加参考：市政给水 1-2 mg/L；再生水 3-5 mg/L；二级出水消毒 3-8 mg/L；医院废水 15-50 mg/L（接触30min 以上）。商品次氯酸钠浓度一般 10-12%，储存会逐月衰减。</div>
+      <div class="info-box">💡 Liều clo hoạt tính tham khảo: nước cấp đô thị 1-2 mg/L; nước tái sử dụng 3-5 mg/L; khử trùng nước sau xử lý thứ cấp 3-8 mg/L; nước thải bệnh viện 15-50 mg/L (thời gian tiếp xúc trên 30min). Dung dịch natri hypoclorit thương phẩm thường có nồng độ 10-12%, giảm dần theo từng tháng lưu trữ.</div>
     </div>
 
-    <!-- ===================== 碳源 ===================== -->
+    <!-- ===================== Nguồn cacbon ===================== -->
     <div class="drug-panel" id="panel-carbon">
-      <div class="section-title">外加碳源参数（反硝化脱氮）</div>
+      <div class="section-title">Thông số nguồn cacbon bổ sung (khử nitơ bằng khử nitrat)</div>
       <div class="grid">
         <div class="field">
-          <label for="c_type">碳源类型</label>
+          <label for="c_type">Loại nguồn cacbon</label>
           <select id="c_type" onchange="updateCarbon()">
-            <option value="methanol">甲醇（CH₃OH）</option>
-            <option value="acetate">乙酸钠（CH₃COONa）</option>
-            <option value="glucose">葡萄糖</option>
-            <option value="compound">复合碳源（商品）</option>
+            <option value="methanol">Metanol (CH₃OH)</option>
+            <option value="acetate">Natri axetat (CH₃COONa)</option>
+            <option value="glucose">Glucozơ</option>
+            <option value="compound">Nguồn cacbon hỗn hợp (thương phẩm)</option>
           </select>
         </div>
         <div class="field">
-          <label for="c_N">待反硝化 NO₃⁻-N 量 <span class="unit">mg/L</span></label>
+          <label for="c_N">Lượng NO₃⁻-N cần khử nitrat <span class="unit">mg/L</span></label>
           <input type="number" id="c_N" value="20" step="1">
         </div>
         <div class="field">
-          <label for="c_cn">C/N 比（COD基） <span class="unit">—</span></label>
+          <label for="c_cn">Tỷ lệ C/N (theo COD) <span class="unit">—</span></label>
           <input type="number" id="c_cn" value="4.98" step="0.1">
         </div>
         <div class="field">
-          <label for="c_cod_in">进水可用 COD <span class="unit">mg/L</span></label>
+          <label for="c_cod_in">COD khả dụng trong nước đầu vào <span class="unit">mg/L</span></label>
           <input type="number" id="c_cod_in" value="20" step="5">
         </div>
         <div class="field">
-          <label for="c_cod_eq">药剂 COD 当量（按纯物质） <span class="unit">gCOD/g</span></label>
+          <label for="c_cod_eq">Đương lượng COD của hoá chất (theo chất tinh khiết) <span class="unit">gCOD/g</span></label>
           <input type="number" id="c_cod_eq" value="1.5" step="0.05">
         </div>
         <div class="field">
-          <label for="c_conc">商品药剂有效含量 <span class="unit">%</span></label>
+          <label for="c_conc">Hàm lượng hoạt chất trong hoá chất thương phẩm <span class="unit">%</span></label>
           <input type="number" id="c_conc" value="100" step="5">
         </div>
         <div class="field" id="c_rho_field">
-          <label for="c_rho">药剂密度（液体药剂） <span class="unit">kg/L</span></label>
+          <label for="c_rho">Khối lượng riêng hoá chất (dạng lỏng) <span class="unit">kg/L</span></label>
           <input type="number" id="c_rho" value="0.79" step="0.01">
         </div>
         <div class="field">
-          <label for="c_price">采购单价 <span class="unit">元/t</span></label>
+          <label for="c_price">Đơn giá mua <span class="unit">nhân dân tệ/t</span></label>
           <input type="number" id="c_price" value="2800" step="100">
         </div>
       </div>
 
       <div class="results">
-        <h2>碳源投加计算结果</h2>
+        <h2>Kết quả tính định lượng nguồn cacbon</h2>
         <div class="result-row">
-          <span class="result-label">脱氮总需 COD</span>
+          <span class="result-label">Tổng COD cần để khử nitơ</span>
           <span><span class="result-value" id="c_r_need">—</span><span class="result-unit">kgCOD/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">进水自带 COD 可贡献</span>
+          <span class="result-label">COD khả dụng từ nước đầu vào</span>
           <span><span class="result-value" id="c_r_in">—</span><span class="result-unit">kgCOD/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">缺口 COD（需外加）</span>
+          <span class="result-label">COD thiếu hụt (cần bổ sung)</span>
           <span><span class="result-value" id="c_r_gap">—</span><span class="result-unit">kgCOD/h</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>外加药剂量（商品）</b></span>
+          <span class="result-label"><b>Lượng hoá chất bổ sung (thương phẩm)</b></span>
           <span><span class="result-value big" id="c_r_solid">—</span><span class="result-unit">kg/h</span></span>
         </div>
         <div class="result-row" id="c_liquid_row">
-          <span class="result-label">药剂体积量（液体药剂）</span>
+          <span class="result-label">Lưu lượng thể tích hoá chất (dạng lỏng)</span>
           <span><span class="result-value" id="c_r_liquid">—</span><span class="result-unit">L/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">日用量</span>
+          <span class="result-label">Lượng dùng hằng ngày</span>
           <span><span class="result-value" id="c_r_day">—</span><span class="result-unit">kg/d</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>年采购成本</b></span>
-          <span><span class="result-value big" id="c_r_year_cost">—</span><span class="result-unit">万元/a</span></span>
+          <span class="result-label"><b>Chi phí mua hằng năm</b></span>
+          <span><span class="result-value big" id="c_r_year_cost">—</span><span class="result-unit">vạn nhân dân tệ/a</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">吨水药剂成本</span>
-          <span><span class="result-value" id="c_r_unit_cost">—</span><span class="result-unit">元/m³水</span></span>
+          <span class="result-label">Chi phí hoá chất trên mỗi mét khối nước</span>
+          <span><span class="result-value" id="c_r_unit_cost">—</span><span class="result-unit">nhân dân tệ/m³ nước</span></span>
         </div>
       </div>
-      <div class="info-box">💡 典型 COD 当量：甲醇 1.5、乙酸钠 0.78（按无水乙酸钠计；固体三水乙酸钠有效含量约 58%，折合约 0.45 gCOD/g 商品）、葡萄糖 1.07、复合碳源 1.0-1.4（视产品而定）。商品药剂用量 = 缺口 COD ÷ COD 当量 ÷ 有效含量。理论反硝化 C/N ≈ 2.86（以 COD/NO₃-N 计），工程实际取 4-6 用于完全反硝化；默认值 4.98 按甲醇计：COD/N = 2.86/(1−1.42×0.3) ≈ 4.98（产率 0.3 gVSS/gCOD），切换碳源时 C/N 不自动改变，乙酸钠等产率较高的碳源宜适当取高。</div>
+      <div class="info-box">💡 Đương lượng COD điển hình: metanol 1.5, natri axetat 0.78 (tính theo natri axetat khan; natri axetat ngậm ba nước dạng rắn có hàm lượng hoạt chất khoảng 58%, tương đương khoảng 0.45 gCOD/g sản phẩm), glucozơ 1.07, nguồn cacbon hỗn hợp 1.0-1.4 (tuỳ sản phẩm). Lượng hoá chất thương phẩm = COD thiếu hụt ÷ đương lượng COD ÷ hàm lượng hoạt chất. C/N lý thuyết cho khử nitrat ≈ 2.86 (theo COD/NO₃-N); thực tế thiết kế chọn 4-6 để khử nitrat hoàn toàn. Giá trị mặc định 4.98 tính cho metanol: COD/N = 2.86/(1−1.42×0.3) ≈ 4.98 (hệ số sinh khối 0.3 gVSS/gCOD). Khi đổi nguồn cacbon, C/N không tự thay đổi; với nguồn có hệ số sinh khối cao hơn như natri axetat nên chọn giá trị cao hơn phù hợp.</div>
     </div>
 
-    <!-- ===================== 除磷剂 ===================== -->
+    <!-- ===================== Hoá chất khử phốt pho ===================== -->
     <div class="drug-panel" id="panel-P">
-      <div class="section-title">化学除磷剂参数</div>
+      <div class="section-title">Thông số hoá chất khử phốt pho bằng phương pháp hoá học</div>
       <div class="grid">
         <div class="field">
-          <label for="p_type">除磷剂类型</label>
+          <label for="p_type">Loại hoá chất khử phốt pho</label>
           <select id="p_type" onchange="updateP()">
-            <option value="PAC">PAC（聚合氯化铝）</option>
-            <option value="PFS">PFS（聚合硫酸铁）</option>
-            <option value="FeCl3">FeCl₃（三氯化铁）</option>
-            <option value="FeSO4">FeSO₄（硫酸亚铁）</option>
+            <option value="PAC">PAC (polyaluminium clorua)</option>
+            <option value="PFS">PFS (polyferric sunfat)</option>
+            <option value="FeCl3">FeCl₃ (sắt(III) clorua)</option>
+            <option value="FeSO4">FeSO₄ (sắt(II) sunfat)</option>
           </select>
         </div>
         <div class="field">
-          <label for="p_TPo">进水 TP <span class="unit">mg/L</span></label>
+          <label for="p_TPo">TP đầu vào <span class="unit">mg/L</span></label>
           <input type="number" id="p_TPo" value="4" step="0.5">
         </div>
         <div class="field">
-          <label for="p_TPe">出水 TP（目标） <span class="unit">mg/L</span></label>
+          <label for="p_TPe">TP đầu ra (mục tiêu) <span class="unit">mg/L</span></label>
           <input type="number" id="p_TPe" value="0.3" step="0.1">
         </div>
         <div class="field">
-          <label for="p_bio">生物除磷贡献 <span class="unit">mg/L</span></label>
+          <label for="p_bio">Phần khử phốt pho sinh học <span class="unit">mg/L</span></label>
           <input type="number" id="p_bio" value="1.5" step="0.5">
         </div>
         <div class="field">
-          <label for="p_mole">金属/磷 摩尔比 <span class="unit">—</span></label>
+          <label for="p_mole">Tỷ lệ mol kim loại/phốt pho <span class="unit">—</span></label>
           <input type="number" id="p_mole" value="2.0" step="0.1">
         </div>
         <div class="field">
-          <label for="p_metal">有效含量 <span class="unit">%（PAC 按 Al₂O₃ 计，铁盐按 Fe 计）</span></label>
+          <label for="p_metal">Hàm lượng hoạt chất <span class="unit">% (PAC tính theo Al₂O₃, muối sắt theo Fe)</span></label>
           <input type="number" id="p_metal" value="10" step="1">
         </div>
         <div class="field">
-          <label for="p_price">采购单价 <span class="unit">元/t</span></label>
+          <label for="p_price">Đơn giá mua <span class="unit">nhân dân tệ/t</span></label>
           <input type="number" id="p_price" value="700" step="50">
-          <span id="p_price_note" style="font-size:11.5px;color:#9ca3af;margin-top:4px;">液体 PAC（10% Al₂O₃）参考价，按厂家报价调整</span>
+          <span id="p_price_note" style="font-size:11.5px;color:#9ca3af;margin-top:4px;">Giá tham khảo PAC lỏng (10% Al₂O₃), điều chỉnh theo báo giá của nhà sản xuất</span>
         </div>
       </div>
 
       <div class="results">
-        <h2>除磷剂投加计算结果</h2>
+        <h2>Kết quả tính định lượng hoá chất khử phốt pho</h2>
         <div class="result-row">
-          <span class="result-label">化学除磷目标 Δ P</span>
+          <span class="result-label">Mục tiêu khử phốt pho hoá học Δ P</span>
           <span><span class="result-value" id="p_r_dP">—</span><span class="result-unit">mg/L</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">需去除磷量</span>
+          <span class="result-label">Lượng phốt pho cần loại bỏ</span>
           <span><span class="result-value" id="p_r_Pmass">—</span><span class="result-unit">kgP/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">所需金属量（Al 或 Fe）</span>
+          <span class="result-label">Lượng kim loại cần thiết (Al hoặc Fe)</span>
           <span><span class="result-value" id="p_r_metal">—</span><span class="result-unit">kg/h</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>商品药剂投加量</b></span>
+          <span class="result-label"><b>Lượng hoá chất thương phẩm định lượng</b></span>
           <span><span class="result-value big" id="p_r_solid">—</span><span class="result-unit">kg/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">等效投加浓度</span>
+          <span class="result-label">Nồng độ định lượng tương đương</span>
           <span><span class="result-value" id="p_r_dose">—</span><span class="result-unit">mg/L</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">日用量</span>
+          <span class="result-label">Lượng dùng hằng ngày</span>
           <span><span class="result-value" id="p_r_day">—</span><span class="result-unit">kg/d</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>年采购成本</b></span>
-          <span><span class="result-value big" id="p_r_year_cost">—</span><span class="result-unit">万元/a</span></span>
+          <span class="result-label"><b>Chi phí mua hằng năm</b></span>
+          <span><span class="result-value big" id="p_r_year_cost">—</span><span class="result-unit">vạn nhân dân tệ/a</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">吨水除磷成本</span>
-          <span><span class="result-value" id="p_r_unit_cost">—</span><span class="result-unit">元/m³水</span></span>
+          <span class="result-label">Chi phí khử phốt pho trên mỗi mét khối nước</span>
+          <span><span class="result-value" id="p_r_unit_cost">—</span><span class="result-unit">nhân dân tệ/m³ nước</span></span>
         </div>
       </div>
-      <div class="info-box">💡 Me/P 摩尔比：出水 TP ≤ 1.0 mg/L 取 1.2-1.5；TP ≤ 0.5 取 1.5-2.0；TP ≤ 0.3 取 2.0-3.0。同时产生化学污泥，注意污泥量增加。</div>
+      <div class="info-box">💡 Tỷ lệ mol Me/P: với TP đầu ra ≤ 1.0 mg/L chọn 1.2-1.5; TP ≤ 0.5 chọn 1.5-2.0; TP ≤ 0.3 chọn 2.0-3.0. Quá trình đồng thời tạo bùn hoá học, cần lưu ý lượng bùn tăng.</div>
     </div>
 
-    <!-- ===================== pH调节 ===================== -->
+    <!-- ===================== Điều chỉnh pH ===================== -->
     <div class="drug-panel" id="panel-pH">
-      <div class="section-title">pH 调节药剂参数（简化估算）</div>
+      <div class="section-title">Thông số hoá chất điều chỉnh pH (ước tính đơn giản)</div>
       <div class="grid">
         <div class="field">
-          <label for="ph_dir">调节方向</label>
+          <label for="ph_dir">Chiều điều chỉnh</label>
           <select id="ph_dir" onchange="updatePH()">
-            <option value="up">偏酸 → 碱性（加碱）</option>
-            <option value="down">偏碱 → 酸性（加酸）</option>
+            <option value="up">Từ axit sang kiềm (thêm kiềm)</option>
+            <option value="down">Từ kiềm sang axit (thêm axit)</option>
           </select>
         </div>
         <div class="field">
-          <label for="ph_chem">药剂类型</label>
+          <label for="ph_chem">Loại hoá chất</label>
           <select id="ph_chem">
-            <option value="NaOH">NaOH（液碱 32%）</option>
-            <option value="Ca(OH)2">Ca(OH)₂（石灰）</option>
-            <option value="Na2CO3">Na₂CO₃（纯碱）</option>
-            <option value="HCl">HCl（盐酸 31%）</option>
-            <option value="H2SO4">H₂SO₄（硫酸 98%）</option>
+            <option value="NaOH">NaOH（xút lỏng 32%）</option>
+            <option value="Ca(OH)2">Ca(OH)₂（vôi）</option>
+            <option value="Na2CO3">Na₂CO₃（sôđa）</option>
+            <option value="HCl">HCl（axit clohidric 31%）</option>
+            <option value="H2SO4">H₂SO₄（axit sunfuric 98%）</option>
           </select>
         </div>
         <div class="field">
-          <label for="ph_in">进水 pH</label>
+          <label for="ph_in">pH đầu vào</label>
           <input type="number" id="ph_in" value="5.5" step="0.1">
         </div>
         <div class="field">
-          <label for="ph_target">目标 pH</label>
+          <label for="ph_target">pH mục tiêu</label>
           <input type="number" id="ph_target" value="7.5" step="0.1">
         </div>
         <div class="field">
-          <label for="ph_alk">待中和酸/碱度 <span class="unit">mmol/L</span></label>
+          <label for="ph_alk">Độ axit/kiềm cần trung hoà <span class="unit">mmol/L</span></label>
           <input type="number" id="ph_alk" value="3" step="0.5">
         </div>
         <div class="field">
-          <label for="ph_purity">药剂纯度/浓度 <span class="unit">%</span></label>
+          <label for="ph_purity">Độ tinh khiết/nồng độ hoá chất <span class="unit">%</span></label>
           <input type="number" id="ph_purity" value="32" step="1">
         </div>
         <div class="field">
-          <label for="ph_rho">药剂密度 <span class="unit">kg/L</span></label>
+          <label for="ph_rho">Khối lượng riêng hoá chất <span class="unit">kg/L</span></label>
           <input type="number" id="ph_rho" value="1.35" step="0.01">
         </div>
         <div class="field">
-          <label for="ph_price">采购单价 <span class="unit">元/t</span></label>
+          <label for="ph_price">Đơn giá mua <span class="unit">nhân dân tệ/t</span></label>
           <input type="number" id="ph_price" value="1200" step="50">
         </div>
         <div class="field">
-          <label for="ph_safety">投加安全系数 <span class="unit">—</span></label>
+          <label for="ph_safety">Hệ số an toàn định lượng <span class="unit">—</span></label>
           <input type="number" id="ph_safety" value="1.2" step="0.05">
         </div>
       </div>
 
       <div class="results">
-        <h2>pH 调节剂投加计算结果</h2>
+        <h2>Kết quả tính định lượng chất điều chỉnh pH</h2>
         <div class="result-row">
-          <span class="result-label">pH 调节幅度 ΔpH（目标 − 进水，仅作校核，不参与计算）</span>
+          <span class="result-label">Mức thay đổi pH ΔpH (mục tiêu − đầu vào, chỉ kiểm tra, không dùng để tính)</span>
           <span><span class="result-value" id="ph_r_dph">—</span><span class="result-unit"></span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">需中和物质量</span>
+          <span class="result-label">Lượng chất cần trung hoà</span>
           <span><span class="result-value" id="ph_r_mol">—</span><span class="result-unit">mol/h</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>商品药剂投加量</b>（已含安全系数 ×<span id="ph_sf_lbl">1.2</span>）</span>
+          <span class="result-label"><b>Lượng hoá chất thương phẩm định lượng</b> (đã bao gồm hệ số an toàn ×<span id="ph_sf_lbl">1.2</span>)</span>
           <span><span class="result-value big" id="ph_r_mass">—</span><span class="result-unit">kg/h</span></span>
         </div>
         <div class="result-row" id="ph_vol_row">
-          <span class="result-label">液体药剂投加体积</span>
+          <span class="result-label">Lưu lượng thể tích hoá chất lỏng</span>
           <span><span class="result-value" id="ph_r_vol">—</span><span class="result-unit">L/h</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">等效投加浓度</span>
+          <span class="result-label">Nồng độ định lượng tương đương</span>
           <span><span class="result-value" id="ph_r_dose">—</span><span class="result-unit">mg/L</span></span>
         </div>
         <div class="result-row">
-          <span class="result-label">日用量</span>
+          <span class="result-label">Lượng dùng hằng ngày</span>
           <span><span class="result-value" id="ph_r_day">—</span><span class="result-unit">kg/d</span></span>
         </div>
         <div class="result-row highlight-row">
-          <span class="result-label"><b>年采购成本</b></span>
-          <span><span class="result-value big" id="ph_r_year_cost">—</span><span class="result-unit">万元/a</span></span>
+          <span class="result-label"><b>Chi phí mua hằng năm</b></span>
+          <span><span class="result-value big" id="ph_r_year_cost">—</span><span class="result-unit">vạn nhân dân tệ/a</span></span>
         </div>
       </div>
-      <div class="info-box">💡 pH 调节需考虑水中碳酸缓冲能力（碱度/酸度），不是单纯 pH 差值就能算。建议通过实验确定实际投药量，本工具按碱度/酸度中和估算，结果已乘以上方填写的安全系数（建议 1.2-1.5），请勿重复放大。进水/目标 pH 仅用于方向校核与显示 ΔpH，不参与投加量计算。</div>
+      <div class="info-box">💡 Điều chỉnh pH cần xét khả năng đệm cacbonat của nước (độ kiềm/độ axit); không thể tính chỉ từ chênh lệch pH. Nên xác định liều thực tế bằng thí nghiệm. Công cụ ước tính theo lượng trung hoà độ kiềm/độ axit; kết quả đã nhân hệ số an toàn nhập ở trên (khuyến nghị 1.2-1.5), không nhân thêm lần nữa. pH đầu vào/mục tiêu chỉ dùng để kiểm tra chiều điều chỉnh và hiển thị ΔpH, không tham gia tính liều.</div>
     </div>
 
     <div class="warn-box" id="warnBox" style="display:none;"></div>
     <div class="warn-box soft" id="hintBox" style="display:none;"></div>
 
     <div class="buttons">
-      <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
-      <button class="btn btn-secondary" onclick="toggleFormula()">📖 查看公式</button>
+      <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+      <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
+      <button class="btn btn-secondary" onclick="toggleFormula()">📖 Xem công thức</button>
     </div>
 
     <div class="formula-box" id="formulaBox" style="display:none;">
-      <h3>① 固体药剂时用量通式</h3>
+      <h3>① Công thức chung tính lượng hoá chất rắn mỗi giờ</h3>
       <code>M = Q × C × 10⁻³  [kg/h]</code>
-      <p>Q [m³/h]，C [mg/L] = [g/m³]。除以药剂有效含量得到商品药剂用量。</p>
+      <p>Q [m³/h], C [mg/L] = [g/m³]. Chia cho hàm lượng hoạt chất để được lượng hoá chất thương phẩm.</p>
 
-      <h3>② 药液配制与液体投加</h3>
-      <code>V_液 = M / (ρ_液 × ω)  [L/h]</code>
-      <p>ρ_液 药液密度 [kg/L]，ω 配制浓度（质量分数，小数）。计量泵选型一般取 1.2-1.5 倍安全系数，本工具取 1.3。</p>
+      <h3>② Pha dung dịch và định lượng chất lỏng</h3>
+      <code>V_liquid = M / (ρ_liquid × ω)  [L/h]</code>
+      <p>ρ_liquid là khối lượng riêng dung dịch [kg/L], ω là nồng độ pha chế (phần khối lượng, dạng thập phân). Khi chọn bơm định lượng thường dùng hệ số an toàn 1.2-1.5; công cụ này dùng 1.3.</p>
 
-      <h3>③ 碳源投加（反硝化脱氮）</h3>
-      <p>理论反硝化化学计量：每 1 kg NO₃⁻-N 被还原需 2.86 kg COD。</p>
-      <code>COD_外加 = Q × [C/N × NO₃⁻-N − 可用COD] / 1000  [kgCOD/h]</code>
-      <code>药剂量 = COD_外加 / COD当量 / 有效含量  [kg/h]</code>
-      <p>C/N 比工程值 4-6（考虑合成细胞消耗）。COD 当量按纯物质计（乙酸钠 0.78 gCOD/g 按无水乙酸钠计），商品药剂再除以有效含量：如三水乙酸钠有效含量 58% 时折合 0.78 × 0.58 ≈ 0.45 gCOD/g 商品。</p>
+      <h3>③ Định lượng nguồn cacbon (khử nitơ bằng khử nitrat)</h3>
+      <p>Theo cân bằng hoá học lý thuyết của quá trình khử nitrat, mỗi 1 kg NO₃⁻-N được khử cần 2.86 kg COD.</p>
+      <code>COD_bổ sung = Q × [C/N × NO₃⁻-N − COD khả dụng] / 1000  [kgCOD/h]</code>
+      <code>Lượng hoá chất = COD_bổ sung / đương lượng COD / hàm lượng hoạt chất  [kg/h]</code>
+      <p>Tỷ lệ C/N thiết kế là 4-6 (có xét tiêu thụ cho tổng hợp tế bào). Đương lượng COD tính theo chất tinh khiết (natri axetat 0.78 gCOD/g tính theo chất khan); để tính lượng thương phẩm, chia thêm cho hàm lượng hoạt chất. Ví dụ natri axetat ngậm ba nước có hàm lượng hoạt chất 58% tương đương 0.78 × 0.58 ≈ 0.45 gCOD/g sản phẩm.</p>
 
-      <h3>④ 化学除磷（Me/P 摩尔比法）</h3>
-      <code>Δ P = TP_o − TP_e − 生物贡献  [mg/L]</code>
-      <code>金属投加量 = Δ P × M_Me/M_P × Me/P 摩尔比  [mg/L]</code>
-      <code>商品药剂量 = 金属投加量 / 有效金属含量；PAC 有效金属含量 = Al₂O₃ 含量 × 0.529（2×27/102）</code>
-      <p>M_Al = 27，M_Fe = 55.85，M_P = 31。PAC 商品标示的是 Al₂O₃ 含量，需换算为 Al 含量；铁盐（PFS、FeCl₃、FeSO₄）直接按 Fe 含量计。</p>
+      <h3>④ Khử phốt pho hoá học (phương pháp tỷ lệ mol Me/P)</h3>
+      <code>Δ P = TP_o − TP_e − phần khử sinh học  [mg/L]</code>
+      <code>Lượng kim loại định lượng = Δ P × M_Me/M_P × tỷ lệ mol Me/P  [mg/L]</code>
+      <code>Lượng hoá chất thương phẩm = lượng kim loại định lượng / hàm lượng kim loại hoạt tính; hàm lượng kim loại hoạt tính của PAC = hàm lượng Al₂O₃ × 0.529 (2×27/102)</code>
+      <p>M_Al = 27, M_Fe = 55.85, M_P = 31. PAC thương phẩm ghi hàm lượng Al₂O₃, cần quy đổi sang hàm lượng Al; muối sắt (PFS, FeCl₃, FeSO₄) tính trực tiếp theo hàm lượng Fe.</p>
 
-      <h3>⑤ pH 调节（碱度/酸度法）</h3>
-      <code>n = Q [m³/h] × 碱度(或酸度) [mmol/L]  [mol/h]</code>
-      <code>药剂质量 = n × M / 价数 / 有效含量 / 1000 × 安全系数  [kg/h]</code>
-      <p>M（摩尔质量）与价数：NaOH=40（1价）、Ca(OH)₂=74（2价）、Na₂CO₃=106（按 1 价计：中和至中性附近时 CO₃²⁻ 只转化为 HCO₃⁻，每 mol 仅消耗 1 mol H⁺）、HCl=36.5（1价）、H₂SO₄=98（2价）。安全系数默认 1.2，可在面板中修改；进水/目标 pH 仅作方向校核。</p>
+      <h3>⑤ Điều chỉnh pH (phương pháp độ kiềm/độ axit)</h3>
+      <code>n = Q [m³/h] × độ kiềm (hoặc độ axit) [mmol/L]  [mol/h]</code>
+      <code>Khối lượng hoá chất = n × M / số đương lượng / hàm lượng hoạt chất / 1000 × hệ số an toàn  [kg/h]</code>
+      <p>M (khối lượng mol) và số đương lượng: NaOH=40 (1), Ca(OH)₂=74 (2), Na₂CO₃=106 (tính theo 1: khi trung hoà đến gần trung tính, CO₃²⁻ chỉ chuyển thành HCO₃⁻, mỗi mol chỉ tiêu thụ 1 mol H⁺), HCl=36.5 (1), H₂SO₄=98 (2). Hệ số an toàn mặc định là 1.2, có thể thay đổi trong bảng; pH đầu vào/mục tiêu chỉ dùng để kiểm tra chiều điều chỉnh.</p>
 
-      <h3>常用药剂参数速查</h3>
+      <h3>Tra nhanh thông số hoá chất thường dùng</h3>
       <table>
-        <tr><th>药剂</th><th>有效含量</th><th>密度 kg/L</th><th>典型投加</th></tr>
-        <tr><td>PAC（液体）</td><td>10% Al₂O₃</td><td>1.20</td><td>10-50 mg/L</td></tr>
-        <tr><td>PAC（固体）</td><td>28-30% Al₂O₃</td><td>—</td><td>—</td></tr>
-        <tr><td>PAM（CPAM）</td><td>≥88% 固含</td><td>—</td><td>3-8 kg/tDS</td></tr>
-        <tr><td>次氯酸钠</td><td>10-12% 有效氯</td><td>1.20</td><td>3-8 mg/L</td></tr>
-        <tr><td>甲醇</td><td>≥99.5%</td><td>0.79</td><td>按缺口 COD</td></tr>
-        <tr><td>乙酸钠</td><td>58-60%</td><td>1.05</td><td>按缺口 COD</td></tr>
+        <tr><th>Hoá chất</th><th>Hàm lượng hoạt chất</th><th>Khối lượng riêng kg/L</th><th>Liều điển hình</th></tr>
+        <tr><td>PAC（lỏng）</td><td>10% Al₂O₃</td><td>1.20</td><td>10-50 mg/L</td></tr>
+        <tr><td>PAC（rắn）</td><td>28-30% Al₂O₃</td><td>—</td><td>—</td></tr>
+        <tr><td>PAM（CPAM）</td><td>≥88% chất rắn</td><td>—</td><td>3-8 kg/tDS</td></tr>
+        <tr><td>Natri hypoclorit</td><td>10-12% clo hoạt tính</td><td>1.20</td><td>3-8 mg/L</td></tr>
+        <tr><td>Metanol</td><td>≥99.5%</td><td>0.79</td><td>theo COD thiếu hụt</td></tr>
+        <tr><td>Natri axetat</td><td>58-60%</td><td>1.05</td><td>theo COD thiếu hụt</td></tr>
         <tr><td>PFS</td><td>11% Fe</td><td>1.45</td><td>30-150 mg/L</td></tr>
-        <tr><td>液碱（NaOH）</td><td>32%</td><td>1.35</td><td>按碱度</td></tr>
-        <tr><td>盐酸</td><td>31%</td><td>1.16</td><td>按酸度</td></tr>
-        <tr><td>硫酸</td><td>98%</td><td>1.84</td><td>按酸度</td></tr>
+        <tr><td>xút lỏng（NaOH）</td><td>32%</td><td>1.35</td><td>theo độ kiềm</td></tr>
+        <tr><td>axit clohidric</td><td>31%</td><td>1.16</td><td>theo độ axit</td></tr>
+        <tr><td>axit sunfuric</td><td>98%</td><td>1.84</td><td>theo độ axit</td></tr>
       </table>
     </div>
 
     <div class="note">
-      ⚠️ 本工具用于方案设计阶段估算。实际投药量应通过烧杯试验、中试或现场调试确定。商品药剂参数以采购检验报告为准，不同批次、不同厂家差异较大。
+      ⚠️ Công cụ dùng để ước tính trong giai đoạn thiết kế phương án. Liều thực tế cần được xác định bằng thử nghiệm Jartest, thử nghiệm pilot hoặc chạy thử tại hiện trường. Thông số hoá chất thương phẩm căn cứ vào báo cáo kiểm nghiệm khi mua; các lô và nhà sản xuất có thể khác nhau đáng kể.
     </div>
 
   </div>
 
-  <footer class="tool-inner-footer">水处理工具箱 · 仅供工程估算参考</footer>
+  <footer class="tool-inner-footer">Bộ công cụ xử lý nước · Chỉ dùng tham khảo cho ước tính kỹ thuật</footer>
 </div>
 </main>
 
@@ -985,65 +985,65 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Công nghệ Dengdeng</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là tập hợp công cụ tính toán trực tuyến do Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam cung cấp, được phát triển và duy trì bởi các kỹ sư công nghệ xử lý nước trực tiếp làm việc tại hiện trường. Miễn phí và liên tục cập nhật.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thuỷ lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thuỷ lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thuỷ lực đường ống (bản nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thuỷ lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính lưu lượng qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lượng sục khí</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn phát sinh</a></li>
+          <li><a href="dosing-calculator.html">Lượng hoá chất định lượng</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">MBBR Thiết kế kỹ thuật</a></li>
+          <li><a href="ifas-design.html">IFAS Thiết kế kỹ thuật</a></li>
+          <li><a href="mbr-design.html">MBR Thiết kế kỹ thuật</a></li>
+          <li><a href="ro-design.html">RO Thiết kế thẩm thấu ngược</a></li>
+          <li><a href="pump-selection-calculator.html">Chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Quy đổi chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thuỷ sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải sau nuôi ao</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 Hướng dẫn tham quan triển lãm</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang web Công nghệ Dengdeng ↗</a></li>
+          <li>Tư vấn Công nghệ Dengdeng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Open Source</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 giấy phép</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Gửi phản hồi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
@@ -1065,7 +1065,7 @@
     calc();
   }
 
-  // PAM 应用场景切换
+  // PAM Ứng dụng切换
   document.addEventListener('DOMContentLoaded', () => {
     const pamUse = $('pam_use');
     if (pamUse) {
@@ -1079,7 +1079,7 @@
     }
   });
 
-  // 固体碳源（乙酸钠三水合物、葡萄糖）不显示体积量与密度
+  // rắnNguồn cacbon（Natri axetat三水合物、Glucozơ）不显示体积量与密度
   const SOLID_CARBON = ['acetate', 'glucose'];
   function syncCarbonForm() {
     const solid = SOLID_CARBON.includes($('c_type').value);
@@ -1088,12 +1088,12 @@
   }
   const SOLID_PH = ['Ca(OH)2', 'Na2CO3'];
 
-  // 碳源类型切换默认参数
+  // Loại nguồn cacbon切换默认参数
   function updateCarbon() {
     const t = $('c_type').value;
     const defaults = {
       methanol: {cod_eq: 1.5, conc: 100, rho: 0.79, price: 2800},
-      acetate:  {cod_eq: 0.78, conc: 58, rho: 1.05, price: 2000},  // 0.78 gCOD/g 按无水 CH3COONa 计；conc=58% 为三水乙酸钠有效含量 → 0.45 gCOD/g 商品
+      acetate:  {cod_eq: 0.78, conc: 58, rho: 1.05, price: 2000},  // 0.78 gCOD/g 按无水 CH3COONa 计；conc=58% 为三水Natri axetatHàm lượng hoạt chất → 0.45 gCOD/g 商品
       glucose:  {cod_eq: 1.07, conc: 100, rho: 1.0, price: 3500},
       compound: {cod_eq: 1.2, conc: 100, rho: 1.10, price: 2500}
     };
@@ -1106,11 +1106,11 @@
     calc();
   }
 
-  // 除磷剂类型切换默认金属含量
+  // Loại hoá chất khử phốt pho切换默认金属hàm lượng
   function updateP() {
     const t = $('p_type').value;
     const defaults = {
-      PAC:   {metal: 10, price: 700},   // 10% Al2O3 液体 PAC 参考价（固体 30% 约 1800 元/t），按厂家报价调整；按 Al2O3 标示含量，calc() 内乘 0.529 换算为 Al
+      PAC:   {metal: 10, price: 700},   // 10% Al2O3 lỏng PAC 参考价（rắn 30% 约 1800 nhân dân tệ/t），按厂家报价调整；按 Al2O3 标示hàm lượng，calc() 内乘 0.529 换算为 Al
       PFS:   {metal: 11, price: 1200},
       FeCl3: {metal: 13, price: 1500},
       FeSO4: {metal: 20, price: 800}
@@ -1121,7 +1121,7 @@
     calc();
   }
 
-  // pH 药剂默认纯度/密度/单价（单价为参考价，仅作占位）
+  // pH Hoá chất默认纯度/密度/单价（单价为参考价，仅作占位）
   const phChemDefaults = {
     'NaOH':    {purity: 32, rho: 1.35, price: 1200},
     'HCl':     {purity: 31, rho: 1.16, price: 600},
@@ -1137,20 +1137,20 @@
     $('ph_price').value = d.price;
   }
 
-  // pH 药剂切换默认
+  // pH Hoá chất切换默认
   function updatePH() {
     const dir = $('ph_dir').value;
     const sel = $('ph_chem');
     sel.innerHTML = '';
     if (dir === 'up') {
       sel.innerHTML = `
-        <option value="NaOH">NaOH（液碱 32%）</option>
-        <option value="Ca(OH)2">Ca(OH)₂（石灰）</option>
-        <option value="Na2CO3">Na₂CO₃（纯碱）</option>`;
+        <option value="NaOH">NaOH（xút lỏng 32%）</option>
+        <option value="Ca(OH)2">Ca(OH)₂（vôi）</option>
+        <option value="Na2CO3">Na₂CO₃（sôđa）</option>`;
     } else {
       sel.innerHTML = `
-        <option value="HCl">HCl（盐酸 31%）</option>
-        <option value="H2SO4">H₂SO₄（硫酸 98%）</option>`;
+        <option value="HCl">HCl（axit clohidric 31%）</option>
+        <option value="H2SO4">H₂SO₄（axit sunfuric 98%）</option>`;
     }
     syncPHDefaults();
     calc();
@@ -1158,12 +1158,12 @@
 
   // 输入校验规则：pos 须 > 0；nn 不能为负；ph 0–14
   const RULES = {
-    PAC:    [['pac_dose','投药浓度','nn'],['pac_al2o3','Al₂O₃ 含量','nn'],['pac_conc','药液配制浓度','pos'],['pac_rho','药液密度','pos'],['pac_price','采购单价','nn']],
-    PAM:    [['pam_dose_water','投药浓度','nn'],['pam_dose_sludge','投药比','nn'],['pam_sludge_q','干泥处理量','nn'],['pam_conc','药液配制浓度','pos'],['pam_price','采购单价','nn']],
-    NaClO:  [['cl_dose','投加浓度','nn'],['cl_active','有效氯含量','pos'],['cl_rho','商品溶液密度','pos'],['cl_price','采购单价','nn']],
-    carbon: [['c_N','NO₃⁻-N 量','nn'],['c_cn','C/N 比','nn'],['c_cod_in','进水可用 COD','nn'],['c_cod_eq','COD 当量','pos'],['c_conc','商品药剂有效含量','pos'],['c_rho','药剂密度','pos'],['c_price','采购单价','nn']],
-    P:      [['p_TPo','进水 TP','nn'],['p_TPe','出水 TP','nn'],['p_bio','生物除磷贡献','nn'],['p_mole','金属/磷摩尔比','nn'],['p_metal','有效含量','pos'],['p_price','采购单价','nn']],
-    pH:     [['ph_in','进水 pH','ph'],['ph_target','目标 pH','ph'],['ph_alk','待中和酸/碱度','nn'],['ph_purity','药剂纯度','pos'],['ph_rho','药剂密度','pos'],['ph_price','采购单价','nn'],['ph_safety','投加安全系数','pos']]
+    PAC:    [['pac_dose','Nồng độ định lượng','nn'],['pac_al2o3','Hàm lượng Al₂O₃','nn'],['pac_conc','Nồng độ pha dung dịch hoá chất','pos'],['pac_rho','Khối lượng riêng dung dịch hoá chất','pos'],['pac_price','Đơn giá mua','nn']],
+    PAM:    [['pam_dose_water','Nồng độ định lượng','nn'],['pam_dose_sludge','Tỷ lệ định lượng','nn'],['pam_sludge_q','Lượng bùn khô xử lý','nn'],['pam_conc','Nồng độ pha dung dịch hoá chất','pos'],['pam_price','Đơn giá mua','nn']],
+    NaClO:  [['cl_dose','Nồng độ định lượng','nn'],['cl_active','Hàm lượng clo hoạt tính','pos'],['cl_rho','Khối lượng riêng dung dịch thương phẩm','pos'],['cl_price','Đơn giá mua','nn']],
+    carbon: [['c_N','Lượng NO₃⁻-N','nn'],['c_cn','Tỷ lệ C/N','nn'],['c_cod_in','COD khả dụng trong nước đầu vào','nn'],['c_cod_eq','Đương lượng COD','pos'],['c_conc','Hàm lượng hoạt chất trong hoá chất thương phẩm','pos'],['c_rho','Khối lượng riêng hoá chất','pos'],['c_price','Đơn giá mua','nn']],
+    P:      [['p_TPo','TP đầu vào','nn'],['p_TPe','TP đầu ra','nn'],['p_bio','Phần khử phốt pho sinh học','nn'],['p_mole','Tỷ lệ mol kim loại/phốt pho','nn'],['p_metal','Hàm lượng hoạt chất','pos'],['p_price','Đơn giá mua','nn']],
+    pH:     [['ph_in','pH đầu vào','ph'],['ph_target','pH mục tiêu','ph'],['ph_alk','Độ axit/kiềm cần trung hoà','nn'],['ph_purity','Độ tinh khiết hoá chất','pos'],['ph_rho','Khối lượng riêng hoá chất','pos'],['ph_price','Đơn giá mua','nn'],['ph_safety','Hệ số an toàn định lượng','pos']]
   };
   function showMsg(id, html) {
     const el = $(id);
@@ -1172,23 +1172,23 @@
   }
   function validate(drug) {
     document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
-    const rules = [['Q','处理水量 Q','pos'],['hours','每天运行时间','pos']].concat(RULES[drug] || []);
+    const rules = [['Q','Lưu lượng nước xử lý Q','pos'],['hours','Thời gian vận hành mỗi ngày','pos']].concat(RULES[drug] || []);
     const errs = [];
     rules.forEach(([id, name, rule]) => {
       const el = $(id);
       if (!el || el.closest('.field').style.display === 'none') return;  // 隐藏的输入不校验
       const v = parseFloat(el.value);
       let msg = '';
-      if (isNaN(v)) msg = `请输入${name}`;
-      else if (rule === 'pos' && v <= 0) msg = `请输入大于 0 的${name}`;
-      else if (rule === 'nn' && v < 0) msg = `${name}不能为负值`;
-      else if (rule === 'ph' && (v < 0 || v > 14)) msg = `${name}应在 0–14 之间`;
+      if (isNaN(v)) msg = `Vui lòng nhập ${name}`;
+      else if (rule === 'pos' && v <= 0) msg = `Vui lòng nhập giá trị lớn hơn 0 cho ${name}`;
+      else if (rule === 'nn' && v < 0) msg = `${name} không được âm`;
+      else if (rule === 'ph' && (v < 0 || v > 14)) msg = `${name} phải nằm trong khoảng 0–14`;
       if (msg) { el.classList.add('invalid'); errs.push(msg); }
     });
-    if (num('hours') > 24) { $('hours').classList.add('invalid'); errs.push('每天运行时间不应超过 24 h'); }
+    if (num('hours') > 24) { $('hours').classList.add('invalid'); errs.push('Thời gian vận hành mỗi ngày không được vượt quá 24 h'); }
     if (drug === 'pH' && SOLID_PH.includes($('ph_chem').value)) {
-      // 固体药剂不需要密度，撤销其校验错误
-      const i = errs.findIndex(e => e.includes('药剂密度'));
+      // rắnHoá chất不需要密度，撤销其校验错误
+      const i = errs.findIndex(e => e.includes('Khối lượng riêng hoá chất'));
       if (i >= 0) { errs.splice(i, 1); $('ph_rho').classList.remove('invalid'); }
     }
     return errs;
@@ -1198,7 +1198,7 @@
     const Q = num('Q');           // m³/h
     const hours = num('hours');
     syncCarbonForm();
-    $('p_price_note').textContent = $('p_type').value === 'PAC' ? '液体 PAC（10% Al₂O₃）参考价，按厂家报价调整' : '参考价，按厂家报价调整';
+    $('p_price_note').textContent = $('p_type').value === 'PAC' ? 'Giá tham khảo PAC lỏng (10% Al₂O₃), điều chỉnh theo báo giá của nhà sản xuất' : 'Giá tham khảo, điều chỉnh theo báo giá của nhà sản xuất';
     $('ph_vol_row').style.display = SOLID_PH.includes($('ph_chem').value) ? 'none' : 'flex';
     showMsg('hintBox', '');
     const errs = validate(currentDrug);
@@ -1236,14 +1236,14 @@
     if (currentDrug === 'PAM') {
       const use = $('pam_use').value;
       const conc = num('pam_conc')/1000;   // ‰ → 小数
-      const price = num('pam_price');       // 元/kg
+      const price = num('pam_price');       // nhân dân tệ/kg
       let solid;  // kg/h
       if (use === 'water') {
         const dose = num('pam_dose_water');
         solid = Q * dose / 1000;
       } else {
         const sludge_q = num('pam_sludge_q');  // kgDS/h
-        const dose = num('pam_dose_sludge');   // kg药/tDS
+        const dose = num('pam_dose_sludge');   // kg hoá chất/tDS
         solid = sludge_q * dose / 1000;
       }
       const liquid = conc>0 ? solid/conc : 0;  // L/h
@@ -1251,9 +1251,9 @@
       const day = solid * hours;
       const month = day * 30;
       const year_cost = day * 365 * price / 10000;
-      const unit_cost = (day * price) / (Q * hours);  // 元/m³水
-      $('pam_unit_note').textContent = use === 'sludge' ? '（按共用水量 Q 摊销）' : '';
-      if (use === 'sludge') showMsg('hintBox', '💡 污泥脱水模式下 PAM 用量按干泥量计算，共用参数“处理水量 Q”仅用于吨水成本摊销。');
+      const unit_cost = (day * price) / (Q * hours);  // nhân dân tệ/m³ nước
+      $('pam_unit_note').textContent = use === 'sludge' ? ' (phân bổ theo lưu lượng chung Q)' : '';
+      if (use === 'sludge') showMsg('hintBox', '💡 Ở chế độ tách nước bùn, lượng PAM được tính theo lượng bùn khô; thông số chung “lưu lượng nước xử lý Q” chỉ dùng để phân bổ chi phí trên mỗi mét khối nước.');
 
       $('pam_r_solid').textContent = solid.toFixed(3);
       $('pam_r_liquid').textContent = liquid.toFixed(1);
@@ -1268,7 +1268,7 @@
     if (currentDrug === 'NaClO') {
       const dose = num('cl_dose'), active = num('cl_active')/100;
       const rho = num('cl_rho'), price = num('cl_price');
-      const cl_mass = Q * dose / 1000;  // kg有效氯/h
+      const cl_mass = Q * dose / 1000;  // kgclo hoạt tính/h
       const liquid = (active>0 && rho>0) ? cl_mass / (active * rho) : 0;  // L/h
       const pump = liquid * 1.3;
       const day_L = liquid * hours;
@@ -1285,7 +1285,7 @@
       $('cl_r_unit_cost').textContent = unit_cost.toFixed(3);
     }
 
-    // ========== 碳源 ==========
+    // ========== Nguồn cacbon ==========
     if (currentDrug === 'carbon') {
       const N = num('c_N'), cn = num('c_cn'), cod_in = num('c_cod_in');
       const cod_eq = num('c_cod_eq'), conc = num('c_conc')/100;
@@ -1313,12 +1313,12 @@
       $('c_r_unit_cost').textContent = unit_cost.toFixed(3);
     }
 
-    // ========== 除磷剂 ==========
+    // ========== Hoá chất khử phốt pho ==========
     if (currentDrug === 'P') {
       const type = $('p_type').value;
       const TPo = num('p_TPo'), TPe = num('p_TPe'), bio = num('p_bio');
       const mole = num('p_mole');
-      // PAC 商品按 Al2O3 标示，换算为 Al：2×27/102 = 0.529；铁盐直接按 Fe 含量
+      // PAC 商品按 Al2O3 标示，换算为 Al：2×27/102 = 0.529；铁盐直接按 Fe hàm lượng
       const metal_content = num('p_metal')/100 * (type === 'PAC' ? 0.529 : 1);
       const price = num('p_price');
 
@@ -1369,7 +1369,7 @@
       const dph = ph_target - ph_in;
       const dir = $('ph_dir').value;
       if ((dir === 'up' && dph <= 0) || (dir === 'down' && dph >= 0)) {
-        showMsg('hintBox', `💡 调节方向与 pH 不一致：当前为“${dir === 'up' ? '加碱（目标 pH 应高于进水 pH）' : '加酸（目标 pH 应低于进水 pH）'}”，进水 pH ${ph_in} → 目标 pH ${ph_target}，请核对调节方向或 pH 输入。`);
+        showMsg('hintBox', `💡 Chiều điều chỉnh không phù hợp với pH: hiện chọn “${dir === 'up' ? 'thêm kiềm (pH mục tiêu phải cao hơn pH đầu vào)' : 'thêm axit (pH mục tiêu phải thấp hơn pH đầu vào)'}”, pH đầu vào ${ph_in} → pH mục tiêu ${ph_target}, hãy kiểm tra chiều điều chỉnh hoặc giá trị pH.`);
       }
       const mass = n * cd.M / cd.valence / purity / 1000 * safety;  // kg/h
       const vol = rho>0 ? mass/rho : 0;  // L/h
@@ -1389,8 +1389,8 @@
   }
 
   function copyResults() {
-    let txt = '加药量计算结果 - ' + currentDrug + '\n————————————————\n';
-    txt += `处理水量: ${num('Q')} m³/h, 日运行: ${num('hours')} h\n\n`;
+    let txt = 'Kết quả tính định lượng hoá chất - ' + currentDrug + '\n————————————————\n';
+    txt += `Lưu lượng nước xử lý: ${num('Q')} m³/h, Vận hành hằng ngày: ${num('hours')} h\n\n`;
     const panel = $('panel-'+currentDrug);
     panel.querySelectorAll('.result-row').forEach(row => {
       if (row.style.display === 'none') return;
@@ -1401,7 +1401,7 @@
     });
     ['warnBox', 'hintBox'].forEach(id => { if ($(id).style.display !== 'none') txt += '\n' + $(id).textContent + '\n'; });
     navigator.clipboard.writeText(txt).then(() => {
-      alert('结果已复制到剪贴板');
+      alert('Đã sao chép kết quả vào bộ nhớ tạm');
     }).catch(() => {
       const ta = document.createElement('textarea');
       ta.value = txt;
@@ -1409,12 +1409,12 @@
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     });
   }
 
   function resetDefaults() {
-    // 恢复 HTML 中的默认值（不用 reload，避免浏览器回填表单且保留当前药剂页签）
+    // 恢复 HTML 中的默认值（不用 reload，避免浏览器回填表单且保留当前Hoá chất页签）
     $('ph_dir').value = 'up';
     updatePH();
     document.querySelectorAll('input').forEach(el => { el.value = el.defaultValue; });
@@ -1442,7 +1442,7 @@
     el.addEventListener('change', calc);
   });
 
-  updatePH();  // 首次加载按默认调节方向（加碱）过滤药剂列表，内部已调用 calc()
+  updatePH();  // 首次加载按默认Chiều điều chỉnh（加碱）过滤Hoá chất列表，内部已调用 calc()
 </script>
 
 </body>

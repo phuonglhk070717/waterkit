@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>活性污泥法工艺计算器 | 水处理工具箱 · WaterKit</title>
+<title>Công cụ tính toán phương pháp bùn hoạt tính | WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
 <meta name="description" content="AAO / 缺氧-好氧 / 厌氧-好氧 / 间歇式(SBR/CASS/UNITANK) / 氧化沟 5 种活性污泥法工艺在线设计计算, 同步脱氮除磷, 城镇污水与工业废水双预设, 依据 GB 50014-2021 / HJ 576 / Metcalf &amp; Eddy 第 5 版; MBR、MBBR、IFAS 见专用工具。">
 <link rel="canonical" href="https://waterkit.cn/activated-sludge-process-calculator.html">
@@ -850,14 +850,14 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · bởi Dengdeng Technology</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-process">工艺计算</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-process">Tính toán công nghệ</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Dengdeng Technology</a>
     </nav>
   </div>
 </header>
@@ -865,40 +865,40 @@
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-process">工艺计算</a>
+  <a href="index.html#cat-process">Tính toán công nghệ</a>
   <span class="sep">/</span>
-  <span class="current">活性污泥法工艺</span>
+  <span class="current">Công nghệ bùn hoạt tính</span>
 </div>
 
 <main class="main-wrap">
 <div class="container">
   <header class="tool-header">
-    <h1>🔬 活性污泥法工艺计算器</h1>
+    <h1>🔬 Công cụ tính toán phương pháp bùn hoạt tính</h1>
     <p>AAO / 缺氧-好氧 / 厌氧-好氧 / 间歇式 / 氧化沟 5 种工艺 · 同步脱氮除磷设计 · 城镇污水与工业废水双预设 · MBR、MBBR、IFAS 见专用工具: <a href="mbr-design.html">MBR</a> · <a href="mbbr-design.html">MBBR</a> · <a href="ifas-design.html">IFAS</a></p>
   </header>
 
   <div class="body">
 
     <!-- ==== 工艺选择 ==== -->
-    <div class="section-title"><span class="num">1</span>工艺类型</div>
+    <div class="section-title"><span class="num">1</span>Loại công nghệ</div>
     <div class="process-tabs-wrap">
       <div class="process-tabs">
         <button class="process-tab active" data-proc="aao" onclick="setProcess('aao')">
-          AAO<span class="tab-sub">脱氮 + 除磷</span>
+          AAO<span class="tab-sub">Khử nitơ + khử photpho</span>
         </button>
         <button class="process-tab" data-proc="ao_an" onclick="setProcess('ao_an')">
-          缺氧-好氧<span class="tab-sub">AO · 只脱氮</span>
+          Thiếu khí–Hiếu khí<span class="tab-sub">AO · chỉ khử nitơ</span>
         </button>
         <button class="process-tab" data-proc="ao_p" onclick="setProcess('ao_p')">
-          厌氧-好氧<span class="tab-sub">AO · 除磷为主</span>
+          Kỵ khí–Hiếu khí<span class="tab-sub">AO · chủ yếu khử photpho</span>
         </button>
         <button class="process-tab" data-proc="sbr" onclick="setProcess('sbr')">
-          间歇式<span class="tab-sub">SBR/CASS/UNITANK</span>
+          Gián đoạn<span class="tab-sub">SBR/CASS/UNITANK</span>
         </button>
         <button class="process-tab" data-proc="oxi" onclick="setProcess('oxi')">
-          氧化沟<span class="tab-sub">Carrousel/Orbal/传统</span>
+          Mương oxy hóa<span class="tab-sub">Carrousel/Orbal/传统</span>
         </button>
         <a class="process-tab process-tab-link" href="mbr-design.html" title="MBR 已迁移至专用工程设计平台">
           MBR ↗<span class="tab-sub">专用平台 · 膜生物反应器</span>
@@ -914,25 +914,25 @@
     <div class="process-panel" id="panel-aao">
 
       <!-- 水种预设 -->
-      <div class="section-title"><span class="num">2</span>水种预设</div>
+      <div class="section-title"><span class="num">2</span>Cài đặt sẵn theo loại nước</div>
       <div class="water-preset">
-        <button class="preset-tab active" data-preset="municipal" onclick="setPreset('municipal')">城镇污水</button>
-        <button class="preset-tab" data-preset="industrial" onclick="setPreset('industrial')">工业废水(综合)</button>
+        <button class="preset-tab active" data-preset="municipal" onclick="setPreset('municipal')">Nước thải đô thị</button>
+        <button class="preset-tab" data-preset="industrial" onclick="setPreset('industrial')">Nước thải công nghiệp (tổng hợp)</button>
       </div>
 
       <!-- 进水 -->
-      <div class="section-title"><span class="num">3</span>进水条件</div>
+      <div class="section-title"><span class="num">3</span>Điều kiện nước đầu vào</div>
       <div class="grid">
         <div class="field">
-          <label for="Q">设计规模 Q <span class="unit">万 m³/d</span></label>
+          <label for="Q">Công suất thiết kế Q <span class="unit">万 m³/d</span></label>
           <input type="number" id="Q" value="5" step="0.5" min="0.01">
         </div>
         <div class="field">
-          <label for="T">水温 T <span class="unit">°C</span></label>
+          <label for="T">Nhiệt độ nước T <span class="unit">°C</span></label>
           <input type="number" id="T" value="15" step="1" min="5" max="35">
           <div class="helper">冬季低温取 8-12℃, 夏季取 20-25℃</div>
         </div>
-        <div class="field"><label for="Tmin">最低设计水温 T_min <span class="unit">°C</span></label>
+        <div class="field"><label for="Tmin">Nhiệt độ nước thiết kế tối thiểu T_min <span class="unit">°C</span></label>
           <input type="number" id="Tmin" value="" step="1" placeholder="留空 = min(T, 12)">
           <div class="helper">硝化最小泥龄 SRT_min 按此温度计; 留空取 min(T, 12 ℃)</div></div>
         <div class="field">
@@ -963,16 +963,16 @@
       </div>
 
       <!-- 出水目标 -->
-      <div class="section-title"><span class="num">4</span>出水目标</div>
+      <div class="section-title"><span class="num">4</span>Mục tiêu nước đầu ra</div>
       <div class="grid">
         <div class="field">
-          <label for="standard">排放标准</label>
+          <label for="standard">Tiêu chuẩn xả thải</label>
           <select id="standard" onchange="applyStandard()">
-            <option value="1A">一级 A (GB 18918)</option>
-            <option value="1B">一级 B (GB 18918)</option>
+            <option value="1A">Cấp A (GB 18918)</option>
+            <option value="1B">Cấp B (GB 18918)</option>
             <option value="grade4">准 IV 类(地方标准, 限值按所在地调整)</option>
             <option value="grade3">地表 III 类 (TP 按河流 0.2, 湖库 0.05 需另行校核; TN 5 为参考值)</option>
-            <option value="custom">自定义</option>
+            <option value="custom">Tùy chỉnh</option>
           </select>
         </div>
         <div class="field">
@@ -995,13 +995,13 @@
           <label for="TPe">TP出 <span class="unit">mg/L</span></label>
           <input type="number" id="TPe" value="0.5" step="0.1">
         </div>
-        <div class="field"><label for="orgNe">出水有机氮 <span class="unit">mg/L</span></label>
+        <div class="field"><label for="orgNe">Nitơ hữu cơ đầu ra <span class="unit">mg/L</span></label>
           <input type="number" id="orgNe" value="1.5" step="0.1" min="0">
           <div class="helper">不可硝化溶解性有机氮; ΔTKN = TN₀(代 TKN₀) − NH₄ₑ − 有机Nₑ</div></div>
       </div>
 
       <!-- 设计参数 -->
-      <div class="section-title"><span class="num">5</span>设计参数</div>
+      <div class="section-title"><span class="num">5</span>Thông số thiết kế</div>
       <div class="grid">
         <div class="field">
           <label for="MLSS">MLSS <span class="unit">mg/L</span></label>
@@ -1009,7 +1009,7 @@
           <div class="helper">城镇污水 3000-4500</div>
         </div>
         <div class="field">
-          <label for="VSS_SS">MLVSS/MLSS 比 <span class="unit">—</span></label>
+          <label for="VSS_SS">Tỷ lệ MLVSS/MLSS <span class="unit">—</span></label>
           <input type="number" id="VSS_SS" value="0.75" step="0.01" min="0.4" max="0.9">
         </div>
         <div class="field">
@@ -1018,16 +1018,16 @@
           <div class="helper">二沉池底部浓度, 常取 8000-12000</div>
         </div>
         <div class="field linked">
-          <label for="SRT">好氧泥龄 SRT_O <span class="unit">d (留空自动)</span></label>
+          <label for="SRT">Tuổi bùn hiếu khí SRT_O <span class="unit">d (留空自动)</span></label>
           <input type="number" id="SRT" value="" step="0.5" placeholder="留空 = 自动">
           <div class="helper">好氧段泥龄, V_O 按此计算; 留空 = max(SF×SRT_min, 常用下限 10 d); 系统总泥龄见结果区</div>
         </div>
         <div class="field">
-          <label for="SF_SRT">SRT 安全系数 <span class="unit">—</span></label>
+          <label for="SF_SRT">Hệ số an toàn SRT <span class="unit">—</span></label>
           <input type="number" id="SF_SRT" value="2.0" step="0.1" min="1.2" max="5">
         </div>
         <div class="field">
-          <label for="HRT_AN">厌氧段 HRT <span class="unit">h</span></label>
+          <label for="HRT_AN">HRT vùng kỵ khí <span class="unit">h</span></label>
           <input type="number" id="HRT_AN" value="1.5" step="0.1" min="0.5" max="3">
           <div class="helper">释磷时间, 1-2h 为常用</div>
         </div>
@@ -1062,15 +1062,15 @@
       <div class="advanced-params" id="advanced-params">
         <div class="grid">
           <div class="field">
-            <label for="Y">Y (产泥系数) <span class="unit">kgVSS/kgBOD</span></label>
+            <label for="Y">Y (hệ số sinh bùn) <span class="unit">kgVSS/kgBOD</span></label>
             <input type="number" id="Y" value="0.6" step="0.05">
           </div>
           <div class="field">
-            <label for="Kd">Kd (衰减系数) <span class="unit">1/d @20℃</span></label>
+            <label for="Kd">Kd (hệ số phân hủy nội sinh) <span class="unit">1/d @20℃</span></label>
             <input type="number" id="Kd" value="0.06" step="0.01">
           </div>
           <div class="field">
-            <label for="SDNR20">SDNR₂₀ (反硝化速率) <span class="unit">gN/gVSS·d</span></label>
+            <label for="SDNR20">SDNR₂₀ (tốc độ khử nitrat) <span class="unit">gN/gVSS·d</span></label>
             <input type="number" id="SDNR20" value="0.08" step="0.01">
           </div>
           <div class="field">
@@ -1092,7 +1092,7 @@
             <div class="helper">微孔 5-7 %/m；E_A = OTE × H_d，用于 SOR 水深修正中的 O_t（与 MBR、IFAS、MBBR 同口径）</div>
           </div>
           <div class="field">
-            <label for="alt">海拔 <span class="unit">m</span></label>
+            <label for="alt">Độ cao <span class="unit">m</span></label>
             <input type="number" id="alt" value="0" step="50" min="0" max="6000">
             <div class="helper">SOR 中 P_b 按当地大气压计；默认 0 = 海平面</div>
           </div>
@@ -1106,7 +1106,7 @@
 
       <!-- ==== 结果区 ==== -->
       <div class="results">
-        <h2>🎯 设计计算结果</h2>
+        <h2>🎯 Kết quả tính toán thiết kế</h2>
 
         <!-- 工艺流程图 -->
         <div class="flow-diagram">
@@ -1117,9 +1117,9 @@
         <div class="result-group">
           <div class="result-group-title"><span class="ic">📐</span> 反应池容积(按结果比例)</div>
           <div class="volume-bar" id="volBar">
-            <div class="seg seg-anaerobic" id="volAN">厌氧</div>
-            <div class="seg seg-anoxic" id="volA">缺氧</div>
-            <div class="seg seg-aerobic" id="volO">好氧</div>
+            <div class="seg seg-anaerobic" id="volAN">Kỵ khí</div>
+            <div class="seg seg-anoxic" id="volA">Thiếu khí</div>
+            <div class="seg seg-aerobic" id="volO">Hiếu khí</div>
           </div>
           <div class="result-row highlight-row">
             <span class="result-label"><b>总反应池容 V_总</b></span>
@@ -1130,11 +1130,11 @@
             <span><span class="result-value big" id="r_HRTtotal">—</span><span class="result-unit">h</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">厌氧段 V_AN <span class="sub">(除磷)</span></span>
+            <span class="result-label">厌氧段 V_AN <span class="sub">(khử photpho)</span></span>
             <span><span class="result-value" id="r_VAN">—</span><span class="result-unit">m³</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">缺氧段 V_A <span class="sub">(反硝化)</span></span>
+            <span class="result-label">缺氧段 V_A <span class="sub">(khử nitrat)</span></span>
             <span><span class="result-value" id="r_VA">—</span><span class="result-unit">m³</span></span>
           </div>
           <div class="result-row">
@@ -1142,15 +1142,15 @@
             <span><span class="result-value" id="r_VO">—</span><span class="result-unit">m³</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">厌氧 HRT</span>
+            <span class="result-label">HRT kỵ khí</span>
             <span><span class="result-value" id="r_HRT_AN">—</span><span class="result-unit">h</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">缺氧 HRT</span>
+            <span class="result-label">HRT thiếu khí</span>
             <span><span class="result-value" id="r_HRT_A">—</span><span class="result-unit">h</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">好氧 HRT</span>
+            <span class="result-label">HRT hiếu khí</span>
             <span><span class="result-value" id="r_HRT_O">—</span><span class="result-unit">h</span></span>
           </div>
         </div>
@@ -1158,7 +1158,7 @@
         <!-- 回流系统 -->
         <div class="result-group">
           <div class="result-group-title">
-            <span class="ic">🔄</span> 回流系统
+            <span class="ic">🔄</span> Hệ thống tuần hoàn
             <span class="auto-tag" title="回流比由工具根据进水水质和出水目标自动推导,不需要手动输入">AUTO</span>
           </div>
           <div class="result-row highlight-row">
@@ -1193,13 +1193,13 @@
 
         <!-- 需氧量 & 产泥 -->
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">💨</span> 需氧量 & 污泥</div>
+          <div class="result-group-title"><span class="ic">💨</span> Nhu cầu oxy & bùn</div>
           <div class="result-row highlight-row">
-            <span class="result-label"><b>实际需氧量 AOR</b></span>
+            <span class="result-label"><b>Nhu cầu oxy thực tế AOR</b></span>
             <span><span class="result-value big" id="r_AOR">—</span><span class="result-unit">kg O₂/d</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">标准需氧量 SOR</span>
+            <span class="result-label">Nhu cầu oxy tiêu chuẩn SOR</span>
             <span><span class="result-value" id="r_SOR">—</span><span class="result-unit">kg O₂/d</span></span>
           </div>
           <div class="result-row">
@@ -1207,15 +1207,15 @@
             <span><span class="result-value" id="r_O_BOD">—</span><span class="result-unit">kg O₂/d</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">硝化需氧</span>
+            <span class="result-label">Nhu cầu oxy cho nitrat hoá</span>
             <span><span class="result-value" id="r_O_N">—</span><span class="result-unit">kg O₂/d</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">反硝化回收</span>
+            <span class="result-label">Oxy thu hồi từ khử nitrat</span>
             <span><span class="result-value" id="r_O_DN">—</span><span class="result-unit">kg O₂/d</span></span>
           </div>
           <div class="result-row highlight-row">
-            <span class="result-label"><b>剩余污泥(干) ΔX</b></span>
+            <span class="result-label"><b>Bùn dư (khô) ΔX</b></span>
             <span><span class="result-value big" id="r_dX">—</span><span class="result-unit">kg DS/d</span></span>
           </div>
           <div class="result-row">
@@ -1272,9 +1272,9 @@
 
         <!-- 校核警告 -->
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">🔎</span> 设计校核 & 警告</div>
+          <div class="result-group-title"><span class="ic">🔎</span> Kiểm tra thiết kế & cảnh báo</div>
           <div class="check-list" id="checkList">
-            <div class="check-item check-info"><span class="ic">ℹ</span><span>正在计算...</span></div>
+            <div class="check-item check-info"><span class="ic">ℹ</span><span>Đang tính toán...</span></div>
           </div>
           <div class="score-ring">
             <div>
@@ -1282,7 +1282,7 @@
               <div class="score-label">/ 100</div>
             </div>
             <div>
-              <div class="score-title" id="scoreTitle">设计合理性评分</div>
+              <div class="score-title" id="scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
               <div class="score-label" id="scoreDesc">综合泥龄、池容比、回流比、碳氮磷比 5 项综合评估</div>
               <div class="score-note">经验评分，仅供方案比选参考</div>
             </div>
@@ -1292,9 +1292,9 @@
       </div>
 
       <div class="buttons">
-        <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-        <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
-        <button class="btn btn-secondary" onclick="toggleFormula()">📖 查看公式</button>
+        <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+        <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
+        <button class="btn btn-secondary" onclick="toggleFormula()">📖 Xem công thức</button>
       </div>
 
       <!-- 公式说明 -->
@@ -1370,10 +1370,10 @@
 
         <h3>⑪ 校核依据</h3>
         <table>
-          <tr><th>指标</th><th>正常范围</th><th>警告阈值</th></tr>
+          <tr><th>Chỉ tiêu</th><th>Phạm vi bình thường</th><th>Ngưỡng cảnh báo</th></tr>
           <tr><td>BOD/TN</td><td>4-8</td><td>&lt; 4 偏低; &lt; 3 需加碳源</td></tr>
           <tr><td>BOD/TP</td><td>≥ 20</td><td>&lt; 20 临界; &lt; 15 生物除磷效率低, 需化学除磷</td></tr>
-          <tr><td>好氧泥龄 SRT_O</td><td>≥ SRT_min × SF, ≤ 25 d</td><td>&lt; SRT_min × SF 硝化不稳; &gt; 25 d 老化</td></tr>
+          <tr><td>Tuổi bùn hiếu khí SRT_O</td><td>≥ SRT_min × SF, ≤ 25 d</td><td>&lt; SRT_min × SF 硝化不稳; &gt; 25 d 老化</td></tr>
           <tr><td>F/M (Q·S₀/(V·MLSS))</td><td>0.05-0.15</td><td>0.15-0.3 偏高(提示); &gt; 0.3 污泥膨胀风险</td></tr>
           <tr><td>HRT 总</td><td>6-24 h</td><td>&lt; 6h 反应不充分</td></tr>
           <tr><td>水温</td><td>≥ 12℃ 硝化正常</td><td>&lt; 12℃ 警告; &lt; 10℃ 严重</td></tr>
@@ -1382,7 +1382,7 @@
           <tr><td>r 外回流</td><td>50-100%</td><td>&gt; 100% 偏高 (提示); &gt; 120% 二沉浓缩不足</td></tr>
         </table>
 
-        <h3>参考规范与文献</h3>
+        <h3>Tiêu chuẩn và tài liệu tham khảo</h3>
         <p>1. <strong>GB 50014-2021</strong> 室外排水设计标准 (活性污泥法、供氧设施相关条文)</p>
         <p>2. <strong>HJ 576-2010</strong> 厌氧-缺氧-好氧活性污泥法污水处理工程技术规范</p>
         <p>3. <strong>GB 18918-2002</strong> 城镇污水处理厂污染物排放标准</p>
@@ -1401,20 +1401,20 @@
     <div class="process-panel" id="panel-ao-an" style="display:none;">
 
       <!-- 水种预设 -->
-      <div class="section-title"><span class="num">2</span>水种预设</div>
+      <div class="section-title"><span class="num">2</span>Cài đặt sẵn theo loại nước</div>
       <div class="water-preset">
-        <button class="preset-tab active" data-preset-ao-an="municipal" onclick="setPresetAOAN('municipal')">城镇污水</button>
-        <button class="preset-tab" data-preset-ao-an="industrial" onclick="setPresetAOAN('industrial')">工业废水(综合)</button>
+        <button class="preset-tab active" data-preset-ao-an="municipal" onclick="setPresetAOAN('municipal')">Nước thải đô thị</button>
+        <button class="preset-tab" data-preset-ao-an="industrial" onclick="setPresetAOAN('industrial')">Nước thải công nghiệp (tổng hợp)</button>
       </div>
 
       <!-- 进水 -->
-      <div class="section-title"><span class="num">3</span>进水条件</div>
+      <div class="section-title"><span class="num">3</span>Điều kiện nước đầu vào</div>
       <div class="grid">
-        <div class="field"><label for="aoan_Q">设计规模 Q <span class="unit">万 m³/d</span></label>
+        <div class="field"><label for="aoan_Q">Công suất thiết kế Q <span class="unit">万 m³/d</span></label>
           <input type="number" id="aoan_Q" value="5" step="0.5" min="0.01"></div>
-        <div class="field"><label for="aoan_T">水温 T <span class="unit">°C</span></label>
+        <div class="field"><label for="aoan_T">Nhiệt độ nước T <span class="unit">°C</span></label>
           <input type="number" id="aoan_T" value="15" step="1"></div>
-        <div class="field"><label for="aoan_Tmin">最低设计水温 T_min <span class="unit">°C</span></label>
+        <div class="field"><label for="aoan_Tmin">Nhiệt độ nước thiết kế tối thiểu T_min <span class="unit">°C</span></label>
           <input type="number" id="aoan_Tmin" value="" step="1" placeholder="留空 = min(T, 12)">
           <div class="helper">硝化最小泥龄 SRT_min 按此温度计; 留空取 min(T, 12 ℃)</div></div>
         <div class="field"><label for="aoan_COD0">COD₀ <span class="unit">mg/L</span></label>
@@ -1430,13 +1430,13 @@
       </div>
 
       <!-- 出水目标 -->
-      <div class="section-title"><span class="num">4</span>出水目标</div>
+      <div class="section-title"><span class="num">4</span>Mục tiêu nước đầu ra</div>
       <div class="grid">
-        <div class="field"><label for="aoan_standard">排放标准</label>
+        <div class="field"><label for="aoan_standard">Tiêu chuẩn xả thải</label>
           <select id="aoan_standard" onchange="applyStandardAOAN()">
-            <option value="1A">一级 A</option><option value="1B">一级 B</option>
+            <option value="1A">Cấp A</option><option value="1B">Cấp B</option>
             <option value="grade4">准 IV 类(地方标准, 限值按所在地调整)</option><option value="grade3">地表 III 类 (TP 按河流 0.2, 湖库 0.05 需另行校核; TN 5 为参考值)</option>
-            <option value="custom">自定义</option>
+            <option value="custom">Tùy chỉnh</option>
           </select></div>
         <div class="field"><label for="aoan_CODe">COD出 <span class="unit">mg/L</span></label>
           <input type="number" id="aoan_CODe" value="50" step="1"></div>
@@ -1446,13 +1446,13 @@
           <input type="number" id="aoan_NH4e" value="5" step="0.5"></div>
         <div class="field"><label for="aoan_TNe">TN出 <span class="unit">mg/L</span></label>
           <input type="number" id="aoan_TNe" value="15" step="0.5"></div>
-        <div class="field"><label for="aoan_orgNe">出水有机氮 <span class="unit">mg/L</span></label>
+        <div class="field"><label for="aoan_orgNe">Nitơ hữu cơ đầu ra <span class="unit">mg/L</span></label>
           <input type="number" id="aoan_orgNe" value="1.5" step="0.1" min="0">
           <div class="helper">不可硝化溶解性有机氮; ΔTKN = TN₀(代 TKN₀) − NH₄ₑ − 有机Nₑ</div></div>
       </div>
 
       <!-- 设计参数 -->
-      <div class="section-title"><span class="num">5</span>设计参数</div>
+      <div class="section-title"><span class="num">5</span>Thông số thiết kế</div>
       <div class="grid">
         <div class="field"><label for="aoan_MLSS">MLSS <span class="unit">mg/L</span></label>
           <input type="number" id="aoan_MLSS" value="3500" step="100"></div>
@@ -1460,7 +1460,7 @@
           <input type="number" id="aoan_VSS_SS" value="0.75" step="0.01"></div>
         <div class="field"><label for="aoan_MLSSr">污泥回流 MLSS_r <span class="unit">mg/L</span></label>
           <input type="number" id="aoan_MLSSr" value="10000" step="500"></div>
-        <div class="field"><label for="aoan_SRT">好氧泥龄 SRT_O <span class="unit">d</span></label>
+        <div class="field"><label for="aoan_SRT">Tuổi bùn hiếu khí SRT_O <span class="unit">d</span></label>
           <input type="number" id="aoan_SRT" value="" step="0.5" placeholder="留空 = 自动">
           <div class="helper">留空 = max(SF×SRT_min, 常用下限 10 d)</div></div>
         <div class="field"><label for="aoan_SF_SRT">SF 安全系数</label>
@@ -1481,7 +1481,7 @@
         <div class="field"><label for="aoan_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
           <input type="number" id="aoan_OTE" value="6" step="0.5" min="0">
           <div class="helper">微孔 5-7 %/m；E_A = OTE × H_d，用于 SOR 水深修正中的 O_t（与 MBR、IFAS、MBBR 同口径）</div></div>
-        <div class="field"><label for="aoan_alt">海拔 <span class="unit">m</span></label>
+        <div class="field"><label for="aoan_alt">Độ cao <span class="unit">m</span></label>
           <input type="number" id="aoan_alt" value="0" step="50" min="0" max="6000">
           <div class="helper">SOR 中 P_b 按当地大气压计；默认 0 = 海平面</div></div>
       </div>
@@ -1503,25 +1503,25 @@
         <div class="result-group">
           <div class="result-group-title"><span class="ic">📐</span> 反应池容积</div>
           <div class="volume-bar" id="aoan_volBar">
-            <div class="seg seg-anoxic" id="aoan_volA">缺氧</div>
-            <div class="seg seg-aerobic" id="aoan_volO">好氧</div>
+            <div class="seg seg-anoxic" id="aoan_volA">Thiếu khí</div>
+            <div class="seg seg-aerobic" id="aoan_volO">Hiếu khí</div>
           </div>
           <div class="result-row highlight-row"><span class="result-label"><b>总池容 V</b></span>
             <span><span class="result-value big" id="aoan_r_Vtotal">—</span><span class="result-unit">m³</span></span></div>
           <div class="result-row highlight-row"><span class="result-label"><b>总 HRT</b></span>
             <span><span class="result-value big" id="aoan_r_HRTtotal">—</span><span class="result-unit">h</span></span></div>
-          <div class="result-row"><span class="result-label">缺氧段 V_A <span class="sub">(反硝化)</span></span>
+          <div class="result-row"><span class="result-label">缺氧段 V_A <span class="sub">(khử nitrat)</span></span>
             <span><span class="result-value" id="aoan_r_VA">—</span><span class="result-unit">m³</span></span></div>
           <div class="result-row"><span class="result-label">好氧段 V_O <span class="sub">(硝化 + COD)</span></span>
             <span><span class="result-value" id="aoan_r_VO">—</span><span class="result-unit">m³</span></span></div>
-          <div class="result-row"><span class="result-label">缺氧 HRT</span>
+          <div class="result-row"><span class="result-label">HRT thiếu khí</span>
             <span><span class="result-value" id="aoan_r_HRT_A">—</span><span class="result-unit">h</span></span></div>
-          <div class="result-row"><span class="result-label">好氧 HRT</span>
+          <div class="result-row"><span class="result-label">HRT hiếu khí</span>
             <span><span class="result-value" id="aoan_r_HRT_O">—</span><span class="result-unit">h</span></span></div>
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">🔄</span> 回流系统<span class="auto-tag">AUTO</span></div>
+          <div class="result-group-title"><span class="ic">🔄</span> Hệ thống tuần hoàn<span class="auto-tag">AUTO</span></div>
           <div class="result-row highlight-row"><span class="result-label"><b>内回流比 R</b> <span class="sub">(好氧→缺氧)</span></span>
             <span><span class="result-value big" id="aoan_r_R">—</span><span class="result-unit"></span></span></div>
           <div class="result-row highlight-row"><span class="result-label"><b>外回流比 r</b> <span class="sub">(二沉→缺氧首端)</span></span>
@@ -1539,7 +1539,7 @@
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">💨</span> 需氧量 & 污泥</div>
+          <div class="result-group-title"><span class="ic">💨</span> Nhu cầu oxy & bùn</div>
           <div class="result-row highlight-row"><span class="result-label"><b>AOR</b></span>
             <span><span class="result-value big" id="aoan_r_AOR">—</span><span class="result-unit">kg O₂/d</span></span></div>
           <div class="result-row"><span class="result-label">SOR</span>
@@ -1551,11 +1551,11 @@
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">🔎</span> 设计校核 & 警告</div>
+          <div class="result-group-title"><span class="ic">🔎</span> Kiểm tra thiết kế & cảnh báo</div>
           <div class="check-list" id="aoan_checkList"></div>
           <div class="score-ring">
             <div><div class="score-num" id="aoan_scoreNum">—</div><div class="score-label">/ 100</div></div>
-            <div><div class="score-title" id="aoan_scoreTitle">设计合理性评分</div>
+            <div><div class="score-title" id="aoan_scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
               <div class="score-label" id="aoan_scoreDesc">综合评估</div>
               <div class="score-note">经验评分，仅供方案比选参考</div></div>
           </div>
@@ -1564,8 +1564,8 @@
       </div>
 
       <div class="buttons">
-        <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-        <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
+        <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+        <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
       </div>
 
       <div class="note">
@@ -1576,10 +1576,10 @@
     <!-- ==== A/O 厌氧-好氧面板(只除磷) ==== -->
     <div class="process-panel" id="panel-ao-p" style="display:none;">
 
-      <div class="section-title"><span class="num">2</span>水种预设</div>
+      <div class="section-title"><span class="num">2</span>Cài đặt sẵn theo loại nước</div>
       <div class="water-preset">
-        <button class="preset-tab active" data-preset-ao-p="municipal" onclick="setPresetAOP('municipal')">城镇污水</button>
-        <button class="preset-tab" data-preset-ao-p="industrial" onclick="setPresetAOP('industrial')">工业废水(综合)</button>
+        <button class="preset-tab active" data-preset-ao-p="municipal" onclick="setPresetAOP('municipal')">Nước thải đô thị</button>
+        <button class="preset-tab" data-preset-ao-p="industrial" onclick="setPresetAOP('industrial')">Nước thải công nghiệp (tổng hợp)</button>
       </div>
 
       <!-- 含硝化氮模式开关 -->
@@ -1599,13 +1599,13 @@
         </label>
       </div>
 
-      <div class="section-title"><span class="num">3</span>进水条件</div>
+      <div class="section-title"><span class="num">3</span>Điều kiện nước đầu vào</div>
       <div class="grid">
-        <div class="field"><label for="aop_Q">设计规模 Q <span class="unit">万 m³/d</span></label>
+        <div class="field"><label for="aop_Q">Công suất thiết kế Q <span class="unit">万 m³/d</span></label>
           <input type="number" id="aop_Q" value="3" step="0.5"></div>
-        <div class="field"><label for="aop_T">水温 T <span class="unit">°C</span></label>
+        <div class="field"><label for="aop_T">Nhiệt độ nước T <span class="unit">°C</span></label>
           <input type="number" id="aop_T" value="15" step="1"></div>
-        <div class="field"><label for="aop_Tmin">最低设计水温 T_min <span class="unit">°C</span></label>
+        <div class="field"><label for="aop_Tmin">Nhiệt độ nước thiết kế tối thiểu T_min <span class="unit">°C</span></label>
           <input type="number" id="aop_Tmin" value="" step="1" placeholder="留空 = min(T, 12)">
           <div class="helper">硝化最小泥龄 SRT_min 按此温度计; 留空取 min(T, 12 ℃)</div></div>
         <div class="field"><label for="aop_COD0">COD₀ <span class="unit">mg/L</span></label>
@@ -1622,12 +1622,12 @@
           <input type="number" id="aop_TP0" value="6" step="0.2"></div>
       </div>
 
-      <div class="section-title"><span class="num">4</span>出水目标</div>
+      <div class="section-title"><span class="num">4</span>Mục tiêu nước đầu ra</div>
       <div class="grid">
-        <div class="field"><label for="aop_standard">排放标准</label>
+        <div class="field"><label for="aop_standard">Tiêu chuẩn xả thải</label>
           <select id="aop_standard" onchange="applyStandardAOP()">
             <option value="ponly" selected>仅控磷 (NH₄/TN 不考核, COD/BOD/TP 同一级 A)</option>
-            <option value="1A">一级 A</option><option value="1B">一级 B</option>
+            <option value="1A">Cấp A</option><option value="1B">Cấp B</option>
             <option value="grade4">准 IV 类(地方标准, 限值按所在地调整)</option><option value="custom">自定义 (NH₄ 按下方输入考核)</option>
           </select>
           <div class="helper">本工艺默认不强制硝化; 选一级 A/B 等含 NH₄/TN 限值的标准时按标准考核出水</div></div>
@@ -1639,12 +1639,12 @@
           <input type="number" id="aop_NH4e" value="5" step="0.5"></div>
         <div class="field"><label for="aop_TPe">TP出 <span class="unit">mg/L</span></label>
           <input type="number" id="aop_TPe" value="0.5" step="0.1"></div>
-        <div class="field"><label for="aop_orgNe">出水有机氮 <span class="unit">mg/L</span></label>
+        <div class="field"><label for="aop_orgNe">Nitơ hữu cơ đầu ra <span class="unit">mg/L</span></label>
           <input type="number" id="aop_orgNe" value="1.5" step="0.1" min="0">
           <div class="helper">不可硝化溶解性有机氮; ΔTKN = TN₀(代 TKN₀) − NH₄ₑ − 有机Nₑ</div></div>
       </div>
 
-      <div class="section-title"><span class="num">5</span>设计参数</div>
+      <div class="section-title"><span class="num">5</span>Thông số thiết kế</div>
       <div class="grid">
         <div class="field"><label for="aop_MLSS">MLSS <span class="unit">mg/L</span></label>
           <input type="number" id="aop_MLSS" value="3000" step="100"></div>
@@ -1652,12 +1652,12 @@
           <input type="number" id="aop_VSS_SS" value="0.75" step="0.01"></div>
         <div class="field"><label for="aop_MLSSr">污泥回流 MLSS_r</label>
           <input type="number" id="aop_MLSSr" value="9000" step="500"></div>
-        <div class="field"><label for="aop_SRT">好氧泥龄 SRT_O <span class="unit">d</span></label>
+        <div class="field"><label for="aop_SRT">Tuổi bùn hiếu khí SRT_O <span class="unit">d</span></label>
           <input type="number" id="aop_SRT" value="5" step="0.5">
           <div class="helper">生物除磷 GB 50014 约 3.5–7 d; 加长至 ≥ SF×SRT_min 则发生硝化</div></div>
         <div class="field"><label for="aop_SF_SRT">SF</label>
           <input type="number" id="aop_SF_SRT" value="2.0" step="0.1"></div>
-        <div class="field"><label for="aop_HRT_AN">厌氧 HRT <span class="unit">h</span></label>
+        <div class="field"><label for="aop_HRT_AN">HRT kỵ khí <span class="unit">h</span></label>
           <input type="number" id="aop_HRT_AN" value="1.5" step="0.1"></div>
         <div class="field"><label for="aop_Y">Y</label>
           <input type="number" id="aop_Y" value="0.65" step="0.05"></div>
@@ -1673,7 +1673,7 @@
         <div class="field"><label for="aop_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
           <input type="number" id="aop_OTE" value="6" step="0.5" min="0">
           <div class="helper">微孔 5-7 %/m；E_A = OTE × H_d，用于 SOR 水深修正中的 O_t（与 MBR、IFAS、MBBR 同口径）</div></div>
-        <div class="field"><label for="aop_alt">海拔 <span class="unit">m</span></label>
+        <div class="field"><label for="aop_alt">Độ cao <span class="unit">m</span></label>
           <input type="number" id="aop_alt" value="0" step="50" min="0" max="6000">
           <div class="helper">SOR 中 P_b 按当地大气压计；默认 0 = 海平面</div></div>
         <div class="field"><label for="aop_AlP">化学除磷 Al/P 摩尔比</label>
@@ -1697,8 +1697,8 @@
         <div class="result-group">
           <div class="result-group-title"><span class="ic">📐</span> 反应池容积</div>
           <div class="volume-bar" id="aop_volBar">
-            <div class="seg seg-anaerobic" id="aop_volAN">厌氧</div>
-            <div class="seg seg-aerobic" id="aop_volO">好氧</div>
+            <div class="seg seg-anaerobic" id="aop_volAN">Kỵ khí</div>
+            <div class="seg seg-aerobic" id="aop_volO">Hiếu khí</div>
           </div>
           <div class="result-row highlight-row"><span class="result-label"><b>总池容 V</b></span>
             <span><span class="result-value big" id="aop_r_Vtotal">—</span><span class="result-unit">m³</span></span></div>
@@ -1708,14 +1708,14 @@
             <span><span class="result-value" id="aop_r_VAN">—</span><span class="result-unit">m³</span></span></div>
           <div class="result-row"><span class="result-label">好氧段 V_O <span class="sub">(吸磷+硝化+COD)</span></span>
             <span><span class="result-value" id="aop_r_VO">—</span><span class="result-unit">m³</span></span></div>
-          <div class="result-row"><span class="result-label">厌氧 HRT</span>
+          <div class="result-row"><span class="result-label">HRT kỵ khí</span>
             <span><span class="result-value" id="aop_r_HRT_AN">—</span><span class="result-unit">h</span></span></div>
-          <div class="result-row"><span class="result-label">好氧 HRT</span>
+          <div class="result-row"><span class="result-label">HRT hiếu khí</span>
             <span><span class="result-value" id="aop_r_HRT_O">—</span><span class="result-unit">h</span></span></div>
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">🔄</span> 回流系统<span class="auto-tag">AUTO</span></div>
+          <div class="result-group-title"><span class="ic">🔄</span> Hệ thống tuần hoàn<span class="auto-tag">AUTO</span></div>
           <div class="result-row highlight-row"><span class="result-label"><b>外回流比 r</b></span>
             <span><span class="result-value big" id="aop_r_r">—</span><span class="result-unit"></span></span></div>
           <div class="result-row"><span class="result-label">设计好氧泥龄 SRT_O</span>
@@ -1751,7 +1751,7 @@
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">💨</span> 需氧量 & 污泥</div>
+          <div class="result-group-title"><span class="ic">💨</span> Nhu cầu oxy & bùn</div>
           <div class="result-row highlight-row"><span class="result-label"><b>AOR</b></span>
             <span><span class="result-value big" id="aop_r_AOR">—</span><span class="result-unit">kg O₂/d</span></span></div>
           <div class="result-row"><span class="result-label">SOR</span>
@@ -1763,11 +1763,11 @@
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">🔎</span> 设计校核 & 警告</div>
+          <div class="result-group-title"><span class="ic">🔎</span> Kiểm tra thiết kế & cảnh báo</div>
           <div class="check-list" id="aop_checkList"></div>
           <div class="score-ring">
             <div><div class="score-num" id="aop_scoreNum">—</div><div class="score-label">/ 100</div></div>
-            <div><div class="score-title" id="aop_scoreTitle">设计合理性评分</div>
+            <div><div class="score-title" id="aop_scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
               <div class="score-label" id="aop_scoreDesc">综合评估</div>
               <div class="score-note">经验评分，仅供方案比选参考</div></div>
           </div>
@@ -1776,8 +1776,8 @@
       </div>
 
       <div class="buttons">
-        <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-        <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
+        <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+        <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
       </div>
 
       <div class="note">
@@ -1790,7 +1790,7 @@
 
       <div class="section-title"><span class="num">2</span>水种 & 工艺亚型</div>
       <div class="water-preset">
-        <button class="preset-tab active" data-preset-sbr="municipal" onclick="setPresetSBR('municipal')">城镇污水</button>
+        <button class="preset-tab active" data-preset-sbr="municipal" onclick="setPresetSBR('municipal')">Nước thải đô thị</button>
         <button class="preset-tab" data-preset-sbr="industrial" onclick="setPresetSBR('industrial')">工业废水</button>
       </div>
       <div class="subtype-tabs">
@@ -1805,13 +1805,13 @@
         </button>
       </div>
 
-      <div class="section-title"><span class="num">3</span>进水条件</div>
+      <div class="section-title"><span class="num">3</span>Điều kiện nước đầu vào</div>
       <div class="grid">
-        <div class="field"><label for="sbr_Q">设计规模 Q <span class="unit">万 m³/d</span></label>
+        <div class="field"><label for="sbr_Q">Công suất thiết kế Q <span class="unit">万 m³/d</span></label>
           <input type="number" id="sbr_Q" value="2" step="0.5"></div>
-        <div class="field"><label for="sbr_T">水温 T <span class="unit">°C</span></label>
+        <div class="field"><label for="sbr_T">Nhiệt độ nước T <span class="unit">°C</span></label>
           <input type="number" id="sbr_T" value="15" step="1"></div>
-        <div class="field"><label for="sbr_Tmin">最低设计水温 T_min <span class="unit">°C</span></label>
+        <div class="field"><label for="sbr_Tmin">Nhiệt độ nước thiết kế tối thiểu T_min <span class="unit">°C</span></label>
           <input type="number" id="sbr_Tmin" value="" step="1" placeholder="留空 = min(T, 12)">
           <div class="helper">硝化最小泥龄 SRT_min 按此温度计; 留空取 min(T, 12 ℃)</div></div>
         <div class="field"><label for="sbr_COD0">COD₀ <span class="unit">mg/L</span></label>
@@ -1828,12 +1828,12 @@
           <input type="number" id="sbr_TP0" value="5" step="0.2"></div>
       </div>
 
-      <div class="section-title"><span class="num">4</span>出水目标</div>
+      <div class="section-title"><span class="num">4</span>Mục tiêu nước đầu ra</div>
       <div class="grid">
-        <div class="field"><label for="sbr_standard">排放标准</label>
+        <div class="field"><label for="sbr_standard">Tiêu chuẩn xả thải</label>
           <select id="sbr_standard" onchange="applyStandardSBR()">
-            <option value="1A">一级 A</option><option value="1B">一级 B</option>
-            <option value="grade4">准 IV 类(地方标准, 限值按所在地调整)</option><option value="custom">自定义</option>
+            <option value="1A">Cấp A</option><option value="1B">Cấp B</option>
+            <option value="grade4">准 IV 类(地方标准, 限值按所在地调整)</option><option value="custom">Tùy chỉnh</option>
           </select></div>
         <div class="field"><label for="sbr_CODe">COD出 <span class="unit">mg/L</span></label>
           <input type="number" id="sbr_CODe" value="50" step="1"></div>
@@ -1845,7 +1845,7 @@
           <input type="number" id="sbr_TNe" value="15" step="0.5"></div>
         <div class="field"><label for="sbr_TPe">TP出 <span class="unit">mg/L</span></label>
           <input type="number" id="sbr_TPe" value="0.5" step="0.1"></div>
-        <div class="field"><label for="sbr_orgNe">出水有机氮 <span class="unit">mg/L</span></label>
+        <div class="field"><label for="sbr_orgNe">Nitơ hữu cơ đầu ra <span class="unit">mg/L</span></label>
           <input type="number" id="sbr_orgNe" value="1.5" step="0.1" min="0">
           <div class="helper">不可硝化溶解性有机氮; ΔTKN = TN₀(代 TKN₀) − NH₄ₑ − 有机Nₑ</div></div>
       </div>
@@ -1912,7 +1912,7 @@
           <div class="field"><label for="sbr_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
             <input type="number" id="sbr_OTE" value="6" step="0.5" min="0">
             <div class="helper">微孔 5-7 %/m；E_A = OTE × H_d，用于 SOR 水深修正中的 O_t（与 MBR、IFAS、MBBR 同口径）</div></div>
-          <div class="field"><label for="sbr_alt">海拔 <span class="unit">m</span></label>
+          <div class="field"><label for="sbr_alt">Độ cao <span class="unit">m</span></label>
             <input type="number" id="sbr_alt" value="0" step="50" min="0" max="6000">
             <div class="helper">SOR 中 P_b 按当地大气压计；默认 0 = 海平面</div></div>
           <div class="field"><label for="sbr_Ls">污泥负荷 Ls (校核用) <span class="unit">kgBOD/kgMLSS·d</span></label>
@@ -1964,7 +1964,7 @@
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">💨</span> 需氧量 & 污泥</div>
+          <div class="result-group-title"><span class="ic">💨</span> Nhu cầu oxy & bùn</div>
           <div class="result-row highlight-row"><span class="result-label"><b>AOR (平均)</b></span>
             <span><span class="result-value big" id="sbr_r_AOR">—</span><span class="result-unit">kg O₂/d</span></span></div>
           <div class="result-row"><span class="result-label">AOR 峰值·全厂 <span class="sub">(各池同时曝气, AOR/(t_曝气·m))</span></span>
@@ -2008,11 +2008,11 @@
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">🔎</span> 设计校核 & 警告</div>
+          <div class="result-group-title"><span class="ic">🔎</span> Kiểm tra thiết kế & cảnh báo</div>
           <div class="check-list" id="sbr_checkList"></div>
           <div class="score-ring">
             <div><div class="score-num" id="sbr_scoreNum">—</div><div class="score-label">/ 100</div></div>
-            <div><div class="score-title" id="sbr_scoreTitle">设计合理性评分</div>
+            <div><div class="score-title" id="sbr_scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
               <div class="score-label" id="sbr_scoreDesc">综合评估</div>
               <div class="score-note">经验评分，仅供方案比选参考</div></div>
           </div>
@@ -2021,8 +2021,8 @@
       </div>
 
       <div class="buttons">
-        <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-        <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
+        <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+        <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
       </div>
 
       <div class="note" id="sbr_note">
@@ -2035,7 +2035,7 @@
 
       <div class="section-title"><span class="num">2</span>水种 & 氧化沟类型</div>
       <div class="water-preset">
-        <button class="preset-tab active" data-preset-oxi="municipal" onclick="setPresetOXI('municipal')">城镇污水</button>
+        <button class="preset-tab active" data-preset-oxi="municipal" onclick="setPresetOXI('municipal')">Nước thải đô thị</button>
         <button class="preset-tab" data-preset-oxi="industrial" onclick="setPresetOXI('industrial')">工业废水</button>
       </div>
       <div class="subtype-tabs">
@@ -2050,13 +2050,13 @@
         </button>
       </div>
 
-      <div class="section-title"><span class="num">3</span>进水条件</div>
+      <div class="section-title"><span class="num">3</span>Điều kiện nước đầu vào</div>
       <div class="grid">
         <div class="field"><label for="oxi_Q">Q <span class="unit">万 m³/d</span></label>
           <input type="number" id="oxi_Q" value="5" step="0.5"></div>
         <div class="field"><label for="oxi_T">T <span class="unit">°C</span></label>
           <input type="number" id="oxi_T" value="15" step="1"></div>
-        <div class="field"><label for="oxi_Tmin">最低设计水温 T_min <span class="unit">°C</span></label>
+        <div class="field"><label for="oxi_Tmin">Nhiệt độ nước thiết kế tối thiểu T_min <span class="unit">°C</span></label>
           <input type="number" id="oxi_Tmin" value="" step="1" placeholder="留空 = min(T, 12)">
           <div class="helper">硝化最小泥龄 SRT_min 按此温度计; 留空取 min(T, 12 ℃)</div></div>
         <div class="field"><label for="oxi_COD0">COD₀ <span class="unit">mg/L</span></label>
@@ -2073,19 +2073,19 @@
           <input type="number" id="oxi_TP0" value="5" step="0.2"></div>
       </div>
 
-      <div class="section-title"><span class="num">4</span>出水目标</div>
+      <div class="section-title"><span class="num">4</span>Mục tiêu nước đầu ra</div>
       <div class="grid">
-        <div class="field"><label for="oxi_standard">排放标准</label>
+        <div class="field"><label for="oxi_standard">Tiêu chuẩn xả thải</label>
           <select id="oxi_standard" onchange="applyStandardOXI()">
-            <option value="1A">一级 A</option><option value="1B">一级 B</option>
-            <option value="grade4">准 IV 类(地方标准, 限值按所在地调整)</option><option value="custom">自定义</option>
+            <option value="1A">Cấp A</option><option value="1B">Cấp B</option>
+            <option value="grade4">准 IV 类(地方标准, 限值按所在地调整)</option><option value="custom">Tùy chỉnh</option>
           </select></div>
         <div class="field"><label for="oxi_CODe">COD出</label><input type="number" id="oxi_CODe" value="50" step="1"></div>
         <div class="field"><label for="oxi_BODe">BOD出</label><input type="number" id="oxi_BODe" value="10" step="0.5"></div>
         <div class="field"><label for="oxi_NH4e">NH₄-N出</label><input type="number" id="oxi_NH4e" value="5" step="0.5"></div>
         <div class="field"><label for="oxi_TNe">TN出</label><input type="number" id="oxi_TNe" value="15" step="0.5"></div>
         <div class="field"><label for="oxi_TPe">TP出 <span class="unit">mg/L</span></label><input type="number" id="oxi_TPe" value="0.5" step="0.1"></div>
-        <div class="field"><label for="oxi_orgNe">出水有机氮 <span class="unit">mg/L</span></label>
+        <div class="field"><label for="oxi_orgNe">Nitơ hữu cơ đầu ra <span class="unit">mg/L</span></label>
           <input type="number" id="oxi_orgNe" value="1.5" step="0.1" min="0">
           <div class="helper">不可硝化溶解性有机氮; ΔTKN = TN₀(代 TKN₀) − NH₄ₑ − 有机Nₑ</div></div>
       </div>
@@ -2136,7 +2136,7 @@
           <div class="field"><label for="oxi_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
             <input type="number" id="oxi_OTE" value="6" step="0.5" min="0">
             <div class="helper">微孔 5-7 %/m；E_A = OTE × H_d，用于 SOR 水深修正中的 O_t（与 MBR、IFAS、MBBR 同口径）</div></div>
-          <div class="field"><label for="oxi_alt">海拔 <span class="unit">m</span></label>
+          <div class="field"><label for="oxi_alt">Độ cao <span class="unit">m</span></label>
             <input type="number" id="oxi_alt" value="0" step="50" min="0" max="6000">
             <div class="helper">SOR 中 P_b 按当地大气压计；默认 0 = 海平面</div></div>
           <div class="field"><label for="oxi_AlP">化学除磷 Al/P 摩尔比</label>
@@ -2147,7 +2147,7 @@
 
       <div class="auto-calc-notice">
         <div class="notice-head"><span class="notice-ic">🔄</span>
-          <span>氧化沟<b>无内回流需求</b>(水流自循环);仅<b>外回流 r 自动推导</b></span>
+          <span>Mương oxy hóa<b>无内回流需求</b>(水流自循环);仅<b>外回流 r 自动推导</b></span>
         </div>
       </div>
 
@@ -2201,7 +2201,7 @@
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">🔄</span> 回流系统<span class="auto-tag">AUTO</span></div>
+          <div class="result-group-title"><span class="ic">🔄</span> Hệ thống tuần hoàn<span class="auto-tag">AUTO</span></div>
           <div class="result-row highlight-row"><span class="result-label"><b>外回流比 r</b></span>
             <span><span class="result-value big" id="oxi_r_r">—</span><span class="result-unit"></span></span></div>
           <div class="result-row"><span class="result-label">系统总泥龄 <span class="sub">(MLSS·V_总/ΔX_SS = 设计值)</span></span>
@@ -2215,7 +2215,7 @@
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">💨</span> 需氧量 & 污泥</div>
+          <div class="result-group-title"><span class="ic">💨</span> Nhu cầu oxy & bùn</div>
           <div class="result-row highlight-row"><span class="result-label"><b>AOR</b></span>
             <span><span class="result-value big" id="oxi_r_AOR">—</span><span class="result-unit">kg O₂/d</span></span></div>
           <div class="result-row"><span class="result-label">SOR</span>
@@ -2245,11 +2245,11 @@
         </div>
 
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">🔎</span> 设计校核 & 警告</div>
+          <div class="result-group-title"><span class="ic">🔎</span> Kiểm tra thiết kế & cảnh báo</div>
           <div class="check-list" id="oxi_checkList"></div>
           <div class="score-ring">
             <div><div class="score-num" id="oxi_scoreNum">—</div><div class="score-label">/ 100</div></div>
-            <div><div class="score-title" id="oxi_scoreTitle">设计合理性评分</div>
+            <div><div class="score-title" id="oxi_scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
               <div class="score-label" id="oxi_scoreDesc">综合评估</div>
               <div class="score-note">经验评分，仅供方案比选参考</div></div>
           </div>
@@ -2257,8 +2257,8 @@
       </div>
 
       <div class="buttons">
-        <button class="btn btn-primary" onclick="copyResults()">📋 复制结果</button>
-        <button class="btn btn-secondary" onclick="resetDefaults()">🔄 恢复默认</button>
+        <button class="btn btn-primary" onclick="copyResults()">📋 Sao chép kết quả</button>
+        <button class="btn btn-secondary" onclick="resetDefaults()">🔄 Khôi phục mặc định</button>
       </div>
 
       <div class="note" id="oxi_note">
@@ -2289,8 +2289,8 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · bởi Dengdeng Technology</div>
           </div>
         </a>
         <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>

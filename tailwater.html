@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>池塘养殖尾水处理设计计算 | 水处理工具箱 · WaterKit</title>
-<meta name="description" content="池塘养殖尾水处理设计计算: 按各省水产养殖尾水排放标准自动判定执行级别, 用氮磷质量平衡估算尾水浓度, 计算三池两坝处理设施规模。">
+<title>Tính toán thiết kế xử lý nước thải ao nuôi | Bộ công cụ xử lý nước · WaterKit</title>
+<meta name="description" content="Tính toán thiết kế xử lý nước thải ao nuôi: tự động xác định cấp áp dụng theo tiêu chuẩn xả thải của từng tỉnh, ước tính nồng độ bằng cân bằng khối lượng nitơ và photpho, tính quy mô hệ thống ba ao hai đập.">
 <link rel="canonical" href="https://waterkit.cn/tailwater.html">
-<meta name="author" content="海南登登科技咨询有限公司">
+<meta name="author" content="Công ty tư vấn công nghệ Dengdeng Hải Nam">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:site_name" content="水处理工具箱 WaterKit">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Bộ công cụ xử lý nước WaterKit">
 <meta property="og:url" content="https://waterkit.cn/tailwater.html">
-<meta property="og:title" content="池塘养殖尾水处理设计计算">
-<meta property="og:description" content="按各省水产养殖尾水排放标准自动判定执行级别，用氮磷质量平衡估算尾水浓度，计算三池两坝处理设施规模。">
+<meta property="og:title" content="Tính toán thiết kế xử lý nước thải ao nuôi">
+<meta property="og:description" content="Tự động xác định cấp áp dụng theo tiêu chuẩn xả thải của từng tỉnh, ước tính nồng độ bằng cân bằng khối lượng nitơ và photpho, tính quy mô hệ thống ba ao hai đập.">
 <!--
   池塘养殖尾水处理设计计算 v0.7 (; 独立单文件工具; 依据《三池两坝处理效果与设计参数审计》2026-10-12)
   单文件版: 计算核心内嵌于 id 为 tailwater-core 的 script 块 (纯函数, 单元测试内嵌于 id 为 tailwater-tests 的 script 块)
@@ -314,14 +314,14 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Dengdeng Technology</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-aquaculture">水产养殖</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-aquaculture">Nuôi trồng thủy sản</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Dengdeng Technology</a>
     </nav>
   </div>
 </header>
@@ -330,16 +330,16 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="breadcrumb no-print">
-      <a href="index.html">WaterKit</a> / <a href="index.html#cat-aquaculture">水产养殖</a> / 池塘养殖尾水处理
+      <a href="index.html">WaterKit</a> / <a href="index.html#cat-aquaculture">Nuôi trồng thủy sản</a> / Xử lý nước thải ao nuôi
     </div>
     <div class="hero-row">
       <div>
-        <h1 class="hero-title">🌿 池塘养殖尾水处理设计计算</h1>
-        <div class="meta hero-sub" id="metaLine">排放标准判定 · 尾水水质估算 · 三池两坝规模 · 达标核算 · v0.7</div>
+        <h1 class="hero-title">🌿 Tính toán thiết kế xử lý nước thải ao nuôi</h1>
+        <div class="meta hero-sub" id="metaLine">Xác định tiêu chuẩn xả thải · Ước tính chất lượng nước thải · Quy mô ba ao hai đập · Kiểm tra đạt chuẩn · v0.7</div>
       </div>
       <div class="hero-actions no-print">
-        <button class="btn" id="btnReset" type="button">↺ 恢复默认</button>
-        <button class="btn" id="btnPrint" type="button">🖨️ 打印</button>
+        <button class="btn" id="btnReset" type="button">↺ Khôi phục mặc định</button>
+        <button class="btn" id="btnPrint" type="button">🖨️ In</button>
       </div>
     </div>
   </div>
@@ -348,9 +348,9 @@
 <!-- ===== Tab Nav ===== -->
 <div class="tab-nav-wrap no-print">
   <nav class="tabs" role="tablist">
-    <button type="button" class="tab" role="tab" data-tab="calc">设计计算</button>
-    <button type="button" class="tab" role="tab" data-tab="standards">排放标准汇总</button>
-    <button type="button" class="tab" role="tab" data-tab="guide">使用说明</button>
+    <button type="button" class="tab" role="tab" data-tab="calc">Tính toán thiết kế</button>
+    <button type="button" class="tab" role="tab" data-tab="standards">Tổng hợp tiêu chuẩn xả thải</button>
+    <button type="button" class="tab" role="tab" data-tab="guide">Hướng dẫn sử dụng</button>
   </nav>
 </div>
 
@@ -361,85 +361,85 @@
     <!-- ============ 输入 ============ -->
     <form class="input-section no-print" id="form" autocomplete="off" onsubmit="return false">
       <div class="input-grid">
-        <div class="group-title">① 所在地与排放标准</div>
-        <div class="field"><label for="water">水体</label>
-          <select id="water"><option value="fw">淡水养殖</option><option value="sw">海水养殖</option></select></div>
-        <div class="field"><label for="standardId">省份 / 标准</label><select id="standardId"></select></div>
-        <div class="field"><label for="receiving">受纳水体类别</label><select id="receiving"></select></div>
-        <div class="field"><label for="gradeOverride">执行级别</label>
-          <select id="gradeOverride"><option value="auto">按受纳水体自动判定</option><option value="1">指定一级（只能比自动判定更严）</option></select></div>
-        <label class="check" id="wrapExisting"><input type="checkbox" id="existingOutlet"> 现有排放口（标准实施前已有；按标准规定执行一级，标准不给限值时按一级或单一限值参照）</label>
+        <div class="group-title">① Địa điểm và tiêu chuẩn xả thải</div>
+        <div class="field"><label for="water">Loại nước</label>
+          <select id="water"><option value="fw">Nuôi trồng nước ngọt</option><option value="sw">Nuôi trồng nước mặn</option></select></div>
+        <div class="field"><label for="standardId">Tỉnh / tiêu chuẩn</label><select id="standardId"></select></div>
+        <div class="field"><label for="receiving">Loại nguồn nước tiếp nhận</label><select id="receiving"></select></div>
+        <div class="field"><label for="gradeOverride">C?p ?p d?ng</label>
+          <select id="gradeOverride"><option value="auto">Tự động xác định theo nguồn nước tiếp nhận</option><option value="1">Chỉ định cấp 1 (chỉ được nghiêm ngặt hơn kết quả tự động)</option></select></div>
+        <label class="check" id="wrapExisting"><input type="checkbox" id="existingOutlet"> Cửa xả hiện hữu (có trước khi tiêu chuẩn có hiệu lực; áp dụng cấp I theo tiêu chuẩn, nếu tiêu chuẩn không quy định giới hạn thì tham khảo cấp I hoặc giới hạn duy nhất)</label>
         <label class="check" id="wrapKeyArea"><input type="checkbox" id="keyArea"> <span id="lblKeyArea"></span></label>
         <label class="check" id="wrapSpecial"><input type="checkbox" id="useSpecial"> <span id="lblSpecial"></span></label>
         <label class="check" id="wrapVariant"><input type="checkbox" id="useVariant"> <span id="lblVariant"></span></label>
         <label class="check" id="wrapPhase2"><input type="checkbox" id="usePhase2"> <span id="lblPhase2"></span></label>
         <div class="stdbox" id="stdBox"></div>
 
-        <div class="group-title">② 养殖规模与品种</div>
-        <div class="field"><label for="speciesId">品种</label><select id="speciesId"></select></div>
-        <div class="field"><label for="areaMu">养殖水面 <span class="hint">亩</span></label><input id="areaMu" type="number" min="0" step="1"></div>
-        <div class="field"><label for="pondDepth">平均水深 <span class="hint">m</span></label><input id="pondDepth" type="number" min="0.3" step="0.1"></div>
-        <div class="field"><label for="yieldKgMu">单产 <span class="hint">kg/亩·周期</span></label><input id="yieldKgMu" type="number" min="0" step="50"></div>
-        <div class="field"><label for="days">养殖周期 <span class="hint">d</span></label><input id="days" type="number" min="1" step="10"></div>
+        <div class="group-title">② Quy mô và đối tượng nuôi</div>
+        <div class="field"><label for="speciesId">Đối tượng nuôi</label><select id="speciesId"></select></div>
+        <div class="field"><label for="areaMu">Diện tích mặt nước nuôi <span class="hint">亩</span></label><input id="areaMu" type="number" min="0" step="1"></div>
+        <div class="field"><label for="pondDepth">Độ sâu nước trung bình <span class="hint">m</span></label><input id="pondDepth" type="number" min="0.3" step="0.1"></div>
+        <div class="field"><label for="yieldKgMu">Năng suất <span class="hint">kg/亩·周期</span></label><input id="yieldKgMu" type="number" min="0" step="50"></div>
+        <div class="field"><label for="days">Chu kỳ nuôi <span class="hint">d</span></label><input id="days" type="number" min="1" step="10"></div>
 
-        <div class="group-title">③ 饲料与产品成分 <small>决定氮磷投入与留存</small></div>
-        <div class="field"><label for="fcr">饲料系数 FCR</label><input id="fcr" type="number" min="0" step="0.05"></div>
-        <div class="field"><label for="cp">饲料粗蛋白 <span class="hint">%</span></label><input id="cp" type="number" min="0" step="1"></div>
-        <div class="field"><label for="pFeed">饲料总磷 <span class="hint">%</span></label><input id="pFeed" type="number" min="0" step="0.1"></div>
-        <div class="field"><label for="bodyN">产品含氮 <span class="hint">% 鲜重</span></label><input id="bodyN" type="number" min="0" step="0.1"></div>
-        <div class="field"><label for="bodyP">产品含磷 <span class="hint">% 鲜重</span></label><input id="bodyP" type="number" min="0" step="0.05"></div>
+        <div class="group-title">③ Thành phần thức ăn và sản phẩm <small>quyết định lượng nitơ và photpho đưa vào và lưu giữ</small></div>
+        <div class="field"><label for="fcr">Hệ số thức ăn FCR</label><input id="fcr" type="number" min="0" step="0.05"></div>
+        <div class="field"><label for="cp">Protein thô trong thức ăn <span class="hint">%</span></label><input id="cp" type="number" min="0" step="1"></div>
+        <div class="field"><label for="pFeed">Tổng photpho trong thức ăn <span class="hint">%</span></label><input id="pFeed" type="number" min="0" step="0.1"></div>
+        <div class="field"><label for="bodyN">Hàm lượng nitơ trong sản phẩm <span class="hint">% khối lượng tươi</span></label><input id="bodyN" type="number" min="0" step="0.1"></div>
+        <div class="field"><label for="bodyP">Hàm lượng photpho trong sản phẩm <span class="hint">% khối lượng tươi</span></label><input id="bodyP" type="number" min="0" step="0.05"></div>
 
-        <div class="group-title">④ 排水方式</div>
-        <div class="field wide"><label for="exchange">排水模式 <span class="hint">决定氮磷流失比例的默认值</span></label><select id="exchange"></select></div>
-        <div class="field"><label for="fN">饲料氮随排水流失 <span class="hint">%</span></label><input id="fN" type="number" min="0" max="100" step="1"></div>
-        <div class="field"><label for="fP">饲料磷随排水流失 <span class="hint">%</span></label><input id="fP" type="number" min="0" max="100" step="0.5"></div>
-        <div class="field"><label for="dailyPct">日换水率 <span class="hint">% 池容/d</span></label><input id="dailyPct" type="number" min="0" step="0.5"></div>
-        <div class="field"><label for="drainLoadPct">排干时排出的份额 <span class="hint">% 流失氮磷</span></label><input id="drainLoadPct" type="number" min="0" max="100" step="5"></div>
-        <div class="field"><label for="drainsPerCycle">每周期排干 <span class="hint">次</span></label><input id="drainsPerCycle" type="number" min="0" step="1"></div>
-        <div class="field"><label for="simultaneousPct">同时排干面积 <span class="hint">%</span></label><input id="simultaneousPct" type="number" min="0" max="100" step="5"></div>
-        <div class="field"><label for="drainDays">排干历时 <span class="hint">d</span></label><input id="drainDays" type="number" min="0.5" step="0.5"></div>
-        <div class="field wide"><label for="designFlowMode">设计流量口径</label><select id="designFlowMode"><option value="draft">广东草案：周期平均日排水量 × 变化系数</option><option value="peak">排干峰值流量（偏保守）</option></select></div>
-        <div class="field wide"><label for="exchDuringDrain">排干期间其余池塘 <span class="hint">峰值口径下决定设计流量</span></label><select id="exchDuringDrain"><option value="1">照常换水（两股水叠加，偏保守）</option><option value="0">停止换水（两者取大）</option></select></div>
-        <div class="field"><label for="bgTN">水源本底 TN <span class="hint">mg/L</span></label><input id="bgTN" type="number" min="0" step="0.1"></div>
-        <div class="field"><label for="bgTP">水源本底 TP <span class="hint">mg/L</span></label><input id="bgTP" type="number" min="0" step="0.01"></div>
+        <div class="group-title">④ Phương thức xả nước</div>
+        <div class="field wide"><label for="exchange">Chế độ xả nước <span class="hint">quyết định giá trị mặc định của tỷ lệ thất thoát nitơ và photpho</span></label><select id="exchange"></select></div>
+        <div class="field"><label for="fN">Nitơ trong thức ăn thất thoát theo nước xả <span class="hint">%</span></label><input id="fN" type="number" min="0" max="100" step="1"></div>
+        <div class="field"><label for="fP">Photpho trong thức ăn thất thoát theo nước xả <span class="hint">%</span></label><input id="fP" type="number" min="0" max="100" step="0.5"></div>
+        <div class="field"><label for="dailyPct">Tỷ lệ thay nước hằng ngày <span class="hint">% thể tích ao/d</span></label><input id="dailyPct" type="number" min="0" step="0.5"></div>
+        <div class="field"><label for="drainLoadPct">Tỷ phần xả khi tháo cạn <span class="hint">% nitơ và photpho thất thoát</span></label><input id="drainLoadPct" type="number" min="0" max="100" step="5"></div>
+        <div class="field"><label for="drainsPerCycle">Số lần tháo cạn mỗi chu kỳ <span class="hint">lần</span></label><input id="drainsPerCycle" type="number" min="0" step="1"></div>
+        <div class="field"><label for="simultaneousPct">Diện tích tháo cạn đồng thời <span class="hint">%</span></label><input id="simultaneousPct" type="number" min="0" max="100" step="5"></div>
+        <div class="field"><label for="drainDays">Thời gian tháo cạn <span class="hint">d</span></label><input id="drainDays" type="number" min="0.5" step="0.5"></div>
+        <div class="field wide"><label for="designFlowMode">Cơ sở xác định lưu lượng thiết kế</label><select id="designFlowMode"><option value="draft">Dự thảo Quảng Đông: lưu lượng xả trung bình ngày trong chu kỳ × hệ số biến động</option><option value="peak">Lưu lượng đỉnh khi tháo cạn (thiên về an toàn)</option></select></div>
+        <div class="field wide"><label for="exchDuringDrain">Các ao còn lại trong thời gian tháo cạn <span class="hint">quyết định lưu lượng thiết kế theo lưu lượng đỉnh</span></label><select id="exchDuringDrain"><option value="1">Thay nước như thường lệ (cộng hai dòng nước, thiên về an toàn)</option><option value="0">Ngừng thay nước (lấy giá trị lớn hơn)</option></select></div>
+        <div class="field"><label for="bgTN">Nồng độ nền trong nguồn nước TN <span class="hint">mg/L</span></label><input id="bgTN" type="number" min="0" step="0.1"></div>
+        <div class="field"><label for="bgTP">Nồng độ nền trong nguồn nước TP <span class="hint">mg/L</span></label><input id="bgTP" type="number" min="0" step="0.01"></div>
 
-        <div class="group-title">⑤ 尾水原水水质 <small>有实测时优先用实测</small></div>
-        <div class="field wide"><label for="rawMode">TN、TP 来源</label><select id="rawMode"><option value="estimate">按③④质量平衡估算</option><option value="measured">本场实测（并反推流失比例）</option></select></div>
-        <div class="field" id="wrapMeasTN"><label for="measTN">实测尾水 TN <span class="hint">mg/L</span></label><input id="measTN" type="number" min="0" step="0.1"></div>
-        <div class="field" id="wrapMeasTP"><label for="measTP">实测尾水 TP <span class="hint">mg/L</span></label><input id="measTP" type="number" min="0" step="0.01"></div>
-        <div class="field"><label for="SS">日常尾水 SS <span class="hint">mg/L</span></label><input id="SS" type="number" min="0" step="5"></div>
-        <div class="field"><label for="drainSS">排干末 20% 水 SS <span class="hint">mg/L, 选填</span></label><input id="drainSS" type="number" min="0" step="10" placeholder="空 = 1000 (Boyd 2000)"></div>
-        <label class="check wide" id="wrapHeld"><input type="checkbox" id="lastPortionHeld"> 最后 20% 排水单独收集、静置 ≥8 h 后再处理（按前 80% 水评价，SS = 日常 × 1.5）</label>
-        <div class="field"><label for="drainTN">排干末段 TN <span class="hint">mg/L, 选填</span></label><input id="drainTN" type="number" min="0" step="0.1" placeholder="空 = 沿用日常"></div>
-        <div class="field"><label for="drainTP">排干末段 TP <span class="hint">mg/L, 选填</span></label><input id="drainTP" type="number" min="0" step="0.01" placeholder="空 = 沿用日常"></div>
-        <div class="field"><label for="COD"><span id="lblCOD">尾水 COD<sub>Mn</sub></span> <span class="hint">mg/L</span></label><input id="COD" type="number" min="0" step="1"></div>
-        <div class="field"><label for="NH3N">尾水氨氮 <span class="hint">mg/L</span></label><input id="NH3N" type="number" min="0" step="0.1"></div>
+        <div class="group-title">⑤ Chất lượng nước thải đầu vào <small>ưu tiên số liệu đo thực tế khi có</small></div>
+        <div class="field wide"><label for="rawMode">Nguồn số liệu TN, TP</label><select id="rawMode"><option value="estimate">Ước tính theo cân bằng khối lượng tại ③ và ④</option><option value="measured">Đo tại cơ sở (và tính ngược tỷ lệ thất thoát)</option></select></div>
+        <div class="field" id="wrapMeasTN"><label for="measTN">TN nước thải ao nuôi đo thực tế <span class="hint">mg/L</span></label><input id="measTN" type="number" min="0" step="0.1"></div>
+        <div class="field" id="wrapMeasTP"><label for="measTP">TP nước thải ao nuôi đo thực tế <span class="hint">mg/L</span></label><input id="measTP" type="number" min="0" step="0.01"></div>
+        <div class="field"><label for="SS">Nước thải thường ngày SS <span class="hint">mg/L</span></label><input id="SS" type="number" min="0" step="5"></div>
+        <div class="field"><label for="drainSS">SS của 20% lượng nước cuối khi tháo cạn <span class="hint">mg/L, không bắt buộc</span></label><input id="drainSS" type="number" min="0" step="10" placeholder="Để trống = 1000 (Boyd 2000)"></div>
+        <label class="check wide" id="wrapHeld"><input type="checkbox" id="lastPortionHeld"> Thu gom riêng 20% lượng nước xả cuối, để lắng ≥8 h rồi xử lý (đánh giá theo 80% lượng nước đầu, SS = giá trị thường ngày × 1.5)</label>
+        <div class="field"><label for="drainTN">TN giai đoạn cuối khi tháo cạn <span class="hint">mg/L, không bắt buộc</span></label><input id="drainTN" type="number" min="0" step="0.1" placeholder="Để trống = dùng giá trị thường ngày"></div>
+        <div class="field"><label for="drainTP">TP giai đoạn cuối khi tháo cạn <span class="hint">mg/L, không bắt buộc</span></label><input id="drainTP" type="number" min="0" step="0.01" placeholder="Để trống = dùng giá trị thường ngày"></div>
+        <div class="field"><label for="COD"><span id="lblCOD">COD<sub>Mn</sub> nước thải ao nuôi</span> <span class="hint">mg/L</span></label><input id="COD" type="number" min="0" step="1"></div>
+        <div class="field"><label for="NH3N">Nitơ amoni trong nước thải ao nuôi <span class="hint">mg/L</span></label><input id="NH3N" type="number" min="0" step="0.1"></div>
 
-        <div class="group-title">⑥ 三池两坝设计参数</div>
-        <div class="field"><label for="areaRatioPct">处理面积比 <span class="hint">% 养殖面积</span></label><input id="areaRatioPct" type="number" min="0" step="0.5"></div>
+        <div class="group-title">⑥ Thông số thiết kế ba ao hai đập</div>
+        <div class="field"><label for="areaRatioPct">Tỷ lệ diện tích xử lý <span class="hint">% diện tích nuôi</span></label><input id="areaRatioPct" type="number" min="0" step="0.5"></div>
         <div class="stdbox" id="ratioBox"></div>
-        <div class="field"><label for="splitSed">沉淀池 <span class="hint">%</span></label><input id="splitSed" type="number" min="0" step="5"></div>
-        <div class="field"><label for="splitAer">曝气池 <span class="hint">%</span></label><input id="splitAer" type="number" min="0" step="5"></div>
-        <div class="field"><label for="splitEco">生态净化池 <span class="hint">%</span></label><input id="splitEco" type="number" min="0" step="5"></div>
-        <div class="field"><label for="depthSed">沉淀池水深 <span class="hint">m</span></label><input id="depthSed" type="number" min="0.5" step="0.1"></div>
-        <div class="field"><label for="depthAer">曝气池水深 <span class="hint">m</span></label><input id="depthAer" type="number" min="0.5" step="0.1"></div>
-        <div class="field"><label for="depthEco">净化池水深 <span class="hint">m</span></label><input id="depthEco" type="number" min="0.5" step="0.1"></div>
-        <div class="field"><label for="slopeA">边坡系数 a</label><input id="slopeA" type="number" min="0.5" max="1" step="0.01"></div>
-        <div class="field"><label for="flowFactor">日流量变化系数 b</label><input id="flowFactor" type="number" min="1" step="0.05"></div>
-        <div class="field"><label for="minHRT">最短停留时间 <span class="hint">d</span></label><input id="minHRT" type="number" min="0" step="0.5"></div>
-        <div class="field"><label for="maxHL">最大水力负荷 <span class="hint">m³/(m²·d)</span></label><input id="maxHL" type="number" min="0.05" step="0.05"></div>
-        <div class="field"><label for="minSettleH">排干沉淀停留 <span class="hint">h</span></label><input id="minSettleH" type="number" min="0" step="1"></div>
-        <div class="field"><label for="recircPct">内循环 <span class="hint">% 设计日流量</span></label><input id="recircPct" type="number" min="0" step="10"></div>
-        <div class="field"><label for="floatBedPct">净化池浮床 <span class="hint">%</span></label><input id="floatBedPct" type="number" min="0" step="5"></div>
-        <div class="field"><label for="sedFloatPct">沉淀池浮床 <span class="hint">% (应布设 10–30)</span></label><input id="sedFloatPct" type="number" min="0" step="5"></div>
+        <div class="field"><label for="splitSed">Ao lắng <span class="hint">%</span></label><input id="splitSed" type="number" min="0" step="5"></div>
+        <div class="field"><label for="splitAer">Ao sục khí <span class="hint">%</span></label><input id="splitAer" type="number" min="0" step="5"></div>
+        <div class="field"><label for="splitEco">Ao làm sạch sinh thái <span class="hint">%</span></label><input id="splitEco" type="number" min="0" step="5"></div>
+        <div class="field"><label for="depthSed">Độ sâu ao lắng <span class="hint">m</span></label><input id="depthSed" type="number" min="0.5" step="0.1"></div>
+        <div class="field"><label for="depthAer">Độ sâu ao sục khí <span class="hint">m</span></label><input id="depthAer" type="number" min="0.5" step="0.1"></div>
+        <div class="field"><label for="depthEco">Độ sâu ao làm sạch <span class="hint">m</span></label><input id="depthEco" type="number" min="0.5" step="0.1"></div>
+        <div class="field"><label for="slopeA">Hệ số mái dốc a</label><input id="slopeA" type="number" min="0.5" max="1" step="0.01"></div>
+        <div class="field"><label for="flowFactor">Hệ số biến động lưu lượng ngày b</label><input id="flowFactor" type="number" min="1" step="0.05"></div>
+        <div class="field"><label for="minHRT">Thời gian lưu tối thiểu <span class="hint">d</span></label><input id="minHRT" type="number" min="0" step="0.5"></div>
+        <div class="field"><label for="maxHL">Tải trọng thủy lực tối đa <span class="hint">m³/(m²·d)</span></label><input id="maxHL" type="number" min="0.05" step="0.05"></div>
+        <div class="field"><label for="minSettleH">Thời gian lưu lắng khi tháo cạn <span class="hint">h</span></label><input id="minSettleH" type="number" min="0" step="1"></div>
+        <div class="field"><label for="recircPct">Tuần hoàn nội bộ <span class="hint">% lưu lượng thiết kế ngày</span></label><input id="recircPct" type="number" min="0" step="10"></div>
+        <div class="field"><label for="floatBedPct">Bè nổi ao làm sạch <span class="hint">%</span></label><input id="floatBedPct" type="number" min="0" step="5"></div>
+        <div class="field"><label for="sedFloatPct">Bè nổi ao lắng <span class="hint">% (nên bố trí 10–30)</span></label><input id="sedFloatPct" type="number" min="0" step="5"></div>
 
-        <div class="group-title">⑦ 去除效果 <small>C<sub>out</sub> = C* + (C<sub>in</sub> − C*)(1 − R·f)</small></div>
-        <div class="field wide"><label for="season">评价季节 <span class="hint">季节系数 f</span></label><select id="season"></select></div>
-        <div class="field"><label for="rSS">SS 去除率中值 R <span class="hint">%</span></label><input id="rSS" type="number" min="0" max="100" step="1"></div>
-        <div class="field"><label for="rCOD">COD 去除率中值 R <span class="hint">%</span></label><input id="rCOD" type="number" min="0" max="100" step="1"></div>
-        <div class="field"><label for="rTN">TN 去除率中值 R <span class="hint">%</span></label><input id="rTN" type="number" min="0" max="100" step="1"></div>
-        <div class="field"><label for="rTP">TP 去除率中值 R <span class="hint">%</span></label><input id="rTP" type="number" min="0" max="100" step="1"></div>
-        <div class="field"><label for="rNH3N">氨氮去除率中值 R <span class="hint">%</span></label><input id="rNH3N" type="number" min="0" max="100" step="1"></div>
+        <div class="group-title">⑦ Hiệu quả loại bỏ <small>C<sub>out</sub> = C* + (C<sub>in</sub> − C*)(1 − R·f)</small></div>
+        <div class="field wide"><label for="season">Mùa đánh giá <span class="hint">hệ số mùa f</span></label><select id="season"></select></div>
+        <div class="field"><label for="rSS">SS Trung vị hiệu suất loại bỏ R <span class="hint">%</span></label><input id="rSS" type="number" min="0" max="100" step="1"></div>
+        <div class="field"><label for="rCOD">COD Trung vị hiệu suất loại bỏ R <span class="hint">%</span></label><input id="rCOD" type="number" min="0" max="100" step="1"></div>
+        <div class="field"><label for="rTN">TN Trung vị hiệu suất loại bỏ R <span class="hint">%</span></label><input id="rTN" type="number" min="0" max="100" step="1"></div>
+        <div class="field"><label for="rTP">TP Trung vị hiệu suất loại bỏ R <span class="hint">%</span></label><input id="rTP" type="number" min="0" max="100" step="1"></div>
+        <div class="field"><label for="rNH3N">Nitơ amoniTrung vị hiệu suất loại bỏ R <span class="hint">%</span></label><input id="rNH3N" type="number" min="0" max="100" step="1"></div>
         <div class="stdbox" id="removalBox"></div>
       </div>
     </form>

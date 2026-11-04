@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>鼓风机选型计算器 | 水处理工具箱 · WaterKit</title>
+<title>Công cụ tính chọn máy thổi khí | Bộ công cụ xử lý nước · WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="污水处理鼓风机选型计算：风量、风压、轴功率、电机功率，覆盖罗茨鼓风机、离心鼓风机、磁悬浮鼓风机选型建议。依据 GB 50014、HJ 576。">
+<meta name="description" content="Tính chọn máy thổi khí xử lý nước thải: lưu lượng khí, áp suất khí, công suất trục và động cơ; khuyến nghị máy Roots, ly tâm và đệm từ. Theo GB 50014, HJ 576.">
 <link rel="canonical" href="https://waterkit.cn/blower-selection-calculator.html">
 <style>
   :root {
@@ -269,7 +269,7 @@
     background: var(--brand-light);
   }
   .blower-card.recommended::before {
-    content: '推荐';
+    content: 'Khuyến nghị';
     position: absolute;
     top: -10px;
     left: 50%;
@@ -480,270 +480,270 @@
     <a href="index.html" class="brand">
       <div class="brand-mark">W</div>
       <div>
-        <div class="brand-name">水处理工具箱</div>
-        <div class="brand-sub">WaterKit · by 登登科技</div>
+        <div class="brand-name">Bộ công cụ xử lý nước</div>
+        <div class="brand-sub">WaterKit · by Dengdeng Technology</div>
       </div>
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="back">返回首页</a>
-      <a href="index.html#cat-equipment">设备选型</a>
-      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技</a>
+      <a href="index.html" class="back">Về trang chủ</a>
+      <a href="index.html#cat-equipment">Lựa chọn thiết bị</a>
+      <a href="https://dengdengtech.cn" target="_blank" rel="noopener">Dengdeng Technology</a>
     </nav>
   </div>
 </header>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
-  <a href="index.html">首页</a>
+  <a href="index.html">Trang chủ</a>
   <span class="sep">/</span>
-  <a href="index.html#cat-equipment">设备选型</a>
+  <a href="index.html#cat-equipment">Lựa chọn thiết bị</a>
   <span class="sep">/</span>
-  <span class="current">鼓风机选型</span>
+  <span class="current">Chọn máy thổi khí</span>
 </div>
 
 <main class="main-wrap">
 <div class="container">
 
   <header class="tool-header">
-    <h1>💨 鼓风机选型计算器</h1>
-    <p>依据 GB 50014-2021、HJ 576，计算鼓风机风量、风压、轴功率及电机功率，并给出机型选型建议</p>
+    <h1>💨 Công cụ tính chọn máy thổi khí</h1>
+    <p>Theo GB 50014-2021 và HJ 576, tính lưu lượng khí, áp suất khí, công suất trục và động cơ, đồng thời đề xuất loại máy phù hợp</p>
   </header>
 
   <div class="info-box">
-    💡 可直接输入供气量，或按曝气量计算器的结果（标准供气量 Gs）填入。风压由扩散器淹没深度、管道阻力和曝气器背压共同决定。
+    💡 Nhập trực tiếp lưu lượng cấp khí hoặc dùng kết quả từ công cụ tính lượng khí sục (lưu lượng cấp khí tiêu chuẩn Gs). Áp suất khí phụ thuộc vào độ ngập của bộ phân phối khí, trở lực đường ống và áp suất ngược của thiết bị sục khí.
   </div>
 
-  <!-- 第一部分：风量 -->
-  <div class="section-title">① 供气量输入</div>
+  <!-- 第一部分：Lưu lượng khí -->
+  <div class="section-title">① Nhập lưu lượng cấp khí</div>
   <div class="grid">
     <div class="field">
-      <label for="Q_avg">平均供气量 Q<sub>avg</sub> <span class="unit">标准状态 m³/min</span></label>
+      <label for="Q_avg">Lưu lượng cấp khí trung bình Q<sub>avg</sub> <span class="unit">điều kiện tiêu chuẩn m³/min</span></label>
       <input type="number" id="Q_avg" value="15" step="0.5" oninput="calc()">
-      <div class="helper">标准状态（20 ℃、101.325 kPa），即曝气量计算器的标准供气量 Gs；下文"m³/min（标）"同此口径</div>
+      <div class="helper">Điều kiện tiêu chuẩn (20 ℃, 101.325 kPa), tương ứng với lưu lượng cấp khí tiêu chuẩn Gs trong công cụ tính lượng khí sục; “m³/min (tiêu chuẩn)” dưới đây cũng theo điều kiện này</div>
     </div>
     <div class="field">
-      <label for="Kh">最大时系数 K<sub>h</sub></label>
+      <label for="Kh">Hệ số giờ lớn nhất K<sub>h</sub></label>
       <input type="number" id="Kh" value="1.5" step="0.1" oninput="calc()">
-      <div class="helper">典型 1.3–2.0，工程上常取 ≥ 1.5（经验值）</div>
+      <div class="helper">Thông thường 1.3–2.0; trong thiết kế thường chọn ≥ 1.5 (giá trị kinh nghiệm)</div>
     </div>
     <div class="field">
-      <label for="n_run">鼓风机台数（运行）<span class="unit">台</span></label>
+      <label for="n_run">Số máy thổi khí vận hành <span class="unit">máy</span></label>
       <input type="number" id="n_run" value="2" step="1" oninput="calc()">
-      <div class="helper">不含备用台，通常 2-4 台并联</div>
+      <div class="helper">Không tính máy dự phòng; thường vận hành song song 2-4 máy</div>
     </div>
   </div>
 
-  <!-- 第二部分：风压计算 -->
-  <div class="section-title">② 风压计算</div>
+  <!-- 第二部分：Tính áp suất khí -->
+  <div class="section-title">② Tính áp suất khí</div>
   <div class="grid">
     <div class="field">
-      <label for="H_pool">扩散器淹没深度 H（池深 − 扩散器安装高度） <span class="unit">m</span></label>
+      <label for="H_pool">Độ ngập của bộ phân phối khí H (độ sâu bể − chiều cao lắp đặt bộ phân phối khí) <span class="unit">m</span></label>
       <input type="number" id="H_pool" value="5.0" step="0.5" oninput="calc()">
-      <div class="helper">扩散器出气口到最高水面的距离，不是池深；如池深 5.2 m、扩散器离池底 0.2 m，则 H = 5.0 m</div>
+      <div class="helper">Khoảng cách từ cửa thoát khí đến mực nước cao nhất, không phải độ sâu bể; ví dụ bể sâu 5.2 m, bộ phân phối cao hơn đáy 0.2 m thì H = 5.0 m</div>
     </div>
     <div class="field">
-      <label for="dP_diff">曝气器背压 ΔP<sub>diff</sub> <span class="unit">kPa</span></label>
+      <label for="dP_diff">Áp suất ngược của thiết bị sục khí ΔP<sub>diff</sub> <span class="unit">kPa</span></label>
       <input type="number" id="dP_diff" value="4.0" step="0.5" oninput="calc()">
-      <div class="helper">微孔曝气器 3-6 kPa，穿孔管 1-2 kPa</div>
+      <div class="helper">Thiết bị sục khí bọt mịn 3-6 kPa, ống đục lỗ 1-2 kPa</div>
     </div>
     <div class="field">
-      <label for="dP_pipe">管道沿程+局部阻力 ΔP<sub>pipe</sub> <span class="unit">kPa</span></label>
+      <label for="dP_pipe">Trở lực dọc đường + cục bộ của đường ống ΔP<sub>pipe</sub> <span class="unit">kPa</span></label>
       <input type="number" id="dP_pipe" value="5.0" step="0.5" oninput="calc()">
-      <div class="helper">含出口至曝气器管道，通常 3-8 kPa</div>
+      <div class="helper">Bao gồm đường ống từ cửa ra đến thiết bị sục khí, thường 3-8 kPa</div>
     </div>
     <div class="field">
-      <label for="fs">安全余量系数 f<sub>s</sub></label>
+      <label for="fs">Hệ số dự phòng an toàn f<sub>s</sub></label>
       <input type="number" id="fs" value="1.1" step="0.05" oninput="calc()">
-      <div class="helper">风压安全系数，通常 1.05-1.15</div>
+      <div class="helper">Hệ số an toàn áp suất khí, thường 1.05-1.15</div>
     </div>
     <div class="field">
-      <label for="alt">海拔高度 <span class="unit">m</span></label>
+      <label for="alt">Độ cao so với mực nước biển <span class="unit">m</span></label>
       <input type="number" id="alt" value="0" step="100" oninput="calc()">
-      <div class="helper">影响空气密度和绝对压力</div>
+      <div class="helper">Ảnh hưởng đến mật độ không khí và áp suất tuyệt đối</div>
     </div>
     <div class="field">
-      <label for="T_inlet">进气温度 <span class="unit">°C</span></label>
+      <label for="T_inlet">Nhiệt độ khí đầu vào <span class="unit">°C</span></label>
       <input type="number" id="T_inlet" value="20" step="1" oninput="calc()">
-      <div class="helper">夏季最高气温，影响风机出力</div>
+      <div class="helper">Nhiệt độ không khí cao nhất vào mùa hè, ảnh hưởng đến công suất máy thổi khí</div>
     </div>
   </div>
 
   <!-- 第三部分：机械效率 -->
-  <div class="section-title">③ 效率参数</div>
+  <div class="section-title">③ Thông số hiệu suất</div>
   <div class="grid">
     <div class="field">
-      <label for="eta_bl">风机绝热效率 η<sub>bl</sub> <span class="unit">%</span></label>
+      <label for="eta_bl">Hiệu suất đoạn nhiệt của máy thổi khí η<sub>bl</sub> <span class="unit">%</span></label>
       <input type="number" id="eta_bl" value="75" step="1" oninput="calc()">
-      <div class="helper">罗茨 60-75%，离心 75-85%，磁悬浮 80-88%</div>
+      <div class="helper">Roots 60-75%, ly tâm 75-85%, đệm từ 80-88%</div>
     </div>
     <div class="field">
-      <label for="eta_t">传动效率 η<sub>t</sub> <span class="unit">%</span></label>
+      <label for="eta_t">Hiệu suất truyền động η<sub>t</sub> <span class="unit">%</span></label>
       <input type="number" id="eta_t" value="95" step="1" oninput="calc()">
-      <div class="helper">直联 95-98%，皮带 90-95%</div>
+      <div class="helper">Truyền động trực tiếp 95-98%, dây đai 90-95%</div>
     </div>
     <div class="field">
-      <label for="eta_m">电机效率 η<sub>m</sub> <span class="unit">%</span></label>
+      <label for="eta_m">Hiệu suất động cơ η<sub>m</sub> <span class="unit">%</span></label>
       <input type="number" id="eta_m" value="93" step="1" oninput="calc()">
-      <div class="helper">IE3 电机 91-95%，IE4 93-96%</div>
+      <div class="helper">Động cơ IE3 91-95%, IE4 93-96%</div>
     </div>
     <div class="field">
-      <label for="motor_margin">电机余量系数 k<sub>m</sub></label>
+      <label for="motor_margin">Hệ số dự phòng động cơ k<sub>m</sub></label>
       <input type="number" id="motor_margin" value="1.1" step="0.05" oninput="calc()">
-      <div class="helper">配套电机计算功率 × k<sub>m</sub> 后取上一档标准电机，常取 1.1-1.2</div>
+      <div class="helper">Công suất động cơ tính toán × k<sub>m</sub> rồi chọn cấp động cơ tiêu chuẩn cao hơn, thường chọn 1.1-1.2</div>
     </div>
     <div class="field">
-      <label for="price">电价 <span class="unit">元/kWh</span></label>
+      <label for="price">Giá điện <span class="unit">nhân dân tệ/kWh</span></label>
       <input type="number" id="price" value="0.8" step="0.05" oninput="calc()">
-      <div class="helper">用于年运行电费估算</div>
+      <div class="helper">Dùng để ước tính chi phí điện vận hành hằng năm</div>
     </div>
   </div>
 
   <!-- 结果区 -->
   <div class="results">
-    <h2>🔧 鼓风机选型计算结果</h2>
+    <h2>🔧 Kết quả tính chọn máy thổi khí</h2>
 
-    <!-- 风量 -->
+    <!-- Lưu lượng khí -->
     <div class="result-group">
-      <div class="result-group-title">💨 风量</div>
+      <div class="result-group-title">💨 Lưu lượng khí</div>
       <div class="result-row">
-        <span class="result-label">平均供气量（设计值）</span>
-        <span><span class="result-value" id="r_Q_avg">—</span><span class="result-unit">m³/min（标）</span></span>
+        <span class="result-label">Lưu lượng cấp khí trung bình (giá trị thiết kế)</span>
+        <span><span class="result-value" id="r_Q_avg">—</span><span class="result-unit">m³/min (tiêu chuẩn)</span></span>
       </div>
       <div class="result-row highlight-row">
-        <span class="result-label"><b>最大时供气量（选型基准）</b></span>
-        <span><span class="result-value big" id="r_Q_max">—</span><span class="result-unit">m³/min（标）</span></span>
+        <span class="result-label"><b>Lưu lượng cấp khí giờ lớn nhất (cơ sở chọn máy)</b></span>
+        <span><span class="result-value big" id="r_Q_max">—</span><span class="result-unit">m³/min (tiêu chuẩn)</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">单台风机风量</span>
-        <span><span class="result-value" id="r_Q_unit">—</span><span class="result-unit">m³/min（标）</span></span>
+        <span class="result-label">Lưu lượng khí mỗi máy</span>
+        <span><span class="result-value" id="r_Q_unit">—</span><span class="result-unit">m³/min (tiêu chuẩn)</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">单台折算实际进气量（T°C修正）</span>
+        <span class="result-label">Lưu lượng khí đầu vào thực tế quy đổi mỗi máy (hiệu chỉnh theo T°C)</span>
         <span><span class="result-value" id="r_Q_actual">—</span><span class="result-unit">m³/min</span></span>
       </div>
     </div>
 
-    <!-- 风压 -->
+    <!-- Áp suất khí -->
     <div class="result-group">
-      <div class="result-group-title">📊 风压</div>
+      <div class="result-group-title">📊 Áp suất khí</div>
       <div class="result-row">
-        <span class="result-label">水柱静压（ρ_水 × g × H）</span>
+        <span class="result-label">Áp suất tĩnh cột nước (ρ_water × g × H)</span>
         <span><span class="result-value" id="r_dP_water">—</span><span class="result-unit">kPa</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">曝气器背压</span>
+        <span class="result-label">Áp suất ngược của thiết bị sục khí</span>
         <span><span class="result-value" id="r_dP_diff">—</span><span class="result-unit">kPa</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">管道阻力</span>
+        <span class="result-label">Trở lực đường ống</span>
         <span><span class="result-value" id="r_dP_pipe">—</span><span class="result-unit">kPa</span></span>
       </div>
       <div class="result-row highlight-row">
-        <span class="result-label"><b>设计总风压（含安全余量）</b></span>
+        <span class="result-label"><b>Tổng áp suất khí thiết kế (bao gồm dự phòng an toàn)</b></span>
         <span><span class="result-value big" id="r_dP_total">—</span><span class="result-unit">kPa</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">进气绝对压力 P₁</span>
+        <span class="result-label">Áp suất tuyệt đối đầu vào P₁</span>
         <span><span class="result-value" id="r_P1">—</span><span class="result-unit">kPa(abs)</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">出口绝对压力 P₂</span>
+        <span class="result-label">Áp suất tuyệt đối đầu ra P₂</span>
         <span><span class="result-value" id="r_P2">—</span><span class="result-unit">kPa(abs)</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">压力比 P₂/P₁</span>
+        <span class="result-label">Tỷ số áp suất P₂/P₁</span>
         <span><span class="result-value" id="r_pr">—</span></span>
       </div>
     </div>
 
-    <!-- 功率 -->
+    <!-- Công suất -->
     <div class="result-group">
-      <div class="result-group-title">⚡ 功率</div>
+      <div class="result-group-title">⚡ Công suất</div>
       <div class="result-row">
-        <span class="result-label">单台绝热压缩功率 N<sub>ad</sub></span>
+        <span class="result-label">Công suất nén đoạn nhiệt mỗi máy N<sub>ad</sub></span>
         <span><span class="result-value" id="r_N_ad">—</span><span class="result-unit">kW</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">单台轴功率 N<sub>shaft</sub></span>
+        <span class="result-label">Công suất trục mỗi máy N<sub>shaft</sub></span>
         <span><span class="result-value" id="r_N_shaft">—</span><span class="result-unit">kW</span></span>
       </div>
       <div class="result-row highlight-row">
-        <span class="result-label"><b>配套电机功率（选型参考）</b></span>
+        <span class="result-label"><b>Công suất động cơ đi kèm (tham khảo chọn máy)</b></span>
         <span><span class="result-value big" id="r_N_motor">—</span><span class="result-unit">kW</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">标准电机规格（× 电机余量系数后就大不就小）</span>
+        <span class="result-label">Công suất động cơ tiêu chuẩn (nhân hệ số dự phòng rồi chọn cấp bằng hoặc cao hơn)</span>
         <span><span class="result-value" id="r_N_std" style="font-size:15px;">—</span><span class="result-unit">kW</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">全站总装机功率（运行台×电机）</span>
+        <span class="result-label">Tổng công suất lắp đặt toàn trạm (số máy vận hành × động cơ)</span>
         <span><span class="result-value" id="r_N_total">—</span><span class="result-unit">kW</span></span>
       </div>
       <div class="result-row">
-        <span class="result-label">年运行电费（按平均风量实际电功率，24h×365d）</span>
-        <span><span class="result-value" id="r_annual_cost">—</span><span class="result-unit">万元/年</span></span>
+        <span class="result-label">Chi phí điện vận hành hằng năm (theo công suất điện thực tế ở lưu lượng khí trung bình, 24h×365d)</span>
+        <span><span class="result-value" id="r_annual_cost">—</span><span class="result-unit">vạn nhân dân tệ/năm</span></span>
       </div>
     </div>
 
-    <!-- 机型推荐 -->
+    <!-- 机型Khuyến nghị -->
     <div class="result-group">
-      <div class="result-group-title">🔩 机型选型建议</div>
+      <div class="result-group-title">🔩 Khuyến nghị chọn loại máy</div>
       <div class="blower-cards" id="blowerCards">
         <!-- JS 动态生成 -->
       </div>
-      <div class="helper" style="margin-top:10px;">注：各机型的风量/压比适用区间、效率、噪音及磁悬浮单台功率上限等均为参考值（经验范围），以厂家样本为准。</div>
+      <div class="helper" style="margin-top:10px;">Lưu ý: Phạm vi lưu lượng khí/tỷ số áp suất, hiệu suất, độ ồn và giới hạn công suất mỗi máy đệm từ đều là giá trị tham khảo theo kinh nghiệm; cần đối chiếu tài liệu nhà sản xuất.</div>
     </div>
 
     <!-- 校核 -->
     <div class="result-group">
-      <div class="result-group-title">🔎 设计校核</div>
+      <div class="result-group-title">🔎 Kiểm tra thiết kế</div>
       <div class="check-list" id="checkList"></div>
     </div>
   </div>
 
-  <!-- 公式说明 -->
+  <!-- Giải thích công thức -->
   <div class="btn-row">
-    <button class="btn btn-ghost" onclick="toggleFormula()">📐 公式说明</button>
-    <button class="btn btn-ghost" onclick="copyResult()">📋 复制结果</button>
-    <button class="btn btn-ghost" onclick="resetDefaults()">↺ 恢复默认</button>
+    <button class="btn btn-ghost" onclick="toggleFormula()">📐 Giải thích công thức</button>
+    <button class="btn btn-ghost" onclick="copyResult()">📋 Sao chép kết quả</button>
+    <button class="btn btn-ghost" onclick="resetDefaults()">↺ Khôi phục mặc định</button>
   </div>
 
   <div class="formula-box" id="formulaBox">
-    <h4>① 最大时风量</h4>
-    <code>Q_max = Q_avg × K_h  [m³/min（标）]</code>
-    <p>单台风量 = Q_max / 运行台数</p>
+    <h4>① Lưu lượng khí giờ lớn nhất</h4>
+    <code>Q_max = Q_avg × K_h  [m³/min (tiêu chuẩn)]</code>
+    <p>Lưu lượng khí mỗi máy = Q_max / số máy vận hành</p>
 
-    <h4>② 实际进气量（温度、压力修正）</h4>
+    <h4>② Lưu lượng khí đầu vào thực tế (hiệu chỉnh nhiệt độ, áp suất)</h4>
     <code>Q_actual = Q_unit × (273.15 + T) / 293.15 × 101.325 / P₁  [m³/min]</code>
-    <p>标准状态定义为 20°C、101.325 kPa；实际进气温度和海拔（P₁）均影响密度，需修正流量。</p>
+    <p>Điều kiện tiêu chuẩn là 20°C, 101.325 kPa; nhiệt độ khí đầu vào thực tế và độ cao (P₁) ảnh hưởng đến mật độ nên cần hiệu chỉnh lưu lượng.</p>
 
-    <h4>③ 风压计算</h4>
-    <code>ΔP_water = ρ_水 × g × H = 9.8 × H  [kPa]（H 为扩散器淹没深度 = 池深 − 扩散器安装高度）</code>
+    <h4>③ Tính áp suất khí</h4>
+    <code>ΔP_water = ρ_water × g × H = 9.8 × H  [kPa] (H là độ ngập của bộ phân phối khí = độ sâu bể − chiều cao lắp đặt bộ phân phối khí)</code>
     <code>ΔP_total = (ΔP_water + ΔP_diff + ΔP_pipe) × f_s  [kPa]</code>
-    <p>海拔修正（标准大气式，与曝气量/水泵选型页一致）：P₁ = 101.325 × (1 − 2.25577×10⁻⁵ × alt)^5.25588 kPa(abs)</p>
+    <p>Hiệu chỉnh độ cao (công thức khí quyển tiêu chuẩn, thống nhất với trang tính lượng khí sục/chọn máy bơm): P₁ = 101.325 × (1 − 2.25577×10⁻⁵ × alt)^5.25588 kPa(abs)</p>
     <code>P₂ = P₁ + ΔP_total  [kPa(abs)]</code>
 
-    <h4>④ 绝热压缩功率（等熵压缩）</h4>
+    <h4>④ Công suất nén đoạn nhiệt (nén đẳng entropy)</h4>
     <code>N_ad = (κ/(κ-1)) × P₁ × Q_actual × [(P₂/P₁)^((κ-1)/κ) - 1]  [kW]</code>
-    <p>κ = 1.4（空气绝热指数）；P 单位 kPa，Q 单位 m³/s。<br>
-    此为等熵压缩理论功率的常用工程公式（热力学通用式，非规范条文）。</p>
+    <p>κ = 1.4 (số mũ đoạn nhiệt của không khí); P có đơn vị kPa, Q có đơn vị m³/s.<br>
+    Đây là công thức kỹ thuật thường dùng tính công suất lý thuyết của quá trình nén đẳng entropy (công thức nhiệt động lực học tổng quát, không phải điều khoản tiêu chuẩn).</p>
 
-    <h4>⑤ 轴功率与电机功率</h4>
+    <h4>⑤ Công suất trục và công suất động cơ</h4>
     <code>N_shaft = N_ad / η_bl  [kW]</code>
-    <code>N_motor = N_shaft / η_t  [kW]（配套电机计算功率；铭牌功率即电机轴输出功率，η_m 只用于计算电耗）</code>
-    <code>N_std = 上一档标准功率( N_motor × k_m )  [kW]，k_m 为电机余量系数（默认 1.1）</code>
-    <p>注意：f_s 与 k_m 叠加后，标准电机规格一般比 N_motor 高一档，属正常的选型余量。</p>
-    <p>标准电机功率档位（GB/T 系列，与水泵选型计算器共用）：0.37、0.55、0.75、1.1、1.5、2.2、3、4、5.5、7.5、11、15、18.5、22、30、37、45、55、75、90、110、132、160、185、200、220、250、280、315、355、400、450、500、560、630、710、800、900、1000 kW；超过 1000 kW 时按 100 kW 向上取整，须向厂家确认。</p>
+    <code>N_motor = N_shaft / η_t  [kW] (công suất động cơ đi kèm tính toán; công suất ghi trên nhãn là công suất đầu ra trên trục động cơ, η_m chỉ dùng để tính điện năng tiêu thụ)</code>
+    <code>N_std = cấp công suất tiêu chuẩn bằng hoặc cao hơn( N_motor × k_m )  [kW], k_m là hệ số dự phòng động cơ (mặc định 1.1)</code>
+    <p>Lưu ý: Khi kết hợp f_s và k_m, công suất động cơ tiêu chuẩn thường cao hơn N_motor một cấp; đây là mức dự phòng chọn máy bình thường.</p>
+    <p>Các cấp công suất động cơ tiêu chuẩn (dãy GB/T, dùng chung với công cụ chọn máy bơm): 0.37, 0.55, 0.75, 1.1, 1.5, 2.2, 3, 4, 5.5, 7.5, 11, 15, 18.5, 22, 30, 37, 45, 55, 75, 90, 110, 132, 160, 185, 200, 220, 250, 280, 315, 355, 400, 450, 500, 560, 630, 710, 800, 900, 1000 kW; Trên 1000 kW, làm tròn lên theo bước 100 kW và cần xác nhận với nhà sản xuất.</p>
 
-    <h4>⑥ 年运行电费</h4>
-    <code>年电费 = (N_ad / K_h) / (η_bl × η_t × η_m) × 运行台数 × 24 × 365 × 电价 / 10000  [万元/年]</code>
-    <p>按平均风量（最大时风量 / K_h）下的实际电机输入功率计算，而非铭牌装机功率。</p>
+    <h4>⑥ Chi phí điện vận hành hằng năm</h4>
+    <code>Chi phí điện hằng năm = (N_ad / K_h) / (η_bl × η_t × η_m) × số máy vận hành × 24 × 365 × Giá điện / 10000  [vạn nhân dân tệ/năm]</code>
+    <p>Tính theo công suất điện đầu vào thực tế của động cơ ở lưu lượng khí trung bình (lưu lượng giờ lớn nhất / K_h), không phải công suất lắp đặt ghi trên nhãn.</p>
   </div>
 
   <div class="note">
-    ℹ️ <b>选型要点：</b>①风量按最大时工况（K_h）选型；②风压应有 5-15% 余量；③离心风机应避免在喘振区运行，核查风机特性曲线；④磁悬浮风机调速性能好，适合变负荷场景；⑤建议至少备用一台，总台数宜为 3-5 台。<br>
-    📌 <b>参考值说明：</b>机型推荐区间（单台风量、压比：罗茨 ≤1.5 常用、1.5–2.0 慎用；单级离心 1.3–1.8；磁悬浮 1.3–1.9）、磁悬浮单台风量/功率上限（约 200 m³/min（标）/ 300 kW）、离心单台风量上限（约 500 m³/min（标））均为经验参考值，非规范条文，以厂家样本为准。<br>
-    📐 <b>依据：</b>GB 50014-2021《室外排水设计标准》、HJ 576《厌氧-缺氧-好氧活性污泥法》
+    ℹ️ <b>Điểm cần lưu ý khi chọn máy:</b>① Chọn theo lưu lượng ở chế độ giờ lớn nhất (K_h); ② áp suất khí cần dự phòng 5-15%; ③ tránh vận hành máy ly tâm trong vùng mất ổn định, kiểm tra đường đặc tính máy; ④ máy đệm từ điều chỉnh tốc độ tốt, phù hợp tải biến thiên; ⑤ nên dự phòng ít nhất một máy, tổng số nên là 3-5 máy.<br>
+    📌 <b>Giải thích giá trị tham khảo:</b>Các khoảng khuyến nghị (lưu lượng mỗi máy, tỷ số áp suất: Roots ≤1.5 thường dùng, 1.5–2.0 cần thận trọng; ly tâm một cấp 1.3–1.8; đệm từ 1.3–1.9), giới hạn lưu lượng/công suất mỗi máy đệm từ (khoảng 200 m³/min (tiêu chuẩn)/ 300 kW) và giới hạn lưu lượng mỗi máy ly tâm (khoảng 500 m³/min (tiêu chuẩn)) là giá trị tham khảo theo kinh nghiệm, không phải điều khoản tiêu chuẩn; đối chiếu tài liệu nhà sản xuất.<br>
+    📐 <b>Căn cứ:</b>GB 50014-2021 “Tiêu chuẩn thiết kế hệ thống thoát nước ngoài nhà”, HJ 576 “Phương pháp bùn hoạt tính kỵ khí - thiếu khí - hiếu khí”
   </div>
 
 </div>
@@ -756,65 +756,65 @@
         <a href="index.html" class="brand">
           <div class="brand-mark">W</div>
           <div>
-            <div class="brand-name">水处理工具箱</div>
-            <div class="brand-sub">WaterKit · by 登登科技</div>
+            <div class="brand-name">Bộ công cụ xử lý nước</div>
+            <div class="brand-sub">WaterKit · by Dengdeng Technology</div>
           </div>
         </a>
-        <p class="footer-about">水处理工具箱(WaterKit)是海南登登科技咨询有限公司推出的水处理在线计算工具集合,由一线水处理工艺工程师开发维护。免费、持续更新。</p>
+        <p class="footer-about">Bộ công cụ xử lý nước (WaterKit) là bộ công cụ tính toán trực tuyến của Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam, do các kỹ sư công nghệ xử lý nước phát triển và duy trì. Miễn phí và được cập nhật liên tục.</p>
       </div>
       <div class="footer-col">
-        <h4>水力计算</h4>
+        <h4>Tính toán thủy lực</h4>
         <ul>
-          <li><a href="pipe-hydraulic-calculator.html">管道水力</a></li>
-          <li><a href="pipe-hydraulic-pro.html">管道水力（加强版）</a></li>
-          <li><a href="open-channel-calculator.html">明渠水力</a></li>
-          <li><a href="weir-flow-calculator.html">堰流计算</a></li>
-          <li><a href="orifice-nozzle-calculator.html">孔口出流</a></li>
+          <li><a href="pipe-hydraulic-calculator.html">Thủy lực đường ống</a></li>
+          <li><a href="pipe-hydraulic-pro.html">Thủy lực đường ống (bản nâng cao)</a></li>
+          <li><a href="open-channel-calculator.html">Thủy lực kênh hở</a></li>
+          <li><a href="weir-flow-calculator.html">Tính lưu lượng qua đập tràn</a></li>
+          <li><a href="orifice-nozzle-calculator.html">Dòng chảy qua lỗ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>工艺与设备</h4>
+        <h4>Công nghệ và thiết bị</h4>
         <ul>
-          <li><a href="aeration-calculator.html">曝气量</a></li>
-          <li><a href="sludge-production-calculator.html">污泥产量</a></li>
-          <li><a href="dosing-calculator.html">加药量</a></li>
-          <li><a href="activated-sludge-process-calculator.html">活性污泥工艺</a></li>
-          <li><a href="mbbr-design.html">MBBR 工程设计</a></li>
-          <li><a href="ifas-design.html">IFAS 工程设计</a></li>
-          <li><a href="mbr-design.html">MBR 工程设计</a></li>
-          <li><a href="ro-design.html">RO 反渗透设计</a></li>
-          <li><a href="pump-selection-calculator.html">水泵选型</a></li>
-          <li><a href="blower-selection-calculator.html">鼓风机选型</a></li>
-          <li><a href="water-quality-unit-converter.html">水质换算</a></li>
+          <li><a href="aeration-calculator.html">Lượng khí sục</a></li>
+          <li><a href="sludge-production-calculator.html">Lượng bùn phát sinh</a></li>
+          <li><a href="dosing-calculator.html">Lượng hóa chất định lượng</a></li>
+          <li><a href="activated-sludge-process-calculator.html">Công nghệ bùn hoạt tính</a></li>
+          <li><a href="mbbr-design.html">Thiết kế công trình MBBR</a></li>
+          <li><a href="ifas-design.html">Thiết kế công trình IFAS</a></li>
+          <li><a href="mbr-design.html">Thiết kế công trình MBR</a></li>
+          <li><a href="ro-design.html">Thiết kế thẩm thấu ngược (RO)</a></li>
+          <li><a href="pump-selection-calculator.html">Chọn máy bơm</a></li>
+          <li><a href="blower-selection-calculator.html">Chọn máy thổi khí</a></li>
+          <li><a href="water-quality-unit-converter.html">Quy đổi chất lượng nước</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>水产养殖</h4>
+        <h4>Nuôi trồng thủy sản</h4>
         <ul>
-          <li><a href="tailwater.html">池塘养殖尾水处理</a></li>
-          <li><a href="aquanor-2027-guide-cn.html">Aqua Nor 2027 观展指南</a></li>
+          <li><a href="tailwater.html">Xử lý nước thải sau nuôi thủy sản trong ao</a></li>
+          <li><a href="aquanor-2027-guide-cn.html">Hướng dẫn tham quan triển lãm Aqua Nor 2027</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Công ty</h4>
         <ul>
-          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">登登科技官网 ↗</a></li>
-          <li>海南登登科技咨询</li>
-          <li>有限公司</li>
+          <li><a href="https://dengdengtech.cn" target="_blank" rel="noopener">Trang web chính thức của Dengdeng Technology ↗</a></li>
+          <li>Tư vấn Công nghệ Dengdeng Hải Nam</li>
+          <li>Công ty TNHH</li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Open Source</h4>
+        <h4>Mã nguồn mở</h4>
         <ul>
-          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">GitHub 仓库 ↗</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 协议</a></li>
-          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Kho mã GitHub ↗</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/blob/main/LICENSE" target="_blank" rel="noopener">Giấy phép AGPL-3.0</a></li>
+          <li><a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">Gửi phản hồi qua Issue</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 海南登登科技咨询有限公司 · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
-      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">开源于 GitHub</a></span>
+      <span>© 2026 Công ty TNHH Tư vấn Công nghệ Dengdeng Hải Nam · <a href="https://dengdengtech.cn" target="_blank" rel="noopener">dengdengtech.cn</a></span>
+      <span>WaterKit · V 1.0 · <a href="https://github.com/chengsunmail/waterkit" target="_blank" rel="noopener">Mã nguồn mở trên GitHub</a></span>
     </div>
   </div>
 </footer>
@@ -822,7 +822,7 @@
 <script>
   const $ = id => document.getElementById(id);
 
-  // 标准电机功率档位（GB/T 系列，与水泵选型计算器共用同一列表）
+  // 标准电机Công suất档位（GB/T 系列，与Chọn máy bơm计算器共用同一列表）
   const STD_MOTORS = [0.37,0.55,0.75,1.1,1.5,2.2,3,4,5.5,7.5,11,15,18.5,22,30,37,45,55,75,90,110,132,160,185,200,220,250,280,315,355,400,450,500,560,630,710,800,900,1000];
 
   function nextStdMotor(kw) {
@@ -837,20 +837,20 @@
   // 输入校验：返回错误信息列表，并给不合格输入框加 .invalid
   function validateInputs(vals) {
     const rules = [
-      ['Q_avg',   v => v > 0,             '请输入大于 0 的平均供气量'],
-      ['Kh',      v => v > 0,             '请输入大于 0 的最大时系数 K_h'],
-      ['n_run',   v => Number.isInteger(v) && v >= 1, '运行台数应为不少于 1 的整数'],
-      ['H_pool',  v => v >= 0,            '扩散器淹没深度不能为负值'],
-      ['dP_diff', v => v >= 0,            '曝气器背压不能为负值'],
-      ['dP_pipe', v => v >= 0,            '管道阻力不能为负值'],
-      ['fs',      v => v > 0,             '请输入大于 0 的安全余量系数 f_s'],
-      ['alt',     v => v > -500 && v < 6000, '海拔高度应在 -500 ~ 6000 m 之间'],
-      ['T_inlet', v => v > -50 && v < 80, '进气温度应在 -50 ~ 80 ℃ 之间'],
-      ['eta_bl',  v => v > 0 && v <= 100, '风机效率 η_bl 应在 0–100% 之间（大于 0）'],
-      ['eta_t',   v => v > 0 && v <= 100, '传动效率 η_t 应在 0–100% 之间（大于 0）'],
-      ['eta_m',   v => v > 0 && v <= 100, '电机效率 η_m 应在 0–100% 之间（大于 0）'],
-      ['motor_margin', v => v > 0,        '请输入大于 0 的电机余量系数 k_m'],
-      ['price',   v => v >= 0,            '电价不能为负值'],
+      ['Q_avg',   v => v > 0,             'Vui lòng nhập lưu lượng cấp khí trung bình lớn hơn 0'],
+      ['Kh',      v => v > 0,             'Vui lòng nhập hệ số giờ lớn nhất K_h lớn hơn 0'],
+      ['n_run',   v => Number.isInteger(v) && v >= 1, 'Số máy vận hành phải là số nguyên không nhỏ hơn 1'],
+      ['H_pool',  v => v >= 0,            'Độ ngập của bộ phân phối khí không được âm'],
+      ['dP_diff', v => v >= 0,            'Áp suất ngược của thiết bị sục khí không được âm'],
+      ['dP_pipe', v => v >= 0,            'Trở lực đường ống không được âm'],
+      ['fs',      v => v > 0,             'Vui lòng nhập hệ số dự phòng an toàn f_s lớn hơn 0'],
+      ['alt',     v => v > -500 && v < 6000, 'Độ cao so với mực nước biển phải trong khoảng -500 ~ 6000 m'],
+      ['T_inlet', v => v > -50 && v < 80, 'Nhiệt độ khí đầu vào phải trong khoảng -50 ~ 80 ℃'],
+      ['eta_bl',  v => v > 0 && v <= 100, 'Hiệu suất máy thổi khí η_bl phải trong khoảng 0–100% (lớn hơn 0)'],
+      ['eta_t',   v => v > 0 && v <= 100, 'Hiệu suất truyền động η_t phải trong khoảng 0–100% (lớn hơn 0)'],
+      ['eta_m',   v => v > 0 && v <= 100, 'Hiệu suất động cơ η_m phải trong khoảng 0–100% (lớn hơn 0)'],
+      ['motor_margin', v => v > 0,        'Vui lòng nhập hệ số dự phòng động cơ k_m lớn hơn 0'],
+      ['price',   v => v >= 0,            'Giá điện không được âm'],
     ];
     const errs = [];
     rules.forEach(([id, ok, msg]) => {
@@ -890,11 +890,11 @@
     const eta_m   = vals.eta_m / 100;
     const k_m     = vals.motor_margin;
 
-    // ── 风量 ────────────────────────────────────────────────────
-    const Q_max    = Q_avg * Kh;                          // m³/min（标）
-    const Q_unit   = Q_max / n_run;                       // 单台 m³/min（标）
+    // ── Lưu lượng khí ────────────────────────────────────────────────────
+    const Q_max    = Q_avg * Kh;                          // m³/min (tiêu chuẩn)
+    const Q_unit   = Q_max / n_run;                       // 单máy m³/min (tiêu chuẩn)
 
-    // ── 风压 ────────────────────────────────────────────────────
+    // ── Áp suất khí ────────────────────────────────────────────────────
     const dP_water = 9.8 * H_pool;                       // kPa 水柱静压
     const dP_raw   = dP_water + dP_diff + dP_pipe;       // kPa 裸压
     const dP_total = dP_raw * fs;                         // kPa 含余量
@@ -907,21 +907,21 @@
     // 温度+压力修正：标准 20°C、101.325 kPa → 实际进气 T°C、P1（需在 P1 之后计算）
     const Q_actual = Q_unit * (273.15 + T_inlet) / 293.15 * 101.325 / P1; // m³/min
 
-    // ── 功率 ────────────────────────────────────────────────────
+    // ── Công suất ────────────────────────────────────────────────────
     const kappa = 1.4;
     const exp   = (kappa - 1) / kappa;                   // 0.2857
-    // 绝热功率（kW）：Q 换算 m³/s，P 单位 kPa → ×1000 → Pa → ÷1000 = kW
+    // 绝热Công suất（kW）：Q 换算 m³/s，P 单位 kPa → ×1000 → Pa → ÷1000 = kW
     const Q_m3s  = Q_actual / 60;                         // m³/s
     const N_ad   = (kappa / (kappa - 1)) * P1 * 1000 * Q_m3s * (Math.pow(pr, exp) - 1) / 1000;
     const N_shaft  = eta_bl > 0 ? N_ad / eta_bl : 0;
-    // 电机铭牌功率为轴输出功率：只计传动损失，电机效率只用于电耗（与水泵选型页口径一致）
+    // 电机铭牌Công suất为轴输出Công suất：只计传动损失，Hiệu suất động cơ只用于电耗（与Chọn máy bơm页口径一致）
     const N_motor_calc = eta_t > 0 ? N_shaft / eta_t : 0;
-    const N_motor_std  = nextStdMotor(N_motor_calc * k_m);  // 乘电机余量系数 k_m（默认 1.1）后取标准档
+    const N_motor_std  = nextStdMotor(N_motor_calc * k_m);  // 乘Hệ số dự phòng động cơ k_m（默认 1.1）后取标准档
     const N_total      = N_motor_std * n_run;
-    // 年电费：按平均风量下的实际电功率（N_ad 与风量成正比，平均工况 = 最大时工况 / Kh），而非铭牌功率
-    const price        = vals.price;                                      // 元/kWh（允许 0）
-    const N_elec_avg   = (eta_t * eta_m) > 0 ? (N_ad / Kh) / eta_bl / eta_t / eta_m : 0; // 单台平均工况电功率 kW
-    const annual_cost  = N_elec_avg * n_run * 24 * 365 * price / 10000;   // 万元/年
+    // Chi phí điện hằng năm：按平均Lưu lượng khí下的实际电Công suất（N_ad 与Lưu lượng khí成正比，平均工况 = 最大时工况 / Kh），而非铭牌Công suất
+    const price        = vals.price;                                      // nhân dân tệ/kWh（允许 0）
+    const N_elec_avg   = (eta_t * eta_m) > 0 ? (N_ad / Kh) / eta_bl / eta_t / eta_m : 0; // 单máy平均工况电Công suất kW
+    const annual_cost  = N_elec_avg * n_run * 24 * 365 * price / 10000;   // vạn nhân dân tệ/năm
 
     // ── 渲染结果 ─────────────────────────────────────────────────
     const set = (id, v, dec = 1) => { const el = $(id); if (el) el.textContent = typeof v === 'number' ? v.toFixed(dec) : v; };
@@ -943,48 +943,48 @@
     set('r_N_total',  fmtMotor(N_total));
     set('r_annual_cost', annual_cost, 1);
 
-    // ── 机型推荐 ─────────────────────────────────────────────────
-    // 判断各机型匹配度：压力以压比 P₂/P₁ 为口径（与下方压比校核一致），风量按单台风量区间；均为参考值
-    // 等级：2 = ✓，1 = ⚠，0 = ✗；卡片等级取压比与风量两者中较差者
+    // ── 机型Khuyến nghị ─────────────────────────────────────────────────
+    // 判断各机型匹配度：压力以Tỷ số áp suất P₂/P₁ 为口径（与下方Tỷ số áp suất校核一致），Lưu lượng khí按Lưu lượng khí mỗi máy区间；均为giá trị tham khảo
+    // 等级：2 = ✓，1 = ⚠，0 = ✗；卡片等级取Tỷ số áp suất与Lưu lượng khí两者中较差者
     const prLevel = (lo_ok, hi_ok, hi_warn) =>
       (pr >= lo_ok && pr <= hi_ok) ? 2 : (pr < lo_ok || (hi_warn && pr <= hi_warn)) ? 1 : 0;
     const blowers = [
-      { key: 'roots', type: '罗茨鼓风机', q: [1, 200], prTxt: '≤ 1.5 ✓；1.5–2.0 慎用',
+      { key: 'roots', type: 'Máy thổi khí Roots', q: [1, 200], prTxt: '≤ 1.5 ✓; 1.5–2.0 Cần thận trọng',
         prL: prLevel(0, 1.5, 2.0),
-        prNote: { 1: '压比 1.5–2.0，罗茨已超常用区，温升、噪音和泄漏增大', 0: '压比 > 2.0，超出罗茨适用范围' },
-        pros: '✓ 结构简单，维护方便<br>✓ 价格低，国产化程度高<br>✓ 适合中小型污水处理厂',
-        cons: '✗ 噪音大（85-95 dB），需隔音<br>✗ 效率偏低（60-75%）<br>✗ 风量调节范围有限' },
-      { key: 'cent', type: '单级高速离心鼓风机', q: [15, 500], prTxt: '1.3–1.8 ✓',
+        prNote: { 1: 'Tỷ số áp suất 1.5–2.0 vượt vùng thường dùng của máy Roots; độ tăng nhiệt, tiếng ồn và rò rỉ tăng', 0: 'Tỷ số áp suất > 2.0, vượt phạm vi áp dụng của máy Roots' },
+        pros: '✓ Kết cấu đơn giản, dễ bảo trì<br>✓ Giá thấp, tỷ lệ nội địa hóa cao<br>✓ Phù hợp nhà máy xử lý nước thải quy mô nhỏ và vừa',
+        cons: '✗ Độ ồn cao (85-95 dB), cần cách âm<br>✗ Hiệu suất tương đối thấp (60-75%)<br>✗ Phạm vi điều chỉnh lưu lượng khí hạn chế' },
+      { key: 'cent', type: 'Máy thổi khí ly tâm tốc độ cao một cấp', q: [15, 500], prTxt: '1.3–1.8 ✓',
         prL: prLevel(1.3, 1.8, 0),
-        prNote: { 1: '压比 < 1.3，低于离心鼓风机常用区，效率偏低', 0: '压比 > 1.8，超出单级离心常用范围' },
-        pros: '✓ 效率高（75-85%），可变频<br>✓ 噪音相对较低<br>✓ 适合大中型污水处理厂',
-        cons: '✗ 注意喘振区，需配防喘振阀<br>✗ 造价高于罗茨<br>✗ 调速范围受限（一般 70-100%）' },
-      { key: 'mag', type: '磁悬浮/空气悬浮鼓风机', q: [5, 200], prTxt: '1.3–1.9 ✓',
+        prNote: { 1: 'Tỷ số áp suất < 1.3, thấp hơn vùng thường dùng của máy ly tâm, hiệu suất tương đối thấp', 0: 'Tỷ số áp suất > 1.8, vượt phạm vi thường dùng của máy ly tâm một cấp' },
+        pros: '✓ Hiệu suất cao (75-85%), có thể dùng biến tần<br>✓ Độ ồn tương đối thấp<br>✓ Phù hợp nhà máy xử lý nước thải quy mô vừa và lớn',
+        cons: '✗ Cần chú ý vùng mất ổn định và lắp van chống mất ổn định<br>✗ Chi phí cao hơn máy Roots<br>✗ Phạm vi điều chỉnh tốc độ hạn chế (thường 70-100%)' },
+      { key: 'mag', type: 'Máy thổi khí đệm từ/đệm khí', q: [5, 200], prTxt: '1.3–1.9 ✓',
         prL: prLevel(1.3, 1.9, 0),
-        prNote: { 1: '压比 < 1.3，低于磁悬浮常用区，效率偏低', 0: '压比 > 1.9，超出磁悬浮常用范围' },
-        pros: '✓ 效率最高（80-88%）<br>✓ 调速范围广（30-100%）<br>✓ 免润滑，维护成本极低<br>✓ 噪音低（<80 dB）',
-        cons: '✗ 造价高（约为罗茨的 3-5 倍）<br>✗ 单台功率上限约 300 kW（参考值，以厂家样本为准）<br>✗ 对电网质量要求较高' },
+        prNote: { 1: 'Tỷ số áp suất < 1.3, thấp hơn vùng thường dùng của máy đệm từ, hiệu suất tương đối thấp', 0: 'Tỷ số áp suất > 1.9, vượt phạm vi thường dùng của máy đệm từ' },
+        pros: '✓ Hiệu suất cao nhất (80-88%)<br>✓ Phạm vi điều chỉnh tốc độ rộng (30-100%)<br>✓ Không cần bôi trơn, chi phí bảo trì rất thấp<br>✓ Độ ồn thấp (<80 dB)',
+        cons: '✗ Chi phí cao (khoảng 3-5 lần máy Roots)<br>✗ Giới hạn công suất mỗi máy khoảng 300 kW (giá trị tham khảo, đối chiếu tài liệu nhà sản xuất)<br>✗ Yêu cầu chất lượng điện lưới tương đối cao' },
     ];
     blowers.forEach(c => {
       c.qL = (Q_unit >= c.q[0] && Q_unit <= c.q[1]) ? 2 : 1;
       c.level = Math.min(c.prL, c.qL);
       const notes = [];
       if (c.prL < 2) notes.push(c.prNote[c.prL]);
-      if (c.qL < 2) notes.push(`单台风量 ${Q_unit.toFixed(1)} m³/min（标）不在 ${c.q[0]}–${c.q[1]} 区间`);
-      c.note = notes.join('；');
+      if (c.qL < 2) notes.push(`Lưu lượng khí mỗi máy ${Q_unit.toFixed(1)} m³/min (tiêu chuẩn) không nằm trong khoảng ${c.q[0]}–${c.q[1]}`);
+      c.note = notes.join('; ');
     });
     const maxLevel = Math.max(...blowers.map(c => c.level));
     const cards = blowers.map(c => ({
       type: c.type,
-      range: `风量：${c.q[0]}-${c.q[1]} m³/min（标）<br>压比 P₂/P₁：${c.prTxt}（参考值）<br>单台：${Q_unit.toFixed(1)} m³/min（标） / 压比 ${pr.toFixed(2)}`,
+      range: `Lưu lượng khí: ${c.q[0]}-${c.q[1]} m³/min (tiêu chuẩn)<br>Tỷ số áp suất P₂/P₁: ${c.prTxt} (giá trị tham khảo)<br>Mỗi máy: ${Q_unit.toFixed(1)} m³/min (tiêu chuẩn) / Tỷ số áp suất ${pr.toFixed(2)}`,
       pros: c.pros, cons: c.cons, score: c.level, max: maxLevel, note: c.note,
     }));
 
     $('blowerCards').innerHTML = cards.map(c => {
       const isRec = c.score === c.max && c.score > 0;
       const matchClass = c.score === 2 ? 'match-good' : c.score === 1 ? (c.max === 2 ? 'match-info' : 'match-ok') : 'match-poor';
-      // 已有机型 ✓ 时，其余机型的“部分匹配”属选型比较信息 → ℹ；无机型 ✓ 时才用 ⚠
-      const matchText  = (c.score === 2 ? '✓ 参数匹配' : c.score === 1 ? (c.max === 2 ? 'ℹ 部分匹配' : '⚠ 部分匹配') : '✗ 超出范围') + '（参考值）';
+      // 已有机型 ✓ 时，其余机型的“Phù hợp một phần”属选型比较信息 → ℹ；无机型 ✓ 时才用 ⚠
+      const matchText  = (c.score === 2 ? '✓ Thông số phù hợp' : c.score === 1 ? (c.max === 2 ? 'ℹ Phù hợp một phần' : '⚠ Phù hợp một phần') : '✗ Vượt phạm vi') + ' (giá trị tham khảo)';
       return `<div class="blower-card${isRec ? ' recommended' : ''}">
         <div class="blower-type">${c.type}</div>
         <div class="blower-range">${c.range}</div>
@@ -997,61 +997,61 @@
     // ── 校核 ─────────────────────────────────────────────────────
     const checks = [];
 
-    // 压力比校核：由机型卡片结果生成，口径一致（罗茨 ≤1.5 ✓、1.5–2.0 ⚠；离心 1.3–1.8 ✓；磁悬浮 1.3–1.9 ✓；均为参考值）
+    // 压力比校核：由机型卡片结果生成，口径一致（罗茨 ≤1.5 ✓、1.5–2.0 ⚠；离心 1.3–1.8 ✓；磁悬浮 1.3–1.9 ✓；均为giá trị tham khảo）
     {
       const sym = l => l === 2 ? '✓' : l === 1 ? '⚠' : '✗';
-      const symTxt = l => l === 2 ? '✓' : l === 1 ? '慎用' : '不适用';   // 行内机型评价用文字, 行首图标表示本行级别
-      const summary = blowers.map(c => `${c.type.replace('鼓风机','')} ${symTxt(c.prL)}`).join('，');
+      const symTxt = l => l === 2 ? '✓' : l === 1 ? 'Cần thận trọng' : 'Không phù hợp';   // 行内机型评价用文字, 行首图标表示本行级别
+      const summary = blowers.map(c => `${c.type.replace('Máy thổi khí ','')} ${symTxt(c.prL)}`).join(', ');
       const nGood = blowers.filter(c => c.prL === 2).length;
-      // 至少一种机型压比 ✓ 时，设计压比本身可行，此行属选型建议 → ℹ 信息样式；三种机型均无 ✓ 时才 ⚠（有慎用机型）/✗（均超范围）
+      // 至少一种机型Tỷ số áp suất ✓ 时，设计Tỷ số áp suất本身可行，此行属选型建议 → ℹ 信息样式；三种机型均无 ✓ 时才 ⚠（有Cần thận trọng机型）/✗（均超范围）
       const type = nGood === blowers.length ? 'ok' : nGood > 0 ? 'info' : blowers.some(c => c.prL === 1) ? 'warn' : 'bad';
-      const tail = nGood === 0 ? '；三种单级机型均不在常用压比区间，建议考虑多级压缩或降低扩散器淹没深度/系统阻力' :
-                   nGood < blowers.length ? `；结合单台风量，建议优先选 ${(blowers.some(c => c.level === 2) ? blowers.filter(c => c.level === 2) : blowers.filter(c => c.prL === 2)).map(c => c.type).join('、')}（同机型卡片“推荐”）` : '';
+      const tail = nGood === 0 ? '; cả ba loại máy một cấp đều ngoài khoảng tỷ số áp suất thường dùng; cân nhắc nén nhiều cấp hoặc giảm độ ngập bộ phân phối khí/trở lực hệ thống' :
+                   nGood < blowers.length ? `; xét lưu lượng khí mỗi máy, nên ưu tiên chọn ${(blowers.some(c => c.level === 2) ? blowers.filter(c => c.level === 2) : blowers.filter(c => c.prL === 2)).map(c => c.type).join(', ')} (theo mục “Khuyến nghị” trên thẻ loại máy)` : '';
       checks.push({type, ic: type === 'info' ? 'ℹ' : sym(type === 'ok' ? 2 : type === 'warn' ? 1 : 0),
-        text:`压力比 ${pr.toFixed(3)}：${summary}${tail}（压比区间为参考值，以厂家样本为准）`});
+        text:`Tỷ số áp suất ${pr.toFixed(3)}: ${summary}${tail} (khoảng tỷ số áp suất chỉ để tham khảo, đối chiếu tài liệu nhà sản xuất)`});
     }
 
-    // 台数校核
+    // máy数校核
     if (n_run < 2) {
-      checks.push({type:'warn', ic:'⚠', text:'运行台数为 1 台，无法通过台数调节风量，建议至少 2 台并联运行，另备 1 台'});
+      checks.push({type:'warn', ic:'⚠', text:'Chỉ có 1 máy vận hành, không thể điều chỉnh lưu lượng bằng số máy; nên vận hành song song ít nhất 2 máy và dự phòng thêm 1 máy'});
     } else if (n_run > 6) {
-      checks.push({type:'warn', ic:'⚠', text:`运行台数 ${n_run} 台偏多，管理维护复杂，通常 2-4 台为宜`});
+      checks.push({type:'warn', ic:'⚠', text:`số máy vận hành ${n_run} máy là khá nhiều, việc quản lý và bảo trì phức tạp; thường nên dùng 2-4 máy`});
     } else {
-      checks.push({type:'ok', ic:'✓', text:`运行 ${n_run} 台并联，具备台数调节能力，建议另设 1 台备用`});
+      checks.push({type:'ok', ic:'✓', text:`Vận hành ${n_run} máy song song, có thể điều chỉnh bằng số máy; nên bố trí thêm 1 máy dự phòng`});
     }
 
-    // 单台风量校核
+    // Lưu lượng khí mỗi máy校核
     if (Q_unit < 1) {
-      checks.push({type:'warn', ic:'⚠', text:`单台风量 ${Q_unit.toFixed(2)} m³/min（标） 过小，建议减少台数或合并`});
+      checks.push({type:'warn', ic:'⚠', text:`Lưu lượng khí mỗi máy ${Q_unit.toFixed(2)} m³/min (tiêu chuẩn) quá nhỏ, nên giảm số máy hoặc gộp lại`});
     } else if (Q_unit > 500) {
-      checks.push({type:'warn', ic:'⚠', text:`单台风量 ${Q_unit.toFixed(0)} m³/min（标） 超大，国内离心风机单台上限约 500 m³/min（标）（参考值，以厂家样本为准），请核查`});
+      checks.push({type:'warn', ic:'⚠', text:`Lưu lượng khí mỗi máy ${Q_unit.toFixed(0)} m³/min (tiêu chuẩn) rất lớn; giới hạn mỗi máy ly tâm trong nước khoảng 500 m³/min (tiêu chuẩn) (giá trị tham khảo, đối chiếu tài liệu nhà sản xuất), cần kiểm tra`});
     } else {
-      checks.push({type:'ok', ic:'✓', text:`单台风量 ${Q_unit.toFixed(1)} m³/min（标），在常用范围内`});
+      checks.push({type:'ok', ic:'✓', text:`Lưu lượng khí mỗi máy ${Q_unit.toFixed(1)} m³/min (tiêu chuẩn), nằm trong phạm vi thường dùng`});
     }
 
-    // 风压校核
+    // Áp suất khí校核
     if (dP_total < 30) {
-      checks.push({type:'warn', ic:'⚠', text:`设计风压 ${dP_total.toFixed(1)} kPa 偏低，请核查扩散器淹没深度和曝气器背压`});
+      checks.push({type:'warn', ic:'⚠', text:`Áp suất khí thiết kế ${dP_total.toFixed(1)} kPa khá thấp, vui lòng kiểm tra độ ngập của bộ phân phối khí và áp suất ngược của thiết bị sục khí`});
     } else if (dP_total > 120) {
-      checks.push({type:'warn', ic:'⚠', text:`设计风压 ${dP_total.toFixed(1)} kPa > 120 kPa，超出单级鼓风机常用范围，考虑减小扩散器淹没深度或采用两级压缩`});
+      checks.push({type:'warn', ic:'⚠', text:`Áp suất khí thiết kế ${dP_total.toFixed(1)} kPa > 120 kPa, vượt phạm vi thường dùng của máy thổi khí một cấp; cân nhắc giảm độ ngập của bộ phân phối khí hoặc dùng nén hai cấp`});
     } else {
-      checks.push({type:'ok', ic:'✓', text:`设计风压 ${dP_total.toFixed(1)} kPa，在单级鼓风机常用范围内`});
+      checks.push({type:'ok', ic:'✓', text:`Áp suất khí thiết kế ${dP_total.toFixed(1)} kPa, nằm trong phạm vi thường dùng của máy thổi khí một cấp`});
     }
-    // 风压安全余量系数校核（常用经验区间 1.05–1.25，非规范条文）
+    // Hệ số dự phòng an toàn áp suất khí校核（常用经验区间 1.05–1.25，非规范条文）
     if (fs >= 1.05 && fs <= 1.25) {
-      checks.push({type:'ok', ic:'✓', text:`风压安全余量系数 f_s = ${fs}（含 ${((fs-1)*100).toFixed(0)}% 余量），在常用经验范围 1.05–1.25 内`});
+      checks.push({type:'ok', ic:'✓', text:`Hệ số dự phòng an toàn áp suất khí f_s = ${fs} (bao gồm ${((fs-1)*100).toFixed(0)}% dự phòng), nằm trong phạm vi kinh nghiệm thường dùng 1.05–1.25`});
     } else if (fs < 1.05) {
-      checks.push({type:'warn', ic:'⚠', text:`风压安全余量系数 f_s = ${fs} 小于 1.05，余量不足，建议取 1.05-1.15`});
+      checks.push({type:'warn', ic:'⚠', text:`Hệ số dự phòng an toàn áp suất khí f_s = ${fs} nhỏ hơn 1.05, dự phòng không đủ, nên chọn 1.05-1.15`});
     } else {
-      checks.push({type:'warn', ic:'⚠', text:`风压安全余量系数 f_s = ${fs} 大于 1.25，余量过大易导致风机选型偏大、长期低效运行，建议取 1.05-1.15`});
+      checks.push({type:'warn', ic:'⚠', text:`Hệ số dự phòng an toàn áp suất khí f_s = ${fs} lớn hơn 1.25, dự phòng quá lớn dễ dẫn đến chọn máy quá lớn và vận hành kém hiệu quả lâu dài; nên chọn 1.05-1.15`});
     }
 
     // 效率校核
     const eta_overall = eta_bl * eta_t * eta_m;
     if (eta_overall < 0.5) {
-      checks.push({type:'warn', ic:'⚠', text:`综合效率 ${(eta_overall*100).toFixed(0)}% 偏低，建议提高风机和传动效率`});
+      checks.push({type:'warn', ic:'⚠', text:`Hiệu suất tổng hợp ${(eta_overall*100).toFixed(0)}% khá thấp, nên nâng cao hiệu suất máy thổi khí và truyền động`});
     } else {
-      checks.push({type:'ok', ic:'✓', text:`综合效率 ${(eta_overall*100).toFixed(0)}%（风机 × 传动 × 电机）`});
+      checks.push({type:'ok', ic:'✓', text:`Hiệu suất tổng hợp ${(eta_overall*100).toFixed(0)}% (máy thổi khí × truyền động × động cơ)`});
     }
 
     $('checkList').innerHTML = checks.map(c =>
@@ -1066,29 +1066,29 @@
 
   function copyResult() {
     const checks = [...document.querySelectorAll('#checkList .check-item')].map(e => e.textContent.trim()).join('\n');
-    const txt = `鼓风机选型计算结果（WaterKit）
-（m³/min（标）= 标准状态 20 ℃、101.325 kPa）
-平均供气量 = ${$('r_Q_avg').textContent} m³/min（标）
-最大时供气量 = ${$('r_Q_max').textContent} m³/min（标）
-单台风量 = ${$('r_Q_unit').textContent} m³/min（标）
-单台实际进气量 = ${$('r_Q_actual').textContent} m³/min
-设计总风压 = ${$('r_dP_total').textContent} kPa
-进气/出口绝对压力 P₁/P₂ = ${$('r_P1').textContent} / ${$('r_P2').textContent} kPa(abs)
-压力比 P₂/P₁ = ${$('r_pr').textContent}
-单台绝热功率 = ${$('r_N_ad').textContent} kW
-单台轴功率 = ${$('r_N_shaft').textContent} kW
-配套电机功率（计算值）= ${$('r_N_motor').textContent} kW
-标准电机规格（×${$('motor_margin').value} 后取档）= ${$('r_N_std').textContent} kW
-运行台装机总功率 = ${$('r_N_total').textContent} kW
-年运行电费估算 = ${$('r_annual_cost').textContent} 万元/年
+    const txt = `Kết quả tính chọn máy thổi khí (WaterKit)
+ (m³/min (tiêu chuẩn)= điều kiện tiêu chuẩn 20 ℃, 101.325 kPa)
+Lưu lượng cấp khí trung bình = ${$('r_Q_avg').textContent} m³/min (tiêu chuẩn)
+Lưu lượng cấp khí giờ lớn nhất = ${$('r_Q_max').textContent} m³/min (tiêu chuẩn)
+Lưu lượng khí mỗi máy = ${$('r_Q_unit').textContent} m³/min (tiêu chuẩn)
+Lưu lượng khí đầu vào thực tế mỗi máy = ${$('r_Q_actual').textContent} m³/min
+Tổng áp suất khí thiết kế = ${$('r_dP_total').textContent} kPa
+Áp suất tuyệt đối đầu vào/đầu ra P₁/P₂ = ${$('r_P1').textContent} / ${$('r_P2').textContent} kPa(abs)
+Tỷ số áp suất P₂/P₁ = ${$('r_pr').textContent}
+Công suất đoạn nhiệt mỗi máy = ${$('r_N_ad').textContent} kW
+Công suất trục mỗi máy = ${$('r_N_shaft').textContent} kW
+Công suất động cơ đi kèm (giá trị tính toán)= ${$('r_N_motor').textContent} kW
+Công suất động cơ tiêu chuẩn (×${$('motor_margin').value} rồi chọn cấp)= ${$('r_N_std').textContent} kW
+Tổng công suất lắp đặt của các máy vận hành = ${$('r_N_total').textContent} kW
+Ước tính chi phí điện vận hành hằng năm = ${$('r_annual_cost').textContent} vạn nhân dân tệ/năm
 
-【设计校核】
+[Kiểm tra thiết kế]
 ${checks}`;
-    navigator.clipboard.writeText(txt).then(() => alert('结果已复制')).catch(() => {
+    navigator.clipboard.writeText(txt).then(() => alert('Đã sao chép kết quả')).catch(() => {
       const ta = document.createElement('textarea');
       ta.value = txt; document.body.appendChild(ta); ta.select();
       document.execCommand('copy'); document.body.removeChild(ta);
-      alert('结果已复制');
+      alert('Đã sao chép kết quả');
     });
   }
 
