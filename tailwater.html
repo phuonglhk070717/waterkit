@@ -377,9 +377,9 @@
 
         <div class="group-title">② Quy mô và đối tượng nuôi</div>
         <div class="field"><label for="speciesId">Đối tượng nuôi</label><select id="speciesId"></select></div>
-        <div class="field"><label for="areaMu">Diện tích mặt nước nuôi <span class="hint">亩</span></label><input id="areaMu" type="number" min="0" step="1"></div>
+        <div class="field"><label for="areaMu">Diện tích mặt nước nuôi <span class="hint">mu (亩)</span></label><input id="areaMu" type="number" min="0" step="1"></div>
         <div class="field"><label for="pondDepth">Độ sâu nước trung bình <span class="hint">m</span></label><input id="pondDepth" type="number" min="0.3" step="0.1"></div>
-        <div class="field"><label for="yieldKgMu">Năng suất <span class="hint">kg/亩·周期</span></label><input id="yieldKgMu" type="number" min="0" step="50"></div>
+        <div class="field"><label for="yieldKgMu">Năng suất <span class="hint">kg/mu·chu kỳ</span></label><input id="yieldKgMu" type="number" min="0" step="50"></div>
         <div class="field"><label for="days">Chu kỳ nuôi <span class="hint">d</span></label><input id="days" type="number" min="1" step="10"></div>
 
         <div class="group-title">③ Thành phần thức ăn và sản phẩm <small>quyết định lượng nitơ và photpho đưa vào và lưu giữ</small></div>
@@ -492,7 +492,7 @@
         <li><b>Dùng số liệu đo thực tế nếu có</b>: Tại mục ⑤, đổi “Nguồn TN, TP” thành “Đo tại cơ sở” và nhập TN, TP, SS, COD và nitơ amoni của nước thải thường ngày. Nếu không có số đo, công cụ ước tính bằng cân bằng khối lượng.</li>
         <li><b>Xem kết quả</b>: Năm thẻ phía trên bên phải cho biết tiêu chuẩn áp dụng, tính áp dụng, tổng diện tích hệ thống ba ao hai đập và kết luận đạt chuẩn cho chế độ thường ngày và tháo cạn; bảng bên dưới liệt kê nước đầu vào, đầu ra và giới hạn từng chỉ tiêu.</li>
       </ol>
-      <p class="tip">Ví dụ mặc định: nuôi cá trắm cỏ nước ngọt tại Quảng Đông, diện tích 100 亩, xả vào nguồn nước loại Ⅳ–Ⅴ. Thay đổi số liệu để xem kết quả thay đổi; chọn “Khôi phục mặc định” ở góc trên bên phải để trở lại ví dụ.</p>
+      <p class="tip">Ví dụ mặc định: nuôi cá trắm cỏ nước ngọt tại Quảng Đông, diện tích 100 mu, xả vào nguồn nước loại Ⅳ–Ⅴ. Thay đổi số liệu để xem kết quả thay đổi; chọn «Khôi phục mặc định» ở góc trên bên phải để trở lại ví dụ.</p>
 
       <h3 id="g3">3. Giải thích các thông số đầu vào</h3>
       <h4>① Địa phương và tiêu chuẩn xả thải</h4>
@@ -767,12 +767,12 @@
     /* ---------- 淡水 ---------- */
     { id: 'JX', region: 'Giang Tây', code: 'DB36/1993-2024', water: 'fw', nature: 'Bắt buộc',
       effective: '2025-02-01', existing: '2026-02-01',
-      thresholdMu: 30, thresholdNote: 'Ao nuôi quy mô lớn: liền vùng ≥50 亩 hoặc ao đơn ≥30 亩; áp dụng cho mọi cơ sở nuôi thủy sản trong công trình',
+      thresholdMu: 30, thresholdNote: 'Ao nuôi quy mô lớn: liền vùng ≥50 mu hoặc ao đơn ≥30 mu; áp dụng cho mọi cơ sở nuôi thuỷ sản trong công trình',
       gradeRule: 'JX', grades: { 1: lim(45, 15, 3.0, 0.4, PH_FW), 2: lim(90, 25, 5.0, 0.8, PH_FW) },
       source: 'https://dbba.sacinfo.org.cn/portal/download/6a86e5ad6a7052293bc3f028877994ac8902913607806fc4e00d8f06edeef534' },
     { id: 'GD_FW', region: 'Quảng Đông', code: 'DB44/2462-2024', water: 'fw', nature: 'Bắt buộc',
       effective: '2024-05-01', existing: '2026-05-01',
-      thresholdMu: 30, thresholdNote: 'Ao nuôi ≥30 亩; hệ thống kín như nuôi công nghiệp; <30 亩 áp dụng tham khảo',
+      thresholdMu: 30, thresholdNote: 'Ao nuôi ≥30 mu; hệ thống kín như nuôi công nghiệp; <30 mu áp dụng tham khảo',
       belowThreshold: 'áp dụng tham khảo',
       gradeRule: 'GD', grades: { 1: lim(45, 15, 3.0, 0.4, PH_FW), 2: lim(90, 25, 5.0, 1.0, PH_FW) },
       source: 'https://gdee.gd.gov.cn/gkmlpt/content/4/4382/post_4382815.html' },
@@ -783,14 +783,14 @@
       source: 'https://sthj.sh.gov.cn/cmsres/1e/1e100688b08b4714a9e7e8fe284a33cf/10c673d2f3e9a7eb4b13a02948de3948.pdf' },
     { id: 'JS_FW', region: 'Giang Tô', code: 'DB32/4043-2021', water: 'fw', nature: 'Bắt buộc',
       effective: '2021-08-01', existing: '2023-06-01',
-      thresholdMu: 50, thresholdNote: 'Liền vùng >100 亩; một chủ thể >50 亩; hệ thống kín như nuôi công nghiệp',
+      thresholdMu: 50, thresholdNote: 'Liền vùng >100 mu; một chủ thể >50 mu; hệ thống kín như nuôi công nghiệp',
       gradeRule: 'JS', grades: { 1: lim(40, 15, 3.0, 0.4, PH_FW), 2: lim(85, 25, 6.0, 0.8, PH_FW) },
       special: { label: 'Khu bảo vệ cấp 1 và 2 của hồ Thái Hồ (giới hạn đặc biệt)',
         grades: { 1: lim(40, 8, 2.0, 0.3, PH_FW), 2: lim(80, 12, 3.0, 0.4, PH_FW) } },
       source: 'https://hbj.nantong.gov.cn/ntshbj/upload/d31a39fa-c45b-412d-96c8-d961031e0951.doc' },
     { id: 'FJ_FW', region: 'Phúc Kiến', code: 'DB35/2160-2023', water: 'fw', nature: 'Bắt buộc',
       effective: '2024-01-01', existing: '2024-12-31',
-      thresholdMu: 100, thresholdNote: 'Ao nuôi tập trung liền vùng ≥100 亩; nuôi công nghiệp',
+      thresholdMu: 100, thresholdNote: 'Ao nuôi tập trung liền vùng ≥100 mu; nuôi công nghiệp',
       gradeRule: 'FW_CLASS1_BAN', grades: { 1: lim(45, 10, 3.0, 0.5, PH_FW), 2: lim(90, 20, 5.0, 1.0, PH_FW) },
       special: { label: 'Khu vực/thời kỳ áp dụng giới hạn xả thải đặc biệt do chính quyền quy định',
         grades: { 1: lim(40, 10, 3.0, 0.3, PH_FW), 2: lim(40, 10, 3.0, 0.3, PH_FW) } },
@@ -802,53 +802,53 @@
       source: 'https://amr.hainan.gov.cn/zw/gsgg/qtgsgg/202301/P020230117567354170133.pdf' },
     { id: 'CQ', region: 'Trùng Khánh', code: 'DB50/1544-2023', water: 'fw', nature: 'Bắt buộc',
       effective: '2024-01-01', existing: '2025-01-01',
-      thresholdMu: 30, thresholdNote: 'Diện tích ao nuôi/nuôi công nghiệp >2 hm² (30 亩), hoặc liền vùng >3.33 hm² (50 亩)',
+      thresholdMu: 30, thresholdNote: 'Diện tích ao nuôi/nuôi công nghiệp >2 hm² (30 mu), hoặc liền vùng >3.33 hm² (50 mu)',
       gradeRule: 'FW', grades: { 1: lim(45, 15, 3.0, 0.4, PH_FW), 2: lim(90, 25, 5.0, 0.8, PH_FW) },
       source: 'https://sthjj.cq.gov.cn/zwgk_249/zfxxgkml/kjbz/gjjdfhj/dfhjbz/202312/W020231215378144404479.pdf' },
     { id: 'SC', region: 'Tứ Xuyên', code: 'DB51/3061-2023', water: 'fw', nature: 'Bắt buộc',
       effective: '2023-10-01', existing: '2025-01-01',
       thresholdMu: null, thresholdNote: 'Ao kín và cơ sở nuôi công nghiệp xả vào nguồn nước công cộng, không có ngưỡng quy mô',
-      gradeRule: 'SC', keyArea: '附录 A 重点控制区域 (成都 20 区县、眉山 6、乐山 11、宜宾 3、德阳 4、资阳 3、内江 5、自贡 6、泸州 3、雅安名山, 共 10 市 62 县) 不论水体类别一律执行一级',
+      gradeRule: 'SC', keyArea: 'Khu vực kiểm soát trọng điểm phụ lục A (Thành Đô 20 quận huyện, Mi Sơn 6, Lạc Sơn 11, Nghi Tân 3, Đức Dương 4, Tư Dương 3, Nội Giang 5, Tự Cống 6, Lô Châu 3, Danh Sơn – Nhã An, tổng 10 thành phố 62 huyện) bất kể loại nguồn nước đều áp dụng cấp 1',
       grades: { 1: lim(45, 15, 3.0, 0.4, PH_FW), 2: lim(90, 25, 5.0, 0.8, PH_FW) },
       source: 'https://dbba.sacinfo.org.cn/portal/download/76541c8e17ece48789a3f0cf90e5c7d6038fd61839e0c0c8f067c35b6c8b15ea' },
     { id: 'HA', region: 'Hà Nam', code: 'DB41/2575-2024', water: 'fw', nature: 'Bắt buộc',
       effective: '2024-06-01', existing: '2026-06-01',
-      thresholdMu: 100, thresholdNote: 'Ao nuôi tập trung liền vùng ≥100 亩; ao hình phễu; nuôi công nghiệp',
+      thresholdMu: 100, thresholdNote: 'Ao nuôi tập trung liền vùng ≥100 mu; ao hình phễu; nuôi công nghiệp',
       gradeRule: 'HA', grades: { 1: lim(45, 15, 8, 0.5, PH_FW), 2: lim(90, 25, 15, 1.0, PH_FW) },
       source: 'https://dbba.sacinfo.org.cn/portal/download/d40e53f654a52729b50edcbac3e28ceea04b498d7cdf88c2b7d1184964f0a1fa' },
     { id: 'HB', region: 'Hồ Bắc', code: 'DB42/2330-2024', water: 'fw', nature: 'Bắt buộc',
-      effective: '2025-01-01', existing: '2026-01-01 (洪湖、梁子湖、斧头湖流域) / 2027-01-01 (其他地区)',
-      thresholdMu: 200, thresholdNote: '养殖水面 ≥200 亩的连片池塘和单个池塘; 工厂化等封闭式养殖',
+      effective: '2025-01-01', existing: '2026-01-01 (lưu vực hồ Hồng Hồ, Lương Tử Hồ, Phủ Đầu Hồ) / 2027-01-01 (khu vực khác)',
+      thresholdMu: 200, thresholdNote: 'Ao nuôi liền vùng và ao đơn có mặt nước nuôi ≥200 mu; nuôi kín như nuôi công nghiệp',
       gradeRule: 'HB', grades: { 1: lim(45, 15, 3.0, 0.4, PH_FW), 2: lim(90, 25, 5.0, 1.0, PH_FW) },
       source: 'http://sthjt.hubei.gov.cn/hjsj/hbbz/shjbh/swrbz/swrdb/202503/P020250301734539887915.pdf' },
     { id: 'HN', region: 'Hồ Nam', code: 'DB43/1752-2020', water: 'fw', nature: 'Bắt buộc',
       effective: '2021-02-27', existing: null,
       thresholdMu: null,
-      thresholdNote: '池塘养殖、工厂化养殖等非天然水域投饵投肥养殖 (淡水), 无规模门槛; 现有养殖场过渡期未核对 (见标准"实施与监督"章)',
+      thresholdNote: 'Nuôi có cho ăn, bón phân ở vùng nước không tự nhiên như ao nuôi, nuôi công nghiệp (nước ngọt), không có ngưỡng quy mô; thời kỳ chuyển tiếp cho cơ sở hiện hữu chưa kiểm tra (xem chương"Thực thi và giám sát"của tiêu chuẩn)',
       gradeRule: 'HN', grades: { 1: lim(45, 15, 2.5, 0.4, PH_FW), 2: lim(90, 25, 5.0, 0.8, PH_FW) },
       source: 'https://hbj.yueyang.gov.cn/6824/6829/content_1667688.html' },
 
     /* ---------- 海水 ---------- */
     { id: 'GD_SW', region: 'Quảng Đông', code: 'DB44/2462-2024', water: 'sw', nature: 'Bắt buộc',
       effective: '2024-05-01', existing: '2026-05-01',
-      thresholdMu: 30, thresholdNote: 'Ao nuôi ≥30 亩; hệ thống kín như nuôi công nghiệp; <30 亩 áp dụng tham khảo',
+      thresholdMu: 30, thresholdNote: 'Ao nuôi ≥30 mu; hệ thống kín như nuôi công nghiệp; <30 mu áp dụng tham khảo',
       belowThreshold: 'áp dụng tham khảo',
       gradeRule: 'SW', grades: { 1: lim(40, 10, 3.5, 0.5, PH_SW2), 2: lim(90, 20, 7.0, 1.5, PH_SW2) },
       source: 'https://gdee.gd.gov.cn/gkmlpt/content/4/4382/post_4382815.html' },
     { id: 'JS_SW', region: 'Giang Tô', code: 'DB32/4043-2021', water: 'sw', nature: 'Bắt buộc',
       effective: '2021-08-01', existing: '2023-06-01',
-      thresholdMu: 50, thresholdNote: 'Liền vùng >100 亩; một chủ thể >50 亩',
+      thresholdMu: 50, thresholdNote: 'Liền vùng >100 mu; một chủ thể >50 mu',
       gradeRule: 'SW', grades: { 1: lim(40, 10, 3.0, 0.5, PH_SW1), 2: lim(100, 20, 5.0, 1.0, PH_SW2) },
       source: 'https://hbj.nantong.gov.cn/ntshbj/upload/d31a39fa-c45b-412d-96c8-d961031e0951.doc' },
     { id: 'ZJ', region: 'Chiết Giang', code: 'DB33/1384-2024', water: 'sw', nature: 'Bắt buộc',
       effective: '2024-10-15', existing: '2025-10-15',
-      thresholdMu: 50, thresholdNote: 'Ao nuôi nước mặn liền vùng ≥50 亩; nuôi công nghiệp; sản xuất giống',
+      thresholdMu: 50, thresholdNote: 'Ao nuôi nước mặn liền vùng ≥50 mu; nuôi công nghiệp; sản xuất giống',
       gradeRule: 'SW', grades: { 1: lim(100, 10.0, 5.0, 0.5, [7.0, 9.0]), 2: lim(120, 20.0, 7.0, 1.0, PH_SW2) },
       phase2: { from: '2027-10-01', TN: { 1: 4.0, 2: 6.0 } },
       source: 'https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1756/site/attach/-1/2405201754074968811.pdf' },
     { id: 'FJ_SW', region: 'Phúc Kiến', code: 'DB35/2160-2023', water: 'sw', nature: 'Bắt buộc',
       effective: '2024-01-01', existing: '2024-12-31',
-      thresholdMu: 100, thresholdNote: 'Áp dụng cho mọi ao nuôi nước mặn dùng bơm cấp nước; ao tập trung liền vùng khác ≥100 亩',
+      thresholdMu: 100, thresholdNote: 'Áp dụng cho mọi ao nuôi nước mặn dùng bơm cấp nước; ao tập trung liền vùng khác ≥100 mu',
       gradeRule: 'SW_CLASS1_BAN', grades: { 1: lim(50, 10, 3.0, 0.5, PH_SW1), 2: lim(90, 20, 5.0, 1.0, PH_SW2) },
       special: { label: 'Khu vực/thời kỳ áp dụng giới hạn xả thải đặc biệt do chính quyền quy định (bảng 3, chung cho nước ngọt và nước mặn)',
         grades: { 1: lim(40, 10, 3.0, 0.3, PH_SW1), 2: lim(40, 10, 3.0, 0.3, PH_SW1) } },   // 表 3: pH、COD 按表 2 一级 (7.0–8.5)
@@ -876,29 +876,29 @@
       source: 'https://dbba.sacinfo.org.cn/portal/download/74363e672a45718b91d5d8b25e7c075838a6ddd7be6e416383d3ca6183c09213' },
     { id: 'HE', region: 'Hà Bắc', code: 'DB13/5879-2023', water: 'sw', nature: 'Bắt buộc',
       effective: '2024-01-01', existing: '2024-09-01',
-      thresholdMu: null, thresholdNote: '池塘、工厂化海水养殖及尾水处理设施, 无规模门槛; 不含网箱、筏式、吊笼、滩涂底播',
+      thresholdMu: null, thresholdNote: 'Ao nuôi, nuôi biển công nghiệp và công trình xử lý nước thải ao nuôi, không có ngưỡng quy mô; không gồm lồng bè, giàn treo, lồng treo, nuôi đáy bãi triều',
       gradeRule: 'SW', grades: { 1: lim(40, 10, 5.0, 0.5, PH_SW2), 2: lim(100, 20, 8.0, 1.0, PH_SW2) },
-      sourceNote: 'SS、COD、TN、TP 与分级取自河北省生态环境厅官方解读 (未取得标准原文); pH 6.5–9.0 取自苏洁等 2025《海洋环境科学》44(3) 对照表, 未核实',
+      sourceNote: 'SS, COD, TN, TP và phân cấp lấy từ bản giải thích chính thức của Sở Sinh thái Môi trường tỉnh Hà Bắc (chưa có nguyên văn tiêu chuẩn); pH 6.5–9.0 lấy từ bảng đối chiếu của Tô Khiết và cs. 2025 «Khoa học môi trường biển» 44(3), chưa xác minh',
       source: 'https://hbepb.hebei.gov.cn/hbhjt/zwgk/zc/101699834119841.html' },
     /* ---------- 无省标地区兜底: 推荐性行业标准 ---------- */
-    { id: 'SCT9101', region: '其他地区 (无省标)', code: 'SC/T 9101-2007', water: 'fw', nature: 'Tiêu chuẩn ngành khuyến nghị',
+    { id: 'SCT9101', region: 'Khu vực khác (không có tiêu chuẩn tỉnh)', code: 'SC/T 9101-2007', water: 'fw', nature: 'Tiêu chuẩn ngành khuyến nghị',
       effective: '2007-09-01', existing: null,
       thresholdMu: null, thresholdNote: 'Yêu cầu xả nước nuôi ao nước ngọt; không có ngưỡng quy mô, không bắt buộc',
       gradeRule: 'SCT', grades: { 1: lim(50, 15, 3.0, 0.5, [6.0, 9.0]), 2: lim(100, 25, 5.0, 1.0, [6.0, 9.0]) },
-      sourceNote: '限值取自项目标准笔记; 另有 BOD₅ 10/15 及铜、锌、硫化物、总余氯等本工具未建模; 分级规则 (Ⅰ、Ⅱ 类不得新建排放口、原有排放执行一级; Ⅲ、Ⅳ、Ⅴ 类执行二级, 3.1) 据转载条文, 原文未取得',
+      sourceNote: 'Giới hạn lấy từ ghi chú tiêu chuẩn của dự án; còn có BOD₅ 10/15 và đồng, kẽm, sunfua, tổng clo dư... công cụ chưa mô hình hoá; quy tắc phân cấp (loại Ⅰ, Ⅱ không được xây mới cửa xả, cửa xả hiện hữu áp dụng cấp 1; loại Ⅲ, Ⅳ, Ⅴ áp dụng cấp 2, 3.1) theo điều khoản đăng lại, chưa có nguyên văn',
       source: 'https://www.zhongkehai.com/news/3264.html' },
-    { id: 'SCT9103', region: '其他地区 (无省标)', code: 'SC/T 9103-2007', water: 'sw', nature: 'Tiêu chuẩn ngành khuyến nghị',
+    { id: 'SCT9103', region: 'Khu vực khác (không có tiêu chuẩn tỉnh)', code: 'SC/T 9103-2007', water: 'sw', nature: 'Tiêu chuẩn ngành khuyến nghị',
       effective: '2007-09-01', existing: null,
       thresholdMu: null, thresholdNote: 'Yêu cầu xả nước nuôi nước mặn; không có ngưỡng quy mô, không bắt buộc',
       gradeRule: 'SCT', grades: { 1: lim(40, 10, null, null, PH_SW1), 2: lim(100, 20, null, null, PH_SW2) },
-      sourceNote: '该标准不考核 TN、TP, 而考核无机氮 0.50/1.00、活性磷酸盐 0.05/0.10 及 BOD₅ 6/10 等, 本工具未建模, TN、TP 列为不考核; 限值取自项目标准笔记; 分级 (第一、二类海域一级, 第三、四类二级, 3.2) 据转载条文, 原文未取得',
+      sourceNote: 'Tiêu chuẩn này không xét TN, TP, mà xét nitơ vô cơ 0.50/1.00, photphat hoạt tính 0.05/0.10 và BOD₅ 6/10..., công cụ chưa mô hình hoá, TN, TP ghi là không xét; giới hạn lấy từ ghi chú tiêu chuẩn của dự án; phân cấp (vùng biển loại 1, 2 cấp 1, loại 3, 4 cấp 2, 3.2) theo điều khoản đăng lại, chưa có nguyên văn',
       source: 'https://www.zhongkehai.com/news/3265.html' }
   ];
 
   /* 已发布但限值未能对照原文核实: 只展示, 不参与计算 */
   var UNVERIFIED = [
-    { region: 'An Huy', code: 'DB34/4722-2024', water: 'fw', note: '原文未取得; 官方解读确认适用于单个养殖水面 ≥10 亩, 现有养殖场 2025-01-01 起执行; 论文转录值 SS 40/85、COD_Mn 15/25、TN 3/6、TP 0.4/0.8 未核实' },
-    { region: 'Quảng Tây', code: 'DB45/T 2841-2024', water: 'sw', note: '推荐性标准, 原文未取得; 论文转录值 SS 40/100、COD 10/20、TN 5.0/8.0、TP 0.7/1.5 未核实' }
+    { region: 'An Huy', code: 'DB34/4722-2024', water: 'fw', note: 'Chưa có nguyên văn; bản giải thích chính thức xác nhận áp dụng cho mặt nước nuôi đơn ≥10 mu, cơ sở hiện hữu áp dụng từ 2025-01-01; giá trị chép từ bài báo SS 40/85, COD_Mn 15/25, TN 3/6, TP 0.4/0.8 chưa xác minh' },
+    { region: 'Quảng Tây', code: 'DB45/T 2841-2024', water: 'sw', note: 'Tiêu chuẩn khuyến nghị, chưa có nguyên văn; giá trị chép từ bài báo SS 40/100, COD 10/20, TN 5.0/8.0, TP 0.7/1.5 chưa xác minh' }
   ];
 
   function findStandard(id) {
@@ -944,13 +944,13 @@
       r.single = true; r.grade = 0;
       // 特殊保护水域 (法律法规禁止设排污口) 与是否分级无关, 单一限值标准同样不得设口
       if (receiving === 'SPECIAL') {
-        var noteS = '法律法规禁止设置排污口的特殊保护水域 (饮用水水源保护区、自然保护区核心区等) 不得设置养殖尾水排放口';
+        var noteS = 'Vùng nước bảo vệ đặc biệt mà pháp luật cấm đặt cửa xả (khu bảo vệ nguồn nước uống, vùng lõi khu bảo tồn thiên nhiên...) không được đặt cửa xả nước thải nuôi trồng';
         if (o.existingOutlet) {
           r.reference = true;
-          r.note = noteS + '。现有排放口: 标准未给限值, "按国家和地方相关法律法规执行"; 本工具按本标准单一限值作参照, 以当地生态环境部门认定为准';
+          r.note = noteS + '. Cửa xả hiện hữu: tiêu chuẩn không cho giới hạn, "thực hiện theo pháp luật quốc gia và địa phương liên quan"; công cụ dùng giới hạn duy nhất của tiêu chuẩn này làm tham chiếu, theo xác định của cơ quan sinh thái môi trường địa phương';
         } else {
           r.prohibited = true; r.grade = null;
-          r.note = noteS + '; 如为标准实施前已有的排放口, 请勾选"现有排放口"';
+          r.note = noteS + '; nếu là cửa xả có trước khi tiêu chuẩn có hiệu lực, hãy tích"Cửa xả hiện hữu"';
         }
         return r;
       }
@@ -963,56 +963,56 @@
       // 不得新建排放口; 标准实施前已有的排放口按国家和地方法规执行, 标准本身不给限值
       if (o.existingOutlet) {
         r.grade = 1; r.reference = true;
-        r.note = note + '。现有排放口: 标准未给限值, "按国家和地方相关法律法规执行"; 本工具按一级限值作参照, 以当地生态环境部门认定为准';
+        r.note = note + '. Cửa xả hiện hữu: tiêu chuẩn không cho giới hạn, "thực hiện theo pháp luật quốc gia và địa phương liên quan"; công cụ dùng giới hạn cấp 1 làm tham chiếu, theo xác định của cơ quan sinh thái môi trường địa phương';
       } else {
-        r.prohibited = true; r.note = note + '; 如为标准实施前已有的排放口, 请勾选"现有排放口"';
+        r.prohibited = true; r.note = note + '; nếu là cửa xả có trước khi tiêu chuẩn có hiệu lực, hãy tích"Cửa xả hiện hữu"';
       }
     };
     if (std.water === 'fw') {
       if (receiving === 'SPECIAL') {
-        ban('法律法规禁止设置排污口的特殊保护水域 (饮用水水源保护区、自然保护区核心区等) 不得设置养殖尾水排放口');
+        ban('Vùng nước bảo vệ đặc biệt mà pháp luật cấm đặt cửa xả (khu bảo vệ nguồn nước uống, vùng lõi khu bảo tồn thiên nhiên...) không được đặt cửa xả nước thải nuôi trồng');
       } else if (receiving === 'I-II') {
-        if (rule === 'JX') { r.grade = 1; r.note = '江西 4.2: GB 3838 Ⅰ–Ⅲ 类水体 (划定的特殊保护水域除外) 执行一级'; }
-        else if (rule === 'GD') { r.grade = 1; r.note = '广东 5.2.1.1: GB 3838 Ⅰ、Ⅱ、Ⅲ 类水域为重点保护水域, 执行一级 (本标准无禁排条款; 法律法规禁止设排污口的水域请选"特殊保护水域")'; }
+        if (rule === 'JX') { r.grade = 1; r.note = 'Giang Tây 4.2: nguồn nước GB 3838 loại Ⅰ–Ⅲ (trừ vùng nước bảo vệ đặc biệt đã khoanh định) áp dụng cấp 1'; }
+        else if (rule === 'GD') { r.grade = 1; r.note = 'Quảng Đông 5.2.1.1: vùng nước GB 3838 loại Ⅰ, Ⅱ, Ⅲ là vùng nước bảo vệ trọng điểm, áp dụng cấp 1 (tiêu chuẩn này không có điều khoản cấm xả; vùng nước pháp luật cấm đặt cửa xả hãy chọn"Vùng nước bảo vệ đặc biệt")'; }
         else if (rule === 'SCT') {
           // SC/T 9101 3.1 a)、b): Ⅰ、Ⅱ 类不得新建排放口, 原有排放达到一级 (标准本身给出一级, 不是参照)
-          var noteSCT = 'SC/T 9101 3.1: GB 3838 Ⅰ、Ⅱ 类为特殊保护、重点保护水域, 不得新建养殖水排放口';
-          if (o.existingOutlet) { r.grade = 1; r.note = noteSCT + '。原有排放口: 执行一级'; }
-          else { r.prohibited = true; r.note = noteSCT + '; 如为原有排放口, 请勾选"现有排放口"'; }
+          var noteSCT = 'SC/T 9101 3.1: GB 3838 loại Ⅰ, Ⅱ là vùng nước bảo vệ đặc biệt, bảo vệ trọng điểm, không được xây mới cửa xả nước nuôi trồng';
+          if (o.existingOutlet) { r.grade = 1; r.note = noteSCT + '. Cửa xả hiện hữu: áp dụng cấp 1'; }
+          else { r.prohibited = true; r.note = noteSCT + '; nếu là cửa xả hiện hữu, hãy tích"Cửa xả hiện hữu"'; }
         }
-        else if (rule === 'HN') ban('湖南: 法律法规禁止设置排污口的特殊保护水域不得设置养殖尾水排放口');
-        else if (rule === 'HB') ban('湖北: GB 3838 Ⅰ、Ⅱ 类水域及Ⅲ类水域中划定的保护区为特殊保护水域, 不得新建排放口');
-        else if (rule === 'HA') ban('河南 6.2 a): Ⅰ、Ⅱ 类功能水域为特殊保护水域, 不应新建水产养殖尾水排放口');
-        else if (rule === 'SC') ban('四川 5.1 c): 法律法规禁止设置排污口的水域 (含 Ⅰ、Ⅱ 类) 为特殊保护水域, 不得新建排放口');
-        else ban('GB 3838 Ⅰ–Ⅱ 类水域为特殊保护水域, 不得新建养殖尾水排放口');
+        else if (rule === 'HN') ban('Hồ Nam: vùng nước bảo vệ đặc biệt mà pháp luật cấm đặt cửa xả không được đặt cửa xả nước thải nuôi trồng');
+        else if (rule === 'HB') ban('Hồ Bắc: vùng nước GB 3838 loại Ⅰ, Ⅱ và khu bảo vệ khoanh định trong vùng nước loại Ⅲ là vùng nước bảo vệ đặc biệt, không được xây mới cửa xả');
+        else if (rule === 'HA') ban('Hà Nam 6.2 a): vùng nước chức năng loại Ⅰ, Ⅱ là vùng nước bảo vệ đặc biệt, không nên xây mới cửa xả nước thải nuôi trồng thuỷ sản');
+        else if (rule === 'SC') ban('Tứ Xuyên 5.1 c): vùng nước pháp luật cấm đặt cửa xả (gồm loại Ⅰ, Ⅱ) là vùng nước bảo vệ đặc biệt, không được xây mới cửa xả');
+        else ban('Vùng nước GB 3838 loại Ⅰ–Ⅱ là vùng nước bảo vệ đặc biệt, không được xây mới cửa xả nước thải nuôi trồng');
       } else if (receiving === 'III' && rule === 'SCT') {
-        r.grade = 2; r.note = 'SC/T 9101 3.1 c): GB 3838 Ⅲ、Ⅳ、Ⅴ 类为一般水域, 执行二级';
+        r.grade = 2; r.note = 'SC/T 9101 3.1 c): GB 3838 loại Ⅲ, Ⅳ, Ⅴ là vùng nước thông thường, áp dụng cấp 2';
       } else if (receiving === 'III') {
-        r.grade = 1; r.note = '排入 GB 3838 Ⅲ 类水体执行一级';
-        if (rule === 'HA') r.note = '河南 5 b): 一级仅针对 Ⅲ 类功能水域内的渔业水域及游泳区; 其他 Ⅲ 类水域标准未明确归类, 本工具按一级偏严处理, 请与当地确认';
-        if (rule === 'SC') r.note += ' (划定的饮用水水源保护区除外; 5.2: 有环境容量且水质稳定达Ⅲ类的重点控制区域经论证可执行二级)';
+        r.grade = 1; r.note = 'Xả vào nguồn nước GB 3838 loại Ⅲ áp dụng cấp 1';
+        if (rule === 'HA') r.note = 'Hà Nam 5 b): cấp 1 chỉ áp dụng cho vùng nước nghề cá và khu bơi lội trong vùng nước chức năng loại Ⅲ; vùng nước loại Ⅲ khác tiêu chuẩn chưa phân loại rõ, công cụ xử lý theo cấp 1 cho chặt hơn, hãy xác nhận với địa phương';
+        if (rule === 'SC') r.note += ' (trừ khu bảo vệ nguồn nước uống đã khoanh định; 5.2: khu vực kiểm soát trọng điểm còn sức chịu tải môi trường và chất lượng nước ổn định đạt loại Ⅲ, qua thẩm định có thể áp dụng cấp 2)';
       } else {
-        r.grade = 2; r.note = rule === 'SCT' ? 'SC/T 9101 3.1 c): GB 3838 Ⅲ、Ⅳ、Ⅴ 类为一般水域, 执行二级' : '排入 GB 3838 Ⅳ–Ⅴ 类及未划类水体执行二级';
+        r.grade = 2; r.note = rule === 'SCT' ? 'SC/T 9101 3.1 c): GB 3838 loại Ⅲ, Ⅳ, Ⅴ là vùng nước thông thường, áp dụng cấp 2' : 'Xả vào nguồn nước GB 3838 loại Ⅳ–Ⅴ và chưa phân loại áp dụng cấp 2';
       }
       if (rule === 'SC' && o.keyArea && !r.prohibited && r.grade === 2) {
-        r.grade = 1; r.note = '四川附录 A 重点控制区域: 不论受纳水体类别一律执行一级 (5.1 b)';
+        r.grade = 1; r.note = 'Khu vực kiểm soát trọng điểm phụ lục A Tứ Xuyên: bất kể loại nguồn tiếp nhận đều áp dụng cấp 1 (5.1 b)';
       }
-      if (rule === 'SC' && !o.keyArea && !r.prohibited) r.note += '; 四川另规定: 附录 A 重点控制区域 (10 市 62 县) 一律执行一级, 位于其中请勾选';
-      if (rule === 'JS' && !r.prohibited) r.note += '; 江苏按水体功能划分, 渔业水域等执行一级, 请以当地生态环境部门认定为准';
-      if (rule === 'HN' && !r.prohibited) r.note += (receiving === 'III' ? ' (划定的饮用水水源保护区除外)' : '') + '; 湖南另规定: 通过未明确环境功能的水域排入湖库的尾水, 县级以上人民政府可要求执行一级 (可在"执行级别"中指定)';
-      if (rule === 'HB' && !r.prohibited) r.note += '; 湖北另规定: Ⅱ、Ⅲ类水质目标湖泊 (水库) 保护区外围 500 m 内的养殖池塘, 不论排向何处一律执行一级 (可在"执行级别"中指定)';
-      if (rule === 'GD' && !r.prohibited && r.grade === 2) r.note += '; 广东 5.2.2.3: 水功能重要、容量小或未达标地区, 地级以上市政府可要求执行一级 (可在"执行级别"中指定)';
+      if (rule === 'SC' && !o.keyArea && !r.prohibited) r.note += '; Tứ Xuyên còn quy định: khu vực kiểm soát trọng điểm phụ lục A (10 thành phố 62 huyện) đều áp dụng cấp 1, nếu nằm trong đó hãy tích';
+      if (rule === 'JS' && !r.prohibited) r.note += '; Giang Tô phân theo chức năng nguồn nước, vùng nước nghề cá... áp dụng cấp 1, theo xác định của cơ quan sinh thái môi trường địa phương';
+      if (rule === 'HN' && !r.prohibited) r.note += (receiving === 'III' ? ' (trừ khu bảo vệ nguồn nước uống đã khoanh định)' : '') + '; Hồ Nam còn quy định: nước thải xả vào hồ chứa qua vùng nước chưa xác định chức năng môi trường, chính quyền cấp huyện trở lên có thể yêu cầu áp dụng cấp 1 (có thể chỉ định ở"Cấp áp dụng")';
+      if (rule === 'HB' && !r.prohibited) r.note += '; Hồ Bắc còn quy định: ao nuôi trong phạm vi 500 m bao quanh khu bảo vệ hồ (hồ chứa) có mục tiêu chất lượng nước loại Ⅱ, Ⅲ, bất kể xả đi đâu đều áp dụng cấp 1 (có thể chỉ định ở"Cấp áp dụng")';
+      if (rule === 'GD' && !r.prohibited && r.grade === 2) r.note += '; Quảng Đông 5.2.2.3: khu vực có chức năng nguồn nước quan trọng, sức chứa nhỏ hoặc chưa đạt chuẩn, chính quyền thành phố cấp địa khu trở lên có thể yêu cầu áp dụng cấp 1 (có thể chỉ định ở"Cấp áp dụng")';
     } else {
       if (receiving === 'SPECIAL') {
-        ban('法律法规禁止设置排污口的海域不得设置养殖尾水排放口');
+        ban('Vùng biển pháp luật cấm đặt cửa xả không được đặt cửa xả nước thải nuôi trồng');
       } else if (receiving === '1') {
-        if (rule === 'SW_CLASS1_BAN') ban('GB 3097 第一类海域为特殊保护水域, 不得新建养殖尾水排放口');
-        else if (rule === 'TJ') ban('天津 4.1 只规定了第二、三、四类海域, 未规定第一类海域; 第一类海域一般属法律法规禁止设排污口的海域');
-        else { r.grade = 1; r.note = '排入 GB 3097 第一类海域执行一级'; }
+        if (rule === 'SW_CLASS1_BAN') ban('Vùng biển GB 3097 loại 1 là vùng nước bảo vệ đặc biệt, không được xây mới cửa xả nước thải nuôi trồng');
+        else if (rule === 'TJ') ban('Thiên Tân 4.1 chỉ quy định vùng biển loại 2, 3, 4, không quy định vùng biển loại 1; vùng biển loại 1 thường thuộc vùng biển pháp luật cấm đặt cửa xả');
+        else { r.grade = 1; r.note = 'Xả vào vùng biển GB 3097 loại 1 áp dụng cấp 1'; }
       } else if (receiving === '2') {
-        r.grade = 1; r.note = '排入 GB 3097 第二类海域执行一级';
+        r.grade = 1; r.note = 'Xả vào vùng biển GB 3097 loại 2 áp dụng cấp 1';
       } else {
-        r.grade = 2; r.note = '排入 GB 3097 第三、四类海域执行二级';
+        r.grade = 2; r.note = 'Xả vào vùng biển GB 3097 loại 3, 4 áp dụng cấp 2';
       }
     }
     return r;
@@ -1091,7 +1091,7 @@
   var FIELD_REF = {
     TN: { lo: 2.0, hi: 10.1, typ: 3.13 },
     TP: { lo: 0.18, hi: 1.63, typ: 0.37 },
-    note: '邹 2024 (广东 25 点)、徐嘉波 2022 (上海)、蒋文俊 2026 (四川)、罗开练 2023 (珠海)'
+    note: 'Trâu 2024 (Quảng Đông 25 điểm), Từ Gia Ba 2022 (Thượng Hải), Tưởng Văn Tuấn 2026 (Tứ Xuyên), La Khai Luyện 2023 (Chu Hải)'
   };
   function fieldCheck(k, c) {
     var r = FIELD_REF[k];
@@ -1108,11 +1108,11 @@
    *  海水: 无官方面积比, 只作下限提示, 规模由流量与水力负荷决定。
    * ------------------------------------------------------------------ */
   var AREA_RATIO = {
-    eel_turtle: { def: 10, lo: 10, hi: 10, note: '广东草案 10%; 海盐 ≥10% 另设湿地 ≥5%; T/SNLT ≥10%' },
-    carnivore:  { def: 8,  lo: 8,  hi: 10, note: '广东草案 8%; T/SNLT 乌鳢 ≥10%' },
-    general:    { def: 6,  lo: 6,  hi: 8,  note: '广东草案 6%; T/JSYX 7—2025 ≥6%; 湖北 2022 6–10%; T/SNLT 大宗淡水鱼 ≥8%' },
-    shrimp:     { def: 5,  defOther: 8, lo: 5, hi: 8, note: '广东草案 5% (广东辖区默认); T/SNLT 白对虾、T/GDNB 罗氏沼虾 ≥8% (其他地区默认)' },
-    crab:       { def: 6,  lo: 3,  hi: 6,  note: 'T/SNLT ≥6% (默认); 3% 仅见广东编制说明, 引自粤农农办〔2021〕40号, 原文未核' }
+    eel_turtle: { def: 10, lo: 10, hi: 10, note: 'Dự thảo Quảng Đông 10%; Hải Diêm ≥10% thêm đất ngập nước ≥5%; T/SNLT ≥10%' },
+    carnivore:  { def: 8,  lo: 8,  hi: 10, note: 'Dự thảo Quảng Đông 8%; T/SNLT cá quả ≥10%' },
+    general:    { def: 6,  lo: 6,  hi: 8,  note: 'Dự thảo Quảng Đông 6%; T/JSYX 7—2025 ≥6%; Hồ Bắc 2022 6–10%; T/SNLT cá nước ngọt chủ lực ≥8%' },
+    shrimp:     { def: 5,  defOther: 8, lo: 5, hi: 8, note: 'Dự thảo Quảng Đông 5% (mặc định cho địa bàn Quảng Đông); T/SNLT tôm thẻ chân trắng, T/GDNB tôm càng xanh ≥8% (mặc định cho khu vực khác)' },
+    crab:       { def: 6,  lo: 3,  hi: 6,  note: 'T/SNLT ≥6% (mặc định); 3% chỉ thấy trong thuyết minh biên soạn của Quảng Đông, dẫn từ văn bản 粤农农办〔2021〕40号, chưa đối chiếu nguyên văn' }
   };
   function defaultAreaRatio(group, standardId) {
     var g = AREA_RATIO[group] || AREA_RATIO.general;
@@ -1388,30 +1388,30 @@
     if (p.rMid) POLLUTANTS.forEach(function (k) {
       var v = p.rMid[k];
       if (v == null) return;
-      if (bad(v) || v < 0 || v > 100) errors.push(k.replace('NH3N', '氨氮') + ' 去除率中值: 应在 0–100% 之间');
+      if (bad(v) || v < 0 || v > 100) errors.push(k.replace('NH3N', 'Amoni') + ' Trung vị hiệu suất loại bỏ: phải trong khoảng 0–100%');
     });
     if (errors.length) return { errors: errors, warnings: warnings };
-    [['splitSed', '沉淀池'], ['splitAer', '曝气池'], ['splitEco', '生态净化池']].forEach(function (c) {
-      if (!(p[c[0]] > 0)) errors.push(c[1] + '比例为 0: 三池两坝必须同时有沉淀、曝气、生态净化三个单元');
+    [['splitSed', 'Ao lắng'], ['splitAer', 'Ao sục khí'], ['splitEco', 'Ao lọc sinh thái']].forEach(function (c) {
+      if (!(p[c[0]] > 0)) errors.push(c[1] + 'Tỷ lệ bằng 0: mô hình «ba ao hai đập» phải có đủ ba đơn vị lắng, sục khí, lọc sinh thái');
     });
-    if (p.dailyPct === 0 && p.drainsPerCycle === 0) errors.push('日换水率与排干次数都为 0: 没有排水, 无法计算尾水浓度与处理规模');
+    if (p.dailyPct === 0 && p.drainsPerCycle === 0) errors.push('Tỷ lệ thay nước hằng ngày và số lần tháo cạn đều bằng 0: không có nước xả, không tính được nồng độ nước thải và quy mô xử lý');
     var sum = p.splitSed + p.splitAer + p.splitEco;
-    if (sum > 0) [['splitSed', '沉淀池', 30, 45], ['splitAer', '曝气池', 5, 30], ['splitEco', '生态净化池', 35, 50]].forEach(function (c) {
+    if (sum > 0) [['splitSed', 'Ao lắng', 30, 45], ['splitAer', 'Ao sục khí', 5, 30], ['splitEco', 'Ao lọc sinh thái', 35, 50]].forEach(function (c) {
       var v = p[c[0]] / sum * 100;
-      if (v < c[2] - 1e-9 || v > c[3] + 1e-9) warnings.push(c[1] + '占 ' + (Math.round(v * 10) / 10) + '%, 超出广东草案 ' + c[2] + '–' + c[3] + '%');
+      if (v < c[2] - 1e-9 || v > c[3] + 1e-9) warnings.push(c[1] + 'chiếm ' + (Math.round(v * 10) / 10) + '%, vượt dự thảo Quảng Đông ' + c[2] + '–' + c[3] + '%');
     });
-    if (p.floatBedPct < 20) warnings.push('净化池浮床 ' + p.floatBedPct + '% 低于广东草案 ≥20%');
-    if (p.sedFloatPct < 10 || p.sedFloatPct > 30) warnings.push('沉淀池浮床 ' + p.sedFloatPct + '% 超出广东草案应布设的 10–30%');
-    if (p.rawMode !== 'measured' && p.dailyPct > 5) warnings.push('日换水率 ' + p.dailyPct + '%/d 较高: 流失比例固定时换水越多算出的浓度越低, 只是稀释; 文献 35% 对应约 3%/d, 高换水率下应相应提高流失比例或改用实测');
-    if (p.recircPct < 70 || p.recircPct > 150) warnings.push('内循环 ' + p.recircPct + '% 超出广东草案 70–150%');
-    if (p.cp > 0 && p.cp < 10) warnings.push('饲料粗蛋白 ' + p.cp + '% 偏低, 请确认单位为 %');
-    if (p.slopeA < 0.85 || p.slopeA > 0.95) warnings.push('边坡系数 ' + p.slopeA + ' 超出广东草案 0.85–0.95');
-    if (p.flowFactor > 1.3) warnings.push('日流量变化系数 ' + p.flowFactor + ' 超出广东草案 1.1–1.3');
-    if (p.simultaneousPct === 0 && p.drainsPerCycle > 0) warnings.push('同时排干面积为 0: 排干峰值流量不计入设计');
+    if (p.floatBedPct < 20) warnings.push('Bè nổi ao lọc ' + p.floatBedPct + '% thấp hơn mức ≥20% của dự thảo Quảng Đông');
+    if (p.sedFloatPct < 10 || p.sedFloatPct > 30) warnings.push('Bè nổi ao lắng ' + p.sedFloatPct + '% vượt mức 10–30% cần bố trí theo dự thảo Quảng Đông');
+    if (p.rawMode !== 'measured' && p.dailyPct > 5) warnings.push('Tỷ lệ thay nước hằng ngày ' + p.dailyPct + '%/d khá cao: khi tỷ lệ thất thoát cố định, thay nước càng nhiều thì nồng độ tính ra càng thấp, chỉ là pha loãng; tài liệu 35% tương ứng khoảng 3%/d, khi tỷ lệ thay nước cao nên tăng tỷ lệ thất thoát tương ứng hoặc dùng số liệu thực đo');
+    if (p.recircPct < 70 || p.recircPct > 150) warnings.push('Tuần hoàn nội ' + p.recircPct + '% vượt mức 70–150% của dự thảo Quảng Đông');
+    if (p.cp > 0 && p.cp < 10) warnings.push('Protein thô trong thức ăn ' + p.cp + '% là thấp, hãy xác nhận đơn vị là %');
+    if (p.slopeA < 0.85 || p.slopeA > 0.95) warnings.push('Hệ số mái dốc ' + p.slopeA + ' vượt mức 0.85–0.95 của dự thảo Quảng Đông');
+    if (p.flowFactor > 1.3) warnings.push('Hệ số biến động lưu lượng ngày ' + p.flowFactor + ' vượt mức 1.1–1.3 của dự thảo Quảng Đông');
+    if (p.simultaneousPct === 0 && p.drainsPerCycle > 0) warnings.push('Diện tích tháo cạn đồng thời bằng 0: lưu lượng đỉnh khi tháo cạn không tính vào thiết kế');
     var tab = REMOVAL[p.water === 'sw' ? 'sw' : 'fw'];
     if (p.rMid) POLLUTANTS.forEach(function (k) {
       var v = p.rMid[k];
-      if (v != null && (v < tab[k].lo || v > tab[k].hi)) warnings.push(k.replace('NH3N', '氨氮') + ' 去除率中值 ' + v + '% 超出实测区间 ' + tab[k].lo + '–' + tab[k].hi + '%');
+      if (v != null && (v < tab[k].lo || v > tab[k].hi)) warnings.push(k.replace('NH3N', 'Amoni') + ' Trung vị hiệu suất loại bỏ ' + v + '% vượt khoảng thực đo ' + tab[k].lo + '–' + tab[k].hi + '%');
     });
     return { errors: errors, warnings: warnings };
   }
@@ -1556,7 +1556,7 @@ function baseInput(over) {
 /* 有日常换水的实测算例: 日常 TN/TP 取 v0.2 的周期平均估算值, 使去除模型的手算结果保持不变 */
 const ROUTINE = { dailyPct: 1, rawMode: 'measured', measTN: 14.336, measTP: 2.2848 };
 
-test('氮磷质量平衡 (草鱼 100 亩算例)', () => {
+test('Cân bằng khối lượng nitơ photpho (ví dụ tính cá trắm cỏ 100 mu)', () => {
   const mb = T.massBalance(baseInput());
   near(mb.areaM2, 66666.6667, 1e-6);
   near(mb.pondVol, 120000);              // 66666.67 × 1.8
@@ -1576,7 +1576,7 @@ test('氮磷质量平衡 (草鱼 100 亩算例)', () => {
   assert.equal(mb.warnings.length, 0);
 });
 
-test('换水量与本底浓度叠加', () => {
+test('Cộng dồn lượng thay nước và nồng độ nền', () => {
   const mb = T.massBalance(baseInput({ dailyPct: 2, bgTN: 1.0, bgTP: 0.1 }));
   near(mb.Vexch, 120000 * 0.02 * 240);   // 576000
   near(mb.Vtot, 696000);
@@ -1584,12 +1584,12 @@ test('换水量与本底浓度叠加', () => {
   near(mb.cTP, 0.1 + 273.6 * 1000 / 696000);
 });
 
-test('收支不闭合时给出警告', () => {
+test('Cảnh báo khi thu chi không khép kín', () => {
   const mb = T.massBalance(baseInput({ fcr: 0.5 }));
   assert.ok(mb.warnings.some(w => w.includes('Cân bằng nitơ không khép kín')));
 });
 
-test('规模: 分池水深、边坡系数、水力负荷控制', () => {
+test('Quy mô: khống chế theo độ sâu nước từng ao, hệ số mái dốc, tải trọng thuỷ lực', () => {
   const p = baseInput();
   const tr = T.sizeTreatment(Object.assign({ water: 'fw' }, p), T.massBalance(p));
   near(tr.hW, 2.2);                      // 0.4×2.5 + 0.2×2 + 0.4×2
@@ -1612,7 +1612,7 @@ test('规模: 分池水深、边坡系数、水力负荷控制', () => {
   assert.deepEqual(tr.dam, { n: 2, L: 4, W: 1, section: 3.2 });
 });
 
-test('规模: 日常换水乘变化系数 b', () => {
+test('Quy mô: thay nước hằng ngày nhân hệ số biến động b', () => {
   const p = baseInput({ dailyPct: 5, exchDuringDrain: false });
   const tr = T.sizeTreatment(Object.assign({ water: 'fw' }, p), T.massBalance(p));
   near(tr.qExchRaw, 6000);
@@ -1621,7 +1621,7 @@ test('规模: 日常换水乘变化系数 b', () => {
   near(tr.aReq, 14400);                  // 7200 / 0.5
 });
 
-test('规模: 排干沉淀 8 h 可成为控制项', () => {
+test('Quy mô: lắng 8 h khi tháo cạn có thể trở thành hạng mục khống chế', () => {
   const p = baseInput({ splitSed: 5, splitAer: 45, splitEco: 50, minSettleH: 24 });
   const tr = T.sizeTreatment(Object.assign({ water: 'fw' }, p), T.massBalance(p));
   near(tr.aSettle, 2400 * 24 / 24 / (0.9 * 0.05 * 2.5));
@@ -1629,7 +1629,7 @@ test('规模: 排干沉淀 8 h 可成为控制项', () => {
   near(tr.settleH, 24);
 });
 
-test('规模: 淡水面积比控制, 海水不计面积比', () => {
+test('Quy mô: nước ngọt khống chế theo tỷ lệ diện tích, nước mặn không tính tỷ lệ diện tích', () => {
   const over = { simultaneousPct: 2, drainDays: 10, areaRatioPct: 5 };
   const p = baseInput(over);
   const mb = T.massBalance(p);
@@ -1642,13 +1642,13 @@ test('规模: 淡水面积比控制, 海水不计面积比', () => {
   assert.equal(sw.ratioControls, false);
 });
 
-test('大场过滤坝', () => {
+test('Đập lọc trại lớn', () => {
   const p = baseInput({ areaMu: 500 });
   const tr = T.sizeTreatment(Object.assign({ water: 'fw' }, p), T.massBalance(p));
   assert.deepEqual(tr.dam, { n: 2, L: 6, W: 2, section: 4.8 });
 });
 
-test('面积比默认值', () => {
+test('Giá trị mặc định tỷ lệ diện tích', () => {
   assert.equal(T.defaultAreaRatio('shrimp', 'GD_FW'), 5);
   assert.equal(T.defaultAreaRatio('shrimp', 'JX'), 8);
   assert.equal(T.defaultAreaRatio('crab', 'JS_FW'), 6);
@@ -1656,13 +1656,13 @@ test('面积比默认值', () => {
   for (const sp of T.SPECIES) assert.ok(T.defaultAreaRatio(sp.group, 'JX') > 0, sp.id);
 });
 
-test('去除模型 C* + (Cin − C*)(1 − R·f)', () => {
+test('Mô hình loại bỏ C* + (Cin − C*)(1 − R·f)', () => {
   near(T.effluent(120, 50, 0.85, 20), 20 + 100 * (1 - 0.425));   // 77.5
   near(T.effluent(0.8, 50, 1, 1.0), 0.8);                         // 低于 C* 不变
   near(T.effluent(10, 50, 0.5, 1.0), 1 + 9 * 0.75);
 });
 
-test('达标对照 (江西一级, 春秋)', () => {
+test('Đối chiếu đạt chuẩn (Giang Tây cấp 1, xuân thu)', () => {
   const r = T.run(baseInput(ROUTINE));
   assert.equal(r.grade.grade, 1);
   const ss = r.compliance.find(x => x.key === 'SS');
@@ -1679,7 +1679,7 @@ test('达标对照 (江西一级, 春秋)', () => {
   assert.equal(r.summary.n, 4);
 });
 
-test('边界判定与氨氮考核 (上海)', () => {
+test('Xác định biên và xét amoni (Thượng Hải)', () => {
   const r = T.run(baseInput(Object.assign({ standardId: 'SH', receiving: 'IV-V', SS: 130, COD: 20 }, ROUTINE)));
   const ss = r.compliance.find(x => x.key === 'SS');        // 限值 85
   near(ss.cout, 20 + 110 * 0.575);                          // 83.25 ≤ 85
@@ -1690,7 +1690,7 @@ test('边界判定与氨氮考核 (上海)', () => {
   assert.equal(nh.status, 'pass');
 });
 
-test('海水参数与冬季系数', () => {
+test('Thông số nước mặn và hệ số mùa đông', () => {
   const r = T.run(baseInput(Object.assign({ standardId: 'SD', receiving: '3', season: 'cold' }, ROUTINE)));
   assert.equal(r.water, 'sw');
   const tn = r.compliance.find(x => x.key === 'TN');
@@ -1701,7 +1701,7 @@ test('海水参数与冬季系数', () => {
   near(cod.cout, 4 + 16 * (1 - 0.40 * 0.8));
 });
 
-test('排干工况: 末 20% SS 1000 (Boyd 2000), TN 不计生态池 16.3; 无换水时负荷全在排干', () => {
+test('Điều kiện tháo cạn: 20% cuối SS 1000 (Boyd 2000), TN không tính ao sinh thái 16.3; khi không thay nước thì toàn bộ tải nằm ở lúc tháo cạn', () => {
   const r = T.run(baseInput());            // dailyPct 0 → 无日常排水, 流失负荷全部在排干
   assert.equal(r.hasRoutine, false); assert.equal(r.summary, null);
   near(r.drainSS, 1000); assert.equal(r.drainSSBasis, 'boyd'); near(r.drainSSFirst, 180);
@@ -1716,7 +1716,7 @@ test('排干工况: 末 20% SS 1000 (Boyd 2000), TN 不计生态池 16.3; 无换
   near(held.drainSS, 180); assert.equal(held.drainSSBasis, 'first80');
   assert.equal(r.settleOk, true);
 });
-test('v0.6 氮磷负荷按 Briggs 拆分到日常与排干', () => {
+test('v0.6 tải nitơ photpho tách theo Briggs thành phần hằng ngày và phần tháo cạn', () => {
   // fN 35%: 流失 3763.2 kg; d = 35%; Vexch 864000, Vdrain 120000
   const mb = T.massBalance(baseInput({ dailyPct: 3, fN: 35, fP: 10, drainLoadPct: 35 }));
   near(mb.routine.TN, 3763.2 * 0.65 * 1000 / 864000);    // 2.831
@@ -1733,7 +1733,7 @@ test('v0.6 氮磷负荷按 Briggs 拆分到日常与排干', () => {
   assert.equal(r.complianceDrain.find(c => c.key === 'TN').status, 'fail');
 });
 
-test('未提供的参数取默认值 (曝气规格)', () => {
+test('Thông số không cung cấp lấy giá trị mặc định (quy cách sục khí)', () => {
   const inp = baseInput();
   delete inp.m2PerHead; delete inp.kWPer100Heads;
   const r = T.run(inp);
@@ -1741,14 +1741,14 @@ test('未提供的参数取默认值 (曝气规格)', () => {
   near(r.treatment.aeration.kW, 9.6);
 });
 
-test('用户调整去除率中值', () => {
+test('Người dùng điều chỉnh trung vị hiệu suất loại bỏ', () => {
   const r = T.run(baseInput(Object.assign({ rMid: { SS: 70, COD: 45, TN: 50, TP: 40, NH3N: 70 } }, ROUTINE)));
   const ss = r.compliance.find(x => x.key === 'SS');
   near(ss.cout, 20 + 100 * (1 - 0.70 * 0.85));
   near(ss.coutBest, ss.cout);           // 区间上限扩到包含中值
 });
 
-test('分级判定', () => {
+test('Xác định phân cấp', () => {
   const g = (id, rcv, ovr) => T.resolveGrade(T.findStandard(id), rcv, ovr || 'auto', false);
   assert.equal(g('GD_FW', 'III').grade, 1);
   assert.equal(g('GD_FW', 'IV-V').grade, 2);
@@ -1769,7 +1769,7 @@ test('分级判定', () => {
   assert.equal(g('GD_FW', 'IV-V', '1').grade, 1);
 });
 
-test('限值取用: 特别限值、变体、第二阶段', () => {
+test('Lấy giới hạn: giới hạn đặc biệt, biến thể, giai đoạn hai', () => {
   const js = T.findStandard('JS_FW');
   assert.equal(T.limitsFor(js, T.resolveGrade(js, 'III', 'auto', true)).COD, 8);
   const fj = T.findStandard('FJ_SW');
@@ -1779,7 +1779,7 @@ test('限值取用: 特别限值、变体、第二阶段', () => {
   assert.equal(T.limitsFor(T.findStandard('HA'), { grade: 2 }).TN, 15);
 });
 
-test('湖北 DB42/2330-2024', () => {
+test('Hồ Bắc DB42/2330-2024', () => {
   const hb = T.findStandard('HB');
   assert.deepEqual([hb.grades[1].SS, hb.grades[1].COD, hb.grades[1].TN, hb.grades[1].TP], [45, 15, 3.0, 0.4]);
   assert.deepEqual([hb.grades[2].SS, hb.grades[2].COD, hb.grades[2].TN, hb.grades[2].TP], [90, 25, 5.0, 1.0]);
@@ -1791,7 +1791,7 @@ test('湖北 DB42/2330-2024', () => {
   assert.equal(T.applicability(hb, 200).applies, true);
 });
 
-test('湖南 DB43/1752-2020', () => {
+test('Hồ Nam DB43/1752-2020', () => {
   const hn = T.findStandard('HN');
   assert.deepEqual([hn.grades[1].SS, hn.grades[1].COD, hn.grades[1].TN, hn.grades[1].TP], [45, 15, 2.5, 0.4]);
   assert.deepEqual([hn.grades[2].SS, hn.grades[2].COD, hn.grades[2].TN, hn.grades[2].TP], [90, 25, 5.0, 0.8]);
@@ -1802,17 +1802,17 @@ test('湖南 DB43/1752-2020', () => {
   assert.equal(T.applicability(hn, 5).text, 'Không có ngưỡng quy mô, áp dụng');
 });
 
-test('河北 DB13/5879-2023', () => {
+test('Hà Bắc DB13/5879-2023', () => {
   const he = T.findStandard('HE');
   assert.equal(he.water, 'sw');
   assert.deepEqual([he.grades[1].SS, he.grades[1].COD, he.grades[1].TN, he.grades[1].TP], [40, 10, 5.0, 0.5]);
   assert.deepEqual([he.grades[2].SS, he.grades[2].COD, he.grades[2].TN, he.grades[2].TP], [100, 20, 8.0, 1.0]);
   assert.equal(T.resolveGrade(he, '2', 'auto').grade, 1);
   assert.equal(T.resolveGrade(he, '3', 'auto').grade, 2);
-  assert.ok(/未核实/.test(he.sourceNote));
+  assert.ok(/chưa xác minh/.test(he.sourceNote));
 });
 
-test('2026-10-20 福建海水: 特别限值不叠加提水式 TN 放宽; 表 3 pH 按表 2 一级 7.0–8.5', () => {
+test('2026-10-20 nước mặn Phúc Kiến: giới hạn đặc biệt không cộng thêm nới lỏng TN cho kiểu bơm cấp nước; pH bảng 3 theo cấp 1 bảng 2 là 7.0–8.5', () => {
   const fj = T.findStandard('FJ_SW');
   const sp = T.resolveGrade(fj, '2', 'auto', { useSpecial: true });
   assert.equal(T.limitsFor(fj, sp, { variant: true }).TN, 3.0);
@@ -1821,7 +1821,7 @@ test('2026-10-20 福建海水: 特别限值不叠加提水式 TN 放宽; 表 3 p
   assert.deepEqual(T.limitsFor(fj, sp).pH, [7.0, 8.5]);
   assert.deepEqual(T.limitsFor(fj, T.resolveGrade(fj, '3', 'auto', { useSpecial: true })).pH, [7.0, 8.5]);
 });
-test('2026-10-20 SC/T 9101 3.1: Ⅰ–Ⅱ 类不得新建 (原有排放一级), Ⅲ–Ⅴ 类二级', () => {
+test('2026-10-20 SC/T 9101 3.1: loại Ⅰ–Ⅱ không được xây mới (cửa xả hiện hữu cấp 1), loại Ⅲ–Ⅴ cấp 2', () => {
   const sct = T.findStandard('SCT9101');
   const g = (rcv, o, ovr) => T.resolveGrade(sct, rcv, ovr || 'auto', o || {});
   assert.equal(g('I-II').prohibited, true); assert.equal(g('I-II').grade, null);
@@ -1836,7 +1836,7 @@ test('2026-10-20 SC/T 9101 3.1: Ⅰ–Ⅱ 类不得新建 (原有排放一级), 
   assert.equal(T.resolveGrade(sw, '1', 'auto').grade, 1); assert.equal(T.resolveGrade(sw, '2', 'auto').grade, 1);
   assert.equal(T.resolveGrade(sw, '3', 'auto').grade, 2);
 });
-test('2026-10-20 福建海水提水式池塘不论规模全部适用', () => {
+test('2026-10-20 ao nước mặn bơm cấp nước Phúc Kiến áp dụng toàn bộ bất kể quy mô', () => {
   const fj = T.findStandard('FJ_SW');
   assert.equal(T.applicability(fj, 50).status, 'reference');
   assert.equal(T.applicability(fj, 50, { variant: true }).status, 'mandatory');
@@ -1845,14 +1845,14 @@ test('2026-10-20 福建海水提水式池塘不论规模全部适用', () => {
   assert.equal(r.applicability.status, 'mandatory');
   assert.equal(T.run(baseInput({ standardId: 'FJ_SW', receiving: '2', areaMu: 50 })).applicability.status, 'reference');
 });
-test('适用性门槛', () => {
+test('Ngưỡng áp dụng', () => {
   assert.equal(T.applicability(T.findStandard('HA'), 80).applies, false);
   assert.equal(T.applicability(T.findStandard('HA'), 100).applies, true);
   assert.equal(T.applicability(T.findStandard('SC'), 1).applies, true);
-  assert.ok(T.applicability(T.findStandard('GD_FW'), 20).text.startsWith('参照执行'));
+  assert.ok(T.applicability(T.findStandard('GD_FW'), 20).text.startsWith('Áp dụng tham chiếu'));
 });
 
-test('v0.6 现有排放口: 禁止新建的水域按一级参照; 四川重点区域一律一级', () => {
+test('v0.6 cửa xả hiện hữu: vùng nước cấm xây mới tham chiếu cấp 1; khu trọng điểm Tứ Xuyên đều cấp 1', () => {
   const g = (id, rcv, o) => T.resolveGrade(T.findStandard(id), rcv, 'auto', o);
   const ex = g('CQ', 'I-II', { existingOutlet: true });
   assert.equal(ex.prohibited, false); assert.equal(ex.grade, 1); assert.equal(ex.reference, true);
@@ -1867,12 +1867,12 @@ test('v0.6 现有排放口: 禁止新建的水域按一级参照; 四川重点�
   assert.equal(g('SCT9101', 'III').grade, 2); assert.equal(g('SCT9101', 'IV-V').grade, 2);   // SC/T 9101 3.1 c)
   assert.equal(T.limitsFor(T.findStandard('SCT9103'), g('SCT9103', '2')).TN, null);
 });
-test('禁止排放时无限值', () => {
+test('Khi cấm xả thì không có giới hạn', () => {
   const r = T.run(baseInput({ standardId: 'HI_FW', receiving: 'I-II' }));
   assert.equal(r.limits, null);
   assert.equal(r.summary, null);
 });
-test('单一限值标准 (上海) 在特殊保护水域同样禁排; 现有排放口按单一限值参照', () => {
+test('Tiêu chuẩn giới hạn duy nhất (Thượng Hải) ở vùng nước bảo vệ đặc biệt cũng cấm xả; cửa xả hiện hữu tham chiếu giới hạn duy nhất', () => {
   const sh = T.findStandard('SH');
   const ban = T.resolveGrade(sh, 'SPECIAL', 'auto');
   assert.equal(ban.prohibited, true); assert.equal(T.limitsFor(sh, ban), null);
@@ -1886,7 +1886,7 @@ test('单一限值标准 (上海) 在特殊保护水域同样禁排; 现有排�
   assert.equal(T.resolveGrade(sh, 'III', 'auto').prohibited, false);       // 非特殊保护水域不受影响
 });
 
-test('v0.3 实测原水: 日常取实测值, 排干按模型比例推算', () => {
+test('v0.3 nước nguồn thực đo: hằng ngày lấy giá trị thực đo, tháo cạn suy theo tỷ lệ mô hình', () => {
   // dailyPct 1: Vexch 288000, Vdrain 120000; 模型 排干/日常 浓度比 = (0.35/120000)/(0.65/288000)
   const k = (0.35 / 120000) / (0.65 / 288000);
   const r = T.run(baseInput({ dailyPct: 1, rawMode: 'measured', measTN: 3.13, measTP: 0.37 }));
@@ -1903,7 +1903,7 @@ test('v0.3 实测原水: 日常取实测值, 排干按模型比例推算', () =>
   const noEx = T.run(baseInput({ rawMode: 'measured', measTN: 3.13, measTP: 0.37 }));   // 无换水: 排干 = 实测值
   near(noEx.complianceDrain.find(c => c.key === 'TN').cin, 3.13);
 });
-test('v0.3 由实测反推流失比例 (无换水: 排干实测即全部)', () => {
+test('v0.3 suy ngược tỷ lệ thất thoát từ thực đo (không thay nước: thực đo khi tháo cạn là toàn bộ)', () => {
   // Vtot = Vdrain 120000 m³; 饲料 N 10752 kg、P 2400 kg
   const r = T.run(baseInput({ rawMode: 'measured', measTN: 4.0, measTP: 0.4, bgTN: 0.5, bgTP: 0.05 }));
   near(r.raw.impliedFN, 3.5 * 120000 / 1000 / 10752 * 100);   // 3.906%
@@ -1911,7 +1911,7 @@ test('v0.3 由实测反推流失比例 (无换水: 排干实测即全部)', () =
   const back = T.massBalance(baseInput({ fN: r.raw.impliedFN, fP: r.raw.impliedFP, bgTN: 0.5, bgTP: 0.05 }));
   near(back.drain.TN, 4.0); near(back.drain.TP, 0.4);
 });
-test('审计修订: 填了排干末段实测时, 回填流失比例 + 排干份额可复现实测', () => {
+test('Sửa đổi sau rà soát: khi đã nhập thực đo cuối kỳ tháo cạn, điền ngược tỷ lệ thất thoát + phần tháo cạn có thể tái lập thực đo', () => {
   // dailyPct 3: Vexch 864000, Vdrain 120000; 日常 3.13/0.37, 排干末段 TN 6、TP 0.5
   const inp = { dailyPct: 3, rawMode: 'measured', measTN: 3.13, measTP: 0.37, drainTN: 6, drainTP: 0.5 };
   const r = T.run(baseInput(inp));
@@ -1923,7 +1923,7 @@ test('审计修订: 填了排干末段实测时, 回填流失比例 + 排干份�
   const s = T.run(baseInput({ dailyPct: 3, rawMode: 'measured', measTN: 3.13, measTP: 0.37 }));
   near(s.raw.impliedN.drainSharePct, 35); near(s.raw.impliedP.drainSharePct, 35);
 });
-test('2026-10-20 填入④: 只填排干末段 TP 时按磷回填份额, 日常 TN、TP 与排干 TP 均复现', () => {
+test('2026-10-20 nhập ④: khi chỉ nhập TP cuối kỳ tháo cạn thì điền ngược phần theo photpho, TN, TP hằng ngày và TP tháo cạn đều tái lập', () => {
   const r = T.run(baseInput({ dailyPct: 3, rawMode: 'measured', measTN: 3.13, measTP: 0.37, drainTP: 0.5 }));
   const c = r.raw.calib;
   assert.equal(c.shareFrom, 'TP'); near(c.drainLoadPct, r.raw.impliedP.drainSharePct); near(c.fP, r.raw.impliedFP);
@@ -1935,7 +1935,7 @@ test('2026-10-20 填入④: 只填排干末段 TP 时按磷回填份额, 日常 
   const bn = T.massBalance(baseInput({ dailyPct: 3, fN: rn.raw.calib.fN, fP: rn.raw.calib.fP, drainLoadPct: rn.raw.calib.drainLoadPct }));
   near(bn.routine.TN, 3.13); near(bn.drain.TN, 6); near(bn.routine.TP, 0.37);
 });
-test('2026-10-20 填入④: 水源本底 ≠ 0、未填排干实测时, 反推份额等于设定份额, 回填可复现日常实测', () => {
+test('2026-10-20 nhập ④: khi nền nguồn nước ≠ 0, chưa nhập thực đo tháo cạn, phần suy ngược bằng phần đã đặt, điền ngược tái lập được thực đo hằng ngày', () => {
   const bg = { bgTN: 1.5, bgTP: 0.05 };
   const r = T.run(baseInput(Object.assign({ dailyPct: 3, rawMode: 'measured', measTN: 3.13, measTP: 0.37 }, bg)));
   near(r.raw.impliedN.drainSharePct, 35); near(r.raw.impliedP.drainSharePct, 35);
@@ -1944,7 +1944,7 @@ test('2026-10-20 填入④: 水源本底 ≠ 0、未填排干实测时, 反推�
   near(back.routine.TN, 3.13); near(back.routine.TP, 0.37);
   near(r.raw.drainEst.TN, back.drain.TN);                     // 排干估计 = 回填后模型的排干浓度
 });
-test('v0.3 估算值与国内实测范围对照', () => {
+test('v0.3 đối chiếu giá trị ước tính với phạm vi thực đo trong nước', () => {
   assert.equal(T.fieldCheck('TN', 14.336), 'above');
   assert.equal(T.fieldCheck('TN', 3.824), 'within');
   assert.equal(T.fieldCheck('TP', 0.1), 'below');
@@ -1956,7 +1956,7 @@ test('v0.3 估算值与国内实测范围对照', () => {
   near(rt.raw.TP, 240 * 0.65 * 1000 / 864000);                    // 0.181
   assert.equal(rt.raw.check.TN, 'within'); assert.equal(rt.raw.check.TP, 'within');
 });
-test('v0.3 品种默认值落在实测范围内 (淡水投饵品种)', () => {
+test('v0.3 giá trị mặc định theo loài nằm trong phạm vi thực đo (loài nước ngọt cho ăn)', () => {
   assert.equal(T.SPECIES.find(s => s.id === 'grasscarp').exchange, 'routine');
   assert.equal(T.SPECIES.find(s => s.id === 'tilapia').exchange, 'routine');
   for (const sp of T.SPECIES.filter(s => s.water === 'fw')) {
@@ -1967,20 +1967,20 @@ test('v0.3 品种默认值落在实测范围内 (淡水投饵品种)', () => {
     assert.ok(r.raw.check.TP !== 'above', sp.id + ' TP ' + r.raw.TP);
   }
 });
-test('v0.4 禁止排放不可被指定级别覆盖', () => {
+test('v0.4 cấm xả không thể bị ghi đè bởi cấp chỉ định', () => {
   for (const [id, rec] of [['GD_FW', 'SPECIAL'], ['HI_FW', 'I-II'], ['HB', 'I-II'], ['HN', 'I-II'], ['FJ_SW', '1'], ['SD', 'SPECIAL']]) {
     const std = T.findStandard(id);
     for (const ov of ['1', '2']) {
       const g = T.resolveGrade(std, rec, ov);
-      assert.equal(g.prohibited, true, id + ' 指定' + ov);
-      assert.ok(/禁止排放/.test(g.overrideRejected || ''), id + ' 应说明禁止排放不能覆盖');
+      assert.equal(g.prohibited, true, id + ' Chỉ định' + ov);
+      assert.ok(/cấm xả/.test(g.overrideRejected || ''), id + ' Phải giải thích cấm xả không thể ghi đè');
       assert.equal(T.limitsFor(std, g), null);
     }
     const r = T.run(baseInput({ standardId: id, receiving: rec, gradeOverride: '1' }));
     assert.equal(r.limits, null); assert.equal(r.summary, null);
   }
 });
-test('v0.4 指定级别只能更严', () => {
+test('v0.4 cấp chỉ định chỉ có thể nghiêm hơn', () => {
   const gd = T.findStandard('GD_FW');
   const loosen = T.resolveGrade(gd, 'III', '2');          // 自动一级, 指定二级 → 拒绝
   assert.equal(loosen.grade, 1); assert.ok(loosen.overrideRejected);
@@ -1994,7 +1994,7 @@ test('v0.4 指定级别只能更严', () => {
   const single = T.resolveGrade(T.findStandard('SH'), 'III', '1');
   assert.equal(single.single, true); assert.ok(single.overrideRejected);
 });
-test('v0.4 输入校验: 空白与非法值报错, 不出结果', () => {
+test('v0.4 kiểm tra dữ liệu nhập: trống và giá trị không hợp lệ báo lỗi, không ra kết quả', () => {
   assert.deepEqual(T.validate(Object.assign({ water: 'fw' }, baseInput())).errors, []);
   const cases = [{ areaMu: NaN }, { areaMu: 0 }, { areaMu: -5 }, { pondDepth: 0 }, { slopeA: 0 }, { slopeA: 1.2 },
     { maxHL: 0 }, { drainDays: 0 }, { fN: 120 }, { flowFactor: 0.8 }, { splitSed: 0, splitAer: 0, splitEco: 0 },
@@ -2006,19 +2006,19 @@ test('v0.4 输入校验: 空白与非法值报错, 不出结果', () => {
     assert.equal(r.compliance, undefined);
   }
 });
-test('v0.4 输入校验: 实测模式必须填实测值; 选填项留空可通过', () => {
+test('v0.4 kiểm tra dữ liệu nhập: chế độ thực đo phải nhập giá trị thực đo; mục không bắt buộc để trống vẫn qua', () => {
   assert.equal(T.run(baseInput({ rawMode: 'measured', measTN: NaN, measTP: 0.4 })).invalid, true);
   assert.equal(T.run(baseInput({ rawMode: 'measured', measTN: 0, measTP: 0.4 })).invalid, true);
   assert.equal(T.run(baseInput({ rawMode: 'estimate', measTN: NaN, measTP: NaN })).invalid, false);
   assert.equal(T.run(baseInput({ drainSS: NaN, drainTN: NaN, drainTP: undefined })).invalid, false);
 });
-test('v0.4 输入校验: 警告不阻断计算', () => {
+test('v0.4 kiểm tra dữ liệu nhập: cảnh báo không chặn tính toán', () => {
   const r = T.run(baseInput({ slopeA: 0.7, rMid: { TN: 80 } }));
   assert.equal(r.invalid, false);
-  assert.ok(r.validation.warnings.some(w => w.indexOf('边坡系数') >= 0));
-  assert.ok(r.validation.warnings.some(w => w.indexOf('TN 去除率中值') >= 0));
+  assert.ok(r.validation.warnings.some(w => w.indexOf('Hệ số mái dốc') >= 0));
+  assert.ok(r.validation.warnings.some(w => w.indexOf('Trung vị hiệu suất loại TN') >= 0));
 });
-test('v0.4 汇总判定: 达标 / 有风险 / 超标', () => {
+test('v0.4 kết luận tổng hợp: đạt / có rủi ro / vượt chuẩn', () => {
   const ok = T.run(baseInput({ dailyPct: 1, rawMode: 'measured', measTN: 2.0, measTP: 0.2, SS: 40, COD: 8, NH3N: 0.5 }));
   assert.equal(ok.summary.verdict, 'pass');
   // 江西一级 TN 限值下, 找一个中值达标、不利端超标的进水
@@ -2029,7 +2029,7 @@ test('v0.4 汇总判定: 达标 / 有风险 / 超标', () => {
   assert.equal(risk.summary.verdict, 'risk');
   assert.equal(T.run(baseInput(ROUTINE)).summary.verdict, 'fail');
 });
-test('v0.4 排干末段 TN、TP: 实测优先, 未填时按模型推算并标记', () => {
+test('v0.4 TN, TP cuối kỳ tháo cạn: ưu tiên thực đo, khi chưa nhập thì suy theo mô hình và đánh dấu', () => {
   const k = (0.35 / 120000) / (0.65 / 288000);
   const a = T.run(baseInput({ dailyPct: 1, rawMode: 'measured', measTN: 3, measTP: 0.4 }));
   assert.deepEqual(a.drainAssumed, { TN: true, TP: true });
@@ -2040,12 +2040,12 @@ test('v0.4 排干末段 TN、TP: 实测优先, 未填时按模型推算并标记
   near(b.complianceDrain.find(c => c.key === 'TP').cin, 1.2);
   near(b.compliance.find(c => c.key === 'TN').cin, 3);          // 日常工况不受影响
 });
-test('每周期排干 0 次时排干历时可填 0 或留空', () => {
+test('Khi mỗi chu kỳ tháo cạn 0 lần, thời gian tháo cạn có thể nhập 0 hoặc để trống', () => {
   assert.equal(T.run(baseInput({ drainsPerCycle: 0, dailyPct: 3, drainDays: 0 })).invalid, false);
   assert.equal(T.run(baseInput({ drainsPerCycle: 0, dailyPct: 3, drainDays: NaN })).invalid, false);
   assert.equal(T.run(baseInput({ drainsPerCycle: 1, dailyPct: 3, drainDays: 0 })).invalid, true);
 });
-test('v0.5 每周期排干 0 次: 无排干流量, 不做排干沉淀校核', () => {
+test('v0.5 mỗi chu kỳ tháo cạn 0 lần: không có lưu lượng tháo cạn, không kiểm tra lắng khi tháo cạn', () => {
   const p = baseInput({ drainsPerCycle: 0, dailyPct: 3 });
   const tr = T.sizeTreatment(Object.assign({ water: 'fw' }, p), T.massBalance(p));
   assert.equal(tr.qDrain, 0); assert.equal(tr.aSettle, 0);
@@ -2054,7 +2054,7 @@ test('v0.5 每周期排干 0 次: 无排干流量, 不做排干沉淀校核', ()
   const q = baseInput({ drainsPerCycle: 1, dailyPct: 3 });
   near(T.sizeTreatment(Object.assign({ water: 'fw' }, q), T.massBalance(q)).qDrain, 2400);
 });
-test('v0.5 设计流量: 排干期间是否继续换水', () => {
+test('v0.5 lưu lượng thiết kế: có tiếp tục thay nước trong thời gian tháo cạn hay không', () => {
   const sz = o => { const p = baseInput(o); return T.sizeTreatment(Object.assign({ water: 'fw' }, p), T.massBalance(p)); };
   const both = sz({ dailyPct: 5, exchDuringDrain: true });   // 2400 + 7200 × 0.9
   near(both.qDesign, 8880); near(both.aReq, 17760); assert.equal(both.qGoverning, 'both');
@@ -2065,7 +2065,7 @@ test('v0.5 设计流量: 排干期间是否继续换水', () => {
   // 排干历时很长时换水单独更大: 说明应为 "换水控制"
   assert.equal(sz({ dailyPct: 5, drainDays: 30, exchDuringDrain: true }).qGoverning, 'exch');
 });
-test('v0.6 设计流量口径: 广东草案 (周期平均 × b) 与排干峰值', () => {
+test('v0.6 quy ước lưu lượng thiết kế: dự thảo Quảng Đông (trung bình chu kỳ × b) và đỉnh tháo cạn', () => {
   const sz = o => { const p = baseInput(o); return T.sizeTreatment(Object.assign({ water: 'fw' }, p), T.massBalance(p)); };
   const d = sz({ dailyPct: 3, designFlowMode: 'draft' });    // Vtot 984000 / 240 d × 1.2
   near(d.qDesign, 984000 / 240 * 1.2); assert.equal(d.qGoverning, 'avg'); near(d.qPeak, 2400 + 4320 * 0.9);
@@ -2074,7 +2074,7 @@ test('v0.6 设计流量口径: 广东草案 (周期平均 × b) 与排干峰值'
   const def = baseInput({ dailyPct: 3 }); delete def.designFlowMode;
   assert.equal(T.sizeTreatment(Object.assign({ water: 'fw' }, T.DEFAULTS, def), T.massBalance(def)).designFlowMode, 'draft');
 });
-test('v0.5 实测反推分日常与排干两部分', () => {
+test('v0.5 suy ngược từ thực đo chia thành phần hằng ngày và phần tháo cạn', () => {
   // Vexch = 120000 × 3% × 240 = 864000; Vdrain = 120000; 饲料 N 10752 kg
   const a = T.run(baseInput({ dailyPct: 3, rawMode: 'measured', measTN: 4, measTP: 0.4, drainTN: 10 }));
   near(a.raw.impliedN.routine, 4 * 864000 / 1000 / 10752 * 100);
@@ -2088,27 +2088,27 @@ test('v0.5 实测反推分日常与排干两部分', () => {
   assert.equal(b.raw.drainBasis.TN, 'scaled');
   near(b.raw.drainShare, 120000 / 984000);
 });
-test('v0.5 三池结构: 缺一个单元即报错, 偏离推荐区间给警告', () => {
+test('v0.5 cấu trúc ba ao: thiếu một đơn vị là báo lỗi, lệch khoảng khuyến nghị thì cảnh báo', () => {
   for (const o of [{ splitAer: 0 }, { splitSed: 0 }, { splitEco: 0 }, { splitSed: 100, splitAer: 0, splitEco: 0 }]) {
     const r = T.run(baseInput(o));
     assert.equal(r.invalid, true, JSON.stringify(o));
-    assert.ok(r.validation.errors.some(e => e.indexOf('三池两坝必须') >= 0));
+    assert.ok(r.validation.errors.some(e => e.indexOf('«Ba ao hai đập» bắt buộc') >= 0));
   }
   const w = T.run(baseInput({ splitSed: 60, splitAer: 10, splitEco: 30, floatBedPct: 10, recircPct: 50 }));
   assert.equal(w.invalid, false);
-  for (const k of ['沉淀池占 60%', '生态净化池占 30%', '浮床 10%', '内循环 50%']) assert.ok(w.validation.warnings.some(x => x.indexOf(k) >= 0), k);
-  assert.ok(!w.validation.warnings.some(x => x.indexOf('曝气池占') >= 0));
+  for (const k of ['Ao lắng chiếm 60%', 'Ao lọc sinh thái chiếm 30%', 'Bè nổi 10%', 'Tuần hoàn nội 50%']) assert.ok(w.validation.warnings.some(x => x.indexOf(k) >= 0), k);
+  assert.ok(!w.validation.warnings.some(x => x.indexOf('Ao sục khí chiếm') >= 0));
   assert.deepEqual(T.run(baseInput()).validation.warnings, []);
 });
-test('v0.5 适用性三态', () => {
+test('v0.5 ba trạng thái áp dụng', () => {
   const hb = T.findStandard('HB');
   const below = T.applicability(hb, 150);
-  assert.equal(below.status, 'reference'); assert.ok(below.text.indexOf('不等于可以不处理') >= 0);
+  assert.equal(below.status, 'reference'); assert.ok(below.text.indexOf('không có nghĩa là có thể không xử lý') >= 0);
   assert.equal(T.applicability(hb, 200).status, 'mandatory');
   assert.equal(T.applicability(T.findStandard('SC'), 1).status, 'mandatory');
   assert.equal(T.applicability(Object.assign({}, hb, { thresholdUnknown: true }), 500).status, 'pending');
 });
-test('v0.5 未来阶段限值标为情景', () => {
+test('v0.5 giới hạn giai đoạn tương lai đánh dấu là kịch bản', () => {
   const zj = T.STANDARDS.find(s => s.phase2);
   const base = { standardId: zj.id, receiving: '2', season: 'mild', rawMode: 'measured', measTN: 3, measTP: 0.2 };
   const now = T.run(baseInput(base)), fut = T.run(baseInput(Object.assign({ usePhase2: true }, base)));
@@ -2116,14 +2116,14 @@ test('v0.5 未来阶段限值标为情景', () => {
   assert.equal(fut.scenario.phase2From, zj.phase2.from);
   assert.ok(fut.limits.TN < now.limits.TN);
 });
-test('标准库与参数表完整性', () => {
+test('Tính đầy đủ của thư viện tiêu chuẩn và bảng thông số', () => {
   const ids = new Set();
   for (const s of T.STANDARDS) {
-    assert.ok(!ids.has(s.id), 'id 重复 ' + s.id); ids.add(s.id);
+    assert.ok(!ids.has(s.id), 'trùng id ' + s.id); ids.add(s.id);
     assert.ok(/^https?:\/\//.test(s.source), s.id + ' 缺来源');
     const gs = Object.values(s.grades);
     for (const g of gs) for (const k of ['SS', 'COD', 'TN', 'TP']) assert.ok(g[k] > 0 || (g[k] === null && s.id === 'SCT9103'), s.id + ' ' + k);
-    if (gs.length === 2) for (const k of ['SS', 'COD', 'TN', 'TP']) assert.ok(s.grades[1][k] == null || s.grades[1][k] <= s.grades[2][k], s.id + ' 一级应严于二级 ' + k);
+    if (gs.length === 2) for (const k of ['SS', 'COD', 'TN', 'TP']) assert.ok(s.grades[1][k] == null || s.grades[1][k] <= s.grades[2][k], s.id + ' Cấp 1 phải nghiêm hơn cấp 2 ' + k);
   }
   for (const w of ['fw', 'sw']) for (const k of T.POLLUTANTS) {
     const t = T.REMOVAL[w][k];
@@ -2147,7 +2147,7 @@ test('标准库与参数表完整性', () => {
     'recircPct','floatBedPct','sedFloatPct','rSS','rCOD','rTN','rTP','rNH3N'];
   var SEL_FIELDS = ['water','standardId','receiving','gradeOverride','speciesId','exchange','season','rawMode','exchDuringDrain','designFlowMode'];
   var CHK_FIELDS = ['useSpecial','useVariant','usePhase2','existingOutlet','keyArea','lastPortionHeld'];
-  var NAME = { SS: '悬浮物 SS', COD: '', TN: '总氮 TN', TP: '总磷 TP', NH3N: '氨氮 NH₃-N' };
+  var NAME = { SS: 'Chất rắn lơ lửng SS', COD: '', TN: 'Tổng nitơ TN', TP: 'Tổng photpho TP', NH3N: 'Amoni NH₃-N' };
   var DP = { SS: 0, COD: 1, TN: 1, TP: 2, NH3N: 2 };
 
   function fmt(x, d) {
@@ -2167,8 +2167,8 @@ test('标准库与参数表完整性', () => {
   function fillReceiving() {
     var w = $('water').value, cur = $('receiving').value;
     var opts = w === 'fw'
-      ? [['SPECIAL','法律禁止设排污口的特殊保护水域（饮用水源保护区等）'],['I-II','GB 3838 Ⅰ–Ⅱ 类'],['III','GB 3838 Ⅲ 类'],['IV-V','GB 3838 Ⅳ–Ⅴ 类 / 未划类']]
-      : [['SPECIAL','法律禁止设排污口的海域'],['1','GB 3097 第一类海域'],['2','GB 3097 第二类海域'],['3','GB 3097 第三类海域'],['4','GB 3097 第四类海域']];
+      ? [['SPECIAL','Vùng nước bảo vệ đặc biệt pháp luật cấm đặt cửa xả (khu bảo vệ nguồn nước uống...)'],['I-II','GB 3838 loại Ⅰ–Ⅱ'],['III','GB 3838 loại Ⅲ'],['IV-V','GB 3838 loại Ⅳ–Ⅴ / chưa phân loại']]
+      : [['SPECIAL','Vùng biển pháp luật cấm đặt cửa xả'],['1','Vùng biển GB 3097 loại 1'],['2','Vùng biển GB 3097 loại 2'],['3','Vùng biển GB 3097 loại 3'],['4','Vùng biển GB 3097 loại 4']];
     $('receiving').innerHTML = opts.map(function (o) { return '<option value="' + o[0] + '">' + o[1] + '</option>'; }).join('');
     $('receiving').value = opts.some(function (o) { return o[0] === cur; }) ? cur : (w === 'fw' ? 'IV-V' : '2');
   }
@@ -2263,43 +2263,43 @@ test('标准库与参数表完整性', () => {
   function stdInfo(std) {
     var w = $('water').value;
     ['Special','Variant','Phase2','KeyArea'].forEach(function (k) { $('wrap' + k).hidden = true; });
-    if (std.keyArea) { $('wrapKeyArea').hidden = false; $('lblKeyArea').textContent = '位于四川' + std.keyArea; }
-    if (std.special) { $('wrapSpecial').hidden = false; $('lblSpecial').textContent = '执行' + std.special.label; }
+    if (std.keyArea) { $('wrapKeyArea').hidden = false; $('lblKeyArea').textContent = 'Nằm tại Tứ Xuyên' + std.keyArea; }
+    if (std.special) { $('wrapSpecial').hidden = false; $('lblSpecial').textContent = 'Áp dụng' + std.special.label; }
     if (std.variant) { $('wrapVariant').hidden = false; $('lblVariant').textContent = std.variant.label; }
-    if (std.phase2) { $('wrapPhase2').hidden = false; $('lblPhase2').textContent = '按 ' + std.phase2.from + ' 起的第二阶段 TN 限值核算'; }
-    $('lblCOD').innerHTML = w === 'fw' ? '尾水 COD<sub>Mn</sub>' : '尾水 COD (碱性 KMnO₄ 法)';
-    $('stdBox').innerHTML = '<b>' + esc(std.region) + ' ' + esc(std.code) + '</b>（' + std.nature + '）· 实施 ' + std.effective +
-      (std.existing ? ' · 现有养殖场 ' + esc(std.existing) + ' 起执行' : '') + '<br>适用范围：' + esc(std.thresholdNote) +
-      (std.sourceNote ? '<br><span style="color:#fcd34d">数据来源：' + esc(std.sourceNote) + '</span>' : '') +
-      '<br><a href="' + std.source + '" target="_blank" rel="noopener">' + (std.sourceNote ? (std.gradeRule === 'SCT' ? '转载条文（原文未取得，转载有识别错误）' : '官方解读') : '标准原文') + '</a>';
+    if (std.phase2) { $('wrapPhase2').hidden = false; $('lblPhase2').textContent = 'Theo ' + std.phase2.from + ' tính theo giới hạn TN giai đoạn hai bắt đầu từ'; }
+    $('lblCOD').innerHTML = w === 'fw' ? 'COD nước thải<sub>Mn</sub>' : 'COD nước thải (phương pháp KMnO₄ kiềm)';
+    $('stdBox').innerHTML = '<b>' + esc(std.region) + ' ' + esc(std.code) + '</b>（' + std.nature + ') · hiệu lực ' + std.effective +
+      (std.existing ? ' · cơ sở nuôi hiện hữu ' + esc(std.existing) + ' bắt đầu áp dụng' : '') + '<br>Phạm vi áp dụng:' + esc(std.thresholdNote) +
+      (std.sourceNote ? '<br><span style="color:#fcd34d">Nguồn dữ liệu:' + esc(std.sourceNote) + '</span>' : '') +
+      '<br><a href="' + std.source + '" target="_blank" rel="noopener">' + (std.sourceNote ? (std.gradeRule === 'SCT' ? 'Điều khoản đăng lại (chưa có nguyên văn, bản đăng lại có lỗi nhận dạng)' : 'Giải thích chính thức') : 'Nguyên văn tiêu chuẩn') + '</a>';
     var g = T.AREA_RATIO[species().group] || T.AREA_RATIO.general;
     $('ratioBox').innerHTML = w === 'sw'
-      ? '<b>海水池塘</b>：没有官方面积比，规模由流量、水力负荷和沉淀停留决定；此处面积比只作对照。'
-      : '<b>' + esc(T.GROUP_LABEL[species().group] || '') + '</b> 面积比区间 ' + g.lo + (g.hi !== g.lo ? '–' + g.hi : '') + '%：' + esc(g.note);
+      ? '<b>Ao nước mặn</b>: không có tỷ lệ diện tích chính thức, quy mô do lưu lượng, tải trọng thuỷ lực và thời gian lưu lắng quyết định; tỷ lệ diện tích ở đây chỉ để đối chiếu.'
+      : '<b>' + esc(T.GROUP_LABEL[species().group] || '') + '</b> Khoảng tỷ lệ diện tích ' + g.lo + (g.hi !== g.lo ? '–' + g.hi : '') + '%：' + esc(g.note);
     var tab = T.REMOVAL[w === 'sw' ? 'sw' : 'fw'];
-    $('removalBox').innerHTML = '实测区间（' + (w === 'sw' ? '海水' : '淡水') + '）：' + T.POLLUTANTS.map(function (k) {
-      return k.replace('NH3N', '氨氮') + ' ' + tab[k].lo + '–' + tab[k].hi + '%，C* ' + tab[k].Cstar; }).join('；') +
-      '。中值可按本地经验修改；区间端点用于给出出水范围。';
+    $('removalBox').innerHTML = 'Khoảng thực đo (' + (w === 'sw' ? 'Nước biển' : 'Nước ngọt') + '）：' + T.POLLUTANTS.map(function (k) {
+      return k.replace('NH3N', 'Amoni') + ' ' + tab[k].lo + '–' + tab[k].hi + '%，C* ' + tab[k].Cstar; }).join('；') +
+      '. Trung vị có thể sửa theo kinh nghiệm địa phương; hai đầu khoảng dùng để đưa ra phạm vi nước ra.';
   }
 
   function pillFor(st) {
-    if (st === 'pass') return '<span class="pill ok">达标</span>';
-    if (st === 'edge') return '<span class="pill edge">临界</span>';
-    if (st === 'fail') return '<span class="pill no">超标</span>';
-    return '<span class="pill na">不考核</span>';
+    if (st === 'pass') return '<span class="pill ok">Đạt</span>';
+    if (st === 'edge') return '<span class="pill edge">Tới hạn</span>';
+    if (st === 'fail') return '<span class="pill no">Vượt chuẩn</span>';
+    return '<span class="pill na">Không xét</span>';
   }
 
   function compTable(rows, opts) {
-    var h = ['<div class="table-wrapper"><table class="tw"><thead><tr><th>指标</th><th>进水</th><th>需要去除率</th><th>去除率 R×f</th><th>出水（中值）</th><th>出水区间</th><th>限值</th><th>结论</th></tr></thead><tbody>'];
+    var h = ['<div class="table-wrapper"><table class="tw"><thead><tr><th>Chỉ tiêu</th><th>Nước vào</th><th>Hiệu suất loại bỏ cần</th><th>Hiệu suất loại bỏ R×f</th><th>Nước ra (trung vị)</th><th>Khoảng nước ra</th><th>Giới hạn</th><th>Kết luận</th></tr></thead><tbody>'];
     rows.forEach(function (c) {
       var tag = opts.tags[c.key] ? ' <span class="muted">(' + opts.tags[c.key] + ')</span>' : '';
       var d = DP[c.key];
-      var need = c.needEta == null ? '—' : (c.needEta === 0 ? '无需' : fmt(c.needEta, 0) + '%');
+      var need = c.needEta == null ? '—' : (c.needEta === 0 ? 'Không cần' : fmt(c.needEta, 0) + '%');
       var rng = fmt(c.coutBest, d) + ' – ' + fmt(c.coutWorst, d);
       h.push('<tr><td>' + NAME[c.key] + tag + '</td><td>' + fmt(c.cin, d) + '</td><td>' + need + '</td><td>' + fmt(c.Reff, 0) + '%</td><td>' +
         fmt(c.cout, d) + '</td><td>' + rng + '</td><td>' + (c.limit == null ? '—' : fmt(c.limit, d)) + '</td><td>' + pillFor(c.status) + '</td></tr>');
     });
-    if (opts.limits) h.push('<tr><td>pH</td><td colspan="5" class="l muted">需实测</td><td>' + opts.limits.pH[0] + '–' + opts.limits.pH[1] + '</td><td><span class="pill na">需实测</span></td></tr>');
+    if (opts.limits) h.push('<tr><td>pH</td><td colspan="5" class="l muted">Cần thực đo</td><td>' + opts.limits.pH[0] + '–' + opts.limits.pH[1] + '</td><td><span class="pill na">Cần thực đo</span></td></tr>');
     h.push('</tbody></table></div>');
     return h.join('');
   }
@@ -2313,14 +2313,14 @@ test('标准库与参数表完整性', () => {
     var meas = inp.rawMode === 'measured';
     $('wrapMeasTN').hidden = !meas; $('wrapMeasTP').hidden = !meas;
     if (r.invalid) {
-      $('results').innerHTML = '<div class="note bad"><span class="label">输入有误，暂不计算</span>：以下参数需要修改，修改后结果会自动更新。<ul style="margin:4px 0 0 18px;padding:0">' +
+      $('results').innerHTML = '<div class="note bad"><span class="label">Dữ liệu nhập có lỗi, tạm không tính</span>: các thông số dưới đây cần sửa, sửa xong kết quả sẽ tự cập nhật.<ul style="margin:4px 0 0 18px;padding:0">' +
         r.validation.errors.map(function (e) { return '<li>' + esc(e) + '</li>'; }).join('') + '</ul></div>';
-      $('metaLine').textContent = std.region + ' · 输入有误 · v' + T.VERSION;
+      $('metaLine').textContent = std.region + ' · dữ liệu nhập có lỗi · v' + T.VERSION;
       renderSources(std); save();
       return;
     }
     var mb = r.massBalance, tr = r.treatment, gi = r.grade, L = r.limits, w = r.water, raw = r.raw;
-    NAME.COD = w === 'fw' ? '高锰酸盐指数 COD<sub>Mn</sub>' : '化学需氧量 COD';
+    NAME.COD = w === 'fw' ? 'Chỉ số permanganat COD<sub>Mn</sub>' : 'Nhu cầu oxy hoá học COD';
     var sp = species();
     var season = T.SEASONS[inp.season] || T.SEASONS.mild;
     var h = [];
@@ -2329,138 +2329,138 @@ test('标准库与参数表完整性', () => {
 
     /* KPI */
     $('wrapExisting').hidden = !(gi.prohibited || gi.reference || inp.existingOutlet);
-    var gradeTxt = gi.prohibited ? '不得新建排放口' : (gi.single ? '单一限值' + (gi.reference ? '（参照）' : '') : (gi.reference ? '参照一级' : (gi.grade === 1 ? '一级' : '二级')) + (gi.special ? '（特别限值）' : ''));
+    var gradeTxt = gi.prohibited ? 'Không được xây mới cửa xả' : (gi.single ? 'Giới hạn duy nhất' + (gi.reference ? '(tham chiếu)' : '') : (gi.reference ? 'Tham chiếu cấp 1' : (gi.grade === 1 ? 'Cấp 1' : 'Cấp 2')) + (gi.special ? '(giới hạn đặc biệt)' : ''));
     var verdict = function (s) {
-      if (!s) return gi.prohibited ? { cls: 'bad', txt: '不可排放', sub: gi.note } : { cls: '', txt: '无此工况', sub: '' };
-      if (s.verdict === 'fail') return { cls: 'bad', txt: '超标 ' + s.fail + ' 项' + (s.edge ? '，临界 ' + s.edge + ' 项' : ''), sub: '模型预测：按去除率中值即超标' };
-      if (s.verdict === 'risk') return { cls: 'warn', txt: '有风险：' + s.edge + ' 项临界', sub: '模型预测：中值达标，去除率偏低时超标' + (unjudged.length ? '；' + unjudged.join('、') + ' 未评价' : '') };
-      if (unjudged.length) return { cls: '', txt: '已评价项达标', sub: '仅评价 ' + s.n + ' 项；' + unjudged.join('、') + ' 不考核，标准另考核的指标本工具未建模，需另行核对' };
-      return { cls: 'good', txt: '达标', sub: '模型预测：去除率取不利端仍达标，非实测保证' };
+      if (!s) return gi.prohibited ? { cls: 'bad', txt: 'Không được xả', sub: gi.note } : { cls: '', txt: 'Không có điều kiện này', sub: '' };
+      if (s.verdict === 'fail') return { cls: 'bad', txt: 'Vượt chuẩn ' + s.fail + ' mục' + (s.edge ? ', tới hạn ' + s.edge + ' mục' : ''), sub: 'Mô hình dự báo: theo trung vị hiệu suất loại bỏ đã vượt chuẩn' };
+      if (s.verdict === 'risk') return { cls: 'warn', txt: 'Có rủi ro:' + s.edge + ' mục tới hạn', sub: 'Mô hình dự báo: trung vị đạt, khi hiệu suất loại bỏ thấp thì vượt chuẩn' + (unjudged.length ? '；' + unjudged.join('、') + ' Chưa đánh giá' : '') };
+      if (unjudged.length) return { cls: '', txt: 'Các mục đã đánh giá đều đạt', sub: 'Chỉ đánh giá ' + s.n + ' mục;' + unjudged.join('、') + ' không xét, các chỉ tiêu tiêu chuẩn xét thêm công cụ chưa mô hình hoá, cần đối chiếu riêng' };
+      return { cls: 'good', txt: 'Đạt', sub: 'Mô hình dự báo: hiệu suất loại bỏ lấy đầu bất lợi vẫn đạt, không phải bảo đảm thực đo' };
     };
     var v1 = verdict(r.summary), v2 = verdict(r.summaryDrain);
     h.push('<div class="kpi-row">');
-    h.push('<div class="kpi ' + (gi.prohibited ? 'bad' : '') + '"><div class="label">执行标准</div><div class="value txt">' + esc(std.region) + ' · ' + gradeTxt + '</div><div class="sub">' + esc(std.code) + (r.scenario.phase2 ? ' · <b>未来情景：' + esc(r.scenario.phase2From) + ' 起 TN 限值</b>' : '') + '</div></div>');
-    var APPL = { mandatory: '强制适用', reference: '参照执行', pending: '待核对' };
-    h.push('<div class="kpi ' + (r.applicability.status === 'mandatory' ? '' : 'warn') + '"><div class="label">适用性（' + fmt(inp.areaMu, 0) + ' 亩）</div><div class="value txt">' + APPL[r.applicability.status] + '</div><div class="sub">' + esc(r.applicability.text) + '</div></div>');
-    h.push('<div class="kpi"><div class="label">三池两坝总面积</div><div class="value">' + fmt(tr.aReq, 0) + '<span class="muted" style="font-size:11px"> m²</span></div><div class="sub">' + fmt(tr.aReqMu, 1) + ' 亩 · 占养殖面积 ' + fmt(tr.pctOfFarm, 1) + '%</div></div>');
-    if (!r.hasRoutine && !gi.prohibited) { v1 = { cls: '', txt: '无此工况', sub: '日换水率为 0，养殖期无日常排水' }; }
-    if (!r.hasDrain && !gi.prohibited) { v2 = { cls: '', txt: '无此工况', sub: '每周期排干 0 次' }; }
-    h.push('<div class="kpi ' + v1.cls + '"><div class="label">日常换水排水 · ' + esc(season.label.split(' ')[0]) + '</div><div class="value txt">' + v1.txt + '</div><div class="sub">' + esc(v1.sub) + '</div></div>');
-    h.push('<div class="kpi ' + v2.cls + '"><div class="label">收获排干期</div><div class="value txt">' + v2.txt + '</div><div class="sub">' + esc(v2.sub && r.hasDrain && !gi.prohibited ? v2.sub + '；SS 进水 ' + fmt(r.drainSS, 0) : v2.sub) + '</div></div>');
+    h.push('<div class="kpi ' + (gi.prohibited ? 'bad' : '') + '"><div class="label">Tiêu chuẩn áp dụng</div><div class="value txt">' + esc(std.region) + ' · ' + gradeTxt + '</div><div class="sub">' + esc(std.code) + (r.scenario.phase2 ? ' · <b>Kịch bản tương lai:' + esc(r.scenario.phase2From) + ' giới hạn TN từ</b>' : '') + '</div></div>');
+    var APPL = { mandatory: 'Bắt buộc áp dụng', reference: 'Áp dụng tham chiếu', pending: 'Chờ đối chiếu' };
+    h.push('<div class="kpi ' + (r.applicability.status === 'mandatory' ? '' : 'warn') + '"><div class="label">Khả năng áp dụng (' + fmt(inp.areaMu, 0) + ' mu)</div><div class="value txt">' + APPL[r.applicability.status] + '</div><div class="sub">' + esc(r.applicability.text) + '</div></div>');
+    h.push('<div class="kpi"><div class="label">Tổng diện tích «ba ao hai đập»</div><div class="value">' + fmt(tr.aReq, 0) + '<span class="muted" style="font-size:11px"> m²</span></div><div class="sub">' + fmt(tr.aReqMu, 1) + ' mu · chiếm diện tích nuôi ' + fmt(tr.pctOfFarm, 1) + '%</div></div>');
+    if (!r.hasRoutine && !gi.prohibited) { v1 = { cls: '', txt: 'Không có điều kiện này', sub: 'Tỷ lệ thay nước hằng ngày bằng 0, thời kỳ nuôi không xả nước hằng ngày' }; }
+    if (!r.hasDrain && !gi.prohibited) { v2 = { cls: '', txt: 'Không có điều kiện này', sub: 'Mỗi chu kỳ tháo cạn 0 lần' }; }
+    h.push('<div class="kpi ' + v1.cls + '"><div class="label">Xả nước thay hằng ngày · ' + esc(season.label.split(' ')[0]) + '</div><div class="value txt">' + v1.txt + '</div><div class="sub">' + esc(v1.sub) + '</div></div>');
+    h.push('<div class="kpi ' + v2.cls + '"><div class="label">Thời kỳ thu hoạch tháo cạn</div><div class="value txt">' + v2.txt + '</div><div class="sub">' + esc(v2.sub && r.hasDrain && !gi.prohibited ? v2.sub + '; SS vào ' + fmt(r.drainSS, 0) : v2.sub) + '</div></div>');
     h.push('</div>');
 
     /* 提示 */
-    if (gi.prohibited) h.push('<div class="note bad"><span class="label">不得新建排放口</span>：' + esc(gi.note) + '。新建项目应改为循环利用、零排放，或另选受纳水体。</div>');
-    else if (gi.reference) h.push('<div class="note warn"><span class="label">参照执行</span>：' + esc(gi.note) + '。</div>');
-    else h.push('<div class="note"><span class="label">级别依据</span>：' + esc(gi.note) + '。</div>');
-    if (unjudged.length && !gi.prohibited) h.push('<div class="note warn"><span class="label">部分指标未评价</span>：' + esc(std.code) + ' 不考核 ' + unjudged.join('、') + '，而考核其他氮磷指标（' + esc(std.sourceNote || '见标准原文') + '）。页面的“达标”只针对已评价的 SS、COD 等项，不代表全部达标。</div>');
-    if (r.scenario.phase2) h.push('<div class="note warn"><span class="label">未来情景</span>：TN 按 ' + esc(r.scenario.phase2From) + ' 起生效的第二阶段限值核算，不是现行限值；核算现行达标请取消勾选。</div>');
-    if (gi.overrideRejected) h.push('<div class="note warn"><span class="label">指定级别未采用</span>：' + esc(gi.overrideRejected) + '。</div>');
-    r.validation.warnings.forEach(function (m) { h.push('<div class="note warn"><span class="label">参数提示</span>：' + esc(m) + '</div>'); });
-    mb.warnings.forEach(function (m) { h.push('<div class="note bad"><span class="label">质量平衡</span>：' + esc(m) + '</div>'); });
-    if (w === 'sw') h.push('<div class="note warn"><span class="label">海水池塘</span>：去除参数取自唯一一项全规模海水实测（烟台对虾，TN 43%、COD 40%），代表性有限；盐度高于 20‰ 时浮床与挺水植物基本失效，不计入去除。海水一级 pH 另要求不超出背景值 ±0.5。</div>');
-    if (!tr.splitOk) h.push('<div class="note warn"><span class="label">面积分配</span>：沉淀、曝气、净化三池比例之和不是 100%，已按比例归一。</div>');
+    if (gi.prohibited) h.push('<div class="note bad"><span class="label">Không được xây mới cửa xả</span>：' + esc(gi.note) + '. Dự án xây mới nên chuyển sang tuần hoàn tái sử dụng, không xả thải, hoặc chọn nguồn tiếp nhận khác.</div>');
+    else if (gi.reference) h.push('<div class="note warn"><span class="label">Áp dụng tham chiếu</span>：' + esc(gi.note) + '。</div>');
+    else h.push('<div class="note"><span class="label">Căn cứ cấp</span>：' + esc(gi.note) + '。</div>');
+    if (unjudged.length && !gi.prohibited) h.push('<div class="note warn"><span class="label">Một số chỉ tiêu chưa đánh giá</span>：' + esc(std.code) + ' Không xét ' + unjudged.join('、') + ', mà xét các chỉ tiêu nitơ photpho khác (' + esc(std.sourceNote || 'xem nguyên văn tiêu chuẩn') + '). «Đạt» trên trang chỉ áp dụng cho các mục đã đánh giá như SS, COD, không có nghĩa là đạt toàn bộ.</div>');
+    if (r.scenario.phase2) h.push('<div class="note warn"><span class="label">Kịch bản tương lai</span>: TN tính theo ' + esc(r.scenario.phase2From) + ' giới hạn giai đoạn hai có hiệu lực từ đó, không phải giới hạn hiện hành; muốn tính đạt chuẩn hiện hành hãy bỏ tích.</div>');
+    if (gi.overrideRejected) h.push('<div class="note warn"><span class="label">Cấp chỉ định không được áp dụng</span>：' + esc(gi.overrideRejected) + '。</div>');
+    r.validation.warnings.forEach(function (m) { h.push('<div class="note warn"><span class="label">Gợi ý thông số</span>：' + esc(m) + '</div>'); });
+    mb.warnings.forEach(function (m) { h.push('<div class="note bad"><span class="label">Cân bằng khối lượng</span>：' + esc(m) + '</div>'); });
+    if (w === 'sw') h.push('<div class="note warn"><span class="label">Ao nước mặn</span>: thông số loại bỏ lấy từ số liệu thực đo quy mô đầy đủ duy nhất cho nước mặn (tôm Yên Đài, TN 43%, COD 40%), tính đại diện hạn chế; độ mặn trên 20‰ thì bè nổi và thực vật thuỷ sinh nổi cơ bản mất tác dụng, không tính vào loại bỏ. pH cấp 1 nước mặn còn yêu cầu không vượt giá trị nền ±0.5.</div>');
+    if (!tr.splitOk) h.push('<div class="note warn"><span class="label">Phân bổ diện tích</span>: tổng tỷ lệ ba ao lắng, sục khí, lọc không bằng 100%, đã chuẩn hoá theo tỷ lệ.</div>');
     var FR = T.FIELD_REF;
     if (!meas) {
       var hi = ['TN', 'TP'].filter(function (k) { return raw.check[k] === 'above'; });
-      if (hi.length) h.push('<div class="note warn"><span class="label">估算偏高</span>：估算原水 ' + hi.map(function (k) { return k + ' ' + fmt(raw[k], DP[k]) + ' mg/L'; }).join('、') +
-        ' 高于国内实测尾水范围上限（TN ' + FR.TN.hi + '、TP ' + FR.TP.hi + ' mg/L）。"少换水、收获时一次排干"的流失比例来自美国斑点叉尾鮰池塘，用于高产池塘时会把氮磷集中到很少的排水量里，结果偏悲观。建议在⑤改用本场实测，或在④改为"养殖期日常换水"。</div>');
-      else h.push('<div class="note"><span class="label">原水估算</span>：TN ' + fmt(raw.TN, 1) + '、TP ' + fmt(raw.TP, 2) + ' mg/L，国内实测尾水范围 TN ' + FR.TN.lo + '–' + FR.TN.hi + '、TP ' + FR.TP.lo + '–' + FR.TP.hi + ' mg/L（广东 25 点均值 ' + FR.TN.typ + ' / ' + FR.TP.typ + '）。有实测数据时请在⑤改用实测。</div>');
+      if (hi.length) h.push('<div class="note warn"><span class="label">Ước tính cao</span>: nước nguồn ước tính ' + hi.map(function (k) { return k + ' ' + fmt(raw[k], DP[k]) + ' mg/L'; }).join('、') +
+        ' cao hơn giới hạn trên phạm vi nước thải thực đo trong nước (TN ' + FR.TN.hi + '、TP ' + FR.TP.hi + ' mg/L）。"ít thay nước, tháo cạn một lần khi thu hoạch"tỷ lệ thất thoát lấy từ ao cá nheo Mỹ, khi dùng cho ao năng suất cao sẽ dồn nitơ photpho vào rất ít lượng nước xả, kết quả thiên bi quan. Khuyến nghị ở ⑤ chuyển sang thực đo của trại, hoặc ở ④ đổi thành"thay nước hằng ngày trong thời kỳ nuôi"。</div>');
+      else h.push('<div class="note"><span class="label">Nước nguồn ước tính</span>：TN ' + fmt(raw.TN, 1) + '、TP ' + fmt(raw.TP, 2) + ' mg/L, phạm vi nước thải thực đo trong nước TN ' + FR.TN.lo + '–' + FR.TN.hi + '、TP ' + FR.TP.lo + '–' + FR.TP.hi + ' mg/L (trung bình 25 điểm Quảng Đông ' + FR.TN.typ + ' / ' + FR.TP.typ + '). Khi có số liệu thực đo hãy chuyển sang thực đo ở ⑤.</div>');
     }
-    r.compliance.forEach(function (c) { if (c.floorExceeds) h.push('<div class="note bad"><span class="label">' + NAME[c.key] + '</span>：实测出水下限 C* = ' + c.Cstar + ' mg/L 已高于限值 ' + c.limit + ' mg/L，生态处理难以稳定达标，需要化学处理或源头削减。</div>'); });
+    r.compliance.forEach(function (c) { if (c.floorExceeds) h.push('<div class="note bad"><span class="label">' + NAME[c.key] + '</span>: giới hạn dưới nước ra thực đo C* = ' + c.Cstar + ' mg/L đã cao hơn giới hạn ' + c.limit + ' mg/L, xử lý sinh thái khó đạt chuẩn ổn định, cần xử lý hoá học hoặc cắt giảm từ nguồn.</div>'); });
 
     /* 达标对照 */
-    var srcTag = meas ? '实测' : '估算·负荷拆分';
-    var tagsR = { SS: '实测', COD: '实测', TN: srcTag, TP: srcTag, NH3N: '实测' };
+    var srcTag = meas ? 'Thực đo' : 'Ước tính · tách tải';
+    var tagsR = { SS: 'Thực đo', COD: 'Thực đo', TN: srcTag, TP: srcTag, NH3N: 'Thực đo' };
     if (r.hasRoutine) {
-    h.push('<h2>达标对照 · 日常换水排水</h2>');
+    h.push('<h2>Đối chiếu đạt chuẩn · xả nước thay hằng ngày</h2>');
     h.push(compTable(r.compliance, { tags: tagsR, limits: L }));
-    h.push('<div class="src">浓度单位 mg/L。出水 = C* + (进水 − C*)(1 − R·f)，季节系数 f 取' + esc(season.label) + '。"出水区间"按实测去除率区间的上、下端计算；中值达标但区间下端超标判为"临界"。' + (meas ? 'TN、TP 进水为本场实测值。' : 'TN、TP 进水为质量平衡估算的日常换水浓度（流失量 × ' + fmt(100 - mb.drainShareUsed * 100, 0) + '% ÷ 周期换水量）。') + '</div>');
-    } else h.push('<h2>达标对照 · 日常换水排水</h2><div class="note">日换水率为 0：养殖期没有日常排水，只评价收获排干期。</div>');
+    h.push('<div class="src">Đơn vị nồng độ mg/L. Nước ra = C* + (nước vào − C*)(1 − R·f), hệ số mùa f lấy' + esc(season.label) + '。"Khoảng nước ra"tính theo đầu trên, đầu dưới của khoảng hiệu suất thực đo; trung vị đạt nhưng đầu dưới khoảng vượt chuẩn thì xếp là"Tới hạn"。' + (meas ? 'TN, TP nước vào là giá trị thực đo của trại.' : 'TN, TP nước vào là nồng độ thay nước hằng ngày ước tính theo cân bằng khối lượng (lượng thất thoát × ' + fmt(100 - mb.drainShareUsed * 100, 0) + '% ÷ lượng nước thay trong chu kỳ).') + '</div>');
+    } else h.push('<h2>Đối chiếu đạt chuẩn · xả nước thay hằng ngày</h2><div class="note">Tỷ lệ thay nước hằng ngày bằng 0: thời kỳ nuôi không xả nước hằng ngày, chỉ đánh giá thời kỳ thu hoạch tháo cạn.</div>');
 
-    var dTag = function (k) { var b = raw.drainBasis[k]; return b === 'measured' ? '实测' : (b === 'scaled' ? '日常实测 × 模型比例' : '估算·负荷拆分'); };
-    var sTag = { measured: '实测末 20%', boyd: '末 20% 按 Boyd 2000', first80: '前 80% 水，日常 × 1.5' }[r.drainSSBasis];
-    var tagsD = { SS: sTag, COD: '沿用日常', TN: dTag('TN'), TP: dTag('TP'), NH3N: '沿用日常' };
+    var dTag = function (k) { var b = raw.drainBasis[k]; return b === 'measured' ? 'Thực đo' : (b === 'scaled' ? 'Thực đo hằng ngày × tỷ lệ mô hình' : 'Ước tính · tách tải'); };
+    var sTag = { measured: 'Thực đo 20% cuối', boyd: '20% cuối theo Boyd 2000', first80: '80% nước đầu, hằng ngày × 1.5' }[r.drainSSBasis];
+    var tagsD = { SS: sTag, COD: 'Dùng lại giá trị hằng ngày', TN: dTag('TN'), TP: dTag('TP'), NH3N: 'Dùng lại giá trị hằng ngày' };
     if (r.hasDrain) {
-    h.push('<h2>达标对照 · 收获排干期</h2>');
+    h.push('<h2>Đối chiếu đạt chuẩn · thời kỳ thu hoạch tháo cạn</h2>');
     h.push(compTable(r.complianceDrain, { tags: tagsD, limits: L }));
-    h.push('<div class="src">排干 SS：前 80% 水取日常 × 1.5、最后 20% 水缺省 ' + fmt(T.DEFAULTS.drainSSLast, 0) + ' mg/L（Boyd 2000 对虾池实测：池水约 100、前 80% 约 150、末 20% 约 1000 mg/L），评价取末 20%，除非勾选"单独收集静置"。TN 去除扣除生态净化池贡献 ' + T.DRAIN_ECO_TN_CREDIT + ' 个百分点（刘梅 2021 单元贡献）。' +
-      (raw.drainBasis.TN === 'model' ? 'TN、TP 进水 = 流失量 × 排干份额 ' + fmt(mb.drainShareUsed * 100, 0) + '% ÷ 排干水量（Briggs & Funge-Smith 1994：63–67% 随日常换水排出，其余在排干时）。' : (raw.drainBasis.TN === 'scaled' ? 'TN、TP 进水按日常实测 × 模型的排干/日常浓度比推算，未填排干实测时仅为估计。' : 'TN、TP 进水为排干末段实测值。')) +
-      'COD、氨氮沿用日常值。目前没有国内排干期实测数据，本表为工程估算。</div>');
-    } else h.push('<h2>达标对照 · 收获排干期</h2><div class="note">每周期排干 0 次：不评价排干工况。</div>');
+    h.push('<div class="src">SS khi tháo cạn: 80% nước đầu lấy hằng ngày × 1.5, 20% nước cuối mặc định ' + fmt(T.DEFAULTS.drainSSLast, 0) + ' mg/L (Boyd 2000 thực đo ao tôm: nước ao khoảng 100, 80% đầu khoảng 150, 20% cuối khoảng 1000 mg/L), đánh giá lấy 20% cuối, trừ khi tích"thu gom riêng để lắng tĩnh". Loại TN đã trừ phần đóng góp của ao lọc sinh thái ' + T.DRAIN_ECO_TN_CREDIT + ' điểm phần trăm (đóng góp đơn vị theo Lưu Mai 2021).' +
+      (raw.drainBasis.TN === 'model' ? 'TN, TP nước vào = lượng thất thoát × phần tháo cạn ' + fmt(mb.drainShareUsed * 100, 0) + '% ÷ lượng nước tháo cạn (Briggs & Funge-Smith 1994: 63–67% thải theo nước thay hằng ngày, phần còn lại lúc tháo cạn).' : (raw.drainBasis.TN === 'scaled' ? 'TN, TP nước vào suy theo thực đo hằng ngày × tỷ số nồng độ tháo cạn/hằng ngày của mô hình, khi chưa nhập thực đo tháo cạn chỉ là ước tính.' : 'TN, TP nước vào là giá trị thực đo cuối kỳ tháo cạn.')) +
+      'COD, amoni dùng lại giá trị hằng ngày. Hiện chưa có số liệu thực đo thời kỳ tháo cạn trong nước, bảng này là ước tính công trình.</div>');
+    } else h.push('<h2>Đối chiếu đạt chuẩn · thời kỳ thu hoạch tháo cạn</h2><div class="note">Mỗi chu kỳ tháo cạn 0 lần: không đánh giá điều kiện tháo cạn.</div>');
 
     var fails = r.compliance.concat(r.complianceDrain).filter(function (c) { return c.status === 'fail' || c.status === 'edge'; }).map(function (c) { return c.key; });
     if (fails.length) {
       var tips = [];
-      if (fails.indexOf('TP') >= 0) tips.push('TP：可在沉淀池投加铝盐或铁盐化学除磷（目前无公开实测效果），或扩大生态净化池与人工湿地');
-      if (fails.indexOf('TN') >= 0) tips.push('TN：生态处理脱氮有限，冬季更低；可延长停留时间、降低水力负荷、增设人工湿地，或从源头降低饲料蛋白、提高饲料利用率');
-      if (fails.indexOf('SS') >= 0) tips.push('SS：排干末段单独收集、静置 ≥8 h 后再进入系统；注意藻类形成的 SS 无法靠沉淀去除');
-      if (fails.indexOf('COD') >= 0) tips.push('COD：增强曝气池供氧（DO 2–4 mg/L），控制排干末段底泥扰动');
-      if (fails.indexOf('NH3N') >= 0) tips.push('氨氮：保证曝气池供氧与停留时间，冬季硝化显著变慢');
-      h.push('<div class="note warn"><span class="label">超标或临界项的常见对策</span><ul style="margin:4px 0 0 18px;padding:0">' + tips.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></div>');
+      if (fails.indexOf('TP') >= 0) tips.push('TP: có thể châm muối nhôm hoặc muối sắt ở ao lắng để khử photpho hoá học (hiện chưa có hiệu quả thực đo công khai), hoặc mở rộng ao lọc sinh thái và đất ngập nước nhân tạo');
+      if (fails.indexOf('TN') >= 0) tips.push('TN: xử lý sinh thái khử nitơ hạn chế, mùa đông còn thấp hơn; có thể kéo dài thời gian lưu, giảm tải trọng thuỷ lực, bổ sung đất ngập nước nhân tạo, hoặc từ nguồn giảm protein thức ăn, nâng hiệu suất sử dụng thức ăn');
+      if (fails.indexOf('SS') >= 0) tips.push('SS: thu gom riêng nước cuối kỳ tháo cạn, lắng tĩnh ≥8 h rồi mới đưa vào hệ thống; chú ý SS do tảo tạo ra không loại được bằng lắng');
+      if (fails.indexOf('COD') >= 0) tips.push('COD: tăng cường cấp oxy ao sục khí (DO 2–4 mg/L), hạn chế khuấy động bùn đáy cuối kỳ tháo cạn');
+      if (fails.indexOf('NH3N') >= 0) tips.push('Amoni: bảo đảm cấp oxy và thời gian lưu của ao sục khí, mùa đông nitrat hoá chậm rõ rệt');
+      h.push('<div class="note warn"><span class="label">Biện pháp thường dùng cho các mục vượt chuẩn hoặc tới hạn</span><ul style="margin:4px 0 0 18px;padding:0">' + tips.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></div>');
     }
 
     /* 氮磷收支 */
     var pct = function (x, tot) { return tot > 0 ? fmt(x / tot * 100, 1) + '%' : '—'; };
     var shareN = raw.impliedN ? raw.impliedN.drainSharePct : NaN, shareP = raw.impliedP ? raw.impliedP.drainSharePct : NaN;
-    h.push('<h2>氮磷收支（每养殖周期）</h2><div class="table-wrapper"><table class="tw"><thead><tr><th>去向</th><th>氮 kg</th><th>占饲料氮</th><th>磷 kg</th><th>占饲料磷</th></tr></thead><tbody>');
-    h.push('<tr class="total"><td>饲料投入</td><td>' + fmt(mb.N.feed, 0) + '</td><td>100%</td><td>' + fmt(mb.P.feed, 0) + '</td><td>100%</td></tr>');
-    h.push('<tr><td>产品留存</td><td>' + fmt(mb.N.harv, 0) + '</td><td>' + pct(mb.N.harv, mb.N.feed) + '</td><td>' + fmt(mb.P.harv, 0) + '</td><td>' + pct(mb.P.harv, mb.P.feed) + '</td></tr>');
-    h.push('<tr><td>随排水流失</td><td>' + fmt(mb.N.water, 0) + '</td><td>' + pct(mb.N.water, mb.N.feed) + '</td><td>' + fmt(mb.P.water, 0) + '</td><td>' + pct(mb.P.water, mb.P.feed) + '</td></tr>');
-    h.push('<tr><td>底泥沉积及气态逸失</td><td>' + fmt(mb.N.rest, 0) + '</td><td>' + pct(mb.N.rest, mb.N.feed) + '</td><td>' + fmt(mb.P.rest, 0) + '</td><td>' + pct(mb.P.rest, mb.P.feed) + '</td></tr>');
+    h.push('<h2>Cân bằng thu chi nitơ photpho (mỗi chu kỳ nuôi)</h2><div class="table-wrapper"><table class="tw"><thead><tr><th>Đi đâu</th><th>Nitơ kg</th><th>Chiếm nitơ thức ăn</th><th>Photpho kg</th><th>Chiếm photpho thức ăn</th></tr></thead><tbody>');
+    h.push('<tr class="total"><td>Thức ăn đưa vào</td><td>' + fmt(mb.N.feed, 0) + '</td><td>100%</td><td>' + fmt(mb.P.feed, 0) + '</td><td>100%</td></tr>');
+    h.push('<tr><td>Lưu lại trong sản phẩm</td><td>' + fmt(mb.N.harv, 0) + '</td><td>' + pct(mb.N.harv, mb.N.feed) + '</td><td>' + fmt(mb.P.harv, 0) + '</td><td>' + pct(mb.P.harv, mb.P.feed) + '</td></tr>');
+    h.push('<tr><td>Thất thoát theo nước xả</td><td>' + fmt(mb.N.water, 0) + '</td><td>' + pct(mb.N.water, mb.N.feed) + '</td><td>' + fmt(mb.P.water, 0) + '</td><td>' + pct(mb.P.water, mb.P.feed) + '</td></tr>');
+    h.push('<tr><td>Lắng đọng bùn đáy và bay hơi dạng khí</td><td>' + fmt(mb.N.rest, 0) + '</td><td>' + pct(mb.N.rest, mb.N.feed) + '</td><td>' + fmt(mb.P.rest, 0) + '</td><td>' + pct(mb.P.rest, mb.P.feed) + '</td></tr>');
     h.push('</tbody></table></div>');
     h.push('<div class="table-wrapper"><table class="tw"><tbody>' +
-      '<tr><td>产量 / 投饵量</td><td>' + fmt(mb.prod / 1000, 1) + ' t / ' + fmt(mb.feed / 1000, 1) + ' t</td></tr>' +
-      '<tr><td>养殖水体</td><td>' + fmt(mb.pondVol, 0) + ' m³</td></tr>' +
-      '<tr><td>周期排水量（换水 + 排干）</td><td>' + fmt(mb.Vexch, 0) + ' + ' + fmt(mb.Vdrain, 0) + ' = ' + fmt(mb.Vtot, 0) + ' m³</td></tr>' +
-      '<tr><td>折合每 kg 产品排水</td><td>' + fmt(mb.dischargePerKg, 2) + ' m³/kg</td></tr>' +
-      '<tr><td>估算日常换水 TN / TP</td><td>' + fmt(mb.routine.TN, 1) + ' / ' + fmt(mb.routine.TP, 2) + ' mg/L（流失量 × ' + fmt(100 - mb.drainShareUsed * 100, 0) + '% ÷ 换水量' + (meas ? '，未采用' : '') + '）</td></tr>' +
-      '<tr><td>估算排干期 TN / TP</td><td>' + fmt(mb.drain.TN, 1) + ' / ' + fmt(mb.drain.TP, 2) + ' mg/L（流失量 × ' + fmt(mb.drainShareUsed * 100, 0) + '% ÷ 排干水量' + (raw.drainBasis.TN === 'model' ? '' : '，未采用') + '）</td></tr>' +
-      '<tr><td>周期平均 TN / TP（仅对照）</td><td>' + fmt(mb.cTN, 1) + ' / ' + fmt(mb.cTP, 2) + ' mg/L</td></tr>' +
-      (meas ? '<tr><td>实测日常尾水 TN / TP</td><td>' + fmt(raw.TN, 1) + ' / ' + fmt(raw.TP, 2) + ' mg/L（估算 ÷ 实测 = ' + fmt(mb.routine.TN / raw.TN, 1) + ' / ' + fmt(mb.routine.TP / raw.TP, 1) + '）</td></tr>' +
-        '<tr><td>反推流失比例 · 日常换水部分</td><td>氮 ' + fmt(raw.impliedN.routine, 1) + '%、磷 ' + fmt(raw.impliedP.routine, 1) + '%（由日常实测确定）</td></tr>' +
-        '<tr><td>反推流失比例 · 排干部分</td><td>氮 ' + fmt(raw.impliedN.drain, 1) + '%（' + (raw.drainBasis.TN === 'measured' ? '排干实测' : '<b>按模型比例推算</b>') + '）、磷 ' + fmt(raw.impliedP.drain, 1) + '%（' + (raw.drainBasis.TP === 'measured' ? '排干实测' : '<b>按模型比例推算</b>') + '）；排干水量占周期 ' + fmt(raw.drainShare * 100, 0) + '%</td></tr>' +
-        '<tr><td>反推排干份额</td><td>氮 ' + fmt(shareN, 1) + '%、磷 ' + fmt(shareP, 1) + '%（当前设定 ' + fmt(inp.drainLoadPct, 1) + '%；④只有一个排干份额，“填入④”优先按填了排干末段实测的氮取值，只填了排干 TP 时按磷取值）</td></tr>' +
-        '<tr class="total"><td>反推流失比例 · 全周期</td><td>氮 ' + fmt(raw.impliedFN, 1) + '%、磷 ' + fmt(raw.impliedFP, 1) + '%（当前设定 ' + fmt(inp.fN, 1) + '% / ' + fmt(inp.fP, 1) + '%；“填入④”写入 ' + fmt(raw.calib.fN, 1) + '% / ' + fmt(raw.calib.fP, 1) + '%' + (isFinite(raw.calib.drainLoadPct) ? '、排干份额 ' + fmt(raw.calib.drainLoadPct, 1) + '%' : '') + '） <button class="btn" type="button" id="btnCalib" style="padding:2px 8px;font-size:12px">填入④</button></td></tr>' : '') +
+      '<tr><td>Sản lượng / lượng thức ăn</td><td>' + fmt(mb.prod / 1000, 1) + ' t / ' + fmt(mb.feed / 1000, 1) + ' t</td></tr>' +
+      '<tr><td>Thể tích nước nuôi</td><td>' + fmt(mb.pondVol, 0) + ' m³</td></tr>' +
+      '<tr><td>Lượng nước xả mỗi chu kỳ (thay nước + tháo cạn)</td><td>' + fmt(mb.Vexch, 0) + ' + ' + fmt(mb.Vdrain, 0) + ' = ' + fmt(mb.Vtot, 0) + ' m³</td></tr>' +
+      '<tr><td>Quy ra lượng nước xả mỗi kg sản phẩm</td><td>' + fmt(mb.dischargePerKg, 2) + ' m³/kg</td></tr>' +
+      '<tr><td>TN / TP thay nước hằng ngày ước tính</td><td>' + fmt(mb.routine.TN, 1) + ' / ' + fmt(mb.routine.TP, 2) + ' mg/L (lượng thất thoát × ' + fmt(100 - mb.drainShareUsed * 100, 0) + '% ÷ lượng nước thay' + (meas ? ', không áp dụng' : '') + '）</td></tr>' +
+      '<tr><td>TN / TP thời kỳ tháo cạn ước tính</td><td>' + fmt(mb.drain.TN, 1) + ' / ' + fmt(mb.drain.TP, 2) + ' mg/L (lượng thất thoát × ' + fmt(mb.drainShareUsed * 100, 0) + '% ÷ lượng nước tháo cạn' + (raw.drainBasis.TN === 'model' ? '' : ', không áp dụng') + '）</td></tr>' +
+      '<tr><td>TN / TP trung bình chu kỳ (chỉ để đối chiếu)</td><td>' + fmt(mb.cTN, 1) + ' / ' + fmt(mb.cTP, 2) + ' mg/L</td></tr>' +
+      (meas ? '<tr><td>TN / TP nước thải hằng ngày thực đo</td><td>' + fmt(raw.TN, 1) + ' / ' + fmt(raw.TP, 2) + ' mg/L (ước tính ÷ thực đo = ' + fmt(mb.routine.TN / raw.TN, 1) + ' / ' + fmt(mb.routine.TP / raw.TP, 1) + '）</td></tr>' +
+        '<tr><td>Tỷ lệ thất thoát suy ngược · phần thay nước hằng ngày</td><td>Nitơ ' + fmt(raw.impliedN.routine, 1) + '%, photpho ' + fmt(raw.impliedP.routine, 1) + '% (xác định từ thực đo hằng ngày)</td></tr>' +
+        '<tr><td>Tỷ lệ thất thoát suy ngược · phần tháo cạn</td><td>Nitơ ' + fmt(raw.impliedN.drain, 1) + '%（' + (raw.drainBasis.TN === 'measured' ? 'Thực đo tháo cạn' : '<b>Suy theo tỷ lệ mô hình</b>') + '), photpho ' + fmt(raw.impliedP.drain, 1) + '%（' + (raw.drainBasis.TP === 'measured' ? 'Thực đo tháo cạn' : '<b>Suy theo tỷ lệ mô hình</b>') + '); lượng nước tháo cạn chiếm chu kỳ ' + fmt(raw.drainShare * 100, 0) + '%</td></tr>' +
+        '<tr><td>Phần tháo cạn suy ngược</td><td>Nitơ ' + fmt(shareN, 1) + '%, photpho ' + fmt(shareP, 1) + '% (đang đặt ' + fmt(inp.drainLoadPct, 1) + '%; ④ chỉ có một phần tháo cạn, «điền vào ④» ưu tiên lấy theo nitơ khi đã nhập thực đo cuối kỳ tháo cạn, chỉ nhập TP tháo cạn thì lấy theo photpho)</td></tr>' +
+        '<tr class="total"><td>Tỷ lệ thất thoát suy ngược · toàn chu kỳ</td><td>Nitơ ' + fmt(raw.impliedFN, 1) + '%, photpho ' + fmt(raw.impliedFP, 1) + '% (đang đặt ' + fmt(inp.fN, 1) + '% / ' + fmt(inp.fP, 1) + '%; «điền vào ④» ghi ' + fmt(raw.calib.fN, 1) + '% / ' + fmt(raw.calib.fP, 1) + '%' + (isFinite(raw.calib.drainLoadPct) ? ', phần tháo cạn ' + fmt(raw.calib.drainLoadPct, 1) + '%' : '') + '） <button class="btn" type="button" id="btnCalib" style="padding:2px 8px;font-size:12px">Điền vào ④</button></td></tr>' : '') +
       '</tbody></table></div>');
-    h.push('<div class="src">尾水浓度 = 水源本底 + 随排水流失量 ÷ 周期排水量。随排水流失比例强烈依赖换水与排干方式，默认值来自文献中的两类池塘。' +
-      (meas ? '反推比例 = Σ(各工况实测 − 本底) × 该工况水量 ÷ 饲料氮（磷）投入，日常换水与排干分开计。' + ((raw.drainBasis.TN === 'scaled' || raw.drainBasis.TP === 'scaled') && raw.drainShare > 0 ? '<b>未填排干末段实测时，排干部分按模型比例推算，全周期比例不能由日常实测唯一确定</b>（排干水量占 ' + fmt(raw.drainShare * 100, 0) + '%，占比越大不确定性越大）。' : '') + '“填入④”回填流失比例；填了排干末段实测时同时回填排干份额（优先按氮，只填 TP 时按磷），未填排干实测的一项按同一份额由日常部分折算全周期比例，切回“估算”后可复现本场日常实测和所依据的排干实测（氮、磷都填了排干实测且份额不同时，磷只复现全周期总量），并用于推算换品种、改单产或改换水方式后的尾水浓度。' : '有实测数据时，在⑤选“本场实测”即可反推本场的流失比例。') + '</div>');
+    h.push('<div class="src">Nồng độ nước thải = nền nguồn nước + lượng thất thoát theo nước xả ÷ lượng nước xả mỗi chu kỳ. Tỷ lệ thất thoát theo nước xả phụ thuộc mạnh vào cách thay nước và tháo cạn, giá trị mặc định lấy từ hai loại ao trong tài liệu.' +
+      (meas ? 'Tỷ lệ suy ngược = Σ(thực đo từng điều kiện − nền) × lượng nước điều kiện đó ÷ lượng nitơ (photpho) thức ăn đưa vào, thay nước hằng ngày và tháo cạn tính riêng.' + ((raw.drainBasis.TN === 'scaled' || raw.drainBasis.TP === 'scaled') && raw.drainShare > 0 ? '<b>Khi chưa nhập thực đo cuối kỳ tháo cạn, phần tháo cạn suy theo tỷ lệ mô hình, tỷ lệ toàn chu kỳ không thể xác định duy nhất từ thực đo hằng ngày</b>(lượng nước tháo cạn chiếm ' + fmt(raw.drainShare * 100, 0) + '%, chiếm càng lớn càng bất định).' : '') + '«Điền vào ④» điền ngược tỷ lệ thất thoát; khi đã nhập thực đo cuối kỳ tháo cạn thì đồng thời điền ngược phần tháo cạn (ưu tiên theo nitơ, chỉ nhập TP thì theo photpho), mục chưa nhập thực đo tháo cạn thì quy đổi tỷ lệ toàn chu kỳ từ phần hằng ngày theo cùng phần đó; chuyển về «ước tính» sẽ tái lập được thực đo hằng ngày của trại và thực đo tháo cạn đã căn cứ (khi cả nitơ và photpho đều nhập thực đo tháo cạn mà phần khác nhau, photpho chỉ tái lập tổng toàn chu kỳ), và dùng để suy nồng độ nước thải khi đổi loài, đổi năng suất hoặc đổi cách thay nước.' : 'Khi có số liệu thực đo, chọn «thực đo của trại» ở ⑤ là suy ngược được tỷ lệ thất thoát của trại.') + '</div>');
 
     /* 三池两坝 */
-    var govTxt = { ratio: '面积比', hl: '水力负荷', hrt: '停留时间', settle: '排干沉淀停留' };
-    var gv = function (k) { return tr.governing === k ? ' <span class="pill gov">控制</span>' : ''; };
-    h.push('<h2>三池两坝规模</h2><div class="table-wrapper"><table class="tw"><thead><tr><th>项目</th><th>数值</th><th>说明</th></tr></thead><tbody>');
-    h.push('<tr><td>排干峰值流量</td><td>' + fmt(tr.qDrain, 0) + ' m³/d</td><td class="l">' + (inp.drainsPerCycle > 0 ? '养殖水体 × ' + fmt(inp.simultaneousPct, 0) + '% ÷ ' + fmt(inp.drainDays, 1) + ' d' : '每周期不排干，不计') + '</td></tr>');
-    h.push('<tr><td>日常换水流量</td><td>' + fmt(tr.qExch, 0) + ' m³/d</td><td class="l">养殖水体 × ' + fmt(inp.dailyPct, 1) + '%/d × 变化系数 ' + fmt(inp.flowFactor, 2) + '</td></tr>');
+    var govTxt = { ratio: 'Tỷ lệ diện tích', hl: 'Tải trọng thuỷ lực', hrt: 'Thời gian lưu', settle: 'Thời gian lưu lắng khi tháo cạn' };
+    var gv = function (k) { return tr.governing === k ? ' <span class="pill gov">khống chế</span>' : ''; };
+    h.push('<h2>Quy mô «ba ao hai đập»</h2><div class="table-wrapper"><table class="tw"><thead><tr><th>Hạng mục</th><th>Giá trị</th><th>Giải thích</th></tr></thead><tbody>');
+    h.push('<tr><td>Lưu lượng đỉnh khi tháo cạn</td><td>' + fmt(tr.qDrain, 0) + ' m³/d</td><td class="l">' + (inp.drainsPerCycle > 0 ? 'thể tích nước nuôi × ' + fmt(inp.simultaneousPct, 0) + '% ÷ ' + fmt(inp.drainDays, 1) + ' d' : 'Mỗi chu kỳ không tháo cạn, không tính') + '</td></tr>');
+    h.push('<tr><td>Lưu lượng thay nước hằng ngày</td><td>' + fmt(tr.qExch, 0) + ' m³/d</td><td class="l">thể tích nước nuôi × ' + fmt(inp.dailyPct, 1) + '%/d × hệ số biến động ' + fmt(inp.flowFactor, 2) + '</td></tr>');
     var qTxt = tr.qGoverning === 'avg'
-      ? '广东草案口径：周期排水量 ' + fmt(mb.Vtot, 0) + ' m³ ÷ ' + fmt(inp.days, 0) + ' d × 变化系数 ' + fmt(inp.flowFactor, 2) + '（排干峰值口径为 ' + fmt(tr.qPeak, 0) + ' m³/d，排干沉淀校核仍按峰值）'
+      ? 'Quy ước dự thảo Quảng Đông: lượng nước xả mỗi chu kỳ ' + fmt(mb.Vtot, 0) + ' m³ ÷ ' + fmt(inp.days, 0) + ' d × hệ số biến động ' + fmt(inp.flowFactor, 2) + '(quy ước đỉnh tháo cạn là ' + fmt(tr.qPeak, 0) + ' m³/d, kiểm tra lắng khi tháo cạn vẫn theo đỉnh)'
       : (tr.qGoverning === 'both'
-        ? '排干峰值口径，排干期间其余池塘照常换水：排干 ' + fmt(tr.qDrain, 0) + ' + 其余池塘换水 ' + fmt(tr.qExchOthers, 0) + '（换水 × ' + fmt(100 - inp.simultaneousPct, 0) + '%）'
-        : '排干峰值口径' + (tr.concurrent ? '' : '，排干期间停止换水') + '：取两者较大值（' + (tr.qGoverning === 'drain' ? '排干控制' : '换水控制') + '）');
-    h.push('<tr class="total"><td>设计流量</td><td>' + fmt(tr.qDesign, 0) + ' m³/d</td><td class="l">' + qTxt + '</td></tr>');
-    h.push('<tr><td>按面积比' + gv('ratio') + '</td><td>' + fmt(tr.aRatio, 0) + ' m²</td><td class="l">' + fmt(inp.areaRatioPct, 1) + '% × 养殖面积' + (tr.ratioControls ? '' : '（海水只作对照，不参与控制）') + '</td></tr>');
-    h.push('<tr><td>按水力负荷' + gv('hl') + '</td><td>' + fmt(tr.aHL, 0) + ' m²</td><td class="l">设计流量 ÷ ' + fmt(inp.maxHL, 2) + ' m³/(m²·d)</td></tr>');
-    h.push('<tr><td>按停留时间' + gv('hrt') + '</td><td>' + fmt(tr.aHRT, 0) + ' m²</td><td class="l">设计流量 × ' + fmt(inp.minHRT, 1) + ' d ÷ (边坡系数 ' + fmt(tr.slopeA, 2) + ' × 加权水深 ' + fmt(tr.hW, 2) + ' m)</td></tr>');
-    h.push('<tr><td>按排干沉淀停留' + gv('settle') + '</td><td>' + fmt(tr.aSettle, 0) + ' m²</td><td class="l">排干峰值下沉淀池停留 ≥' + fmt(inp.minSettleH, 0) + ' h</td></tr>');
-    h.push('<tr class="total"><td>采用总面积</td><td>' + fmt(tr.aReq, 0) + ' m²</td><td class="l">' + fmt(tr.aReqMu, 1) + ' 亩，占养殖面积 ' + fmt(tr.pctOfFarm, 1) + '%，由' + govTxt[tr.governing] + '控制</td></tr>');
-    h.push('<tr><td>沉淀池</td><td>' + fmt(tr.aSed, 0) + ' m²</td><td class="l">水深 ' + fmt(inp.depthSed, 1) + ' m，有效容积 ' + fmt(tr.volSed, 0) + ' m³' + (tr.sedFloat > 0 ? '，浮床 ' + fmt(tr.sedFloat, 0) + ' m²' : '') + '；不曝气</td></tr>');
-    h.push('<tr><td>曝气池</td><td>' + fmt(tr.aAer, 0) + ' m²</td><td class="l">水深 ' + fmt(inp.depthAer, 1) + ' m，有效容积 ' + fmt(tr.volAer, 0) + ' m³；曝气头 ' + fmt(tr.aeration.heads, 0) + ' 个、风机约 ' + fmt(tr.aeration.kW, 1) + ' kW（广东草案"每 3 kW 宜配不少于 100 个曝气头"，即按头数折算的功率上限；经验估算，未按需氧量、氧转移效率和管路损失计算），DO 2–4 mg/L</td></tr>');
-    h.push('<tr><td>生态净化池</td><td>' + fmt(tr.aEco, 0) + ' m²</td><td class="l">水深 ' + fmt(inp.depthEco, 1) + ' m，有效容积 ' + fmt(tr.volEco, 0) + ' m³，浮床 ' + fmt(tr.floatBed, 0) + ' m²；可放养鲢鳙 30–100 尾/亩、螺蚌 30–100 kg/亩（各文件不一）</td></tr>');
-    h.push('<tr><td>总有效容积 / 停留时间</td><td>' + fmt(tr.vol, 0) + ' m³</td><td class="l">' + (isFinite(tr.hrt) ? fmt(tr.hrt, 1) + ' d' : '—') + '（要求 ≥' + fmt(inp.minHRT, 1) + ' d）</td></tr>');
-    h.push('<tr><td>实际水力负荷</td><td>' + fmt(tr.hl, 2) + '</td><td class="l">m³/(m²·d)（上限 ' + fmt(inp.maxHL, 2) + '，借自水平潜流湿地）</td></tr>');
-    h.push('<tr><td>排干沉淀停留</td><td>' + (isFinite(tr.settleH) ? fmt(tr.settleH, 1) + ' h' : '—') + '</td><td class="l">沉淀池容积 ÷ 排干峰值流量（要求 ≥' + fmt(inp.minSettleH, 0) + ' h）' + (r.settleOk ? '' : ' <span class="pill no">不足</span>') + '</td></tr>');
-    h.push('<tr><td>过滤坝</td><td>' + tr.dam.n + ' 道</td><td class="l">每道长 ≥' + tr.dam.L + ' m、宽 ≥' + tr.dam.W + ' m，过流断面 ≥' + tr.dam.section + ' m²，过流水深 ≥1.5 m（养殖面积' + (tr.bigFarm ? '大于' : '不超过') + ' 300 亩）</td></tr>');
-    h.push('<tr><td>内循环泵</td><td>' + fmt(tr.recirc, 0) + ' m³/d</td><td class="l">≈ ' + fmt(tr.recirc / 24, 1) + ' m³/h，设计日流量的 ' + fmt(inp.recircPct, 0) + '%（区间 70–150%）；循环水量不计入上面的负荷校核</td></tr>');
+        ? 'Quy ước đỉnh tháo cạn, trong thời gian tháo cạn các ao khác vẫn thay nước bình thường: tháo cạn ' + fmt(tr.qDrain, 0) + ' + các ao khác thay nước ' + fmt(tr.qExchOthers, 0) + '(thay nước × ' + fmt(100 - inp.simultaneousPct, 0) + '%）'
+        : 'Quy ước đỉnh tháo cạn' + (tr.concurrent ? '' : ', ngừng thay nước trong thời gian tháo cạn') + ': lấy giá trị lớn hơn của hai (' + (tr.qGoverning === 'drain' ? 'tháo cạn khống chế' : 'thay nước khống chế') + '）');
+    h.push('<tr class="total"><td>Lưu lượng thiết kế</td><td>' + fmt(tr.qDesign, 0) + ' m³/d</td><td class="l">' + qTxt + '</td></tr>');
+    h.push('<tr><td>Theo tỷ lệ diện tích' + gv('ratio') + '</td><td>' + fmt(tr.aRatio, 0) + ' m²</td><td class="l">' + fmt(inp.areaRatioPct, 1) + '% × diện tích nuôi' + (tr.ratioControls ? '' : '(nước mặn chỉ đối chiếu, không tham gia khống chế)') + '</td></tr>');
+    h.push('<tr><td>Theo tải trọng thuỷ lực' + gv('hl') + '</td><td>' + fmt(tr.aHL, 0) + ' m²</td><td class="l">lưu lượng thiết kế ÷ ' + fmt(inp.maxHL, 2) + ' m³/(m²·d)</td></tr>');
+    h.push('<tr><td>Theo thời gian lưu' + gv('hrt') + '</td><td>' + fmt(tr.aHRT, 0) + ' m²</td><td class="l">lưu lượng thiết kế × ' + fmt(inp.minHRT, 1) + ' d ÷ (hệ số mái dốc ' + fmt(tr.slopeA, 2) + ' × độ sâu nước bình quân gia quyền ' + fmt(tr.hW, 2) + ' m)</td></tr>');
+    h.push('<tr><td>Theo thời gian lưu lắng khi tháo cạn' + gv('settle') + '</td><td>' + fmt(tr.aSettle, 0) + ' m²</td><td class="l">Thời gian lưu ao lắng ở đỉnh tháo cạn ≥' + fmt(inp.minSettleH, 0) + ' h</td></tr>');
+    h.push('<tr class="total"><td>Tổng diện tích áp dụng</td><td>' + fmt(tr.aReq, 0) + ' m²</td><td class="l">' + fmt(tr.aReqMu, 1) + ' mu, chiếm diện tích nuôi ' + fmt(tr.pctOfFarm, 1) + '%, do' + govTxt[tr.governing] + 'khống chế</td></tr>');
+    h.push('<tr><td>Ao lắng</td><td>' + fmt(tr.aSed, 0) + ' m²</td><td class="l">Độ sâu nước ' + fmt(inp.depthSed, 1) + ' m, thể tích hữu ích ' + fmt(tr.volSed, 0) + ' m³' + (tr.sedFloat > 0 ? ', bè nổi ' + fmt(tr.sedFloat, 0) + ' m²' : '') + '; không sục khí</td></tr>');
+    h.push('<tr><td>Ao sục khí</td><td>' + fmt(tr.aAer, 0) + ' m²</td><td class="l">Độ sâu nước ' + fmt(inp.depthAer, 1) + ' m, thể tích hữu ích ' + fmt(tr.volAer, 0) + ' m³; đầu sục khí ' + fmt(tr.aeration.heads, 0) + ' cái, máy thổi khí khoảng ' + fmt(tr.aeration.kW, 1) + ' kW (dự thảo Quảng Đông"mỗi 3 kW nên bố trí không ít hơn 100 đầu sục khí", tức giới hạn trên công suất quy đổi theo số đầu; ước tính kinh nghiệm, chưa tính theo nhu cầu oxy, hiệu suất truyền oxy và tổn thất đường ống), DO 2–4 mg/L</td></tr>');
+    h.push('<tr><td>Ao lọc sinh thái</td><td>' + fmt(tr.aEco, 0) + ' m²</td><td class="l">Độ sâu nước ' + fmt(inp.depthEco, 1) + ' m, thể tích hữu ích ' + fmt(tr.volEco, 0) + ' m³, bè nổi ' + fmt(tr.floatBed, 0) + ' m²; có thể thả cá mè trắng/mè hoa 30–100 con/mu, ốc trai 30–100 kg/mu (các văn bản không thống nhất)</td></tr>');
+    h.push('<tr><td>Tổng thể tích hữu ích / thời gian lưu</td><td>' + fmt(tr.vol, 0) + ' m³</td><td class="l">' + (isFinite(tr.hrt) ? fmt(tr.hrt, 1) + ' d' : '—') + '(yêu cầu ≥' + fmt(inp.minHRT, 1) + ' d）</td></tr>');
+    h.push('<tr><td>Tải trọng thuỷ lực thực tế</td><td>' + fmt(tr.hl, 2) + '</td><td class="l">m³/(m²·d) (giới hạn trên ' + fmt(inp.maxHL, 2) + ', mượn từ đất ngập nước dòng chảy ngầm ngang)</td></tr>');
+    h.push('<tr><td>Thời gian lưu lắng khi tháo cạn</td><td>' + (isFinite(tr.settleH) ? fmt(tr.settleH, 1) + ' h' : '—') + '</td><td class="l">Thể tích ao lắng ÷ lưu lượng đỉnh tháo cạn (yêu cầu ≥' + fmt(inp.minSettleH, 0) + ' h）' + (r.settleOk ? '' : ' <span class="pill no">không đủ</span>') + '</td></tr>');
+    h.push('<tr><td>Đập lọc</td><td>' + tr.dam.n + ' đập</td><td class="l">mỗi đập dài ≥' + tr.dam.L + ' m, rộng ≥' + tr.dam.W + ' m, tiết diện thoát nước ≥' + tr.dam.section + ' m², độ sâu nước chảy qua ≥1.5 m (diện tích nuôi' + (tr.bigFarm ? 'lớn hơn' : 'không quá') + ' 300 mu)</td></tr>');
+    h.push('<tr><td>Bơm tuần hoàn nội</td><td>' + fmt(tr.recirc, 0) + ' m³/d</td><td class="l">≈ ' + fmt(tr.recirc / 24, 1) + ' m³/h, bằng ' + fmt(inp.recircPct, 0) + '% lưu lượng ngày thiết kế (khoảng 70–150%); lưu lượng tuần hoàn không tính vào kiểm tra tải ở trên</td></tr>');
     h.push('</tbody></table></div>');
     if (tr.governing !== 'ratio' && tr.ratioControls) {
       if (tr.designFlowMode === 'draft' && tr.governing !== 'settle') {
         // 广东草案口径: 设计流量 = 周期排水量 ÷ 周期天数 × b, 与排干时间安排无关
         var qMax = Math.min(tr.aRatio * inp.maxHL, inp.minHRT > 0 ? tr.aRatio * tr.slopeA * tr.hW / inp.minHRT : Infinity);
         var qEx = mb.Vexch / inp.days * inp.flowFactor, qDr = mb.Vdrain / inp.days * inp.flowFactor;
-        h.push('<div class="note"><span class="label">面积由' + govTxt[tr.governing] + '控制</span>：按广东草案口径，设计流量 ' + fmt(tr.qDesign, 0) + ' m³/d 是周期平均日排水量（日常换水约 ' + fmt(qEx, 0) + '、排干约 ' + fmt(qDr, 0) + ' m³/d，已乘变化系数），与排干时间安排无关。' +
-          '要把面积降到面积比要求的 ' + fmt(tr.aRatio, 0) + ' m²，设计流量需不超过约 ' + fmt(qMax, 0) + ' m³/d：应减少日换水量' + (qDr > 0 ? '或每周期排干次数' : '') + '；错开排干、延长排干历时只影响排干沉淀停留校核，不改变这一口径下的面积。</div>');
+        h.push('<div class="note"><span class="label">Diện tích do' + govTxt[tr.governing] + 'khống chế</span>: theo quy ước dự thảo Quảng Đông, lưu lượng thiết kế ' + fmt(tr.qDesign, 0) + ' m³/d là lượng nước xả ngày trung bình chu kỳ (thay nước hằng ngày khoảng ' + fmt(qEx, 0) + ', tháo cạn khoảng ' + fmt(qDr, 0) + ' m³/d, đã nhân hệ số biến động), không liên quan đến lịch tháo cạn.' +
+          'Để giảm diện tích xuống mức tỷ lệ diện tích yêu cầu ' + fmt(tr.aRatio, 0) + ' m², lưu lượng thiết kế cần không vượt khoảng ' + fmt(qMax, 0) + ' m³/d: nên giảm lượng thay nước hằng ngày' + (qDr > 0 ? 'hoặc số lần tháo cạn mỗi chu kỳ' : '') + '; tháo cạn so le, kéo dài thời gian tháo cạn chỉ ảnh hưởng kiểm tra thời gian lưu lắng khi tháo cạn, không thay đổi diện tích theo quy ước này.</div>');
       } else {
-        h.push('<div class="note warn"><span class="label">面积由' + govTxt[tr.governing] + '控制</span>：排干或换水流量决定了处理设施规模。错开各池塘的排干时间、延长排干历时，或先把排干水暂存在空闲池塘再匀速处理，可以把面积降到面积比要求的 ' + fmt(tr.aRatio, 0) + ' m²。</div>');
+        h.push('<div class="note warn"><span class="label">Diện tích do' + govTxt[tr.governing] + 'khống chế</span>: lưu lượng tháo cạn hoặc thay nước quyết định quy mô công trình xử lý. Tháo cạn các ao so le, kéo dài thời gian tháo cạn, hoặc tạm chứa nước tháo cạn vào ao trống rồi xử lý đều, có thể giảm diện tích xuống mức tỷ lệ diện tích yêu cầu ' + fmt(tr.aRatio, 0) + ' m²。</div>');
       }
     }
 
@@ -2471,7 +2471,7 @@ test('标准库与参数表完整性', () => {
       if (isFinite(raw.calib.drainLoadPct)) $('drainLoadPct').value = +raw.calib.drainLoadPct.toFixed(1);
       render();
     });
-    $('metaLine').textContent = std.region + ' · ' + (sp.name || '') + ' · ' + fmt(inp.areaMu, 0) + ' 亩 · v' + T.VERSION;
+    $('metaLine').textContent = std.region + ' · ' + (sp.name || '') + ' · ' + fmt(inp.areaMu, 0) + ' mu · v' + T.VERSION;
     renderSources(std);
     save();
   }
@@ -2480,58 +2480,58 @@ test('标准库与参数表完整性', () => {
     var ex = T.EXCHANGE_PRESETS;
     var unv = T.UNVERIFIED.map(function (u) { return '<li>' + esc(u.region) + ' ' + esc(u.code) + '：' + esc(u.note) + '</li>'; }).join('');
     $('sources').innerHTML = '<ul class="src">' +
-      '<li>排放限值：<a href="' + std.source + '" target="_blank" rel="noopener">' + esc(std.region + ' ' + std.code) + (std.sourceNote ? (std.gradeRule === 'SCT' ? ' 转载条文' : ' 官方解读') : ' 原文') + '</a>；本工具收录 ' + T.STANDARDS.length + ' 套限值：除河北取自官方解读、SC/T 9101/9103 取自项目笔记外均已对照标准原文（核对日期 2026-10-12；湖南据用户提供的标准第 1–2 页）。v0.6 起各省 Ⅰ–Ⅱ 类水体的规定按原文逐省区分：广东 5.2.1.1、江西 4.2 执行一级；福建、海南、重庆、四川、河南、湖北、湖南为"不得新建排放口，现有排放口按国家和地方法规执行"；天津未规定第一类海域；四川附录 A 重点控制区域一律一级。</li>' +
-      '<li>饲料氮磷随排水流失比例：' + esc(ex.low.source) + '：N ' + ex.low.fN + '%、P ' + ex.low.fP + '%；' + esc(ex.routine.source) + '：N ' + ex.routine.fN + '%、P ' + ex.routine.fP + '%。v0.3 起草鱼、罗非默认按日常换水计算：按少换水、一次排干算得 TN 14–18 mg/L，是广东实测进水的 3–5 倍；按日常换水算得 3.8 / 5.6 mg/L，与实测相符。</li>' +
-      '<li>国内淡水池塘尾水实测范围（用于校核估算值）：TN ' + T.FIELD_REF.TN.lo + '–' + T.FIELD_REF.TN.hi + '、TP ' + T.FIELD_REF.TP.lo + '–' + T.FIELD_REF.TP.hi + ' mg/L，来自' + esc(T.FIELD_REF.note) + '；均为日常换水期的少量采样，不含排干末段。实测示例值取广东 25 点进水均值 TN ' + T.FIELD_REF.TN.typ + '、TP ' + T.FIELD_REF.TP.typ + ' mg/L。</li>' +
-      '<li>产品成分：对虾含氮 2.9%、含磷 0.34%（Boyd 2004）；鱼类、鳖、蟹为一般范围取值，建议按实测修改。各品种的饲料系数、蛋白、含磷与单产为常见典型值，仅作起点。</li>' +
-      '<li>设计参数主要来自<a href="https://gdses.org.cn/u_file/2510/file/aba70b2ef0.pdf" target="_blank" rel="noopener">广东《淡水池塘养殖尾水处理技术规范 三池两坝技术》征求意见稿</a>（未发布，<a href="https://www.gdses.org.cn/u_file/2510/file/c49618f5d3.pdf" target="_blank" rel="noopener">编制说明</a> 2025-10，适用于 30 亩以上连片淡水池塘）：三池比例区间、净化池浮床 ≥20%、沉淀池浮床 10–30%、内循环 70–150%、边坡系数 0.85–0.95、流量变化系数 1.1–1.3、过滤坝尺寸与过流断面、曝气每 3 m² 1 个头且每 100 头 ≥3 kW。水力负荷 0.5 m³/(m²·d) 为该草案借自 HJ 2005—2010 水平潜流湿地的数值。</li>' +
-      '<li>面积比区间与分池水深：<a href="https://www.ttbz.org.cn/upload/1/cms/content/20260423/2047246675671166976.pdf" target="_blank" rel="noopener">T/SNLT 草案</a>、<a href="https://www.ttbz.org.cn/upload/file/20230630/6382373605799229555890463.pdf" target="_blank" rel="noopener">T/GDNB 草案</a>、T/JSYX 7—2025、<a href="https://hbnysy.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/202208/t20220811_4259225.shtml" target="_blank" rel="noopener">湖北 2022 推介模式</a>、海盐县甲鱼养殖尾水指导意见。蟹类 3% 仅见广东编制说明（引自粤农农办〔2021〕40号，原文未核），默认改用 T/SNLT 的 6%。</li>' +
-      '<li>去除效果：淡水参数锚定<a href="https://hjgcjsxb.org.cn/article/doi/10.12153/j.issn.1674-991X.20200153" target="_blank" rel="noopener">刘梅等 2021</a>（仅摘要）、<a href="https://www.jeesci.com/CN/abstract/abstract4917.shtml" target="_blank" rel="noopener">邹等 2024</a>、<a href="https://xuebao.dlou.edu.cn/article/2022/2095-1388/202201013.html" target="_blank" rel="noopener">徐嘉波等 2022</a>；海水参数锚定<a href="https://files.sciengine.com/pdfs/1007-6336/09F8A40331B34CA9A4AF1145D3E9AF9D.pdf" target="_blank" rel="noopener">王磊等 2023</a>（烟台对虾）。HJ 1217 编制说明中的 TN ≥50%、TP ≥40% 是达标门槛，不是实测值。中值、C* 取整与季节系数属工程判断。</li>' +
-      '<li>排干期：<a href="https://www.globalseafood.org/advocate/farm-effluent-during-draining-for-harvest/" target="_blank" rel="noopener">Boyd 2000, Farm effluent during draining for harvest</a>（对虾池：池水 TSS 约 100、前 80% 约 150、末 20% 约 1000 mg/L）；<a href="https://www.srac.msstate.edu/Project%20PDFs/Effluent%20Mgt..pdf" target="_blank" rel="noopener">美国 SRAC 池塘排水管理报告</a>（末 10% 比首 10% 高 40–70%，为相对值；建议末段静置 8 h）；氮磷排干份额取 Briggs & Funge-Smith 1994（63–67% 随日常换水排出）；生态池 TN 贡献 16.3 个百分点取自刘梅 2021。</li>' +
-      '<li>完整依据见《三池两坝处理效果与设计参数审计》（2026-10-12）。</li>' +
-      '<li>已发布但限值未能核实、暂未纳入计算：<ul style="margin:2px 0 0 16px;padding:0">' + unv + '</ul></li>' +
+      '<li>Giới hạn xả thải:<a href="' + std.source + '" target="_blank" rel="noopener">' + esc(std.region + ' ' + std.code) + (std.sourceNote ? (std.gradeRule === 'SCT' ? ' Điều khoản đăng lại' : ' Giải thích chính thức') : ' Nguyên văn') + '</a>; công cụ này đưa vào ' + T.STANDARDS.length + ' bộ giới hạn: trừ Hà Bắc lấy từ giải thích chính thức, SC/T 9101/9103 lấy từ ghi chú dự án, còn lại đều đã đối chiếu nguyên văn tiêu chuẩn (ngày đối chiếu 2026-10-12; Hồ Nam theo trang 1–2 tiêu chuẩn do người dùng cung cấp). Từ v0.6 quy định về nguồn nước loại Ⅰ–Ⅱ của các tỉnh được phân biệt từng tỉnh theo nguyên văn: Quảng Đông 5.2.1.1, Giang Tây 4.2 áp dụng cấp 1; Phúc Kiến, Hải Nam, Trùng Khánh, Tứ Xuyên, Hà Nam, Hồ Bắc, Hồ Nam là"không được xây mới cửa xả, cửa xả hiện hữu thực hiện theo pháp luật quốc gia và địa phương"; Thiên Tân không quy định vùng biển loại 1; khu vực kiểm soát trọng điểm phụ lục A Tứ Xuyên đều áp dụng cấp 1.</li>' +
+      '<li>Tỷ lệ thất thoát nitơ photpho thức ăn theo nước xả:' + esc(ex.low.source) + '：N ' + ex.low.fN + '%、P ' + ex.low.fP + '%；' + esc(ex.routine.source) + '：N ' + ex.routine.fN + '%、P ' + ex.routine.fP + '%. Từ v0.3 cá trắm cỏ, cá rô phi mặc định tính theo thay nước hằng ngày: tính theo ít thay nước, tháo cạn một lần cho TN 14–18 mg/L, gấp 3–5 lần nước vào thực đo ở Quảng Đông; tính theo thay nước hằng ngày cho 3.8 / 5.6 mg/L, khớp với thực đo.</li>' +
+      '<li>Phạm vi thực đo nước thải ao nuôi nước ngọt trong nước (dùng kiểm tra giá trị ước tính): TN ' + T.FIELD_REF.TN.lo + '–' + T.FIELD_REF.TN.hi + '、TP ' + T.FIELD_REF.TP.lo + '–' + T.FIELD_REF.TP.hi + ' mg/L, lấy từ' + esc(T.FIELD_REF.note) + '; đều là ít mẫu trong thời kỳ thay nước hằng ngày, không gồm cuối kỳ tháo cạn. Giá trị ví dụ thực đo lấy trung bình nước vào 25 điểm Quảng Đông TN ' + T.FIELD_REF.TN.typ + '、TP ' + T.FIELD_REF.TP.typ + ' mg/L。</li>' +
+      '<li>Thành phần sản phẩm: tôm chứa nitơ 2.9%, photpho 0.34% (Boyd 2004); cá, ba ba, cua lấy theo phạm vi thông thường, khuyến nghị sửa theo thực đo. Hệ số thức ăn, protein, hàm lượng photpho và năng suất của các loài là giá trị điển hình thông dụng, chỉ làm điểm xuất phát.</li>' +
+      '<li>Thông số thiết kế chủ yếu lấy từ<a href="https://gdses.org.cn/u_file/2510/file/aba70b2ef0.pdf" target="_blank" rel="noopener">bản lấy ý kiến «Quy phạm kỹ thuật xử lý nước thải ao nuôi nước ngọt – kỹ thuật ba ao hai đập» của Quảng Đông</a>(chưa ban hành,<a href="https://www.gdses.org.cn/u_file/2510/file/c49618f5d3.pdf" target="_blank" rel="noopener">thuyết minh biên soạn</a> 2025-10, áp dụng cho ao nuôi nước ngọt liền vùng trên 30 mu): khoảng tỷ lệ ba ao, bè nổi ao lọc ≥20%, bè nổi ao lắng 10–30%, tuần hoàn nội 70–150%, hệ số mái dốc 0.85–0.95, hệ số biến động lưu lượng 1.1–1.3, kích thước đập lọc và tiết diện thoát nước, sục khí mỗi 3 m² 1 đầu và mỗi 100 đầu ≥3 kW. Tải trọng thuỷ lực 0.5 m³/(m²·d) là trị số dự thảo mượn từ đất ngập nước dòng chảy ngầm ngang HJ 2005—2010.</li>' +
+      '<li>Khoảng tỷ lệ diện tích và độ sâu nước từng ao:<a href="https://www.ttbz.org.cn/upload/1/cms/content/20260423/2047246675671166976.pdf" target="_blank" rel="noopener">dự thảo T/SNLT</a>、<a href="https://www.ttbz.org.cn/upload/file/20230630/6382373605799229555890463.pdf" target="_blank" rel="noopener">dự thảo T/GDNB</a>、T/JSYX 7—2025、<a href="https://hbnysy.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/202208/t20220811_4259225.shtml" target="_blank" rel="noopener">mô hình khuyến nghị Hồ Bắc 2022</a>, ý kiến hướng dẫn về nước thải nuôi ba ba huyện Hải Diêm. Cua 3% chỉ thấy trong thuyết minh biên soạn Quảng Đông (dẫn từ 粤农农办〔2021〕40号, chưa đối chiếu nguyên văn), mặc định đổi dùng 6% của T/SNLT.</li>' +
+      '<li>Hiệu quả loại bỏ: thông số nước ngọt neo theo<a href="https://hjgcjsxb.org.cn/article/doi/10.12153/j.issn.1674-991X.20200153" target="_blank" rel="noopener">Lưu Mai và cs. 2021</a>(chỉ tóm tắt),<a href="https://www.jeesci.com/CN/abstract/abstract4917.shtml" target="_blank" rel="noopener">Trâu và cs. 2024</a>、<a href="https://xuebao.dlou.edu.cn/article/2022/2095-1388/202201013.html" target="_blank" rel="noopener">Từ Gia Ba và cs. 2022</a>; thông số nước mặn neo theo<a href="https://files.sciengine.com/pdfs/1007-6336/09F8A40331B34CA9A4AF1145D3E9AF9D.pdf" target="_blank" rel="noopener">Vương Lỗi và cs. 2023</a>(tôm Yên Đài). TN ≥50%, TP ≥40% trong thuyết minh biên soạn HJ 1217 là ngưỡng đạt chuẩn, không phải giá trị thực đo. Trung vị, làm tròn C* và hệ số mùa thuộc phán đoán công trình.</li>' +
+      '<li>Thời kỳ tháo cạn:<a href="https://www.globalseafood.org/advocate/farm-effluent-during-draining-for-harvest/" target="_blank" rel="noopener">Boyd 2000, Farm effluent during draining for harvest</a>(ao tôm: nước ao TSS khoảng 100, 80% đầu khoảng 150, 20% cuối khoảng 1000 mg/L);<a href="https://www.srac.msstate.edu/Project%20PDFs/Effluent%20Mgt..pdf" target="_blank" rel="noopener">báo cáo quản lý nước xả ao nuôi SRAC của Mỹ</a>(10% cuối cao hơn 10% đầu 40–70%, là giá trị tương đối; khuyến nghị lắng tĩnh phần cuối 8 h); phần tháo cạn nitơ photpho lấy theo Briggs & Funge-Smith 1994 (63–67% thải theo nước thay hằng ngày); đóng góp TN của ao sinh thái 16.3 điểm phần trăm lấy từ Lưu Mai 2021.</li>' +
+      '<li>Căn cứ đầy đủ xem «Rà soát hiệu quả xử lý và thông số thiết kế ba ao hai đập» (2026-10-12).</li>' +
+      '<li>Đã ban hành nhưng chưa xác minh được giới hạn, tạm chưa đưa vào tính toán:<ul style="margin:2px 0 0 16px;padding:0">' + unv + '</ul></li>' +
       '</ul>';
   }
 
   /* ---------- 排放标准汇总 (v0.7, 由 T.STANDARDS 生成, 与计算同源) ---------- */
   var GRADE_RULES = {
-    JX: 'GB 3838 Ⅰ–Ⅲ 类执行一级 (4.2), Ⅳ–Ⅴ 类二级; 未明确功能水域执行二级, 县级以上政府可要求一级; 法律法规禁止设排污口的特殊保护水域 (饮用水源保护区等) 不得设置养殖尾水排放口。',
-    GD_FW: 'GB 3838 Ⅰ、Ⅱ、Ⅲ 类为重点保护水域, 执行一级 (5.2.1.1), 正文无禁排条款; Ⅳ、Ⅴ 类及未明确功能水体执行二级; 水功能重要、容量小或未达标地区, 地级以上市政府可要求执行一级 (5.2.2.3)。',
-    SH: '单一限值, 不分级; 另考核氨氮 2.0 mg/L。法律法规禁止设排污口的特殊保护水域不得设置排放口。',
-    JS_FW: '按受纳水体功能划分, 渔业水域等执行一级; 太湖一、二级保护区执行特别限值。具体以当地生态环境部门认定为准。',
-    FJ_FW: 'Ⅰ–Ⅱ 类为特殊保护水域, 不得新建排放口, 现有排放口按法规执行; Ⅲ 类一级, Ⅳ–Ⅴ 类二级; 政府划定区域/时段执行表 3 特别排放限值。另规定基准排水量 (鳗鲡工厂化、高位池对虾 ≤3.0 新建 / 6.0 现有 m³/kg), 超出时实测浓度按比例折算 (4.4.2)。',
-    HI_FW: 'Ⅰ、Ⅱ 类及 Ⅲ 类中的保护区、游泳区为特殊保护水域, 不得新建排放口, 已有排放口按法规执行; Ⅲ 类一级, Ⅳ–Ⅴ 类二级。',
-    CQ: 'Ⅰ–Ⅱ 类不应新建排污口, 已有排污口按法规执行 (4.2.3); Ⅲ 类 (饮用水源保护区除外) 一级, Ⅳ–Ⅴ 类二级; 有容量且水质稳定的 Ⅲ 类经批准可执行二级 (4.2.4); 未达标水体可要求一级 (4.2.5)。',
-    SC: '特殊保护水域 (含 Ⅰ–Ⅱ 类) 不得新建排放口; Ⅲ 类 (饮用水源保护区除外) 一级; 附录 A 重点控制区域 (成都、眉山、乐山等 10 市 62 县) 不论类别一律一级, 有容量且稳定达 Ⅲ 类的经论证可执行二级 (5.2); Ⅳ–Ⅴ 类二级。底泥不得排入公共水域 (5.5)。',
-    HA: 'Ⅰ、Ⅱ 类为特殊保护水域, 不应新建排放口 (6.2 a); 一级仅针对 Ⅲ 类中的渔业水域及游泳区 (5 b), 其他 Ⅲ 类水域未明确归类; Ⅳ、Ⅴ 类及未明确功能水域二级。',
-    HB: 'Ⅰ、Ⅱ 类及 Ⅲ 类中划定的保护区为特殊保护水域, 不得新建排放口; Ⅲ 类一级, Ⅳ–Ⅴ 类二级; Ⅱ、Ⅲ 类水质目标湖库保护区外围 500 m 内的养殖池塘不论排向一律执行一级。',
-    HN: '法律法规禁止设排污口的特殊保护水域不得设养殖尾水排放口; Ⅲ 类 (饮用水源保护区除外) 一级, Ⅳ–Ⅴ 类及未明确功能水域二级; 经未明确功能水域排入湖库的, 县级以上政府可要求一级。',
-    GD_SW: 'GB 3097 第一、二类海域执行一级 (5.2.1.1), 第三、四类及未明确功能海域执行二级。',
-    JS_SW: 'GB 3097 第一、二类海域一级, 第三、四类二级。一级 pH 不超出背景值 ±0.5。',
-    ZJ: '第一、二类海域一级, 第三、四类二级; TN 分两阶段, 2027-10-01 起执行第二阶段限值。适用于盐度 ≥3 的海水养殖。',
-    FJ_SW: '第一类海域为特殊保护水域, 不得新建排放口; 第二类一级, 第三、四类二级; 提水式池塘 TN 放宽; 表 3 特别排放限值对淡水、海水同一表。',
-    HI_SW: '第一类海域为特殊保护水域, 不得新建排放口, 已有排放口按法规执行; 第二类一级, 第三、四类及未明确水质目标海域二级。',
-    SD: '第一、二类海域一级, 第三、四类二级。不含网箱、筏式、吊笼、底播。',
-    LN: '第一、二类海域一级, 第三、四类二级。',
-    TJ: '4.1 只规定第二类海域执行一级、第三、四类二级, 未规定第一类海域。尾水定义明确包含清塘水; 池塘每次排放前自测。循环水工厂化另有表 2 (SS 60/80、COD 15/20、TN 8.0/10.0、TP 0.8/1.0、氨氮 2.0/2.0), 本工具不涉及。',
-    HE: '第一、二类海域一级, 第三、四类二级 (据官方解读)。不含网箱、筏式、吊笼、滩涂底播。',
-    SCT9101: '推荐性行业标准, 无省标地区参照。Ⅰ、Ⅱ 类不得新建排放口, 原有排放执行一级; Ⅲ、Ⅳ、Ⅴ 类执行二级 (3.1, 据转载条文); 另考核 BOD₅、铜、锌、硫化物、总余氯等, 本工具未建模。',
-    SCT9103: '推荐性行业标准, 无省标地区参照。考核无机氮、活性磷酸盐而非 TN、TP, 另有 BOD₅ 等, 本工具未建模; 设计计算页只评价 SS、COD。'
+    JX: 'GB 3838 loại Ⅰ–Ⅲ áp dụng cấp 1 (4.2), loại Ⅳ–Ⅴ cấp 2; vùng nước chưa xác định chức năng áp dụng cấp 2, chính quyền cấp huyện trở lên có thể yêu cầu cấp 1; vùng nước bảo vệ đặc biệt pháp luật cấm đặt cửa xả (khu bảo vệ nguồn nước uống...) không được đặt cửa xả nước thải nuôi trồng.',
+    GD_FW: 'GB 3838 loại Ⅰ, Ⅱ, Ⅲ là vùng nước bảo vệ trọng điểm, áp dụng cấp 1 (5.2.1.1), chính văn không có điều khoản cấm xả; loại Ⅳ, Ⅴ và nguồn nước chưa xác định chức năng áp dụng cấp 2; khu vực có chức năng nguồn nước quan trọng, sức chứa nhỏ hoặc chưa đạt chuẩn, chính quyền thành phố cấp địa khu trở lên có thể yêu cầu áp dụng cấp 1 (5.2.2.3).',
+    SH: 'Giới hạn duy nhất, không phân cấp; xét thêm amoni 2.0 mg/L. Vùng nước bảo vệ đặc biệt pháp luật cấm đặt cửa xả không được đặt cửa xả.',
+    JS_FW: 'Phân theo chức năng nguồn tiếp nhận, vùng nước nghề cá... áp dụng cấp 1; khu bảo vệ cấp 1, cấp 2 hồ Thái Hồ áp dụng giới hạn đặc biệt. Cụ thể theo xác định của cơ quan sinh thái môi trường địa phương.',
+    FJ_FW: 'Loại Ⅰ–Ⅱ là vùng nước bảo vệ đặc biệt, không được xây mới cửa xả, cửa xả hiện hữu theo pháp quy; loại Ⅲ cấp 1, loại Ⅳ–Ⅴ cấp 2; khu vực/thời đoạn chính quyền khoanh định áp dụng giới hạn xả đặc biệt bảng 3. Còn quy định lượng nước xả chuẩn (lươn nuôi công nghiệp, tôm ao cao ≤3.0 xây mới / 6.0 hiện hữu m³/kg), vượt thì nồng độ thực đo quy đổi theo tỷ lệ (4.4.2).',
+    HI_FW: 'Loại Ⅰ, Ⅱ và khu bảo vệ, khu bơi lội trong loại Ⅲ là vùng nước bảo vệ đặc biệt, không được xây mới cửa xả, cửa xả hiện hữu theo pháp quy; loại Ⅲ cấp 1, loại Ⅳ–Ⅴ cấp 2.',
+    CQ: 'Loại Ⅰ–Ⅱ không nên xây mới cửa xả, cửa xả hiện hữu theo pháp quy (4.2.3); loại Ⅲ (trừ khu bảo vệ nguồn nước uống) cấp 1, loại Ⅳ–Ⅴ cấp 2; loại Ⅲ còn sức chứa và chất lượng nước ổn định, được phê duyệt có thể áp dụng cấp 2 (4.2.4); nguồn nước chưa đạt chuẩn có thể yêu cầu cấp 1 (4.2.5).',
+    SC: 'Vùng nước bảo vệ đặc biệt (gồm loại Ⅰ–Ⅱ) không được xây mới cửa xả; loại Ⅲ (trừ khu bảo vệ nguồn nước uống) cấp 1; khu vực kiểm soát trọng điểm phụ lục A (10 thành phố 62 huyện như Thành Đô, Mi Sơn, Lạc Sơn) bất kể loại đều cấp 1, nơi còn sức chứa và ổn định đạt loại Ⅲ qua thẩm định có thể áp dụng cấp 2 (5.2); loại Ⅳ–Ⅴ cấp 2. Bùn đáy không được xả vào vùng nước công cộng (5.5).',
+    HA: 'Loại Ⅰ, Ⅱ là vùng nước bảo vệ đặc biệt, không nên xây mới cửa xả (6.2 a); cấp 1 chỉ áp dụng cho vùng nước nghề cá và khu bơi lội trong loại Ⅲ (5 b), vùng nước loại Ⅲ khác chưa phân loại rõ; loại Ⅳ, Ⅴ và vùng nước chưa xác định chức năng cấp 2.',
+    HB: 'Loại Ⅰ, Ⅱ và khu bảo vệ khoanh định trong loại Ⅲ là vùng nước bảo vệ đặc biệt, không được xây mới cửa xả; loại Ⅲ cấp 1, loại Ⅳ–Ⅴ cấp 2; ao nuôi trong phạm vi 500 m bao quanh khu bảo vệ hồ chứa có mục tiêu chất lượng nước loại Ⅱ, Ⅲ, bất kể xả đi đâu đều áp dụng cấp 1.',
+    HN: 'Vùng nước bảo vệ đặc biệt pháp luật cấm đặt cửa xả không được đặt cửa xả nước thải nuôi trồng; loại Ⅲ (trừ khu bảo vệ nguồn nước uống) cấp 1, loại Ⅳ–Ⅴ và vùng nước chưa xác định chức năng cấp 2; xả vào hồ chứa qua vùng nước chưa xác định chức năng, chính quyền cấp huyện trở lên có thể yêu cầu cấp 1.',
+    GD_SW: 'Vùng biển GB 3097 loại 1, 2 áp dụng cấp 1 (5.2.1.1), loại 3, 4 và vùng biển chưa xác định chức năng áp dụng cấp 2.',
+    JS_SW: 'Vùng biển GB 3097 loại 1, 2 cấp 1, loại 3, 4 cấp 2. pH cấp 1 không vượt giá trị nền ±0.5.',
+    ZJ: 'Vùng biển loại 1, 2 cấp 1, loại 3, 4 cấp 2; TN chia hai giai đoạn, từ 2027-10-01 áp dụng giới hạn giai đoạn hai. Áp dụng cho nuôi biển có độ mặn ≥3.',
+    FJ_SW: 'Vùng biển loại 1 là vùng nước bảo vệ đặc biệt, không được xây mới cửa xả; loại 2 cấp 1, loại 3, 4 cấp 2; ao bơm cấp nước được nới TN; giới hạn xả đặc biệt bảng 3 dùng chung một bảng cho nước ngọt và nước mặn.',
+    HI_SW: 'Vùng biển loại 1 là vùng nước bảo vệ đặc biệt, không được xây mới cửa xả, cửa xả hiện hữu theo pháp quy; loại 2 cấp 1, loại 3, 4 và vùng biển chưa xác định mục tiêu chất lượng nước cấp 2.',
+    SD: 'Vùng biển loại 1, 2 cấp 1, loại 3, 4 cấp 2. Không gồm lồng bè, giàn treo, lồng treo, nuôi đáy.',
+    LN: 'Vùng biển loại 1, 2 cấp 1, loại 3, 4 cấp 2.',
+    TJ: '4.1 chỉ quy định vùng biển loại 2 áp dụng cấp 1, loại 3, 4 cấp 2, không quy định vùng biển loại 1. Định nghĩa nước thải nêu rõ gồm nước vệ sinh ao; ao tự đo trước mỗi lần xả. Nuôi công nghiệp tuần hoàn có riêng bảng 2 (SS 60/80, COD 15/20, TN 8.0/10.0, TP 0.8/1.0, amoni 2.0/2.0), công cụ này không đề cập.',
+    HE: 'Vùng biển loại 1, 2 cấp 1, loại 3, 4 cấp 2 (theo giải thích chính thức). Không gồm lồng bè, giàn treo, lồng treo, nuôi đáy bãi triều.',
+    SCT9101: 'Tiêu chuẩn ngành khuyến nghị, khu vực không có tiêu chuẩn tỉnh tham chiếu. Loại Ⅰ, Ⅱ không được xây mới cửa xả, cửa xả hiện hữu áp dụng cấp 1; loại Ⅲ, Ⅳ, Ⅴ áp dụng cấp 2 (3.1, theo điều khoản đăng lại); còn xét BOD₅, đồng, kẽm, sunfua, tổng clo dư..., công cụ chưa mô hình hoá.',
+    SCT9103: 'Tiêu chuẩn ngành khuyến nghị, khu vực không có tiêu chuẩn tỉnh tham chiếu. Xét nitơ vô cơ, photphat hoạt tính chứ không phải TN, TP, còn có BOD₅..., công cụ chưa mô hình hoá; trang tính thiết kế chỉ đánh giá SS, COD.'
   };
   function limCell(v, d) { return v == null ? '—' : fmt(v, d); }
   function stdGradeRows(st) {
     var rows = [];
     var add = function (label, g) {
       rows.push('<tr><td>' + label + '</td><td>' + limCell(g.SS, 0) + '</td><td>' + limCell(g.COD, 1) + '</td><td>' + limCell(g.TN, 1) +
-        '</td><td>' + limCell(g.TP, 2) + '</td><td>' + (g.pH ? g.pH[0] + '–' + g.pH[1] : '—') + '</td><td>' + (g.NH3N != null ? '氨氮 ' + g.NH3N : '') + '</td></tr>');
+        '</td><td>' + limCell(g.TP, 2) + '</td><td>' + (g.pH ? g.pH[0] + '–' + g.pH[1] : '—') + '</td><td>' + (g.NH3N != null ? 'Amoni ' + g.NH3N : '') + '</td></tr>');
     };
-    Object.keys(st.grades).sort().forEach(function (k) { add(k === '0' ? '单一限值' : (k === '1' ? '一级' : '二级'), st.grades[k]); });
+    Object.keys(st.grades).sort().forEach(function (k) { add(k === '0' ? 'Giới hạn duy nhất' : (k === '1' ? 'Cấp 1' : 'Cấp 2'), st.grades[k]); });
     if (st.special) Object.keys(st.special.grades).sort().forEach(function (k) {
       if (k === '2' && JSON.stringify(st.special.grades[1]) === JSON.stringify(st.special.grades[2])) return;
-      add('特别限值', st.special.grades[k]);
+      add('Giới hạn đặc biệt', st.special.grades[k]);
     });
-    if (st.variant && st.variant.TN) rows.push('<tr><td>' + esc(st.variant.label) + '</td><td colspan="6" class="l">TN 一级 ' + st.variant.TN[1] + ' / 二级 ' + st.variant.TN[2] + '，其余同上</td></tr>');
-    if (st.phase2 && st.phase2.TN) rows.push('<tr><td>第二阶段（' + st.phase2.from + ' 起）</td><td colspan="6" class="l">TN 一级 ' + st.phase2.TN[1] + ' / 二级 ' + st.phase2.TN[2] + '，其余同上</td></tr>');
+    if (st.variant && st.variant.TN) rows.push('<tr><td>' + esc(st.variant.label) + '</td><td colspan="6" class="l">TN cấp 1 ' + st.variant.TN[1] + ' / cấp 2 ' + st.variant.TN[2] + ', còn lại như trên</td></tr>');
+    if (st.phase2 && st.phase2.TN) rows.push('<tr><td>Giai đoạn hai (' + st.phase2.from + ' trở đi)</td><td colspan="6" class="l">TN cấp 1 ' + st.phase2.TN[1] + ' / cấp 2 ' + st.phase2.TN[2] + ', còn lại như trên</td></tr>');
     return rows.join('');
   }
   function renderStandards() {
@@ -2540,28 +2540,28 @@ test('标准库与参数表完整性', () => {
       if (w !== 'all' && st.water !== w) return false;
       return !q || (st.region + ' ' + st.code).toLowerCase().indexOf(q) >= 0;
     });
-    $('stdCount').textContent = '共 ' + list.length + ' 套';
+    $('stdCount').textContent = 'Tổng ' + list.length + ' bộ';
     $('stdList').innerHTML = list.map(function (st) {
       var codName = st.water === 'fw' ? 'COD<sub>Mn</sub>' : 'COD';
       return '<div class="std-card"><div class="hd"><div><b>' + esc(st.region) + ' · ' + esc(st.code) + '</b> <span class="muted">' +
-        (st.water === 'fw' ? '淡水' : '海水') + ' · ' + esc(st.nature) + '</span></div>' +
-        '<button class="btn" type="button" data-use="' + st.id + '">用此标准计算 →</button></div>' +
-        '<div class="facts"><div><span>实施：</span>' + esc(st.effective) + '</div><div><span>现有养殖场：</span>' + esc(st.existing || '未规定') +
-        '</div><div style="grid-column:1/-1"><span>适用范围：</span>' + esc(st.thresholdNote) + '</div></div>' +
-        '<div class="table-wrapper"><table class="tw"><thead><tr><th>级别</th><th>SS</th><th>' + codName + '</th><th>TN</th><th>TP</th><th>pH</th><th>其他</th></tr></thead><tbody>' +
+        (st.water === 'fw' ? 'Nước ngọt' : 'Nước biển') + ' · ' + esc(st.nature) + '</span></div>' +
+        '<button class="btn" type="button" data-use="' + st.id + '">Tính theo tiêu chuẩn này →</button></div>' +
+        '<div class="facts"><div><span>Hiệu lực:</span>' + esc(st.effective) + '</div><div><span>Cơ sở nuôi hiện hữu:</span>' + esc(st.existing || 'Chưa quy định') +
+        '</div><div style="grid-column:1/-1"><span>Phạm vi áp dụng:</span>' + esc(st.thresholdNote) + '</div></div>' +
+        '<div class="table-wrapper"><table class="tw"><thead><tr><th>Cấp</th><th>SS</th><th>' + codName + '</th><th>TN</th><th>TP</th><th>pH</th><th>Khác</th></tr></thead><tbody>' +
         stdGradeRows(st) + '</tbody></table></div>' +
-        '<div class="rule"><b>执行级别：</b>' + esc(GRADE_RULES[st.id] || '') + '</div>' +
-        (st.sourceNote ? '<div class="flag">数据说明：' + esc(st.sourceNote) + '</div>' : '') +
-        (st.gradeRule === 'SCT' ? '' : '<div class="rule"><a href="' + st.source + '" target="_blank" rel="noopener">' + (st.sourceNote ? '官方解读' : '标准原文') + '</a></div>') +
+        '<div class="rule"><b>Cấp áp dụng:</b>' + esc(GRADE_RULES[st.id] || '') + '</div>' +
+        (st.sourceNote ? '<div class="flag">Ghi chú dữ liệu:' + esc(st.sourceNote) + '</div>' : '') +
+        (st.gradeRule === 'SCT' ? '' : '<div class="rule"><a href="' + st.source + '" target="_blank" rel="noopener">' + (st.sourceNote ? 'Giải thích chính thức' : 'Nguyên văn tiêu chuẩn') + '</a></div>') +
         '</div>';
-    }).join('') || '<div class="note">没有匹配的标准。</div>';
+    }).join('') || '<div class="note">Không có tiêu chuẩn phù hợp.</div>';
     $('stdExtra').innerHTML =
-      '<h3>已发布但未能核实限值（不参与计算）</h3><ul>' + T.UNVERIFIED.map(function (u) { return '<li><b>' + esc(u.region) + ' ' + esc(u.code) + '</b>：' + esc(u.note) + '</li>'; }).join('') + '</ul>' +
-      '<h3>国家层面文件</h3><ul><li>HJ 1217-2023《地方水产养殖业水污染物排放控制标准制订技术导则》（2023-03-01 起）：指导各省制订标准，本身不设限值；编制说明提出生态处理 TN 去除 ≥50%、TP ≥40% 的预期。</li>' +
-      '<li>SC/T 9101-2007《淡水池塘养殖水排放要求》、SC/T 9103-2007《海水养殖水排放要求》：推荐性行业标准，无省标地区可参照。</li></ul>' +
-      '<h3>采样要求</h3><p>在最终排放口或集中处理设施出口，各排放口分别采样；多数标准规定在尾水排放期间采样。天津要求池塘每次排放前自测、工厂化至少每季度一次。除天津的尾水定义明确包含清塘水外，未见针对清塘水的单独规定。</p>' +
-      '<h3>尚未检索到地方标准的地区</h3><p>浙江（淡水）、云南、贵州、陕西、黑龙江、吉林、北京、宁夏、新疆、山西；内蒙古、甘肃、青海、西藏未逐一检索。这些地区可参照 SC/T 9101 / 9103，并以当地生态环境部门要求为准。</p>' +
-      '<p class="muted">核对日期 2026-10-12。湖南据标准第 1–2 页核对，现有养殖场执行日期未查到；河北限值取自官方解读；江西、湖南、河北标准原文未能完整打开。标准原文经网页文本提取阅读，合并单元格和表注可能遗漏，使用前请对照原文。</p>';
+      '<h3>Đã ban hành nhưng chưa xác minh được giới hạn (không tham gia tính toán)</h3><ul>' + T.UNVERIFIED.map(function (u) { return '<li><b>' + esc(u.region) + ' ' + esc(u.code) + '</b>：' + esc(u.note) + '</li>'; }).join('') + '</ul>' +
+      '<h3>Văn bản cấp quốc gia</h3><ul><li>HJ 1217-2023 «Hướng dẫn kỹ thuật xây dựng tiêu chuẩn kiểm soát xả chất ô nhiễm nước ngành nuôi trồng thuỷ sản địa phương» (từ 2023-03-01): hướng dẫn các tỉnh xây dựng tiêu chuẩn, bản thân không đặt giới hạn; thuyết minh biên soạn đề ra kỳ vọng xử lý sinh thái loại TN ≥50%, TP ≥40%.</li>' +
+      '<li>SC/T 9101-2007 «Yêu cầu xả nước ao nuôi nước ngọt», SC/T 9103-2007 «Yêu cầu xả nước nuôi trồng nước mặn»: tiêu chuẩn ngành khuyến nghị, khu vực không có tiêu chuẩn tỉnh có thể tham chiếu.</li></ul>' +
+      '<h3>Yêu cầu lấy mẫu</h3><p>Lấy mẫu riêng từng cửa xả tại cửa xả cuối cùng hoặc đầu ra công trình xử lý tập trung; đa số tiêu chuẩn quy định lấy mẫu trong thời gian xả nước thải. Thiên Tân yêu cầu ao tự đo trước mỗi lần xả, nuôi công nghiệp ít nhất mỗi quý một lần. Ngoài định nghĩa nước thải của Thiên Tân nêu rõ gồm nước vệ sinh ao, chưa thấy quy định riêng cho nước vệ sinh ao.</p>' +
+      '<h3>Khu vực chưa tìm thấy tiêu chuẩn địa phương</h3><p>Chiết Giang (nước ngọt), Vân Nam, Quý Châu, Thiểm Tây, Hắc Long Giang, Cát Lâm, Bắc Kinh, Ninh Hạ, Tân Cương, Sơn Tây; Nội Mông, Cam Túc, Thanh Hải, Tây Tạng chưa tra cứu từng nơi. Các khu vực này có thể tham chiếu SC/T 9101 / 9103, theo yêu cầu của cơ quan sinh thái môi trường địa phương.</p>' +
+      '<p class="muted">Ngày đối chiếu 2026-10-12. Hồ Nam đối chiếu theo trang 1–2 tiêu chuẩn, chưa tra được ngày áp dụng cho cơ sở nuôi hiện hữu; giới hạn Hà Bắc lấy từ giải thích chính thức; nguyên văn tiêu chuẩn Giang Tây, Hồ Nam, Hà Bắc chưa mở được đầy đủ. Nguyên văn tiêu chuẩn được đọc qua trích xuất văn bản trang web, ô gộp và chú thích bảng có thể bị sót, trước khi dùng hãy đối chiếu nguyên văn.</p>';
   }
 
   /* ---------- 分页 ---------- */
@@ -2587,12 +2587,12 @@ test('标准库与参数表完整性', () => {
     var fail = function (msg) { throw new Error(msg); };
     var same = function (a, b) { return JSON.stringify(a) === JSON.stringify(b); };
     var assert = {
-      ok: function (v, msg) { if (!v) fail(msg || '断言为假'); },
+      ok: function (v, msg) { if (!v) fail(msg || 'Khẳng định sai'); },
       equal: function (a, b, msg) { if (a !== b) fail((msg ? msg + ': ' : '') + a + ' !== ' + b); },
       deepEqual: function (a, b, msg) { if (!same(a, b)) fail((msg ? msg + ': ' : '') + JSON.stringify(a) + ' ≠ ' + JSON.stringify(b)); }
     };
     var results = [];
-    try { TailwaterTests(T, test, assert); } catch (e) { results.push({ name: '测试定义', ok: false, err: e.message }); }
+    try { TailwaterTests(T, test, assert); } catch (e) { results.push({ name: 'Định nghĩa kiểm thử', ok: false, err: e.message }); }
     cases.forEach(function (c) {
       try { c.fn(); results.push({ name: c.name, ok: true }); }
       catch (e) { results.push({ name: c.name, ok: false, err: e && e.message }); }
@@ -2602,10 +2602,10 @@ test('标准库与参数表完整性', () => {
     window.__tailwaterSelftest = { pass: pass, total: results.length, results: results };
     var el = $('selftest');
     el.style.display = 'block';
-    el.innerHTML = '<b style="color:' + (allOk ? '#86efac' : '#fca5a5') + '">单元测试 ' + pass + '/' + results.length + (allOk ? ' 全部通过' : ' 有失败项') + '</b>' +
+    el.innerHTML = '<b style="color:' + (allOk ? '#86efac' : '#fca5a5') + '">Kiểm thử đơn vị ' + pass + '/' + results.length + (allOk ? ' Đạt toàn bộ' : ' Có mục thất bại') + '</b>' +
       '<ul style="margin:6px 0 0 16px;padding:0;max-height:50vh;overflow:auto">' + results.map(function (r) {
         return '<li>' + (r.ok ? '✓ ' : '✗ ') + esc(r.name) + (r.ok ? '' : '<br><span style="color:#fca5a5">' + esc(r.err) + '</span>') + '</li>'; }).join('') + '</ul>' +
-      '<button class="btn" type="button" style="margin-top:8px" onclick="this.parentNode.style.display=\'none\'">关闭</button>';
+      '<button class="btn" type="button" style="margin-top:8px" onclick="this.parentNode.style.display=\'none\'">Đóng</button>';
   }
 
   /* ---------- 事件 ---------- */

@@ -454,7 +454,7 @@
         <div class="field"><label for="pumpEff">Hiệu suất bơm <span class="hint">%</span></label><input id="pumpEff" type="number" min="30" max="95" step="1"></div>
         <div class="field"><label for="motorEff">Hiệu suất động cơ <span class="hint">%</span></label><input id="motorEff" type="number" min="50" max="99" step="1"></div>
         <div class="field"><label for="Psuc">Áp suất hút bơm cao áp <span class="hint">bar</span></label><input id="Psuc" type="number" min="0" step="0.5"></div>
-        <div class="field"><label for="price">Giá điện <span class="hint">元/kWh</span></label><input id="price" type="number" min="0" step="0.05"></div>
+        <div class="field"><label for="price">Giá điện <span class="hint">NDT/kWh</span></label><input id="price" type="number" min="0" step="0.05"></div>
         <label class="check"><input type="checkbox" id="erdOn"> Thiết bị thu hồi năng lượng đẳng áp (ERD, thường dùng cho nước biển)</label>
         <div class="field" id="wrapErdDP"><label for="erdDP">Tổn thất áp suất phía cao áp ERD <span class="hint">bar</span></label><input id="erdDP" type="number" min="0" step="0.1"></div>
         <div class="field" id="wrapErdLeak"><label for="erdLeak">Dòng bôi trơn <span class="hint">% nước cô đặc</span></label><input id="erdLeak" type="number" min="0" step="0.1"></div>
@@ -833,7 +833,7 @@
     { id: 'BW30PRO400',  brand: 'DuPont FilmTec', model: 'BW30 PRO-400',       type: 'bw', area: 37,   testFlow: 42,   testRejection: 99.6,  testNaCl: 2000,  testP: 15.5,  testRecovery: 0.15, spacer: 28, pmax: 41, note: 'Nước lợ tiêu chuẩn' },
     { id: 'BW30XFRLE',   brand: 'DuPont FilmTec', model: 'BW30XFRLE-400/34i',  type: 'bw', area: 37,   testFlow: 43.5, testRejection: 99.3,  testNaCl: 2000,  testP: 10.34, testRecovery: 0.15, spacer: 34, pmax: 41, note: 'Chống bám bẩn, tiêu thụ ít năng lượng' },
     { id: 'ECOPRO440',   brand: 'DuPont FilmTec', model: 'ECO PRO-440i',       type: 'bw', area: 41,   testFlow: 48,   testRejection: 99.7,  testNaCl: 2000,  testP: 10.34, testRecovery: 0.15, spacer: 28, pmax: 41, note: 'Tiêu thụ ít năng lượng' },
-    { id: 'SW30HRLE440', brand: 'DuPont FilmTec', model: 'SW30HRLE-440i',      type: 'sw', area: 41,   testFlow: 30.2, testRejection: 99.8,  testNaCl: 32000, testP: 55.16, testRecovery: 0.08, spacer: 28, pmax: 83, boronRej: 92, note: 'Nước biển，高脱盐、Tiêu thụ ít năng lượng' },
+    { id: 'SW30HRLE440', brand: 'DuPont FilmTec', model: 'SW30HRLE-440i',      type: 'sw', area: 41,   testFlow: 30.2, testRejection: 99.8,  testNaCl: 32000, testP: 55.16, testRecovery: 0.08, spacer: 28, pmax: 83, boronRej: 92, note: 'Nước biển, khử muối cao, tiêu thụ ít năng lượng' },
     { id: 'SW30XHR440',  brand: 'DuPont FilmTec', model: 'SW30XHR-440i',       type: 'sw', area: 41,   testFlow: 25,   testRejection: 99.82, testNaCl: 32000, testP: 55.16, testRecovery: 0.08, spacer: 28, pmax: 83, boronRej: 93, note: 'Nước biển, khử muối rất cao' },
     { id: 'CPA5LD',      brand: 'Hydranautics',   model: 'CPA5-LD',            type: 'bw', area: 37.2, testFlow: 41.6, testRejection: 99.7,  testNaCl: 1500,  testP: 15.51, testRecovery: 0.15, spacer: 34, pmax: 41, note: 'Nước lợ tiêu chuẩn' },
     { id: 'ESPA2LD',     brand: 'Hydranautics',   model: 'ESPA2-LD',           type: 'bw', area: 37.2, testFlow: 37.9, testRejection: 99.6,  testNaCl: 1500,  testP: 10.34, testRecovery: 0.15, spacer: 34, pmax: 41, note: 'Tiêu thụ ít năng lượng' },
@@ -844,12 +844,12 @@
     { id: 'TML20D400',   brand: 'Toray',          model: 'TML20D-400',         type: 'bw', area: 37,   testFlow: 39.7, testRejection: 99.8,  testNaCl: 2000,  testP: 15.51, testRecovery: 0.15, spacer: 34, pmax: 41, note: 'Áp suất thấp' },
     { id: 'TMG20D400',   brand: 'Toray',          model: 'TMG20D-400',         type: 'bw', area: 37,   testFlow: 45.8, testRejection: 99.7,  testNaCl: 2000,  testP: 10.34, testRecovery: 0.15, spacer: 34, pmax: 25, note: 'Áp suất siêu thấp, tối đa 25 bar' },
     { id: 'TM820V440',   brand: 'Toray',          model: 'TM820V-440',         type: 'sw', area: 41,   testFlow: 37.5, testRejection: 99.8,  testNaCl: 32000, testP: 55.16, testRecovery: 0.08, spacer: 28, pmax: 83, boronRej: 92, note: 'Nước biển' },
-    { id: 'ULP228040',   brand: 'Vontron', model: 'ULP22-8040',       type: 'bw', area: 37.2, testFlow: 45.8, testRejection: 99.0,  testNaCl: 1500,  testP: 10.34, testRecovery: 0.15, spacer: 28, pmax: 41, note: '超Áp suất thấp；2023 产品目录与样本：12 100 gpd，150 psi' },
-    { id: 'LP228040',    brand: 'Vontron', model: 'LP22-8040',        type: 'bw', area: 37.2, testFlow: 39.7, testRejection: 99.7,  testNaCl: 2000,  testP: 15.51, testRecovery: 0.15, spacer: 28, pmax: 41, note: 'Áp suất thấp；2023 产品目录：10 500 gpd，225 psi（取代 LP21-8040）' },
-    { id: 'FR128040',    brand: 'Vontron', model: 'FR12-8040',        type: 'bw', area: 37.2, testFlow: 39.7, testRejection: 99.5,  testNaCl: 2000,  testP: 15.51, testRecovery: 0.15, spacer: 34, pmax: 41, note: 'Chống bám bẩn；样本：10 500 gpd，225 psi（取代 FR11-8040）' },
-    { id: 'SW8040HR400', brand: 'Vontron', model: 'SW8040HR-400',     type: 'sw', area: 37.2, testFlow: 28.4, testRejection: 99.8,  testNaCl: 32000, testP: 55.16, testRecovery: 0.08, spacer: 28, pmax: 83, boronRej: 92, note: 'Nước biển；2023 产品目录：7 500 gpd，800 psi，32 000 ppm（单型号样本为 32 800 ppm）；取代 SW22-8040' },
-    { id: 'OWBWFR400',   brand: 'OriginWater', model: 'FLM-BW8040-FR(400)', type: 'bw', area: 37, testFlow: 41.6, testRejection: 99.75, testNaCl: 2000,  testP: 15.51, testRecovery: 0.15, spacer: 34, pmax: 41, note: 'Chống bám bẩn；官网：11 000 gpd，225 psi；最高压力等限值厂家未给，按同类取值' },
-    { id: 'OWSWHR400',   brand: 'OriginWater', model: 'FLM-SW8040-HR(400)', type: 'sw', area: 37, testFlow: 26.5, testRejection: 99.82, testNaCl: 32000, testP: 55.16, testRecovery: 0.08, spacer: 34, pmax: 83, boronRej: 93, note: 'Nước biển；官网：7 000 gpd，800 psi；最高压力等限值厂家未给，按同类取值' }
+    { id: 'ULP228040',   brand: 'Vontron', model: 'ULP22-8040',       type: 'bw', area: 37.2, testFlow: 45.8, testRejection: 99.0,  testNaCl: 1500,  testP: 10.34, testRecovery: 0.15, spacer: 28, pmax: 41, note: 'Áp suất siêu thấp; catalogue và tờ thông số 2023: 12 100 gpd, 150 psi' },
+    { id: 'LP228040',    brand: 'Vontron', model: 'LP22-8040',        type: 'bw', area: 37.2, testFlow: 39.7, testRejection: 99.7,  testNaCl: 2000,  testP: 15.51, testRecovery: 0.15, spacer: 28, pmax: 41, note: 'Áp suất thấp; catalogue 2023: 10 500 gpd, 225 psi (thay thế LP21-8040)' },
+    { id: 'FR128040',    brand: 'Vontron', model: 'FR12-8040',        type: 'bw', area: 37.2, testFlow: 39.7, testRejection: 99.5,  testNaCl: 2000,  testP: 15.51, testRecovery: 0.15, spacer: 34, pmax: 41, note: 'Chống bám bẩn; tờ thông số: 10 500 gpd, 225 psi (thay thế FR11-8040)' },
+    { id: 'SW8040HR400', brand: 'Vontron', model: 'SW8040HR-400',     type: 'sw', area: 37.2, testFlow: 28.4, testRejection: 99.8,  testNaCl: 32000, testP: 55.16, testRecovery: 0.08, spacer: 28, pmax: 83, boronRej: 92, note: 'Nước biển; catalogue 2023: 7 500 gpd, 800 psi, 32 000 ppm (tờ thông số riêng ghi 32 800 ppm); thay thế SW22-8040' },
+    { id: 'OWBWFR400',   brand: 'OriginWater', model: 'FLM-BW8040-FR(400)', type: 'bw', area: 37, testFlow: 41.6, testRejection: 99.75, testNaCl: 2000,  testP: 15.51, testRecovery: 0.15, spacer: 34, pmax: 41, note: 'Chống bám bẩn; website hãng: 11 000 gpd, 225 psi; áp suất tối đa và các giới hạn khác hãng không công bố, lấy theo loại tương tự' },
+    { id: 'OWSWHR400',   brand: 'OriginWater', model: 'FLM-SW8040-HR(400)', type: 'sw', area: 37, testFlow: 26.5, testRejection: 99.82, testNaCl: 32000, testP: 55.16, testRecovery: 0.08, spacer: 34, pmax: 83, boronRej: 93, note: 'Nước biển; website hãng: 7 000 gpd, 800 psi; áp suất tối đa và các giới hạn khác hãng không công bố, lấy theo loại tương tự' }
   ];
   var BORON_REJ_DEFAULT = { bw: 65, sw: 90 };
   /* 硼的形态: B(OH)₃ (中性, 透过高) ⇌ B(OH)₄⁻ (带电, 按一价离子透过)。
@@ -1287,8 +1287,8 @@
       var lp = label ? label + '：' : '';
       if (!res.converged) add('bad', lp + (res.rCapped ? 'Tỷ lệ thu hồi của một phần tử đạt giới hạn tính toán 50%; số phần tử quá ít, hãy tăng số phần tử hoặc giảm tỷ lệ thu hồi' : 'Không xác định được áp suất nước cấp (> 120 bar hoặc lưu lượng nước sản phẩm không đạt thiết kế); hãy tăng số phần tử hoặc giảm tỷ lệ thu hồi'));
       var nDead = res.elems.filter(function (e) { return e.dead || !(e.Pc > 0) || !(e.Pf > 0); }).length;
-      if (nDead) add('bad', lp + '有 ' + nDead + ' 支元件无产水或出现负压（压降过大或驱动压力不足），请增加压力容器数、减少每容器元件数或调整段间增压');
-      if (res.flux > gd.flux[1] + 1e-9) add('warn', label + '平均通量 ' + res.flux.toFixed(1) + ' LMH 超过「' + gd.name + '」推荐上限 ' + gd.flux[1] + ' LMH');
+      if (nDead) add('bad', lp + 'Có ' + nDead + '  phần tử không có nước sản phẩm hoặc xuất hiện áp suất âm (tổn thất áp quá lớn hoặc áp lực dẫn động không đủ), hãy tăng số bình áp lực, giảm số phần tử mỗi bình hoặc điều chỉnh tăng áp giữa các tầng');
+      if (res.flux > gd.flux[1] + 1e-9) add('warn', label + 'Thông lượng trung bình ' + res.flux.toFixed(1) + ' LMH vượt giới hạn khuyến nghị của «' + gd.name + '» ' + gd.flux[1] + ' LMH');
       var maxFlux = 0, maxR = 0, maxQf = 0, minQc = Infinity, maxB = 0;
       res.stages.forEach(function (st) {
         maxQf = Math.max(maxQf, st.Qf / st.nv);
@@ -1304,10 +1304,10 @@
       res.stages.forEach(function (st) { maxPVdP = Math.max(maxPVdP, st.Pin - st.Pout); maxPp = Math.max(maxPp, st.Pp || 0); st.elems.forEach(function (e) { maxEdP = Math.max(maxEdP, e.dP); }); });
       if (maxEdP > 1.0 + 1e-9) add('warn', label + 'Tổn thất áp suất mỗi phần tử ' + maxEdP.toFixed(2) + ' bar > 1.0 bar (giới hạn theo tài liệu phần tử)');
       if (maxPVdP > 3.4 + 1e-9) add('warn', label + 'Tổn thất áp suất mỗi bình áp lực ' + maxPVdP.toFixed(2) + ' bar > 3.4 bar (giới hạn theo tài liệu phần tử)');
-      if (maxPp > 1.0 + 1e-9) add('warn', label + 'Áp suất ngược nước sản phẩm ' + maxPp.toFixed(1) + ' bar 偏高：能耗增加，停机时产水侧压力不得高于进水侧（设止回阀或爆破膜）');
+      if (maxPp > 1.0 + 1e-9) add('warn', label + 'Áp suất ngược nước sản phẩm ' + maxPp.toFixed(1) + ' bar là cao: tốn năng lượng hơn; khi dừng máy áp suất phía nước sản phẩm không được cao hơn phía nước cấp (lắp van một chiều hoặc màng phòng nổ)');
       var pmax = elemType && elemType.pmax ? elemType.pmax : (elemType && elemType.type === 'sw' ? P_MAX.sw : P_MAX.bw);
       var mp = maxPin(res);
-      if (res.converged && mp.P > pmax) add('bad', label + (mp.stage > 1 ? '第 ' + mp.stage + ' 段（段前增压后）' : '') + '进水压力 ' + mp.P.toFixed(1) + ' bar 超过元件最高操作压力 ' + pmax + ' bar');
+      if (res.converged && mp.P > pmax) add('bad', label + (mp.stage > 1 ? 'Tầng ' + mp.stage + ' (sau tăng áp trước tầng)' : '') + 'Áp suất nước cấp ' + mp.P.toFixed(1) + ' bar vượt áp suất vận hành tối đa của phần tử ' + pmax + ' bar');
       return { maxFlux: maxFlux, maxR: maxR, maxB: maxB, maxQf: maxQf, minQc: minQc };
     };
     var s1 = passChecks(d.pass2 ? 'Cấp 1: ' : '', d.pass1, g, inp.pass1.elem);
@@ -1315,30 +1315,30 @@
     // 结垢
     var anti = (inp.antiscalant || 0) > 0, L = function (k) { return SCALE_LIMIT[k][anti ? 'anti' : 'none']; };
     var c = d.conc;
-    if (c.idx.v > L(c.idx.key)) add('warn', '浓水 ' + c.idx.name + ' = ' + c.idx.v.toFixed(2) + ' > ' + L(c.idx.key) + (anti ? '（加阻垢剂限值），需加酸降 pH 或降低回收率' : '，需加阻垢剂或加酸'));
+    if (c.idx.v > L(c.idx.key)) add('warn', 'Nước cô đặc ' + c.idx.name + ' = ' + c.idx.v.toFixed(2) + ' > ' + L(c.idx.key) + (anti ? '(giới hạn khi có chất chống cáu cặn), cần châm axit giảm pH hoặc giảm tỷ lệ thu hồi' : ', cần dùng chất chống cáu cặn hoặc châm axit'));
     ['CaSO4', 'BaSO4', 'SrSO4', 'CaF2'].forEach(function (k) {
-      if (c.sat[k] > L(k)) add('warn', '浓水 ' + k + ' 饱和度 ' + c.sat[k].toFixed(0) + '% > ' + L(k) + '%' + (anti ? '（加阻垢剂限值）' : '，需加阻垢剂'));
+      if (c.sat[k] > L(k)) add('warn', 'Nước cô đặc ' + k + ' Độ bão hoà ' + c.sat[k].toFixed(0) + '% > ' + L(k) + '%' + (anti ? '(giới hạn khi có chất chống cáu cặn)' : ', cần dùng chất chống cáu cặn'));
     });
     var siPct = c.silica.sol > 0 ? c.silica.conc / c.silica.sol * 100 : 0;
-    if (siPct > L('SiO2')) add('warn', '浓水 SiO₂ ' + c.silica.conc.toFixed(0) + ' mg/L，为溶解度的 ' + siPct.toFixed(0) + '%，超过 ' + L('SiO2') + '%');
-    if (inp.target && d.tdsProd > inp.target) add('warn', '产水 TDS ' + d.tdsProd.toFixed(1) + ' mg/L > 目标 ' + inp.target + ' mg/L');
-    if (inp.targetB && (d.Cprod.B || 0) > inp.targetB) add('warn', '产水硼 ' + (d.Cprod.B || 0).toFixed(2) + ' mg/L > 目标 ' + inp.targetB + ' mg/L');
+    if (siPct > L('SiO2')) add('warn', 'SiO₂ nước cô đặc ' + c.silica.conc.toFixed(0) + ' mg/L, bằng ' + siPct.toFixed(0) + '% độ hoà tan, vượt ' + L('SiO2') + '%');
+    if (inp.target && d.tdsProd > inp.target) add('warn', 'TDS nước sản phẩm ' + d.tdsProd.toFixed(1) + ' mg/L > Mục tiêu ' + inp.target + ' mg/L');
+    if (inp.targetB && (d.Cprod.B || 0) > inp.targetB) add('warn', 'Bo trong nước sản phẩm ' + (d.Cprod.B || 0).toFixed(2) + ' mg/L > Mục tiêu ' + inp.targetB + ' mg/L');
     return { items: out, stats1: s1, stats2: s2, siPct: siPct, useSDSI: useSD };
   }
 
   /* 最高水温、新膜 (FF = 1) 工况: 产水水质最差、首支元件通量最高 */
   function hotChecks(inp, dh, Tmax) {
-    var out = [], g = GUIDE[inp.source] || GUIDE.surf, pre = '最高水温 ' + Tmax + ' °C、新膜时';
+    var out = [], g = GUIDE[inp.source] || GUIDE.surf, pre = 'Nhiệt độ nước cao nhất ' + Tmax + ' °C, màng mới';
     var one = function (res, gd, lab) {
       if (!res) return;
       var maxFlux = 0, maxR = 0;
       res.elems.forEach(function (e) { maxFlux = Math.max(maxFlux, e.flux); maxR = Math.max(maxR, e.r); });
-      if (maxFlux > gd.fluxMax + 1e-9) out.push({ type: 'warn', text: pre + lab + '单支元件最大通量 ' + maxFlux.toFixed(1) + ' LMH > ' + gd.fluxMax });
-      if (maxR > gd.rMax + 1e-9) out.push({ type: 'warn', text: pre + lab + '单支元件最大回收率 ' + (maxR * 100).toFixed(1) + '% > ' + Math.round(gd.rMax * 100) + '%' });
+      if (maxFlux > gd.fluxMax + 1e-9) out.push({ type: 'warn', text: pre + lab + 'Thông lượng tối đa mỗi phần tử ' + maxFlux.toFixed(1) + ' LMH > ' + gd.fluxMax });
+      if (maxR > gd.rMax + 1e-9) out.push({ type: 'warn', text: pre + lab + 'Tỷ lệ thu hồi tối đa mỗi phần tử ' + (maxR * 100).toFixed(1) + '% > ' + Math.round(gd.rMax * 100) + '%' });
     };
     one(dh.pass1, g, dh.pass2 ? 'Cấp 1: ' : ''); one(dh.pass2, GUIDE.ro_perm, 'Cấp 2: ');
-    if (inp.target && dh.tdsProd > inp.target) out.push({ type: 'warn', text: pre + '产水 TDS ' + dh.tdsProd.toFixed(1) + ' mg/L > 目标 ' + inp.target + ' mg/L' });
-    if (inp.targetB && (dh.Cprod.B || 0) > inp.targetB) out.push({ type: 'warn', text: pre + '产水硼 ' + (dh.Cprod.B || 0).toFixed(2) + ' mg/L > 目标 ' + inp.targetB + ' mg/L' });
+    if (inp.target && dh.tdsProd > inp.target) out.push({ type: 'warn', text: pre + 'TDS nước sản phẩm ' + dh.tdsProd.toFixed(1) + ' mg/L > Mục tiêu ' + inp.target + ' mg/L' });
+    if (inp.targetB && (dh.Cprod.B || 0) > inp.targetB) out.push({ type: 'warn', text: pre + 'Bo trong nước sản phẩm ' + (dh.Cprod.B || 0).toFixed(2) + ' mg/L > Mục tiêu ' + inp.targetB + ' mg/L' });
     return out;
   }
   /* 碳酸钙指数: 浓水 TDS ≤ 8000 用 LSI, ≥ 12 000 用 S&DSI (ASTM 分界 10 000), 其间按 TDS 线性过渡, 避免在分界处跳变 (两者限值相同) */
@@ -1347,7 +1347,7 @@
     if (t <= 8000) return { key: 'LSI', name: 'LSI', v: L };
     if (t >= 12000) return { key: 'SDSI', name: 'S&DSI', v: S };
     var w = (t - 8000) / 4000;
-    return { key: w < 0.5 ? 'LSI' : 'SDSI', name: 'LSI/S&DSI 过渡', v: (1 - w) * L + w * S, w: w };
+    return { key: w < 0.5 ? 'LSI' : 'SDSI', name: 'Chuyển tiếp LSI/S&DSI', v: (1 - w) * L + w * S, w: w };
   }
   /* 最大回收率估算: 浓水 = 进水 / (1 − R) (假定全截留, CO2 自由透过), 逐项检查结垢限值, 二分求各项允许的最大 R */
   function concAt(Cfeed, R) { var o = {}; for (var k in Cfeed) o[k] = Cfeed[k] / (1 - R); return o; }
@@ -1418,54 +1418,54 @@ function ROTests(T, test, assert) {
   const NaCl = c => ({ Na: c * 22.990 / 58.443, Cl: c * 35.453 / 58.443 });
   const psi = 0.0689476;
 
-  test('温度修正 TCF (FilmTec 两段式)', () => {
+  test('Hiệu chỉnh nhiệt độ TCF (FilmTec hai đoạn)', () => {
     near(T.tcf(25), 1, 1e-12);
     near(T.tcf(15), Math.exp(3020 * (1 / 298.15 - 1 / 288.15)), 1e-12);
     near(T.tcf(35), Math.exp(2640 * (1 / 298.15 - 1 / 308.15)), 1e-12);
     assert.ok(T.tcf(10) < T.tcf(20) && T.tcf(20) < T.tcf(30));
   });
-  test('渗透压: 2000 mg/L NaCl 25 °C ≈ 1.6 bar (ROSA 1.61)', () => {
+  test('Áp suất thẩm thấu: 2000 mg/L NaCl 25 °C ≈ 1.6 bar (ROSA 1.61)', () => {
     near(T.osmotic(NaCl(2000), 25), 1.61, 0.03);
     near(T.osmotic(NaCl(4000), 25) / T.osmotic(NaCl(2000), 25), 2, 1e-9);
   });
-  test('元件压降: 0.0213·q^1.23 psi (q gpm, 按 ROSA 9.1 拟合, 11-02e)', () => {
+  test('Tổn thất áp phần tử: 0.0213·q^1.23 psi (q gpm, khớp theo ROSA 9.1, 11-02e)', () => {
     near(T.elemDP(50 * 0.227125), 0.0213 * Math.pow(50, 1.23) * psi, 1e-9);
-    near(T.elemDP(54.8 * 0.227125) / psi, 2.93, 0.06, 'ROSA 9.1 ECO-440i 首支 q̄ 54.8 gpm 压降 2.93 psi');
+    near(T.elemDP(54.8 * 0.227125) / psi, 2.93, 0.06, 'ROSA 9.1 ECO-440i phần tử đầu q̄ 54.8 gpm tổn thất áp 2.93 psi');
   });
-  test('溶度积与硅溶解度 (PHREEQC, 25 °C)', () => {
+  test('Tích số tan và độ hoà tan silic (PHREEQC, 25 °C)', () => {
     near(T.logKsp('CaSO4', 25), -4.58, 0.005); near(T.logKsp('BaSO4', 25), -9.97, 0.005); near(T.logKsp('BaSO4', 5), -10.357, 0.002);
     near(T.logKsp('SrSO4', 25), -6.66, 0.005); near(T.logKsp('CaF2', 25), -10.60, 0.005);
     near(T.logKsp('Calcite', 25), -8.48, 0.005);
     near(T.silicaSol(25), 117, 0.01); near(T.silicaSol(5), 78, 0.02); near(T.silicaSol(45), 166, 0.02);
   });
-  test('元件库: 20 个型号均能复现样本测试条件', () => {
+  test('Thư viện phần tử: cả 20 model đều tái lập được điều kiện thử nghiệm của tờ thông số', () => {
     assert.ok(T.ELEMENTS.length >= 20);
     T.ELEMENTS.forEach(sp => {
       const e = T.getElement(sp.id);
       const r = T.element(e, sp.testFlow / 24 / sp.testRecovery, NaCl(sp.testNaCl), sp.testP, 0, 25, 1);
-      near(r.Qp * 24, sp.testFlow, 0.002, sp.model + ' 产水');
-      near((1 - r.tdsP / sp.testNaCl) * 100, sp.testRejection, 0.0001, sp.model + ' 脱盐率');
+      near(r.Qp * 24, sp.testFlow, 0.002, sp.model + ' Nước sản phẩm');
+      near((1 - r.tdsP / sp.testNaCl) * 100, sp.testRejection, 0.0001, sp.model + ' Tỷ lệ khử muối');
     });
   });
-  test('单支元件物料平衡', () => {
+  test('Cân bằng vật chất từng phần tử', () => {
     const e = T.getElement('BW30PRO400');
     const C = { Ca: 80, Mg: 20, Na: 300, HCO3: 200, SO4: 150, Cl: 400, SiO2: 20, B: 0.5 };
     const r = T.element(e, 10, C, 12, 0.5, 20, 0.85);
     near(r.Qf, r.Qp + r.Qc, 1e-12);
     Object.keys(C).forEach(k => near(r.Qf * C[k], r.Qp * r.Cp[k] + r.Qc * r.Cc[k], 1e-9, k));
   });
-  test('基准: ROSA 8.0.3, 2000 mg/L NaCl, BW30-400, 2:1×4, 70%, 25 °C, FF 0.85', () => {
+  test('Chuẩn: ROSA 8.0.3, 2000 mg/L NaCl, BW30-400, 2:1×4, 70%, 25 °C, FF 0.85', () => {
     const e = Object.assign({ area: 445.92 / 12, type: 'bw' }, T.fitElement({ area: 445.92 / 12, testFlow: 39.7, testRejection: 99.5, testNaCl: 2000, testP: 15.5, testRecovery: 0.15 }));
     const r = T.solvePass({ elem: e, FF: 0.85, stages: [{ nv: 2, ne: 4 }, { nv: 1, ne: 4 }] }, 15.71, NaCl(2000), 11.0, 25);
-    near(r.Pf, 12.46, 0.03, '一段进水压力');   // 11-02e 压降改按现代软件拟合后约 −2% (ROSA 8 的元件压降约为新式的 1.9–2.1 倍)
-    near(T.tds(r.Cp), 30.43, 0.05, '产水 TDS');
-    near(r.stages[0].flux, 27.44, 0.03, '一段通量'); near(r.stages[1].flux, 19.13, 0.08, '二段通量');   // 11-02e 起约 +7% (压降减小, 后段压力多)
+    near(r.Pf, 12.46, 0.03, 'Áp suất nước cấp tầng 1');   // 11-02e 压降改按现代软件拟合后约 −2% (ROSA 8 的元件压降约为新式的 1.9–2.1 倍)
+    near(T.tds(r.Cp), 30.43, 0.05, 'TDS nước sản phẩm');
+    near(r.stages[0].flux, 27.44, 0.03, 'Thông lượng tầng 1'); near(r.stages[1].flux, 19.13, 0.08, 'Thông lượng tầng 2');   // 11-02e 起约 +7% (压降减小, 后段压力多)
     near(T.tds(r.stages[0].Cp), 22.12, 0.05); near(T.tds(r.stages[1].Cp), 54.28, 0.08);   // 二段通量偏高, 产水浓度相应偏低约 7% (11-02e)
     const rosaQp = [1.12, 1.06, 0.99, 0.91, 0.82, 0.75, 0.67, 0.59];
-    r.elems.forEach((x, i) => near(x.Qp, rosaQp[i], 0.13, '元件 ' + x.stage + '-' + x.pos));   // 11-02e 前 ≤ 6%; ROSA 8 的元件压降约为新式的 1.9–2.1 倍, 二段元件产水现高 5–12%
-    near(T.osmotic(r.Cc, 25), 5.20, 0.02, '浓水渗透压');
+    r.elems.forEach((x, i) => near(x.Qp, rosaQp[i], 0.13, 'Phần tử ' + x.stage + '-' + x.pos));   // 11-02e 前 ≤ 6%; ROSA 8 的元件压降约为新式的 1.9–2.1 倍, 二段元件产水现高 5–12%
+    near(T.osmotic(r.Cc, 25), 5.20, 0.02, 'Áp suất thẩm thấu nước cô đặc');
   });
-  test('对照: TWDB 2014 苦咸地下水, LE-440i, 38:18×7, 29 °C (记录已知偏差: 旧版软件压降大, 本工具进水压力低 14–18%)', () => {
+  test('Đối chiếu: TWDB 2014 nước ngầm lợ, LE-440i, 38:18×7, 29 °C (sai lệch đã biết: phần mềm cũ có tổn thất áp lớn, công cụ này cho áp suất nước cấp thấp hơn 14–18%)', () => {
     const e = Object.assign({ area: 41, type: 'bw' }, T.fitElement({ area: 41, testFlow: 47.9, testRejection: 99.3, testNaCl: 2000, testP: 10.34, testRecovery: 0.15 }));
     const C1 = { Ca: 134, Mg: 102, Na: 508, NH4: 0.5, Ba: 0.053, Sr: 25.8, HCO3: 141, CO3: 0.98, SO4: 269, Cl: 1057, F: 1, NO3: 0.1, SiO2: 15.4 };
     const C2 = { Ca: 146, Mg: 153, Na: 946, K: 16.3, NH4: 0.5, Ba: 0.059, Sr: 25.8, HCO3: 141, CO3: 0.96, SO4: 373, Cl: 1840, F: 1, NO3: 0.1, SiO2: 15.4 };
@@ -1473,32 +1473,32 @@ function ROTests(T, test, assert) {
     [[C1, 1, 0.75, 70, 113], [C1, 1, 0.80, 76, 113], [C2, 0.75, 0.75, 97, 165], [C2, 0.75, 0.80, 112, 166]].forEach(([C, FF, R, boost, ref]) => {
       const r = T.solvePass({ elem: e, FF, stages: [{ nv: 38, ne: 7, Pp: 0 }, { nv: 18, ne: 7, booster: boost * psi, Pp: 1.0 }] }, Qp / R, T.balance(C).C, Qp, 29);
       const k = r.Pf / psi / ref;   // 11-02e 前 −3%～+6%; 新压降式下 −14%～−18% (TWDB 用 ROSA 8 / IMSDesign 2012 / TorayDS2 2.0, 段间增压按其设计值固定输入)
-      assert.ok(k > 0.78 && k < 0.90, `FF ${FF} R ${R} 进水压力比 ${k}`);
-      near(r.flux / 1.6996, 14.5, 0.02, '平均通量 gfd');
+      assert.ok(k > 0.78 && k < 0.90, `FF ${FF} R ${R} Tỷ số áp suất nước cấp ${k}`);
+      near(r.flux / 1.6996, 14.5, 0.02, 'Thông lượng trung bình gfd');
     });
   });
-  test('基准: IWA 2021 SWRO 手算, 12×6, 40%, 25 °C (Kw 0.99, Ks 0.056)', () => {
+  test('Chuẩn: IWA 2021 SWRO tính tay, 12×6, 40%, 25 °C (Kw 0.99, Ks 0.056)', () => {
     const base = { Na: 10770, Mg: 1290, Ca: 412, K: 399, Sr: 7.9, Cl: 19354, SO4: 2712, HCO3: 142, F: 1.3, B: 4.5, SiO2: 2 };
     const sc = 35030 / T.tds(base), SW = {}; Object.keys(base).forEach(k => SW[k] = base[k] * sc);
     const r = T.solvePass({ elem: { area: 40.9, A: 0.99, B: 0.056, type: 'sw' }, FF: 1, stages: [{ nv: 12, ne: 6 }] }, 45 / 0.4, T.balance(SW).C, 45, 25);
-    near(r.Pf, 54, 0.05, '进水压力'); near(r.flux, 15.5, 0.03, '平均通量');
-    near(T.tds(T.neutralize(r.Cp)), 171, 0.15, '产水 TDS');
-    r.elems.forEach(x => assert.ok(x.beta >= 1.03 && x.beta <= 1.11, 'β 区间'));
+    near(r.Pf, 54, 0.05, 'Áp suất nước cấp'); near(r.flux, 15.5, 0.03, 'Thông lượng trung bình');
+    near(T.tds(T.neutralize(r.Cp)), 171, 0.15, 'TDS nước sản phẩm');
+    r.elems.forEach(x => assert.ok(x.beta >= 1.03 && x.beta <= 1.11, 'Khoảng β'));
   });
-  test('不变量: 流量与压力容器同比例放大, 压力与通量不变', () => {
+  test('Bất biến: lưu lượng và số bình áp lực tăng cùng tỷ lệ thì áp suất và thông lượng không đổi', () => {
     const e = T.getElement('BW30PRO400'), C = { Ca: 60, Mg: 15, Na: 160, HCO3: 200, SO4: 120, Cl: 210, SiO2: 15 };
     const a = T.solvePass({ elem: e, FF: 0.85, stages: [{ nv: 10, ne: 6 }, { nv: 5, ne: 6 }] }, 100 / 0.75, C, 100, 20);
     const b = T.solvePass({ elem: e, FF: 0.85, stages: [{ nv: 20, ne: 6 }, { nv: 10, ne: 6 }] }, 200 / 0.75, C, 200, 20);
     near(b.Pf, a.Pf, 1e-4); near(b.flux, a.flux, 1e-4); near(T.tds(b.Cp), T.tds(a.Cp), 1e-3);
   });
-  test('不变量: 低温、污染、高回收率的方向', () => {
+  test('Bất biến: chiều ảnh hưởng của nhiệt độ thấp, bám bẩn, tỷ lệ thu hồi cao', () => {
     const e = T.getElement('BW30PRO400'), C = { Ca: 60, Mg: 15, Na: 160, HCO3: 200, SO4: 120, Cl: 210, SiO2: 15 };
     const run = (T_, FF, R) => T.solvePass({ elem: e, FF, stages: [{ nv: 10, ne: 6 }, { nv: 5, ne: 6 }] }, 100 / R, C, 100, T_);
-    assert.ok(run(10, 0.85, 0.75).Pf > run(25, 0.85, 0.75).Pf, '低温压力升高');
-    assert.ok(T.tds(run(10, 0.85, 0.75).Cp) < T.tds(run(25, 0.85, 0.75).Cp), '低温产水更好');
-    assert.ok(run(25, 0.7, 0.75).Pf > run(25, 0.85, 0.75).Pf, '污染压力升高');
+    assert.ok(run(10, 0.85, 0.75).Pf > run(25, 0.85, 0.75).Pf, 'Nhiệt độ thấp làm tăng áp suất');
+    assert.ok(T.tds(run(10, 0.85, 0.75).Cp) < T.tds(run(25, 0.85, 0.75).Cp), 'Nhiệt độ thấp cho nước sản phẩm tốt hơn');
+    assert.ok(run(25, 0.7, 0.75).Pf > run(25, 0.85, 0.75).Pf, 'Bám bẩn làm tăng áp suất');
     const lo = T.designAll(baseDesign({ R: 0.70 })), hi = T.designAll(baseDesign({ R: 0.80 }));
-    assert.ok(hi.conc.sat.CaSO4 > lo.conc.sat.CaSO4 && hi.conc.lsi.LSI > lo.conc.lsi.LSI, '回收率高结垢倾向大');
+    assert.ok(hi.conc.sat.CaSO4 > lo.conc.sat.CaSO4 && hi.conc.lsi.LSI > lo.conc.lsi.LSI, 'Tỷ lệ thu hồi cao thì xu hướng đóng cặn lớn');
   });
   function baseDesign(o) {
     o = o || {};
@@ -1507,15 +1507,15 @@ function ROTests(T, test, assert) {
       pass1: { elem: T.getElement('BW30PRO400'), R: o.R || 0.75, FF: 0.85, stages: [{ nv: 14, ne: 6 }, { nv: 7, ne: 6 }] },
       pass2: o.pass2 || null, acid: o.acid || null, erd: o.erd || null };
   }
-  test('二级 RO: 物料平衡与产水改善', () => {
+  test('RO hai cấp: cân bằng vật chất và cải thiện nước sản phẩm', () => {
     const d = T.designAll(baseDesign({ pass2: { elem: T.getElement('BW30PRO400'), R: 0.85, FF: 0.9, stages: [{ nv: 6, ne: 6 }, { nv: 3, ne: 6 }] } }));
-    near(d.Qraw, 100 + d.Qconc, 1e-5, '原水 = 产品水 + 一级浓水');
-    near(d.recycle, d.pass1.Qp - 100, 1e-4, '二级浓水回流');
+    near(d.Qraw, 100 + d.Qconc, 1e-5, 'Nước nguồn = nước thành phẩm + nước cô đặc cấp 1');
+    near(d.recycle, d.pass1.Qp - 100, 1e-4, 'Tuần hoàn nước cô đặc cấp 2');
     near(d.pass2.Qp, 100, 2e-3);
-    assert.ok(d.tdsProd < T.tds(d.pass1.Cp) / 5, '二级产水明显改善');
+    assert.ok(d.tdsProd < T.tds(d.pass1.Cp) / 5, 'Nước sản phẩm cấp 2 cải thiện rõ rệt');
     assert.ok(d.sysRecovery > 0.7 && d.sysRecovery < 0.75);
   });
-  test('加酸: H2SO4 每 1 mg/L 降碱度 1.02 mg/L (以 CaCO3 计, ASTM D4582)', () => {
+  test('Châm axit: H2SO4 mỗi 1 mg/L giảm độ kiềm 1.02 mg/L (tính theo CaCO3, ASTM D4582)', () => {
     const C = T.balance({ Ca: 60, Mg: 15, Na: 160, HCO3: 250, SO4: 120, Cl: 210 }).C;
     const a = T.acidDose(C, 7.8, 6.8, 25, 'H2SO4');
     const dAlk = (C.HCO3 - a.C.HCO3) * 50.04 / 61.017;
@@ -1524,33 +1524,33 @@ function ROTests(T, test, assert) {
     near((C.HCO3 - h.C.HCO3) * 50.04 / 61.017 / h.doseMgL, 1.37, 0.01);
     assert.equal(T.acidDose(C, 7.0, 7.5, 25, 'HCl').doseMgL, 0);
   });
-  test('离子平衡与 LSI (Carrier 式)', () => {
+  test('Cân bằng ion và LSI (công thức Carrier)', () => {
     const b = T.balance({ Ca: 40.078, Cl: 35.453 });               // 2 meq/L Ca, 1 meq/L Cl → 补 Cl 1 meq
     near(b.added.mgL, 35.453, 1e-6); assert.equal(b.added.ion, 'Cl');
     const C = { Ca: 40.078, HCO3: 122.034, Na: 0, Cl: 0 };          // Ca 100、碱度 100 mg/L as CaCO3, TDS 162
     const pHs = (9.3 + (Math.log10(T.tds(C)) - 1) / 10 + (-13.12 * Math.log10(298.15) + 34.55)) - (Math.log10(100.09) - 0.4 + Math.log10(100.08));
     near(T.lsi(C, 8, 25).pHs, pHs, 1e-6);
   });
-  test('能耗: 无 ERD 与有 ERD', () => {
+  test('Năng lượng: không ERD và có ERD', () => {
     const inp = baseDesign();
     const d = T.designAll(inp);
     near(d.energy.items[0].kW, d.pass1.Qf * (d.pass1.Pf - 2) / 36 / (0.8 * 0.95), 1e-9);
     const sw = Object.assign(baseDesign(), { erd: { dP: 0.7, leak: 0.012, mix: 0 } });
     const d2 = T.designAll(sw);
-    assert.ok(d2.energy.kW < d.energy.kW, '有 ERD 能耗更低');
+    assert.ok(d2.energy.kW < d.energy.kW, 'Có ERD tiêu thụ năng lượng thấp hơn');
   });
-  test('海水 ERD: 比能耗量级 (ERI 白皮书: 42 000 mg/L、42% 约 2.1 kWh/m³)', () => {
+  test('ERD nước biển: cấp độ điện năng riêng (sách trắng ERI: 42 000 mg/L, 42% khoảng 2.1 kWh/m³)', () => {
     const SW = { Na: 10770, Mg: 1290, Ca: 412, K: 399, Sr: 7.9, Cl: 19354, SO4: 2712, HCO3: 142, F: 1.3, B: 4.5, SiO2: 2 };
     const inp = { feed: SW, pH: 8.1, T: 25, source: 'sw_open', Qp: 100, antiscalant: 2, pumpEff: 0.82, motorEff: 0.95,
       erd: { dP: 0.67, leak: 0.012, mix: 0.013 }, pass1: { elem: T.getElement('SW30HRLE440'), R: 0.45, FF: 0.85, stages: [{ nv: 21, ne: 7 }] } };
     const d = T.designAll(inp);
     assert.ok(d.energy.sec > 1.7 && d.energy.sec < 2.6, 'SEC ' + d.energy.sec);
     const noErd = T.designAll(Object.assign({}, inp, { erd: null }));
-    assert.ok(noErd.energy.sec > 1.6 * d.energy.sec, '无 ERD 能耗显著更高');
-    assert.ok(d.conc.sat.CaSO4 < 100 && d.conc.sat.SrSO4 < 100, '海水 45% 硫酸盐不饱和');
-    assert.ok(d.check.useSDSI, '海水浓水用 S&DSI');
+    assert.ok(noErd.energy.sec > 1.6 * d.energy.sec, 'Không ERD tiêu thụ năng lượng cao hơn rõ rệt');
+    assert.ok(d.conc.sat.CaSO4 < 100 && d.conc.sat.SrSO4 < 100, 'Nước biển 45% sunfat chưa bão hoà');
+    assert.ok(d.check.useSDSI, 'Nước cô đặc nước biển dùng S&DSI');
   });
-  test('结垢计算与 PHREEQC 对照 (离子对形态, |ΔSI| ≤ 0.1)', () => {
+  test('Tính đóng cặn và đối chiếu PHREEQC (dạng cặp ion, |ΔSI| ≤ 0.1)', () => {
     // 参考值: PHREEQC (phreeqpython 1.6.2 缺省库 vitens.dat) 计算的饱和指数
     const SW = T.balance({ Na: 10770, Mg: 1290, Ca: 412, K: 399, Sr: 7.9, Cl: 19354, SO4: 2712, HCO3: 142, F: 1.3, Ba: 0.02 }).C;
     let s = T.saturation(SW, 25, 8.1);
@@ -1559,50 +1559,50 @@ function ROTests(T, test, assert) {
     s = T.saturation(BW, 25, 8.06);
     assert.ok(Math.abs(Math.log10(s.CaSO4 / 100) + 0.82) < 0.1 && Math.abs(Math.log10(s.CaF2 / 100) + 0.23) < 0.1 && Math.abs(Math.log10(s.Calcite / 100) - 1.56) < 0.1);
   });
-  test('元件求解: 高盐末端元件产水随压力单调, 无负驱动压力产水 (10-21 审查 A1)', () => {
+  test('Giải phần tử: phần tử cuối nước mặn có nước sản phẩm đơn điệu theo áp suất, không có nước sản phẩm khi áp lực dẫn động âm (rà soát 10-21 A1)', () => {
     const C = T.balance({ Ca: 450, Mg: 300, Na: 3750, K: 30, Sr: 15, HCO3: 300, SO4: 2250, Cl: 5550, SiO2: 30 }).C;
     const pass = { elem: T.getElement('BW30PRO400'), FF: 0.85, stages: [{ nv: 12, ne: 7 }, { nv: 6, ne: 7, booster: 15 }] };
     let prev = 0;
     for (let P = 22; P <= 40; P += 0.25) {
       const r = T.runPass(pass, 100 / 0.75, C, P, 25);
-      assert.ok(r.Qp >= prev - 1e-6, 'Qp 随压力下降 @' + P); prev = r.Qp;
-      r.elems.forEach(e => assert.ok(e.ndp > 0 || e.Qp === 0, '负 NDP 有产水'));
+      assert.ok(r.Qp >= prev - 1e-6, 'Qp giảm theo áp suất @' + P); prev = r.Qp;
+      r.elems.forEach(e => assert.ok(e.ndp > 0 || e.Qp === 0, 'NDP âm mà có nước sản phẩm'));
     }
     const d = T.designAll({ feed: { Ca: 450, Mg: 300, Na: 3750, K: 30, Sr: 15, HCO3: 300, SO4: 2250, Cl: 5550, SiO2: 30 }, pH: 7.5, T: 25, source: 'well', Qp: 100, antiscalant: 3,
       pass1: { elem: T.getElement('BW30PRO400'), R: 0.75, FF: 0.85, stages: [{ nv: 12, ne: 7 }, { nv: 6, ne: 7, booster: 15 }] }, pass2: null, acid: null, erd: null });
-    assert.ok(d.pass1.converged && d.pass1.Pf < 35, '可求出进水压力 ' + d.pass1.Pf);
+    assert.ok(d.pass1.converged && d.pass1.Pf < 35, 'Giải được áp suất nước cấp ' + d.pass1.Pf);
   });
-  test('设计校核: 负压/无产水元件、段前增压超压报出 (A2/A3)', () => {
+  test('Kiểm tra thiết kế: báo phần tử áp suất âm/không có nước sản phẩm, quá áp khi tăng áp trước tầng (A2/A3)', () => {
     const b = baseDesign(); b.pass1.stages = [{ nv: 14, ne: 6 }, { nv: 7, ne: 6, Pp: 15 }];   // 二段产水背压过高 → 二段无产水 (11-02e 压降减小后改用此例)
-    assert.ok(T.designAll(b).check.items.some(x => x.type === 'bad' && /无产水或出现负压/.test(x.text)), '负压未报');
+    assert.ok(T.designAll(b).check.items.some(x => x.type === 'bad' && /không có nước sản phẩm hoặc xuất hiện áp suất âm/.test(x.text)), 'Không báo áp suất âm');
     const c = baseDesign(); for (const k in c.feed) c.feed[k] *= 4; c.T = 5; c.pass1.FF = 0.65;
     c.pass1.elem = T.getElement('TMG20D400'); c.pass1.stages = [{ nv: 14, ne: 6 }, { nv: 7, ne: 6, booster: 20 }];
     const dc = T.designAll(c);
-    assert.ok(T.maxPin(dc.pass1).P > 25 && dc.check.items.some(x => x.type === 'bad' && /第 2 段/.test(x.text)), '段前增压超压未报');
-    assert.ok(!T.designAll(baseDesign()).check.items.some(x => x.type === 'bad'), '常规设计无 ✗');
+    assert.ok(T.maxPin(dc.pass1).P > 25 && dc.check.items.some(x => x.type === 'bad' && /Tầng 2/.test(x.text)), 'Không báo quá áp khi tăng áp trước tầng');
+    assert.ok(!T.designAll(baseDesign()).check.items.some(x => x.type === 'bad'), 'Thiết kế thông thường không có ✗');
   });
-  test('产水 pH 电荷平衡; 吸入压力、电价可为 0 (A4/A5)', () => {
+  test('pH nước sản phẩm theo cân bằng điện tích; áp suất hút, giá điện có thể bằng 0 (A4/A5)', () => {
     const d1 = T.designAll(baseDesign());
     const co2 = T.carbonate(d1.Cfeed, d1.pHfeed, 25).CO2;
     const p1 = T.permeatePH(d1.Cprod, co2, 25);
-    assert.ok(p1 > 5.3 && p1 < 6.2, '一级产水 pH ' + p1);
+    assert.ok(p1 > 5.3 && p1 < 6.2, 'pH nước sản phẩm cấp 1 ' + p1);
     const d2 = T.designAll(baseDesign({ pass2: { elem: T.getElement('BW30PRO400'), R: 0.85, FF: 0.9, stages: [{ nv: 6, ne: 6 }, { nv: 3, ne: 6 }] } }));
     const p2 = T.permeatePH(d2.Cprod, co2, 25);
-    assert.ok(p2 > 4.6 && p2 < p1, '二级产水 pH ' + p2);
+    assert.ok(p2 > 4.6 && p2 < p1, 'pH nước sản phẩm cấp 2 ' + p2);
     const i0 = Object.assign(baseDesign(), { Psuction: 0, price: 0 }), e0 = T.energy(i0, d1), e2 = T.energy(Object.assign(baseDesign(), { Psuction: 2 }), d1);
-    assert.ok(e0.kW > e2.kW * 1.1 && e0.costYear === 0, '0 被替换为缺省');
+    assert.ok(e0.kW > e2.kW * 1.1 && e0.costYear === 0, '0 bị thay bằng giá trị mặc định');
   });
-  test('硼随 pH: 实测对照 (Hydranautics 太平洋海水 pH 8.14→9.24 降 62%; 苦咸水膜 pH 10.5 脱除 94.5–95%)', () => {
+  test('Bo theo pH: đối chiếu thực đo (Hydranautics nước biển Thái Bình Dương pH 8.14→9.24 giảm 62%; màng nước lợ pH 10.5 loại bỏ 94.5–95%)', () => {
     const feedA = { Ca: 410, Mg: 1337, Na: 12000, K: 229, CO3: 15.5, HCO3: 150, SO4: 2802, Cl: 21000, B: 5.3, SiO2: 4 };
     const run = pH => T.designAll({ feed: feedA, pH, T: 23, source: 'sw_uf', Qp: 1027.8, pass1: { elem: T.getElement('SWC5LD'), R: 0.5, FF: 1, stages: [{ nv: 284, ne: 7 }] }, pass2: null, acid: null, erd: null }).Cprod.B;
     const red = 1 - run(9.24) / run(8.14);
-    assert.ok(red > 0.5 && red < 0.75, '海水 pH 升高硼降低 ' + red);
+    assert.ok(red > 0.5 && red < 0.75, 'pH nước biển tăng thì bo giảm ' + red);
     const r = T.solvePass({ elem: T.getElement('ESPA2LD'), FF: 1, pH: 10.5, stages: [{ nv: 72, ne: 7 }, { nv: 36, ne: 7 }] }, 925 / 0.9, { Na: 70, Cl: 110, B: 1.2 }, 925, 15);
     const rej = 1 - r.Cp.B / 1.2;
-    assert.ok(rej > 0.88 && rej < 0.97, 'pH 10.5 硼脱除率 ' + rej);
+    assert.ok(rej > 0.88 && rej < 0.97, 'Tỷ lệ loại bo tại pH 10.5 ' + rej);
     near(T.boricPKa(25, 0), 9.24, 0.005); near(T.boricPKa(25, 0.7), 8.64, 0.01);
   });
-  test('二级加碱: NaOH 量、产水硼与 CO₂; 最高水温校核 (第二轮 A1/A2)', () => {
+  test('Châm kiềm cấp 2: lượng NaOH, bo và CO₂ nước sản phẩm; kiểm tra nhiệt độ nước cao nhất (vòng hai A1/A2)', () => {
     const sea = { Na: 10770, Mg: 1290, Ca: 412, K: 399, Sr: 7.9, Cl: 19354, SO4: 2712, HCO3: 142, F: 1.3, Ba: 0.02, B: 4.5 };
     const mk = (pHt, Tc, FF) => ({ feed: sea, pH: 8.1, T: Tc || 25, source: 'sw_open', Qp: 100, antiscalant: 2, targetB: 0.8,
       pass1: { elem: T.getElement('SW30HRLE440'), R: 0.45, FF: FF || 0.85, stages: [{ nv: 21, ne: 7 }] },
@@ -1611,20 +1611,20 @@ function ROTests(T, test, assert) {
     assert.ok(d1.Cprod.B < 0.5 * d0.Cprod.B && d1.chem.naohMgL > 3 && d1.chem.naohMgL < 30, 'NaOH ' + d1.chem.naohMgL + ' B ' + d1.Cprod.B);
     assert.ok(d0.co2Prod > 0.5 && d1.co2Prod < 0.1, 'CO₂');
     const hot = T.designAll(mk(undefined, 35, 1));
-    assert.ok(hot.Cprod.B > 0.8 && T.hotChecks({ source: 'sw_open', targetB: 0.8 }, hot, 35).some(x => /产水硼/.test(x.text)), '高温硼超标未报');
-    assert.ok(!T.designAll(mk(undefined)).check.items.length, '25 °C 无提示');
+    assert.ok(hot.Cprod.B > 0.8 && T.hotChecks({ source: 'sw_open', targetB: 0.8 }, hot, 35).some(x => /Bo trong nước sản phẩm/.test(x.text)), 'Không báo bo vượt chuẩn khi nhiệt độ cao');
+    assert.ok(!T.designAll(mk(undefined)).check.items.length, '25 °C không có cảnh báo');
   });
-  test('碳酸钙指数在 8000–12 000 mg/L 线性过渡, 无跳变 (B7)', () => {
+  test('Chỉ số canxi cacbonat chuyển tiếp tuyến tính trong khoảng 8000–12 000 mg/L, không nhảy bậc (B7)', () => {
     const C = T.balance({ Ca: 108, Mg: 35, Na: 376, K: 13, HCO3: 295, SO4: 172, Cl: 429, NO3: 33, SiO2: 38 }).C;
     let prev = null;
     for (let R = 0.80; R < 0.87; R += 0.001) {
       const Cc = {}; for (const k in C) Cc[k] = C[k] / (1 - R);
       const ix = T.caco3Index(Cc, 7.9, 36.7);
-      if (prev != null) assert.ok(Math.abs(ix.v - prev) < 0.03, '跳变 @' + R.toFixed(3));
+      if (prev != null) assert.ok(Math.abs(ix.v - prev) < 0.03, 'Nhảy bậc @' + R.toFixed(3));
       prev = ix.v;
     }
   });
-  test('口径: CO₃ 未填与填 0 一致; ERD 润滑流计入原水; 二级泵吸入取一级产水背压 (B9–B11)', () => {
+  test('Quy ước: CO₃ bỏ trống và nhập 0 cho kết quả như nhau; dòng bôi trơn ERD tính vào nước nguồn; áp suất hút bơm cấp 2 lấy áp suất ngược nước sản phẩm cấp 1 (B9–B11)', () => {
     const f1 = { Ca: 120, Mg: 30, Na: 150, HCO3: 400, SO4: 150, Cl: 200 }, f2 = Object.assign({ CO3: 0 }, f1);
     const a1 = T.acidDose(T.balance(f1).C, 8.3, 7.3, 25, 'H2SO4'), a2 = T.acidDose(T.balance(f2).C, 8.3, 7.3, 25, 'H2SO4');
     near(a1.doseMgL, a2.doseMgL, 1e-9); near(a1.C.CO3, a2.C.CO3, 1e-9);
@@ -1632,10 +1632,10 @@ function ROTests(T, test, assert) {
     const d = T.designAll({ feed: sea, pH: 8.1, T: 25, source: 'sw_open', Qp: 100, pass1: { elem: T.getElement('SW30HRLE440'), R: 0.45, FF: 0.85, stages: [{ nv: 21, ne: 7 }] }, pass2: null, acid: null, erd: { dP: 0.7, leak: 0.012, mix: 0 } });
     near(d.Qraw, d.pass1.Qf + 0.012 * d.pass1.Qc, 1e-9);
     const b = baseDesign({ pass2: { elem: T.getElement('BW30PRO400'), R: 0.85, FF: 0.9, stages: [{ nv: 6, ne: 6 }, { nv: 3, ne: 6 }] } });
-    const it = T.designAll(b).energy.items.filter(x => x.name === '二级高压泵')[0];
+    const it = T.designAll(b).energy.items.filter(x => x.name === 'Bơm cao áp cấp 2')[0];
     near(it.dP, T.designAll(b).pass2.Pf, 1e-9);
   });
-  test('浓水 pH: 完整碳酸平衡 + 离子对, 与 PHREEQC 对照 (CO₂ 活度不变, 碱度浓缩) |ΔpH| ≤ 0.02', () => {
+  test('pH nước cô đặc: cân bằng cacbonat đầy đủ + cặp ion, đối chiếu PHREEQC (hoạt độ CO₂ không đổi, độ kiềm cô đặc) |ΔpH| ≤ 0.02', () => {
     // 参考值: PHREEQC (phreeqpython 缺省库 vitens.dat), 进水 pH 下求 CO₂(g) 饱和指数, 浓水按同一 CO₂ 分压平衡
     const W = [[{ Ca: 60, Mg: 15, Na: 110, K: 5, HCO3: 200, SO4: 120, Cl: 150, F: 0.5, NO3: 10, SiO2: 15 }, 7.5, 0.75, 8.037],
                [{ Ca: 134, Mg: 102, Na: 508, Sr: 25.8, HCO3: 141, CO3: 0.98, SO4: 269, Cl: 1057, F: 1, SiO2: 15.4 }, 7.66, 0.75, 8.142],
@@ -1644,17 +1644,17 @@ function ROTests(T, test, assert) {
     W.forEach(([C, pH, R, ref]) => {
       const b = T.balance(C).C, Cc = {}; for (const k in b) Cc[k] = b[k] / (1 - R);
       const v = T.concentratePH(b, pH, Cc, 25);
-      assert.ok(Math.abs(v - ref) <= 0.02, '浓水 pH ' + v + ' vs PHREEQC ' + ref);
-      assert.ok(Math.abs(T.pHcGrid(b, pH, 25)(R) - v) < 0.005, '插值');
+      assert.ok(Math.abs(v - ref) <= 0.02, 'pH nước cô đặc ' + v + ' vs PHREEQC ' + ref);
+      assert.ok(Math.abs(T.pHcGrid(b, pH, 25)(R) - v) < 0.005, 'Nội suy');
     });
     // 高 pH、高温、高回收率: 初值不得落入 speciate 无定义区 (复核发现的 NaN)
     const hi = T.balance({ Ca: 91, Mg: 0.6, Na: 1650, K: 14.5, HCO3: 183, CO3: 8.9, SO4: 833, Cl: 3115, F: 2.6, SiO2: 9 }).C, Ch = {};
     for (const k in hi) Ch[k] = hi[k] / 0.1;
     const vh = T.concentratePH(hi, 11, Ch, 45);
-    assert.ok(isFinite(vh) && vh > 9 && vh < 12, '高 pH 浓水 pH ' + vh);
-    assert.ok(T.maxRecovery(hi, 11, 45, true).each.CaCO3 < 0.5, '高 pH 碳酸钙限制');
+    assert.ok(isFinite(vh) && vh > 9 && vh < 12, 'pH nước cô đặc khi pH cao ' + vh);
+    assert.ok(T.maxRecovery(hi, 11, 45, true).each.CaCO3 < 0.5, 'Giới hạn canxi cacbonat khi pH cao');
   });
-  test('加酸量: 离子对形态 + CT 守恒, 与 PHREEQC 滴定对照 (淡水/苦咸水 vitens.dat ±1%, 海水 pitzer.dat ±5%)', () => {
+  test('Lượng axit: dạng cặp ion + bảo toàn CT, đối chiếu chuẩn độ PHREEQC (nước ngọt/nước lợ vitens.dat ±1%, nước biển pitzer.dat ±5%)', () => {
     const cases = [[{ Ca: 60, Mg: 15, Na: 134, K: 5, HCO3: 200, SO4: 120, Cl: 150, F: 0.5, NO3: 10, SiO2: 15 }, 7.5, 6.5, 'H2SO4', 25, 56.04],
                    [{ Ca: 60, Mg: 15, Na: 134, K: 5, HCO3: 200, SO4: 120, Cl: 150, F: 0.5, NO3: 10, SiO2: 15 }, 7.5, 6.5, 'HCl', 25, 41.68],
                    [{ Ca: 120, Mg: 30, Na: 150, HCO3: 400, SO4: 150, Cl: 200 }, 8.3, 7.0, 'H2SO4', 10, 66.53],
@@ -1663,18 +1663,18 @@ function ROTests(T, test, assert) {
                    [{ Ca: 40, Mg: 20, Na: 300, HCO3: 350, CO3: 8, SO4: 150, Cl: 200, SiO2: 30 }, 8.8, 7.5, 'H2SO4', 25, 36.70]];
     cases.forEach(([C, pH, pHt, acid, t, ref]) => near(T.acidDose(T.balance(C).C, pH, pHt, t, acid).doseMgL, ref, 0.015, acid + ' ' + pH + '→' + pHt));
     const sw = T.acidDose(T.balance({ Ca: 412, Mg: 1290, Na: 10770, K: 399, Sr: 7.9, HCO3: 142, SO4: 2712, Cl: 19354, F: 1.3 }).C, 8.1, 6.5, 35, 'H2SO4').doseMgL;
-    near(sw, 35.86, 0.05, '海水');
+    near(sw, 35.86, 0.05, 'Nước biển');
   });
-  test('对照: WAVE 1.82 单段 1×6, BW30XFR-400/34, 20 °C (压降拟合式验证, 11-02e)', () => {
+  test('Đối chiếu: WAVE 1.82 một tầng 1×6, BW30XFR-400/34, 20 °C (kiểm chứng công thức khớp tổn thất áp, 11-02e)', () => {
     // 意大利招标附件 WAVE 报告: 进水 8.99 m³/h, 产水 6.00 m³/h, 进水 12.0 bar, 容器压降 0.5 bar, 产水 9.04 mg/L; 首/末支产水 1.07/0.91 m³/h
     const e = Object.assign({ area: 37.2, type: 'bw' }, T.fitElement({ area: 37.2, testFlow: 43.5, testRejection: 99.65, testNaCl: 2000, testP: 15.5, testRecovery: 0.15, spacer: 34 }));
     const C = T.balance({ K: 7, Na: 297.8, Mg: 22, Ca: 33, CO3: 4.39, HCO3: 362.1, NO3: 10.4, F: 0.31, Cl: 325, SO4: 55 }).C;
     const r = T.solvePass({ elem: e, FF: 0.85, stages: [{ nv: 1, ne: 6 }] }, 8.99, C, 6.0, 20);
-    near(r.Pf, 12.0, 0.03, '进水压力'); near(r.Pf - r.Pc, 0.5, 0.2, '容器压降 (WAVE 取 0.1 bar 精度)');
-    near(r.elems[0].Qp, 1.07, 0.04, '首支产水'); near(r.elems[5].Qp, 0.91, 0.04, '末支产水');
-    near(T.tds(T.neutralize(r.Cp)), 9.04, 0.1, '产水 TDS');
+    near(r.Pf, 12.0, 0.03, 'Áp suất nước cấp'); near(r.Pf - r.Pc, 0.5, 0.2, 'Tổn thất áp bình (WAVE lấy độ chính xác 0.1 bar)');
+    near(r.elems[0].Qp, 1.07, 0.04, 'Nước sản phẩm phần tử đầu'); near(r.elems[5].Qp, 0.91, 0.04, 'Nước sản phẩm phần tử cuối');
+    near(T.tds(T.neutralize(r.Cp)), 9.04, 0.1, 'TDS nước sản phẩm');
   });
-  test('对照: ROSA 9.1 三段 (5:3:1×6, 84%) 与 Toray DS2 三段 (2:2:1×6, 75%), 记录已知偏差 (11-02)', () => {
+  test('Đối chiếu: ROSA 9.1 ba tầng (5:3:1×6, 84%) và Toray DS2 ba tầng (2:2:1×6, 75%), ghi nhận sai lệch đã biết (11-02)', () => {
     // 来源与数据见 claude/audit-ro-3stage-2026-11-02.md §3、claude/research-ro-sources-2026-11-02.md。11-02e 起压降按 ROSA 9.1 拟合, 压力与分段产水吻合;
     // 暖水产水 TDS 仍偏低 (盐透过模型), 本测试锁定现状, 改动压降或透盐模型时需同步更新
     const gpm = 0.227125, e = T.getElement('ECOPRO440');
@@ -1683,18 +1683,18 @@ function ROTests(T, test, assert) {
     const runA = (C, t, pp1, qf, qp) => T.solvePass({ elem: e, FF: 0.85, stages: [{ nv: 5, ne: 6, Pp: pp1 * psi }, { nv: 3, ne: 6, booster: -5 * psi, Pp: 30 * psi }, { nv: 1, ne: 6, booster: -5 * psi, Pp: 15 * psi }] }, qf * gpm, C, qp * gpm, t);
     const a25 = runA(A, 25, 50, 287.81, 242.49), a10 = runA(A10, 10, 40, 287.86, 242.54);
     const within = (v, ref, lo, hi, m) => assert.ok(v / ref > lo && v / ref < hi, m + ' ' + (v / ref).toFixed(3));
-    within(a25.Pf / psi, 138.38, 0.98, 1.10, 'ROSA 25 °C 进水压力');  within(a10.Pf / psi, 201.15, 0.88, 1.00, 'ROSA 10 °C 进水压力');
-    within(a25.stages[2].Qp / gpm, 20.42, 0.90, 1.08, 'ROSA 25 °C 三段产水'); within(a10.stages[2].Qp / gpm, 21.41, 0.94, 1.10, 'ROSA 10 °C 三段产水');
-    within(T.tds(T.neutralize(a25.Cp)), 16.36, 0.55, 0.72, 'ROSA 25 °C 产水 TDS'); within(T.tds(T.neutralize(a10.Cp)), 6.86, 0.78, 0.95, 'ROSA 10 °C 产水 TDS');
+    within(a25.Pf / psi, 138.38, 0.98, 1.10, 'ROSA 25 °C áp suất nước cấp');  within(a10.Pf / psi, 201.15, 0.88, 1.00, 'ROSA 10 °C áp suất nước cấp');
+    within(a25.stages[2].Qp / gpm, 20.42, 0.90, 1.08, 'ROSA 25 °C nước sản phẩm ba tầng'); within(a10.stages[2].Qp / gpm, 21.41, 0.94, 1.10, 'ROSA 10 °C nước sản phẩm ba tầng');
+    within(T.tds(T.neutralize(a25.Cp)), 16.36, 0.55, 0.72, 'ROSA 25 °C TDS nước sản phẩm'); within(T.tds(T.neutralize(a10.Cp)), 6.86, 0.78, 0.95, 'ROSA 10 °C TDS nước sản phẩm');
     const eB = Object.assign({}, T.getElement('TMG20D400')); eB.B *= 1.331;          // 膜龄 3 年, 透盐率增加 33.1%
     const b = T.solvePass({ elem: eB, FF: 0.848, stages: [{ nv: 2, ne: 6 }, { nv: 2, ne: 6 }, { nv: 1, ne: 6 }] }, 98.04 * gpm,
       T.balance({ Ca: 27.41, Mg: 5.946, Na: 454.3, K: 2.533, HCO3: 400.6, Cl: 528.6, SO4: 3.528, NO3: 0.0476, SiO2: 18.055, CO3: 3.425 }).C, 73.53 * gpm, 13 / 1.8);
-    within(b.Pf / psi, 119.3, 0.95, 1.08, 'Toray 进水压力'); within(b.stages[2].Qp / gpm, 8.8, 1.0, 1.18, 'Toray 三段产水');
-    within(T.tds(T.neutralize(b.Cp)), 18.34, 0.93, 1.10, 'Toray 产水 TDS');
+    within(b.Pf / psi, 119.3, 0.95, 1.08, 'Toray áp suất nước cấp'); within(b.stages[2].Qp / gpm, 8.8, 1.0, 1.18, 'Toray nước sản phẩm ba tầng');
+    within(T.tds(T.neutralize(b.Cp)), 18.34, 0.93, 1.10, 'Toray TDS nước sản phẩm');
   });
-  test('设计校核: 超通量、超压、结垢能报出', () => {
+  test('Kiểm tra thiết kế: báo được vượt thông lượng, quá áp, đóng cặn', () => {
     const tight = baseDesign(); tight.pass1.stages = [{ nv: 6, ne: 6 }, { nv: 3, ne: 6 }];
-    assert.ok(T.designAll(tight).check.items.some(x => /平均通量/.test(x.text)));
+    assert.ok(T.designAll(tight).check.items.some(x => /Thông lượng trung bình/.test(x.text)));
     const scale = baseDesign({ R: 0.9 }); scale.antiscalant = 0;
     assert.ok(T.designAll(scale).check.items.some(x => /LSI/.test(x.text)));
   });
@@ -1839,7 +1839,7 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
     ION_ORDER.forEach(function (k) { need('ion_' + k, T.IONS[k].name, 0, 1e5); });
     var stageErr = function (pass, lab) {
       readStages(pass).forEach(function (s, i) {
-        var p = lab + '第 ' + (i + 1) + ' 段';
+        var p = lab + 'Tầng ' + (i + 1) + ' Tầng';
         if (!(s[0] >= 1 && Math.floor(s[0]) === s[0])) bad.push(p + 'số bình áp lực phải là số nguyên dương');
         if (!(s[1] >= 1 && s[1] <= 8 && Math.floor(s[1]) === s[1])) bad.push(p + 'số phần tử mỗi bình phải là số nguyên từ 1–8');
         if (!(s[2] >= 0)) bad.push(p + 'áp suất tăng trước đoạn phải ≥ 0'); if (!(s[3] >= 0)) bad.push(p + 'áp suất ngược nước sản phẩm phải ≥ 0');
@@ -1865,7 +1865,7 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
     if (tmax() < num('T')) bad.push('Nhiệt độ nước cao nhất ' + tmax() + ' °C không được thấp hơn nhiệt độ nước tính toán ' + num('T') + ' °C');
     if ($('elem1').value === 'CUSTOM' || ($('pass2on').checked && $('elem2').value === 'CUSTOM')) {
       var cn = num('cNaCl'), piT = T.osmotic({ Na: cn * 0.3934, Cl: cn * 0.6066 }, 25);
-      if (num('cP') <= piT * 1.2) bad.push('自定义元件Áp suất thử nghiệm ' + num('cP') + ' bar 过低：NaCl thử nghiệm ' + cn + ' mg/L 的渗透压约 ' + piT.toFixed(1) + ' bar，Áp suất thử nghiệm应明显高于它');
+      if (num('cP') <= piT * 1.2) bad.push('Áp suất thử nghiệm của phần tử tự định nghĩa ' + num('cP') + ' bar là quá thấp: áp suất thẩm thấu của NaCl thử nghiệm ' + cn + ' mg/L khoảng ' + piT.toFixed(1) + ' bar, áp suất thử nghiệm phải cao hơn rõ rệt');
     }
     var tds = ION_ORDER.reduce(function (a, k) { return a + (num('ion_' + k) || 0); }, 0);
     if (!(tds > 0)) bad.push('Các chỉ tiêu chất lượng nước cấp đều bằng 0');
@@ -1908,19 +1908,19 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
     var pmax1 = inp.pass1.elem.pmax || 41;
     var mp1 = T.maxPin(dmin.pass1);
     var dOk = d.pass1.converged;
-    if (dmin !== d && dOk && dmin.pass1.converged && mp1.P > pmax1) items.push({ type: 'bad', text: 'Nhiệt độ nước thấp nhất ' + num('Tmin') + ' °C 时一级' + (mp1.stage > 1 ? '第 ' + mp1.stage + ' 段（段前增压后）' : '') + 'Áp suất nước cấp ' + fmt(mp1.P, 1) + ' bar 超过元件最高操作压力 ' + pmax1 + ' bar' });
-    if (dmin !== d && dOk && !dmin.pass1.converged) items.push({ type: 'bad', text: 'Nhiệt độ nước thấp nhất ' + num('Tmin') + ' °C 下' + (dmin.pass1.rCapped ? '单支元件Tỷ lệ thu hồi达到 50% 的计算上限' : '求不出Áp suất nước cấp cấp 1（> 120 bar）') + '，请增加元件或降低Tỷ lệ thu hồi' });
-    if (dmin !== d && dOk && d.pass2 && dmin.pass2 && dmin.pass2.converged && T.maxPin(dmin.pass2).P > (inp.pass2.elem.pmax || 41)) items.push({ type: 'bad', text: 'Nhiệt độ nước thấp nhất时二级Áp suất nước cấp ' + fmt(T.maxPin(dmin.pass2).P, 1) + ' bar 超过元件最高操作压力' });
+    if (dmin !== d && dOk && dmin.pass1.converged && mp1.P > pmax1) items.push({ type: 'bad', text: 'Nhiệt độ nước thấp nhất ' + num('Tmin') + ' °C, cấp 1' + (mp1.stage > 1 ? 'Tầng ' + mp1.stage + ' (sau tăng áp trước tầng)' : '') + 'Áp suất nước cấp ' + fmt(mp1.P, 1) + ' bar vượt áp suất vận hành tối đa của phần tử ' + pmax1 + ' bar' });
+    if (dmin !== d && dOk && !dmin.pass1.converged) items.push({ type: 'bad', text: 'Nhiệt độ nước thấp nhất ' + num('Tmin') + ' °C,' + (dmin.pass1.rCapped ? 'Tỷ lệ thu hồi mỗi phần tử đạt giới hạn tính toán 50%' : 'Không giải được áp suất nước cấp cấp 1 (> 120 bar）') + ', hãy thêm phần tử hoặc giảm tỷ lệ thu hồi' });
+    if (dmin !== d && dOk && d.pass2 && dmin.pass2 && dmin.pass2.converged && T.maxPin(dmin.pass2).P > (inp.pass2.elem.pmax || 41)) items.push({ type: 'bad', text: 'Ở nhiệt độ nước thấp nhất, áp suất nước cấp cấp 2 ' + fmt(T.maxPin(dmin.pass2).P, 1) + ' bar vượt áp suất vận hành tối đa của phần tử' });
     [inp.pass1.elem, inp.pass2 && inp.pass2.elem].forEach(function (el, k) {
-      if (el && el.id === 'CUSTOM' && el.fitOk === false) items.unshift({ type: 'bad', text: '自定义元件的样本参数无法用本模型复现（Áp suất thử nghiệm、产水量、Tỷ lệ khử muối组合不合理），' + (k ? 'Cấp 2' : 'Cấp 1') + '计算结果不可靠，请核对样本' });
+      if (el && el.id === 'CUSTOM' && el.fitOk === false) items.unshift({ type: 'bad', text: 'Thông số tờ dữ liệu của phần tử tự định nghĩa không tái lập được bằng mô hình này (áp suất thử nghiệm, lưu lượng nước sản phẩm, tỷ lệ khử muối không hợp lý),' + (k ? 'Cấp 2' : 'Cấp 1') + 'kết quả tính không tin cậy, hãy kiểm tra lại tờ thông số' });
     });
     T.hotChecks(inp, dhot, tmax()).forEach(function (x) { items.push(x); });
     var eb = Math.abs(d.balance.errPct);
-    if (eb > 5) items.push({ type: eb > 10 ? 'bad' : 'warn', text: '进水阴阳离子不平衡 ' + fmt(d.balance.errPct, 1) + '%（已补 ' + T.IONS[d.balance.added.ion].name + ' ' + fmt(d.balance.added.mgL, 1) + ' mg/L）：请检查是否把碱度、硬度按 CaCO₃ 计或 mmol/L 填写，硝酸盐、氨氮按 N 计填写' });
-    if (inp.pH > 7 && !((inp.feed.HCO3 || 0) >= 10) && inp.source !== 'ro_perm') items.push({ type: 'warn', text: 'pH nước cấp ' + inp.pH + ' 而 HCO₃⁻ 不足 10 mg/L：天然水少见，请确认碱度是否按 mmol/L 填写（换算见②）' });
-    if (inp.pH < 4.5 && (inp.feed.HCO3 || 0) > 0) items.push({ type: 'warn', text: 'pH nước cấp < 4.5 时碳酸氢根基本不存在，输入的 pH 与 HCO₃⁻ 不自洽' });
-    if (d.chem.naohMgL > 50) items.push({ type: 'warn', text: '二级前加碱量 ' + fmt(d.chem.naohMgL, 0) + ' mg/L 偏大：Nước sản phẩm cấp 1 CO₂ 高（常因一级前Châm axit），宜在二级前脱气或降低目标 pH' });
-    if (noErd && noErd.sec < d.energy.sec) items.push({ type: 'warn', text: 'Áp suất nước cô đặc低（' + fmt(d.pass1.Pc, 1) + ' bar），设能量回收装置反而多耗能，不宜设置' });
+    if (eb > 5) items.push({ type: eb > 10 ? 'bad' : 'warn', text: 'Cation và anion nước cấp không cân bằng ' + fmt(d.balance.errPct, 1) + '% (đã bổ sung ' + T.IONS[d.balance.added.ion].name + ' ' + fmt(d.balance.added.mgL, 1) + ' mg/L): kiểm tra xem độ kiềm, độ cứng có bị nhập theo CaCO₃ hoặc mmol/L không; nitrat, amoni cần nhập theo N' });
+    if (inp.pH > 7 && !((inp.feed.HCO3 || 0) >= 10) && inp.source !== 'ro_perm') items.push({ type: 'warn', text: 'pH nước cấp ' + inp.pH + ' mà HCO₃⁻ dưới 10 mg/L: hiếm gặp với nước tự nhiên, hãy xác nhận độ kiềm có bị nhập theo mmol/L không (quy đổi xem ②)' });
+    if (inp.pH < 4.5 && (inp.feed.HCO3 || 0) > 0) items.push({ type: 'warn', text: 'pH nước cấp < 4.5 thì bicacbonat gần như không tồn tại, pH và HCO₃⁻ nhập vào không nhất quán' });
+    if (d.chem.naohMgL > 50) items.push({ type: 'warn', text: 'Lượng kiềm châm trước cấp 2 ' + fmt(d.chem.naohMgL, 0) + ' mg/L là lớn: CO₂ trong nước sản phẩm cấp 1 cao (thường do châm axit trước cấp 1), nên khử khí trước cấp 2 hoặc giảm pH mục tiêu' });
+    if (noErd && noErd.sec < d.energy.sec) items.push({ type: 'warn', text: 'Áp suất nước cô đặc thấp (' + fmt(d.pass1.Pc, 1) + ' bar), lắp thiết bị thu hồi năng lượng lại tốn điện hơn, không nên lắp' });
     last.items = items;
     renderCalc(inp, d, dmin, items);
     renderScale(inp, d, mr);
@@ -1943,10 +1943,10 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
   function passTable(res, label) {
     var h = ['<div class="table-wrapper"><table class="tw"><thead><tr><th>' + label + '</th><th>Bố trí</th><th>Nước cấp m³/h</th><th>Áp suất nước cấp bar</th><th>Nước cô đặc m³/h</th><th>Áp suất nước cô đặc bar</th><th>Nước sản phẩm m³/h</th><th>Thông lượng trung bình LMH</th><th>TDS nước sản phẩm</th></tr></thead><tbody>'];
     res.stages.forEach(function (st, i) {
-      h.push('<tr><td>第 ' + (i + 1) + ' 段</td><td>' + st.nv + ' × ' + st.ne + '</td><td>' + fmt(st.Qf, 1) + '</td><td>' + pfmt(st.Pin) + (st.booster > 0 ? '<br><span class="muted">bao gồm tăng áp ' + fmt(st.booster, 1) + '</span>' : '') + '</td><td>' + fmt(st.Qc, 1) + '</td><td>' + pfmt(st.Pout) +
+      h.push('<tr><td>Tầng ' + (i + 1) + ' Tầng</td><td>' + st.nv + ' × ' + st.ne + '</td><td>' + fmt(st.Qf, 1) + '</td><td>' + pfmt(st.Pin) + (st.booster > 0 ? '<br><span class="muted">bao gồm tăng áp ' + fmt(st.booster, 1) + '</span>' : '') + '</td><td>' + fmt(st.Qc, 1) + '</td><td>' + pfmt(st.Pout) +
         '</td><td>' + fmt(st.Qp, 1) + '</td><td>' + fmt(st.flux, 1) + '</td><td>' + fmt(ptds(st.Cp), 1) + '</td></tr>');
     });
-    h.push('<tr class="total"><td>Tổng cộng</td><td>' + res.nElements + ' 支</td><td>' + fmt(res.Qf, 1) + '</td><td>' + fmt(res.Pf, 2) + '</td><td>' + fmt(res.Qc, 1) + '</td><td>' + pfmt(res.Pc) +
+    h.push('<tr class="total"><td>Tổng cộng</td><td>' + res.nElements + ' phần tử</td><td>' + fmt(res.Qf, 1) + '</td><td>' + fmt(res.Pf, 2) + '</td><td>' + fmt(res.Qc, 1) + '</td><td>' + pfmt(res.Pc) +
       '</td><td>' + fmt(res.Qp, 1) + '</td><td>' + fmt(res.flux, 1) + '</td><td>' + fmt(ptds(res.Cp), 1) + '</td></tr>');
     h.push('</tbody></table></div>');
     return h.join('');
@@ -1967,49 +1967,49 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
     var warnN = items.filter(function (x) { return x.type === 'warn'; }).length, badN = items.filter(function (x) { return x.type === 'bad'; }).length;
     h.push('<div class="kpi-row">');
     h.push(kpi('Tỷ lệ thu hồi hệ thống', fmt(d.sysRecovery * 100, 1) + '<span class="muted" style="font-size:11px"> %</span>', 'Nước nguồn ' + fmt(d.Qraw, 1) + ' m³/h · Nước cô đặc ' + fmt(d.Qconc, 1) + ' m³/h'));
-    h.push(kpi('Áp suất nước cấp cấp 1', fmt(d.pass1.Pf, 1) + '<span class="muted" style="font-size:11px"> bar</span>', fmt(inp.T, 0) + ' °C；' + fmt(num('Tmin'), 0) + ' °C 时 ' + fmt(dmin.pass1.Pf, 1) + ' bar' + (d.pass2 ? '；二级 ' + fmt(d.pass2.Pf, 1) + ' bar' : ''), T.maxPin(dmin.pass1).P > (inp.pass1.elem.pmax || 41) ? 'bad' : ''));
+    h.push(kpi('Áp suất nước cấp cấp 1', fmt(d.pass1.Pf, 1) + '<span class="muted" style="font-size:11px"> bar</span>', fmt(inp.T, 0) + ' °C；' + fmt(num('Tmin'), 0) + ' °C, ' + fmt(dmin.pass1.Pf, 1) + ' bar' + (d.pass2 ? '; cấp 2 ' + fmt(d.pass2.Pf, 1) + ' bar' : ''), T.maxPin(dmin.pass1).P > (inp.pass1.elem.pmax || 41) ? 'bad' : ''));
     var dh = last.dhot, tH = tmax();
-    h.push(kpi('TDS nước sản phẩm', fmt(d.tdsProd, d.tdsProd < 10 ? 2 : 1) + '<span class="muted" style="font-size:11px"> mg/L</span>', fmt(inp.T, 0) + ' °C；bo ' + fmt(d.Cprod.B || 0, 2) + '。最高 ' + fmt(tH, 0) + ' °C 新膜：' + fmt(dh.tdsProd, dh.tdsProd < 10 ? 2 : 1) + '，bo ' + fmt(dh.Cprod.B || 0, 2),
+    h.push(kpi('TDS nước sản phẩm', fmt(d.tdsProd, d.tdsProd < 10 ? 2 : 1) + '<span class="muted" style="font-size:11px"> mg/L</span>', fmt(inp.T, 0) + ' °C；bo ' + fmt(d.Cprod.B || 0, 2) + '. Cao nhất ' + fmt(tH, 0) + ' °C màng mới:' + fmt(dh.tdsProd, dh.tdsProd < 10 ? 2 : 1) + '，bo ' + fmt(dh.Cprod.B || 0, 2),
       (inp.target && dh.tdsProd > inp.target) || (inp.targetB && (dh.Cprod.B || 0) > inp.targetB) ? 'warn' : ''));
-    h.push(kpi('Phần tử màng', fmt(nEl, 0) + '<span class="muted" style="font-size:11px"> 支</span>', fmt(nPV, 0) + ' bình áp lực · Thông lượng trung bình cấp 1 ' + fmt(d.pass1.flux, 1) + ' LMH'));
+    h.push(kpi('Phần tử màng', fmt(nEl, 0) + '<span class="muted" style="font-size:11px"> phần tử</span>', fmt(nPV, 0) + ' bình áp lực · Thông lượng trung bình cấp 1 ' + fmt(d.pass1.flux, 1) + ' LMH'));
     h.push(kpi('Điện năng tiêu thụ riêng', fmt(d.energy.sec, 2) + '<span class="muted" style="font-size:11px"> kWh/m³</span>', 'Máy bơm cao áp' + (d.pass2 ? '、Máy bơm cấp 2' : '') + (inp.erd ? '，có thu hồi năng lượng' : '') + '；tổng công suất ' + fmt(d.energy.kW, 1) + ' kW'));
-    h.push(kpi('Kiểm tra thiết kế', badN ? '✗ ' + badN + (warnN ? ' · ⚠ ' + warnN : ' 项') : (warnN ? '⚠ ' + warnN + ' 项' : '✓ 通过'), badN || warnN ? 'xem lưu ý bên dưới' : 'Thông lượng, phần tử và cáu cặn đều nằm trong phạm vi hướng dẫn', badN ? 'bad' : (warnN ? 'warn' : 'good')));
+    h.push(kpi('Kiểm tra thiết kế', badN ? '✗ ' + badN + (warnN ? ' · ⚠ ' + warnN : ' mục') : (warnN ? '⚠ ' + warnN + ' mục' : '✓ Đạt'), badN || warnN ? 'xem lưu ý bên dưới' : 'Thông lượng, phần tử và cáu cặn đều nằm trong phạm vi hướng dẫn', badN ? 'bad' : (warnN ? 'warn' : 'good')));
     h.push('</div>');
-    if (!items.length) h.push(note('', 'Kiểm tra thiết kế', '按「' + esc(g.name) + '」导则：Thông lượng trung bình ' + g.flux[0] + '–' + g.flux[1] + ' LMH、单支元件最大通量 ' + g.fluxMax + ' LMH、单支Tỷ lệ thu hồi ≤ ' + Math.round(g.rMax * 100) + '%、单bình áp lực进水 ≤ ' + g.qfMax + ' m³/h、Nước cô đặc ≥ ' + g.qcMin + ' m³/h、β ≤ ' + g.beta + '；Nước cô đặc结垢在限值内，各项均满足。'));
+    if (!items.length) h.push(note('', 'Kiểm tra thiết kế', 'Theo hướng dẫn «' + esc(g.name) + '»: thông lượng trung bình ' + g.flux[0] + '–' + g.flux[1] + ' LMH, thông lượng tối đa mỗi phần tử ' + g.fluxMax + ' LMH, tỷ lệ thu hồi mỗi phần tử ≤ ' + Math.round(g.rMax * 100) + '%, nước cấp mỗi bình áp lực ≤ ' + g.qfMax + ' m³/h、Nước cô đặc ≥ ' + g.qcMin + ' m³/h、β ≤ ' + g.beta + '; đóng cặn nước cô đặc trong giới hạn, tất cả các mục đều đạt.'));
     items.forEach(function (x) { h.push(note(x.type === 'bad' ? 'bad' : 'warn', x.type === 'bad' ? 'Không đáp ứng' : 'Chú ý', esc(x.text))); });
-    if (d.pass2) h.push(note('', '二级 RO', '一级需产水 ' + fmt(d.pass1.Qp, 1) + ' m³/h（Nước sản phẩm ÷ Tỷ lệ thu hồi cấp 2），比单级多 ' + fmt((d.pass1.Qp / inp.Qp - 1) * 100, 0) + '%，一级元件数应相应增加；二级Nước cô đặc ' + fmt(d.recycle, 1) + ' m³/h tuần hoàn到Nước cấp cấp 1。'));
-    if (d.pass2 && d.caustic) h.push(note('', '二级加碱', d.caustic.pHt > d.caustic.pH0 + 1e-9 ? 'Nước sản phẩm cấp 1 pH ' + fmt(d.caustic.pH0, 2) + ' → ' + fmt(d.caustic.pHt, 1) + '，NaOH ' + fmt(d.chem.naohMgL, 1) + ' mg/L（100%）。高 pH 下bo主要以bo酸根存在，二级除bo率大幅提高；二级pH nước cô đặc 高，tuần hoàn到Nước cấp cấp 1。' : '二级不加碱：Nước sản phẩm cấp 1 pH ' + fmt(d.caustic.pH0, 2) + '，bo以bo酸存在、二级除bo有限；CO₂ 全部透过（产水 CO₂ ' + fmt(d.co2Prod, 1) + ' mg/L）。需要除bo或后接 EDI 时，可在二级前加碱至 pH 10–10.5。'));
+    if (d.pass2) h.push(note('', 'RO cấp 2', 'Cấp 1 cần sản xuất ' + fmt(d.pass1.Qp, 1) + ' m³/h (nước sản phẩm ÷ tỷ lệ thu hồi cấp 2), nhiều hơn một cấp ' + fmt((d.pass1.Qp / inp.Qp - 1) * 100, 0) + '%, số phần tử cấp 1 cần tăng tương ứng; nước cô đặc cấp 2 ' + fmt(d.recycle, 1) + ' m³/h tuần hoàn về nước cấp cấp 1.'));
+    if (d.pass2 && d.caustic) h.push(note('', 'Châm kiềm cấp 2', d.caustic.pHt > d.caustic.pH0 + 1e-9 ? 'Nước sản phẩm cấp 1 pH ' + fmt(d.caustic.pH0, 2) + ' → ' + fmt(d.caustic.pHt, 1) + '，NaOH ' + fmt(d.chem.naohMgL, 1) + ' mg/L (100%). Ở pH cao bo chủ yếu tồn tại dạng borat, tỷ lệ loại bo cấp 2 tăng mạnh; pH nước cô đặc cấp 2 cao, tuần hoàn về nước cấp cấp 1.' : 'Cấp 2 không châm kiềm: pH nước sản phẩm cấp 1 ' + fmt(d.caustic.pH0, 2) + ', bo tồn tại dạng axit boric, cấp 2 loại bo hạn chế; CO₂ đi qua hoàn toàn (CO₂ nước sản phẩm ' + fmt(d.co2Prod, 1) + ' mg/L). Khi cần loại bo hoặc nối tiếp EDI, có thể châm kiềm trước cấp 2 đến pH 10–10.5.'));
     var sp = [], ps = d.pass1.stages;
-    if (ps.some(function (st) { return st.Pp > 0; })) sp.push('设有产水背压时，产水管应设止回阀或爆破膜，停机时产水侧压力不得高于进水侧');
-    if (d.pass1.flux < g.flux[0] - 1e-9) sp.push('Thông lượng trung bình cấp 1 ' + fmt(d.pass1.flux, 1) + ' LMH 低于导则下限 ' + g.flux[0] + ' LMH，元件偏多、投资偏高');
-    for (var si2 = 1; si2 < ps.length; si2++) if (ps[si2].flux > 0 && ps[si2 - 1].flux / ps[si2].flux > 1.5) { sp.push('第 ' + si2 + ' 段与第 ' + (si2 + 1) + ' 段通量比 ' + fmt(ps[si2 - 1].flux / ps[si2].flux, 1) + '，可用前段产水背压或段间增压均衡'); break; }
+    if (ps.some(function (st) { return st.Pp > 0; })) sp.push('Khi có áp suất ngược nước sản phẩm, đường ống nước sản phẩm phải lắp van một chiều hoặc màng phòng nổ; khi dừng máy áp suất phía nước sản phẩm không được cao hơn phía nước cấp');
+    if (d.pass1.flux < g.flux[0] - 1e-9) sp.push('Thông lượng trung bình cấp 1 ' + fmt(d.pass1.flux, 1) + ' LMH thấp hơn giới hạn dưới của hướng dẫn ' + g.flux[0] + ' LMH, số phần tử nhiều, chi phí đầu tư cao');
+    for (var si2 = 1; si2 < ps.length; si2++) if (ps[si2].flux > 0 && ps[si2 - 1].flux / ps[si2].flux > 1.5) { sp.push('Tầng ' + si2 + ' và tầng ' + (si2 + 1) + ' tỷ số thông lượng ' + fmt(ps[si2 - 1].flux / ps[si2].flux, 1) + ', có thể cân bằng bằng áp suất ngược nước sản phẩm tầng trước hoặc tăng áp giữa các tầng'); break; }
     if (sp.length) h.push(note('', 'Lưu ý', sp.join('；') + '。'));
     var miss = ['Ba', 'Sr'].filter(function (k) { return !(inp.feed[k] > 0); });
-    if (miss.length && inp.feed.SO4 > 0) h.push(note('', '钡、锶', '进水未提供 ' + miss.map(function (k) { return T.IONS[k].name; }).join('、') + '，' + miss.map(function (k) { return k + 'SO₄'; }).join('、') + ' 未校核。高硫酸盐地下水、矿井水常由 BaSO₄ 控制Tỷ lệ thu hồi，建议补测。'));
-    if (inp.acid && !(d.acid.doseMgL > 0)) h.push(note('', 'Châm axit', 'Châm axit后目标 pH ' + fmt(inp.acid.pHt, 2) + ' 不低于pH nước cấp ' + fmt(inp.pH, 2) + (d.balance.C.HCO3 > 0 ? '' : '（或进水无碱度）') + '，không châm axit。'));
-    if (d.balance.added && Math.abs(d.balance.errPct) > 1) h.push(note('', '离子平衡', '进水阴阳离子差 ' + fmt(d.balance.errPct, 1) + '%，已补加 ' + T.IONS[d.balance.added.ion].name + ' ' + fmt(d.balance.added.mgL, 1) + ' mg/L 使其平衡。'));
-    if (specOf($('elem1').value).unverified || (d.pass2 && specOf($('elem2').value).unverified)) h.push(note('warn', '元件参数', '所选时代沃顿元件已不在厂家官网在售列表，Điều kiện thử nghiệm取自经销商翻印型录，元件面积按 400 ft²（37 m²）推定，请向厂家核实或改选现行型号。'));
+    if (miss.length && inp.feed.SO4 > 0) h.push(note('', 'Bari, stronti', 'nước cấp không cung cấp ' + miss.map(function (k) { return T.IONS[k].name; }).join('、') + '，' + miss.map(function (k) { return k + 'SO₄'; }).join('、') + ' chưa kiểm tra. Nước ngầm nhiều sunfat, nước mỏ thường bị BaSO₄ khống chế tỷ lệ thu hồi, nên đo bổ sung.'));
+    if (inp.acid && !(d.acid.doseMgL > 0)) h.push(note('', 'Châm axit', 'pH mục tiêu sau châm axit ' + fmt(inp.acid.pHt, 2) + ' không thấp hơn pH nước cấp ' + fmt(inp.pH, 2) + (d.balance.C.HCO3 > 0 ? '' : '(hoặc nước cấp không có độ kiềm)') + '，không châm axit。'));
+    if (d.balance.added && Math.abs(d.balance.errPct) > 1) h.push(note('', 'Cân bằng ion', 'Chênh lệch cation–anion nước cấp ' + fmt(d.balance.errPct, 1) + '%, đã bổ sung ' + T.IONS[d.balance.added.ion].name + ' ' + fmt(d.balance.added.mgL, 1) + ' mg/L để cân bằng.'));
+    if (specOf($('elem1').value).unverified || (d.pass2 && specOf($('elem2').value).unverified)) h.push(note('warn', 'Thông số phần tử', 'Phần tử Vontron (时代沃顿) đã chọn không còn trong danh sách đang bán trên website hãng; điều kiện thử nghiệm lấy từ catalogue in lại của nhà phân phối, diện tích phần tử giả định 400 ft² (37 m²), hãy xác minh với hãng hoặc chọn model hiện hành.'));
 
     // 流量平衡
     h.push('<h2>Cân bằng lưu lượng</h2><div class="table-wrapper"><table class="tw"><thead><tr><th>Vị trí</th><th>Lưu lượng m³/h</th><th>TDS mg/L</th><th>Ghi chú</th></tr></thead><tbody>');
     h.push('<tr><td>Nước nguồn</td><td>' + fmt(d.Qraw, 1) + '</td><td>' + fmt(T.tds(d.balance.C), 0) + '</td><td class="l">sau cân bằng ion' + (d.acid.doseMgL > 0 ? '；pH sau châm axit ' + fmt(d.pHfeed, 1) : '') + '</td></tr>');
     if (d.pass2) h.push('<tr><td>Nước cô đặc cấp 2 tuần hoàn</td><td>' + fmt(d.recycle, 1) + '</td><td>' + fmt(T.tds(d.pass2.Cc), 1) + '</td><td class="l">tuần hoàn về nước cấp cấp 1</td></tr>');
-    h.push('<tr><td>Nước cấp cấp 1</td><td>' + fmt(d.pass1.Qf, 1) + '</td><td>' + fmt(T.tds(d.Cin1), 0) + '</td><td class="l">' + (inp.erd ? 'có thu hồi năng lượng混合 ' + fmt(inp.erd.mix * 100, 1) + '%' : '') + '</td></tr>');
+    h.push('<tr><td>Nước cấp cấp 1</td><td>' + fmt(d.pass1.Qf, 1) + '</td><td>' + fmt(T.tds(d.Cin1), 0) + '</td><td class="l">' + (inp.erd ? 'Hoà trộn có thu hồi năng lượng ' + fmt(inp.erd.mix * 100, 1) + '%' : '') + '</td></tr>');
     h.push('<tr><td>Nước cô đặc cấp 1 (xả)</td><td>' + fmt(d.pass1.Qc, 1) + '</td><td>' + fmt(T.tds(d.pass1.Cc), 0) + '</td><td class="l">Áp suất nước cô đặc ' + (d.pass1.Pc > 0 ? fmt(d.pass1.Pc, 1) + ' bar' : 'âm, xem kiểm tra') + '</td></tr>');
     h.push('<tr><td>Nước sản phẩm cấp 1</td><td>' + fmt(d.pass1.Qp, 1) + '</td><td>' + fmt(ptds(d.pass1.Cp), d.pass2 ? 1 : 2) + '</td><td class="l">Tỷ lệ thu hồi cấp 1 ' + fmt(d.pass1.recovery * 100, 1) + '%</td></tr>');
-    if (d.erdLeak > 0) h.push('<tr><td>ERD Dòng bôi trơn（排放）</td><td>' + fmt(d.erdLeak, 1) + '</td><td>' + fmt(T.tds(d.Cin1), 0) + '</td><td class="l">Nước nguồn经 ERD Áp suất thấp侧直接排放，计入Nước nguồn量</td></tr>');
+    if (d.erdLeak > 0) h.push('<tr><td>Dòng bôi trơn ERD (xả bỏ)</td><td>' + fmt(d.erdLeak, 1) + '</td><td>' + fmt(T.tds(d.Cin1), 0) + '</td><td class="l">Nước nguồn xả trực tiếp qua phía áp suất thấp của ERD, tính vào lưu lượng nước nguồn</td></tr>');
     if (d.pass2) h.push('<tr><td>Nước sản phẩm cấp 2</td><td>' + fmt(d.pass2.Qp, 1) + '</td><td>' + fmt(ptds(d.pass2.Cp), 2) + '</td><td class="l">Tỷ lệ thu hồi cấp 2 ' + fmt(d.pass2.recovery * 100, 1) + '%</td></tr>');
     h.push('<tr class="total"><td>Nước sản phẩm</td><td>' + fmt(inp.Qp, 1) + '</td><td>' + fmt(d.tdsProd, 2) + '</td><td class="l">Tỷ lệ thu hồi hệ thống ' + fmt(d.sysRecovery * 100, 1) + '%</td></tr>');
     h.push('</tbody></table></div>');
 
-    h.push('<h2>分段结果 · 一级' + (d.pass2 ? '' : ' RO') + '（' + esc((s1.brand + ' ' + s1.model).trim()) + '）</h2>' + passTable(d.pass1, 'Cấp 1'));
-    if (d.pass2) { var s2 = specOf($('elem2').value); h.push('<h2>分段结果 · 二级（' + esc((s2.brand + ' ' + s2.model).trim()) + '）</h2>' + passTable(d.pass2, 'Cấp 2')); }
-    h.push('<h2>逐支元件 · 一级（单bình áp lực）</h2>' + elemTable(d.pass1));
-    if (d.pass2) h.push('<h2>逐支元件 · 二级（单bình áp lực）</h2>' + elemTable(d.pass2));
-    h.push('<div class="src">Nhiệt độ nước tính toán ' + fmt(inp.T, 0) + ' °C，Hệ số lưu lượng ' + fmt(inp.pass1.FF, 2) + (d.pass2 ? '（二级取 ' + fmt(inp.pass2.FF, 2) + '）' : '') + '。β 为浓差极化系数；单支元件Tỷ lệ thu hồi、通量、β、压力容器进水与Nước cô đặc流量按导则逐项校核。</div>');
+    h.push('<h2>Kết quả theo tầng · Cấp 1' + (d.pass2 ? '' : ' RO') + '（' + esc((s1.brand + ' ' + s1.model).trim()) + '）</h2>' + passTable(d.pass1, 'Cấp 1'));
+    if (d.pass2) { var s2 = specOf($('elem2').value); h.push('<h2>Kết quả theo tầng · Cấp 2 (' + esc((s2.brand + ' ' + s2.model).trim()) + '）</h2>' + passTable(d.pass2, 'Cấp 2')); }
+    h.push('<h2>Từng phần tử · Cấp 1 (một bình áp lực)</h2>' + elemTable(d.pass1));
+    if (d.pass2) h.push('<h2>Từng phần tử · Cấp 2 (một bình áp lực)</h2>' + elemTable(d.pass2));
+    h.push('<div class="src">Nhiệt độ nước tính toán ' + fmt(inp.T, 0) + ' °C，Hệ số lưu lượng ' + fmt(inp.pass1.FF, 2) + (d.pass2 ? '(cấp 2 lấy ' + fmt(inp.pass2.FF, 2) + '）' : '') + '. β là hệ số phân cực nồng độ; tỷ lệ thu hồi, thông lượng, β mỗi phần tử, lưu lượng nước cấp và nước cô đặc mỗi bình áp lực được kiểm tra từng mục theo hướng dẫn.</div>');
 
     // 水质
-    h.push('<h2>Chất lượng nước (mg/L)</h2><div class="table-wrapper"><table class="tw"><thead><tr><th>Chỉ tiêu</th><th>Nước nguồn</th><th>Nước cấp cấp 1</th><th>Nước sản phẩm</th><th>Nước sản phẩm<br><span class="muted">' + fmt(tH, 0) + ' °C 新膜</span></th><th>Nước cô đặc</th></tr></thead><tbody>');
+    h.push('<h2>Chất lượng nước (mg/L)</h2><div class="table-wrapper"><table class="tw"><thead><tr><th>Chỉ tiêu</th><th>Nước nguồn</th><th>Nước cấp cấp 1</th><th>Nước sản phẩm</th><th>Nước sản phẩm<br><span class="muted">' + fmt(tH, 0) + ' °C màng mới</span></th><th>Nước cô đặc</th></tr></thead><tbody>');
     ION_ORDER.forEach(function (k) {
       var a = d.balance.C[k] || 0, b = d.Cin1[k] || 0, p = d.Cprod[k] || 0, ph = dh.Cprod[k] || 0, c = d.pass1.Cc[k] || 0;
       if (!(a > 0 || b > 0)) return;
@@ -2021,7 +2021,7 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
     h.push('<tr><td>CO₂</td><td>' + fmt(T.carbonate(d.balance.C, inp.pH, inp.T).CO2, 1) + '</td><td>' + fmt(T.carbonate(d.Cfeed, d.pHfeed, inp.T).CO2, 1) + '</td><td>' + fmt(d.co2Prod, 1) + '</td><td>' + fmt(dh.co2Prod, 1) + '</td><td>' + fmt(T.carbonate(d.Cfeed, d.pHfeed, inp.T).CO2, 1) + '</td></tr>');
     h.push('<tr><td>Áp suất thẩm thấu bar</td><td>' + fmt(T.osmotic(d.balance.C, inp.T), 2) + '</td><td>' + fmt(T.osmotic(d.Cin1, inp.T), 2) + '</td><td>' + fmt(T.osmotic(d.Cprod, inp.T), 3) + '</td><td>' + fmt(T.osmotic(dh.Cprod, tH), 3) + '</td><td>' + fmt(T.osmotic(d.pass1.Cc, inp.T), 2) + '</td></tr>');
     h.push('</tbody></table></div>');
-    h.push('<div class="src">产水各离子按透盐类别估算（二价离子透过约为 NaCl 的 0.15 倍、硝酸根约 5 倍、硅 1 倍；bo按元件bo脱除率并随 pH、水温变化），并修正为电中性；CO₂ 视为全部透过。「Nhiệt độ nước cao nhất新膜」列按Nhiệt độ nước cao nhất、Hệ số lưu lượng 1.0 计算，是产水水质最差的工况。TDS nước sản phẩm 为逐支元件计算结果，非按恒定Tỷ lệ khử muối估算。产水 pH 按电荷平衡计算（CO₂ 全部透过、未计脱气）。</div>');
+    h.push('<div class="src">Các ion trong nước sản phẩm được ước tính theo nhóm thấm muối (ion hoá trị hai thấm khoảng 0.15 lần NaCl, nitrat khoảng 5 lần, silic 1 lần; bo theo tỷ lệ loại bo của phần tử và thay đổi theo pH, nhiệt độ nước), rồi hiệu chỉnh cho trung hoà điện; CO₂ coi như đi qua hoàn toàn. Cột «Nhiệt độ nước cao nhất, màng mới» tính theo nhiệt độ nước cao nhất, hệ số lưu lượng 1.0, là điều kiện chất lượng nước sản phẩm xấu nhất. TDS nước sản phẩm là kết quả tính từng phần tử, không ước tính theo tỷ lệ khử muối cố định. pH nước sản phẩm tính theo cân bằng điện tích (CO₂ đi qua hoàn toàn, chưa tính khử khí).</div>');
     $('outCalc').innerHTML = h.join('');
   }
 
@@ -2030,31 +2030,31 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
     var h = [], c = d.conc, L = T.SCALE_LIMIT, anti = inp.antiscalant > 0, IX = c.idx;
     var key = anti ? 'anti' : 'none';
     h.push('<h2>Xu hướng tạo cáu cặn của nước cô đặc</h2>');
-    h.push('<div class="kpi-row">' + kpi('pH nước cô đặc', fmt(c.pH, 2), 'pH nước cấp ' + fmt(d.pHfeed, 2) + '，CO₂ 全部透过') +
-      kpi('Nước cô đặc ' + IX.name, fmt(IX.v, 2), '限值 ' + (anti ? 'dùng chất chống cáu cặn ' : 'không dùng chất chống cáu cặn ') + L[IX.key][key] + (IX.w != null ? '；LSI ' + fmt(c.lsi.LSI, 2) + '、S&DSI ' + fmt(c.sdsi.SDSI, 2) : ''), IX.v > L[IX.key][key] ? 'warn' : '') +
+    h.push('<div class="kpi-row">' + kpi('pH nước cô đặc', fmt(c.pH, 2), 'pH nước cấp ' + fmt(d.pHfeed, 2) + ', CO₂ đi qua hoàn toàn') +
+      kpi('Nước cô đặc ' + IX.name, fmt(IX.v, 2), 'Giới hạn ' + (anti ? 'dùng chất chống cáu cặn ' : 'không dùng chất chống cáu cặn ') + L[IX.key][key] + (IX.w != null ? '；LSI ' + fmt(c.lsi.LSI, 2) + '、S&DSI ' + fmt(c.sdsi.SDSI, 2) : ''), IX.v > L[IX.key][key] ? 'warn' : '') +
       kpi('Lực ion của nước cô đặc', fmt(c.sat.I, 3), 'Nước cô đặc TDS ' + fmt(T.tds(c.C), 0) + ' mg/L') +
-      kpi('Tỷ lệ thu hồi tối đa (ước tính)', fmt(mr[key].max * 100, 1) + '%', (anti ? 'dùng chất chống cáu cặn' : 'không dùng chất chống cáu cặn') + '，受 ' + ({ CaCO3: 'canxi cacbonat', CaSO4: 'canxi sunfat', BaSO4: 'bari sunfat', SrSO4: 'stronti sunfat', CaF2: 'canxi florua', SiO2: 'silic đioxit' }[mr[key].limiting]) + ' 控制') + '</div>');
+      kpi('Tỷ lệ thu hồi tối đa (ước tính)', fmt(mr[key].max * 100, 1) + '%', (anti ? 'dùng chất chống cáu cặn' : 'không dùng chất chống cáu cặn') + ', bị ' + ({ CaCO3: 'canxi cacbonat', CaSO4: 'canxi sunfat', BaSO4: 'bari sunfat', SrSO4: 'stronti sunfat', CaF2: 'canxi florua', SiO2: 'silic đioxit' }[mr[key].limiting]) + ' khống chế') + '</div>');
     h.push('<div class="table-wrapper"><table class="tw"><thead><tr><th>Chất tạo cáu cặn</th><th>Nước cô đặc</th><th>Giới hạn không dùng chất chống cáu cặn</th><th>Giới hạn khi dùng chất chống cáu cặn</th><th>Hiện tại（' + (anti ? 'dùng chất chống cáu cặn' : 'không dùng chất chống cáu cặn') + '）</th><th>Tỷ lệ thu hồi tối đa không dùng / có dùng chất chống cáu cặn</th></tr></thead><tbody>');
     var ix = IX.key, ixv = IX.v;
     h.push('<tr><td>CaCO₃（' + IX.name + '）</td><td>' + fmt(ixv, 2) + '</td><td>' + L[ix].none + '</td><td>' + L[ix].anti + '</td>' + statusCell(ixv, L[ix][key]) + '<td>' + fmt(mr.none.each.CaCO3 * 100, 1) + '% / ' + fmt(mr.anti.each.CaCO3 * 100, 1) + '%</td></tr>');
     [['CaSO4', 'CaSO₄（thạch cao）'], ['BaSO4', 'BaSO₄（barit）'], ['SrSO4', 'SrSO₄（celestin）'], ['CaF2', 'CaF₂（fluorit）']].forEach(function (x) {
       var v = c.sat[x[0]], ion = x[0].slice(0, 2);
-      if ((ion === 'Ba' || ion === 'Sr') && !(inp.feed[ion] > 0)) { h.push('<tr><td>' + x[1] + '</td><td colspan="5" class="l muted">进水未提供 ' + T.IONS[ion].name + '，未校核（建议补测）</td></tr>'); return; }
+      if ((ion === 'Ba' || ion === 'Sr') && !(inp.feed[ion] > 0)) { h.push('<tr><td>' + x[1] + '</td><td colspan="5" class="l muted">nước cấp không cung cấp ' + T.IONS[ion].name + ', chưa kiểm tra (nên đo bổ sung)</td></tr>'); return; }
       h.push('<tr><td>' + x[1] + '</td><td>' + fmt(v, v < 10 ? 1 : 0) + '%</td><td>' + L[x[0]].none + '%</td><td>' + L[x[0]].anti + '%</td>' + statusCell(v, L[x[0]][key]) + '<td>' + fmt(mr.none.each[x[0]] * 100, 1) + '% / ' + fmt(mr.anti.each[x[0]] * 100, 1) + '%</td></tr>');
     });
     var si = d.check.siPct;
     h.push('<tr><td>SiO₂（vô định hình）</td><td>' + fmt(c.silica.conc, 1) + ' mg/L，của độ hòa tan ' + fmt(si, 0) + '%</td><td>' + L.SiO2.none + '%</td><td>' + L.SiO2.anti + '%</td>' + statusCell(si, L.SiO2[key]) + '<td>' + fmt(mr.none.each.SiO2 * 100, 1) + '% / ' + fmt(mr.anti.each.SiO2 * 100, 1) + '%</td></tr>');
     h.push('</tbody></table></div>');
-    h.push('<div class="src">饱和度 = 离子活度积 ÷ 溶度积，活度按离子对形态计算（仿 PHREEQC；与 PHREEQC 对照，苦咸水Nước cô đặc饱和指数差 ≤ 0.1、Nước biểnNước cô đặc ≤ 0.2 个对数单位）；溶度积取 USGS PHREEQC 数据库（barit取 WATEQ4F 式）。pH nước cô đặc 按完整碳酸平衡和离子对计算（CO₂ 自由透过、碱度浓缩），与 PHREEQC 相差 ≤ 0.01。Nước cô đặc TDS ≤ 10 000 mg/L 用 LSI（Carrier 式），> 10 000 mg/L 用 S&DSI（ASTM D4582，K 值用常见拟合式）。限值取 Hydranautics TAB111 的Chất chống cáu cặn报警点；SiO₂ 溶解度按 PHREEQC vô định hình硅（25 °C 约 117 mg/L）与 pH 修正。最大Tỷ lệ thu hồi按「Nước cô đặc = 进水 ÷ (1 − Tỷ lệ thu hồi)」估算，未计盐透过与浓差极化，仅供参考。</div>');
+    h.push('<div class="src">Độ bão hoà = tích hoạt độ ion ÷ tích số tan, hoạt độ tính theo dạng cặp ion (mô phỏng PHREEQC; đối chiếu PHREEQC, chỉ số bão hoà nước cô đặc nước lợ chênh ≤ 0.1, nước cô đặc nước biển ≤ 0.2 đơn vị log); tích số tan lấy theo cơ sở dữ liệu USGS PHREEQC (barit theo công thức WATEQ4F). pH nước cô đặc tính theo cân bằng cacbonat đầy đủ và cặp ion (CO₂ đi qua tự do, độ kiềm cô đặc), chênh với PHREEQC ≤ 0.01. TDS nước cô đặc ≤ 10 000 mg/L dùng LSI (công thức Carrier),> 10 000 mg/L dùng S&DSI (ASTM D4582, hệ số K theo công thức khớp thông dụng). Giới hạn lấy theo ngưỡng cảnh báo chất chống cáu cặn của Hydranautics TAB111; độ hoà tan SiO₂ theo silic vô định hình PHREEQC (25 °C khoảng 117 mg/L) có hiệu chỉnh pH. Tỷ lệ thu hồi tối đa ước tính theo «nước cô đặc = nước cấp ÷ (1 − tỷ lệ thu hồi)», chưa tính thấm muối và phân cực nồng độ, chỉ để tham khảo.</div>');
 
     h.push('<h2>Định lượng hóa chất tiền xử lý</h2><div class="table-wrapper"><table class="tw"><thead><tr><th>Hóa chất</th><th>Liều lượng</th><th>Lượng dùng hàng ngày</th><th>Ghi chú</th></tr></thead><tbody>');
     h.push('<tr><td>' + (d.acid.doseMgL > 0 ? (inp.acid.type === 'HCl' ? 'Axit clohydric HCl（100%）' : 'Axit sunfuric H₂SO₄（100%）') : 'Châm axit') + '</td><td>' + (d.acid.doseMgL > 0 ? fmt(d.acid.doseMgL, 1) + ' mg/L' : '—') + '</td><td>' + (d.acid.doseMgL > 0 ? fmt(d.chem.acidKgD, 1) + ' kg/d' : '—') +
-      '</td><td class="l">' + (d.acid.doseMgL > 0 ? 'pH nước cấp ' + fmt(inp.pH, 2) + ' → ' + fmt(inp.acid.pHt, 2) + '，折合商品酸 ' + fmt(d.chem.acidKgD / (inp.acid.type === 'HCl' ? 0.31 : 0.98), 1) + ' kg/d（' + (inp.acid.type === 'HCl' ? '31%' : '98%') + '）；按离子对形态与碳酸平衡计算（计入bo酸根、硅酸根碱度）；' + (inp.acid.type === 'HCl' ? '增加 Cl⁻' : '增加 SO₄²⁻，注意硫酸盐结垢') : 'không châm axit') + '</td></tr>');
-    h.push('<tr><td>Chất chống cáu cặn</td><td>' + (inp.antiscalant > 0 ? fmt(inp.antiscalant, 1) + ' mg/L' : '—') + '</td><td>' + (inp.antiscalant > 0 ? fmt(d.chem.antiKgD, 1) + ' kg/d' : '—') + '</td><td class="l">按Nước cấp cấp 1量计；常用 2–5 mg/L，具体以Chất chống cáu cặn厂家软件为准</td></tr>');
-    if (d.pass2 && d.chem.naohMgL > 0) h.push('<tr><td>Natri hydroxit NaOH（100%）</td><td>' + fmt(d.chem.naohMgL, 1) + ' mg/L</td><td>' + fmt(d.chem.naohKgD, 1) + ' kg/d</td><td class="l">二级pH nước cấp ' + fmt(d.caustic.pH0, 2) + ' → ' + fmt(d.caustic.pHt, 1) + '（除bo）；折合 30% 液碱 ' + fmt(d.chem.naohKgD / 0.30, 1) + ' kg/d</td></tr>');
-    h.push('<tr><td>Natri bisunfit NaHSO₃</td><td>' + (inp.cl2 > 0 ? fmt(d.chem.sbsMgL, 2) + ' mg/L' : '—') + '</td><td>' + (inp.cl2 > 0 ? fmt(d.chem.sbsKgD, 1) + ' kg/d' : '—') + '</td><td class="l">还原Clo dư：理论 1.47 mg/mg Cl₂，设计 1.8–3.0（取 1.8）；接触时间 ≥ 20 s，ORP 宜 < 300 mV</td></tr>');
+      '</td><td class="l">' + (d.acid.doseMgL > 0 ? 'pH nước cấp ' + fmt(inp.pH, 2) + ' → ' + fmt(inp.acid.pHt, 2) + ', quy ra axit thương phẩm ' + fmt(d.chem.acidKgD / (inp.acid.type === 'HCl' ? 0.31 : 0.98), 1) + ' kg/d（' + (inp.acid.type === 'HCl' ? '31%' : '98%') + '); tính theo dạng cặp ion và cân bằng cacbonat (có tính độ kiềm của borat, silicat);' + (inp.acid.type === 'HCl' ? 'tăng Cl⁻' : 'tăng SO₄²⁻, chú ý đóng cặn sunfat') : 'không châm axit') + '</td></tr>');
+    h.push('<tr><td>Chất chống cáu cặn</td><td>' + (inp.antiscalant > 0 ? fmt(inp.antiscalant, 1) + ' mg/L' : '—') + '</td><td>' + (inp.antiscalant > 0 ? fmt(d.chem.antiKgD, 1) + ' kg/d' : '—') + '</td><td class="l">tính theo lưu lượng nước cấp cấp 1; thường dùng 2–5 mg/L, cụ thể theo phần mềm của hãng chất chống cáu cặn</td></tr>');
+    if (d.pass2 && d.chem.naohMgL > 0) h.push('<tr><td>Natri hydroxit NaOH（100%）</td><td>' + fmt(d.chem.naohMgL, 1) + ' mg/L</td><td>' + fmt(d.chem.naohKgD, 1) + ' kg/d</td><td class="l">pH nước cấp cấp 2 ' + fmt(d.caustic.pH0, 2) + ' → ' + fmt(d.caustic.pHt, 1) + '(loại bo); quy ra xút lỏng 30% ' + fmt(d.chem.naohKgD / 0.30, 1) + ' kg/d</td></tr>');
+    h.push('<tr><td>Natri bisunfit NaHSO₃</td><td>' + (inp.cl2 > 0 ? fmt(d.chem.sbsMgL, 2) + ' mg/L' : '—') + '</td><td>' + (inp.cl2 > 0 ? fmt(d.chem.sbsKgD, 1) + ' kg/d' : '—') + '</td><td class="l">Khử clo dư: lý thuyết 1.47 mg/mg Cl₂, thiết kế 1.8–3.0 (lấy 1.8); thời gian tiếp xúc ≥ 20 s, ORP nên < 300 mV</td></tr>');
     h.push('</tbody></table></div>');
-    if (!anti && (mr.none.max < (d.sysRecovery - 1e-6))) h.push(note('warn', 'Lưu ý', '不dùng chất chống cáu cặn时，按估算最大Tỷ lệ thu hồi只有 ' + fmt(mr.none.max * 100, 1) + '%，低于Hiện tạiTỷ lệ thu hồi hệ thống，建议投dùng chất chống cáu cặn。'));
+    if (!anti && (mr.none.max < (d.sysRecovery - 1e-6))) h.push(note('warn', 'Lưu ý', 'Khi không dùng chất chống cáu cặn, tỷ lệ thu hồi tối đa ước tính chỉ ' + fmt(mr.none.max * 100, 1) + '%, thấp hơn tỷ lệ thu hồi hệ thống hiện tại, nên dùng chất chống cáu cặn.'));
     $('outScale').innerHTML = h.join('');
   }
 
@@ -2062,16 +2062,16 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
     var e = d.energy, h = [];
     h.push('<div class="kpi-row">' + kpi('Tổng công suất', fmt(e.kW, 1) + '<span class="muted" style="font-size:11px"> kW</span>', 'Hiệu suất máy bơm ' + fmt(inp.pumpEff * 100, 0) + '% × động cơ ' + fmt(inp.motorEff * 100, 0) + '%') +
       kpi('Điện năng tiêu thụ riêng', fmt(e.sec, 3) + '<span class="muted" style="font-size:11px"> kWh/m³</span>', 'tính theo nước sản phẩm') +
-      kpi('Chi phí điện hàng năm', fmt(e.costYear, 1) + '<span class="muted" style="font-size:11px"> 万元</span>', 'giá điện ' + fmt(inp.price, 2) + ' 元/kWh，vận hành liên tục cả năm') +
-      kpi('Chi phí điện trên mỗi mét khối nước', fmt(e.costTon, 3) + '<span class="muted" style="font-size:11px"> 元/m³</span>', '') +
+      kpi('Chi phí điện hàng năm', fmt(e.costYear, 1) + '<span class="muted" style="font-size:11px"> vạn NDT</span>', 'giá điện ' + fmt(inp.price, 2) + ' NDT/kWh, vận hành liên tục cả năm') +
+      kpi('Chi phí điện trên mỗi mét khối nước', fmt(e.costTon, 3) + '<span class="muted" style="font-size:11px"> NDT/m³</span>', '') +
       (noErd ? kpi('Khi không thu hồi năng lượng', fmt(noErd.sec, 2) + '<span class="muted" style="font-size:11px"> kWh/m³</span>', 'Điện năng tiết kiệm nhờ thu hồi năng lượng ' + fmt((1 - e.sec / noErd.sec) * 100, 0) + '%') : '') + '</div>');
     h.push('<div class="table-wrapper"><table class="tw"><thead><tr><th>Thiết bị</th><th>Lưu lượng m³/h</th><th>Độ tăng áp bar</th><th>Công suất trục kW</th><th>Công suất điện kW</th></tr></thead><tbody>');
     var eta = inp.motorEff;
     e.items.forEach(function (x) { h.push('<tr><td>' + esc(x.name) + '</td><td>' + fmt(x.Q, 1) + '</td><td>' + fmt(x.dP, 2) + '</td><td>' + fmt(x.kW * eta, 1) + '</td><td>' + fmt(x.kW, 1) + '</td></tr>'); });
     h.push('<tr class="total"><td>Tổng cộng</td><td></td><td></td><td></td><td>' + fmt(e.kW, 1) + '</td></tr></tbody></table></div>');
-    h.push('<div class="src">泵电功率 = 流量 × 扬压 ÷ 36 ÷（Hiệu suất máy bơm × động cơ效率），扬压 = 出口压力 − 吸入压力 ' + fmt(inp.Psuction, 1) + ' bar' + (d.pass2 ? '（二级Máy bơm cao áp直接接Nước sản phẩm cấp 1，吸入压力取Nước sản phẩm cấp 1背压）' : '') + '。' +
-      (inp.erd ? '等压式能量回收（ERI PX 白皮书 2025）：Áp suất nước cô đặc经 ERD 传给等量进水，高压侧压损 ' + fmt(inp.erd.dP, 2) + ' bar，Dòng bôi trơn ' + fmt(inp.erd.leak * 100, 1) + '%，混合使膜进水盐度升高 ' + fmt(inp.erd.mix * 100, 1) + '%；Máy bơm cao áp只输送产水量加Dòng bôi trơn，增压泵补足 ERD 出口与膜进水的压差。' : '') +
-      '只统计 RO 本体的Máy bơm cao áp、段间增压泵和Máy bơm cấp 2，不含Nước nguồn泵、预处理、清洗与产水输送。' + (/^sw/.test(inp.source) ? 'Nước biển淡化全厂điện năng tiêu thụ riêng通常为 3–4.5 kWh/m³。' : '') + '</div>');
+    h.push('<div class="src">Công suất điện bơm = lưu lượng × cột áp ÷ 36 ÷ (hiệu suất máy bơm × hiệu suất động cơ), cột áp = áp suất đẩy − áp suất hút ' + fmt(inp.Psuction, 1) + ' bar' + (d.pass2 ? '(bơm cao áp cấp 2 nối trực tiếp nước sản phẩm cấp 1, áp suất hút lấy áp suất ngược nước sản phẩm cấp 1)' : '') + '。' +
+      (inp.erd ? 'Thu hồi năng lượng kiểu đẳng áp (sách trắng ERI PX 2025): áp suất nước cô đặc truyền qua ERD cho lượng nước cấp tương đương, tổn thất áp phía cao áp ' + fmt(inp.erd.dP, 2) + ' bar，Dòng bôi trơn ' + fmt(inp.erd.leak * 100, 1) + '%, hoà trộn làm độ mặn nước cấp vào màng tăng ' + fmt(inp.erd.mix * 100, 1) + '%; bơm cao áp chỉ bơm lưu lượng nước sản phẩm cộng dòng bôi trơn, bơm tăng áp bù chênh áp giữa đầu ra ERD và nước cấp vào màng.' : '') +
+      'Chỉ thống kê bơm cao áp, bơm tăng áp giữa tầng và máy bơm cấp 2 của bản thân hệ RO, không gồm bơm nước nguồn, tiền xử lý, rửa và bơm chuyển nước sản phẩm.' + (/^sw/.test(inp.source) ? 'Điện năng tiêu thụ riêng toàn nhà máy khử mặn nước biển thường 3–4.5 kWh/m³.' : '') + '</div>');
     $('outEnergy').innerHTML = h.join('');
   }
 
@@ -2084,7 +2084,7 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
         '</td><td>' + fmt(sp.area, 1) + '</td><td>' + fmt(sp.testFlow, 1) + '</td><td>' + fmt(sp.testRejection, 2) + '%</td><td class="l">' + fmt(sp.testNaCl, 0) + ' mg/L NaCl，' + fmt(sp.testP, 1) + ' bar，Tỷ lệ thu hồi ' + fmt(sp.testRecovery * 100, 0) + '%，25 °C</td><td>' + fmt(e.A, 2) + '</td><td>' + fmt(e.B, 3) + '</td><td>' + sp.pmax + ' bar</td></tr>');
     });
     h.push('</tbody></table></div>');
-    h.push('<div class="src">A（水透过系数）、B（盐透过系数）由样本Điều kiện thử nghiệm用本工具同一模型反算，每个型号都能复现样本的产水量和Tỷ lệ khử muối。产水量公差通常为 ±15%。Nguồn: DuPont FilmTec、Hydranautics、Toray 现行规格书；时代沃顿（国内亦称「汇通膜」）按 2023 产品目录与单型号样本；碧水源按官网产品页（Áp suất tối đa等限值厂家未给，按同类元件取值）。其他型号可用「自定义元件」输入。</div>');
+    h.push('<div class="src">A (hệ số thấm nước), B (hệ số thấm muối) được tính ngược từ điều kiện thử nghiệm của tờ thông số bằng cùng mô hình của công cụ này, mọi model đều tái lập được lưu lượng nước sản phẩm và tỷ lệ khử muối của tờ thông số. Dung sai lưu lượng nước sản phẩm thường ±15%. Nguồn: tờ thông số hiện hành của DuPont FilmTec, Hydranautics, Toray; Vontron (时代沃顿, trong nước còn gọi «汇通膜») theo catalogue 2023 và tờ thông số từng model; OriginWater (碧水源) theo trang sản phẩm trên website (áp suất tối đa và các giới hạn khác hãng không công bố, lấy theo phần tử tương tự). Model khác có thể nhập qua «Phần tử tự định nghĩa».</div>');
     if (!last) { $('outElem').innerHTML = h.join(''); return; }
     var d = last.d, spec1 = specOf(cur1), big = spec1 && spec1.area > 39;
     var big1 = d.pass1.stages.concat(d.pass2 ? d.pass2.stages : []).reduce(function (a, s) { return s.nv * s.ne > a.nv * a.ne ? s : a; });   // 按元件数最多的一段
@@ -2092,12 +2092,12 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
     var tank = nvMax * neMax * 197 / 6 * 1.15 / 1000;
     var qLo = big ? 8.0 : 6.0, qHi = 10.2;
     h.push('<h2>Rửa hóa chất (CIP) và lọc bảo vệ</h2><div class="table-wrapper"><table class="tw"><tbody>');
-    h.push('<tr><td>Phương pháp rửa</td><td class="l">逐段清洗，按最大一段 ' + nvMax + ' bình áp lực × ' + neMax + ' 支计</td></tr>');
-    h.push('<tr><td>Thể tích hữu dụng bể rửa</td><td class="l">约 ' + fmt(tank, 1) + ' m³（空压力容器容积 + 管路约 15%；FilmTec 例：8 英寸 6 芯压力容器约 197 L）</td></tr>');
-    h.push('<tr><td>Lưu lượng máy bơm rửa</td><td class="l">' + fmt(nvMax * qLo, 0) + '–' + fmt(nvMax * qHi, 0) + ' m³/h（每个 8 英寸压力容器 ' + qLo + '–' + qHi + ' m³/h' + (big ? '，440 ft² 元件' : '') + '），压力 1.5–4.0 bar</td></tr>');
-    h.push('<tr><td>pH / nhiệt độ rửa</td><td class="l">≤ 25 °C：pH 1–13；≤ 35 °C：pH 1–12；≤ 45 °C：pH 1–10.5（FilmTec）；以所选元件厂家hướng dẫn rửa为准</td></tr>');
-    h.push('<tr><td>Thời điểm rửa</td><td class="l">标准化产水量下降 10%，或透盐率上升 5–10%，或压降上升 10–15%</td></tr>');
-    h.push('<tr><td>Bộ lọc bảo vệ</td><td class="l">5 μm 滤芯，处理量按Nước cấp cấp 1 ' + fmt(d.pass1.Qf, 1) + ' m³/h' + (d.pass2 ? '（含Nước cô đặc cấp 2 tuần hoàn）' : '') + '选型</td></tr>');
+    h.push('<tr><td>Phương pháp rửa</td><td class="l">Rửa từng tầng, tính theo tầng lớn nhất ' + nvMax + ' bình áp lực × ' + neMax + ' phần tử</td></tr>');
+    h.push('<tr><td>Thể tích hữu dụng bể rửa</td><td class="l">Khoảng ' + fmt(tank, 1) + ' m³ (thể tích bình áp lực rỗng + đường ống khoảng 15%; ví dụ FilmTec: bình áp lực 8 inch 6 lõi khoảng 197 L)</td></tr>');
+    h.push('<tr><td>Lưu lượng máy bơm rửa</td><td class="l">' + fmt(nvMax * qLo, 0) + '–' + fmt(nvMax * qHi, 0) + ' m³/h (mỗi bình áp lực 8 inch ' + qLo + '–' + qHi + ' m³/h' + (big ? ', phần tử 440 ft²' : '') + '), áp suất 1.5–4.0 bar</td></tr>');
+    h.push('<tr><td>pH / nhiệt độ rửa</td><td class="l">≤ 25 °C: pH 1–13; ≤ 35 °C: pH 1–12; ≤ 45 °C: pH 1–10.5 (FilmTec); theo hướng dẫn rửa của hãng phần tử đã chọn</td></tr>');
+    h.push('<tr><td>Thời điểm rửa</td><td class="l">Lưu lượng nước sản phẩm chuẩn hoá giảm 10%, hoặc tỷ lệ thấm muối tăng 5–10%, hoặc tổn thất áp tăng 10–15%</td></tr>');
+    h.push('<tr><td>Bộ lọc bảo vệ</td><td class="l">Lõi lọc 5 μm, công suất xử lý theo nước cấp cấp 1 ' + fmt(d.pass1.Qf, 1) + ' m³/h' + (d.pass2 ? '(gồm nước cô đặc cấp 2 tuần hoàn)' : '') + 'Lựa chọn</td></tr>');
     h.push('</tbody></table></div>');
     h.push('<div class="src">Nguồn: DuPont FilmTec hướng dẫn rửa 45-D01696（2026）；Hydranautics TSB107。</div>');
     $('outElem').innerHTML = h.join('');
@@ -2110,13 +2110,13 @@ if (typeof module === 'object' && module.exports) module.exports = ROTests;
     L.push('Kết quả tính toán thiết kế hệ thống thẩm thấu ngược RO (WaterKit)', '————————————————');
     L.push('Nguồn nước: ' + T.GUIDE[inp.source].name + '；Nước sản phẩm ' + fmt(inp.Qp, 1) + ' m³/h；Nhiệt độ nước tính toán ' + inp.T + ' °C（' + num('Tmin') + '–' + tmax() + ' °C）；Hệ số lưu lượng ' + inp.pass1.FF);
     L.push('Nước nguồn ' + fmt(d.Qraw, 1) + ' m³/h（TDS ' + fmt(T.tds(d.balance.C), 0) + ' mg/L，pH ' + inp.pH + '）；Nước cô đặc ' + fmt(d.Qconc, 1) + ' m³/h；Tỷ lệ thu hồi hệ thống ' + fmt(d.sysRecovery * 100, 1) + '%');
-    L.push('Cấp 1: ' + specOf($('elem1').value).model + '，' + d.pass1.stages.map(function (s) { return s.nv + '×' + s.ne; }).join(' + ') + '，共 ' + d.pass1.nElements + ' 支；Áp suất nước cấp ' + fmt(d.pass1.Pf, 2) + ' bar（' + num('Tmin') + ' °C 时 ' + fmt(last.dmin.pass1.Pf, 2) + ' bar）；Thông lượng trung bình ' + fmt(d.pass1.flux, 1) + ' LMH');
-    if (d.pass2) L.push('Cấp 2: ' + specOf($('elem2').value).model + '，' + d.pass2.stages.map(function (s) { return s.nv + '×' + s.ne; }).join(' + ') + '，共 ' + d.pass2.nElements + ' 支，Áp suất nước cấp ' + fmt(d.pass2.Pf, 2) + ' bar，tuần hoàn ' + fmt(d.recycle, 1) + ' m³/h');
-    L.push('Nước sản phẩm TDS ' + fmt(d.tdsProd, 2) + ' mg/L，bo ' + fmt(d.Cprod.B || 0, 2) + ' mg/L，pH ' + fmt(d.pHprod, 1) + '；Nhiệt độ nước cao nhất ' + tmax() + ' °C 新膜时 TDS ' + fmt(last.dhot.tdsProd, 2) + '、bo ' + fmt(last.dhot.Cprod.B || 0, 2) + ' mg/L');
+    L.push('Cấp 1: ' + specOf($('elem1').value).model + '，' + d.pass1.stages.map(function (s) { return s.nv + '×' + s.ne; }).join(' + ') + ', tổng ' + d.pass1.nElements + ' phần tử; áp suất nước cấp ' + fmt(d.pass1.Pf, 2) + ' bar（' + num('Tmin') + ' °C, ' + fmt(last.dmin.pass1.Pf, 2) + ' bar）；Thông lượng trung bình ' + fmt(d.pass1.flux, 1) + ' LMH');
+    if (d.pass2) L.push('Cấp 2: ' + specOf($('elem2').value).model + '，' + d.pass2.stages.map(function (s) { return s.nv + '×' + s.ne; }).join(' + ') + ', tổng ' + d.pass2.nElements + ' phần tử, áp suất nước cấp ' + fmt(d.pass2.Pf, 2) + ' bar，tuần hoàn ' + fmt(d.recycle, 1) + ' m³/h');
+    L.push('Nước sản phẩm TDS ' + fmt(d.tdsProd, 2) + ' mg/L，bo ' + fmt(d.Cprod.B || 0, 2) + ' mg/L，pH ' + fmt(d.pHprod, 1) + '；Nhiệt độ nước cao nhất ' + tmax() + ' °C màng mới TDS ' + fmt(last.dhot.tdsProd, 2) + '、bo ' + fmt(last.dhot.Cprod.B || 0, 2) + ' mg/L');
     L.push('Nước cô đặc TDS ' + fmt(T.tds(d.pass1.Cc), 0) + ' mg/L，pH ' + fmt(d.conc.pH, 2) + '，' + d.conc.idx.name + ' ' + fmt(d.conc.idx.v, 2) +
       '，CaSO₄ ' + fmt(d.conc.sat.CaSO4, 0) + '%，BaSO₄ ' + fmt(d.conc.sat.BaSO4, 0) + '%，SrSO₄ ' + fmt(d.conc.sat.SrSO4, 0) + '%，CaF₂ ' + fmt(d.conc.sat.CaF2, 0) + '%，SiO₂ ' + fmt(d.check.siPct, 0) + '%');
-    L.push('加药：' + (d.acid.doseMgL > 0 ? (inp.acid.type === 'HCl' ? '盐酸 ' : '硫酸 ') + fmt(d.acid.doseMgL, 1) + ' mg/L（100%）、' : '') + 'Chất chống cáu cặn ' + fmt(inp.antiscalant, 1) + ' mg/L' + (inp.cl2 > 0 ? '、Natri bisunfit ' + fmt(d.chem.sbsMgL, 2) + ' mg/L' : '') + (d.chem.naohMgL > 0 ? '、二级前 NaOH ' + fmt(d.chem.naohMgL, 1) + ' mg/L（pH ' + fmt(d.caustic.pHt, 1) + '）' : ''));
-    L.push('Năng lượng tiêu thụ: tổng công suất ' + fmt(d.energy.kW, 1) + ' kW，điện năng tiêu thụ riêng ' + fmt(d.energy.sec, 3) + ' kWh/m³，Chi phí điện hàng năm ' + fmt(d.energy.costYear, 1) + ' 万元');
+    L.push('Hoá chất:' + (d.acid.doseMgL > 0 ? (inp.acid.type === 'HCl' ? 'Axit clohydric ' : 'Axit sunfuric ') + fmt(d.acid.doseMgL, 1) + ' mg/L（100%）、' : '') + 'Chất chống cáu cặn ' + fmt(inp.antiscalant, 1) + ' mg/L' + (inp.cl2 > 0 ? '、Natri bisunfit ' + fmt(d.chem.sbsMgL, 2) + ' mg/L' : '') + (d.chem.naohMgL > 0 ? ', NaOH trước cấp 2 ' + fmt(d.chem.naohMgL, 1) + ' mg/L（pH ' + fmt(d.caustic.pHt, 1) + '）' : ''));
+    L.push('Năng lượng tiêu thụ: tổng công suất ' + fmt(d.energy.kW, 1) + ' kW，điện năng tiêu thụ riêng ' + fmt(d.energy.sec, 3) + ' kWh/m³，Chi phí điện hàng năm ' + fmt(d.energy.costYear, 1) + ' vạn NDT');
     L.push('Kiểm tra thiết kế: ' + (last.items.length ? last.items.map(function (x) { return x.text; }).join('；') : 'Tất cả các mục đều đáp ứng hướng dẫn'));
     L.push('Lưu ý: Đây là ước tính phương án; kết quả cuối cùng cần dựa trên phần mềm thiết kế của nhà sản xuất.');
     return L.join('\n');
