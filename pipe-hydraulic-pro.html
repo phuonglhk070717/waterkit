@@ -2189,7 +2189,7 @@ function renderGravity(){
     ${gbLine}
     ${(()=>{
       const er=effRange(rec);
-      /* P3-2：市政水·重力流的 min=0，?? 不拦 0 会让 vMin 退化为 0（文案打印"≥0.00"、
+      /* P3-2：市政水·重力流的 min=0，cho ph?p 不拦 0 会让 vMin 退化为 0（文案打印"≥0.00"、
          下界二分空跑）。此处取 null 表示无下限约束 */
       const vMinRaw=g.gbMinV?Math.max(0.6,er.min||0):(er.min>0?er.min:null);
       const vMin=vMinRaw;

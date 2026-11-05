@@ -1122,23 +1122,23 @@
             <div class="seg seg-aerobic" id="volO">Hiếu khí</div>
           </div>
           <div class="result-row highlight-row">
-            <span class="result-label"><b>总反应池容 V_总</b></span>
+            <span class="result-label"><b>Tổng thể tích bể phản ứng V_总</b></span>
             <span><span class="result-value big" id="r_Vtotal">—</span><span class="result-unit">m³</span></span>
           </div>
           <div class="result-row highlight-row">
-            <span class="result-label"><b>总水力停留时间 HRT_总</b></span>
+            <span class="result-label"><b>Tổng thời gian lưu thủy lực HRT_总</b></span>
             <span><span class="result-value big" id="r_HRTtotal">—</span><span class="result-unit">h</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">厌氧段 V_AN <span class="sub">(khử photpho)</span></span>
+            <span class="result-label">Ngăn kỵ khí V_AN <span class="sub">(khử photpho)</span></span>
             <span><span class="result-value" id="r_VAN">—</span><span class="result-unit">m³</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">缺氧段 V_A <span class="sub">(khử nitrat)</span></span>
+            <span class="result-label">Ngăn thiếu khí V_A <span class="sub">(khử nitrat)</span></span>
             <span><span class="result-value" id="r_VA">—</span><span class="result-unit">m³</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">好氧段 V_O <span class="sub">(硝化 + COD去除)</span></span>
+            <span class="result-label">Ngăn hiếu khí V_O <span class="sub">(nitrat hóa + loại bỏ COD)</span></span>
             <span><span class="result-value" id="r_VO">—</span><span class="result-unit">m³</span></span>
           </div>
           <div class="result-row">
@@ -1159,34 +1159,34 @@
         <div class="result-group">
           <div class="result-group-title">
             <span class="ic">🔄</span> Hệ thống tuần hoàn
-            <span class="auto-tag" title="回流比由工具根据进水水质和出水目标自动推导,不需要手动输入">AUTO</span>
+            <span class="auto-tag" title="Tỷ lệ tuần hoàn được tự động tính từ chất lượng nước đầu vào và mục tiêu đầu ra, không cần nhập thủ công">AUTO</span>
           </div>
           <div class="result-row highlight-row">
-            <span class="result-label"><b>内回流比 R</b> <span class="sub">(好氧→缺氧 · 由 TN 目标反算)</span></span>
+            <span class="result-label"><b>Tỷ lệ tuần hoàn nội R</b> <span class="sub">(hiếu khí → thiếu khí · tính ngược từ mục tiêu TN)</span></span>
             <span><span class="result-value big" id="r_R">—</span><span class="result-unit"></span></span>
           </div>
           <div class="result-row highlight-row">
-            <span class="result-label"><b>外回流比 r</b> <span class="sub">(二沉→厌氧 · 由 MLSS 平衡反算)</span></span>
+            <span class="result-label"><b>Tỷ lệ tuần hoàn bùn r</b> <span class="sub">(lắng thứ cấp → kỵ khí · tính ngược từ cân bằng MLSS)</span></span>
             <span><span class="result-value big" id="r_r">—</span><span class="result-unit"></span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">内回流流量 Q_R</span>
+            <span class="result-label">Lưu lượng tuần hoàn nội Q_R</span>
             <span><span class="result-value" id="r_QR">—</span><span class="result-unit">万 m³/d</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">外回流流量 Q_r</span>
+            <span class="result-label">Lưu lượng tuần hoàn bùn Q_r</span>
             <span><span class="result-value" id="r_Qr">—</span><span class="result-unit">万 m³/d</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">设计好氧泥龄 SRT_O <span class="sub">(V_O 按此计算)</span></span>
+            <span class="result-label">Tuổi bùn hiếu khí thiết kế SRT_O <span class="sub">(V_O được tính theo giá trị này)</span></span>
             <span><span class="result-value" id="r_SRT">—</span><span class="result-unit">d</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">系统总泥龄 SRT_总 <span class="sub">(MLSS·V_总/ΔX_SS, 与池容迭代收敛)</span></span>
+            <span class="result-label">Tổng tuổi bùn của hệ thống SRT_总 <span class="sub">(MLSS·V_总/ΔX_SS, lặp đến khi hội tụ với thể tích bể)</span></span>
             <span><span class="result-value" id="r_SRTtot">—</span><span class="result-unit">d</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">最小泥龄 SRT_min <span class="sub">(硝化, 好氧, 按最低设计水温 T_min)</span></span>
+            <span class="result-label">Tuổi bùn tối thiểu SRT_min <span class="sub">(nitrat hóa, hiếu khí, theo nhiệt độ nước thiết kế tối thiểu T_min)</span></span>
             <span><span class="result-value" id="r_SRTmin">—</span><span class="result-unit">d</span></span>
           </div>
         </div>
@@ -1203,7 +1203,7 @@
             <span><span class="result-value" id="r_SOR">—</span><span class="result-unit">kg O₂/d</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">BOD 降解需氧 <span class="sub">(碳氧化, 1.47ΔBOD−1.42ΔX_VSS)</span></span>
+            <span class="result-label">Nhu cầu oxy để phân hủy BOD <span class="sub">(oxy hóa cacbon, 1.47ΔBOD−1.42ΔX_VSS)</span></span>
             <span><span class="result-value" id="r_O_BOD">—</span><span class="result-unit">kg O₂/d</span></span>
           </div>
           <div class="result-row">
@@ -1219,49 +1219,49 @@
             <span><span class="result-value big" id="r_dX">—</span><span class="result-unit">kg DS/d</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">F/M 污泥负荷 <span class="sub">(Q·S₀/(V_总·MLSS))</span></span>
+            <span class="result-label">Tải trọng bùn F/M <span class="sub">(Q·S₀/(V_总·MLSS))</span></span>
             <span><span class="result-value" id="r_FM">—</span><span class="result-unit">kgBOD/kgMLSS·d</span></span>
           </div>
         </div>
 
         <!-- 出水预测 -->
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">🧪</span> 脱氮 & 除磷效果 <span class="sub" style="font-weight:400;font-size:11px;color:var(--text-faint);">(估算)</span></div>
-          <div class="result-row"><span class="result-label">出水 NO₃-N <span class="sub">(内回流封顶 800% 后, NOx − N_DN)</span></span>
+          <div class="result-group-title"><span class="ic">🧪</span> Hiệu quả khử nitơ &amp; loại bỏ photpho <span class="sub" style="font-weight:400;font-size:11px;color:var(--text-faint);">(ước tính)</span></div>
+          <div class="result-row"><span class="result-label">NO₃-N đầu ra <span class="sub">(sau khi giới hạn tuần hoàn nội ở 800%, NOx − N_DN)</span></span>
             <span><span class="result-value" id="r_NO3e">—</span><span class="result-unit">mg/L</span></span></div>
-          <div class="result-row highlight-row"><span class="result-label"><b>出水 TN 预测</b> <span class="sub">(NH₄ₑ + 有机Nₑ + NO₃ₑ)</span></span>
+          <div class="result-row highlight-row"><span class="result-label"><b>TN đầu ra dự báo</b> <span class="sub">(NH₄ₑ + N hữu cơₑ + NO₃ₑ)</span></span>
             <span><span class="result-value big" id="r_TNpred">—</span><span class="result-unit">mg/L</span></span></div>
-          <div class="result-row"><span class="result-label">生物除磷出水 TP <span class="sub">(经验估算)</span></span>
+          <div class="result-row"><span class="result-label">TP đầu ra sau khử photpho sinh học <span class="sub">(ước tính theo kinh nghiệm)</span></span>
             <span><span class="result-value" id="r_TPbio">—</span><span class="result-unit">mg/L</span></span></div>
-          <div class="result-row"><span class="result-label">化学除磷量 ΔTP_chem <span class="sub">(max(0, TP_生物出水 − TP出))</span></span>
+          <div class="result-row"><span class="result-label">Lượng photpho loại bỏ bằng hóa chất ΔTP_chem <span class="sub">(max(0, TP_生物出水 − TP出))</span></span>
             <span><span class="result-value" id="r_dTPchem">—</span><span class="result-unit">mg/L</span></span></div>
-          <div class="result-row"><span class="result-label">PAC 投加量 <span class="sub">(10% Al₂O₃ 液体)</span></span>
+          <div class="result-row"><span class="result-label">Liều lượng PAC <span class="sub">(10% Al₂O₃ dạng lỏng)</span></span>
             <span><span class="result-value" id="r_PAC">—</span><span class="result-unit">mg/L</span></span></div>
-          <div class="result-row"><span class="result-label">PAC 日投加量</span>
+          <div class="result-row"><span class="result-label">Lượng PAC định lượng hằng ngày</span>
             <span><span class="result-value" id="r_PACkg">—</span><span class="result-unit">kg/d</span></span></div>
-          <div class="result-row"><span class="result-label">化学污泥 ΔX_chem <span class="sub">(已计入剩余污泥)</span></span>
+          <div class="result-row"><span class="result-label">Bùn hóa học ΔX_chem <span class="sub">(đã tính vào bùn dư)</span></span>
             <span><span class="result-value" id="r_chemSludge">—</span><span class="result-unit">kg DS/d</span></span></div>
-          <div class="result-row highlight-row"><span class="result-label"><b>出水 TP 预测</b> <span class="sub">(含化学除磷)</span></span>
+          <div class="result-row highlight-row"><span class="result-label"><b>TP đầu ra dự báo</b> <span class="sub">(bao gồm khử photpho bằng hóa chất)</span></span>
             <span><span class="result-value big" id="r_TPe">—</span><span class="result-unit">mg/L</span></span></div>
         </div>
 
         <!-- 比值与平衡 -->
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">⚖️</span> 工艺比值与平衡</div>
+          <div class="result-group-title"><span class="ic">⚖️</span> Các tỷ số và cân bằng công nghệ</div>
           <div class="result-row">
-            <span class="result-label">BOD/TN (碳氮比)</span>
+            <span class="result-label">BOD/TN (tỷ lệ cacbon/nitơ)</span>
             <span><span class="result-value" id="r_BODTN">—</span><span class="result-unit">—</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">BOD/TP (碳磷比)</span>
+            <span class="result-label">BOD/TP (tỷ lệ cacbon/photpho)</span>
             <span><span class="result-value" id="r_BODTP">—</span><span class="result-unit">—</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">理论反硝化需碳 <span class="sub">(以 COD 计, 2.86 gCOD/gN 理论下限)</span></span>
+            <span class="result-label">Nhu cầu cacbon lý thuyết cho khử nitrat <span class="sub">(tính theo COD, giới hạn dưới lý thuyết 2.86 gCOD/gN)</span></span>
             <span><span class="result-value" id="r_CforDN">—</span><span class="result-unit">mgCOD/L</span></span>
           </div>
           <div class="result-row">
-            <span class="result-label">实际碳源需求估算 <span class="sub">(4–5 gCOD/gN, 含异养菌合成)</span></span>
+            <span class="result-label">实际碳源需求ước tính <span class="sub">(4–5 gCOD/gN, bao gồm tổng hợp sinh khối vi khuẩn dị dưỡng)</span></span>
             <span><span class="result-value" id="r_CforDNreal">—</span><span class="result-unit">mgCOD/L</span></span>
           </div>
           <div class="result-row">
@@ -1283,7 +1283,7 @@
             </div>
             <div>
               <div class="score-title" id="scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
-              <div class="score-label" id="scoreDesc">综合泥龄、池容比、回流比、碳氮磷比 5 项综合评估</div>
+              <div class="score-label" id="scoreDesc">Đánh giá tổng hợp 5 chỉ tiêu về tuổi bùn, tỷ lệ thể tích bể, tuần hoàn và cacbon/nitơ/photpho</div>
               <div class="score-note">Điểm kinh nghiệm, chỉ dùng để tham khảo khi so sánh phương án</div>
             </div>
           </div>
