@@ -2323,7 +2323,7 @@ function checkIFAS(r) {
     checks.push({type:'bad', ic:'✗', text:`<b>Tuổi bùn pha lơ lửng không đủ</b>: tuổi bùn theo cân bằng khối lượng ${r.SRT_act.toFixed(1)} d &lt; SRT thiết kế ${r.SRT_in} d, nên tăng thể tích bể/MLSS hoặc giảm lưu lượng xử lý`});
     score -= 15;
   } else if (r.SRT_act > r.SRT_in * (1 + 1e-3)) {
-    checks.push({type:'info', ic:'ℹ', text:`<b>Tuổi bùn pha lơ lửng</b>: ở MLSS ${r.MLSS} mg/L theo cân bằng khối lượng là ${r.SRT_act.toFixed(1)} d（> SRT thiết kế ${r.SRT_in} d；${r.isRetro ? 'Q thiết kế thấp hơn năng lực' : 'Thể tích bể do' + r.V_ctrl + 'khống chế'}）`});
+    checks.push({type:'info', ic:'ℹ', text:`<b>Tuổi bùn pha lơ lửng</b>: ở MLSS ${r.MLSS} mg/L theo cân bằng khối lượng là ${r.SRT_act.toFixed(1)} d（> SRT thiết kế ${r.SRT_in} d；${r.isRetro ? 'Q thiết kế thấp hơn năng lực' : 'Thể tích bể do ' + r.V_ctrl + ' khống chế'}）`});
   }
 
   // SALR 校核（附着相承担的 BOD）
