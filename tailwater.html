@@ -773,7 +773,7 @@
     { id: 'GD_FW', region: 'Quảng Đông', code: 'DB44/2462-2024', water: 'fw', nature: 'Bắt buộc',
       effective: '2024-05-01', existing: '2026-05-01',
       thresholdMu: 30, thresholdNote: 'Ao nuôi ≥30 mu; hệ thống kín như nuôi công nghiệp; <30 mu áp dụng tham khảo',
-      belowThreshold: 'áp dụng tham khảo',
+      belowThreshold: 'Áp dụng tham khảo',
       gradeRule: 'GD', grades: { 1: lim(45, 15, 3.0, 0.4, PH_FW), 2: lim(90, 25, 5.0, 1.0, PH_FW) },
       source: 'https://gdee.gd.gov.cn/gkmlpt/content/4/4382/post_4382815.html' },
     { id: 'SH', region: 'Thượng Hải', code: 'DB31/1405-2023', water: 'fw', nature: 'Bắt buộc',
@@ -832,7 +832,7 @@
     { id: 'GD_SW', region: 'Quảng Đông', code: 'DB44/2462-2024', water: 'sw', nature: 'Bắt buộc',
       effective: '2024-05-01', existing: '2026-05-01',
       thresholdMu: 30, thresholdNote: 'Ao nuôi ≥30 mu; hệ thống kín như nuôi công nghiệp; <30 mu áp dụng tham khảo',
-      belowThreshold: 'áp dụng tham khảo',
+      belowThreshold: 'Áp dụng tham khảo',
       gradeRule: 'SW', grades: { 1: lim(40, 10, 3.5, 0.5, PH_SW2), 2: lim(90, 20, 7.0, 1.5, PH_SW2) },
       source: 'https://gdee.gd.gov.cn/gkmlpt/content/4/4382/post_4382815.html' },
     { id: 'JS_SW', region: 'Giang Tô', code: 'DB32/4043-2021', water: 'sw', nature: 'Bắt buộc',
@@ -1392,13 +1392,13 @@
     });
     if (errors.length) return { errors: errors, warnings: warnings };
     [['splitSed', 'Ao lắng'], ['splitAer', 'Ao sục khí'], ['splitEco', 'Ao lọc sinh thái']].forEach(function (c) {
-      if (!(p[c[0]] > 0)) errors.push(c[1] + 'Tỷ lệ bằng 0: mô hình «ba ao hai đập» phải có đủ ba đơn vị lắng, sục khí, lọc sinh thái');
+      if (!(p[c[0]] > 0)) errors.push(c[1] + ' tỷ lệ bằng 0: mô hình «ba ao hai đập» bắt buộc phải có đủ ba đơn vị lắng, sục khí, lọc sinh thái');
     });
     if (p.dailyPct === 0 && p.drainsPerCycle === 0) errors.push('Tỷ lệ thay nước hằng ngày và số lần tháo cạn đều bằng 0: không có nước xả, không tính được nồng độ nước thải và quy mô xử lý');
     var sum = p.splitSed + p.splitAer + p.splitEco;
     if (sum > 0) [['splitSed', 'Ao lắng', 30, 45], ['splitAer', 'Ao sục khí', 5, 30], ['splitEco', 'Ao lọc sinh thái', 35, 50]].forEach(function (c) {
       var v = p[c[0]] / sum * 100;
-      if (v < c[2] - 1e-9 || v > c[3] + 1e-9) warnings.push(c[1] + 'chiếm ' + (Math.round(v * 10) / 10) + '%, vượt dự thảo Quảng Đông ' + c[2] + '–' + c[3] + '%');
+      if (v < c[2] - 1e-9 || v > c[3] + 1e-9) warnings.push(c[1] + ' chiếm ' + (Math.round(v * 10) / 10) + '%, vượt dự thảo Quảng Đông ' + c[2] + '–' + c[3] + '%');
     });
     if (p.floatBedPct < 20) warnings.push('Bè nổi ao lọc ' + p.floatBedPct + '% thấp hơn mức ≥20% của dự thảo Quảng Đông');
     if (p.sedFloatPct < 10 || p.sedFloatPct > 30) warnings.push('Bè nổi ao lắng ' + p.sedFloatPct + '% vượt mức 10–30% cần bố trí theo dự thảo Quảng Đông');
@@ -1849,7 +1849,7 @@ test('Ngưỡng áp dụng', () => {
   assert.equal(T.applicability(T.findStandard('HA'), 80).applies, false);
   assert.equal(T.applicability(T.findStandard('HA'), 100).applies, true);
   assert.equal(T.applicability(T.findStandard('SC'), 1).applies, true);
-  assert.ok(T.applicability(T.findStandard('GD_FW'), 20).text.startsWith('Áp dụng tham chiếu'));
+  assert.ok(T.applicability(T.findStandard('GD_FW'), 20).text.startsWith('Áp dụng tham khảo'));
 });
 
 test('v0.6 cửa xả hiện hữu: vùng nước cấm xây mới tham chiếu cấp 1; khu trọng điểm Tứ Xuyên đều cấp 1', () => {
@@ -2016,7 +2016,7 @@ test('v0.4 kiểm tra dữ liệu nhập: cảnh báo không chặn tính toán'
   const r = T.run(baseInput({ slopeA: 0.7, rMid: { TN: 80 } }));
   assert.equal(r.invalid, false);
   assert.ok(r.validation.warnings.some(w => w.indexOf('Hệ số mái dốc') >= 0));
-  assert.ok(r.validation.warnings.some(w => w.indexOf('Trung vị hiệu suất loại TN') >= 0));
+  assert.ok(r.validation.warnings.some(w => w.indexOf('TN Trung vị hiệu suất loại bỏ') >= 0));
 });
 test('v0.4 kết luận tổng hợp: đạt / có rủi ro / vượt chuẩn', () => {
   const ok = T.run(baseInput({ dailyPct: 1, rawMode: 'measured', measTN: 2.0, measTP: 0.2, SS: 40, COD: 8, NH3N: 0.5 }));
@@ -2092,18 +2092,18 @@ test('v0.5 cấu trúc ba ao: thiếu một đơn vị là báo lỗi, lệch kh
   for (const o of [{ splitAer: 0 }, { splitSed: 0 }, { splitEco: 0 }, { splitSed: 100, splitAer: 0, splitEco: 0 }]) {
     const r = T.run(baseInput(o));
     assert.equal(r.invalid, true, JSON.stringify(o));
-    assert.ok(r.validation.errors.some(e => e.indexOf('«Ba ao hai đập» bắt buộc') >= 0));
+    assert.ok(r.validation.errors.some(e => e.indexOf('«ba ao hai đập» bắt buộc') >= 0));
   }
   const w = T.run(baseInput({ splitSed: 60, splitAer: 10, splitEco: 30, floatBedPct: 10, recircPct: 50 }));
   assert.equal(w.invalid, false);
-  for (const k of ['Ao lắng chiếm 60%', 'Ao lọc sinh thái chiếm 30%', 'Bè nổi 10%', 'Tuần hoàn nội 50%']) assert.ok(w.validation.warnings.some(x => x.indexOf(k) >= 0), k);
+  for (const k of ['Ao lắng chiếm 60%', 'Ao lọc sinh thái chiếm 30%', 'Bè nổi ao lọc 10%', 'Tuần hoàn nội 50%']) assert.ok(w.validation.warnings.some(x => x.indexOf(k) >= 0), k);
   assert.ok(!w.validation.warnings.some(x => x.indexOf('Ao sục khí chiếm') >= 0));
   assert.deepEqual(T.run(baseInput()).validation.warnings, []);
 });
 test('v0.5 ba trạng thái áp dụng', () => {
   const hb = T.findStandard('HB');
   const below = T.applicability(hb, 150);
-  assert.equal(below.status, 'reference'); assert.ok(below.text.indexOf('không có nghĩa là có thể không xử lý') >= 0);
+  assert.equal(below.status, 'reference'); assert.ok(below.text.indexOf('không có nghĩa là được miễn xử lý') >= 0);
   assert.equal(T.applicability(hb, 200).status, 'mandatory');
   assert.equal(T.applicability(T.findStandard('SC'), 1).status, 'mandatory');
   assert.equal(T.applicability(Object.assign({}, hb, { thresholdUnknown: true }), 500).status, 'pending');

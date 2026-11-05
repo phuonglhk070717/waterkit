@@ -1632,7 +1632,7 @@ function ROTests(T, test, assert) {
     const d = T.designAll({ feed: sea, pH: 8.1, T: 25, source: 'sw_open', Qp: 100, pass1: { elem: T.getElement('SW30HRLE440'), R: 0.45, FF: 0.85, stages: [{ nv: 21, ne: 7 }] }, pass2: null, acid: null, erd: { dP: 0.7, leak: 0.012, mix: 0 } });
     near(d.Qraw, d.pass1.Qf + 0.012 * d.pass1.Qc, 1e-9);
     const b = baseDesign({ pass2: { elem: T.getElement('BW30PRO400'), R: 0.85, FF: 0.9, stages: [{ nv: 6, ne: 6 }, { nv: 3, ne: 6 }] } });
-    const it = T.designAll(b).energy.items.filter(x => x.name === 'Bơm cao áp cấp 2')[0];
+    const it = T.designAll(b).energy.items.filter(x => x.name === 'Máy bơm cao áp cấp 2')[0];
     near(it.dP, T.designAll(b).pass2.Pf, 1e-9);
   });
   test('pH nước cô đặc: cân bằng cacbonat đầy đủ + cặp ion, đối chiếu PHREEQC (hoạt độ CO₂ không đổi, độ kiềm cô đặc) |ΔpH| ≤ 0.02', () => {
