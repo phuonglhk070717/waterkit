@@ -941,7 +941,7 @@ const DATA_SRC={
 
 /* 该材质的规格序列：钢管/公称 → DN 值数组；塑料 → de 值数组 */
 function sizeList(mat){ return isPlastic(mat)?DE_SERIES:DN_LIST; }
-/* 规格 size（DN 或 de）在该材质+等级下的实际内径 mm；无数据 null */
+/* 规格 size（DN 或 de）在该材质+等级下的Đường kính trong thực tế mm；无数据 null */
 function idOf(mat,grade,size){
   if(mat==="nominal") return size;
   if(mat==="b36"){const w=WALL[grade][size];return w?+(B36_OD[size]-2*w).toFixed(1):null;}
@@ -1121,8 +1121,8 @@ function syncGravInput(){
   inp.style.color=off?"#8aa0ab":"";
   if(off&&!(parseFloat(inp.value)>0))inp.value=1;   /* 兜底：保证反解分支不因空值静默停止（该值不参与计算） */
   lab.innerHTML=off
-    ? `流速 <b>v</b> <span style="color:var(--warn);font-size:11px">— 重力流由坡度决定，此值不参与管径计算</span>`
-    : `流速 <b>v</b>`;
+    ? `Vận tốc <b>v</b> <span style="color:var(--warn);font-size:11px">— Vận tốc dòng tự chảy do độ dốc quyết định; giá trị này không dùng để tính đường kính ống</span>`
+    : `Vận tốc <b>v</b>`;
 }
 /* 输入校验：参与除法/开方的输入须 > 0；不合格时标红、结果显示「—」并在 dnNote 提示 */
 let invalidMsg="";
@@ -1135,7 +1135,7 @@ function validateMain(){
   [inQ,inV,inD].forEach(el=>markInvalid(el,false));
   const bad=need.filter(([el])=>!(parseFloat(el.value)>0));
   bad.forEach(([el])=>markInvalid(el,true));
-  invalidMsg=bad.length?`<span style="color:var(--bad)">请输入大于 0 的${bad.map(b=>b[1]).join("、")}</span>`:"";
+  invalidMsg=bad.length?`<span style="color:var(--bad)">Nhập giá trị lớn hơn 0 cho ${bad.map(b=>b[1]).join("、")}</span>`:"";
   return !bad.length;
 }
 function calc(){
@@ -1266,7 +1266,7 @@ function renderResult(ok,Q,v,D,S){
       const alt=Object.keys(MATS[mat].grades).filter(gg=>gg!==g)
         .map(gg=>{const s=list.find(x=>x>=floorSz&&idOf(mat,gg,x)!==null&&idOf(mat,gg,x)>=D);
                   return s!==undefined?{gg,s,id:idOf(mat,gg,s)}:null;}).filter(Boolean);
-      dnHtml=`<span style="color:var(--bad)">所需内径 <b>${fmt(D,1)} mm</b> 超出「${MATS[mat].name.split("·")[0].trim()} · ${GRADE_SHORT[g]}」的数据范围`
+      dnHtml=`<span style="color:var(--bad)">Đường kính trong cần thiết <b>${fmt(D,1)} mm</b> 超出「${MATS[mat].name.split("·")[0].trim()} · ${GRADE_SHORT[g]}」的数据范围`
         +(maxID!==null?`（该等级最大规格 ${sizeLabel(mat,valid[valid.length-1])}，内径 ${fmt(maxID,1)} mm）`:"")+`，未给出推荐。</span>`
         +(alt.length?`<br>可改用同材质其它等级：`+alt.slice(0,3).map(a=>`<span class="tag">${GRADE_SHORT[a.gg]} → ${sizeLabel(mat,a.s)}（内径 ${fmt(a.id,1)} mm）</span>`).join(""):`<br>请改选其它管材体系（如大口径可选「螺旋/直缝焊管」或「STD/XS 恒定壁厚」档）。`);
       $("dnNote").innerHTML=dnHtml;
@@ -1281,7 +1281,7 @@ function renderResult(ok,Q,v,D,S){
         const alt=Object.keys(MATS[mat].grades).filter(gg=>gg!==g)
           .map(gg=>{const s=list.find(x=>x>=floorSz&&idOf(mat,gg,x)!==null&&idOf(mat,gg,x)>=D);
                     return s!==undefined?{gg,s,id:idOf(mat,gg,s)}:null;}).filter(Boolean);
-        $("dnNote").innerHTML=`<span style="color:var(--bad)">所需内径 <b>${fmt(D,1)} mm</b> 超出「${MATS[mat].name.split("·")[0].trim()} · ${GRADE_SHORT[g]}」的可选范围：`
+        $("dnNote").innerHTML=`<span style="color:var(--bad)">Đường kính trong cần thiết <b>${fmt(D,1)} mm</b> 超出「${MATS[mat].name.split("·")[0].trim()} · ${GRADE_SHORT[g]}」的可选范围：`
           +`该等级最大规格 <b>${sizeLabel(mat,sz)}</b> 内径仅 <b>${fmt(idAct,1)} mm</b>（此规格下流速将达 ${fmt(vAct,2)} m/s），未作为推荐。</span>`
           +(alt.length?`<br>可改用同材质其它等级：`+alt.slice(0,3).map(a=>`<span class="tag">${GRADE_SHORT[a.gg]} → ${sizeLabel(mat,a.s)}（内径 ${fmt(a.id,1)} mm）</span>`).join(""):`<br>请改选其它管材体系（如大口径可选「螺旋/直缝焊管」或「STD/XS 恒定壁厚」档）。`);
         return;
@@ -1317,17 +1317,17 @@ function renderResult(ok,Q,v,D,S){
       dnHtml=(gs&&gs.tooSmall
         ? `<span style="color:var(--warn)">流量过小（水力反解内径仅 ${fmt(D,0)} mm），重力管此时应按<b>最小管径</b>而非水力计算控制（污水管街坊 DN200 / 街道 DN300）</span><br>水力反解内径 <b>${fmt(D,1)} mm</b>${overTip}`
         : gs&&!gs.failed
-        ? `按 Manning 反解（i=${gs.i}‰、n=${gs.n}、充满度限值 ${gs.fill}${gs.converged?"":"，注：限值在管径分界处切换，已取较保守解"}）所需内径 <b>${fmt(D,1)} mm</b>${overTip}`
+        ? `按 Manning 反解（i=${gs.i}‰、n=${gs.n}、充满度限值 ${gs.fill}${gs.converged?"":"，注：限值在管径分界处切换，已取较保守解"}）Đường kính trong cần thiết <b>${fmt(D,1)} mm</b>${overTip}`
         : gs&&gs.failed
-        ? `<span style="color:var(--warn)">Manning 反解失败（坡度/n 未填或超出合理管径范围），已回退按流速估算</span><br>计算所需内径 <b>${fmt(D,1)} mm</b>`
-        : `计算所需内径 <b>${fmt(D,1)} mm</b>`)
-        +` → 建议选用 <b>${sizeLabel(mat,sz)}</b>`
+        ? `<span style="color:var(--warn)">Manning 反解失败（坡度/n 未填或超出合理管径范围），已回退按流速估算</span><br>Đường kính trong cần thiết theo tính toán <b>${fmt(D,1)} mm</b>`
+        : `Đường kính trong cần thiết theo tính toán <b>${fmt(D,1)} mm</b>`)
+        +` → Khuyến nghị chọn <b>${sizeLabel(mat,sz)}</b>`
         +`<span class="tag">${GRADE_SHORT[g]}</span>${npsOf(isPlastic(mat)?(DE_TO_DN[sz]||0):sz)?`<span class="tag">NPS ${npsOf(isPlastic(mat)?DE_TO_DN[sz]:sz)}</span>`:""}<br>`
-        +`实际内径 <b>${fmt(idAct,1)} mm</b>，复核流速 ≈ <b>${fmt(vAct,2)} m/s</b>`;
+        +`Đường kính trong thực tế <b>${fmt(idAct,1)} mm</b>; vận tốc kiểm tra ≈ <b>${fmt(vAct,2)} m/s</b>`;
       if(szFree!==undefined && sz!==szFree){
         /* 3：区分约束来源；rec2.minDN 可能不存在（重力流各档均无），需兜底 */
         const src=(gbFloor&&floorSz===gbFloor)?"DN200（GB50014 污水管）"
-                 :(rec2&&rec2.minDN?"DN"+rec2.minDN+"（工艺要求）":"下限");
+                 :(rec2&&rec2.minDN?"DN"+rec2.minDN+" (yêu cầu công nghệ)":"下限");
         dnHtml+=`<span class="tag">受最小管径 ${src} 约束放大</span>`;
       }
       /* P2-1：上一档/推荐档/下一档对比。公称近似档 idOf 返回 DN 数值（其定义即"拿 DN 当内径"），
@@ -1337,13 +1337,13 @@ function renderResult(ok,Q,v,D,S){
       const tiers=(pos>=0)?[avail[pos-1],sz,avail[pos+1]].filter(x=>x!==undefined&&idOf(mat,g,x)!==null):[];
       if(tiers.length>1 && !med3Block()){
         const gravTier=!!(gravSizing&&!gravSizing.failed);   /* P3：重力流下整表改用 Manning 非满管口径 */
-        dnHtml+=`<table class="mini"><tr><th>规格</th><th>内径 mm</th><th>${gravTier?"流速 m/s<br><span style='font-weight:400'>非满管</span>":"流速 m/s"}</th><th>${gravTier?"充满度 h/D":"沿程 m/100m"}</th><th></th></tr>`
+        dnHtml+=`<table class="mini"><tr><th>Kích cỡ</th><th>Đường kính trong mm</th><th>${gravTier?"Vận tốc m/s<br><span style='font-weight:400'>không đầy ống</span>":"Vận tốc m/s"}</th><th>${gravTier?"Độ đầy h/D":"Dọc đường m/100m"}</th><th></th></tr>`
           +tiers.map(x=>{
             const idx=idOf(mat,g,x);
             let vx,col4,jj;
             if(gravTier){
               const rp=manningPartial(Q,idx,gravSizing.i,gravSizing.n);
-              if(!rp||rp.over||rp.surcharged){vx=NaN;col4="超载";}
+              if(!rp||rp.over||rp.surcharged){vx=NaN;col4="Quá tải";}
               else{vx=rp.vAct;
                 const dnE=isPlastic(mat)?(DE_TO_DN[x]||nearestDN(idx)):x;
                 const mfx=maxFill(dnE);
@@ -1356,9 +1356,9 @@ function renderResult(ok,Q,v,D,S){
             /* 2：低于 floorSz 的档位已被最小管径排除，必须标注——否则用户会照着表里"看着合格"的上一档选 */
             const belowFloor = x<floorSz;
             const floorSrc = (gbFloor&&floorSz===gbFloor)?"GB50014 DN200":(rec2&&rec2.minDN?"最小 DN"+rec2.minDN:"最小管径");
-            const remark = x===sz?"← 推荐"
+            const remark = x===sz?"← Khuyến nghị"
               : belowFloor?`<span style="color:var(--bad)">低于${floorSrc}</span>`
-              : (x<sz?(jj===2?"严重超速":jj>0?"流速偏高":""):(jj<0?"流速偏低":""));
+              : (x<sz?(jj===2?"严重超速":jj>0?"Vận tốc cao":""):(jj<0?"Vận tốc thấp":""));
             return `<tr${x===sz?' class="rec"':''}><td>${sizeLabel(mat,x)}</td><td>${fmt(idx,1)}</td><td>${isFinite(vx)?fmt(vx,2):"—"}</td><td>${col4}</td><td style="font-family:var(--sans);font-size:11px">${remark}</td></tr>`;
           }).join("")+`</table>`;
       }
@@ -1422,7 +1422,7 @@ function renderVerdict(ok,Q,v,D){
   const gravStr=rec.grav?("<br><span style='font-size:11px'>※ "+(gravMann
     ?"重力流推荐值针对非满管自流工况，本栏已按 Manning 非满管实际流速判定"
     :"重力流推荐值针对非满管自流工况，本栏按满管断面近似判定，实际判据见下方 Manning 校核栏")+"</span>"):"";
-  chip.innerHTML=`推荐范围：<b>${er.min===null?"—":er.min}</b> ~ <b>${er.max}</b> m/s（正常值 <b>${er.norm}</b> m/s）${singleStr}${noteStr}${gravStr}`;
+  chip.innerHTML=`Phạm vi khuyến nghị: <b>${er.min===null?"—":er.min}</b> ~ <b>${er.max}</b> m/s（giá trị thông thường <b>${er.norm}</b> m/s）${singleStr}${noteStr}${gravStr}`;
 
   const hardMax=er.hard;                         /* E：硬上限，超过判 FAIL */
   const top=hardMax*1.15;
@@ -1450,26 +1450,26 @@ function renderVerdict(ok,Q,v,D){
   const j=judge(v,rec);
   const sludgy=/污|砂/.test(selM.value); /* 含固介质才强调沉积风险（P2-4） */
   if(j<0){
-    cls=lowCls(rec);t=`流速偏低（${fmt(v,2)} m/s < 最小 ${er.min} m/s）`;
+    cls=lowCls(rec);t=`Vận tốc thấp（${fmt(v,2)} m/s < 最小 ${er.min} m/s）`;
     d=sludgy?"低于表中最小流速，含固介质长期低速运行存在沉积、淤堵风险；建议缩小管径、提高流量或设置冲洗措施。"
             :"低于推荐最小流速，偏离经济流速区间；清水介质沉积风险较小，但请复核停留时间、排气等工艺影响，必要时缩小管径。";
   }else if(j===2){
     cls="bad";t=`流速严重超限（${fmt(v,2)} m/s > 硬上限 ${fmt(er.hard,2)} m/s）`;
     d="远超推荐上限，冲刷磨蚀、水锤压力与噪音风险随 v² 急剧上升，塑料管与含砂介质尤其危险。必须放大管径。";
   }else if(j>0){
-    cls="warn";t=`流速偏高（${fmt(v,2)} m/s > 最大 ${er.max} m/s）`;
+    cls="warn";t=`Vận tốc cao（${fmt(v,2)} m/s > 最大 ${er.max} m/s）`;
     d="沿程阻力按 v² 增长，噪音、磨损与水锤风险上升。建议放大管径。";
   }else{
     cls="ok";
     const dev=Math.abs(v-er.norm)/er.norm;
     t=`合格（${fmt(v,2)} m/s 在 ${er.min===null?"—":er.min}~${er.max} m/s 范围内）`;
-    d=dev<=0.25?`接近正常值 ${er.norm} m/s，经济流速区间，选型合理。`
-               :`在允许范围内，但偏离正常值 ${er.norm} m/s 较多，如条件允许可向正常值靠拢。`;
+    d=dev<=0.25?`接近giá trị thông thường ${er.norm} m/s，经济流速区间，选型合理。`
+               :`在允许范围内，但偏离giá trị thông thường ${er.norm} m/s 较多，如条件允许可向giá trị thông thường靠拢。`;
   }
   if(er.single) d+=` <b>注意</b>：原表该工况为<b>单点推荐值 ${rec.norm} m/s</b>（非区间），本工具按 ±10% 展开为 ${er.min}~${er.max} m/s 供判定，严格设计应以 ${rec.norm} m/s 为目标。`;
   /* P2-1：重力流时压力流判定降为参考，Manning 为主判据 */
   if(rec.grav){
-    t=(gravMann?"非满管（Manning）：":"满管参考：")+t;
+    t=(gravMann?"Không đầy ống (Manning): ":"Tham khảo đầy ống: ")+t;
     d+=" <b>重力管以下方 Manning 校核为主要设计判据。</b>";
   }
   /* mode=D：对圆整到标准规格后的实际流速做二次判定 */
@@ -1502,11 +1502,11 @@ function renderVerdict(ok,Q,v,D){
 function renderDNTable(){
   const mat=curMat(), grades=Object.keys(MATS[mat].grades), gAct=curGrade();
   const pl=isPlastic(mat);
-  const odName= mat==="gbw"?"外径 mm<br>(GB/T 3091)": mat==="enm"?"外径 mm<br>(EN 10255)": mat==="di"?"外径 mm<br>(ISO 2531)": mat==="sp"?"外径 mm<br>(国标焊管系列)": pl?"外径 de mm": mat==="nominal"?"钢管外径 mm<br>（参考）":"外径 mm<br>(B36.10)";
+  const odName= mat==="gbw"?"Đường kính ngoài mm<br>(GB/T 3091)": mat==="enm"?"Đường kính ngoài mm<br>(EN 10255)": mat==="di"?"Đường kính ngoài mm<br>(ISO 2531)": mat==="sp"?"Đường kính ngoài mm<br>(国标焊管系列)": pl?"外径 de mm": mat==="nominal"?"钢管Đường kính ngoài mm<br>（参考）":"Đường kính ngoài mm<br>(B36.10)";
   document.querySelector("#dnTable thead tr").innerHTML=
-    (pl?`<th>规格 de</th><th>≈DN</th><th>NPS</th>`:`<th>DN</th><th>NPS</th><th>口语叫法</th>`)
+    (pl?`<th>Kích cỡ de</th><th>≈DN</th><th>NPS</th>`:`<th>DN</th><th>NPS</th><th>Tên gọi thông dụng</th>`)
     +`<th>${odName}</th>`
-    +grades.map(g=>`<th class="${g===gAct?"gcol":""}">内径 mm<br>${GRADE_SHORT[g]}</th>`).join("");
+    +grades.map(g=>`<th class="${g===gAct?"gcol":""}">Đường kính trong mm<br>${GRADE_SHORT[g]}</th>`).join("");
   document.querySelector("#dnTable tbody").innerHTML=sizeList(mat).map(sz=>{
     const od=odOf(mat,sz);
     const dnEq=pl?DE_TO_DN[sz]:null;
@@ -1524,7 +1524,7 @@ function renderDNTable(){
     b36:"无缝钢管按 ASME B36.10 壁厚（国标无缝管 GB/T 17395 同外径系列），Sch10/40/80/160 均取自 B36.10 原表（B36.19 不锈钢 10S 在这些口径的壁厚与 Sch10 数值相同，可通用）。Sch40/80/160 定义至 DN600，更大口径请选 STD/XS 恒定壁厚档（覆盖至 DN1200）。注意 DN65 美标外径 73.0，与国标焊管 76.1 并存。",
     gbw:"国标低压流体焊管/镀锌管（GB/T 3091）。此标准仅对螺纹连接小口径系列定义了固定的普通/加厚壁厚：外径与壁厚按 2008 版螺纹/沟槽连接钢管表（DN15–DN150，与 2001 版相同），DN200 为常用参考值（219.1×6.0）；更大口径焊管壁厚由订货方按设计指定，请改选「螺旋/直缝焊管」材质。2025 版（2025-10-01 实施）修改了最小公称壁厚，具体项目请以现行标准和供货合同为准；DN150 外径另有 165.1 系列。",
     enm:"欧标螺纹焊管 EN 10255（前身 DIN 2440「水煤气管」/英标 BS 1387），覆盖 DN15–DN150。Medium（中系列/红标）对应国标普通壁厚、Heavy（重系列/蓝标）对应加厚。注意欧标外径 DN125=139.7、DN150=165.1，与美标 141.3/168.3 不同；DN65=76.1 与国标焊管一致。另有 Light 轻系列（薄壁）未列。",
-    di:"球墨铸铁管 ISO 2531 / EN 545（欧洲输水主力管材）/ GB/T 13295（国标同源）。K9 级壁厚 e=K(0.5+0.001DN)、最小 6.0mm；「含水泥内衬」档按 EN 545 表 10 公称内衬厚度（DN≤300 为 3.5、DN350-600 为 5、DN700+ 为 6mm）扣除，得到实际过流内径——数值恰好非常接近 DN 公称值，这正是球墨管的设计意图。承压等级新标准（EN 545:2010+）改用 C 级（C40/C30/C25），K9 大致相当于 C40（小口径）~C30；承压校核按 EN 545 的 PFA 公式随口径计算（K9：DN≤300 约 4.8–6.4 MPa，DN600 约 3.5 MPa，DN1200 约 2.8 MPa）。",
+    di:"球墨铸铁管 ISO 2531 / EN 545（欧洲输水主力管材）/ GB/T 13295（国标同源）。K9 级壁厚 e=K(0.5+0.001DN)、最小 6.0mm；「含水泥内衬」档按 EN 545 表 10 公称内衬厚度（DN≤300 为 3.5、DN350-600 为 5、DN700+ 为 6mm）扣除，得到实际过流内径——数值恰好非常接近 DN 公称值，这正是球墨管的设计意图。承压等级新标准（EN 545:2010+）改用 C 级（C40/C30/C25），K9 大致相当于 C40（小口径）~C30；Kiểm tra khả năng chịu áp按 EN 545 的 PFA 公式随口径计算（K9：DN≤300 约 4.8–6.4 MPa，DN600 约 3.5 MPa，DN1200 约 2.8 MPa）。",
     sp:"螺旋缝/直缝埋弧焊管（SY/T 5037、GB/T 9711，外径为 GB/T 28708 系列2 国内常用值），DN200–DN1200。大口径焊管壁厚无固定标准值，由承压/刚度设计选定：「给水常用壁厚」档为设计手册典型选配（DN200-400→δ6、DN450-600→δ8、DN700-1000→δ10、DN1200→δ12），也可直接选固定 δ 档。欧标大口径输水钢管（EN 10224）外径与美标 B36.10 同系列，可直接用「无缝/ASME」材质的 STD/XS 档近似。部分地区外径习惯用 478/530 替代 480/529。",
     pe:"PE100 给水管：GB/T 13663 与欧标 EN 12201 同体系（均源自 ISO 4427），de 外径、SDR 与 PN 完全一致（设计应力 8MPa），中欧规格可互认。已列全 de 系列（含 de125/180/200/250/355 等中间规格）。壁厚优先取 GB/T 10002.1 / ISO 4422 标准表列举值（de63–de630 的 SDR11/13.6/17/21/26 已录入）；表外规格按 e=de/SDR 向上取整至 0.1mm 兜底，最小 2.0mm。标准另有 SDR9/PN2.0 等更高等级，未列出。",
     pvc:"PVC-U 给水管（GB/T 10002.1，国标），按外径 de 标称。PN 按口径分档换算（PN = σ/S）：de≤90 取总体使用系数 C=2.5、设计应力 σ=10 MPa；de≥110 取 C=2.0、σ=12.5 MPa（MRS25）。例：SDR21 在 de90 为 PN1.0、在 de110 为 PN1.25。壁厚取值规则同 PE（标准表优先、公式兜底）；小口径低压力等级受最小壁厚 2.0mm 限制，市面上通常不生产。标准另有 S4/PN2.5 等级，未列出。",
@@ -1615,7 +1615,7 @@ function fT(D){
    「运行管典型值」档为结垢/老化后的取值（基础版旧钢管 0.5–1.0 范围内取 0.5），球墨/塑料运行管为参考值 */
 const EPS={nominal:0.10,b36:0.05,gbw:0.15,enm:0.15,sp:0.15,di:0.1,pe:0.0015,pvc:0.0015,pvce:0.0015};
 const EPS_OLD={nominal:0.5,b36:0.5,gbw:0.5,enm:0.5,sp:0.5,di:0.3,pe:0.03,pvc:0.03,pvce:0.03};
-/* Manning 粗糙系数 n（重力流校核用）。与基础版统一：新钢管 0.011、球墨铸铁（衬里）0.011、塑料 0.009；
+/* Manning 粗糙系数 n（Kiểm tra dòng tự chảy用）。与基础版统一：新钢管 0.011、球墨铸铁（衬里）0.011、塑料 0.009；
    保留差异：镀锌/螺纹焊管 0.013、螺旋焊管 0.012（焊缝凸起），公称近似档 0.013 */
 const MAT_N={nominal:0.013,b36:0.011,gbw:0.013,enm:0.013,sp:0.012,di:0.011,pe:0.009,pvc:0.009,pvce:0.009};
 /* 水的运动黏度（×10⁻⁶ m²/s）与密度 kg/m³：手册「水的物性表」表值，0–100 ℃ 线性插值（黏度表与基础版相同），超出钳位 */
@@ -1701,7 +1701,7 @@ function frictionFactor(Re,relRough){
   return lam;
 }
 
-/* 第15条：设计结果汇总（独立函数）。P1-1：重力流以 Manning 为主判据。
+/* 第15条：Tổng hợp kết quả thiết kế（独立函数）。P1-1：重力流以 Manning 为主判据。
    2：Darcy 被拦截（非牛顿介质/无有效规格）时仍渲染不含压降行的版本——
    重力管判据（充满度、自清流速）与 Darcy 无关，不应被其拦截牵连 */
 function renderSummary(ctx){
@@ -1719,9 +1719,9 @@ function renderSummary(ctx){
     const j2=rec?judge(pickInfo.vAct,rec):0;
     const isGrav=rec&&rec.grav;
     const g=isGrav?computeGravity():null;
-    let cls="ok",txt="PASS 通过";
+    let cls="ok",txt="PASS Đạt";
     if(isGrav){
-      if(!g){cls="warn";txt="CHECK 核查（Manning 校核参数未填全）";}
+      if(!g){cls="warn";txt="CHECK 核查（Manning 校核Chưa nhập đủ thông số）";}
       else if(g.over){cls="bad";txt="FAIL 不通过（重力流：该坡度下输水能力不足）";}
       else if(g.surcharged){cls="bad";txt="FAIL 不通过（重力流：h/D≈"+fmt(g.hD,2)+" 水面接近管顶，将满流承压）";}
       else if(g.fillBad){cls="bad";txt="FAIL 不通过（充满度 "+fmt(g.hD,2)+" 超 GB50014 限值 "+g.mf+"）";}
@@ -1734,9 +1734,9 @@ function renderSummary(ctx){
       if(med.includes("<4")){cls="warn";txt="CHECK 核查（介质接近非牛顿边界）";}
       if(trans){cls="warn";txt="CHECK 核查（过渡区流态）";}
       if(j2===2){cls="bad";txt="FAIL 不通过（圆整后流速严重超限，>硬上限 "+effRange(rec).hard+" m/s）";}
-      else if(j2!==0){cls=j2>0?"warn":lowCls(rec);txt=j2>0?"CHECK 核查（圆整后流速偏高）":(cls==="bad"?"FAIL 不通过（圆整后流速低于推荐下限）":"CHECK 核查（圆整后流速低于推荐下限）");}
+      else if(j2!==0){cls=j2>0?"warn":lowCls(rec);txt=j2>0?"CHECK 核查（圆整后Vận tốc cao）":(cls==="bad"?"FAIL 不通过（圆整后流速低于推荐下限）":"CHECK 核查（圆整后流速低于推荐下限）");}
     }
-    if(pnPass===false){cls="bad";txt="FAIL 不通过（设计工作压力超出所选管道承压等级）";}
+    if(pnPass===false){cls="bad";txt="FAIL 不通过（áp suất làm việc thiết kế超出所选管道承压等级）";}
     /* P2-4：压降判定参与总评定；但重力管的 hf 按满管压力流算、界面已声明仅参考，
        不应对重力流一票否决（P0-2）——重力管的约束是 i×L 与充满度，由 Manning 分支处理 */
     if(!HY&&!isGrav){cls="warn";txt="CHECK 核查（"+blockReason+"，压力流无法完成水力评定）";}
@@ -1745,33 +1745,33 @@ function renderSummary(ctx){
       else if(dpPass===true&&cls==="ok")txt="PASS 通过（流速与压降均满足）";
     }
     const src=DATA_SRC[curMat()];
-    const gravRow=isGrav?`<tr><td class="sk">重力流校核 <small>Manning（i=${g?g.i:"—"}‰）</small></td><td class="sv">${
-      !g?"参数未填全":g.over?`Q/Q满=${fmt(g.ratio,2)} — <span class="passtag bad">FAIL</span>`
+    const gravRow=isGrav?`<tr><td class="sk">Kiểm tra dòng tự chảy <small>Manning（i=${g?g.i:"—"}‰）</small></td><td class="sv">${
+      !g?"Chưa nhập đủ thông số":g.over?`Q/Q满=${fmt(g.ratio,2)} — <span class="passtag bad">FAIL</span>`
       :g.surcharged?`h/D≈${fmt(g.hD,2)} 水面接近管顶，将转入满流承压 — <span class="passtag bad">FAIL</span>`
       :`h/D=${fmt(g.hD,2)}（限值${g.mf}）· v=${fmt(g.va,2)} m/s — <span class="passtag ${g.fillBad||g.jv!==0?(g.fillBad?"bad":"warn"):"ok"}">${g.fillBad?"FAIL":g.jv!==0?"CHECK":"PASS"}</span>`}</td></tr>`:"";
     sumBox.innerHTML=`<div class="sum-card">
-      <div class="sh"><span>HYDRAULIC DESIGN RESULT · 设计结果汇总</span><span class="passtag ${cls}">${txt.split(" ")[0]}</span></div>
+      <div class="sh"><span>HYDRAULIC DESIGN RESULT · Tổng hợp kết quả thiết kế</span><span class="passtag ${cls}">${txt.split(" ")[0]}</span></div>
       <table>
-        <tr><td class="sk">设计流量 <small>Design flow</small></td><td class="sv">${fmt(lastCalc.Q,2)} m³/h（${fmt(lastCalc.Q/3.6,1)} L/s）</td></tr>
-        <tr><td class="sk">选定管道 <small>Selected pipe</small></td><td class="sv">${MATS[curMat()].name.split("·")[0].trim()} · ${GRADE_SHORT[curGrade()]} · ${pickInfo.label} <span class="tag">${src.t}</span></td></tr>
-        <tr><td class="sk">水力内径 <small>Hydraulic ID</small></td><td class="sv">${fmt(pickInfo.idAct,1)} mm</td></tr>
+        <tr><td class="sk">Lưu lượng thiết kế <small>Design flow</small></td><td class="sv">${fmt(lastCalc.Q,2)} m³/h（${fmt(lastCalc.Q/3.6,1)} L/s）</td></tr>
+        <tr><td class="sk">Ống đã chọn <small>Selected pipe</small></td><td class="sv">${MATS[curMat()].name.split("·")[0].trim()} · ${GRADE_SHORT[curGrade()]} · ${pickInfo.label} <span class="tag">${src.t}</span></td></tr>
+        <tr><td class="sk">Đường kính trong thủy lực <small>Hydraulic ID</small></td><td class="sv">${fmt(pickInfo.idAct,1)} mm</td></tr>
         <tr><td class="sk">实际流速 <small>Actual velocity${isGrav?(gravSizing&&gravSizing.vReal>0?"（非满管，Manning）":" (đầy ống)"):""}</small></td><td class="sv">${fmt((isGrav&&gravSizing&&gravSizing.vReal>0)?gravSizing.vReal:pickInfo.vAct,2)} m/s${(isGrav&&gravSizing&&gravSizing.vReal>0)?`<span style="color:#9dbecb;font-size:11px"> · 满管 ${fmt(pickInfo.vAct,2)}</span>`:""}</td></tr>
-        <tr><td class="sk">流速判据 <small>Velocity criterion${isGrav?" — 非满管（Manning），与校核栏同一阈值":""}</small></td><td class="sv">${rec?velCritText(rec,isGrav,g,j2):"—"}</td></tr>
+        <tr><td class="sk">Tiêu chí vận tốc <small>Velocity criterion${isGrav?" — 非满管（Manning），与校核栏同一阈值":""}</small></td><td class="sv">${rec?velCritText(rec,isGrav,g,j2):"—"}</td></tr>
         ${gravRow}
-        ${HY?`<tr><td class="sk">雷诺数 / 摩阻系数 <small>Re / λ</small></td><td class="sv">${Re>=1e5?Re.toExponential(2):fmt(Re,0)}（${regime}） / ${fmt(lam,4)}</td></tr>`:`<tr><td class="sk">水力损失计算 <small>Head loss</small></td><td class="sv" style="color:var(--bad)">未计算 — ${blockReason}</td></tr>`}
-        ${HY?`<tr><td class="sk">沿程损失 <small>Major loss（L=${fmt(L,0)}m，ε=${fmt(eps*1000,3)}mm）${isGrav?" — 满管压力流口径，重力管仅参考":""}</small></td><td class="sv">${fmt(hf,2)} m</td></tr>`:""}
-        ${HY?`<tr><td class="sk">局部损失 <small>Minor loss（Σζ=${fmt(sz,2)}）</small></td><td class="sv">${fmt(hj,2)} m</td></tr>`:""}
-        ${HY?`<tr><td class="sk">总损失 / 折合压力 <small>Total / ΔP</small></td><td class="sv">${fmt(h,2)} m · ${fmt(kPa,1)} kPa · ${fmt(kPa/100,3)} bar</td></tr>`:""}
-        ${pnPass!==null?`<tr><td class="sk">承压校核 <small>Pressure rating</small></td><td class="sv">P=${fmt(pWork,3)} / 许用 ${fmt(pnAllow,3)} MPa — <span class="passtag ${pnPass?"ok":"bad"}">${pnPass?"PASS":"FAIL"}</span></td></tr>`
-          :pnHint?`<tr><td class="sk">承压校核 <small>Pressure rating</small></td><td class="sv" style="font-weight:400;font-family:var(--sans)">仅提示：${pnHint}</td></tr>`:""}
-        ${HY&&allowH!==null?`<tr><td class="sk">压降判据 <small>Head loss criterion${isGrav?" — 满管压力流口径，不参与重力流评定":""}</small></td><td class="sv">允许 ${fmt(allowH,2)} m — <span class="passtag ${isGrav?"warn":(dpPass?"ok":"bad")}">${isGrav?"参考":(dpPass?"PASS":"FAIL")}</span>（余量 ${fmt(allowH-h,2)} m）</td></tr>`:""}
-        <tr><td class="sk">工程评定 <small>Engineering assessment</small></td><td class="sv"><span class="passtag ${cls}">${txt}</span></td></tr>
+        ${HY?`<tr><td class="sk">Số Reynolds / hệ số ma sát <small>Re / λ</small></td><td class="sv">${Re>=1e5?Re.toExponential(2):fmt(Re,0)}（${regime}） / ${fmt(lam,4)}</td></tr>`:`<tr><td class="sk">Tính tổn thất thủy lực <small>Head loss</small></td><td class="sv" style="color:var(--bad)">Chưa tính — ${blockReason}</td></tr>`}
+        ${HY?`<tr><td class="sk">Tổn thất dọc đường <small>Major loss（L=${fmt(L,0)}m，ε=${fmt(eps*1000,3)}mm）${isGrav?" — 满管压力流口径，重力管仅参考":""}</small></td><td class="sv">${fmt(hf,2)} m</td></tr>`:""}
+        ${HY?`<tr><td class="sk">Tổn thất cục bộ <small>Minor loss（Σζ=${fmt(sz,2)}）</small></td><td class="sv">${fmt(hj,2)} m</td></tr>`:""}
+        ${HY?`<tr><td class="sk">总损失 / Áp suất tương đương <small>Total / ΔP</small></td><td class="sv">${fmt(h,2)} m · ${fmt(kPa,1)} kPa · ${fmt(kPa/100,3)} bar</td></tr>`:""}
+        ${pnPass!==null?`<tr><td class="sk">Kiểm tra khả năng chịu áp <small>Pressure rating</small></td><td class="sv">P=${fmt(pWork,3)} / 许用 ${fmt(pnAllow,3)} MPa — <span class="passtag ${pnPass?"ok":"bad"}">${pnPass?"PASS":"FAIL"}</span></td></tr>`
+          :pnHint?`<tr><td class="sk">Kiểm tra khả năng chịu áp <small>Pressure rating</small></td><td class="sv" style="font-weight:400;font-family:var(--sans)">仅提示：${pnHint}</td></tr>`:""}
+        ${HY&&allowH!==null?`<tr><td class="sk">Tiêu chí giảm áp <small>Head loss criterion${isGrav?" — 满管压力流口径，不参与重力流评定":""}</small></td><td class="sv">允许 ${fmt(allowH,2)} m — <span class="passtag ${isGrav?"warn":(dpPass?"ok":"bad")}">${isGrav?"参考":(dpPass?"PASS":"FAIL")}</span>（余量 ${fmt(allowH-h,2)} m）</td></tr>`:""}
+        <tr><td class="sk">Đánh giá kỹ thuật <small>Engineering assessment</small></td><td class="sv"><span class="passtag ${cls}">${txt}</span></td></tr>
       </table></div>`;
     if(!usePick&&pickInfo)lastPick=lastPickBak;
   }
 }
 
-/* 汇总「流速判据」：显示实际参与校核的阈值（重力流污水含 GB50014 0.6 m/s 下限），与判定结果同源 */
+/* 汇总「Tiêu chí vận tốc」：显示实际参与校核的阈值（重力流污水含 GB50014 0.6 m/s 下限），与判定结果同源 */
 function velCritText(rec,isGrav,g,j2){
   const er=effRange(rec);
   let lo=er.min;
@@ -1803,7 +1803,7 @@ function syncHeadlossUI(Dmm){
   const rdType=$("rdType").value;
   let rdZ=0, rdNote="";
   if(rdc>0&&!(d1>0&&d2>0)){
-    rdNote='<span style="color:var(--warn)">⚠ 请输入两侧管径，否则无法确定 ζ 的参考侧</span>';
+    rdNote='<span style="color:var(--warn)">⚠ Hãy nhập đường kính ống ở hai phía để xác định phía tham chiếu của ζ</span>';
   }else if(rdc>0){
     const Dbig=Math.max(d1,d2), Dsml=Math.min(d1,d2);
     const beta=Dsml/Dbig, b2=1-beta*beta;
@@ -1877,16 +1877,16 @@ function renderHeadloss(){
     return;
   }
   if(!lastCalc.ok||!(lastCalc.v>0)||!(lastCalc.D>0)){
-    box.innerHTML=`<div class="sub">等待上方计算模块给出有效的流速与内径。</div>`;
+    box.innerHTML=`<div class="sub">Đang chờ mô-đun tính toán phía trên cung cấp vận tốc và đường kính trong hợp lệ.</div>`;
     return;
   }
   if(badL||badE){
-    box.innerHTML=`<div class="sub" style="color:var(--bad)">请输入有效的${[badL?"管长 L（≥0）":"",badE?"粗糙度 ε（≥0）":""].filter(Boolean).join("、")}，水头损失结果暂显示为「—」。</div>`;
+    box.innerHTML=`<div class="sub" style="color:var(--bad)">请输入有效的${[badL?"chiều dài ống L (≥0)":"",badE?"độ nhám ε (≥0)":""].filter(Boolean).join("、")}，水头损失结果暂显示为「—」。</div>`;
     return;
   }
   /* 求管径模式下若未得出有效规格（超出该等级数据范围），不按需求内径臆算水损 */
   if(mode==="D"&&!lastPick){
-    box.innerHTML=`<div class="sub">上方未得出可用规格（所需内径超出当前管材/等级的数据范围），水损计算已暂停。请改选其它等级或管材体系后重试。</div>`;
+    box.innerHTML=`<div class="sub">Chưa xác định được kích cỡ phù hợp ở trên (đường kính trong yêu cầu vượt phạm vi dữ liệu của vật liệu/cấp hiện tại), nên đã tạm dừng tính tổn thất cột áp. Hãy chọn cấp hoặc hệ vật liệu ống khác rồi thử lại.</div>`;
     return;   /* 无有效规格时汇总本就无对象可报，保持不渲染 */
   }
   /* 求管径模式下按圆整后的实际规格计算——水损对管径呈5次方敏感 */
@@ -1903,7 +1903,7 @@ function renderHeadloss(){
   const nuEff=nu*mp.mu/mp.rho;        /* 运动粘度 ν=μ/ρ，动力粘度按倍数修正 */
   const Re=v*D/nuEff;
   const trans=Re>=2300&&Re<4000;
-  const regime=Re<2300?"层流":trans?"过渡区":"湍流";
+  const regime=Re<2300?"chảy tầng":trans?"vùng chuyển tiếp":"chảy rối";
   const lam=frictionFactor(Re,eps/D);
   const hf=lam*(L/D)*v*v/(2*G);
   /* P2-3：过渡区敏感性带（层流解 vs 湍流解） */
@@ -1915,7 +1915,7 @@ function renderHeadloss(){
     transNote=`<br><span style="color:var(--warn)">过渡区敏感性：h<sub>f</sub> 可能落在 <b>${fmt(Math.min(hfL,hfT),2)} ~ ${fmt(Math.max(hfL,hfT),2)} m</b>（层流解~湍流解），建议避开 Re 2300-4000 区间运行</span>`;
   }
 
-  /* —— 局部损失：清单（含 P1-1 口径修正）+ Tính chi tiết ống chuyển đường kính + 附加 —— */
+  /* —— Tổn thất cục bộ：清单（含 P1-1 口径修正）+ Tính chi tiết ống chuyển đường kính + 附加 —— */
   const autoOn=$("autoK").checked, fTv=fT(Dmm);
   let sz=Math.max(0,parseFloat($("hlZx").value)||0), fitCnt=0;   /* 拦负值 */
   FITS.forEach((f,i)=>{   /* 状态已由 syncHeadlossUI 处理，此处只累加 */
@@ -1946,7 +1946,7 @@ function renderHeadloss(){
   let pnNote="", pnPass=null, pnAllow=null, pWork=null, pnHint="";
   {
     const raw=parseFloat($("pnWork").value), pu=$("pnUnit").value;
-    $("pnU").textContent=pu==="m"?"m 水柱":pu;
+    $("pnU").textContent=pu==="m"?"m cột nước":pu;
     if(isFinite(raw)&&raw>0){
       pWork = pu==="MPa"?raw : pu==="bar"?raw/10 : raw*rho*G/1e6;
       const mat=curMat(), sizeNow=usePick?lastPick.sz:currentSize();
@@ -1966,15 +1966,15 @@ function renderHeadloss(){
       if(rt.pn!==null){
         pnAllow=rt.pn*tf;
         pnPass=pWork<=pnAllow;
-        pnNote=`<br>承压校核：设计工作压力 <b>${fmt(pWork,3)} MPa</b> vs ${isP?"管道 PN":mat==="di"?"允许工作压力 PFA":"Barlow 允许压力"} <b>${fmt(rt.pn,2)} MPa</b>`
+        pnNote=`<br>Kiểm tra khả năng chịu áp：áp suất làm việc thiết kế <b>${fmt(pWork,3)} MPa</b> vs ${isP?"管道 PN":mat==="di"?"áp suất làm việc cho phép PFA":"Barlow 允许压力"} <b>${fmt(rt.pn,2)} MPa</b>`
           +(tf<1?`${tNote} → 许用 <b>${fmt(pnAllow,3)} MPa</b>`:"")
           +` → <span class="passtag ${pnPass?"ok":"bad"}">${pnPass?"PASS":"FAIL"}</span>`
           +(pnPass?` 余量 ${fmt((pnAllow-pWork)/pnAllow*100,0)}%`
                  :` <b>超出 ${fmt((pWork/pnAllow-1)*100,0)}%，须选用更高压力等级/壁厚</b>`)
           +`<br><span style="font-size:11px;color:var(--ink-soft)">${rt.f}${isP?"":"。未计水锤；精算按 GB 50316 / GB/T 20801 或相应管道规范"}</span>`;
       }else{
-        pnHint=rt.hint||"无法确定承压等级";
-        pnNote=`<br><span style="color:var(--warn);font-size:12px">承压校核（仅提示，不判定）：${pnHint}</span>`;
+        pnHint=rt.hint||"Không xác định được cấp áp lực";
+        pnNote=`<br><span style="color:var(--warn);font-size:12px">Kiểm tra khả năng chịu áp（仅提示，不判定）：${pnHint}</span>`;
       }
     }
   }
@@ -1984,21 +1984,21 @@ function renderHeadloss(){
 
   box.innerHTML=`${nonNewtonBanner}
     <div class="hd">
-      <div class="item big"><span class="k">总水头损失 h</span><span class="v">${fmt(h,2)}<small>m</small></span></div>
-      <div class="item"><span class="k">折合压力</span><span class="v">${fmt(kPa,1)}<small>kPa · ${fmt(kPa/100,3)} bar</small></span></div>
-      <div class="item"><span class="k">沿程 h<sub>f</sub></span><span class="v">${fmt(hf,2)}<small>m</small></span></div>
-      <div class="item"><span class="k">局部 h<sub>j</sub></span><span class="v">${fmt(hj,2)}<small>m</small></span></div>
+      <div class="item big"><span class="k">Tổng tổn thất cột áp h</span><span class="v">${fmt(h,2)}<small>m</small></span></div>
+      <div class="item"><span class="k">Áp suất tương đương</span><span class="v">${fmt(kPa,1)}<small>kPa · ${fmt(kPa/100,3)} bar</small></span></div>
+      <div class="item"><span class="k">Dọc đường h<sub>f</sub></span><span class="v">${fmt(hf,2)}<small>m</small></span></div>
+      <div class="item"><span class="k">Cục bộ h<sub>j</sub></span><span class="v">${fmt(hj,2)}<small>m</small></span></div>
     </div>
     <div class="sub">
       <div class="hl-bar"><div class="f" style="width:${pctF}%"></div><div class="j" style="width:${100-pctF}%"></div></div>
       沿程占 ${fmt(pctF,0)}% · 局部占 ${fmt(100-pctF,0)}%（管件 ${fitCnt} 件，Σζ = <b>${fmt(sz,2)}</b>${autoOn?"，含口径修正 f<sub>T</sub>="+fmt(fTv,4)+"（ε=0.045 mm 清洁商用钢管）":""}）<br>
-      Re = <b>${Re>=1e5?Re.toExponential(2):fmt(Re,0)}</b>（${regime}） · λ = <b>${fmt(lam,4)}</b> · 单位沿程 <b>${L>0?fmt(hf/L*100,2):"—"} m/100m</b> ≈ ${L>0?fmt(rho*G*hf/L*0.01,3):"—"} bar/km · 流速取 ${fmt(v,2)} m/s，内径 ${fmt(Dmm,1)} mm${usePick?"（已按圆整规格 "+lastPick.label+" 取实际内径）":""}<br>
-      介质物性：ρ=${fmt(rho,1)} kg/m³（×${mp.rho}）· ν=${(nuEff*1e6).toFixed(3)}e-6 m²/s（粘度×${mp.mu}）${mp.note?" · "+mp.note:""}${mp.mu>1.2?`<br><span style="color:var(--warn)">※ 此修正<b>仅作用于牛顿粘性项</b>：湍流下 λ 约按 Re<sup>-0.2</sup> 变化，粘度×${mp.mu} 对沿程损失的实际影响仅 <b>10~20%</b>；非牛顿流体真正的 50~200% 偏差来自<b>屈服应力（宾汉项），本工具未建模</b>，两者不可互相替代。</span>`:""}${transNote}${dpNote}${pnNote}
+      Re = <b>${Re>=1e5?Re.toExponential(2):fmt(Re,0)}</b>（${regime}） · λ = <b>${fmt(lam,4)}</b> · 单位沿程 <b>${L>0?fmt(hf/L*100,2):"—"} m/100m</b> ≈ ${L>0?fmt(rho*G*hf/L*0.01,3):"—"} bar/km · 流速取 ${fmt(v,2)} m/s，内径 ${fmt(Dmm,1)} mm${usePick?"（已按圆整规格 "+lastPick.label+" 取Đường kính trong thực tế）":""}<br>
+      介质物性：ρ=${fmt(rho,1)} kg/m³（×${mp.rho}）· ν=${(nuEff*1e6).toFixed(3)}e-6 m²/s（粘度×${mp.mu}）${mp.note?" · "+mp.note:""}${mp.mu>1.2?`<br><span style="color:var(--warn)">※ 此修正<b>仅作用于牛顿粘性项</b>：湍流下 λ 约按 Re<sup>-0.2</sup> 变化，粘度×${mp.mu} 对Tổn thất dọc đường的实际影响仅 <b>10~20%</b>；非牛顿流体真正的 50~200% 偏差来自<b>屈服应力（宾汉项），本工具未建模</b>，两者不可互相替代。</span>`:""}${transNote}${dpNote}${pnNote}
     </div>`;
 
   renderSummary({hasHydraulic:true,usePick,v,Dmm,L,eps,Re,regime,lam,hf,hj,h,kPa,sz,trans,med,allowH,dpPass,pWork,pnAllow,pnPass,pnHint});
 }
-/* 供三档对比使用：给定内径与流速的单位沿程 m/100m（取当前 ε 与水温） */
+/* 供三档对比使用：给定内径与流速的单位Dọc đường m/100m（取当前 ε 与水温） */
 function hf100(Dmm,v){
   const T=Number($("hlT").value), eps=(parseFloat($("hlEps").value)||0)/1000;
   const mp=medProp();                                   /* D：与主卡片同步使用介质修正后的粘度 */
@@ -2026,7 +2026,7 @@ function manningPartial(Qm3h,Dmm,iPm,n){
 }
 /* F：把内径映射到公称 DN 档（用于反解阶段估算充满度限值）。
    7：反解阶段只是估算，最终限值在选型完成后按实际规格回填（见 calc 中 gravSizing.fill 回填） */
-function nearestDN(idMm){   /* 充满度取档：按实际内径向上归档（如 de355 内径 321 → DN350 档），GB50014 表按管径分段 */
+function nearestDN(idMm){   /* 充满度取档：按Đường kính trong thực tế向上归档（如 de355 内径 321 → DN350 档），GB50014 表按管径分段 */
   const up=DN_LIST.find(dn=>dn>=idMm-1e-9);
   return up!==undefined?up:DN_LIST[DN_LIST.length-1];
 }
@@ -2074,7 +2074,7 @@ function solveSlopeCoupled(Qm3h,n,vMin,vMax,minSz,mat,grade,iCur,minDNgb){
   let lo=0.1,hi=200;
   const rHi=evalAt(hi);
   if(!rHi)return null;
-  /* P0：极缓坡下所需内径可能超出该管材规格表上限，evalAt 返回 null。
+  /* P0：极缓坡下Đường kính trong cần thiết可能超出该管材规格表上限，evalAt 返回 null。
      这是"管径超表"而非"无解"——把下界推进到第一个可评估的坡度，而不是直接判定无解 */
   if(!evalAt(lo)){
     let a=lo,b=hi;
@@ -2130,7 +2130,7 @@ function manningSolveSlope(Qm3h,Dmm,n,vMin,vMax,fillMax){
   return {i:iMin,iMax,reason:"ok"};
 }
 const maxFill=dn=>dn<=300?0.55:dn<=450?0.65:dn<=900?0.70:0.75; /* GB50014 最大设计充满度 */
-/* P0-1：重力流按 Manning 反解所需内径——给定 Q、i、n 与目标充满度，二分求 D
+/* P0-1：重力流按 Manning 反解Đường kính trong cần thiết——给定 Q、i、n 与目标充满度，二分求 D
    Q(D) = (1/n)·A(D,h/D)·R^⅔·i^½ 对 D 单调递增，故可二分 */
 function manningSolveD(Qm3h,iPm,n,fill){
   const Q=Qm3h/3600,S=iPm/1000;
@@ -2147,7 +2147,7 @@ function manningSolveD(Qm3h,iPm,n,fill){
   /* 6：小流量下水力反解会给出无工程意义的微小管径，重力管此时由最小管径控制 */
   return {D:Dmm, tooSmall:gbAppliesMinV()&&Dmm<150};   /* E：最小管径条款仅对市政水/污水适用 */
 }
-/* 重力流校核计算（供渲染与工程评定共用，P1-1）；不适用/未填参数返回 null */
+/* Kiểm tra dòng tự chảy计算（供渲染与Đánh giá kỹ thuật共用，P1-1）；不适用/未填参数返回 null */
 function computeGravity(){
   const rec=currentRec();
   if(!(rec&&rec.grav&&lastCalc.ok))return null;
@@ -2179,13 +2179,13 @@ function renderGravity(){
   const g=computeGravity();
   if(!g){gb.innerHTML="Nhập độ dốc và giá trị n hợp lệ.";return;}
   if(g.over){gb.innerHTML=`坡度 ${g.i}‰ 下满管能力 Q<sub>满</sub>=<b>${fmt(g.Qf*3600,1)} m³/h</b>（满管流速 ${fmt(g.vF,2)} m/s），当前 Q 已<b style="color:var(--bad)">超过输水能力</b>（Q/Q<sub>满</sub>=${fmt(g.ratio,2)}）——需放大管径或加大坡度。`;return;}
-  if(g.surcharged){gb.innerHTML=`坡度 ${g.i}‰ 下满管能力 Q<sub>满</sub>=<b>${fmt(g.Qf*3600,1)} m³/h</b>，当前 Q/Q<sub>满</sub>=<b>${fmt(g.ratio,2)}</b> → 充满度 h/D ≈ <b>${fmt(g.hD,2)}</b>，水面已接近管顶。<br><b style="color:var(--bad)">不满足重力流设计：明渠流假定失效，管道将转入满流/承压状态</b>，此时非满管流速与自清判据均不适用，上游可能壅水。<b>需放大管径或加大坡度</b>。`;return;}
+  if(g.surcharged){gb.innerHTML=`坡度 ${g.i}‰ 下满管能力 Q<sub>满</sub>=<b>${fmt(g.Qf*3600,1)} m³/h</b>，当前 Q/Q<sub>满</sub>=<b>${fmt(g.ratio,2)}</b> → Độ đầy h/D ≈ <b>${fmt(g.hD,2)}</b>，水面已接近管顶。<br><b style="color:var(--bad)">不满足重力流设计：明渠流假定失效，管道将转入满流/承压状态</b>，此时非满管流速与自清判据均不适用，上游可能壅水。<b>需放大管径或加大坡度</b>。`;return;}
   const gbLine = g.gbMinV
     ? `<br>GB50014 配套校核：最小设计流速 0.6 m/s — ${g.selfClean?'<span style="color:var(--ok)">满足 ✓</span>':'<span style="color:var(--bad)">不满足（'+fmt(g.va,2)+' m/s，存在淤积风险）</span>'}`
       +` · 最小管径 DN200 — ${g.dnOK?'<span style="color:var(--ok)">满足 ✓</span>':'<span style="color:var(--warn)">不满足（污水管街坊内不宜小于 DN200、街道 DN300）</span>'}`
     : `<br><span style="color:var(--ink-soft)">GB50014 最小设计流速 0.6 m/s 及最小管径 DN200 系针对<b>市政污水/合流管道</b>（《室外排水设计标准》）。本介质（${selM.value}）${selM.value==="市政水"?"为<b>给水管道</b>，不属该标准管辖，无自清流速与最小管径要求":"为<b>厂内工艺管路</b>，不适用该条款"}；判定以上方公式书推荐值为准。</span>`;
   gb.innerHTML=`Manning：坡度 ${g.i}‰、n=${g.n} → 满管能力 Q<sub>满</sub>=<b>${fmt(g.Qf*3600,1)} m³/h</b>、满管流速 ${fmt(g.vF,2)} m/s<br>
-    当前流量下充满度 h/D ≈ <b>${fmt(g.hD,2)}</b>${g.fillBad?`<span style="color:var(--bad)">（超过 GB50014 最大设计充满度 ${g.mf}）</span>`:`（≤ 设计限值 ${g.mf} ✓）`} · 非满管实际流速 ≈ <b>${fmt(g.va,2)} m/s</b>${g.jv===0?"（在公式书推荐范围内 ✓）":`<span style="color:${g.jv===2?"var(--bad)":"var(--warn)"}">（${g.jv===2?"严重超出":"超出"}公式书推荐 ${effRange(rec).min??"—"}~${effRange(rec).max} m/s）</span>`}
+    当前流量下Độ đầy h/D ≈ <b>${fmt(g.hD,2)}</b>${g.fillBad?`<span style="color:var(--bad)">（超过 GB50014 最大设计充满度 ${g.mf}）</span>`:`（≤ 设计限值 ${g.mf} ✓）`} · 非满管实际流速 ≈ <b>${fmt(g.va,2)} m/s</b>${g.jv===0?"（在公式书推荐范围内 ✓）":`<span style="color:${g.jv===2?"var(--bad)":"var(--warn)"}">（${g.jv===2?"严重超出":"超出"}公式书推荐 ${effRange(rec).min??"—"}~${effRange(rec).max} m/s）</span>`}
     ${gbLine}
     ${(()=>{
       const er=effRange(rec);
@@ -2197,7 +2197,7 @@ function renderGravity(){
       const need=(g.gbMinV&&!g.selfClean)||g.fillBad||g.jv!==0;
       if(!need)return "";
       const Dnow=(mode==="D"&&lastPick&&lastPick.idAct>0)?lastPick.idAct:lastCalc.D;
-      const btnHtml=(i,label)=>`<button type="button" id="gvApply" data-i="${i}" style="margin-left:8px;padding:2px 10px;border:1px solid var(--water);background:#eaf5f8;color:var(--water-deep);border-radius:5px;cursor:pointer;font-size:11px;font-family:var(--mono)">${label||"采用"}</button>`;
+      const btnHtml=(i,label)=>`<button type="button" id="gvApply" data-i="${i}" style="margin-left:8px;padding:2px 10px;border:1px solid var(--water);background:#eaf5f8;color:var(--water-deep);border-radius:5px;cursor:pointer;font-size:11px;font-family:var(--mono)">${label||"Áp dụng"}</button>`;
       /* 2：求管径模式下管径随坡度变化，须联立求解；固定管径的解法只适用于求流速/求流量模式 */
       if(mode==="D"){
         const rec2=currentRec();
@@ -2205,7 +2205,7 @@ function renderGravity(){
         const cs=solveSlopeCoupled(lastCalc.Q,g.n,vMin??0,vMax,minSz,curMat(),curGrade(),g.i,g.gbMinV?200:0);
         if(cs&&cs.ok)
           return `<br><span style="color:var(--water-deep)">▶ <b>建议坡度 ${cs.i}‰</b>（当前 ${g.i}‰）：联立求解坡度与管径后，将选出 <b>${sizeLabel(curMat(),cs.sz)}</b>（内径 ${fmt(cs.D,1)} mm），流速 <b>${fmt(cs.v,2)} m/s</b>、充满度 ${fmt(cs.hD,2)}（限值 ${cs.mf}），同时满足流速与充满度要求。${btnHtml(cs.i)}</span>`;
-        return `<br><span style="color:var(--bad)">▶ 在本流量与管材序列下，<b>找不到同时满足流速 ${vMin!==null?fmt(vMin,2)+"~":"≤"}${vMax} m/s 与充满度 ≤限值的坡度</b>（已按坡度与管径联立搜索）。可考虑：放宽流速判据、改用其它管材序列（可选规格更密）、或分段设跌水井调整落差分配。</span>`;
+        return `<br><span style="color:var(--bad)">▶ 在本流量与管材序列下，<b>找不到同时满足流速 ${vMin!==null?fmt(vMin,2)+"~":"≤"}${vMax} m/s 与充满度 ≤限值的坡度</b>（已按坡度与管径联立搜索）。可考虑：放宽Tiêu chí vận tốc、改用其它管材序列（可选规格更密）、或分段设跌水井调整落差分配。</span>`;
       }
       const r=manningSolveSlope(lastCalc.Q,Dnow,g.n,vMin??0,vMax,g.mf);
       /* 2：重力流中流速由坡度决定、对管径几乎不敏感（Manning v=(1/n)R^⅔√S，
@@ -2216,11 +2216,11 @@ function renderGravity(){
       if(r.reason==="nolow")
         return `<br><span style="color:var(--bad)">▶ 按当前管径，任何坡度都无法同时满足${vMin!==null?"流速 ≥"+fmt(vMin,2)+" m/s 与":""}充满度 ≤${g.mf} — 管径偏大导致水深过浅，应<b>缩小管径</b>或分段设跌水井。</span>`;
       if(g.jv>0&&r.iMax!==null&&g.i>r.iMax)
-        return `<br><span style="color:var(--water-deep)">▶ 流速偏高，应<b>减小坡度至 ≤${r.iMax}‰</b>（当前 ${g.i}‰）。<b>注意：放大管径无效</b>——重力流流速由坡度决定，管径放大后水深随之降低、流速基本不变。若地形落差无法消化，应分段设跌水井。${btnHtml(r.iMax)}</span>`;
+        return `<br><span style="color:var(--water-deep)">▶ Vận tốc cao，应<b>减小坡度至 ≤${r.iMax}‰</b>（当前 ${g.i}‰）。<b>注意：放大管径无效</b>——重力流流速由坡度决定，管径放大后水深随之降低、流速基本不变。若地形落差无法消化，应分段设跌水井。${btnHtml(r.iMax)}</span>`;
       if(g.i>=r.i&&g.jv<=0&&!g.fillBad)return "";
       return `<br><span style="color:var(--water-deep)">▶ <b>建议坡度 ≥ ${r.i}‰</b>${r.iMax!==null?`（且 ≤${r.iMax}‰ 以免超速）`:""}，当前 ${g.i}‰：该坡度下可满足${vMin!==null?"流速 ≥"+fmt(vMin,2)+" m/s 与":""}充满度 ≤${g.mf}。${btnHtml(r.i)}</span>`;
     })()}
-    <br><span style="font-size:11px"><b>本栏为重力管主要设计判据</b>，结果直接进入下方工程评定；上方流速判定${(mode==="D"&&gravSizing&&gravSizing.vReal>0)?"已同步采用本栏的非满管流速":"为满管断面近似"}。</span>`;
+    <br><span style="font-size:11px"><b>本栏为重力管主要设计判据</b>，结果直接进入下方Đánh giá kỹ thuật；上方流速判定${(mode==="D"&&gravSizing&&gravSizing.vReal>0)?"已同步采用本栏的非满管流速":"为满管断面近似"}。</span>`;
   const ab=$("gvApply");
   if(ab)ab.addEventListener("click",()=>{$("gvI").value=ab.dataset.i;calc();});
 }
@@ -2231,8 +2231,8 @@ function copyResults(){
   const parts=[
     "Kết quả tính toán thủy lực đường ống (bản nâng cao)",
     "————————————————",
-    `管材：${selMat.options[selMat.selectedIndex].text} · ${selGrade.options[selGrade.selectedIndex]?selGrade.options[selGrade.selectedIndex].text:""}`,
-    `介质 / 工况：${selM.value} · ${selF.value}`,
+    `Vật liệu ống: ${selMat.options[selMat.selectedIndex].text} · ${selGrade.options[selGrade.selectedIndex]?selGrade.options[selGrade.selectedIndex].text:""}`,
+    `Môi chất / điều kiện làm việc: ${selM.value} · ${selF.value}`,
     "",
     txt($("resNums")),
     txt($("dnNote")),

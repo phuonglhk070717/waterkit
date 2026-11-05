@@ -1727,55 +1727,55 @@ body {
     <!-- 高级参数（折叠） -->
     <div class="advanced-toggle" id="stAdvToggle" onclick="toggleStAdv()">
       <span class="chev" id="stAdvChev">▸</span>
-      <span>高级参数（θHiệu chỉnh nhiệt độ / α·β曝气修正 / SOFK / 动力学 / 预缺氧格数 / 填料生物膜 / 搅拌功率）</span>
+      <span>Thông số nâng cao (hiệu chỉnh nhiệt độ θ / hiệu chỉnh sục khí α·β / SOFK / động học / số ngăn thiếu khí trước / màng sinh học trên giá thể / công suất khuấy)</span>
     </div>
     <div class="advanced-params" id="stAdvParams">
       <div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:8px;">
         <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🌡️ Hiệu chỉnh nhiệt độ</div>
         <div class="grid">
-          <div class="field"><label for="st_theta">θ_BOD (BOD 段温度系数)</label>
+          <div class="field"><label for="st_theta">θ_BOD (hệ số nhiệt độ của ngăn BOD)</label>
             <input type="number" id="st_theta" value="1.07" step="0.01" onchange="calcStages()">
             <div class="helper">r_BOD × θ^(min(T_min,20)−10)（θ_bod = 1.07）</div></div>
-          <div class="field"><label for="st_theta_N">θ_N (硝化温度系数)</label>
+          <div class="field"><label for="st_theta_N">θ_N (hệ số nhiệt độ nitrat hoá)</label>
             <input type="number" id="st_theta_N" value="1.09" step="0.01" onchange="calcStages()">
-            <div class="helper">r_nit × θ^(min(T_min,20)−10)（θ_nit = 1.09）；反硝化 θ_den = 1.07，Hiệu chỉnh nhiệt độ上限 20 ℃</div></div>
-          <div class="field"><label for="st_theta_o2">θ_O₂ (好氧速率温度系数)</label>
+            <div class="helper">r_nit × θ^(min(T_min,20)−10)（θ_nit = 1.09）；khử nitrat θ_den = 1.07, giới hạn nhiệt độ hiệu chỉnh 20 ℃</div></div>
+          <div class="field"><label for="st_theta_o2">θ_O₂ (hệ số nhiệt độ của tốc độ hiếu khí)</label>
             <input type="number" id="st_theta_o2" value="1.024" step="0.001" onchange="calcStages()">
-            <div class="helper">鼓风曝气传质 1.016-1.025，取 1.024</div></div>
+            <div class="helper">Truyền khối khi sục khí bằng máy thổi khí: 1.016-1.025, chọn 1.024</div></div>
         </div>
       </div>
       <div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:8px;">
-        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">💨 曝气修正系数 (SOR 计算)</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">💨 Hệ số hiệu chỉnh sục khí (tính SOR)</div>
         <div class="grid">
-          <div class="field"><label for="st_alpha">α（污水修正）</label>
+          <div class="field"><label for="st_alpha">α（hiệu chỉnh nước thải）</label>
             <input type="number" id="st_alpha" value="0.70" step="0.05" onchange="calcStages()">
             <div class="helper">Nước thải đô thị 0.65-0.75，Nước thải công nghiệp 0.4-0.6</div></div>
-          <div class="field"><label for="st_beta">β（水质修正）</label>
+          <div class="field"><label for="st_beta">β（hiệu chỉnh chất lượng nước）</label>
             <input type="number" id="st_beta" value="0.95" step="0.01" onchange="calcStages()">
-            <div class="helper">含盐量低时取 0.95-1.0（盐度对饱和溶解氧的影响由下方"盐度"单独修正，不在 β 中重复计）</div></div>
-          <div class="field"><label for="st_salinity">盐度 <span class="unit">‰</span></label>
+            <div class="helper">Khi hàm lượng muối thấp, chọn 0.95-1.0 (ảnh hưởng của độ mặn đến oxy hòa tan bão hòa được hiệu chỉnh riêng bằng thông số "độ mặn" bên dưới, không tính lặp trong β)</div></div>
+          <div class="field"><label for="st_salinity">Độ mặn <span class="unit">‰</span></label>
             <input type="number" id="st_salinity" value="0" step="1" onchange="calcStages()">
-            <div class="helper">饱和溶解氧按 Benson-Krause 盐度项修正（35‰ 约为淡水的 0.81 倍）；淡水取 0，海水约 35</div></div>
-          <div class="field"><label for="st_DO">DO 设计值 <span class="unit">mg/L</span></label>
+            <div class="helper">Oxy hòa tan bão hòa được hiệu chỉnh theo thành phần độ mặn của Benson-Krause (ở 35‰ bằng khoảng 0.81 lần nước ngọt); chọn 0 cho nước ngọt, khoảng 35 cho nước biển</div></div>
+          <div class="field"><label for="st_DO">DO thiết kế <span class="unit">mg/L</span></label>
             <input type="number" id="st_DO" value="4.0" step="0.5" onchange="calcStages()">
-            <div class="helper">好氧段 DO，默认 4；硝化速率按 min(DO, 5)/5 线性修正，设计 DO 上限 5</div></div>
+            <div class="helper">DO ngăn hiếu khí, mặc định 4; tốc độ nitrat hoá được hiệu chỉnh tuyến tính theo min(DO, 5)/5, giới hạn DO thiết kế là 5</div></div>
           <div class="field"><label for="st_SOFK">Tùy chỉnh SOFK <span class="unit">g O₂/Nm³·m</span></label>
-            <input type="number" id="st_SOFK" value="" step="0.25" placeholder="留空 = 按填料形状" onchange="calcStages()">
+            <input type="number" id="st_SOFK" value="" step="0.25" placeholder="Để trống = theo hình dạng giá thể" onchange="calcStages()">
             <div class="helper">留空：管状 8、片状 6.25（经验值，Tỷ lệ nạp giá thể 40-60%）。SOFK 为现场条件值，故供氧气量用实际需氧 AOR ÷ (SOFK × 淹没深度)，不经 α/SOR 换算；峰值工况请另行乘系数</div></div>
-          <div class="field"><label for="st_EE">曝气效率 EE <span class="unit">%</span></label>
+          <div class="field"><label for="st_EE">Hiệu suất sục khí EE <span class="unit">%</span></label>
             <input type="number" id="st_EE" value="13" step="1" readonly tabindex="-1" style="background:#f1f5f9;">
             <div class="helper">只读 = SOFK ÷ 297.4 g O₂/Nm³ × 淹没深度(H−0.2 m)，限 5-40%；仅用于 SOR 的 Csm 修正（SOR 照常显示，供氧气量按 AOR 计）</div></div>
-          <div class="field"><label for="st_airIntMin">搅拌气量强度 <span class="unit">Nm³/m²·h</span></label>
+          <div class="field"><label for="st_airIntMin">Cường độ cấp khí khuấy trộn <span class="unit">Nm³/m²·h</span></label>
             <input type="number" id="st_airIntMin" value="12.5" step="0.5" onchange="calcStages()">
-            <div class="helper">确保填料流化，默认 12.5（经验范围 10-15，视填料而定）；以填料厂家最小流化风量为准</div></div>
+            <div class="helper">Đảm bảo giá thể chuyển động, mặc định 12.5 (phạm vi kinh nghiệm 10-15, tùy giá thể); lấy lưu lượng khí tối thiểu để giá thể chuyển động theo nhà sản xuất</div></div>
         </div>
       </div>
       <div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:8px;">
-        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🧬 生物动力学参数</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🧬 Thông số động học sinh học</div>
         <div class="grid">
           <div class="field"><label for="st_Y">Y <span class="unit">g VSS/g BOD</span></label>
             <input type="number" id="st_Y" value="0.60" step="0.05" onchange="calcStages()">
-            <div class="helper">产率系数，好氧 0.5-0.7</div></div>
+            <div class="helper">Hệ số sinh trưởng, hiếu khí 0.5-0.7</div></div>
           <div class="field"><label for="st_Kd">Kd <span class="unit">d⁻¹</span></label>
             <input type="number" id="st_Kd" value="0.04" step="0.01" onchange="calcStages()">
             <div class="helper">内源衰减，20°C 典型 0.04-0.06；按 Kd_T = Kd₂₀·1.04^(T−20) Hiệu chỉnh nhiệt độ</div></div>
@@ -1785,68 +1785,68 @@ body {
           <div class="field"><label for="st_SDNR20">SDNR₂₀ <span class="unit">g N/g VSS·d</span></label>
             <input type="number" id="st_SDNR20" value="0.08" step="0.01" onchange="calcStages()">
             <div class="helper">生物膜反硝化速率（θ=1.08 修正，依据 GB 50014：Kde(T)=Kde(20)·1.08^(T−20)），用于缺氧段反硝化能力校核，常 0.06-0.10</div></div>
-          <div class="field"><label for="st_preDN_n">预缺氧串联格数 n</label>
+          <div class="field"><label for="st_preDN_n">Số ngăn thiếu khí trước mắc nối tiếp n</label>
             <input type="number" id="st_preDN_n" value="1" step="1" min="1" onchange="calcStages()">
-            <div class="helper">前置反硝化速率：第一格 0.5、其后各格 0.3 g NO₃-N/m²·d（10 ℃），多格取均值 (r₁+(n−1)r₂)/n</div></div>
-          <div class="field"><label for="st_rPNA">PN/A 面积负荷 <span class="unit">g N/m²·d（30 ℃）</span></label>
+            <div class="helper">Tốc độ khử nitrat trước: ngăn đầu 0.5, các ngăn sau 0.3 g NO₃-N/m²·d (10 ℃); với nhiều ngăn lấy giá trị trung bình (r₁+(n−1)r₂)/n</div></div>
+          <div class="field"><label for="st_rPNA">Tải trọng diện tích PN/A <span class="unit">g N/m²·d（30 ℃）</span></label>
             <input type="number" id="st_rPNA" value="1.2" step="0.1" onchange="calcStages()">
             <div class="helper">仅方案 ⑦：按进入 NH₄-N 负荷定一段式 PN/A 填料面积，默认 1.2（参考值，K5 类填料文献约 1.0-1.2，以厂家数据为准）；温度按 θ 1.09 以 30 ℃ 为基准修正至 T_min，不做 20 ℃ 封顶；不套用全程硝化速率式</div></div>
         </div>
       </div>
       <div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:14px;">
-        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🧱 填料生物膜参数</div>
+        <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">🧱 Thông số màng sinh học trên giá thể</div>
         <div class="grid">
-          <div class="field"><label for="st_biofilmX">生物膜量 X <span class="unit">g VSS/m²</span></label>
+          <div class="field"><label for="st_biofilmX">Lượng màng sinh học X <span class="unit">g VSS/m²</span></label>
             <input type="number" id="st_biofilmX" value="20" step="5" onchange="calcStages()">
-            <div class="helper">文献常用 10-30 g VSS/m²（Ødegaard 等）；用于生物膜量 X_bio、缺氧段反硝化能力校核，以及与泥龄输入的自洽校核（产泥按泥龄输入计算）</div></div>
+            <div class="helper">文献常用 10-30 g VSS/m²（Ødegaard 等）；用于Lượng màng sinh học X_bio、缺氧段反硝化能力校核，以及与泥龄输入的自洽校核（产泥按泥龄输入计算）</div></div>
           <div class="field"><label for="st_mixPower">Mật độ công suất khuấy ngăn thiếu khí <span class="unit">W/m³</span></label>
             <input type="number" id="st_mixPower" value="25" step="1" onchange="calcStages()">
-            <div class="helper">预缺氧/后缺氧/Anammox 段潜水搅拌器保持填料悬浮，默认 25 W/m³（文献值），计入电耗</div></div>
+            <div class="helper">Máy khuấy chìm tại ngăn thiếu khí trước/thiếu khí sau/Anammox giữ giá thể lơ lửng, mặc định 25 W/m³ (giá trị theo tài liệu), được tính vào điện năng tiêu thụ</div></div>
         </div>
       </div>
     </div>
 
     <!-- 容积分配(可手动微调) -->
-    <div class="section-title"><span class="num">5</span>容积分配比(%) <span class="sub">(手动调整，各段之和须 = 100)</span></div>
+    <div class="section-title"><span class="num">5</span>Tỷ lệ phân bổ thể tích (%) <span class="sub">(điều chỉnh thủ công, tổng các ngăn phải = 100)</span></div>
     <div class="grid" id="volRatioGrid">
-      <div class="field" data-stage="preAnox"><label for="st_r_preAnox">预缺氧 %</label>
+      <div class="field" data-stage="preAnox"><label for="st_r_preAnox">Thiếu khí trước %</label>
         <input type="number" id="st_r_preAnox" value="20" step="5" onchange="calcStages()"></div>
       <div class="field" data-stage="nitrif_hi"><label for="st_r_nitrif_hi">MBBR tải trọng cao %</label>
         <input type="number" id="st_r_nitrif_hi" value="0" step="5" onchange="calcStages()"></div>
-      <div class="field" data-stage="nitrif"><label for="st_r_nitrif">硝化 %</label>
+      <div class="field" data-stage="nitrif"><label for="st_r_nitrif">Nitrat hoá %</label>
         <input type="number" id="st_r_nitrif" value="50" step="5" onchange="calcStages()"></div>
       <div class="field" data-stage="nitrif_lo"><label for="st_r_nitrif_lo">MBBR tải trọng thấp %</label>
         <input type="number" id="st_r_nitrif_lo" value="0" step="5" onchange="calcStages()"></div>
-      <div class="field" data-stage="partNitrif"><label for="st_r_partNitrif">短程硝化 %</label>
+      <div class="field" data-stage="partNitrif"><label for="st_r_partNitrif">Nitrat hoá bán phần %</label>
         <input type="number" id="st_r_partNitrif" value="0" step="5" onchange="calcStages()"></div>
       <div class="field" data-stage="anammox"><label for="st_r_anammox">Anammox %</label>
         <input type="number" id="st_r_anammox" value="0" step="5" onchange="calcStages()"></div>
-      <div class="field" data-stage="postAnox"><label for="st_r_postAnox">后缺氧 %</label>
+      <div class="field" data-stage="postAnox"><label for="st_r_postAnox">Thiếu khí sau %</label>
         <input type="number" id="st_r_postAnox" value="25" step="5" onchange="calcStages()"></div>
-      <div class="field" data-stage="chemP"><label for="st_r_chemP">化除磷 %</label>
+      <div class="field" data-stage="chemP"><label for="st_r_chemP">Khử phospho bằng hoá chất %</label>
         <input type="number" id="st_r_chemP" value="5" step="5" onchange="calcStages()"></div>
     </div>
     <div id="volSumWarn"></div>
 
     <!-- 回流参数(A/O 及含预缺氧工艺) -->
     <div id="recircleSection">
-      <div class="section-title"><span class="num">6</span>Thông số tuần hoàn nội hỗn hợp (MLR) <span class="sub">硝化段末端→预缺氧段头部</span></div>
+      <div class="section-title"><span class="num">6</span>Thông số tuần hoàn nội hỗn hợp (MLR) <span class="sub">cuối ngăn nitrat hoá → đầu ngăn thiếu khí trước</span></div>
       <div class="auto-calc-notice" style="background:#eff6ff;border-left-color:#3b82f6;color:#1e3a8a;">
         <div class="notice-head"><span class="notice-ic">🔄</span>
-          <span><b>混合液内回流(MLR)作用</b>:将硝化段产生的 NO₃ 回流至预缺氧段,利用进水 BOD 做免费反硝化。
-          MLR 越大 TN 去除越高,理论极限 = MLR/(1+MLR)。</span>
+          <span><b>Vai trò của tuần hoàn nội hỗn hợp (MLR)</b>:Tuần hoàn NO₃ sinh ra ở ngăn nitrat hoá về ngăn thiếu khí trước, tận dụng BOD trong nước đầu vào để khử nitrat mà không cần bổ sung nguồn cacbon.
+          MLR càng lớn, hiệu suất loại bỏ TN càng cao; giới hạn lý thuyết = MLR/(1+MLR).</span>
         </div>
       </div>
       <div class="grid">
-        <div class="field"><label for="st_MLR">内回流比 MLR <span class="unit">%(相对进水 Q)</span></label>
+        <div class="field"><label for="st_MLR">Tỷ lệ tuần hoàn nội MLR <span class="unit">% (so với Q đầu vào)</span></label>
           <input type="number" id="st_MLR" value="200" step="25" min="0" max="500" onchange="calcStages()">
           <div class="helper">常 200-400%；按本页 TN 模型（前置去除 = 0.85·R/(1+R)），仅靠前置反硝化达 70% 脱氮需 MLR ≈ 470%，超出常用范围时应配后缺氧。预缺氧进入负荷 = 回流 NO₃-N + 回流 DO × 0.35</div></div>
         <div class="field"><label for="st_pumpEff">Hiệu suất máy bơm tuần hoàn <span class="unit">%</span></label>
           <input type="number" id="st_pumpEff" value="65" step="5" onchange="calcStages()">
-          <div class="helper">潜水泵 60-70</div></div>
+          <div class="helper">Máy bơm chìm 60-70</div></div>
         <div class="field"><label for="st_pumpH">Cột áp tuần hoàn <span class="unit">m</span></label>
           <input type="number" id="st_pumpH" value="2" step="0.5" onchange="calcStages()">
-          <div class="helper">常 1.5-3,仅克服管道阻力</div></div>
+          <div class="helper">Thường 1.5-3, chỉ để khắc phục trở lực đường ống</div></div>
       </div>
     </div>
 
@@ -1855,31 +1855,31 @@ body {
     <div class="grid">
       <div class="field"><label for="st_carbonSrc">Loại nguồn carbon cho ngăn thiếu khí sau</label>
         <select id="st_carbonSrc" onchange="calcStages()">
-          <option value="methanol">甲醇(COD=1.5 g/g · 最经济)</option>
-          <option value="acetate">乙酸钠(无水 COD=0.78 g/g × 有效含量 · 启动快)</option>
-          <option value="glucose">葡萄糖(COD=1.07 g/g)</option>
+          <option value="methanol">Methanol (COD=1.5 g/g · kinh tế nhất)</option>
+          <option value="acetate">Natri acetat (khan COD=0.78 g/g × hàm lượng hoạt chất · khởi động nhanh)</option>
+          <option value="glucose">Glucose (COD=1.07 g/g)</option>
         </select></div>
-      <div class="field"><label for="st_acetatePurity">乙酸钠有效含量 <span class="unit">%</span></label>
+      <div class="field"><label for="st_acetatePurity">Hàm lượng hoạt chất natri acetat <span class="unit">%</span></label>
         <input type="number" id="st_acetatePurity" value="58" step="1" onchange="calcStages()">
         <div class="helper">固体三水乙酸钠约 58%（折合 0.45 gCOD/g 商品）；液体按标称含量；仅选乙酸钠时生效</div></div>
-      <div class="field"><label for="st_TNmargin">TN 设计余量 <span class="unit">mg/L</span></label>
+      <div class="field"><label for="st_TNmargin">Dự phòng thiết kế TN <span class="unit">mg/L</span></label>
         <input type="number" id="st_TNmargin" value="1.0" step="0.5" onchange="calcStages()">
         <div class="helper">后缺氧按需投碳的控制值 = TN đầu ra 目标 − 余量（默认 1.0）；后缺氧进入 NO₃-N 与 TN 模型同口径，按 r_postDN 1.5 g/m²·d（10 ℃）定面积</div></div>
-      <div class="field"><label for="st_c_n_ratio">等效碳氮比 C/N <span class="unit">g COD/g NO₃-N</span></label>
+      <div class="field"><label for="st_c_n_ratio">Tỷ lệ cacbon/nitơ tương đương C/N <span class="unit">g COD/g NO₃-N</span></label>
         <input type="number" id="st_c_n_ratio" value="4.3" step="0.1" readonly tabindex="-1" style="background:#f1f5f9;">
         <div class="helper">只读：甲醇 = (2.47 × 后缺氧去除 NO₃-N + 1.0 × 进入 DO) × 1.15，折 COD 1.5 g/g；其他碳源按 COD 当量换算（甲醇化学计量与工程系数为文献值）。本页 C/N 含溶解氧消耗与 1.15 安全系数（不计 DO 时 2.47 × 1.15 × 1.5 = 4.26）；IFAS 页按 4.98 g COD/g N（2.86/(1−1.42×0.3)，未计 DO 消耗），口径不同</div></div>
-      <div class="field"><label for="st_PAC">PAC 投加量 <span class="unit">mg/L（留空按化学计量自动）</span></label>
-        <input type="number" id="st_PAC" value="" placeholder="自动" step="5" onchange="calcStages()">
+      <div class="field"><label for="st_PAC">Liều lượng PAC <span class="unit">mg/L (để trống để tự tính theo tỷ lượng hoá học)</span></label>
+        <input type="number" id="st_PAC" value="" placeholder="Tự động" step="5" onchange="calcStages()">
         <div class="helper">化学计量：PAC = ΔTP_chem × (Al/P) × 27/31 ÷ 0.0529（PAC 含 Al₂O₃ 10% → Al 5.29%）</div></div>
-      <div class="field"><label for="st_AlP">Al/P 摩尔比</label>
+      <div class="field"><label for="st_AlP">Tỷ lệ mol Al/P</label>
         <input type="number" id="st_AlP" value="2" step="0.1" onchange="calcStages()">
-        <div class="helper">化学除磷 Al/P 摩尔比，常取 1.5-3，默认 2</div></div>
-      <div class="field"><label for="st_PAC_price">PAC 单价 <span class="unit">元/kg</span></label>
+        <div class="helper">化学除磷 Tỷ lệ mol Al/P，常取 1.5-3，默认 2</div></div>
+      <div class="field"><label for="st_PAC_price">Đơn giá PAC <span class="unit">元/kg</span></label>
         <input type="number" id="st_PAC_price" value="0.7" step="0.1" onchange="calcStages()">
         <div class="helper">液体 PAC（10% Al₂O₃）参考价 0.7 元/kg（与投加量同一口径，与站内加药计算器一致；固体 30% 约 1.8 元/kg），按厂家报价调整</div></div>
-      <div class="field"><label for="st_carbon_price">碳源单价 <span class="unit">元/kg</span></label>
+      <div class="field"><label for="st_carbon_price">Đơn giá nguồn cacbon <span class="unit">元/kg</span></label>
         <input type="number" id="st_carbon_price" value="5" step="0.5" onchange="calcStages()">
-        <div class="helper">甲醇 3-5, 乙酸钠 5-8</div></div>
+        <div class="helper">Methanol 3-5, natri acetat 5-8</div></div>
     </div>
 
     <!-- 污泥处置参数（与药剂参数合并展示） -->
@@ -1894,8 +1894,8 @@ body {
         <div class="helper">纯 MBBR 前一般设初沉池/细格栅，默认按初沉出水 120 mg/L；无初沉时按原水（城镇约 200）</div></div>
       <div class="field"><label for="st_SSe">出水 SSₑ <span class="unit">mg/L</span></label>
         <input type="number" id="st_SSe" value="10" step="1" onchange="calcStages()">
-        <div class="helper">一级 A 为 10 mg/L</div></div>
-      <div class="field"><label for="st_fSS">惰性 SS 系数 f</label>
+        <div class="helper">Mức A cấp 1 là 10 mg/L</div></div>
+      <div class="field"><label for="st_fSS">Hệ số SS trơ f</label>
         <input type="number" id="st_fSS" value="0.5" step="0.05" onchange="calcStages()">
         <div class="helper">进水 SS 中不可生物降解部分，GB 50014 取 0.5-0.7，默认 0.5</div></div>
       <div class="field"><label for="st_sludge_mc">脱水后泥饼含水率 <span class="unit">%</span></label>
@@ -1910,141 +1910,141 @@ body {
 
     <!-- ===== 曝气系统设计（原Tab3合并）===== -->
     <!-- 曝气器选型 -->
-    <div class="section-title"><span class="num">8</span>Chọn thiết bị sục khí và máy thổi khí <span class="sub">基于上方AOR/SOR计算</span></div>
+    <div class="section-title"><span class="num">8</span>Chọn thiết bị sục khí và máy thổi khí <span class="sub">Dựa trên tính toán AOR/SOR ở trên</span></div>
     <div class="aerator-tabs">
       <button class="aerator-tab active" data-aer="coarse" onclick="setAeratorType('coarse')">
-        <b>粗孔旋混</b><span>专为 MBBR 优化 · 抗堵</span>
+        <b>Sục khí lỗ thô xoáy trộn</b><span>Tối ưu cho MBBR · chống tắc</span>
       </button>
       <button class="aerator-tab" data-aer="disc" onclick="setAeratorType('disc')">
-        <b>盘式微孔</b><span>氧传质最高 · 易堵塞</span>
+        <b>Đĩa sục khí lỗ mịn</b><span>Truyền oxy cao nhất · dễ tắc</span>
       </button>
       <button class="aerator-tab" data-aer="tube" onclick="setAeratorType('tube')">
-        <b>管式曝气</b><span>大气量 · 安装方便</span>
+        <b>Sục khí dạng ống</b><span>Lưu lượng khí lớn · dễ lắp đặt</span>
       </button>
       <button class="aerator-tab" data-aer="jet" onclick="setAeratorType('jet')">
-        <b>射流曝气</b><span>小规模/深池 · 无堵塞</span>
+        <b>Sục khí tia</b><span>Quy mô nhỏ/bể sâu · không tắc</span>
       </button>
     </div>
 
     <!-- 曝气器特性参数 -->
     <div class="section-title"><span class="num">9</span>Thông số hiệu suất thiết bị sục khí</div>
     <div class="grid">
-      <div class="field"><label for="a_perDevice">单个曝气器额定气量 <span class="unit">Nm³/h</span></label>
+      <div class="field"><label for="a_perDevice">Lưu lượng khí định mức mỗi thiết bị sục khí <span class="unit">Nm³/h</span></label>
         <input type="number" id="a_perDevice" value="7" step="1" onchange="calcAeration()">
-        <div class="helper" id="a_perDevice_help">粗孔单件 5-15</div></div>
-      <div class="field"><label for="a_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
+        <div class="helper" id="a_perDevice_help">Lỗ thô: mỗi thiết bị 5-15</div></div>
+      <div class="field"><label for="a_OTE">Hiệu suất truyền oxy OTE <span class="unit">%/m</span></label>
         <input type="number" id="a_OTE" value="2.7" step="0.1" readonly tabindex="-1" style="background:#f1f5f9;">
-        <div class="helper" id="a_OTE_help">只读：由 SOFK 推导 = SOFK ÷ 297.4 g O₂/Nm³（管状 8 → 2.69 %/m）</div></div>
-      <div class="field"><label for="a_spacing">曝气器布置间距 <span class="unit">m</span></label>
+        <div class="helper" id="a_OTE_help">Chỉ đọc: tính từ SOFK = SOFK ÷ 297.4 g O₂/Nm³ (dạng ống 8 → 2.69 %/m)</div></div>
+      <div class="field"><label for="a_spacing">Khoảng cách bố trí thiết bị sục khí <span class="unit">m</span></label>
         <input type="number" id="a_spacing" value="0.8" step="0.1" onchange="calcAeration()">
-        <div class="helper">粗孔 0.6-1.0 常用</div></div>
-      <div class="field"><label for="a_price">单价 <span class="unit">元/个</span></label>
+        <div class="helper">Lỗ thô thường dùng 0.6-1.0</div></div>
+      <div class="field"><label for="a_price">Đơn giá <span class="unit">元/个</span></label>
         <input type="number" id="a_price" value="180" step="10" onchange="calcAeration()">
-        <div class="helper" id="a_price_help">粗孔 150-300 元</div></div>
+        <div class="helper" id="a_price_help">Lỗ thô 150-300 nhân dân tệ</div></div>
     </div>
 
-    <!-- 风机选型参数 -->
+    <!-- Chọn máy thổi khí参数 -->
     <div class="section-title"><span class="num">10</span>Thông số máy thổi khí</div>
     <div class="grid">
       <div class="field"><label for="a_blowerType">Loại máy thổi khí</label>
         <select id="a_blowerType" onchange="setBlowerType()">
-          <option value="roots">罗茨风机(常规)</option>
-          <option value="multistage">多级离心风机(低噪音)</option>
-          <option value="magnetic">磁悬浮风机(节能最优)</option>
+          <option value="roots">Máy thổi khí Roots (thông dụng)</option>
+          <option value="multistage">Máy thổi khí ly tâm nhiều cấp (ít ồn)</option>
+          <option value="magnetic">Máy thổi khí ổ từ (tiết kiệm năng lượng nhất)</option>
         </select></div>
-      <div class="field"><label for="a_dp_aer">曝气池阻力 <span class="unit">kPa</span></label>
+      <div class="field"><label for="a_dp_aer">Trở lực bể sục khí <span class="unit">kPa</span></label>
         <input type="number" id="a_dp_aer" value="3" step="0.5" onchange="calcAeration()">
-        <div class="helper">微孔 3-5, 粗孔 2-3</div></div>
+        <div class="helper">Lỗ mịn 3-5, lỗ thô 2-3</div></div>
       <div class="field"><label for="a_dp_pipe">Tổn thất áp suất đường ống <span class="unit">kPa</span></label>
         <input type="number" id="a_dp_pipe" value="3" step="0.5" onchange="calcAeration()"></div>
       <div class="field"><label for="a_efficiency">Hiệu suất máy thổi khí <span class="unit">%</span></label>
         <input type="number" id="a_efficiency" value="62" step="1" onchange="calcAeration()">
         <div class="helper">罗茨 55-70, 多级离心 65-78, 磁悬浮 75-85；切换Loại máy thổi khí时自动填入典型值（62/70/80），超出该类型上限按上限计</div></div>
-      <div class="field"><label for="a_backupFactor">备用系数</label>
+      <div class="field"><label for="a_backupFactor">Hệ số dự phòng</label>
         <input type="number" id="a_backupFactor" value="1.2" step="0.05" onchange="calcAeration()">
-        <div class="helper">单台风机选型富余系数（常 1.1-1.2）：单台额定气量 = 设计气量 × 系数 ÷ 工作台数；备用台另按"N 用 1 备"计入装机气量</div></div>
+        <div class="helper">单台Chọn máy thổi khí富余系数（常 1.1-1.2）：单台额定气量 = 设计气量 × 系数 ÷ 工作台数；备用台另按"N 用 1 备"计入装机气量</div></div>
     </div>
 
     <!-- 结果 -->
     <div class="results">
-      <h2>🎯 曝气系统设计结果</h2>
+      <h2>🎯 Kết quả thiết kế hệ thống sục khí</h2>
 
       <!-- 气量汇总 -->
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">📊</span> 气量确定(取控制性较大值)</div>
-        <div class="result-row"><span class="result-label">输入 SOR (来自Tính toán công nghệ)</span>
+        <div class="result-group-title"><span class="ic">📊</span> Xác định lưu lượng khí (chọn giá trị khống chế lớn hơn)</div>
+        <div class="result-row"><span class="result-label">SOR đầu vào (từ phần tính toán công nghệ)</span>
           <span><span class="result-value" id="ar_SOR_in">—</span><span class="result-unit">kg O₂/d</span></span></div>
-        <div class="result-row"><span class="result-label">供氧所需气量</span>
+        <div class="result-row"><span class="result-label">Lưu lượng khí cần để cấp oxy</span>
           <span><span class="result-value" id="ar_airO2">—</span><span class="result-unit">Nm³/h</span></span></div>
-        <div class="result-row"><span class="result-label">填料搅拌所需气量</span>
+        <div class="result-row"><span class="result-label">Lưu lượng khí cần để khuấy trộn giá thể</span>
           <span><span class="result-value" id="ar_airMix">—</span><span class="result-unit">Nm³/h</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>设计气量(控制性)</b> <span class="sub">Nm³ 指 0 °C、101.325 kPa；换算为 20 °C 标态（鼓风机选型页口径）×1.073</span></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>Lưu lượng khí thiết kế (khống chế)</b> <span class="sub">Nm³ 指 0 °C、101.325 kPa；换算为 20 °C 标态（鼓Chọn máy thổi khí页口径）×1.073</span></span>
           <span><span class="result-value big" id="ar_airDesign">—</span><span class="result-unit">Nm³/h</span></span></div>
-        <div class="result-row"><span class="result-label">装机气量（单台额定 × 总台数，含富余与备用台）</span>
+        <div class="result-row"><span class="result-label">Lưu lượng khí lắp đặt (định mức mỗi máy × tổng số máy, gồm phần dự phòng và máy dự phòng)</span>
           <span><span class="result-value" id="ar_airInstalled">—</span><span class="result-unit">Nm³/h</span></span></div>
-        <div class="result-row"><span class="result-label">控制性因素</span>
+        <div class="result-row"><span class="result-label">Yếu tố khống chế</span>
           <span><span class="result-value" id="ar_control">—</span></span></div>
       </div>
 
-      <!-- 曝气器布置 -->
+      <!-- Bố trí thiết bị sục khí -->
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">🔧</span> 曝气器布置 <span class="auto-tag">AUTO</span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>曝气器数量</b></span>
+        <div class="result-group-title"><span class="ic">🔧</span> Bố trí thiết bị sục khí <span class="auto-tag">AUTO</span></div>
+        <div class="result-row highlight-row"><span class="result-label"><b>Số lượng thiết bị sục khí</b></span>
           <span><span class="result-value big" id="ar_count">—</span><span class="result-unit">个</span></span></div>
-        <div class="result-row"><span class="result-label">数量控制因素 <span class="sub">(max(气量/单个额定, 面积/间距²))</span></span>
+        <div class="result-row"><span class="result-label">Yếu tố khống chế số lượng <span class="sub">(max(lưu lượng khí/định mức mỗi thiết bị, diện tích/khoảng cách²))</span></span>
           <span><span class="result-value" id="ar_countCtrl">—</span></span></div>
-        <div class="result-row"><span class="result-label">单个曝气器实际气量 <span class="sub">(设计气量/数量)</span></span>
+        <div class="result-row"><span class="result-label">Lưu lượng khí thực tế mỗi thiết bị sục khí <span class="sub">(lưu lượng khí thiết kế/số lượng)</span></span>
           <span><span class="result-value" id="ar_perDeviceAct">—</span><span class="result-unit">Nm³/h</span></span></div>
-        <div class="result-row"><span class="result-label">每 m² 池底密度</span>
+        <div class="result-row"><span class="result-label">Mật độ trên mỗi m² đáy bể</span>
           <span><span class="result-value" id="ar_density">—</span><span class="result-unit">个/m²</span></span></div>
-        <div class="result-row"><span class="result-label">布置间距(建议)</span>
+        <div class="result-row"><span class="result-label">Khoảng cách bố trí (đề xuất)</span>
           <span><span class="result-value" id="ar_actSpacing">—</span><span class="result-unit">m</span></span></div>
-        <div class="result-row"><span class="result-label">曝气器投资</span>
+        <div class="result-row"><span class="result-label">Chi phí đầu tư thiết bị sục khí</span>
           <span><span class="result-value" id="ar_cost">—</span><span class="result-unit">万元</span></span></div>
       </div>
 
-      <!-- 风机选型 -->
+      <!-- Chọn máy thổi khí -->
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">⚙️</span> 风机选型</div>
-        <div class="result-row highlight-row"><span class="result-label"><b>风机总压力</b></span>
+        <div class="result-group-title"><span class="ic">⚙️</span> Chọn máy thổi khí</div>
+        <div class="result-row highlight-row"><span class="result-label"><b>Tổng áp suất máy thổi khí</b></span>
           <span><span class="result-value big" id="ar_dp">—</span><span class="result-unit">kPa</span></span></div>
-        <div class="result-row"><span class="result-label">水深静压 <span class="sub">(淹没深度 H−0.2 m × 9.81，与 SOR 同口径)</span></span>
+        <div class="result-row"><span class="result-label">Áp suất thủy tĩnh theo độ sâu <span class="sub">(độ sâu ngập H−0.2 m × 9.81, cùng cơ sở tính với SOR)</span></span>
           <span><span class="result-value" id="ar_dp_water">—</span><span class="result-unit">kPa</span></span></div>
-        <div class="result-row"><span class="result-label">曝气器+Tổn thất áp suất đường ống</span>
+        <div class="result-row"><span class="result-label">Thiết bị sục khí + tổn thất áp suất đường ống</span>
           <span><span class="result-value" id="ar_dp_sys">—</span><span class="result-unit">kPa</span></span></div>
-        <div class="result-row"><span class="result-label">单台风机额定流量 <span class="sub">(设计气量 × 富余系数 ÷ 工作台数)</span></span>
+        <div class="result-row"><span class="result-label">Lưu lượng định mức mỗi máy thổi khí <span class="sub">(lưu lượng khí thiết kế × hệ số dự phòng ÷ số máy vận hành)</span></span>
           <span><span class="result-value" id="ar_blowerQ">—</span><span class="result-unit">Nm³/h</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>风机台数(含备用)</b></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>Số máy thổi khí (gồm dự phòng)</b></span>
           <span><span class="result-value big" id="ar_blowerCount">—</span><span class="result-unit">台</span></span></div>
-        <div class="result-row"><span class="result-label">推荐型号参考</span>
+        <div class="result-row"><span class="result-label">Tham khảo kiểu máy đề xuất</span>
           <span><span class="result-value" id="ar_blowerModel">—</span></span></div>
       </div>
 
       <!-- 能耗 -->
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">⚡</span> 能耗计算</div>
-        <div class="result-row highlight-row"><span class="result-label"><b>风机轴功率 N_s</b> <span class="sub">绝热压缩 · 运行工况（设计气量 ÷ 工作台数）· 进气 20 °C、当地大气压（海拔 0 m = 101.325 kPa）· 采用效率 <span id="ar_effUsed">—</span></span></span>
+        <div class="result-group-title"><span class="ic">⚡</span> Tính toán điện năng</div>
+        <div class="result-row highlight-row"><span class="result-label"><b>Công suất trục máy thổi khí N_s</b> <span class="sub">绝热压缩 · 运行工况（设计气量 ÷ 工作台数）· 进气 20 °C、当地大气压（海拔 0 m = 101.325 kPa）· 采用效率 <span id="ar_effUsed">—</span></span></span>
           <span><span class="result-value big" id="ar_Ns">—</span><span class="result-unit">kW</span></span></div>
-        <div class="result-row"><span class="result-label">电机功率(配备) <span class="sub">(额定流量轴功率 × 1.1，圆整到 5 kW)</span></span>
+        <div class="result-row"><span class="result-label">Công suất động cơ (lắp đặt) <span class="sub">(công suất trục ở lưu lượng định mức × 1.1, làm tròn đến 5 kW)</span></span>
           <span><span class="result-value" id="ar_Nmotor">—</span><span class="result-unit">kW</span></span></div>
-        <div class="result-row"><span class="result-label">日耗电量</span>
+        <div class="result-row"><span class="result-label">Điện năng tiêu thụ hàng ngày</span>
           <span><span class="result-value" id="ar_daily_kwh">—</span><span class="result-unit">kWh/d</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>吨水电耗(曝气部分)</b></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>Điện năng trên mỗi tấn nước (phần sục khí)</b></span>
           <span><span class="result-value big" id="ar_kwh_per_m3">—</span><span class="result-unit">kWh/m³</span></span></div>
-        <div class="result-row"><span class="result-label">年电费估算(0.8元/度)</span>
+        <div class="result-row"><span class="result-label">Ước tính chi phí điện hàng năm (0.8 nhân dân tệ/kWh)</span>
           <span><span class="result-value" id="ar_yearly_cost">—</span><span class="result-unit">万元/年</span></span></div>
       </div>
 
       <!-- 搅拌校核 -->
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">🔎</span> 搅拌充分度校核 & 专家建议</div>
+        <div class="result-group-title"><span class="ic">🔎</span> Kiểm tra mức độ khuấy trộn & khuyến nghị chuyên gia</div>
         <div class="check-list" id="aerCheckList"></div>
       </div>
 
       <!-- 布置示意图 -->
       <div class="result-group">
-        <div class="result-group-title"><span class="ic">🗺️</span> 曝气器布置示意</div>
-        <div class="svg-scroll-hint">← 布置图可左右滑动 →</div>
+        <div class="result-group-title"><span class="ic">🗺️</span> Bố trí thiết bị sục khí示意</div>
+        <div class="svg-scroll-hint">← Có thể cuộn sơ đồ sang trái hoặc phải →</div>
         <div class="flow-diagram">
           <svg id="aerLayoutSvg" width="100%" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg"></svg>
         </div>
@@ -2052,16 +2052,16 @@ body {
     </div>
 
     <div class="buttons" style="margin-top:24px;">
-      <button class="btn btn-secondary" onclick="switchTab('stages')">← 返回Tính toán công nghệ</button>
-      <button class="btn btn-primary" onclick="copyAeration()">📋 复制曝气方案</button>
+      <button class="btn btn-secondary" onclick="switchTab('stages')">← Quay lại tính toán công nghệ</button>
+      <button class="btn btn-primary" onclick="copyAeration()">📋 Sao chép phương án sục khí</button>
     </div>
 
     <div class="note">
       ℹ️ <strong>纯 MBBR 曝气核心理念</strong>: (1) 气量取"供氧"和"搅拌"两者<b>较大值</b>; 
-      (2) 粗孔旋混是 MBBR 的主流选择,抗堵塞优于盘式微孔; 
+      (2) Sục khí lỗ thô xoáy trộn是 MBBR 的主流选择,抗堵塞优于Đĩa sục khí lỗ mịn; 
       (3) 磁悬浮风机虽贵但节能 15-25%,大项目 3-5 年回本; 
       (4) 搅拌气量强度 <b>10-15 Nm³/m²·h</b>（默认 12.5）是填料不堵底、不分层的关键下限，以填料厂家最小流化风量为准；小水量高浓度或低温大池容时常由搅拌控制，吨水电耗会明显偏高。
-      (5) 曝气器数量 = max(设计气量 ÷ 单个额定气量, 好氧段池底面积 ÷ 最大间距²)，单个实际气量 = 设计气量 ÷ 数量。
+      (5) Số lượng thiết bị sục khí = max(设计气量 ÷ 单个额定气量, 好氧段池底面积 ÷ 最大间距²)，单个实际气量 = 设计气量 ÷ 数量。
     </div>
 
     <!-- 结果 -->
@@ -2159,7 +2159,7 @@ body {
           <span><span class="result-value big" id="st_r_carbonDose">—</span><span class="result-unit">kg/d</span></span></div>
         <div class="result-row"><span class="result-label">碳源年费用</span>
           <span><span class="result-value" id="st_r_carbonCost">—</span><span class="result-unit">万元/年</span></span></div>
-        <div class="result-row highlight-row"><span class="result-label"><b>PAC 投加量</b></span>
+        <div class="result-row highlight-row"><span class="result-label"><b>Liều lượng PAC</b></span>
           <span><span class="result-value big" id="st_r_PACDose">—</span><span class="result-unit">kg/d</span></span></div>
         <div class="result-row"><span class="result-label">PAC 年费用</span>
           <span><span class="result-value" id="st_r_PACCost">—</span><span class="result-unit">万元/年</span></span></div>
@@ -2219,7 +2219,7 @@ body {
         <li><b>方案 ⑥(完整 BNR+除磷)</b>:方案 ⑤ + 化除磷段,适用严格 TP 限值场景</li>
         <li><b>内回流 MLR</b>:硝化段末 → 预缺氧段头,典型 200-400% · 理论 TN 去除极限 = MLR/(1+MLR) · 越高 TN 去除越好但回流能耗/管道造价增大</li>
         <li>硝化段是<b>设计控制段</b>,通常占总容积 50-60%；本工具各段面积按进入负荷计算，选方案时容积比按面积需求自动分配</li>
-        <li>化除磷段 HRT 15-30 min 即可,关键是 PAC 投加量与 pH 控制</li>
+        <li>化除磷段 HRT 15-30 min 即可,关键是 Liều lượng PAC与 pH 控制</li>
         <li><b>方案 ⑦(短程硝化+Anammox)</b>:适用 <b>高氨氮 NH₄ &gt;300 mg/L</b> 工况(污泥脱水液/发酵废水/渗滤液侧流),自养脱氮<b>省 100% 外加碳源 + 60% 曝气能耗</b>,但启动期 6-12 个月</li>
       </ul>
     </div>
@@ -4324,7 +4324,7 @@ function calcStages() {
     ['st_fillRatio','填充率'], ['st_specArea','比表面积'], ['st_poolH','Chiều sâu nước hữu ích bể hiếu khí H'],
     ['st_theta','θ_BOD'], ['st_theta_N','θ_N'], ['st_theta_o2','θ_O₂'], ['st_alpha','α'], ['st_beta','β'],
     ['st_DO','DO 设计值'], ['st_airIntMin','搅拌气量强度'], ['st_Y','产率系数 Y'], ['st_SRT','参考 SRT'],
-    ['st_biofilmX','生物膜量 X'], ['st_acetatePurity','乙酸钠有效含量']
+    ['st_biofilmX','生物膜量 X'], ['st_acetatePurity','Hàm lượng hoạt chất natri acetat']
   ]);
   const badNN = wkCheckNonNeg([
     ['st_T','水温 T'], ['st_NH40','进水 NH₄-N'], ['st_TN0','进水 TN'], ['st_TP0','进水 TP'],
@@ -4332,14 +4332,14 @@ function calcStages() {
     ['st_settleHRT','后置沉淀 HRT'], ['st_Tmin','最低设计水温 T_min'], ['st_rNit','自定义硝化速率'], ['st_SOFK','自定义 SOFK'], ['st_mixPower','缺氧段搅拌功率'], ['st_rPNA','PN/A 面积负荷'], ['st_BODe','出水 BOD'], ['st_salinity','盐度'], ['st_Kd','Kd'], ['st_SDNR20','SDNR₂₀'],
     ['st_r_preAnox','预缺氧 %'], ['st_r_nitrif_hi','高负荷 %'], ['st_r_nitrif','硝化 %'], ['st_r_nitrif_lo','低负荷 %'],
     ['st_r_partNitrif','短程硝化 %'], ['st_r_anammox','Anammox %'], ['st_r_postAnox','后缺氧 %'], ['st_r_chemP','化除磷 %'],
-    ['st_MLR','内回流比 MLR'], ['st_PAC','PAC 投加量'], ['st_PAC_price','PAC 单价'],
-    ['st_carbon_price','碳源单价'], ['st_sludge_price','污泥处置费用'],
-    ['st_SS0','进水 SS₀'], ['st_SSe','出水 SSₑ'], ['st_fSS','惰性 SS 系数 f']
+    ['st_MLR','Tỷ lệ tuần hoàn nội MLR'], ['st_PAC','Liều lượng PAC'], ['st_PAC_price','Đơn giá PAC'],
+    ['st_carbon_price','Đơn giá nguồn cacbon'], ['st_sludge_price','污泥处置费用'],
+    ['st_SS0','进水 SS₀'], ['st_SSe','出水 SSₑ'], ['st_fSS','Hệ số SS trơ f']
   ]);
   // 必填（空值按无效）：进水/出水 SS 与 f 参与产泥计算，不得静默按默认
   ['st_SS0','st_SSe','st_fSS','st_Tmin'].forEach(id => {
     const el = $(id); if (!el) return;
-    if (el.value.trim() === '') { el.classList.add('invalid'); badNN.push({st_SS0:'进水 SS₀',st_SSe:'出水 SSₑ',st_fSS:'惰性 SS 系数 f',st_Tmin:'最低设计水温 T_min'}[id]); }
+    if (el.value.trim() === '') { el.classList.add('invalid'); badNN.push({st_SS0:'进水 SS₀',st_SSe:'出水 SSₑ',st_fSS:'Hệ số SS trơ f',st_Tmin:'最低设计水温 T_min'}[id]); }
   });
   // 进水 TN 须 ≥ NH₄-N（TN = 有机氮 + NH₄-N + NOx-N）
   const tnEl = $('st_TN0'), nhEl = $('st_NH40');
@@ -4657,7 +4657,7 @@ function calcStages() {
   // 硝化面积不足：未硝化的 NH₄-N 已通过 φ（预缺氧）与后缺氧 NO₃ 上限扣除，留在出水 TN 中，不再另加
 
   // TP 去除(仅化除磷段)
-  // 化学除磷按化学计量：PAC(mg/L) = ΔTP_chem × (Al/P 摩尔比) × 27/31 ÷ Al 质量分数
+  // 化学除磷按化学计量：PAC(mg/L) = ΔTP_chem × (Tỷ lệ mol Al/P) × 27/31 ÷ Al 质量分数
   //   PAC 含 Al₂O₃ 10% → Al 质量分数 = 0.10 × 54/102 = 0.0529
   // 生物合成去除约 15-20%（经验值）
   const TP_bio_rm = 15;
@@ -4919,7 +4919,7 @@ function calcStages() {
   }
 
   if (TNmarginBad) {
-    checks.push({type:'warn', ic:'⚠', text:`<b>TN 设计余量超出范围</b>: 输入 ${TNmarginIn} mg/L，应 ≥ 0 且 &lt; 出水 TN 目标 ${TNe} mg/L；已按 ${TNmargin.toFixed(2)} mg/L 计算`});
+    checks.push({type:'warn', ic:'⚠', text:`<b>Dự phòng thiết kế TN超出范围</b>: 输入 ${TNmarginIn} mg/L，应 ≥ 0 且 &lt; 出水 TN 目标 ${TNe} mg/L；已按 ${TNmargin.toFixed(2)} mg/L 计算`});
   }
   // 设计水温
   if (Tmin > T + 1e-9) {

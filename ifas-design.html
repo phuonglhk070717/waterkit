@@ -820,15 +820,15 @@ body {
           <option value="custom">Tự chọn</option>
         </select>
         <div class="helper">Loại tương đương IV là tiêu chuẩn địa phương (TN 10 v.v.); điều chỉnh giới hạn theo địa điểm dự án</div></div>
-      <div class="field"><label for="ifas_NH4e">出水 NH₄-N <span class="unit">mg/L</span></label>
+      <div class="field"><label for="ifas_NH4e">NH₄-N nước ra <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_NH4e" value="5" step="0.5" oninput="calcAndRenderIFAS()"></div>
-      <div class="field"><label for="ifas_TNe">出水 TN <span class="unit">mg/L</span></label>
+      <div class="field"><label for="ifas_TNe">TN nước ra <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_TNe" value="15" step="0.5" oninput="calcAndRenderIFAS()"></div>
-      <div class="field"><label for="ifas_TPe">出水 TP <span class="unit">mg/L</span></label>
+      <div class="field"><label for="ifas_TPe">TP nước ra <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_TPe" value="0.5" step="0.1" oninput="calcAndRenderIFAS()"></div>
-      <div class="field"><label for="ifas_BODe">出水 BOD <span class="unit">mg/L</span></label>
+      <div class="field"><label for="ifas_BODe">BOD nước ra <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_BODe" value="10" step="0.5" oninput="calcAndRenderIFAS()"></div>
-      <div class="field"><label for="ifas_SSe">出水 SSₑ <span class="unit">mg/L</span></label>
+      <div class="field"><label for="ifas_SSe">SSₑ nước ra <span class="unit">mg/L</span></label>
         <input type="number" id="ifas_SSe" value="10" step="1" oninput="calcAndRenderIFAS()"></div>
     </div>
 
@@ -894,9 +894,9 @@ body {
     <div class="section-title"><span class="num">4</span><span id="ifas_paramTitle">Thông số thiết kế công nghệ</span></div>
     <div id="ifas_newParams">
       <div class="grid">
-        <div class="field"><label for="ifas_MLSS">MLSS(悬浮) <span class="unit">mg/L</span></label>
+        <div class="field"><label for="ifas_MLSS">MLSS (lơ lửng) <span class="unit">mg/L</span></label>
           <input type="number" id="ifas_MLSS" value="3500" step="100" oninput="calcAndRenderIFAS()">
-          <div class="helper">总悬浮固体（含进水惰性 SS、Bùn hoá học），D1 口径；IFAS 常 2500-4000</div></div>
+          <div class="helper">Tổng chất rắn lơ lửng (gồm SS trơ trong nước vào và bùn hoá học), theo cơ sở D1; IFAS thường 2500-4000</div></div>
         <div class="field"><label for="ifas_VSS_SS">MLVSS/MLSS</label>
           <input type="number" id="ifas_VSS_SS" value="0.72" step="0.01" oninput="calcAndRenderIFAS()"></div>
         <div class="field"><label for="ifas_SRT">Tuổi bùn SRT <span class="unit">d</span></label>
@@ -955,7 +955,7 @@ body {
           <div class="helper">改造前后同一口径：水体×MLSS = SRT×ΔX（含惰性 SS）反算能力；改造前另需好氧泥龄 ≥ SF·SRT_min 才能硝化，改造后不足部分由填料硝化</div></div>
         <div class="field"><label for="ifas_Asettle_r">Diện tích bể lắng thứ cấp hiện hữu <span class="unit">m²</span></label>
           <input type="number" id="ifas_Asettle_r" value="2400" step="100" oninput="calcAndRenderIFAS()">
-          <div class="helper">二沉池能力 = A × q × 24 / Kz（改造前后相同）</div></div>
+          <div class="helper">Công suất bể lắng thứ cấp = A × q × 24 / Kz (như nhau trước và sau cải tạo)</div></div>
         <div class="field"><label for="ifas_fillRatio_r">Tỷ lệ lấp đầy giá thể f <span class="unit">%</span></label>
           <input type="number" id="ifas_fillRatio_r" value="40" step="5" oninput="calcAndRenderIFAS()">
           <div class="helper">IFAS thường 20-40%, tối đa 50%</div></div>
@@ -1074,14 +1074,14 @@ body {
     <div class="grid">
       <div class="field"><label for="ifa_perDevice">Lưu lượng khí định mức mỗi thiết bị sục khí <span class="unit">Nm³/h</span></label>
         <input type="number" id="ifa_perDevice" value="7" step="1" onchange="calcAndRenderIFAS()">
-        <div class="helper" id="ifa_perDevice_help">粗孔单件 5-15</div></div>
+        <div class="helper" id="ifa_perDevice_help">Mỗi thiết bị lỗ thô 5-15</div></div>
       <div class="field"><label for="ifa_OTE">Hiệu suất truyền oxy OTE <span class="unit">%/m</span></label>
         <input type="number" id="ifa_OTE" value="3" step="0.5" onchange="calcAndRenderIFAS()">
-        <div class="helper" id="ifa_OTE_help">粗孔 2-4 %/m 水深</div>
+        <div class="helper" id="ifa_OTE_help">Lỗ thô 2-4 %/m độ sâu nước</div>
         <div class="helper">IFAS 口径：OTE 为曝气器标准条件（清水）值，经 α/β/θ 由 SOR 推气量；与纯 MBBR 的 SOFK（现场条件值、按 AOR 推气量）口径不同，同等需氧下 IFAS 算出的气量会偏高</div></div>
       <div class="field"><label for="ifa_spacing">Khoảng cách bố trí thiết bị sục khí <span class="unit">m</span></label>
         <input type="number" id="ifa_spacing" value="0.8" step="0.1" onchange="calcAndRenderIFAS()">
-        <div class="helper">粗孔 0.6-1.0 常用</div></div>
+        <div class="helper">Lỗ thô thường dùng 0.6-1.0</div></div>
       <div class="field"><label for="ifa_mixAir">Cường độ cấp khí tối thiểu để làm chuyển động giá thể <span class="unit">Nm³/m²·h</span></label>
         <input type="number" id="ifa_mixAir" value="12.5" step="0.5" oninput="this.dataset.user='1'" onchange="this.dataset.user='1'">
         <div class="helper" id="ifa_mixAir_help">按好氧段池底面积计的搅拌/流化下限，设计气量 = max(需氧气量, 本值 × 池底面积)。粗孔/旋混、管式靠气体流化填料，套用纯 MBBR 经验值 12.5；Đĩa sục khí lỗ mịn气泡细、流化力弱，取 3 并需另配潜水搅拌器（约 25 W/m³，参考值，计入电耗）。随曝气器类型自动填入，手动修改后不再覆盖</div></div>
@@ -1104,7 +1104,7 @@ body {
         <div class="helper">Lỗ mịn 3-5, lỗ thô 2-3</div></div>
       <div class="field"><label for="ifa_dp_pipe">Tổn thất áp suất đường ống <span class="unit">kPa</span></label>
         <input type="number" id="ifa_dp_pipe" value="3" step="0.5" onchange="calcAndRenderIFAS()"></div>
-      <div class="field"><label for="ifa_alt">海拔 <span class="unit">m</span></label>
+      <div class="field"><label for="ifa_alt">Độ cao <span class="unit">m</span></label>
         <input type="number" id="ifa_alt" value="0" step="100" onchange="calcAndRenderIFAS()">
         <div class="helper">SOR 的 P_b 与鼓风机进气压力按当地大气压计；默认 0 = 海平面（P = 101.325·(1 − 2.25577×10⁻⁵·h)^5.25588 kPa，−500 ~ 6000 m）</div></div>
       <div class="field"><label for="ifa_efficiency">Hiệu suất máy thổi khí <span class="unit">%</span></label>

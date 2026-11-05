@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Công cụ tính toán phương pháp bùn hoạt tính | WaterKit</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230891b2'/%3E%3Ctext x='16' y='22.5' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="description" content="AAO / 缺氧-好氧 / 厌氧-好氧 / 间歇式(SBR/CASS/UNITANK) / 氧化沟 5 种活性污泥法工艺在线设计计算, 同步脱氮除磷, 城镇污水与工业废水双预设, 依据 GB 50014-2021 / HJ 576 / Metcalf &amp; Eddy 第 5 版; MBR、MBBR、IFAS 见专用工具。">
+<meta name="description" content="Tính toán thiết kế trực tuyến 5 công nghệ bùn hoạt tính: AAO, thiếu khí–hiếu khí, kỵ khí–hiếu khí, gián đoạn (SBR/CASS/UNITANK) và mương oxy hóa; đồng thời khử nitơ và photpho, có cài đặt sẵn cho nước thải đô thị và công nghiệp, theo GB 50014-2021, HJ 576 và Metcalf &amp; Eddy phiên bản thứ 5; xem công cụ riêng cho MBR, MBBR và IFAS.">
 <link rel="canonical" href="https://waterkit.cn/activated-sludge-process-calculator.html">
-<meta name="keywords" content="AAO计算,A2O设计,活性污泥法,污水处理工艺,脱氮除磷,SBR计算,CASS,氧化沟,硝化泥龄,污水厂设计">
+<meta name="keywords" content="tính toán AAO,thiết kế A2O,bùn hoạt tính,công nghệ xử lý nước thải,khử nitơ và photpho,tính toán SBR,CASS,mương oxy hóa,tuổi bùn nitrat hóa,thiết kế nhà máy xử lý nước thải">
 <style>
   :root {
     --brand: #0891b2;
@@ -861,7 +861,7 @@
     </nav>
   </div>
 </header>
-<div class="beta-bar">🚧 <b>Beta · 开发中</b>：本工具仍在开发与校核中，计算结果仅供方案估算参考。发现问题欢迎 <a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">反馈 Issue</a>。</div>
+<div class="beta-bar">🚧 <b>Beta · Đang phát triển</b>: Công cụ đang được phát triển và kiểm tra; kết quả chỉ dùng để tham khảo khi ước tính phương án. Nếu phát hiện vấn đề, vui lòng <a href="https://github.com/chengsunmail/waterkit/issues" target="_blank" rel="noopener">gửi Issue phản hồi</a>.</div>
 
 <!-- 面包屑 -->
 <div class="breadcrumb">
@@ -876,7 +876,7 @@
 <div class="container">
   <header class="tool-header">
     <h1>🔬 Công cụ tính toán phương pháp bùn hoạt tính</h1>
-    <p>AAO / 缺氧-好氧 / 厌氧-好氧 / 间歇式 / 氧化沟 5 种工艺 · 同步脱氮除磷设计 · 城镇污水与工业废水双预设 · MBR、MBBR、IFAS 见专用工具: <a href="mbr-design.html">MBR</a> · <a href="mbbr-design.html">MBBR</a> · <a href="ifas-design.html">IFAS</a></p>
+    <p>5 công nghệ: AAO / thiếu khí–hiếu khí / kỵ khí–hiếu khí / gián đoạn / mương oxy hóa · Thiết kế đồng thời khử nitơ và photpho · Cài đặt sẵn cho nước thải đô thị và công nghiệp · Công cụ riêng cho MBR, MBBR, IFAS: <a href="mbr-design.html">MBR</a> · <a href="mbbr-design.html">MBBR</a> · <a href="ifas-design.html">IFAS</a></p>
   </header>
 
   <div class="body">
@@ -898,17 +898,17 @@
           Gián đoạn<span class="tab-sub">SBR/CASS/UNITANK</span>
         </button>
         <button class="process-tab" data-proc="oxi" onclick="setProcess('oxi')">
-          Mương oxy hóa<span class="tab-sub">Carrousel/Orbal/传统</span>
+          Mương oxy hóa<span class="tab-sub">Carrousel/Orbal/truyền thống</span>
         </button>
-        <a class="process-tab process-tab-link" href="mbr-design.html" title="MBR 已迁移至专用工程设计平台">
-          MBR ↗<span class="tab-sub">专用平台 · 膜生物反应器</span>
+        <a class="process-tab process-tab-link" href="mbr-design.html" title="MBR đã được chuyển sang nền tảng thiết kế kỹ thuật riêng">
+          MBR ↗<span class="tab-sub">Nền tảng riêng · bể phản ứng sinh học màng</span>
         </a>
-        <a class="process-tab process-tab-link" href="mbbr-design.html" title="MBBR 已迁移至专用工程设计平台">
-          MBBR ↗<span class="tab-sub">专用平台 · 悬浮填料</span>
+        <a class="process-tab process-tab-link" href="mbbr-design.html" title="MBBR đã được chuyển sang nền tảng thiết kế kỹ thuật riêng">
+          MBBR ↗<span class="tab-sub">Nền tảng riêng · giá thể lơ lửng</span>
         </a>
       </div>
     </div>
-    <div class="tabs-swipe-hint" id="tabsHint" aria-hidden="true">← 左右滑动查看更多工艺 →</div>
+    <div class="tabs-swipe-hint" id="tabsHint" aria-hidden="true">← Vuốt sang hai bên để xem thêm công nghệ →</div>
 
     <!-- ==== AAO 面板 ==== -->
     <div class="process-panel" id="panel-aao">
@@ -930,11 +930,11 @@
         <div class="field">
           <label for="T">Nhiệt độ nước T <span class="unit">°C</span></label>
           <input type="number" id="T" value="15" step="1" min="5" max="35">
-          <div class="helper">冬季低温取 8-12℃, 夏季取 20-25℃</div>
+          <div class="helper">Mùa đông lấy 8-12℃, mùa hè lấy 20-25℃</div>
         </div>
         <div class="field"><label for="Tmin">Nhiệt độ nước thiết kế tối thiểu T_min <span class="unit">°C</span></label>
-          <input type="number" id="Tmin" value="" step="1" placeholder="留空 = min(T, 12)">
-          <div class="helper">硝化最小泥龄 SRT_min 按此温度计; 留空取 min(T, 12 ℃)</div></div>
+          <input type="number" id="Tmin" value="" step="1" placeholder="Để trống = min(T, 12)">
+          <div class="helper">Tuổi bùn tối thiểu để nitrat hóa SRT_min được tính theo nhiệt độ này; để trống lấy min(T, 12 ℃)</div></div>
         <div class="field">
           <label for="COD0">COD₀ <span class="unit">mg/L</span></label>
           <input type="number" id="COD0" value="400" step="10">
@@ -954,7 +954,7 @@
         <div class="field">
           <label for="NH40">NH₄-N₀ <span class="unit">mg/L</span></label>
           <input type="number" id="NH40" value="35" step="1">
-          <div class="helper">TKN₀ 的下限参考: 本页以 TN₀ 代 TKN₀, 须 TN₀ ≥ NH₄-N₀</div>
+          <div class="helper">Giới hạn dưới tham khảo của TKN₀: trang này dùng TN₀ thay cho TKN₀, yêu cầu TN₀ ≥ NH₄-N₀</div>
         </div>
         <div class="field">
           <label for="TP0">TP₀ <span class="unit">mg/L</span></label>
@@ -970,8 +970,8 @@
           <select id="standard" onchange="applyStandard()">
             <option value="1A">Cấp A (GB 18918)</option>
             <option value="1B">Cấp B (GB 18918)</option>
-            <option value="grade4">准 IV 类(地方标准, 限值按所在地调整)</option>
-            <option value="grade3">地表 III 类 (TP 按河流 0.2, 湖库 0.05 需另行校核; TN 5 为参考值)</option>
+            <option value="grade4">Tương đương loại IV (tiêu chuẩn địa phương, điều chỉnh giới hạn theo địa phương)</option>
+            <option value="grade3">Nước mặt loại III (TP lấy 0.2 cho sông; hồ và hồ chứa lấy 0.05 và cần kiểm tra riêng; TN 5 là giá trị tham khảo)</option>
             <option value="custom">Tùy chỉnh</option>
           </select>
         </div>
@@ -997,7 +997,7 @@
         </div>
         <div class="field"><label for="orgNe">Nitơ hữu cơ đầu ra <span class="unit">mg/L</span></label>
           <input type="number" id="orgNe" value="1.5" step="0.1" min="0">
-          <div class="helper">不可硝化溶解性有机氮; ΔTKN = TN₀(代 TKN₀) − NH₄ₑ − 有机Nₑ</div></div>
+          <div class="helper">Nitơ hữu cơ hòa tan không thể nitrat hóa; ΔTKN = TN₀ (thay TKN₀) − NH₄ₑ − N hữu cơₑ</div></div>
       </div>
 
       <!-- 设计参数 -->
@@ -1006,21 +1006,21 @@
         <div class="field">
           <label for="MLSS">MLSS <span class="unit">mg/L</span></label>
           <input type="number" id="MLSS" value="3500" step="100">
-          <div class="helper">城镇污水 3000-4500</div>
+          <div class="helper">Nước thải đô thị 3000-4500</div>
         </div>
         <div class="field">
           <label for="VSS_SS">Tỷ lệ MLVSS/MLSS <span class="unit">—</span></label>
           <input type="number" id="VSS_SS" value="0.75" step="0.01" min="0.4" max="0.9">
         </div>
         <div class="field">
-          <label for="MLSSr">污泥回流 MLSS₁ <span class="unit">mg/L</span></label>
+          <label for="MLSSr">Bùn tuần hoàn MLSS₁ <span class="unit">mg/L</span></label>
           <input type="number" id="MLSSr" value="10000" step="500">
-          <div class="helper">二沉池底部浓度, 常取 8000-12000</div>
+          <div class="helper">Nồng độ ở đáy bể lắng thứ cấp, thường lấy 8000-12000</div>
         </div>
         <div class="field linked">
-          <label for="SRT">Tuổi bùn hiếu khí SRT_O <span class="unit">d (留空自动)</span></label>
-          <input type="number" id="SRT" value="" step="0.5" placeholder="留空 = 自动">
-          <div class="helper">好氧段泥龄, V_O 按此计算; 留空 = max(SF×SRT_min, 常用下限 10 d); 系统总泥龄见结果区</div>
+          <label for="SRT">Tuổi bùn hiếu khí SRT_O <span class="unit">d (để trống để tính tự động)</span></label>
+          <input type="number" id="SRT" value="" step="0.5" placeholder="Để trống = tự động">
+          <div class="helper">Tuổi bùn vùng hiếu khí, dùng để tính V_O; để trống = max(SF×SRT_min, giới hạn dưới thường dùng 10 d); xem tổng tuổi bùn hệ thống trong phần kết quả</div>
         </div>
         <div class="field">
           <label for="SF_SRT">Hệ số an toàn SRT <span class="unit">—</span></label>
@@ -1029,7 +1029,7 @@
         <div class="field">
           <label for="HRT_AN">HRT vùng kỵ khí <span class="unit">h</span></label>
           <input type="number" id="HRT_AN" value="1.5" step="0.1" min="0.5" max="3">
-          <div class="helper">释磷时间, 1-2h 为常用</div>
+          <div class="helper">Thời gian giải phóng photpho, thường dùng 1-2h</div>
         </div>
       </div>
 
@@ -1037,19 +1037,19 @@
       <div class="auto-calc-notice">
         <div class="notice-head">
           <span class="notice-ic">🔄</span>
-          <span><b>内回流比 R / 外回流比 r</b> 将根据以下条件<b>自动推导</b>,无需手动设置</span>
+          <span><b>Tỷ lệ tuần hoàn nội R / tuần hoàn ngoài r</b> được <b>tự động tính</b> theo các điều kiện sau, không cần nhập thủ công</span>
         </div>
         <div class="notice-body">
           <div class="notice-item">
             <span class="notice-dot"></span>
-            <b>内回流 R</b> ← 按 <code>出水 TN 目标</code> + <code>进水 NH₄-N</code> 反算
+            <b>Tuần hoàn nội R</b> ← tính ngược từ <code>mục tiêu TN đầu ra</code> + <code>NH₄-N đầu vào</code>
           </div>
           <div class="notice-item">
             <span class="notice-dot"></span>
-            <b>外回流 r</b> ← 按 <code>MLSS</code> / <code>污泥回流 MLSS_r</code> 浓度平衡反算
+            <b>Tuần hoàn ngoài r</b> ← tính ngược theo cân bằng nồng độ <code>MLSS</code> / <code>MLSS_r của bùn tuần hoàn</code>
           </div>
           <div class="notice-tip">
-            💡 想让 <b>r 减小</b>?提高 MLSS_r。想让 <b>R 增大</b>?收严 TNe 出水目标。
+            💡 Muốn <b>giảm r</b>? Hãy tăng MLSS_r. Muốn <b>tăng R</b>? Hãy đặt mục tiêu TNe đầu ra nghiêm ngặt hơn.
           </div>
         </div>
       </div>
@@ -1057,7 +1057,7 @@
       <!-- 高级参数 -->
       <div class="advanced-toggle" onclick="toggleAdvanced()">
         <span class="chev">▸</span>
-        <span>高级参数(动力学 / 产泥 / 校核系数)</span>
+        <span>Thông số nâng cao (động học / sinh bùn / hệ số kiểm tra)</span>
       </div>
       <div class="advanced-params" id="advanced-params">
         <div class="grid">
@@ -1074,32 +1074,32 @@
             <input type="number" id="SDNR20" value="0.08" step="0.01">
           </div>
           <div class="field">
-            <label for="alpha">α (氧传质修正) <span class="unit">—</span></label>
+            <label for="alpha">α (hiệu chỉnh truyền oxy) <span class="unit">—</span></label>
             <input type="number" id="alpha" value="0.7" step="0.05">
           </div>
           <div class="field">
-            <label for="beta">β (溶氧饱和修正) <span class="unit">—</span></label>
+            <label for="beta">β (hiệu chỉnh độ bão hòa oxy hòa tan) <span class="unit">—</span></label>
             <input type="number" id="beta" value="0.95" step="0.01">
           </div>
           <div class="field">
-            <label for="H_diff">曝气器淹没深度 H_d <span class="unit">m</span></label>
+            <label for="H_diff">Độ sâu ngập của thiết bị sục khí H_d <span class="unit">m</span></label>
             <input type="number" id="H_diff" value="5.5" step="0.1" min="0">
-            <div class="helper">SOR 水深修正用; 0 = 表面曝气不修正</div>
+            <div class="helper">Dùng để hiệu chỉnh SOR theo độ sâu nước; 0 = sục khí bề mặt, không hiệu chỉnh</div>
           </div>
           <div class="field">
-            <label for="OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
+            <label for="OTE">Hiệu suất truyền oxy OTE <span class="unit">%/m</span></label>
             <input type="number" id="OTE" value="6" step="0.5" min="0">
-            <div class="helper">微孔 5-7 %/m；E_A = OTE × H_d，用于 SOR 水深修正中的 O_t（与 MBR、IFAS、MBBR 同口径）</div>
+            <div class="helper">Bọt mịn 5-7 %/m; E_A = OTE × H_d, dùng để tính O_t khi hiệu chỉnh SOR theo độ sâu nước (cùng cơ sở tính với MBR, IFAS, MBBR)</div>
           </div>
           <div class="field">
             <label for="alt">Độ cao <span class="unit">m</span></label>
             <input type="number" id="alt" value="0" step="50" min="0" max="6000">
-            <div class="helper">SOR 中 P_b 按当地大气压计；默认 0 = 海平面</div>
+            <div class="helper">Trong phép tính SOR, P_b được tính theo áp suất khí quyển tại địa phương; mặc định 0 = mực nước biển</div>
           </div>
           <div class="field">
-            <label for="AlP">化学除磷 Al/P 摩尔比 <span class="unit">—</span></label>
+            <label for="AlP">Tỷ lệ mol Al/P để khử photpho bằng hóa chất <span class="unit">—</span></label>
             <input type="number" id="AlP" value="2" step="0.1" min="1">
-            <div class="helper">生物除磷不足时按化学计量投加 PAC (10% Al₂O₃ 液体), 化学污泥计入 ΔX; 须 ≥ 1, TP出 ≤ 0.5 常取 1.5–2.0</div>
+            <div class="helper">Khi khử photpho sinh học không đủ, định lượng PAC theo tỷ lượng hóa học (dung dịch 10% Al₂O₃); bùn hóa học được tính vào ΔX; tỷ lệ phải ≥ 1, khi TP đầu ra ≤ 0.5 thường chọn 1.5–2.0</div>
           </div>
         </div>
       </div>
@@ -1115,7 +1115,7 @@
 
         <!-- 池容可视化条 -->
         <div class="result-group">
-          <div class="result-group-title"><span class="ic">📐</span> 反应池容积(按结果比例)</div>
+          <div class="result-group-title"><span class="ic">📐</span> Thể tích bể phản ứng (theo tỷ lệ kết quả)</div>
           <div class="volume-bar" id="volBar">
             <div class="seg seg-anaerobic" id="volAN">Kỵ khí</div>
             <div class="seg seg-anoxic" id="volA">Thiếu khí</div>
@@ -1284,7 +1284,7 @@
             <div>
               <div class="score-title" id="scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
               <div class="score-label" id="scoreDesc">综合泥龄、池容比、回流比、碳氮磷比 5 项综合评估</div>
-              <div class="score-note">经验评分，仅供方案比选参考</div>
+              <div class="score-note">Điểm kinh nghiệm, chỉ dùng để tham khảo khi so sánh phương án</div>
             </div>
           </div>
         </div>
@@ -1475,15 +1475,15 @@
           <input type="number" id="aoan_alpha" value="0.7" step="0.05"></div>
         <div class="field"><label for="aoan_beta">β <span class="unit">饱和修正</span></label>
           <input type="number" id="aoan_beta" value="0.95" step="0.01"></div>
-        <div class="field"><label for="aoan_H_diff">曝气器淹没深度 H_d <span class="unit">m</span></label>
+        <div class="field"><label for="aoan_H_diff">Độ sâu ngập của thiết bị sục khí H_d <span class="unit">m</span></label>
           <input type="number" id="aoan_H_diff" value="5.5" step="0.1" min="0">
           <div class="helper">SOR 水深修正; 0 = 表面曝气</div></div>
-        <div class="field"><label for="aoan_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
+        <div class="field"><label for="aoan_OTE">Hiệu suất truyền oxy OTE <span class="unit">%/m</span></label>
           <input type="number" id="aoan_OTE" value="6" step="0.5" min="0">
-          <div class="helper">微孔 5-7 %/m；E_A = OTE × H_d，用于 SOR 水深修正中的 O_t（与 MBR、IFAS、MBBR 同口径）</div></div>
+          <div class="helper">Bọt mịn 5-7 %/m; E_A = OTE × H_d, dùng để tính O_t khi hiệu chỉnh SOR theo độ sâu nước (cùng cơ sở tính với MBR, IFAS, MBBR)</div></div>
         <div class="field"><label for="aoan_alt">Độ cao <span class="unit">m</span></label>
           <input type="number" id="aoan_alt" value="0" step="50" min="0" max="6000">
-          <div class="helper">SOR 中 P_b 按当地大气压计；默认 0 = 海平面</div></div>
+          <div class="helper">Trong phép tính SOR, P_b được tính theo áp suất khí quyển tại địa phương; mặc định 0 = mực nước biển</div></div>
       </div>
 
       <div class="auto-calc-notice">
@@ -1557,7 +1557,7 @@
             <div><div class="score-num" id="aoan_scoreNum">—</div><div class="score-label">/ 100</div></div>
             <div><div class="score-title" id="aoan_scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
               <div class="score-label" id="aoan_scoreDesc">综合评估</div>
-              <div class="score-note">经验评分，仅供方案比选参考</div></div>
+              <div class="score-note">Điểm kinh nghiệm, chỉ dùng để tham khảo khi so sánh phương án</div></div>
           </div>
         </div>
 
@@ -1667,16 +1667,16 @@
           <input type="number" id="aop_alpha" value="0.7" step="0.05"></div>
         <div class="field"><label for="aop_beta">β</label>
           <input type="number" id="aop_beta" value="0.95" step="0.01"></div>
-        <div class="field"><label for="aop_H_diff">曝气器淹没深度 H_d <span class="unit">m</span></label>
+        <div class="field"><label for="aop_H_diff">Độ sâu ngập của thiết bị sục khí H_d <span class="unit">m</span></label>
           <input type="number" id="aop_H_diff" value="5.5" step="0.1" min="0">
           <div class="helper">SOR 水深修正; 0 = 表面曝气</div></div>
-        <div class="field"><label for="aop_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
+        <div class="field"><label for="aop_OTE">Hiệu suất truyền oxy OTE <span class="unit">%/m</span></label>
           <input type="number" id="aop_OTE" value="6" step="0.5" min="0">
-          <div class="helper">微孔 5-7 %/m；E_A = OTE × H_d，用于 SOR 水深修正中的 O_t（与 MBR、IFAS、MBBR 同口径）</div></div>
+          <div class="helper">Bọt mịn 5-7 %/m; E_A = OTE × H_d, dùng để tính O_t khi hiệu chỉnh SOR theo độ sâu nước (cùng cơ sở tính với MBR, IFAS, MBBR)</div></div>
         <div class="field"><label for="aop_alt">Độ cao <span class="unit">m</span></label>
           <input type="number" id="aop_alt" value="0" step="50" min="0" max="6000">
-          <div class="helper">SOR 中 P_b 按当地大气压计；默认 0 = 海平面</div></div>
-        <div class="field"><label for="aop_AlP">化学除磷 Al/P 摩尔比</label>
+          <div class="helper">Trong phép tính SOR, P_b được tính theo áp suất khí quyển tại địa phương; mặc định 0 = mực nước biển</div></div>
+        <div class="field"><label for="aop_AlP">Tỷ lệ mol Al/P để khử photpho bằng hóa chất</label>
           <input type="number" id="aop_AlP" value="2" step="0.1" min="1">
           <div class="helper">PAC = ΔTP_chem × (Al/P) × 27/31 ÷ 0.0529 (PAC 含 Al₂O₃ 10% → Al 5.29%); TP出 ≤ 0.5 常取 1.5-2.0。注: PAC 有效含量固定按 10% Al₂O₃ 液体计, 固体 PAC (约 28–30%) 请按实际含量折算; 生物出水 TP 未扣除出水 SS 所含颗粒磷 (约 SSₑ×2–4%), 待定口径</div></div>
       </div>
@@ -1769,7 +1769,7 @@
             <div><div class="score-num" id="aop_scoreNum">—</div><div class="score-label">/ 100</div></div>
             <div><div class="score-title" id="aop_scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
               <div class="score-label" id="aop_scoreDesc">综合评估</div>
-              <div class="score-note">经验评分，仅供方案比选参考</div></div>
+              <div class="score-note">Điểm kinh nghiệm, chỉ dùng để tham khảo khi so sánh phương án</div></div>
           </div>
         </div>
 
@@ -1906,19 +1906,19 @@
             <input type="number" id="sbr_alpha" value="0.7" step="0.05"></div>
           <div class="field"><label for="sbr_beta">β</label>
             <input type="number" id="sbr_beta" value="0.95" step="0.01"></div>
-          <div class="field"><label for="sbr_H_diff">曝气器淹没深度 H_d <span class="unit">m</span></label>
+          <div class="field"><label for="sbr_H_diff">Độ sâu ngập của thiết bị sục khí H_d <span class="unit">m</span></label>
             <input type="number" id="sbr_H_diff" value="5.5" step="0.1" min="0">
             <div class="helper">SOR 水深修正; 0 = 表面曝气</div></div>
-          <div class="field"><label for="sbr_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
+          <div class="field"><label for="sbr_OTE">Hiệu suất truyền oxy OTE <span class="unit">%/m</span></label>
             <input type="number" id="sbr_OTE" value="6" step="0.5" min="0">
-            <div class="helper">微孔 5-7 %/m；E_A = OTE × H_d，用于 SOR 水深修正中的 O_t（与 MBR、IFAS、MBBR 同口径）</div></div>
+            <div class="helper">Bọt mịn 5-7 %/m; E_A = OTE × H_d, dùng để tính O_t khi hiệu chỉnh SOR theo độ sâu nước (cùng cơ sở tính với MBR, IFAS, MBBR)</div></div>
           <div class="field"><label for="sbr_alt">Độ cao <span class="unit">m</span></label>
             <input type="number" id="sbr_alt" value="0" step="50" min="0" max="6000">
-            <div class="helper">SOR 中 P_b 按当地大气压计；默认 0 = 海平面</div></div>
+            <div class="helper">Trong phép tính SOR, P_b được tính theo áp suất khí quyển tại địa phương; mặc định 0 = mực nước biển</div></div>
           <div class="field"><label for="sbr_Ls">污泥负荷 Ls (校核用) <span class="unit">kgBOD/kgMLSS·d</span></label>
             <input type="number" id="sbr_Ls" value="0.1" step="0.01" min="0.01">
             <div class="helper">GB 50014 污泥负荷法校核 V = 24·Q·S₀/(1000·m·t_R·Ls·X), 不改池容</div></div>
-          <div class="field"><label for="sbr_AlP">化学除磷 Al/P 摩尔比</label>
+          <div class="field"><label for="sbr_AlP">Tỷ lệ mol Al/P để khử photpho bằng hóa chất</label>
             <input type="number" id="sbr_AlP" value="2" step="0.1" min="1">
             <div class="helper">生物除磷不足时按化学计量投加 PAC (10% Al₂O₃ 液体), 化学污泥计入 ΔX; 须 ≥ 1</div></div>
         </div>
@@ -2014,7 +2014,7 @@
             <div><div class="score-num" id="sbr_scoreNum">—</div><div class="score-label">/ 100</div></div>
             <div><div class="score-title" id="sbr_scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
               <div class="score-label" id="sbr_scoreDesc">综合评估</div>
-              <div class="score-note">经验评分，仅供方案比选参考</div></div>
+              <div class="score-note">Điểm kinh nghiệm, chỉ dùng để tham khảo khi so sánh phương án</div></div>
           </div>
         </div>
 
@@ -2130,16 +2130,16 @@
           <div class="field"><label for="oxi_anoxOverride">手动 anoxRatio 覆盖 <span class="unit">% (0=自动)</span></label>
             <input type="number" id="oxi_anoxOverride" value="0" step="1" min="0" max="70">
             <div class="helper" id="oxi_anoxHelper">默认 0 (按 v/H/F-M 自动算): 缺氧区为总池容的一部分 (V_缺氧 = anoxRatio × V_总), 自动修正值已满足缺氧区容积校核; 切换亚型时按校核自动重设</div></div>
-          <div class="field"><label for="oxi_H_diff">曝气器淹没深度 H_d <span class="unit">m</span></label>
+          <div class="field"><label for="oxi_H_diff">Độ sâu ngập của thiết bị sục khí H_d <span class="unit">m</span></label>
             <input type="number" id="oxi_H_diff" value="0" step="0.1" min="0">
             <div class="helper">转刷/表曝机取 0 (不作水深修正); 底部微孔曝气取实际淹没深度, 并将 α 改为 0.5–0.7</div></div>
-          <div class="field"><label for="oxi_OTE">氧传质效率 OTE <span class="unit">%/m</span></label>
+          <div class="field"><label for="oxi_OTE">Hiệu suất truyền oxy OTE <span class="unit">%/m</span></label>
             <input type="number" id="oxi_OTE" value="6" step="0.5" min="0">
-            <div class="helper">微孔 5-7 %/m；E_A = OTE × H_d，用于 SOR 水深修正中的 O_t（与 MBR、IFAS、MBBR 同口径）</div></div>
+            <div class="helper">Bọt mịn 5-7 %/m; E_A = OTE × H_d, dùng để tính O_t khi hiệu chỉnh SOR theo độ sâu nước (cùng cơ sở tính với MBR, IFAS, MBBR)</div></div>
           <div class="field"><label for="oxi_alt">Độ cao <span class="unit">m</span></label>
             <input type="number" id="oxi_alt" value="0" step="50" min="0" max="6000">
-            <div class="helper">SOR 中 P_b 按当地大气压计；默认 0 = 海平面</div></div>
-          <div class="field"><label for="oxi_AlP">化学除磷 Al/P 摩尔比</label>
+            <div class="helper">Trong phép tính SOR, P_b được tính theo áp suất khí quyển tại địa phương; mặc định 0 = mực nước biển</div></div>
+          <div class="field"><label for="oxi_AlP">Tỷ lệ mol Al/P để khử photpho bằng hóa chất</label>
             <input type="number" id="oxi_AlP" value="2" step="0.1" min="1">
             <div class="helper">生物除磷不足时按化学计量投加 PAC (10% Al₂O₃ 液体), 化学污泥计入 ΔX; 须 ≥ 1</div></div>
         </div>
@@ -2251,7 +2251,7 @@
             <div><div class="score-num" id="oxi_scoreNum">—</div><div class="score-label">/ 100</div></div>
             <div><div class="score-title" id="oxi_scoreTitle">Điểm đánh giá tính hợp lý của thiết kế</div>
               <div class="score-label" id="oxi_scoreDesc">综合评估</div>
-              <div class="score-note">经验评分，仅供方案比选参考</div></div>
+              <div class="score-note">Điểm kinh nghiệm, chỉ dùng để tham khảo khi so sánh phương án</div></div>
           </div>
         </div>
       </div>
@@ -2482,7 +2482,7 @@ function validateInputs(specs, bod) {
   // Al/P 摩尔比须 ≥ 1 (AlPO₄ 化学计量下限)
   specs.filter(([id]) => /(^|_)AlP$/.test(id)).forEach(([id]) => {
     const el = $(id), v = parseFloat(el.value);
-    if (!isNaN(v) && v > 0 && v < 1) { el.classList.add('invalid'); msgs.push('化学除磷 Al/P 摩尔比须 ≥ 1 (AlPO₄ 化学计量下限)'); }
+    if (!isNaN(v) && v > 0 && v < 1) { el.classList.add('invalid'); msgs.push('Tỷ lệ mol Al/P để khử photpho bằng hóa chất须 ≥ 1 (AlPO₄ 化学计量下限)'); }
   });
   // 海拔 ≤ 6000 m (与 MBR、IFAS、MBBR 页一致)
   specs.filter(([id]) => /(^|_)alt$/.test(id)).forEach(([id]) => {
@@ -2529,7 +2529,7 @@ function specsFor(prefix, pos, nonneg) {
 }
 const CONC_SPECS = [['COD0','COD₀'],['BOD0','BOD₅'],['SS0','SS₀'],['TN0','TN₀'],['NH40','NH₄-N₀'],['TP0','TP₀'],
   ['CODe','出水 COD'],['BODe','出水 BOD'],['NH4e','出水 NH₄-N'],['TNe','出水 TN'],['TPe','出水 TP'],
-  ['SRT','泥龄 SRT'],['Kd','Kd'],['H_diff','曝气器淹没深度'],['OTE','氧传质效率 OTE'],['alt','海拔'],['HRT_AN','厌氧 HRT'],
+  ['SRT','泥龄 SRT'],['Kd','Kd'],['H_diff','曝气器淹没深度'],['OTE','Hiệu suất truyền oxy OTE'],['alt','海拔'],['HRT_AN','厌氧 HRT'],
   ['Tmin','最低设计水温'],['orgNe','出水有机氮']];
 const VALID_AAO = specsFor('', [['Q','设计规模 Q'],['MLSS','MLSS'],['VSS_SS','MLVSS/MLSS'],['MLSSr','回流污泥浓度'],
   ['Y','产泥系数 Y'],['SDNR20','SDNR₂₀'],['SF_SRT','SRT 安全系数'],['alpha','α'],['beta','β'],['AlP','Al/P 摩尔比']], CONC_SPECS);
@@ -5011,7 +5011,7 @@ function resetPanel(proc) {
 }
 function resetDefaults() {
   if (!PANEL_RESET[currentProcess]) return;
-  if (confirm('确定将当前工艺面板的参数恢复为城镇污水默认值吗? (其他工艺面板不受影响)')) resetPanel(currentProcess);
+  if (confirm('Khôi phục các thông số của công nghệ hiện tại về giá trị mặc định cho nước thải đô thị? (Các công nghệ khác không bị ảnh hưởng)')) resetPanel(currentProcess);
 }
 
 // ============ 工艺页签横向滑动提示 ============
